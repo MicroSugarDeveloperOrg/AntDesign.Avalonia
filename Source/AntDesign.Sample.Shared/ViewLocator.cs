@@ -12,7 +12,7 @@ namespace AntDesign.Sample
                 return null;
 
             var name = data.GetType().FullName!.Replace("ViewModel", "View");
-            var type = Type.GetType(name);
+            var type = name.GetType();
 
             if (type != null)
             {
