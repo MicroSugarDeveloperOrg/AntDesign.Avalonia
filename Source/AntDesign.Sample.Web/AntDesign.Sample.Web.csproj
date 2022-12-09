@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+		<WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>AntDesign.Sample</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<WasmExtraFilesToDeploy Include="AppBundle\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia.Web" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
+	</ItemGroup>
+</Project>

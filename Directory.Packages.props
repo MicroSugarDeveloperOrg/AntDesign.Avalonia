@@ -1,0 +1,39 @@
+﻿<Project>
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<AvaloniaVersion>11.0.0-preview4</AvaloniaVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="XamlNameReferenceGenerator" Version="1.5.1" />
+		<PackageVersion Include="Avalonia.Web" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Web.Blazor" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
+		<PackageVersion Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageVersion Include="PolySharp" Version="1.8.1" />
+		<PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+		<PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4-beta1.22518.1" />
+		<PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.4.0" />
+		<PackageVersion Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+		<PackageVersion Include="System.Reflection.Emit" Version="4.7.0" />
+		<PackageVersion Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+		<PackageVersion Include="System.Runtime" Version="4.3.1" />
+		<PackageVersion Include="System.ComponentModel.Annotations" Version="6.0.0-preview.4.21253.7" />
+		<PackageVersion Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageVersion Include="PublishAotCompressed" Version="1.0.0" />
+	</ItemGroup>
+</Project>
