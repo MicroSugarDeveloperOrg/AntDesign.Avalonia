@@ -6,7 +6,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" /> 
-		<PackageReference Include="XamlNameReferenceGenerator" />
+		<PackageReference Include="Avalonia" />  
 	</ItemGroup>
 </Project>

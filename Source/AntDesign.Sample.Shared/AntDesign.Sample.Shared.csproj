@@ -20,5 +20,9 @@
 		<PackageReference Include="XamlNameReferenceGenerator" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\AntDesign\AntDesign.csproj" />
+	</ItemGroup>
+
 	 
 </Project>
