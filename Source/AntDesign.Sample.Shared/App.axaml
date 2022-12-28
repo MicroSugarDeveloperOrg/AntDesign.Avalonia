@@ -7,6 +7,6 @@
     </Application.DataTemplates>
 
     <Application.Styles>
-        <FluentTheme Mode="Dark"/>
+		<AntDesign Mode="Dark"/>
     </Application.Styles>
 </Application>

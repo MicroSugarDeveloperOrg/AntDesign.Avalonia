@@ -1,0 +1,19 @@
+<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Style.Resources>
+		
+		<x:Double x:Key="ControlContentFontSize">14</x:Double>
+
+		
+		<!--Button-->
+		<Thickness x:Key="ButtonBorderThickness">1</Thickness>
+		<Thickness x:Key="ButtonPadding">3</Thickness>
+		<CornerRadius x:Key="ButtonCornerRadius">5</CornerRadius>
+	</Style.Resources>
+
+	
+	
+	
+	
+</Style>
