@@ -1,22 +1,23 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers">
 
 	<ControlTheme x:Key="{x:Type Window}" TargetType="Window">
-		<Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
-		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource WindowBackground}" />
+		<Setter Property="Background" Value="{DynamicResource Background}"/>
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Background}" />
 		<Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
-		<Setter Property="FontSize" Value="{DynamicResource ControlContentFontSize}"/>
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel>
-					<Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+					<Border Name="{x:Static helpers:PARTNameHelper.PARTTransparencyFallback}" IsHitTestVisible="False" />
 					<Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />
 					<Panel Background="Transparent" Margin="{TemplateBinding WindowDecorationMargin}" />
 					<VisualLayerManager>
 						<VisualLayerManager.ChromeOverlayLayer>
 							<TitleBar />
 						</VisualLayerManager.ChromeOverlayLayer>
-						<ContentPresenter Name="PART_ContentPresenter"
+						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
 										  Content="{TemplateBinding Content}"
 										  Margin="{TemplateBinding Padding}"

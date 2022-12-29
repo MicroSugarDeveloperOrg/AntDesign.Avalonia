@@ -4,29 +4,11 @@
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 		<RootNamespace>AntDesign</RootNamespace>
 	</PropertyGroup>
+
 	<ItemGroup>
-	  <AvaloniaXaml Remove="Accents\AntDesignBase.axaml" />
-	  <AvaloniaXaml Remove="Accents\AntDesignBrush.axaml" />
-	  <AvaloniaXaml Remove="Accents\AntDesignColors.axaml" />
-	  <AvaloniaXaml Remove="Accents\AntDesignDarkColor.axaml" />
-	  <AvaloniaXaml Remove="Accents\AntDesignLightColor.axaml" />
-	  <AvaloniaXaml Remove="AntDesign.Dark.axaml" />
-	  <AvaloniaXaml Remove="AntDesign.Light.axaml" />
-	  <AvaloniaXaml Remove="Controls\AntDesignControls.axaml" />
-	  <AvaloniaXaml Remove="Controls\Button.axaml" />
-	  <AvaloniaXaml Remove="Controls\Window.axaml" />
-	</ItemGroup>
-	<ItemGroup>
-	  <AvaloniaResource Include="Accents\AntDesignBase.axaml" />
-	  <AvaloniaResource Include="Accents\AntDesignDarkColor.axaml" />
-	  <AvaloniaResource Include="Accents\AntDesignLightColor.axaml" />
-	  <AvaloniaResource Include="Accents\AntDesignBrush.axaml" />
-	  <AvaloniaResource Include="Accents\AntDesignColors.axaml" />
-	  <AvaloniaResource Include="AntDesign.Dark.axaml" />
-	  <AvaloniaResource Include="AntDesign.Light.axaml" />
-	  <AvaloniaResource Include="Controls\AntDesignControls.axaml" />
-	  <AvaloniaResource Include="Controls\Button.axaml" />
-	  <AvaloniaResource Include="Controls\Window.axaml" />
+	  <AvaloniaResource Include="Accents\*.axaml" />
+	  <AvaloniaResource Include="*.axaml" />
+	  <AvaloniaResource Include="Controls\*.axaml" />  
 	</ItemGroup>
 
 	<ItemGroup>

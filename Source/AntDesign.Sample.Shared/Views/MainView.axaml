@@ -5,8 +5,7 @@
              xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
-             Foreground="White"
-             Background="#171C2C">
+             >
     <Design.DataContext>
       <viewModels:MainViewModel />
     </Design.DataContext>
@@ -17,11 +16,21 @@
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
 
-		<Border Background="Red">
+		<Border  >
 			
 		</Border>
-		
-		<Button Padding=""/>
+
+		<Grid Grid.Column="1">
+
+			<StackPanel>
+				<Button Content="1232323" Height="30" Width="120"/>
+				<Button Content="1232323" Height="30" Width="120" IsEnabled="False"/>
+				<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>
+				<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120"/>
+
+			</StackPanel>
+			
+		</Grid>
 		
 		
 	</Grid>

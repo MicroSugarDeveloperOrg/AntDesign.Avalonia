@@ -10,10 +10,25 @@
 		<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>
 		<SolidColorBrush x:Key="DangerBrush" Color="{DynamicResource DangerColor}"/>
 
-
-		<SolidColorBrush x:Key="WindowBackground" Color="{DynamicResource WindowBackgroundColor}"/>
+		<SolidColorBrush x:Key="Background" Color="{DynamicResource BackgroundColor}"/>
 		<SolidColorBrush x:Key="Foreground" Color="{DynamicResource ForegroundColor}"/>
-		
+
+		<SolidColorBrush x:Key="DisableBackground" Color="{DynamicResource DisableBackgroundColor}"/>
+		<SolidColorBrush x:Key="DisableForeground" Color="{DynamicResource DisableForegroundColor}"/>
+		<SolidColorBrush x:Key="DisableBorderBrush" Color="{DynamicResource DisableBorderColor}"/>
+			
+		<SolidColorBrush x:Key="ButtonDefaultBackground" Color="{DynamicResource TransparentColor}"/>
+		<SolidColorBrush x:Key="ButtonDefaultForeground" Color="{DynamicResource ButtonDefaultForegroundColor}"/>
+		<SolidColorBrush x:Key="ButtonDefaultBorderBrush" Color="{DynamicResource ButtonDefaultBorderColor}"/>
+		<SolidColorBrush x:Key="ButtonHoverDefaultForeground" Color="{DynamicResource ButtonHoverDefaultForegroundColor}"/>
+		<SolidColorBrush x:Key="ButtonHoverDefaultBorderBrush" Color="{DynamicResource ButtonHoverDefaultBorderColor}"/>
+		<SolidColorBrush x:Key="ButtonPressedDefaultForeground" Color="{DynamicResource ButtonPressedDefaultForegroundColor}"/>
+		<SolidColorBrush x:Key="ButtonPressedDefaultBorderBrush" Color="{DynamicResource ButtonPressedDefaultBorderColor}"/>
+
+		<SolidColorBrush x:Key="ButtonFullBackground" Color="{DynamicResource ButtonFullBackgroundColor}"/>
+		<SolidColorBrush x:Key="ButtonFullForeground" Color="{DynamicResource ButtonFullForegroundColor}"/>
+		<SolidColorBrush x:Key="ButtonHoverFullBackground" Color="{DynamicResource ButtonHoverFullBackgroundColor}"/>
+		<SolidColorBrush x:Key="ButtonPressedFullBackground" Color="{DynamicResource ButtonPressedFullBackgroundColor}"/>
 			
 	</Style.Resources>
 

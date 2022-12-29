@@ -9,5 +9,7 @@
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>
- 
+
+	<StyleInclude Source="avares://AntDesign/Controls/UserControl.axaml" />
+
 </Styles>
