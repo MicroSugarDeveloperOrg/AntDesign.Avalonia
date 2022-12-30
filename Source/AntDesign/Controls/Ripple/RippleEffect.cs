@@ -2,7 +2,6 @@
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Threading;
-using System.Net;
 
 namespace AntDesign.Controls.Ripple;
 
@@ -14,16 +13,25 @@ public class RippleEffect : Border
         AddHandler(PointerReleasedEvent, PointerReleasedHandler);
         AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
     }
-     
-    double _realSpeedRate = 30d; 
+
+    double _realSpeedRate = 30d;
     bool _isRippling = false;
-    int _progress = 0; 
+    int _progress = 0;
     double _rate = 0;
 
     Timer? _timer;
 
+    public static readonly StyledProperty<bool> IsRippleProperty =
+                           AvaloniaProperty.Register<RippleEffect, bool>(nameof(IsRipple), defaultBindingMode: BindingMode.TwoWay, defaultValue: true);
+
+    public bool IsRipple
+    {
+        get => GetValue(IsRippleProperty);
+        set => SetValue(IsRippleProperty, value);
+    }
+
     public static readonly StyledProperty<double> DurationProperty =
-                           AvaloniaProperty.Register<RippleEffect, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 200d);
+                           AvaloniaProperty.Register<RippleEffect, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 150d);
 
     public double Duration
     {
@@ -51,8 +59,8 @@ public class RippleEffect : Border
     }
 
 
-    public static readonly StyledProperty<Color> RippleColorProperty = 
-                           AvaloniaProperty.Register<RippleEffect, Color>(nameof(RippleColor),defaultBindingMode:BindingMode.TwoWay, defaultValue:Color.FromArgb(155,64,169,255));
+    public static readonly StyledProperty<Color> RippleColorProperty =
+                           AvaloniaProperty.Register<RippleEffect, Color>(nameof(RippleColor), defaultBindingMode: BindingMode.TwoWay, defaultValue: Color.FromArgb(155, 64, 169, 255));
 
     public Color RippleColor
     {
@@ -76,7 +84,7 @@ public class RippleEffect : Border
     public double RippleToSize
     {
         get => GetValue(RippleToSizeProperty);
-        set => SetValue (RippleToSizeProperty, value);
+        set => SetValue(RippleToSizeProperty, value);
     }
 
 
@@ -92,6 +100,9 @@ public class RippleEffect : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        if (!IsRipple)
+            return;
+
         if (Volatile.Read(ref _isRippling))
             return;
 
@@ -170,12 +181,12 @@ public class RippleEffect : Border
     {
         Dispatcher.UIThread.InvokeAsync(() =>
         {
-            BoxShadow = new BoxShadows(new BoxShadow 
+            BoxShadow = new BoxShadows(new BoxShadow
             {
                 OffsetX = 0,
                 OffsetY = 0,
-                Blur = 0 ,
-                Spread = 0 ,
+                Blur = 0,
+                Spread = 0,
                 Color = Colors.Red,
             });
         });
