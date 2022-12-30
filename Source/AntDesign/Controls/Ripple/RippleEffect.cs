@@ -69,6 +69,15 @@ public class RippleEffect : Border
     }
 
 
+    public static readonly StyledProperty<double> RippleColorAlphaProperty =
+                           AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleColorAlpha), defaultBindingMode: BindingMode.TwoWay, defaultValue: 1d);
+
+    public double RippleColorAlpha
+    {
+        get => GetValue(RippleColorAlphaProperty);
+        set => SetValue(RippleFromSizeProperty, value);
+    }
+
     public static readonly StyledProperty<double> RippleFromSizeProperty =
                            AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleFromSize), defaultBindingMode: BindingMode.TwoWay, defaultValue: 0d);
 
@@ -162,13 +171,17 @@ public class RippleEffect : Border
             if (spread <= 0)
                 spread = 0;
 
+            var color = RippleColor;
+            if (RippleColor.A == 255)
+                color = new Color((byte)(RippleColorAlpha * 255), RippleColor.R, RippleColor.G, RippleColor.B);
+
             var boxShadow = new BoxShadow
             {
                 OffsetX = 0,
                 OffsetY = 0,
                 Blur = RippleBlur,
                 Spread = spread,
-                Color = RippleColor,
+                Color = color,
             };
 
             BoxShadow = new BoxShadows(boxShadow);

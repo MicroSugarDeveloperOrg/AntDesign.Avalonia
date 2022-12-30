@@ -34,8 +34,16 @@
 				<Button Theme="{StaticResource LinkButtonTheme}"  Content="1232323" Height="30" Width="120"/>
 				<Button Theme="{StaticResource LinkButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
 
-			 <RippleEffect BorderThickness="1" BorderBrush="Gray" Width="120" Height="120"/>
-				
+				<Button BorderBrush="Red" 
+						Foreground="Red" 
+						ButtonAssists.HoverBorderBrush="Red" 
+						ButtonAssists.HoverForeground="Red"
+						ButtonAssists.PressedBorderBrush="Red" 
+						ButtonAssists.PressedForeground="Red"
+						ButtonAssists.RippleColor="Red" 
+						ButtonAssists.RippleColorAlpha="0.3"
+						Content="1232323" Height="30" Width="120"/>
+
 			</StackPanel>
 			
 		</Grid>
