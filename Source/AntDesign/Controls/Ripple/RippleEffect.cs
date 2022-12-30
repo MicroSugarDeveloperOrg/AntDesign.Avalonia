@@ -23,7 +23,7 @@ public class RippleEffect : Border
     Timer? _timer;
 
     public static readonly StyledProperty<double> DurationProperty =
-                           AvaloniaProperty.Register<RippleEffect, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 400d);
+                           AvaloniaProperty.Register<RippleEffect, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 200d);
 
     public double Duration
     {

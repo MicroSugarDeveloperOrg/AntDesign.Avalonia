@@ -12,6 +12,7 @@
 		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
@@ -31,7 +32,8 @@
 
 		<Setter Property="Template">
 			<ControlTemplate>
-				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}">
+				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}" 
+									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}">
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
 								      Background="{TemplateBinding Background}"
 								      BorderBrush="{TemplateBinding BorderBrush}"
@@ -67,6 +69,8 @@
 			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
 		</Style>
 
+	
+		
 	</ControlTheme>
 
 	<ControlTheme x:Key="PrimaryButtonTheme" TargetType="Button">
@@ -75,6 +79,7 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource ButtonHoverFullBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedFullBackground}" />
+		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
@@ -93,7 +98,8 @@
 
 		<Setter Property="Template">
 			<ControlTemplate>
-				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}">
+				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
+									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}">
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
 									  Background="{TemplateBinding Background}"
 									  BorderBrush="{TemplateBinding BorderBrush}"

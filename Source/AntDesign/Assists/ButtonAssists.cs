@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media;
+using System.Net;
 
 namespace AntDesign.Assists;
 
@@ -27,5 +28,10 @@ public static class ButtonAssists
     public static readonly AvaloniaProperty<IBrush?> PressedBorderBrushProperty = AvaloniaProperty.RegisterAttached<Button, IBrush?>("PressedBorderBrush", typeof(ButtonAssists));
     public static void SetPressedBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PressedBorderBrushProperty, value);
     public static IBrush? GetPressedBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PressedBorderBrushProperty);
+
+    public static readonly AvaloniaProperty<Color> RippleColorProperty = AvaloniaProperty.RegisterAttached<Button, Color>("RippleColor", typeof(ButtonAssists));
+    public static void SetRippleColor(AvaloniaObject dependencyObject, Color value) => dependencyObject.SetValue(RippleColorProperty, value);
+    public static Color GetRippleColor(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Color>(RippleColorProperty);
+
 
 }

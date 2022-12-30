@@ -18,6 +18,9 @@
 		<Color x:Key="DisableForegroundColor">#c8c8c8</Color>
 		<Color x:Key="DisableBorderColor">#d9d9d9</Color>
 
+		<Color x:Key="RippleColor">#9B40a9ff</Color>
+		<Color x:Key="DangerRippleColor">#9Bff7875</Color>
+
 	</Style.Resources>
 
 
