@@ -10,14 +10,14 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel>
-					<Border Name="{x:Static helpers:PARTNameHelper.PARTTransparencyFallback}" IsHitTestVisible="False" />
+					<Border Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" IsHitTestVisible="False" />
 					<Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />
 					<Panel Background="Transparent" Margin="{TemplateBinding WindowDecorationMargin}" />
 					<VisualLayerManager>
 						<VisualLayerManager.ChromeOverlayLayer>
 							<TitleBar />
 						</VisualLayerManager.ChromeOverlayLayer>
-						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
+						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
 										  Content="{TemplateBinding Content}"
 										  Margin="{TemplateBinding Padding}"

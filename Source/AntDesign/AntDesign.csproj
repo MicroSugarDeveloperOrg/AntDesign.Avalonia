@@ -8,7 +8,7 @@
 	<ItemGroup>
 	  <AvaloniaResource Include="Accents\*.axaml" />
 	  <AvaloniaResource Include="*.axaml" />
-	  <AvaloniaResource Include="Controls\*.axaml" />  
+	  <AvaloniaResource Include="Styles\*.axaml" />  
 	</ItemGroup>
 
 	<ItemGroup>
@@ -18,4 +18,5 @@
 			<IncludeAssets>build; analyzers</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
+
 </Project>

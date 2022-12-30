@@ -29,7 +29,7 @@
 				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}" 
 									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"							 
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								      Background="{TemplateBinding Background}"
 								      BorderBrush="{TemplateBinding BorderBrush}"
 								      BorderThickness="{TemplateBinding BorderThickness}"
@@ -97,7 +97,7 @@
 				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
 									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"								 
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 									  Background="{TemplateBinding Background}"
 									  BorderBrush="{TemplateBinding BorderBrush}"
 									  BorderThickness="{TemplateBinding BorderThickness}"
@@ -168,7 +168,7 @@
 				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
 									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"						 
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								      Background="{TemplateBinding Background}"
 								      BorderBrush="{TemplateBinding BorderBrush}"
 								      BorderThickness="{TemplateBinding BorderThickness}"
@@ -244,7 +244,7 @@
 									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}"
 									 IsRipple="false">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								      Background="{TemplateBinding Background}"
 								      BorderBrush="{TemplateBinding BorderBrush}"
 								      BorderThickness="{TemplateBinding BorderThickness}"

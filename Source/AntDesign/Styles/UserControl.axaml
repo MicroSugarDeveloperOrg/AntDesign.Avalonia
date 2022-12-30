@@ -5,7 +5,7 @@
 	
 	<Setter Property="Template">
 		<ControlTemplate>
-			<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PARTContentPresenter}"
+			<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 							  Padding="{TemplateBinding Padding}"
 							  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 							  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"

@@ -5,6 +5,6 @@
 	<StyleInclude Source="avares://AntDesign/Accents/AntDesignColors.axaml" />
 	<StyleInclude Source="avares://AntDesign/Accents/AntDesignLightColor.axaml" />
 	<StyleInclude Source="avares://AntDesign/Accents/AntDesignBrush.axaml" />
-	<StyleInclude Source="avares://AntDesign/Controls/AntDesignControls.axaml" />
+	<StyleInclude Source="avares://AntDesign/Styles/AntDesignControls.axaml" />
 	
 </Styles>
