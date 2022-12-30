@@ -28,6 +28,8 @@
 				<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>
 				<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120"/>
 
+			 <RippleEffect BorderThickness="1" BorderBrush="Gray" Width="120" Height="120"/>
+				
 			</StackPanel>
 			
 		</Grid>
