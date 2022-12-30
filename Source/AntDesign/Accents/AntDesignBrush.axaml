@@ -29,6 +29,10 @@
 		<SolidColorBrush x:Key="ButtonFullForeground" Color="{DynamicResource ButtonFullForegroundColor}"/>
 		<SolidColorBrush x:Key="ButtonHoverFullBackground" Color="{DynamicResource ButtonHoverFullBackgroundColor}"/>
 		<SolidColorBrush x:Key="ButtonPressedFullBackground" Color="{DynamicResource ButtonPressedFullBackgroundColor}"/>
+
+		<SolidColorBrush x:Key="ButtonDangerBrush" Color="{DynamicResource ButtonDangerColor}"/>
+		<SolidColorBrush x:Key="ButtonDangerHoverBrush" Color="{DynamicResource ButtonDangerHoverColor}"/>
+		<SolidColorBrush x:Key="ButtonDangerPressedBrush" Color="{DynamicResource ButtonDangerPressedColor}"/>
 			
 	</Style.Resources>
 
