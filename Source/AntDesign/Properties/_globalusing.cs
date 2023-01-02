@@ -1,6 +1,4 @@
 ﻿global using Avalonia;
-global using Avalonia.Animation;
-global using Avalonia.Animation.Animators;
+global using Avalonia.Controls;
 global using Avalonia.Markup.Xaml;
 global using Avalonia.Styling;
-global using Avalonia.Controls;

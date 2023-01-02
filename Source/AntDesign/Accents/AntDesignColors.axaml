@@ -3,6 +3,8 @@
 
 	<Style.Resources>
 		<Color x:Key="PrimaryColor">#4096ff</Color>
+		<Color x:Key="SecondlyColor">#000000</Color>
+		<Color x:Key="ThirdlyColor">#000000</Color>
 
 		<Color x:Key="DefaultColor">#bfbfbf</Color>
 		<Color x:Key="InfoColor">#1677ff</Color>
@@ -24,6 +26,12 @@
 		<Color x:Key="ButtonDangerColor">#ff4d4f</Color>
 		<Color x:Key="ButtonDangerHoverColor">#ff7875</Color>
 		<Color x:Key="ButtonDangerPressedColor">#d9363e</Color>
+
+		<Color x:Key="TextControlForegroundColor">#3e3e3e</Color>
+		<Color x:Key="TextControlBorderColor">#d9d9d9</Color>
+		<Color x:Key="TextControlHoverBorderColor">#4096ff</Color>
+		<Color x:Key="TextControlPlaceholderForegroundColor">#d9d9d9</Color>
+		<Color x:Key="TextControlSelectionColor">#3390ff</Color>
 
 	</Style.Resources>
 

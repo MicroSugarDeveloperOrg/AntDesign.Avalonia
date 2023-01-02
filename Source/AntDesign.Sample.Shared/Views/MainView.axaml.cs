@@ -9,12 +9,8 @@ public partial class MainView : UserControl
     {
         InitializeComponent();
 
-        //SolidColorBrush
-
-        //Button btn = new();
-        //btn.IsEnabled
-        //btn.CornerRadius
-
-        //Margin
+        //TextBox.SelectionBrushProperty
+        //TextBox textBox = new();
+        //textBox.Text
     }
 }

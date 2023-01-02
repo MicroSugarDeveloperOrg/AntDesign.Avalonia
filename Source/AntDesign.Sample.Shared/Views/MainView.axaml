@@ -44,6 +44,8 @@
 						ButtonAssists.RippleColorAlpha="0.3"
 						Content="1232323" Height="30" Width="120"/>
 
+				<TextBox Watermark="please" UseFloatingWatermark="False" Text="12312313"></TextBox>
+				
 			</StackPanel>
 			
 		</Grid>

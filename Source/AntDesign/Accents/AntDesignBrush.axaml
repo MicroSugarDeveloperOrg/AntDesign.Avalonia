@@ -2,7 +2,11 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 	<Style.Resources>
+		<!--Global-->
 		<SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource PrimaryColor}"/>
+		<SolidColorBrush x:Key="SecondlyBrush" Color="{DynamicResource SecondlyColor}"/>
+		<SolidColorBrush x:Key="ThirdlyBrush" Color="{DynamicResource ThirdlyColor}"/>
+		
 		<SolidColorBrush x:Key="DefaultBrush" Color="{DynamicResource DefaultColor}"/>
 		<SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}"/>
 		<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
@@ -13,10 +17,15 @@
 		<SolidColorBrush x:Key="Background" Color="{DynamicResource BackgroundColor}"/>
 		<SolidColorBrush x:Key="Foreground" Color="{DynamicResource ForegroundColor}"/>
 
+		<!--Disable-->
 		<SolidColorBrush x:Key="DisableBackground" Color="{DynamicResource DisableBackgroundColor}"/>
 		<SolidColorBrush x:Key="DisableForeground" Color="{DynamicResource DisableForegroundColor}"/>
 		<SolidColorBrush x:Key="DisableBorderBrush" Color="{DynamicResource DisableBorderColor}"/>
-			
+	
+		<!--Error-->
+		<SolidColorBrush x:Key="ErrorBorderBrush" Color="{DynamicResource ErrorColor}"/>
+
+		<!--Button-->
 		<SolidColorBrush x:Key="ButtonDefaultBackground" Color="{DynamicResource TransparentColor}"/>
 		<SolidColorBrush x:Key="ButtonDefaultForeground" Color="{DynamicResource ButtonDefaultForegroundColor}"/>
 		<SolidColorBrush x:Key="ButtonDefaultBorderBrush" Color="{DynamicResource ButtonDefaultBorderColor}"/>
@@ -33,7 +42,15 @@
 		<SolidColorBrush x:Key="ButtonDangerBrush" Color="{DynamicResource ButtonDangerColor}"/>
 		<SolidColorBrush x:Key="ButtonDangerHoverBrush" Color="{DynamicResource ButtonDangerHoverColor}"/>
 		<SolidColorBrush x:Key="ButtonDangerPressedBrush" Color="{DynamicResource ButtonDangerPressedColor}"/>
-			
+		
+		<!--TextBox-->
+		<SolidColorBrush x:Key="TextControlForeground" Color="{DynamicResource TextControlForegroundColor}"/>
+		<SolidColorBrush x:Key="TextControlBorderBrush" Color="{DynamicResource TextControlBorderColor}"/>
+		<SolidColorBrush x:Key="TextControlHoverBorderBrush" Color="{DynamicResource TextControlHoverBorderColor}"/>
+		<SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="{DynamicResource TextControlPlaceholderForegroundColor}"/>
+		<SolidColorBrush x:Key="TextControlSelectionBrush" Color="{DynamicResource TextControlSelectionColor}"/>
+
+
 	</Style.Resources>
 
 </Style>

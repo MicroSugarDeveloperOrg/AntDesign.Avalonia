@@ -2,9 +2,11 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 	<Style.Resources>
+		<!--Global-->
 		<Color x:Key="ForegroundColor">#000000</Color>
-		<Color x:Key="BackgroundColor">#FFFFFF</Color>
-
+		<Color x:Key="BackgroundColor">#FFFFFF</Color> 
+		
+		<!--Button-->
 		<Color x:Key="ButtonDefaultForegroundColor">#363636</Color>
 		<Color x:Key="ButtonDefaultBorderColor">#e0e0e0</Color>
 		<Color x:Key="ButtonHoverDefaultForegroundColor">#56a2ff</Color>
@@ -17,6 +19,10 @@
 		<Color x:Key="ButtonHoverFullBackgroundColor">#4096ff</Color>
 		<Color x:Key="ButtonPressedFullBackgroundColor">#0958d9</Color>
 
+		<!--TextBox-->
+		
+		
+		
 	</Style.Resources>
 
 

@@ -60,7 +60,7 @@ public class RippleEffect : Border
 
 
     public static readonly StyledProperty<Color> RippleColorProperty =
-                           AvaloniaProperty.Register<RippleEffect, Color>(nameof(RippleColor), defaultBindingMode: BindingMode.TwoWay, defaultValue: Color.FromArgb(155, 64, 169, 255));
+                           AvaloniaProperty.Register<RippleEffect, Color>(nameof(RippleColor), defaultBindingMode: BindingMode.TwoWay, defaultValue: Color.FromRgb(64, 150, 255));
 
     public Color RippleColor
     {
@@ -70,7 +70,7 @@ public class RippleEffect : Border
 
 
     public static readonly StyledProperty<double> RippleColorAlphaProperty =
-                           AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleColorAlpha), defaultBindingMode: BindingMode.TwoWay, defaultValue: 1d);
+                           AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleColorAlpha), defaultBindingMode: BindingMode.TwoWay, defaultValue: 0.3d);
 
     public double RippleColorAlpha
     {

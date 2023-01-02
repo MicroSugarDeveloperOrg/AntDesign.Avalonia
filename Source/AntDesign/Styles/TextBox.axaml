@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers"
                     x:CompileBindings="True">
   <Design.PreviewWith>
     <Border Padding="20">
@@ -33,7 +34,7 @@
     <MenuItem x:Name="TextBoxContextMenuPasteItem" Header="Paste" Command="{Binding $parent[TextBox].Paste}" IsEnabled="{Binding $parent[TextBox].CanPaste}" InputGesture="{x:Static TextBox.PasteGesture}"/>
   </ContextMenu>
 
-  <ControlTheme x:Key="FluentTextBoxButton" TargetType="Button">
+  <ControlTheme x:Key="AntDesignTextBoxButton" TargetType="Button">
     <Setter Property="Background" Value="{DynamicResource TextControlButtonBackground}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TextControlButtonBorderBrush}" />
     <Setter Property="Focusable" Value="False"/>
@@ -72,9 +73,9 @@
     </Style>
   </ControlTheme>
 
-  <ControlTheme x:Key="FluentTextBoxToggleButton"
+  <ControlTheme x:Key="AntDesignTextBoxToggleButton"
                 TargetType="ToggleButton"
-                BasedOn="{StaticResource FluentTextBoxButton}">
+                BasedOn="{StaticResource AntDesignTextBoxButton}">
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="ToggleButton">
@@ -99,13 +100,13 @@
     <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
     <Setter Property="CaretBrush" Value="{DynamicResource TextControlForeground}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-    <Setter Property="SelectionBrush" Value="{DynamicResource TextControlSelectionHighlightColor}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
-    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
-    <Setter Property="MinHeight" Value="{DynamicResource TextControlThemeMinHeight}" />
-    <Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
-    <Setter Property="Padding" Value="{DynamicResource TextControlThemePadding}" />
+    <Setter Property="SelectionBrush" Value="{DynamicResource TextControlSelectionBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
+    <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBoxMinHeight}" />
+    <Setter Property="MinWidth" Value="{DynamicResource TextBoxMinWidth}" />
+    <Setter Property="Padding" Value="{DynamicResource TextBoxPadding}" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout" Value="{StaticResource DefaultTextBoxContextFlyout}" />
@@ -113,14 +114,13 @@
       <ControlTemplate>
         <DataValidationErrors>
           <Panel>
-            <Border
-              Name="PART_BorderElement"
-              Background="{TemplateBinding Background}"
-              BorderBrush="{TemplateBinding BorderBrush}"
-              BorderThickness="{TemplateBinding BorderThickness}"
-              CornerRadius="{TemplateBinding CornerRadius}"
-              MinWidth="{TemplateBinding MinWidth}"
-              MinHeight="{TemplateBinding MinHeight}">
+            <Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}" 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    MinWidth="{TemplateBinding MinWidth}"
+                    MinHeight="{TemplateBinding MinHeight}">
             </Border>
 
             <Border
@@ -129,12 +129,12 @@
                 <ContentPresenter Grid.Column="0"
                                   Grid.ColumnSpan="1"
                                   Content="{TemplateBinding InnerLeftContent}"/>
-                <DockPanel x:Name="PART_InnerDockPanel"
+                <DockPanel x:Name="{x:Static helpers:PARTNameHelper.PART_InnerDockPanel}"
                            Grid.Column="1"
                            Grid.ColumnSpan="1"
                            Cursor="IBeam"
                            Margin="{TemplateBinding Padding}">
-                  <TextBlock Name="PART_FloatingWatermark"
+                  <TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_FloatingWatermark}"
                              Foreground="{DynamicResource SystemAccentColor}"
                              FontSize="{TemplateBinding FontSize}"
                              IsVisible="False"
@@ -145,30 +145,30 @@
                                 IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
                                 AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
                     <Panel>
-                      <TextBlock Name="PART_Watermark"
-                              Opacity="0.5"
-                              Text="{TemplateBinding Watermark}"
-                              TextAlignment="{TemplateBinding TextAlignment}"
-                              TextWrapping="{TemplateBinding TextWrapping}"
-                              IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                      <TextPresenter Name="PART_TextPresenter"
-                                    Text="{TemplateBinding Text, Mode=TwoWay}"
-                                    CaretIndex="{TemplateBinding CaretIndex}"
-                                    SelectionStart="{TemplateBinding SelectionStart}"
-                                    SelectionEnd="{TemplateBinding SelectionEnd}"
-                                    TextAlignment="{TemplateBinding TextAlignment}"
-                                    TextWrapping="{TemplateBinding TextWrapping}"
-                                    LineHeight="{TemplateBinding LineHeight}"
-                                    LetterSpacing="{TemplateBinding LetterSpacing}"
-                                    PasswordChar="{TemplateBinding PasswordChar}"
-                                    RevealPassword="{TemplateBinding RevealPassword}"
-                                    SelectionBrush="{TemplateBinding SelectionBrush}"
-                                    SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-                                    CaretBrush="{TemplateBinding CaretBrush}"
-                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                      <TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_Watermark}"
+                                 Opacity="0.5"
+                                 Text="{TemplateBinding Watermark}"
+                                 TextAlignment="{TemplateBinding TextAlignment}"
+                                 TextWrapping="{TemplateBinding TextWrapping}"
+                                 IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                      <TextPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_TextPresenter}"
+                                     Text="{TemplateBinding Text, Mode=TwoWay}"
+                                     CaretIndex="{TemplateBinding CaretIndex}"
+                                     SelectionStart="{TemplateBinding SelectionStart}"
+                                     SelectionEnd="{TemplateBinding SelectionEnd}"
+                                     TextAlignment="{TemplateBinding TextAlignment}"
+                                     TextWrapping="{TemplateBinding TextWrapping}"
+                                     LineHeight="{TemplateBinding LineHeight}"
+                                     LetterSpacing="{TemplateBinding LetterSpacing}"
+                                     PasswordChar="{TemplateBinding PasswordChar}"
+                                     RevealPassword="{TemplateBinding RevealPassword}"
+                                     SelectionBrush="{TemplateBinding SelectionBrush}"
+                                     SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                                     CaretBrush="{TemplateBinding CaretBrush}"
+                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Panel>
                   </ScrollViewer>
                 </DockPanel>
@@ -182,49 +182,35 @@
 
     <!-- Disabled State -->
     <Style Selector="^:disabled">
-      <Setter Property="Foreground" Value="{DynamicResource TextControlForegroundDisabled}" />
+      <Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
 
       <Style Selector="^ /template/ Border#PART_BorderElement">
-        <Setter Property="Background" Value="{DynamicResource TextControlBackgroundDisabled}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushDisabled}" />
+        <Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
       </Style>
 
       <Style Selector="^ /template/ TextBlock#PART_Watermark, ^ /template/ TextBlock#PART_FloatingWatermark">
-        <Setter Property="Foreground" Value="{DynamicResource TextControlPlaceholderForegroundDisabled}" />
+        <Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
       </Style>
     </Style>
 
     <!-- PointerOver State-->
-    <Style Selector="^:pointerover">
-      <Setter Property="Foreground" Value="{DynamicResource TextControlForegroundPointerOver}" />
-
+    <Style Selector="^:pointerover">   
       <Style Selector="^ /template/ Border#PART_BorderElement">
-        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushPointerOver}"/>
-        <Setter Property="Background" Value="{DynamicResource TextControlBackgroundPointerOver}" />
-      </Style>
-
-      <Style Selector="^ /template/ TextBlock#PART_Watermark">
-        <Setter Property="Foreground" Value="{DynamicResource TextControlPlaceholderForegroundPointerOver}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/> 
       </Style>
     </Style>
 
     <!-- Focused State -->
     <Style Selector="^:focus">
-      <Setter Property="Foreground" Value="{DynamicResource TextControlForegroundFocused}" />
-
-      <Style Selector="^ /template/ TextBlock#PART_Watermark">
-        <Setter Property="Foreground" Value="{DynamicResource TextControlPlaceholderForegroundFocused}" />
-      </Style>
-
-      <Style Selector="^ /template/ Border#PART_BorderElement">
-        <Setter Property="Background" Value="{DynamicResource TextControlBackgroundFocused}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}"/>
-        <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
+      <Style Selector="^ /template/ Border#PART_BorderElement"> 
+        <Setter Property="BorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
+		  <Setter Property="BoxShadow" Value="0 0 5 2 #4096ff"/>
       </Style>
     </Style>
 
     <Style Selector="^:error /template/ Border#PART_BorderElement">
-      <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}"/>
     </Style>
 
     <Style Selector="^[UseFloatingWatermark=true]:not(:empty) /template/ TextBlock#PART_FloatingWatermark">
@@ -234,7 +220,7 @@
     <Style Selector="^.revealPasswordButton[AcceptsReturn=False][IsReadOnly=False]:not(TextBox:empty)">
       <Setter Property="InnerRightContent">
         <Template>
-          <ToggleButton Theme="{StaticResource FluentTextBoxToggleButton}"
+          <ToggleButton Theme="{StaticResource AntDesignTextBoxToggleButton}"
                         IsChecked="{Binding $parent[TextBox].RevealPassword, Mode=TwoWay}"
                         ClipToBounds="True">
             <Panel>
@@ -253,7 +239,7 @@
     <Style Selector="^.clearButton[AcceptsReturn=False][IsReadOnly=False]:focus:not(TextBox:empty)">
       <Setter Property="InnerRightContent">
         <Template>
-          <Button Theme="{StaticResource FluentTextBoxButton}"
+          <Button Theme="{StaticResource AntDesignTextBoxButton}"
                   Command="{Binding $parent[TextBox].Clear}"
                   ClipToBounds="True">
             <PathIcon Data="{StaticResource TextBoxClearButtonData}" Height="10" Width="10"/>
