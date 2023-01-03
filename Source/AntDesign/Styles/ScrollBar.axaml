@@ -103,9 +103,9 @@
 	<ControlTheme x:Key="{x:Type ScrollBar}" TargetType="ScrollBar">
 		<Setter Property="MinWidth" Value="{DynamicResource ScrollBarSize}" />
 		<Setter Property="MinHeight" Value="{DynamicResource ScrollBarSize}" />
-		<Setter Property="Background" Value="{DynamicResource ScrollBarBackground}" />
+		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource ScrollBarForeground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource ScrollBarBorderBrush}" />
+		<Setter Property="BorderBrush" Value="Transparent" />
 
 		<Style Selector="^:vertical">
 			<Setter Property="Template">
@@ -135,7 +135,7 @@
 											  Focusable="False"
 											  MinWidth="{DynamicResource ScrollBarSize}"
 											  Height="{DynamicResource ScrollBarSize}">
-									<PathIcon Data="M 19.091797 14.970703 L 10 5.888672 L 0.908203 14.970703 L 0.029297 14.091797 L 10 4.111328 L 19.970703 14.091797 Z"
+									<PathIcon Data="M65.582671 735.208665l446.417329-446.41733 446.417329 446.41733z"
 											  Width="{DynamicResource ScrollBarButtonArrowIconFontSize}"
 											  Height="{DynamicResource ScrollBarButtonArrowIconFontSize}"/>
 								</RepeatButton>
@@ -173,7 +173,7 @@
 											  Focusable="False"
 											  MinWidth="{DynamicResource ScrollBarSize}"
 											  Height="{DynamicResource ScrollBarSize}">
-									<PathIcon Data="M 18.935547 4.560547 L 19.814453 5.439453 L 10 15.253906 L 0.185547 5.439453 L 1.064453 4.560547 L 10 13.496094 Z"
+									<PathIcon Data="M65.582671 288.791335l446.417329 446.41733 446.417329-446.41733z"
 											  Width="{DynamicResource ScrollBarButtonArrowIconFontSize}"
 											  Height="{DynamicResource ScrollBarButtonArrowIconFontSize}"/>
 								</RepeatButton>
@@ -193,8 +193,8 @@
 								BorderBrush="{TemplateBinding BorderBrush}">
 							<Grid ColumnDefinitions="Auto,*,Auto">
 								<Rectangle x:Name="TrackRect"
-										   Fill="{DynamicResource ScrollBarTrackBackground}"
-										   Stroke="{DynamicResource ScrollBarTrackBorderBrush}"
+										   Fill="Transparent"
+										   Stroke="Transparent"
 										   StrokeThickness="{DynamicResource ScrollBarTrackBorderThemeThickness}"
 										   Opacity="0"
 										   Grid.ColumnSpan="3">
@@ -212,7 +212,7 @@
 											  Focusable="False"
 											  MinHeight="{DynamicResource ScrollBarSize}"
 											  Width="{DynamicResource ScrollBarSize}">
-									<PathIcon Data="M 14.091797 19.970703 L 4.111328 10 L 14.091797 0.029297 L 14.970703 0.908203 L 5.888672 10 L 14.970703 19.091797 Z"
+									<PathIcon Data="M735.208665 65.582671l-446.41733 446.417329 446.41733 446.417329z"
 											  Width="{DynamicResource ScrollBarButtonArrowIconFontSize}"
 											  Height="{DynamicResource ScrollBarButtonArrowIconFontSize}"/>
 								</RepeatButton>
@@ -249,7 +249,7 @@
 											  Focusable="False"
 											  MinHeight="{DynamicResource ScrollBarSize}"
 											  Width="{DynamicResource ScrollBarSize}">
-									<PathIcon Data="M 5.029297 19.091797 L 14.111328 10 L 5.029297 0.908203 L 5.908203 0.029297 L 15.888672 10 L 5.908203 19.970703 Z"
+									<PathIcon Data="M288.791335 65.582671l446.41733 446.417329-446.41733 446.417329z"
 											  Width="{DynamicResource ScrollBarButtonArrowIconFontSize}"
 											  Height="{DynamicResource ScrollBarButtonArrowIconFontSize}"/>
 								</RepeatButton>
