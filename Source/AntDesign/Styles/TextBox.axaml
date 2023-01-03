@@ -111,6 +111,7 @@
 		<Setter Property="FocusAdorner" Value="{x:Null}" />
 		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
 		<Setter Property="ContextFlyout" Value="{StaticResource DefaultTextBoxContextFlyout}" />
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DataValidationErrors>

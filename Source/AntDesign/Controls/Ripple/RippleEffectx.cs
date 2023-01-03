@@ -18,7 +18,7 @@ public class RippleEffectx : Border
                 if (RippleColor.A == 255)
                     color = new Color((byte)(RippleColorAlpha * 255), RippleColor.R, RippleColor.G, RippleColor.B);
 
-                BoxShadow = new BoxShadows(new BoxShadow
+                s.BoxShadow = new BoxShadows(new BoxShadow
                 {
                     OffsetX = 0,
                     OffsetY = 0,
@@ -29,7 +29,7 @@ public class RippleEffectx : Border
             }
             else
             {
-                BoxShadow = new BoxShadows(new BoxShadow
+                s.BoxShadow = new BoxShadows(new BoxShadow
                 {
                     OffsetX = 0,
                     OffsetY = 0,
@@ -60,7 +60,7 @@ public class RippleEffectx : Border
     }
 
     public static readonly StyledProperty<double> RippleColorAlphaProperty =
-                          AvaloniaProperty.Register<RippleEffectx, double>(nameof(RippleColorAlpha), defaultBindingMode: BindingMode.TwoWay, defaultValue: 0.3d);
+                          AvaloniaProperty.Register<RippleEffectx, double>(nameof(RippleColorAlpha), defaultBindingMode: BindingMode.TwoWay, defaultValue: 0.4d);
 
     public double RippleColorAlpha
     {
@@ -70,7 +70,7 @@ public class RippleEffectx : Border
 
 
     public static readonly StyledProperty<double> RippleBlurProperty =
-                           AvaloniaProperty.Register<RippleEffectx, double>(nameof(RippleBlur), defaultBindingMode: BindingMode.TwoWay, defaultValue: 3d);
+                           AvaloniaProperty.Register<RippleEffectx, double>(nameof(RippleBlur), defaultBindingMode: BindingMode.TwoWay, defaultValue: 4d);
 
     public double RippleBlur
     {

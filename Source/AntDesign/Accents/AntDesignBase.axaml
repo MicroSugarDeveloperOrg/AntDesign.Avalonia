@@ -30,7 +30,7 @@
 		<x:Double x:Key="TextBoxMinHeight">30</x:Double>
 		<x:Double x:Key="TextBoxMinWidth">100</x:Double>
 		<Thickness x:Key="TextBoxBorderThickness">1</Thickness>
-		<Thickness x:Key="TextBoxPadding">3</Thickness>
+		<Thickness x:Key="TextBoxPadding">5,0,5,0</Thickness>
 		<CornerRadius x:Key="TextBoxCornerRadius">5</CornerRadius>
 		
 	</Style.Resources>

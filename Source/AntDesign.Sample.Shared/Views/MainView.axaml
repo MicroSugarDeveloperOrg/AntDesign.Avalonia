@@ -49,8 +49,9 @@
 						
 					</Grid>
 				</ScrollViewer>
-				
+
 				<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+				<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 				
 			</StackPanel>
 			
