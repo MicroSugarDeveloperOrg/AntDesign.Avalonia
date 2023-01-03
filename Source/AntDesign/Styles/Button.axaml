@@ -19,7 +19,7 @@
 		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -87,7 +87,7 @@
 		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -152,7 +152,7 @@
 		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -227,7 +227,7 @@
 		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>

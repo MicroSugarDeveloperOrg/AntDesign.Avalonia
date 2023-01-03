@@ -50,8 +50,6 @@
 					</Grid>
 				</ScrollViewer>
 				
-				
-				
 				<TextBox Watermark="please" UseFloatingWatermark="False" Text="12312313"></TextBox>
 				
 			</StackPanel>

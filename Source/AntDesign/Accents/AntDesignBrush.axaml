@@ -69,6 +69,7 @@
 		<SolidColorBrush x:Key="ScrollViewerScrollBarsSeparatorBackground" Color="{DynamicResource ScrollViewerScrollBarsSeparatorBackgroundColor}"/>
 
 		<!--TextBox-->
+		
 		<SolidColorBrush x:Key="TextControlForeground" Color="{DynamicResource TextControlForegroundColor}"/>
 		<SolidColorBrush x:Key="TextControlBorderBrush" Color="{DynamicResource TextControlBorderColor}"/>
 		<SolidColorBrush x:Key="TextControlHoverBorderBrush" Color="{DynamicResource TextControlHoverBorderColor}"/>
