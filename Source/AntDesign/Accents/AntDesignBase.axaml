@@ -3,7 +3,9 @@
 
 	<Style.Resources>
 		
+		<!--Global-->
 		<x:Double x:Key="FontSize">14</x:Double>
+		<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
 	
 		<!--Button-->
 		<Thickness x:Key="ButtonBorderThickness">1</Thickness>
