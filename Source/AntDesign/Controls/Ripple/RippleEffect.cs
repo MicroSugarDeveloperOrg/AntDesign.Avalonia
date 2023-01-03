@@ -12,6 +12,15 @@ public class RippleEffect : Border
         AddHandler(PointerPressedEvent, PointerPressedHandler);
         AddHandler(PointerReleasedEvent, PointerReleasedHandler);
         AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
+        IsRippleProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
+        {
+
+        });
+
+        DurationProperty.Changed.AddClassHandler<RippleEffect, double>((s, e) =>
+        {
+
+        });
     }
 
     double _realSpeedRate = 30d;

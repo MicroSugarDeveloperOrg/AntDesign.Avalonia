@@ -43,6 +43,31 @@
 		<SolidColorBrush x:Key="ButtonDangerHoverBrush" Color="{DynamicResource ButtonDangerHoverColor}"/>
 		<SolidColorBrush x:Key="ButtonDangerPressedBrush" Color="{DynamicResource ButtonDangerPressedColor}"/>
 		
+		<!--ScrollBar-->
+		<SolidColorBrush x:Key="ScrollBarThumbBackground" Color="{DynamicResource ScrollBarThumbBackgroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarThumbHoverBackground" Color="{DynamicResource ScrollBarThumbHoverBackgroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarThumbPressedBackground" Color="{DynamicResource ScrollBarThumbPressedBackgroundColor}"/>
+
+		<SolidColorBrush x:Key="ScrollBarLineButtonForeground" Color="{DynamicResource ScrollBarLineButtonForegroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarLineButtonHoverForeground" Color="{DynamicResource ScrollBarLineButtonHoverForegroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarLineButtonPressedForeground" Color="{DynamicResource ScrollBarLineButtonPressedForegroundColor}"/>
+
+		<SolidColorBrush x:Key="ScrollBarLineButtonBackground" Color="{DynamicResource ScrollBarLineButtonBackgroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarLineButtonHoverBackground" Color="{DynamicResource ScrollBarLineButtonHoverBackgroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarLineButtonPressedBackground" Color="{DynamicResource ScrollBarLineButtonPressedBackgroundColor}"/>
+
+		<SolidColorBrush x:Key="ScrollBarLineButtonBorderBrush" Color="{DynamicResource ScrollBarLineButtonBorderColor}"/>
+		
+		<SolidColorBrush x:Key="ScrollBarBackground" Color="{DynamicResource ScrollBarBackgroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarForeground" Color="{DynamicResource ScrollBarForegroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarBorderBrush" Color="{DynamicResource ScrollBarBorderColor}"/>
+
+		<SolidColorBrush x:Key="ScrollBarTrackBackground" Color="{DynamicResource ScrollBarTrackBackgroundColor}"/>
+		<SolidColorBrush x:Key="ScrollBarTrackBorderBrush" Color="{DynamicResource ScrollBarTrackBorderColor}"/>
+
+		<!--ScrollViewer-->
+		<SolidColorBrush x:Key="ScrollViewerScrollBarsSeparatorBackground" Color="{DynamicResource ScrollViewerScrollBarsSeparatorBackgroundColor}"/>
+
 		<!--TextBox-->
 		<SolidColorBrush x:Key="TextControlForeground" Color="{DynamicResource TextControlForegroundColor}"/>
 		<SolidColorBrush x:Key="TextControlBorderBrush" Color="{DynamicResource TextControlBorderColor}"/>

@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
 
 namespace AntDesign.Sample.Views
 {
@@ -7,6 +8,9 @@ namespace AntDesign.Sample.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            //Rectangle rectangle = new Rectangle();
+            //rectangle.StrokeThickness
         }
     }
 }

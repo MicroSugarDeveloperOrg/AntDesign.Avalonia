@@ -44,6 +44,14 @@
 						ButtonAssists.RippleColorAlpha="0.3"
 						Content="1232323" Height="30" Width="120"/>
 
+				<ScrollViewer Width="400" Height="300" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+					<Grid Height="1024" Width="500" Background="AliceBlue">
+						
+					</Grid>
+				</ScrollViewer>
+				
+				
+				
 				<TextBox Watermark="please" UseFloatingWatermark="False" Text="12312313"></TextBox>
 				
 			</StackPanel>

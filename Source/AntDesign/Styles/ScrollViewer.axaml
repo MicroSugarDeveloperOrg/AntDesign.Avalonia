@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers">
+	<Design.PreviewWith>
+		<ScrollViewer Width="200" Height="200"
+					  HorizontalScrollBarVisibility="Auto">
+			<StackPanel Spacing="20" Width="210">
+				<TextBlock>Item 1</TextBlock>
+				<TextBlock>Item 2</TextBlock>
+				<TextBlock>Item 3</TextBlock>
+				<TextBlock>Item 4</TextBlock>
+				<TextBlock>Item 5</TextBlock>
+				<TextBlock>Item 6</TextBlock>
+				<TextBlock>Item 7</TextBlock>
+				<TextBlock>Item 8</TextBlock>
+				<TextBlock>Item 9</TextBlock>
+			</StackPanel>
+		</ScrollViewer>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type ScrollViewer}" TargetType="ScrollViewer">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
+					<ScrollContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+											Grid.Row="0"
+											Grid.Column="0"
+											Grid.RowSpan="2"
+											Grid.ColumnSpan="2"
+											Background="{TemplateBinding Background}"
+											CanHorizontallyScroll="{TemplateBinding CanHorizontallyScroll}"
+											CanVerticallyScroll="{TemplateBinding CanVerticallyScroll}"
+											Content="{TemplateBinding Content}"
+											Extent="{TemplateBinding Extent, Mode=TwoWay}"
+											Padding="{TemplateBinding Padding}"
+											Offset="{TemplateBinding Offset, Mode=TwoWay}"
+											Viewport="{TemplateBinding Viewport, Mode=TwoWay}"
+											IsScrollChainingEnabled="{TemplateBinding IsScrollChainingEnabled}">
+						<ScrollContentPresenter.GestureRecognizers>
+							<ScrollGestureRecognizer CanHorizontallyScroll="{TemplateBinding CanHorizontallyScroll}"
+													 CanVerticallyScroll="{TemplateBinding CanVerticallyScroll}" />
+						</ScrollContentPresenter.GestureRecognizers>
+					</ScrollContentPresenter>
+					<ScrollBar Name="{x:Static helpers:PARTNameHelper.PART_HorizontalScrollBar}"
+							   AllowAutoHide="{TemplateBinding AllowAutoHide}"
+							   Orientation="Horizontal"
+							   LargeChange="{Binding LargeChange.Width, RelativeSource={RelativeSource TemplatedParent}}"
+							   SmallChange="{Binding SmallChange.Width, RelativeSource={RelativeSource TemplatedParent}}"
+							   Maximum="{TemplateBinding HorizontalScrollBarMaximum}"
+							   Value="{TemplateBinding HorizontalScrollBarValue, Mode=TwoWay}"
+							   ViewportSize="{TemplateBinding HorizontalScrollBarViewportSize}"
+							   Visibility="{TemplateBinding HorizontalScrollBarVisibility}"
+							   Grid.Row="1"
+							   Focusable="False" />
+					<ScrollBar Name="{x:Static helpers:PARTNameHelper.PART_VerticalScrollBar}"
+							   AllowAutoHide="{TemplateBinding AllowAutoHide}"
+							   Orientation="Vertical"
+							   LargeChange="{Binding LargeChange.Height, RelativeSource={RelativeSource TemplatedParent}}"
+							   SmallChange="{Binding SmallChange.Height, RelativeSource={RelativeSource TemplatedParent}}"
+							   Maximum="{TemplateBinding VerticalScrollBarMaximum}"
+							   Value="{TemplateBinding VerticalScrollBarValue, Mode=TwoWay}"
+							   ViewportSize="{TemplateBinding VerticalScrollBarViewportSize}"
+							   Visibility="{TemplateBinding VerticalScrollBarVisibility}"
+							   Grid.Column="1"
+							   Focusable="False" />
+					<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_ScrollBarsSeparator}"
+						   Grid.Row="1"
+						   Grid.Column="1"
+						   Background="{DynamicResource ScrollViewerScrollBarsSeparatorBackground}"
+						   Opacity="0">
+						<Panel.Transitions>
+							<Transitions>
+								<DoubleTransition Property="Opacity" Duration="0:0:0.1" />
+							</Transitions>
+						</Panel.Transitions>
+					</Panel>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^[IsExpanded=true] /template/ Panel#PART_ScrollBarsSeparator">
+			<Setter Property="Opacity" Value="1" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

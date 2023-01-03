@@ -19,6 +19,32 @@
 		<Color x:Key="ButtonHoverFullBackgroundColor">#4096ff</Color>
 		<Color x:Key="ButtonPressedFullBackgroundColor">#0958d9</Color>
 
+		<!--ScrollBar-->
+		<Color x:Key="ScrollBarThumbBackgroundColor">#c1c1c1</Color>
+		<Color x:Key="ScrollBarThumbHoverBackgroundColor">#a8a8a8</Color>
+		<Color x:Key="ScrollBarThumbPressedBackgroundColor">#787878</Color>
+
+		<Color x:Key="ScrollBarLineButtonForegroundColor">#a3a3a3</Color>
+		<Color x:Key="ScrollBarLineButtonHoverForegroundColor">#505050</Color>
+		<Color x:Key="ScrollBarLineButtonPressedForegroundColor">#ffffff</Color>
+
+		<Color x:Key="ScrollBarLineButtonBackgroundColor">#f1f1f1</Color>
+		<Color x:Key="ScrollBarLineButtonHoverBackgroundColor">#d2d2d2</Color>
+		<Color x:Key="ScrollBarLineButtonPressedBackgroundColor">#787878</Color>
+		
+		<Color x:Key="ScrollBarLineButtonBorderColor">Transparent</Color>
+
+		<Color x:Key="ScrollBarBackgroundColor">#f1f1f1</Color>
+		<Color x:Key="ScrollBarForegroundColor">#c1c1c1</Color>
+		<Color x:Key="ScrollBarBorderColor">Transparent</Color>
+
+		<Color x:Key="ScrollBarTrackBackgroundColor">#f1f1f1</Color>
+		<Color x:Key="ScrollBarTrackBorderColor">Transparent</Color>
+		
+		<!--ScrollViewer-->
+		<Color x:Key="ScrollViewerScrollBarsSeparatorBackgroundColor">#E6E6E6</Color>
+		
+		
 		<!--TextBox-->
 		
 		
