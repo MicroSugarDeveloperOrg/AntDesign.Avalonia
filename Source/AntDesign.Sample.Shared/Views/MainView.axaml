@@ -5,7 +5,8 @@
              xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
-             >
+    
+			 >
     <Design.DataContext>
       <viewModels:MainViewModel />
     </Design.DataContext>
@@ -22,38 +23,43 @@
 
 		<Grid Grid.Column="1">
 
-			<StackPanel>
-				<Button Content="1232323" Height="30" Width="120"/>
-				<Button Classes="danger" Content="1232323" Height="30" Width="120"/>
-				<Button Content="1232323" Height="30" Width="120" IsEnabled="False"/>
-				<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>
-				<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120"/>
-				<Button Theme="{StaticResource PrimaryButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-				<Button Theme="{StaticResource TextButtonTheme}"  Content="1232323" Height="30" Width="120"/>
-				<Button Theme="{StaticResource TextButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-				<Button Theme="{StaticResource LinkButtonTheme}"  Content="1232323" Height="30" Width="120"/>
-				<Button Theme="{StaticResource LinkButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
+			<ScrollViewer>
+				<StackPanel  >
+					<Button Content="1232323" Height="30" Width="120"/>
+					<Button Classes="danger" Content="1232323" Height="30" Width="120"/>
+					<Button Content="1232323" Height="30" Width="120" IsEnabled="False"/>
+					<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>
+					<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120"/>
+					<Button Theme="{StaticResource PrimaryButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
+					<Button Theme="{StaticResource TextButtonTheme}"  Content="1232323" Height="30" Width="120"/>
+					<Button Theme="{StaticResource TextButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
+					<Button Theme="{StaticResource LinkButtonTheme}"  Content="1232323" Height="30" Width="120"/>
+					<Button Theme="{StaticResource LinkButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
 
-				<Button BorderBrush="Red" 
-						Foreground="Red" 
-						ButtonAssists.HoverBorderBrush="Red" 
-						ButtonAssists.HoverForeground="Red"
-						ButtonAssists.PressedBorderBrush="Red" 
-						ButtonAssists.PressedForeground="Red"
-						ButtonAssists.RippleColor="Red" 
-						ButtonAssists.RippleColorAlpha="0.3"
-						Content="1232323" Height="30" Width="120"/>
+					<Button BorderBrush="Red"
+							Foreground="Red"
+							ButtonAssists.HoverBorderBrush="Red"
+							ButtonAssists.HoverForeground="Red"
+							ButtonAssists.PressedBorderBrush="Red"
+							ButtonAssists.PressedForeground="Red"
+							ButtonAssists.RippleColor="Red"
+							ButtonAssists.RippleColorAlpha="0.3"
+							Content="1232323" Height="30" Width="120"/>
 
-				<ScrollViewer Width="400" Height="300" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-					<Grid Height="1024" Width="500" Background="AliceBlue">
-						
-					</Grid>
-				</ScrollViewer>
+					<ScrollViewer Width="400" Height="300" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+						<Grid Height="1024" Width="500" Background="AliceBlue">
 
-				<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
-				<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
-				
-			</StackPanel>
+						</Grid>
+					</ScrollViewer>
+
+					<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+					<TextBox Classes="clearButton" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+					<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+					<TextBox IsEnabled="False" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+
+				</StackPanel>
+
+			</ScrollViewer>
 			
 		</Grid>
 		

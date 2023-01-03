@@ -204,7 +204,7 @@
 
 		<!-- Focused State -->
 		<Style Selector="^:focus">
-			<Style Selector="^ /template/ RippleEffectx#PART_BorderElement">
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
 				<Setter Property="BorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
 				<Setter Property="IsRipple" Value="True"/>
 			</Style>
