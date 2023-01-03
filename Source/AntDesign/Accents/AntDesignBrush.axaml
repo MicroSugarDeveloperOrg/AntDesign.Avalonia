@@ -12,6 +12,8 @@
 		<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
 		<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
 		<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>
+		<SolidColorBrush x:Key="ErrorBackground" Color="{DynamicResource ErrorColor}"/>
+		<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
 		<SolidColorBrush x:Key="DangerBrush" Color="{DynamicResource DangerColor}"/>
 
 		<SolidColorBrush x:Key="Background" Color="{DynamicResource BackgroundColor}"/>
@@ -69,12 +71,14 @@
 		<SolidColorBrush x:Key="ScrollViewerScrollBarsSeparatorBackground" Color="{DynamicResource ScrollViewerScrollBarsSeparatorBackgroundColor}"/>
 
 		<!--TextBox-->
-		
+		<SolidColorBrush x:Key="TextControlCaretBrush" Color="{DynamicResource TextControlCaretColor}"/>
+		<SolidColorBrush x:Key="TextControlBackground" Color="{DynamicResource TextControlBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlForeground" Color="{DynamicResource TextControlForegroundColor}"/>
 		<SolidColorBrush x:Key="TextControlBorderBrush" Color="{DynamicResource TextControlBorderColor}"/>
 		<SolidColorBrush x:Key="TextControlHoverBorderBrush" Color="{DynamicResource TextControlHoverBorderColor}"/>
 		<SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="{DynamicResource TextControlPlaceholderForegroundColor}"/>
-		<SolidColorBrush x:Key="TextControlSelectionBrush" Color="{DynamicResource TextControlSelectionColor}"/>
+		<SolidColorBrush x:Key="TextControlSelectionBackground" Color="{DynamicResource TextControlSelectionBackgroundColor}"/>
+		<SolidColorBrush x:Key="TextControlSelectionForeground" Color="{DynamicResource TextControlSelectionForegroundColor}"/>
 
 
 	</Style.Resources>

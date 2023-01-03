@@ -1,6 +1,4 @@
-﻿using Avalonia;
-using Avalonia.Media;
-using System.Net;
+﻿using Avalonia.Media;
 
 namespace AntDesign.Assists;
 

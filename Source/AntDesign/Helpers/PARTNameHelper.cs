@@ -19,6 +19,9 @@ public static class PARTNameHelper
     public static string PART_RestoreButton => nameof(PART_RestoreButton);
     public static string PART_CloseButton => nameof(PART_CloseButton);
 
+    //DataValidationErrors
+    public static string PART_InlineErrorTemplatePanel => nameof(PART_InlineErrorTemplatePanel);
+
     //ScrollBar
     public static string PART_LineUpButton => nameof(PART_LineUpButton);
     public static string PART_PageUpButton => nameof(PART_PageUpButton);
