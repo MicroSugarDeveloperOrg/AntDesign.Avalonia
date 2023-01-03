@@ -27,6 +27,7 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type DataValidationErrors}" TargetType="DataValidationErrors">
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="DataValidationErrors">
 				<DockPanel LastChildFill="True">

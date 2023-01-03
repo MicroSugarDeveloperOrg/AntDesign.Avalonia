@@ -50,7 +50,7 @@
 					</Grid>
 				</ScrollViewer>
 				
-				<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False" Text="12312313"></TextBox>
+				<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 				
 			</StackPanel>
 			

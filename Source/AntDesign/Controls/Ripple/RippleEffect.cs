@@ -84,7 +84,7 @@ public class RippleEffect : Border
     public double RippleColorAlpha
     {
         get => GetValue(RippleColorAlphaProperty);
-        set => SetValue(RippleFromSizeProperty, value);
+        set => SetValue(RippleColorAlphaProperty, value);
     }
 
     public static readonly StyledProperty<double> RippleFromSizeProperty =
