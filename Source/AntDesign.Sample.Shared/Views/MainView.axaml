@@ -63,6 +63,8 @@
 					<SelectableTextBlock  Text="12312312312313\r\n235454545546576576"/>
 					<SelectableTextBlock IsEnabled="False" Text="12312312312313\r\n235454545546576576"/>
 					
+					<ButtonSpinner Content="12323" Width="200" Height="30" ButtonSpinnerLocation="Left"/>
+					
 				</StackPanel>
 
 			</ScrollViewer>

@@ -87,6 +87,7 @@
 		<SolidColorBrush x:Key="TextControlButtonPressedBackground" Color="{DynamicResource TextControlButtonPressedBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlButtonBorderBrush" Color="{DynamicResource TextControlButtonBorderColor}"/>
 
+		<!--RepeatButton-->
 		
 		
 

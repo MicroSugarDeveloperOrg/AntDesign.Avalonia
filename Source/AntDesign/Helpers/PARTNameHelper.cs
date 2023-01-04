@@ -31,7 +31,7 @@ public static class PARTNameHelper
     //ScrollViwer
     public static string PART_HorizontalScrollBar => nameof(PART_HorizontalScrollBar);
     public static string PART_VerticalScrollBar => nameof(PART_VerticalScrollBar);
-    public static string PART_ScrollBarsSeparator => nameof(PART_ScrollBarsSeparator);  
+    public static string PART_ScrollBarsSeparator => nameof(PART_ScrollBarsSeparator);
 
     //TextBox
     public static string PART_BorderElement => nameof(PART_BorderElement);
@@ -39,6 +39,11 @@ public static class PARTNameHelper
     public static string PART_FloatingWatermark => nameof(PART_FloatingWatermark);
     public static string PART_Watermark => nameof(PART_Watermark);
     public static string PART_TextPresenter => nameof(PART_TextPresenter);
+
+    //ButtonSpinner
+    public static string PART_SpinnerPanel => nameof(PART_SpinnerPanel);
+    public static string PART_IncreaseButton => nameof(PART_IncreaseButton);
+    public static string PART_DecreaseButton => nameof(PART_DecreaseButton);
 
     //AutoCompleteBox
     public static string PART_LayoutRoot => nameof(PART_LayoutRoot);
