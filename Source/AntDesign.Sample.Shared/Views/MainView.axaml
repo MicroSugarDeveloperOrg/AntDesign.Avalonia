@@ -58,6 +58,8 @@
 					<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 					<TextBox IsEnabled="False" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 
+					<Label Content="12312313231"/>
+					
 				</StackPanel>
 
 			</ScrollViewer>

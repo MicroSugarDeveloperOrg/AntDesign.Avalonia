@@ -9,6 +9,7 @@
 				<ResourceInclude Source="avares://AntDesign/Styles/CaptionButtons.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ContentControl.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/DataValidationErrors.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/RepeatButton.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ScrollBar.axaml" />
