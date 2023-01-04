@@ -33,14 +33,7 @@
 		<Color x:Key="ButtonDangerPressedColor">#d9363e</Color>
 
 		<!--TextBox-->
-		<Color x:Key="TextControlCaretColor">Black</Color>
-		<Color x:Key="TextControlBackgroundColor">Transparent</Color>
-		<Color x:Key="TextControlForegroundColor">#3e3e3e</Color>
-		<Color x:Key="TextControlBorderColor">#d9d9d9</Color>
-		<Color x:Key="TextControlHoverBorderColor">#4096ff</Color>
-		<Color x:Key="TextControlPlaceholderForegroundColor">#d9d9d9</Color>
-		<Color x:Key="TextControlSelectionBackgroundColor">#3390ff</Color>
-		<Color x:Key="TextControlSelectionForegroundColor">White</Color>
+
 
 	</Style.Resources>
 

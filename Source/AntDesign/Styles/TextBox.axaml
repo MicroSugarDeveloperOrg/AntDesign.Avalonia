@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"				
 					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					xmlns:assists="using:AntDesign.Assists"
                     x:CompileBindings="True">
 	<Design.PreviewWith>
 		<Border Padding="20">
@@ -37,17 +38,19 @@
 
 	<ControlTheme x:Key="AntDesignTextBoxButton" TargetType="Button">
 		<Setter Property="Background" Value="{DynamicResource TextControlButtonBackground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TextControlButtonBorderBrush}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TextControlButtonBorderBrush}" /> 
 		<Setter Property="Focusable" Value="False"/>
-		<Setter Property="MinWidth" Value="34" />
-		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
-		<Setter Property="Width" Value="{Binding $self.Bounds.Height}"/>
+		<Setter Property="Width" Value="18" />
+		<Setter Property="Height" Value="18" />
+		<Setter Property="CornerRadius" Value="20"/>
+		<Setter Property="Padding" Value="3" /> 
 		<Setter Property="TextElement.Foreground" Value="{DynamicResource TextControlButtonForeground}"/>
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="Button">
-					<ContentPresenter x:Name="PART_ContentPresenter"
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 									  Background="{TemplateBinding Background}"
+									  CornerRadius="{TemplateBinding CornerRadius}"
 									  BorderBrush="{TemplateBinding BorderBrush}"
 									  BorderThickness="{TemplateBinding BorderThickness}"
 									  Content="{TemplateBinding Content}"
@@ -58,15 +61,12 @@
 		</Setter>
 
 		<Style Selector="^:pointerover /template/ ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource TextControlButtonBackgroundPointerOver}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource TextControlButtonBorderBrushPointerOver}" />
-			<Setter Property="Foreground" Value="{DynamicResource TextControlButtonForegroundPointerOver}" />
+			<Setter Property="Background" Value="{DynamicResource TextControlButtonHoverBackground}" />
+ 
 		</Style>
 
 		<Style Selector="^:pressed /template/ ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource TextControlButtonBackgroundPressed}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource TextControlButtonBorderBrushPressed}" />
-			<Setter Property="Foreground" Value="{DynamicResource TextControlButtonForegroundPressed}" />
+			<Setter Property="Background" Value="{DynamicResource TextControlButtonPressedBackground}" /> 
 		</Style>
 
 		<Style Selector="^:disabled /template/ ContentPresenter">
@@ -99,6 +99,10 @@
 		<Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
 		<Setter Property="CaretBrush" Value="{DynamicResource TextControlCaretBrush}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
+		<Setter Property="assists:TextBoxAssists.HoverBorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
+		<Setter Property="assists:TextBoxAssists.FocusBorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
+		<Setter Property="assists:TextBoxAssists.RippleColor" Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:TextBoxAssists.RippleColorAlpha" Value="0.35"/>	
 		<Setter Property="SelectionBrush" Value="{DynamicResource TextControlSelectionBackground}" />
 		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource TextControlSelectionForeground}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
@@ -121,6 +125,8 @@
 											  BorderBrush="{TemplateBinding BorderBrush}"
 											  BorderThickness="{TemplateBinding BorderThickness}"
 											  CornerRadius="{TemplateBinding CornerRadius}"
+											  RippleColor="{TemplateBinding assists:TextBoxAssists.RippleColor}"
+										      RippleColorAlpha="{TemplateBinding assists:TextBoxAssists.RippleColorAlpha}"
 											  MinWidth="{TemplateBinding MinWidth}"
 											  MinHeight="{TemplateBinding MinHeight}">
 						</ripple:RippleEffectx>
@@ -198,14 +204,14 @@
 		<!-- PointerOver State-->
 		<Style Selector="^:pointerover">
 			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
-				<Setter Property="BorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.HoverBorderBrush}"/>
 			</Style>
 		</Style>
 
 		<!-- Focused State -->
 		<Style Selector="^:focus">
 			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
-				<Setter Property="BorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.FocusBorderBrush}"/>
 				<Setter Property="IsRipple" Value="True"/>
 			</Style>
 		</Style>
@@ -242,6 +248,7 @@
 				<Template>
 					<Button Theme="{StaticResource AntDesignTextBoxButton}"
 							Command="{Binding $parent[TextBox].Clear}"
+							Margin="0,0,3,0"
 							ClipToBounds="False">
 						<PathIcon Data="{StaticResource TextBoxClearButtonData}" Height="10" Width="10"/>
 					</Button>

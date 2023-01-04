@@ -44,9 +44,21 @@
 		<!--ScrollViewer-->
 		<Color x:Key="ScrollViewerScrollBarsSeparatorBackgroundColor">#E6E6E6</Color>
 		
-		
 		<!--TextBox-->
-		
+		<Color x:Key="TextControlCaretColor">Black</Color>
+		<Color x:Key="TextControlBackgroundColor">Transparent</Color>
+		<Color x:Key="TextControlForegroundColor">#3e3e3e</Color>
+		<Color x:Key="TextControlBorderColor">#d9d9d9</Color>
+		<Color x:Key="TextControlHoverBorderColor">#4096ff</Color>
+		<Color x:Key="TextControlPlaceholderForegroundColor">#d9d9d9</Color>
+		<Color x:Key="TextControlSelectionBackgroundColor">#3390ff</Color>
+		<Color x:Key="TextControlSelectionForegroundColor">White</Color>
+
+		<Color x:Key="TextControlButtonBackgroundColor">#bfbfbf</Color>
+		<Color x:Key="TextControlButtonForegroundColor">White</Color>
+		<Color x:Key="TextControlButtonHoverBackgroundColor">#8c8c8c</Color>
+		<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>
+		<Color x:Key="TextControlButtonBorderColor">Transparent</Color>
 		
 		
 	</Style.Resources>

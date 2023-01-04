@@ -10,6 +10,7 @@ public partial class MainView : UserControl
 
         //TextBox.SelectionBrushProperty
         //TextBox textBox = new();
+        //textBox.P
         //textBox.Text
     }
 }
