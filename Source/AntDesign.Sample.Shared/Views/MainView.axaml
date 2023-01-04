@@ -59,6 +59,9 @@
 					<TextBox IsEnabled="False" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 
 					<Label Content="12312313231"/>
+
+					<SelectableTextBlock  Text="12312312312313\r\n235454545546576576"/>
+					<SelectableTextBlock IsEnabled="False" Text="12312312312313\r\n235454545546576576"/>
 					
 				</StackPanel>
 

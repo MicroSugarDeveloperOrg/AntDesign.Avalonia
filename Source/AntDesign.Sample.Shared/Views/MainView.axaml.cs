@@ -8,6 +8,9 @@ public partial class MainView : UserControl
     {
         InitializeComponent();
 
+
+        SelectableTextBlock selectableTextBlock = new SelectableTextBlock();
+
         //TextBox.SelectionBrushProperty
         //TextBox textBox = new();
         //textBox.P
