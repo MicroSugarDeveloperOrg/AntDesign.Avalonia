@@ -185,7 +185,7 @@
 		<Style Selector="^:disabled">
 			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
 
-			<Style Selector="^ /template/ Border#PART_BorderElement">
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
 				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 			</Style>
@@ -197,7 +197,7 @@
 
 		<!-- PointerOver State-->
 		<Style Selector="^:pointerover">
-			<Style Selector="^ /template/ Border#PART_BorderElement">
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
 				<Setter Property="BorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
 			</Style>
 		</Style>
@@ -210,7 +210,7 @@
 			</Style>
 		</Style>
 
-		<Style Selector="^:error /template/ Border#PART_BorderElement">
+		<Style Selector="^:error /template/ ripple|RippleEffectx#PART_BorderElement">
 			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}"/>
 		</Style>
 

@@ -3,19 +3,25 @@
 	   xmlns:helpers="using:AntDesign.Helpers"
        Selector=":is(UserControl)">
 
-	<Setter Property="Template">
-		<ControlTemplate>
-			<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-							  Padding="{TemplateBinding Padding}"
-							  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-							  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-							  Background="{TemplateBinding Background}"
-							  BorderBrush="{TemplateBinding BorderBrush}"
-							  BorderThickness="{TemplateBinding BorderThickness}"
-							  Content="{TemplateBinding Content}"
-							  ContentTemplate="{TemplateBinding ContentTemplate}"
-							  CornerRadius="{TemplateBinding CornerRadius}" />
-		</ControlTemplate>
-	</Setter>
+	<Style.Resources>
+		<ControlTheme x:Key="AntDesignUserControl" TargetType="UserControl">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Padding="{TemplateBinding Padding}"
+									  Background="{TemplateBinding Background}"
+									  CornerRadius="{TemplateBinding CornerRadius}" 
+									  BorderBrush="{TemplateBinding BorderBrush}"
+									  BorderThickness="{TemplateBinding BorderThickness}"
+									  Content="{TemplateBinding Content}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}"
+									  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+				</ControlTemplate>
+			</Setter>
+		</ControlTheme>
+	</Style.Resources>
+
+	<Setter Property="Theme" Value="{StaticResource AntDesignUserControl}"/>
 
 </Style>

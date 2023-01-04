@@ -18,9 +18,9 @@
 							<TitleBar />
 						</VisualLayerManager.ChromeOverlayLayer>
 						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-										  ContentTemplate="{TemplateBinding ContentTemplate}"
-										  Content="{TemplateBinding Content}"
 										  Margin="{TemplateBinding Padding}"
+										  Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
 					</VisualLayerManager>
