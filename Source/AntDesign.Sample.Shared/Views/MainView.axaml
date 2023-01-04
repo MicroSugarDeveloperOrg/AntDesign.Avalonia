@@ -53,6 +53,7 @@
 					</ScrollViewer>
 
 					<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+					<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="True"></TextBox>
 					<TextBox Classes="clearButton" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 					<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 					<TextBox IsEnabled="False" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>

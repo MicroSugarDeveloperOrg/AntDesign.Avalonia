@@ -53,8 +53,9 @@
 		<Color x:Key="TextControlPlaceholderForegroundColor">#d9d9d9</Color>
 		<Color x:Key="TextControlSelectionBackgroundColor">#3390ff</Color>
 		<Color x:Key="TextControlSelectionForegroundColor">White</Color>
+		<Color x:Key="TextControlFloatingForegroundColor">#4096ff</Color>
 
-		<Color x:Key="TextControlButtonBackgroundColor">#bfbfbf</Color>
+		<Color x:Key="TextControlButtonBackgroundColor">#a6a6a6</Color>
 		<Color x:Key="TextControlButtonForegroundColor">White</Color>
 		<Color x:Key="TextControlButtonHoverBackgroundColor">#8c8c8c</Color>
 		<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>

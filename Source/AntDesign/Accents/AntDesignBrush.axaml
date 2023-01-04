@@ -79,6 +79,7 @@
 		<SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="{DynamicResource TextControlPlaceholderForegroundColor}"/>
 		<SolidColorBrush x:Key="TextControlSelectionBackground" Color="{DynamicResource TextControlSelectionBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlSelectionForeground" Color="{DynamicResource TextControlSelectionForegroundColor}"/>
+		<SolidColorBrush x:Key="TextControlFloatingForeground" Color="{DynamicResource TextControlFloatingForegroundColor}"/>
 
 		<SolidColorBrush x:Key="TextControlButtonBackground" Color="{DynamicResource TextControlButtonBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlButtonForeground" Color="{DynamicResource TextControlButtonForegroundColor}"/>
