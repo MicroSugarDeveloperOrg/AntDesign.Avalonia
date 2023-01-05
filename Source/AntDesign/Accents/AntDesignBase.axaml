@@ -56,7 +56,7 @@
 
 			<!--Separator-->
 			<x:Double x:Key="SeparatorHeight">1</x:Double>
-			<Thickness x:Key="SeparatorPadding">12,4,12,4</Thickness>
+			<Thickness x:Key="SeparatorPadding">12,0,12,0</Thickness>
 
 		</ResourceDictionary>
 	
