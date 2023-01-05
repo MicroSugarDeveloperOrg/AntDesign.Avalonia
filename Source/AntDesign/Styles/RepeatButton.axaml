@@ -1,65 +1,72 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:helpers="using:AntDesign.Helpers">
-  <Design.PreviewWith>
-    <Border Padding="20">
-      <StackPanel Spacing="20">
-        <RepeatButton Content="Click Me!" />
-        <RepeatButton Content="Disabled" IsEnabled="False" />
-        <RepeatButton Content="Rounded" CornerRadius="16"/>
-      </StackPanel>
-    </Border>
-  </Design.PreviewWith>
+					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					xmlns:assists="using:AntDesign.Assists">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="20">
+				<RepeatButton Content="Click Me!" />
+				<RepeatButton Content="Disabled" IsEnabled="False" />
+				<RepeatButton Content="Rounded" CornerRadius="16"/>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
 
-  <Thickness x:Key="ButtonPadding">8,5,8,6</Thickness>
+	<ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton">
+		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.35"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
+		<Setter Property="Padding" Value="{StaticResource ButtonPadding}" />
+		<Setter Property="FontWeight" Value="Normal" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="RenderTransform" Value="none" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
+									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
+									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+								      Background="{TemplateBinding Background}"
+								      BorderBrush="{TemplateBinding BorderBrush}"
+								      BorderThickness="{TemplateBinding BorderThickness}"
+								      CornerRadius="{TemplateBinding CornerRadius}"
+								      Content="{TemplateBinding Content}"
+								      ContentTemplate="{TemplateBinding ContentTemplate}"
+								      Padding="{TemplateBinding Padding}"
+								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+				</ripple:RippleEffect>
+			</ControlTemplate>
+		</Setter>
 
-  <ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton">
-    <Setter Property="Background" Value="{DynamicResource RepeatButtonBackground}" />
-    <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForeground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThemeThickness}" />
-    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="Padding" Value="{StaticResource ButtonPadding}" />
-    <Setter Property="HorizontalAlignment" Value="Center" />
-    <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="FontWeight" Value="Normal" />
-    <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
-    <Setter Property="RenderTransform" Value="none" />
-    <Setter Property="Template">
-      <ControlTemplate>
-        <ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-                          Background="{TemplateBinding Background}"
-                          BorderBrush="{TemplateBinding BorderBrush}"
-                          BorderThickness="{TemplateBinding BorderThickness}"
-                          CornerRadius="{TemplateBinding CornerRadius}"
-                          Content="{TemplateBinding Content}"
-                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                          Padding="{TemplateBinding Padding}"
-                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-      </ControlTemplate>
-    </Setter>
+		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
+		</Style>
 
-    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPointerOver}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrushPointerOver}" />
-      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundPointerOver}" />
-    </Style>
+		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+		</Style>
 
-    <Style Selector="^:pressed">
-      <Setter Property="RenderTransform" Value="scale(0.98)" />
-    </Style>
-
-    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPressed}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrushPressed}" />
-      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundPressed}" />
-    </Style>
-
-    <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundDisabled}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrushDisabled}" />
-      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}" />
-    </Style>
-  </ControlTheme>
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+		</Style>
+	</ControlTheme>
 </ResourceDictionary>

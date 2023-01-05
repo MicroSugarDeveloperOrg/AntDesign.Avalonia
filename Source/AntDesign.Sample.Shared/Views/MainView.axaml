@@ -78,7 +78,8 @@
 			<StackPanel Spacing="10">
 				<DropDownButton Content="123123" ToolTip.Tip="123123"/>
 				<DropDownButton IsEnabled="False" Content="123123" />
-				
+				<RepeatButton Content="1231233"/>
+				<RepeatButton IsEnabled="False" Content="1231233"/>
 				
 			</StackPanel>
 			

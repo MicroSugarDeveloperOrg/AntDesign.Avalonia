@@ -7,6 +7,8 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
+
+        //RepeatButton
         //Button.VerticalAlignmentProperty
         //ToolTip
         //DropDownButton 

@@ -28,6 +28,7 @@
 		<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
 
 		<!--Button-->
+		<!--RepeatButton-->
 		<SolidColorBrush x:Key="ButtonDefaultBackground" Color="{DynamicResource TransparentColor}"/>
 		<SolidColorBrush x:Key="ButtonDefaultForeground" Color="{DynamicResource ButtonDefaultForegroundColor}"/>
 		<SolidColorBrush x:Key="ButtonDefaultBorderBrush" Color="{DynamicResource ButtonDefaultBorderColor}"/>
@@ -87,7 +88,7 @@
 		<SolidColorBrush x:Key="TextControlButtonPressedBackground" Color="{DynamicResource TextControlButtonPressedBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlButtonBorderBrush" Color="{DynamicResource TextControlButtonBorderColor}"/>
 
-		<!--RepeatButton-->
+
 		
 		<!--ToolTip-->
 		<SolidColorBrush x:Key="ToolTipBackground" Color="{DynamicResource ToolTipBackgroundColor}"/>
