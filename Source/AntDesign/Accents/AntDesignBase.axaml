@@ -1,12 +1,15 @@
 <Style xmlns="https://github.com/avaloniaui"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	   xmlns:converters="using:Avalonia.Controls.Converters"
+	   xmlns:antConverters="using:AntDesign.Converters"
 	   x:CompileBindings="True">
 
 	<Style.Resources>
 		<ResourceDictionary>
 			<!--Converters-->
 			<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
+			<antConverters:ToBrushConverter x:Key="ToBrushConverter"/>
+
 
 			<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
 			<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />

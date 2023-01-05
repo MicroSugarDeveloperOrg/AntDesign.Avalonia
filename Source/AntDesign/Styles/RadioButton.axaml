@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:helpers="using:AntDesign.Helpers">
+					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:assists="using:AntDesign.Assists">
 
 	<Design.PreviewWith>
 		<Border Padding="20">
@@ -13,10 +14,18 @@
 		</Border>
 	</Design.PreviewWith>
 
+
 	<ControlTheme x:Key="{x:Type RadioButton}" TargetType="RadioButton">
 		<Setter Property="Background" Value="{DynamicResource Transparent}" />
 		<Setter Property="Foreground" Value="{DynamicResource RadioButtonForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource RadioButtonBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedFullBackground}" />
+		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.5"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
@@ -40,7 +49,7 @@
 								     Height="20"
 									 Opacity="0"
 								     Fill="{DynamicResource Transparnet}"
-								     Stroke="{DynamicResource ButtonPressedDefaultBorderBrush}"
+								     Stroke="{TemplateBinding assists:ButtonAssists.RippleColor, Converter={StaticResource ToBrushConverter}}"
 								     StrokeThickness="{DynamicResource RadioButtonStrokeThickness}"
 								     UseLayoutRounding="False"
 									 RenderTransform="none">
@@ -92,26 +101,24 @@
 		</Setter>
 
 		<!--  PointerOver State  -->
-		<Style Selector="^:pointerover">
-			<Style Selector="^ /template/ Ellipse#OuterEllipse">
-				<Setter Property="Stroke" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}"/>
 			</Style>
-
+			
 			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
-				<Setter Property="Stroke" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+				<Setter Property="Stroke" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
 			</Style>
 		</Style>
 
 		<!--  Pressed State  -->
 		<Style Selector="^:pressed">
-			<Style Selector="^ /template/ Ellipse#OuterEllipse">
-				<Setter Property="Stroke" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
-				<Setter Property="Fill" Value="{DynamicResource ButtonPressedFullBackground}" />
+			<Style  Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}"/>
 			</Style>
-
-			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
-				<Setter Property="Stroke" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
-				<Setter Property="Fill" Value="{DynamicResource ButtonPressedFullBackground}" />
+			
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Fill" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
 			</Style>
 
 			<Style Selector="^ /template/ Ellipse#OuterEllipse">
@@ -138,22 +145,24 @@
 
 		<!--  Checked State  -->
 		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Opacity" Value="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}" />
+			</Style>
+			
+			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
+				<Setter Property="Stroke" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+				<Setter Property="Fill" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			</Style>
+			
 			<Style Selector="^ /template/ Ellipse#CheckGlyph">
 				<Setter Property="Opacity" Value="1" />
-				<Setter Property="Fill" Value="{DynamicResource RadioButtonFill}" />
 				<Setter Property="RenderTransform" Value="scale(1.0)" />
-			</Style>
-
-			<Style Selector="^ /template/ Ellipse#OuterEllipse">
-				<Setter Property="Opacity" Value="0.3" /> 
-			</Style>
-
-			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
-				<Setter Property="Stroke" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
-				<Setter Property="Fill" Value="{DynamicResource ButtonPressedFullBackground}" />
 			</Style>
 		</Style>
 
 	</ControlTheme>
+
+
+
 
 </ResourceDictionary>
