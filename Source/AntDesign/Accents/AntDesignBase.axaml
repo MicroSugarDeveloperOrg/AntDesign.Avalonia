@@ -54,6 +54,9 @@
 			<Thickness x:Key="ToolTipBorderThickness">0</Thickness>
 			<x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
 
+			<!--Separator-->
+			<x:Double x:Key="SeparatorHeight">1</x:Double>
+			<Thickness x:Key="SeparatorPadding">12,4,12,4</Thickness>
 
 		</ResourceDictionary>
 	

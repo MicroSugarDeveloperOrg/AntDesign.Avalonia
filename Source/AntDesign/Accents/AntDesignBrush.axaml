@@ -87,14 +87,16 @@
 		<SolidColorBrush x:Key="TextControlButtonHoverBackground" Color="{DynamicResource TextControlButtonHoverBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlButtonPressedBackground" Color="{DynamicResource TextControlButtonPressedBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlButtonBorderBrush" Color="{DynamicResource TextControlButtonBorderColor}"/>
-
-
-		
+	
 		<!--ToolTip-->
 		<SolidColorBrush x:Key="ToolTipBackground" Color="{DynamicResource ToolTipBackgroundColor}"/>
 		<SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource ToolTipForegroundColor}"/>
 		<SolidColorBrush x:Key="ToolTipBorderBrush" Color="Transparent"/>
 
+		<!--Separator-->
+		<SolidColorBrush x:Key="SeparatorForeground" Color="{DynamicResource SeparatorForegroundColor}"/>
+		<SolidColorBrush x:Key="SeparatorBackground" Color="{DynamicResource SeparatorBackgroundColor}"/>
+		<SolidColorBrush x:Key="SeparatorContentBackground" Color="{DynamicResource SeparatorContentBackgroundColor}"/>
 
 
 	</Style.Resources>

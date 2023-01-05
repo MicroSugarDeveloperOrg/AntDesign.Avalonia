@@ -18,6 +18,7 @@
 				<ResourceInclude Source="avares://AntDesign/Styles/ScrollBar.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ScrollViewer.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/SelectableTextBlock.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Styles/Separator.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/TitleBar.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ToolTip.axaml" />

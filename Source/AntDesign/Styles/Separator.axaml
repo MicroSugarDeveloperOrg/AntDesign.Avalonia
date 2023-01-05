@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:assists="using:AntDesign.Assists">
+	
+	<ControlTheme x:Key="{x:Type Separator}" TargetType="Separator">
+		<Setter Property="Background" Value="{DynamicResource SeparatorBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource SeparatorForeground}" />
+		<Setter Property="Margin" Value="{DynamicResource SeparatorPadding}" />
+		<Setter Property="assists:SeparatorAssists.Height" Value="{DynamicResource SeparatorHeight}" />
+		<Setter Property="assists:SeparatorAssists.Background" Value="{DynamicResource SeparatorContentBackground}" />
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Focusable" Value="False" /> 
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border Padding="{TemplateBinding Margin}"
+						    Height="{TemplateBinding assists:SeparatorAssists.Height}"
+						    HorizontalAlignment="Stretch"
+						    VerticalAlignment="Center"
+						    BorderBrush="{TemplateBinding BorderBrush}"
+						    BorderThickness="{TemplateBinding BorderThickness}"
+						    CornerRadius="{TemplateBinding CornerRadius}"
+						    Background="{TemplateBinding Background}" />
+
+					<ContentPresenter x:Name="SeparatorContentPresenter" 
+									  Margin="{TemplateBinding Margin}"
+									  Padding="8,0,8,0"
+									  Foreground="{TemplateBinding Foreground}"
+									  Background="{TemplateBinding assists:SeparatorAssists.Background}"
+									  HorizontalAlignment="Center"
+								      VerticalAlignment="Center"
+									  Content="{TemplateBinding assists:SeparatorAssists.Content}"
+									  ContentTemplate="{TemplateBinding assists:SeparatorAssists.ContentTemplate}" 
+									  RecognizesAccessKey="True" />
+					
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^.left /template/ ContentPresenter#SeparatorContentPresenter">
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
+
+		<Style Selector="^.right /template/ ContentPresenter#SeparatorContentPresenter">
+			<Setter Property="HorizontalAlignment" Value="Right"/>
+		</Style>
+		
+	</ControlTheme>
+</ResourceDictionary>

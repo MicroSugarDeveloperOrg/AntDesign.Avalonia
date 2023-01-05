@@ -64,8 +64,12 @@
 		<!--ToolTip-->
 		<Color x:Key="ToolTipBackgroundColor">#262626</Color>
 		<Color x:Key="ToolTipForegroundColor">White</Color>
-		
-		
+
+		<!--Separator-->
+		<Color x:Key="SeparatorForegroundColor">#1f1f1f</Color>
+		<Color x:Key="SeparatorBackgroundColor">#a3a3a3</Color>
+		<Color x:Key="SeparatorContentBackgroundColor">White</Color>
+
 	</Style.Resources>
 
 
