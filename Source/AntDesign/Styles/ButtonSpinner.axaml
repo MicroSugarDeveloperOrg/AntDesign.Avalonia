@@ -46,7 +46,6 @@
 		<Setter Property="MinWidth" Value="34" />
 		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}"/>
 		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}"/>
-		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}"/>	
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.35"/>
 		<Setter Property="ClipToBounds" Value="False" />
@@ -78,7 +77,6 @@
 
 		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
 			<Setter Property="Background" Value="{DynamicResource DisableBackgroundColor}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 			<Setter Property="Foreground" Value="{DynamicResource DisableForegroundColor}" />
 		</Style>
 	</ControlTheme>
@@ -167,6 +165,12 @@
 				<Setter Property="CornerRadius" Value="0"/>
 			</Style>
 		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource DisableBackgroundColor}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+		</Style>
+		
 		<Style Selector="^:error">
 			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 		</Style>
