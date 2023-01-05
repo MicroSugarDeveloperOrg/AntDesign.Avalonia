@@ -7,7 +7,9 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
-        
+
+        //Ellipse.StrokeThicknessProperty
+        //RadioButton
         //Separator.For
         //ContentControl
 

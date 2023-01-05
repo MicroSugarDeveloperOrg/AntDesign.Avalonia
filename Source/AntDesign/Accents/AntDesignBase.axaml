@@ -21,6 +21,7 @@
 			<!--Global-->
 			<x:Double x:Key="FontSize">14</x:Double>
 			<Thickness x:Key="Padding">3</Thickness>
+			<Thickness x:Key="BorderThickness">0</Thickness>
 			<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
 			<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
 
@@ -57,6 +58,9 @@
 			<!--Separator-->
 			<x:Double x:Key="SeparatorHeight">1</x:Double>
 			<Thickness x:Key="SeparatorPadding">12,0,12,0</Thickness>
+			
+			<!--RadioButton-->
+			<x:Double x:Key="RadioButtonStrokeThickness">1</x:Double>
 
 		</ResourceDictionary>
 	

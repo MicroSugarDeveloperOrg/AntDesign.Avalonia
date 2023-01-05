@@ -14,6 +14,7 @@
 				<ResourceInclude Source="avares://AntDesign/Styles/ItemsControl.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Styles/RadioButton.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/RepeatButton.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ScrollBar.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ScrollViewer.axaml" />

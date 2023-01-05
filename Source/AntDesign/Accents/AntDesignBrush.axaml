@@ -16,9 +16,11 @@
 
 		<SolidColorBrush x:Key="Background" Color="{DynamicResource BackgroundColor}"/>
 		<SolidColorBrush x:Key="Foreground" Color="{DynamicResource ForegroundColor}"/>
-
+		<SolidColorBrush x:Key="Transparent" Color="{DynamicResource TransparentColor}"/>
+ 
 		<!--Disable-->
 		<SolidColorBrush x:Key="DisableBackground" Color="{DynamicResource DisableBackgroundColor}"/>
+		<SolidColorBrush x:Key="DisableFillBrush" Color="{DynamicResource DisableFillColor}"/>
 		<SolidColorBrush x:Key="DisableForeground" Color="{DynamicResource DisableForegroundColor}"/>
 		<SolidColorBrush x:Key="DisableBorderBrush" Color="{DynamicResource DisableBorderColor}"/>
 	
@@ -98,6 +100,14 @@
 		<SolidColorBrush x:Key="SeparatorBackground" Color="{DynamicResource SeparatorBackgroundColor}"/>
 		<SolidColorBrush x:Key="SeparatorContentBackground" Color="{DynamicResource SeparatorContentBackgroundColor}"/>
 
+		<!--RadioButton-->
+		<SolidColorBrush x:Key="RadioButtonForeground" Color="{DynamicResource RadioButtonForegroundColor}"/>
+		<SolidColorBrush x:Key="RadioButtonBorderBrush" Color="{DynamicResource RadioButtonBorderColor}"/>
+		<SolidColorBrush x:Key="RadioButtonFill" Color="{DynamicResource RadioButtonFillColor}"/>
+
+		
+		
+		
 
 	</Style.Resources>
 

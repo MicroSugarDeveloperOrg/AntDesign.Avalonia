@@ -70,6 +70,12 @@
 		<Color x:Key="SeparatorBackgroundColor">#a3a3a3</Color>
 		<Color x:Key="SeparatorContentBackgroundColor">White</Color>
 
+		<!--RadioButton-->
+		<Color x:Key="RadioButtonForegroundColor">#393939</Color>
+		<Color x:Key="RadioButtonBorderColor">Transparent</Color>
+		<Color x:Key="RadioButtonFillColor">White</Color>
+
+
 	</Style.Resources>
 
 
