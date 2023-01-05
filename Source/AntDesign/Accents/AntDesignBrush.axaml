@@ -11,9 +11,7 @@
 		<SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}"/>
 		<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
 		<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
-		<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>
-		<SolidColorBrush x:Key="ErrorBackground" Color="{DynamicResource ErrorColor}"/>
-		<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
+		<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>	
 		<SolidColorBrush x:Key="DangerBrush" Color="{DynamicResource DangerColor}"/>
 
 		<SolidColorBrush x:Key="Background" Color="{DynamicResource BackgroundColor}"/>
@@ -26,6 +24,8 @@
 	
 		<!--Error-->
 		<SolidColorBrush x:Key="ErrorBorderBrush" Color="{DynamicResource ErrorColor}"/>
+		<SolidColorBrush x:Key="ErrorBackground" Color="{DynamicResource ErrorColor}"/>
+		<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
 
 		<!--Button-->
 		<SolidColorBrush x:Key="ButtonDefaultBackground" Color="{DynamicResource TransparentColor}"/>

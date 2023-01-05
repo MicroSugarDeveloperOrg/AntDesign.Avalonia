@@ -1,8 +1,20 @@
 <Style xmlns="https://github.com/avaloniaui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	   xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls">
 
 	<Style.Resources>
-		
+
+		<!--Converters-->
+		<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
+		<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
+
+		<converters:CornerRadiusFilterConverter x:Key="LeftCornerRadiusFilterConverter" Filter="TopLeft, BottomLeft"/>
+		<converters:CornerRadiusFilterConverter x:Key="RightCornerRadiusFilterConverter" Filter="TopRight, BottomRight"/>
+		<converters:CornerRadiusFilterConverter x:Key="TopCornerRadiusFilterConverter" Filter="TopLeft, TopRight"/>
+		<converters:CornerRadiusFilterConverter x:Key="BottomCornerRadiusFilterConverter" Filter="BottomLeft, BottomRight"/>
+		<converters:CornerRadiusToDoubleConverter x:Key="TopLeftCornerRadiusConverter" Corner="TopLeft" />
+		<converters:CornerRadiusToDoubleConverter x:Key="BottomRightCornerRadiusConverter" Corner="BottomRight" />
+
 		<!--Global-->
 		<x:Double x:Key="FontSize">14</x:Double>
 		<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
@@ -32,6 +44,9 @@
 		<Thickness x:Key="TextBoxBorderThickness">1</Thickness>
 		<Thickness x:Key="TextBoxPadding">5,0,5,0</Thickness>
 		<CornerRadius x:Key="TextBoxCornerRadius">5</CornerRadius>
+		
+		
+		
 		
 	</Style.Resources>
 

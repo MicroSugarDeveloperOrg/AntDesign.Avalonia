@@ -3,6 +3,8 @@
                     xmlns:sys="clr-namespace:System;assembly=netstandard"
                     xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
 					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					xmlns:assists="using:AntDesign.Assists"
                     x:CompileBindings="True">
 	<Design.PreviewWith>
 		<Border Padding="20">
@@ -37,38 +39,46 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<converters:MarginMultiplierConverter x:Key="ButtonSpinnerLeftThickness" Indent="1" Left="True" />
-	<converters:MarginMultiplierConverter x:Key="ButtonSpinnerRightThickness" Indent="1" Right="True" />
-
 	<StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M0,9 L10,0 20,9 19,10 10,2 1,10 z</StreamGeometry>
 	<StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,1 L10,10 20,1 19,0 10,8 1,0 z</StreamGeometry>
 
 	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButton" TargetType="RepeatButton">
 		<Setter Property="MinWidth" Value="34" />
-		<Setter Property="" Value="0"/>
+		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}"/>
+		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}"/>	
+		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.35"/>
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-								  Background="{TemplateBinding Background}"
-								  BorderBrush="{TemplateBinding BorderBrush}"
-								  BorderThickness="{TemplateBinding BorderThickness}"
-								  Content="{TemplateBinding Content}"
-								  ContentTemplate="{TemplateBinding ContentTemplate}"
-								  Padding="{TemplateBinding Padding}"
-								  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-								  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
+									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
+									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+								      Foreground="{TemplateBinding Foreground}"
+								      Background="{TemplateBinding Background}"
+								      BorderBrush="{TemplateBinding BorderBrush}"
+								      BorderThickness="{TemplateBinding BorderThickness}"
+								      Content="{TemplateBinding Content}"
+								      ContentTemplate="{TemplateBinding ContentTemplate}"
+								      Padding="{TemplateBinding Padding}"
+								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+				</ripple:RippleEffect>
 			</ControlTemplate>
 		</Setter>
 		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPointerOver}" />
+			<Setter Property="Foreground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
 		</Style>
 
 		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPressed}" />
+			<Setter Property="Foreground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
 		</Style>
 
 		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
 			<Setter Property="Background" Value="{DynamicResource DisableBackgroundColor}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 			<Setter Property="Foreground" Value="{DynamicResource DisableForegroundColor}" />
 		</Style>
 	</ControlTheme>
@@ -86,6 +96,7 @@
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Focusable" Value="True"/>
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -104,7 +115,7 @@
 											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButton}"
 											  Background="{TemplateBinding Background}"
 											  BorderBrush="{TemplateBinding BorderBrush}"
-											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerLeftThickness}}"
+											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource LeftThicknessFilterConverter}}"
 											  VerticalAlignment="Stretch"
 											  VerticalContentAlignment="Center"
 											  Foreground="{TemplateBinding Foreground}"
@@ -119,8 +130,8 @@
 											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButton}"
 											  Background="{TemplateBinding Background}"
 											  BorderBrush="{TemplateBinding BorderBrush}"
-											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerLeftThickness}}"
 											  VerticalAlignment="Stretch"
+											  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
 											  VerticalContentAlignment="Center"
 											  Foreground="{TemplateBinding Foreground}"
 											  FontSize="{TemplateBinding FontSize}"
@@ -147,12 +158,17 @@
 			<Style Selector="^ /template/ StackPanel#PART_SpinnerPanel">
 				<Setter Property="DockPanel.Dock" Value="Left"/>
 			</Style>
-			<Style Selector="^ /template/ RepeatButton">
-				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerRightThickness}}"/>
+			<Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
+				<Setter Property="BorderThickness" Value="0"/>
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"/>
+			</Style>
+			<Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource RightThicknessFilterConverter}}"/>
+				<Setter Property="CornerRadius" Value="0"/>
 			</Style>
 		</Style>
 		<Style Selector="^:error">
-			<Setter Property="BorderBrush" Value="{DynamicResource SystemErrorTextColor}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 		</Style>
 	</ControlTheme>
 
