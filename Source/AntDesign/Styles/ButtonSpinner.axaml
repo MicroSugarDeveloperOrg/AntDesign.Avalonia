@@ -44,6 +44,8 @@
 
 	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButton" TargetType="RepeatButton">
 		<Setter Property="MinWidth" Value="34" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="CornerRadius" Value="0" />
 		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}"/>
 		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}"/>
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
@@ -170,7 +172,7 @@
 			<Setter Property="Background" Value="{DynamicResource DisableBackgroundColor}" />
 			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 		</Style>
-		
+
 		<Style Selector="^:error">
 			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 		</Style>
