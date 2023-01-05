@@ -15,6 +15,7 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="0.3*"/>
 			<ColumnDefinition/>
+			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
 
 		<Border  >
@@ -70,6 +71,17 @@
 				</StackPanel>
 
 			</ScrollViewer>
+			
+		</Grid>
+
+		<Grid Grid.Column="2">
+			<StackPanel Spacing="10">
+				<DropDownButton Content="123123"/>
+				<DropDownButton IsEnabled="False" Content="123123"/>
+				
+				
+			</StackPanel>
+			
 			
 		</Grid>
 		

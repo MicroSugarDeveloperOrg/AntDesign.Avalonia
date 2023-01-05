@@ -51,4 +51,8 @@ public static class PARTNameHelper
     public static string PART_Popup => nameof(PART_Popup);
     public static string PART_SuggestionsContainer => nameof(PART_SuggestionsContainer);
     public static string PART_SelectingItemsControl => nameof(PART_SelectingItemsControl);
+
+    //ItemControl
+    public static string PART_ItemsPresenter => nameof(PART_ItemsPresenter);
+
 }
