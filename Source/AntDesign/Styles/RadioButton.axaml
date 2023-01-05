@@ -61,8 +61,8 @@
 								     UseLayoutRounding="False"/>
 
 							<Ellipse Name="CheckGlyph"
-								     Width="8"
-								     Height="8"
+								     Width="10"
+								     Height="10"
 								     Opacity="0"
 								     Stroke="Transparent"
 									 StrokeThickness="0"
@@ -132,6 +132,7 @@
 			<Style Selector="^ /template/ Ellipse#CheckGlyph">
 				<Setter Property="Opacity" Value="1" />
 				<Setter Property="Fill" Value="{DynamicResource DisableFillBrush}" />
+				<Setter Property="RenderTransform" Value="scale(1.0)" />
 			</Style>
 		</Style>
 
