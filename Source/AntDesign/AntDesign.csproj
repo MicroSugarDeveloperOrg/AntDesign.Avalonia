@@ -18,5 +18,5 @@
 			<IncludeAssets>build; analyzers</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	
+
 </Project>

@@ -7,7 +7,8 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
-
+        //Button.VerticalAlignmentProperty
+        //ToolTip
         //DropDownButton 
         //ToBrushConverter
         //ContentPresenter

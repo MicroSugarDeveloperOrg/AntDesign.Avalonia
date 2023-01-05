@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+					xmlns:helpers="using:AntDesign.Helpers"
+                    x:CompileBindings="True">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="20">
+				<ToolTip Opacity="1">Text Content</ToolTip>
+				<ToolTip Opacity="1">Very long text content which should exceed the maximum with of the tooltip and wrap.</ToolTip>
+				<ToolTip Opacity="1">
+					<StackPanel>
+						<TextBlock>Multi-line</TextBlock>
+						<TextBlock>Control Content</TextBlock>
+					</StackPanel>
+				</ToolTip>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<StreamGeometry x:Key="TooltipArrowUpButton">M511.997952 268.025732 146.975708 755.974268l730.048584 0L511.997952 268.025732</StreamGeometry>
+	<StreamGeometry x:Key="TooltipArrowDownButton">M511.997952 755.974268l365.02634-487.950584L146.975708 268.023684 511.997952 755.974268</StreamGeometry>
+	<StreamGeometry x:Key="TooltipArrowLeftButton">M268.025732 511.997952l487.950584 365.02634L755.976316 146.975708 268.025732 511.997952</StreamGeometry>
+	<StreamGeometry x:Key="TooltipArrowRightButton">M755.974268 512 268.025732 146.975708l0 730.048584L755.974268 512</StreamGeometry>
+	
+
+	<ControlTheme x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+		<Setter Property="Foreground" Value="{DynamicResource ToolTipForeground}" />
+		<Setter Property="Background" Value="{DynamicResource ToolTipBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ToolTipBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ToolTipBorderThickness}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Padding" Value="{DynamicResource ToolTipPadding}" />
+		<Setter Property="MaxWidth" Value="{DynamicResource ToolTipContentMaxWidth}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Opacity" Value="0" />
+		<Setter Property="Transitions">
+			<Transitions>
+				<DoubleTransition Property="Opacity" Duration="0:0:0.15" />
+			</Transitions>
+		</Setter>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<DockPanel x:Name="TooltipPanel">
+					<PathIcon x:Name="TooltipArrowButton" 
+							  Foreground="{TemplateBinding Background}" 
+						      />
+					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							Padding="{TemplateBinding Padding}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+										  MaxWidth="{TemplateBinding MaxWidth}"
+										  Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
+										  TextBlock.TextWrapping="Wrap"/>
+					</Border>
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="DockPanel.Dock" Value="Top"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Height" Value="8"/>
+			<Setter Property="Width" Value="15"/>
+			<Setter Property="Data" Value="{StaticResource TooltipArrowUpButton}"/>
+		</Style>
+		
+		<Style Selector="^:open">
+			<Setter Property="Opacity" Value="1" />
+		</Style>
+
+		<Style Selector="^.lefttop /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="Margin" Value="5,0,0,0"/>
+		</Style>
+
+		<Style Selector="^.righttop /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="HorizontalAlignment" Value="Right"/>
+			<Setter Property="Margin" Value="0,0,5,0"/>
+		</Style>
+
+		<Style Selector="^.left /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="DockPanel.Dock" Value="Left"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Height" Value="15"/>
+			<Setter Property="Width" Value="8"/>
+			<Setter Property="Data" Value="{StaticResource TooltipArrowLeftButton}"/>		
+		</Style>
+
+		<Style Selector="^.right /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="DockPanel.Dock" Value="Right"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Height" Value="15"/>
+			<Setter Property="Width" Value="8"/>
+			<Setter Property="Data" Value="{StaticResource TooltipArrowRightButton}"/>
+		</Style>
+
+		<Style Selector="^.bottom /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="DockPanel.Dock" Value="Bottom"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="Height" Value="8"/>
+			<Setter Property="Width" Value="15"/>
+			<Setter Property="Data" Value="{StaticResource TooltipArrowDownButton}"/>
+		</Style>
+
+		<Style Selector="^.leftbottom /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="DockPanel.Dock" Value="Bottom"/>
+			<Setter Property="Margin" Value="5,0,0,0"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="Height" Value="8"/>
+			<Setter Property="Width" Value="15"/>
+			<Setter Property="Data" Value="{StaticResource TooltipArrowDownButton}"/>
+		</Style>
+
+		<Style Selector="^.rightbottom /template/ PathIcon#TooltipArrowButton">
+			<Setter Property="DockPanel.Dock" Value="Bottom"/>
+			<Setter Property="Margin" Value="0,0,5,0"/>
+			<Setter Property="HorizontalAlignment" Value="Right"/>
+			<Setter Property="Height" Value="8"/>
+			<Setter Property="Width" Value="15"/>
+			<Setter Property="Data" Value="{StaticResource TooltipArrowDownButton}"/>
+		</Style>
+		
+	</ControlTheme>
+</ResourceDictionary>

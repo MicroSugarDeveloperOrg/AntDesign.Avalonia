@@ -20,6 +20,8 @@
 
 			<!--Global-->
 			<x:Double x:Key="FontSize">14</x:Double>
+			<Thickness x:Key="Padding">3</Thickness>
+			<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
 			<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
 
 			<!--Button-->
@@ -46,6 +48,12 @@
 			<Thickness x:Key="TextBoxBorderThickness">1</Thickness>
 			<Thickness x:Key="TextBoxPadding">5,0,5,0</Thickness>
 			<CornerRadius x:Key="TextBoxCornerRadius">5</CornerRadius>
+			
+			<!--ToolTip-->
+			<Thickness x:Key="ToolTipPadding">10</Thickness>
+			<Thickness x:Key="ToolTipBorderThickness">0</Thickness>
+			<x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
+
 
 		</ResourceDictionary>
 	

@@ -76,8 +76,8 @@
 
 		<Grid Grid.Column="2">
 			<StackPanel Spacing="10">
-				<DropDownButton Content="123123"/>
-				<DropDownButton IsEnabled="False" Content="123123"/>
+				<DropDownButton Content="123123" ToolTip.Tip="123123"/>
+				<DropDownButton IsEnabled="False" Content="123123" />
 				
 				
 			</StackPanel>

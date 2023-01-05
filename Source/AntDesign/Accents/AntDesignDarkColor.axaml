@@ -61,6 +61,13 @@
 		<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>
 		<Color x:Key="TextControlButtonBorderColor">Transparent</Color>
 
+		<!--RepeatButton-->
+
+		<!--ToolTip-->
+		<SolidColorBrush x:Key="ToolTipBackground" Color="{DynamicResource ToolTipBackgroundColor}"/>
+		<SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource ToolTipForegroundColor}"/>
+		<SolidColorBrush x:Key="ToolTipBorderBrush" Color="Transparent"/>
+
 	</Style.Resources>
 
 

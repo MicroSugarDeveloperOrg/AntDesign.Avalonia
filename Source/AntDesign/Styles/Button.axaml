@@ -4,6 +4,15 @@
 					xmlns:ripple="using:AntDesign.Controls.Ripple"
 					xmlns:assists="using:AntDesign.Assists">
 
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="20">
+				<Button Content="Click Me!" />
+				<Button Classes="accent" Content="Click Me!" />
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
 	<ControlTheme x:Key="{x:Type Button}" TargetType="Button">
 		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
@@ -218,8 +227,8 @@
 		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ButtonFullBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonFullBackground}" />
-		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonFullBackground}" />
+		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverFullBackground}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedFullBackground}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.35"/>
 		<Setter Property="BorderThickness" Value="0" />
@@ -282,8 +291,8 @@
 		<Style Selector="^.danger">
 			<Style Selector="^">
 				<Setter Property="Foreground" Value="{DynamicResource ButtonDangerBrush}" />
-				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonDangerBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonDangerBrush}" />
+				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonDangerHoverBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonDangerPressedBrush}" />
 			</Style>
 		</Style>
 	</ControlTheme>

@@ -89,7 +89,12 @@
 
 		<!--RepeatButton-->
 		
-		
+		<!--ToolTip-->
+		<SolidColorBrush x:Key="ToolTipBackground" Color="{DynamicResource ToolTipBackgroundColor}"/>
+		<SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource ToolTipForegroundColor}"/>
+		<SolidColorBrush x:Key="ToolTipBorderBrush" Color="Transparent"/>
+
+
 
 	</Style.Resources>
 

@@ -61,6 +61,10 @@
 		<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>
 		<Color x:Key="TextControlButtonBorderColor">Transparent</Color>
 		
+		<!--ToolTip-->
+		<Color x:Key="ToolTipBackgroundColor">#262626</Color>
+		<Color x:Key="ToolTipForegroundColor">White</Color>
+		
 		
 	</Style.Resources>
 
