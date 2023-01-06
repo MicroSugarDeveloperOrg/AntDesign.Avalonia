@@ -113,6 +113,8 @@
 		<SolidColorBrush x:Key="GridSplitterAltMediumLowBrush" Color="{DynamicResource GridSplitterAltMediumLowColor}"/>
 		<SolidColorBrush x:Key="GridSplitterAccentBrush" Color="{DynamicResource GridSplitterAccentColor}"/>
 
+		<!--EmbeddableControlRoot-->
+		<SolidColorBrush x:Key="EmbeddableControlRootBackground" Color="{DynamicResource EmbeddableControlRootBackgroundColor}"/>
 
 	</Style.Resources>
 
