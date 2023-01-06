@@ -15,6 +15,7 @@
 				<ResourceInclude Source="avares://AntDesign/Styles/GridSplitter.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ItemsControl.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Styles/OverlayPopupHost.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/RadioButton.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/RepeatButton.axaml" />

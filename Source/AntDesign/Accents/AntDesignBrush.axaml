@@ -74,6 +74,7 @@
 		<SolidColorBrush x:Key="ScrollViewerScrollBarsSeparatorBackground" Color="{DynamicResource ScrollViewerScrollBarsSeparatorBackgroundColor}"/>
 
 		<!--TextBox-->
+		<!--AutoCompleteBox-->
 		<SolidColorBrush x:Key="TextControlCaretBrush" Color="{DynamicResource TextControlCaretColor}"/>
 		<SolidColorBrush x:Key="TextControlBackground" Color="{DynamicResource TextControlBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlForeground" Color="{DynamicResource TextControlForegroundColor}"/>
