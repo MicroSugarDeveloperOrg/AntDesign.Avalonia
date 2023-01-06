@@ -79,6 +79,9 @@
 		<Color x:Key="FocusAdornerFocusVisualPrimaryColor">#FF000000</Color>
 		<Color x:Key="FocusAdornerFocusVisualSecondaryCoolor">#99FFFFFF</Color>
 
+		<!--GridSplitter-->
+		<Color x:Key="GridSplitterAltMediumLowColor">#66000000</Color>
+		<Color x:Key="GridSplitterAccentColor">#FF0078D7</Color>
 
 	</Style.Resources>
 
