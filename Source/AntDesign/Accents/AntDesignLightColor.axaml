@@ -75,6 +75,10 @@
 		<Color x:Key="RadioButtonBorderColor">Transparent</Color>
 		<Color x:Key="RadioButtonFillColor">White</Color>
 
+		<!--FocusAdorner-->
+		<Color x:Key="FocusAdornerFocusVisualPrimaryColor">#FF000000</Color>
+		<Color x:Key="FocusAdornerFocusVisualSecondaryCoolor">#99FFFFFF</Color>
+
 
 	</Style.Resources>
 

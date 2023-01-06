@@ -105,7 +105,9 @@
 		<SolidColorBrush x:Key="RadioButtonBorderBrush" Color="{DynamicResource RadioButtonBorderColor}"/>
 		<SolidColorBrush x:Key="RadioButtonFill" Color="{DynamicResource RadioButtonFillColor}"/>
 
-		
+		<!--FocusAdorner-->
+		<SolidColorBrush x:Key="FocusAdornerFocusVisualPrimaryBrush" Color="{DynamicResource FocusAdornerFocusVisualPrimaryColor}"/>
+		<SolidColorBrush x:Key="FocusAdornerFocusVisualSecondaryBrush" Color="{DynamicResource FocusAdornerFocusVisualSecondaryCoolor}"/>
 		
 		
 

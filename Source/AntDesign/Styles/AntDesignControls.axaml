@@ -29,5 +29,6 @@
 	</Styles.Resources>
 
 	<StyleInclude Source="avares://AntDesign/Styles/UserControl.axaml" />
+	<StyleInclude Source="avares://AntDesign/Styles/FocusAdorner.axaml" />
 
 </Styles>

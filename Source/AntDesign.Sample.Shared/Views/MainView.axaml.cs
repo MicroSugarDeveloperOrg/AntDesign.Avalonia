@@ -18,6 +18,7 @@ public partial class MainView : UserControl
         act2.Invoke();
         act1.Invoke();
 
+        //ToolTip.IsOpenProperty
         //RadioButton.IsPointerOverProperty
         //Thickness
 

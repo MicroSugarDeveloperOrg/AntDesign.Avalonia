@@ -72,7 +72,12 @@
 			
 			<!--RadioButton-->
 			<x:Double x:Key="RadioButtonStrokeThickness">1</x:Double>
-
+			
+			<!--FocusAdorner-->
+			<Thickness x:Key="FocusAdornerFocusVisualMargin">0</Thickness>
+			<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">2</Thickness>
+			<Thickness x:Key="FocusAdornerFocusVisualSecondaryThickness">1</Thickness>
+			
 		</ResourceDictionary>
 	
 	</Style.Resources>
