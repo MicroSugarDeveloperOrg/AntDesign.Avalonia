@@ -10,7 +10,6 @@
 			<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
 			<antConverters:ToBrushConverter x:Key="ToBrushConverter"/>
 
-
 			<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
 			<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
 
@@ -35,7 +34,7 @@
 			<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
 			<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
 			<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
-			
+
 			<!--Button-->
 			<Thickness x:Key="ButtonBorderThickness">1</Thickness>
 			<Thickness x:Key="ButtonPadding">3</Thickness>
@@ -60,7 +59,12 @@
 			<Thickness x:Key="TextBoxBorderThickness">1</Thickness>
 			<Thickness x:Key="TextBoxPadding">5,0,5,0</Thickness>
 			<CornerRadius x:Key="TextBoxCornerRadius">5</CornerRadius>
-			
+
+			<!--AutoCompleteBox-->
+			<x:Double x:Key="AutoCompletePopupMaxHeight">374</x:Double>
+			<Thickness x:Key="AutoCompletePopupMargin">5</Thickness>
+			<Thickness x:Key="AutoCompletePopupPadding">-1,0,-1,0</Thickness>
+
 			<!--ToolTip-->
 			<Thickness x:Key="ToolTipPadding">10</Thickness>
 			<Thickness x:Key="ToolTipBorderThickness">0</Thickness>
@@ -69,17 +73,24 @@
 			<!--Separator-->
 			<x:Double x:Key="SeparatorHeight">1</x:Double>
 			<Thickness x:Key="SeparatorPadding">12,0,12,0</Thickness>
-			
+
 			<!--RadioButton-->
 			<x:Double x:Key="RadioButtonStrokeThickness">1</x:Double>
-			
+
 			<!--FocusAdorner-->
 			<Thickness x:Key="FocusAdornerFocusVisualMargin">0</Thickness>
 			<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">2</Thickness>
 			<Thickness x:Key="FocusAdornerFocusVisualSecondaryThickness">1</Thickness>
-			
+
+			<!--ListBoxItem-->
+			<Thickness x:Key="ListBoxItemPadding">5,0,5,0</Thickness>
+			<Thickness x:Key="ListBoxItemMargin">0,1,0,1</Thickness>
+			<CornerRadius x:Key="ListBoxItemCornerRadius">8</CornerRadius>
+
+
+
 		</ResourceDictionary>
-	
+
 	</Style.Resources>
-	
+
 </Style>

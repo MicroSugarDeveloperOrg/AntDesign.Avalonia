@@ -60,7 +60,7 @@
 		<Color x:Key="TextControlButtonHoverBackgroundColor">#8c8c8c</Color>
 		<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>
 		<Color x:Key="TextControlButtonBorderColor">Transparent</Color>
-		
+
 		<!--ToolTip-->
 		<Color x:Key="ToolTipBackgroundColor">#262626</Color>
 		<Color x:Key="ToolTipForegroundColor">White</Color>
@@ -78,13 +78,22 @@
 		<!--FocusAdorner-->
 		<Color x:Key="FocusAdornerFocusVisualPrimaryColor">#FFFFFFFF</Color>
 		<Color x:Key="FocusAdornerFocusVisualSecondaryCoolor">#99000000</Color>
-		
+
 		<!--GridSplitter-->
 		<Color x:Key="GridSplitterAltMediumLowColor">#66000000</Color>
 		<Color x:Key="GridSplitterAccentColor">#FF0078D7</Color>
 
 		<!--EmbeddableControlRoot-->
 		<Color x:Key="EmbeddableControlRootBackgroundColor">#FF000000</Color>
+
+		<!--ListBoxItem-->
+		<Color x:Key="ListBoxItemHoverBackgroundColor">#f0f0f0</Color>
+		<Color x:Key="ListBoxItemPressedBackgroundColor">#e6f4ff</Color>
+		<Color x:Key="ListBoxItemPressedForegroundColor">#3489ff</Color>
+		<Color x:Key="ListBoxItemPressedBorderColor">#e6f4ff</Color>
+
+		<!--ListBox-->
+		<Color x:Key="ListBoxBorderColor">#e0e0e0</Color>
 
 	</Style.Resources>
 

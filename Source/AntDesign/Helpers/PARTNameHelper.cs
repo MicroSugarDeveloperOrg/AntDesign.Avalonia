@@ -55,4 +55,7 @@ public static class PARTNameHelper
     //ItemControl
     public static string PART_ItemsPresenter => nameof(PART_ItemsPresenter);
 
+    //ListBox
+    public static string PART_ScrollViewer => nameof(PART_ScrollViewer);
+
 }

@@ -1,0 +1,83 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers">
+	<Design.PreviewWith>
+		<Border Padding="0">
+			<ListBox>
+				<ListBoxItem IsEnabled="False">Disabled</ListBoxItem>
+				<ListBoxItem Background="#66000000"
+							 Padding="20">
+					Test
+				</ListBoxItem>
+				<ListBoxItem>Test</ListBoxItem>
+			</ListBox>
+		</Border>
+	</Design.PreviewWith>
+	
+	<ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="MinHeight" Value="36" />
+		<Setter Property="FontWeight" Value="Normal" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Foreground" Value="{DynamicResource Foreground}" />
+		<Setter Property="Margin" Value="{DynamicResource ListBoxItemMargin}" />
+		<Setter Property="Padding" Value="{DynamicResource ListBoxItemPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ListBoxItemPressedBorderBrush}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ListBoxItemCornerRadius}" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />	
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+								  Background="{TemplateBinding Background}"
+								  BorderBrush="{TemplateBinding BorderBrush}"
+								  BorderThickness="{TemplateBinding BorderThickness}"
+								  CornerRadius="{TemplateBinding CornerRadius}"
+								  Content="{TemplateBinding Content}"
+								  ContentTemplate="{TemplateBinding ContentTemplate}"
+								  FontSize="{TemplateBinding FontSize}"
+								  FontWeight="{TemplateBinding FontWeight}"
+								  Margin="{TemplateBinding Margin}"
+								  Padding="{TemplateBinding Padding}"
+								  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+		</Style>
+
+		<!--  PointerOver State  -->
+		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="{DynamicResource ListBoxItemHoverBackground}" />
+		</Style>
+
+		<!--  Pressed State  -->
+		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="{DynamicResource ListBoxItemPressedBackground}" />
+			<Setter Property="Foreground" Value="{DynamicResource ListBoxItemPressedForeground}" />
+		</Style>
+
+		<!--  Selected State  -->
+		<Style Selector="^:selected">
+
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Background" Value="{DynamicResource ListBoxItemPressedBackground}" />
+				<Setter Property="Foreground" Value="{DynamicResource ListBoxItemPressedForeground}" />
+			</Style>
+
+			<!--  Selected Unfocused State  -->
+			<Style Selector="^:not(:focus) /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Foreground}" />
+			</Style>
+
+			<!--  Selected Pressed State  -->
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

@@ -4,8 +4,8 @@
 	<Style.Resources>
 		<!--Global-->
 		<Color x:Key="ForegroundColor">#000000</Color>
-		<Color x:Key="BackgroundColor">#FFFFFF</Color> 
-		
+		<Color x:Key="BackgroundColor">#FFFFFF</Color>
+
 		<!--Button-->
 		<Color x:Key="ButtonDefaultForegroundColor">#363636</Color>
 		<Color x:Key="ButtonDefaultBorderColor">#e0e0e0</Color>
@@ -31,7 +31,7 @@
 		<Color x:Key="ScrollBarLineButtonBackgroundColor">#f1f1f1</Color>
 		<Color x:Key="ScrollBarLineButtonHoverBackgroundColor">#d2d2d2</Color>
 		<Color x:Key="ScrollBarLineButtonPressedBackgroundColor">#787878</Color>
-		
+
 		<Color x:Key="ScrollBarLineButtonBorderColor">Transparent</Color>
 
 		<Color x:Key="ScrollBarBackgroundColor">#f1f1f1</Color>
@@ -40,10 +40,10 @@
 
 		<Color x:Key="ScrollBarTrackBackgroundColor">#f1f1f1</Color>
 		<Color x:Key="ScrollBarTrackBorderColor">Transparent</Color>
-		
+
 		<!--ScrollViewer-->
 		<Color x:Key="ScrollViewerScrollBarsSeparatorBackgroundColor">#E6E6E6</Color>
-		
+
 		<!--TextBox-->
 		<Color x:Key="TextControlCaretColor">Black</Color>
 		<Color x:Key="TextControlBackgroundColor">Transparent</Color>
@@ -60,7 +60,7 @@
 		<Color x:Key="TextControlButtonHoverBackgroundColor">#8c8c8c</Color>
 		<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>
 		<Color x:Key="TextControlButtonBorderColor">Transparent</Color>
-		
+
 		<!--ToolTip-->
 		<Color x:Key="ToolTipBackgroundColor">#262626</Color>
 		<Color x:Key="ToolTipForegroundColor">White</Color>
@@ -85,6 +85,15 @@
 
 		<!--EmbeddableControlRoot-->
 		<Color x:Key="EmbeddableControlRootBackgroundColor">#FF000000</Color>
+
+		<!--ListBoxItem-->
+		<Color x:Key="ListBoxItemHoverBackgroundColor">#f0f0f0</Color>
+		<Color x:Key="ListBoxItemPressedBackgroundColor">#e6f4ff</Color>
+		<Color x:Key="ListBoxItemPressedForegroundColor">#3489ff</Color>
+		<Color x:Key="ListBoxItemPressedBorderColor">#e6f4ff</Color>
+
+		<!--ListBox-->
+		<Color x:Key="ListBoxBorderColor">#e0e0e0</Color>
 
 	</Style.Resources>
 

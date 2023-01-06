@@ -107,6 +107,14 @@
 						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="right" Width="120" Height="30" Content="123"/>
 					</StackPanel>
 
+					<ListBox Width="150">
+						<ListBoxItem Content="123"/>
+						<ListBoxItem Content="234" IsEnabled="False"/>
+						<ListBoxItem Content="432"/>
+						<ListBoxItem Content="345"/>
+						<ListBoxItem Content="567"/>	
+					</ListBox>
+					
 					
 				</StackPanel>
 			</ScrollViewer>
