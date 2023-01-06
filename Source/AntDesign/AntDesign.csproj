@@ -10,7 +10,7 @@
 	  <AvaloniaResource Include="*.axaml" />
 	  <AvaloniaResource Include="Styles\*.axaml" />  
 	</ItemGroup>
-
+	
 	<ItemGroup>
 		<PackageReference Include="Avalonia" />
 		<PackageReference Include="PolySharp">

@@ -8,6 +8,7 @@
 				<ResourceInclude Source="avares://AntDesign/Styles/Button.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ButtonSpinner.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/CaptionButtons.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Styles/CheckBox.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ContentControl.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/DataValidationErrors.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/DropDownButton.axaml" />

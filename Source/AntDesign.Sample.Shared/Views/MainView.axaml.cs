@@ -32,6 +32,8 @@ public partial class MainView : UserControl
         InitializeComponent();
 
         //TextBox.CornerRadiusProperty
+        CheckBox checkBox = new CheckBox();
+        
 
         States = BuildAllStates();
 
