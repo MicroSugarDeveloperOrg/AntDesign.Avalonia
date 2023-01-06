@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
                     x:CompileBindings="True">
 	<Design.PreviewWith>
@@ -21,7 +21,7 @@
 	<StreamGeometry x:Key="TooltipArrowDownButton">M511.997952 755.974268l365.02634-487.950584L146.975708 268.023684 511.997952 755.974268</StreamGeometry>
 	<StreamGeometry x:Key="TooltipArrowLeftButton">M268.025732 511.997952l487.950584 365.02634L755.976316 146.975708 268.025732 511.997952</StreamGeometry>
 	<StreamGeometry x:Key="TooltipArrowRightButton">M755.974268 512 268.025732 146.975708l0 730.048584L755.974268 512</StreamGeometry>
-	
+
 
 	<ControlTheme x:Key="{x:Type ToolTip}" TargetType="ToolTip">
 		<Setter Property="Foreground" Value="{DynamicResource ToolTipForeground}" />
@@ -41,8 +41,8 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DockPanel x:Name="TooltipPanel">
-					<PathIcon x:Name="TooltipArrowButton" 
-							  Foreground="{TemplateBinding Background}" 
+					<PathIcon x:Name="TooltipArrowButton"
+							  Foreground="{TemplateBinding Background}"
 						      />
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							BorderThickness="{TemplateBinding BorderThickness}"
@@ -67,7 +67,7 @@
 			<Setter Property="Width" Value="15"/>
 			<Setter Property="Data" Value="{StaticResource TooltipArrowUpButton}"/>
 		</Style>
-		
+
 		<Style Selector="^:open">
 			<Setter Property="Opacity" Value="1" />
 		</Style>
@@ -87,7 +87,7 @@
 			<Setter Property="VerticalAlignment" Value="Center"/>
 			<Setter Property="Height" Value="15"/>
 			<Setter Property="Width" Value="8"/>
-			<Setter Property="Data" Value="{StaticResource TooltipArrowLeftButton}"/>		
+			<Setter Property="Data" Value="{StaticResource TooltipArrowLeftButton}"/>
 		</Style>
 
 		<Style Selector="^.right /template/ PathIcon#TooltipArrowButton">
@@ -123,6 +123,6 @@
 			<Setter Property="Width" Value="15"/>
 			<Setter Property="Data" Value="{StaticResource TooltipArrowDownButton}"/>
 		</Style>
-		
+
 	</ControlTheme>
 </ResourceDictionary>

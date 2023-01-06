@@ -10,7 +10,7 @@
 					<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 									  Padding="{TemplateBinding Padding}"
 									  Background="{TemplateBinding Background}"
-									  CornerRadius="{TemplateBinding CornerRadius}" 
+									  CornerRadius="{TemplateBinding CornerRadius}"
 									  BorderBrush="{TemplateBinding BorderBrush}"
 									  BorderThickness="{TemplateBinding BorderThickness}"
 									  Content="{TemplateBinding Content}"

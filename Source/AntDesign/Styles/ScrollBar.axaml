@@ -78,7 +78,7 @@
 			<Setter Property="TextElement.Foreground" Value="{DynamicResource ScrollBarLineButtonHoverForeground}"/>
 
 			<Style Selector="^ /template/ ContentPresenter" >
-				<Setter Property="Background" Value="{DynamicResource ScrollBarLineButtonHoverBackground}" /> 
+				<Setter Property="Background" Value="{DynamicResource ScrollBarLineButtonHoverBackground}" />
 			</Style>
 		</Style>
 
@@ -86,7 +86,7 @@
 			<Setter Property="TextElement.Foreground" Value="{DynamicResource ScrollBarLineButtonPressedForeground}"/>
 
 			<Style Selector="^ /template/ ContentPresenter" >
-				<Setter Property="Background" Value="{DynamicResource ScrollBarLineButtonPressedBackground}" /> 
+				<Setter Property="Background" Value="{DynamicResource ScrollBarLineButtonPressedBackground}" />
 			</Style>
 		</Style>
 

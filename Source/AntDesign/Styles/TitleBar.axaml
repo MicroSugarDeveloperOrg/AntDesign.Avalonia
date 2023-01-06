@@ -33,24 +33,23 @@
 		</Setter>
 
 		<Style Selector="^:fullscreen">
-			<Setter Property="Background" Value="#eef4f9" />
-		</Style>
-
-		<Style Selector="^:fullscreen /template/ Border#PART_Background">
-			<Setter Property="IsHitTestVisible" Value="True" />
-		</Style>
-
-		<Style Selector="^:fullscreen /template/ Panel#PART_MouseTracker">
-			<Setter Property="Background" Value="Transparent" />
-		</Style>
-
-		<Style Selector="^:fullscreen /template/ Panel#PART_Container">
-			<Setter Property="RenderTransform" Value="translateY(-30px)" />
-			<Setter Property="Transitions">
-				<Transitions>
-					<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.25" />
-				</Transitions>
-			</Setter>
+			<Style Selector="^">
+				<Setter Property="Background" Value="#eef4f9" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_Background">
+				<Setter Property="IsHitTestVisible" Value="True" />
+			</Style>
+			<Style Selector="^ /template/ Panel#PART_MouseTracker">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
+			<Style Selector="^ /template/ Panel#PART_Container">
+				<Setter Property="RenderTransform" Value="translateY(-30px)" />
+				<Setter Property="Transitions">
+					<Transitions>
+						<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.25" />
+					</Transitions>
+				</Setter>
+			</Style>
 		</Style>
 
 		<Style Selector="^:fullscreen:pointerover /template/ Panel#PART_Container">

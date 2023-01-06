@@ -101,11 +101,10 @@
 		</Setter>
 
 		<!--  PointerOver State  -->
-		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Style Selector="^">
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}"/>
 			</Style>
-			
 			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
 				<Setter Property="Stroke" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
 			</Style>
@@ -113,14 +112,12 @@
 
 		<!--  Pressed State  -->
 		<Style Selector="^:pressed">
-			<Style  Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}"/>
 			</Style>
-			
 			<Style Selector="^ /template/ Ellipse#OuterEllipse">
 				<Setter Property="Fill" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
 			</Style>
-
 			<Style Selector="^ /template/ Ellipse#OuterEllipse">
 				<Setter Property="RenderTransform" Value="scale(2.0)" />
 			</Style>
@@ -131,11 +128,9 @@
 			<Style Selector="^">
 				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}"/>
 			</Style>
-
 			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
 				<Setter Property="Stroke" Value="{DynamicResource DisableBorderBrush}" />
 			</Style>
-
 			<Style Selector="^ /template/ Ellipse#CheckGlyph">
 				<Setter Property="Opacity" Value="1" />
 				<Setter Property="Fill" Value="{DynamicResource DisableFillBrush}" />
@@ -148,21 +143,17 @@
 			<Style Selector="^ /template/ Ellipse#OuterEllipse">
 				<Setter Property="Opacity" Value="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}" />
 			</Style>
-			
+
 			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
 				<Setter Property="Stroke" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
 				<Setter Property="Fill" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
 			</Style>
-			
+
 			<Style Selector="^ /template/ Ellipse#CheckGlyph">
 				<Setter Property="Opacity" Value="1" />
 				<Setter Property="RenderTransform" Value="scale(1.0)" />
 			</Style>
 		</Style>
-
 	</ControlTheme>
-
-
-
 
 </ResourceDictionary>

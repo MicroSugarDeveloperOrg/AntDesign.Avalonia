@@ -19,8 +19,10 @@
 		<Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
@@ -77,28 +79,30 @@
 			<Setter Property="Data" Value="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z" />
 		</Style>
 
-		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
+			</Style>
+			<Style Selector="^ /template/ PathIcon#DropDownGlyph">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
+			</Style>
+			<Style Selector="^ /template/ ripple|RippleEffect#RootBorder">
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+			</Style>
 		</Style>
 
-		<Style Selector="^:pointerover /template/ PathIcon#DropDownGlyph">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
-		</Style>
-
-		<Style Selector="^:pointerover /template/ ripple|RippleEffect#RootBorder">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
-		</Style>
-
-		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
-		</Style>
-
-		<Style Selector="^:pressed /template/ PathIcon#DropDownGlyph">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
-		</Style>
-
-		<Style Selector="^:pressed  /template/ ripple|RippleEffect#RootBorder">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			</Style>
+			<Style Selector="^ /template/ PathIcon#DropDownGlyph">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			</Style>
+			<Style Selector="^ /template/ ripple|RippleEffect#RootBorder">
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			</Style>
 		</Style>
 
 		<Style Selector="^:disabled">

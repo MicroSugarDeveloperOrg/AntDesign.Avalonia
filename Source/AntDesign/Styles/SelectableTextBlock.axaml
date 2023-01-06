@@ -24,6 +24,6 @@
 		</Style>
 		<Style Selector="^[IsEnabled=False]">
 			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}"/>
-		</Style>		
+		</Style>
 	</ControlTheme>
 </ResourceDictionary>
