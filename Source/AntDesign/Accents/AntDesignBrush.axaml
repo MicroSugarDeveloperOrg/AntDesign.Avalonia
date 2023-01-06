@@ -91,6 +91,11 @@
 		<SolidColorBrush x:Key="TextControlButtonPressedBackground" Color="{DynamicResource TextControlButtonPressedBackgroundColor}"/>
 		<SolidColorBrush x:Key="TextControlButtonBorderBrush" Color="{DynamicResource TextControlButtonBorderColor}"/>
 
+		<!--AutoCompleteBox Popup-->
+		<SolidColorBrush x:Key="AutoCompletePopupBackground" Color="{DynamicResource AutoCompletePopupBackgroundColor}"/>
+		<SolidColorBrush x:Key="AutoCompletePopupBorderBrush" Color="{DynamicResource AutoCompletePopupBorderColor}"/>
+
+
 		<!--ToolTip-->
 		<SolidColorBrush x:Key="ToolTipBackground" Color="{DynamicResource ToolTipBackgroundColor}"/>
 		<SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource ToolTipForegroundColor}"/>

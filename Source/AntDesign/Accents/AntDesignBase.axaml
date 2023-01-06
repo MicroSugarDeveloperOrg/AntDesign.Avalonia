@@ -63,7 +63,8 @@
 			<!--AutoCompleteBox-->
 			<x:Double x:Key="AutoCompletePopupMaxHeight">374</x:Double>
 			<Thickness x:Key="AutoCompletePopupMargin">5</Thickness>
-			<Thickness x:Key="AutoCompletePopupPadding">-1,0,-1,0</Thickness>
+			<Thickness x:Key="AutoCompletePopupPadding">5</Thickness>
+			<CornerRadius x:Key="AutoCompletePopupCornerRadius">10</CornerRadius>
 
 			<!--ToolTip-->
 			<Thickness x:Key="ToolTipPadding">10</Thickness>
@@ -88,6 +89,7 @@
 			<CornerRadius x:Key="ListBoxItemCornerRadius">8</CornerRadius>
 
 
+			
 
 		</ResourceDictionary>
 

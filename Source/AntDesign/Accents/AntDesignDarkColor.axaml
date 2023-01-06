@@ -95,6 +95,10 @@
 		<!--ListBox-->
 		<Color x:Key="ListBoxBorderColor">#e0e0e0</Color>
 
+		<!--AutoCompleteBox Popup-->
+		<Color x:Key="AutoCompletePopupBackgroundColor">White</Color>
+		<Color x:Key="AutoCompletePopupBorderColor">Transparent</Color>
+
 	</Style.Resources>
 
 

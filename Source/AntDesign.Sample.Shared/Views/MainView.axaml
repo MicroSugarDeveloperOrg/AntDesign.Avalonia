@@ -114,6 +114,9 @@
 						<ListBoxItem Content="345"/>
 						<ListBoxItem Content="567"/>	
 					</ListBox>
+
+					<AutoCompleteBox x:Name="PART_AutoCompleteBox" Width="200" Watermark="12323"/>
+					<AutoCompleteBox x:Name="PART_AutoCompleteBox1" AutoCompleteBoxAssists.UseFloatingWatermark="True" Width="200" Watermark="12323"/>
 					
 					
 				</StackPanel>
