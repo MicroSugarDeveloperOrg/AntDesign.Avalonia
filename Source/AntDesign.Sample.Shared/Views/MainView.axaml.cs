@@ -1,3 +1,4 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Converters;
 using Avalonia.Data;
@@ -16,6 +17,9 @@ public partial class MainView : UserControl
         act1 = Test2;
         act2.Invoke();
         act1.Invoke();
+
+        //RadioButton.IsPointerOverProperty
+        //Thickness
 
         //Binding
 

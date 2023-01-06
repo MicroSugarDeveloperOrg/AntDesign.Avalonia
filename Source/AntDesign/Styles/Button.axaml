@@ -17,10 +17,10 @@
 		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource Transparent}" />
+		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource Transparent}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>

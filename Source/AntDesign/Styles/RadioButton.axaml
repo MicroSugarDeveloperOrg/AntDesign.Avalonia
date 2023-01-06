@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
-					xmlns:assists="using:AntDesign.Assists">
+					xmlns:assists="using:AntDesign.Assists"
+					xmlns:ripple="using:AntDesign.Controls.Ripple">
 
 	<Design.PreviewWith>
 		<Border Padding="20">
@@ -13,7 +14,6 @@
 			</StackPanel>
 		</Border>
 	</Design.PreviewWith>
-
 
 	<ControlTheme x:Key="{x:Type RadioButton}" TargetType="RadioButton">
 		<Setter Property="Background" Value="{DynamicResource Transparent}" />
@@ -155,5 +155,214 @@
 			</Style>
 		</Style>
 	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignLikeButtonTheme" TargetType="RadioButton">
+		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource Transparent}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource Transparent}" />
+		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.5"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RadioButton">
+				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
+									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
+									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Background="{TemplateBinding Background}"
+								      BorderBrush="{TemplateBinding BorderBrush}"
+								      BorderThickness="{TemplateBinding BorderThickness}"
+								      CornerRadius="{TemplateBinding CornerRadius}"
+								      Content="{TemplateBinding Content}"
+								      ContentTemplate="{TemplateBinding ContentTemplate}"
+									  Foreground="{TemplateBinding Foreground}"
+								      Padding="{TemplateBinding Padding}"
+									  RecognizesAccessKey="True"
+								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+				</ripple:RippleEffect>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  PointerOver State  -->
+		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+		</Style>
+
+		<!--  Pressed State  -->
+		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+		</Style>
+
+		<!--  Disabled State  -->
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+		</Style>
+
+		<!--  Checked State  -->
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			</Style>
+		</Style>
+		
+		<!--left-->
+		<Style Selector="^.left">
+			<Setter Property="CornerRadius" Value="{DynamicResource LeftOverlayCornerRadius}" />
+		</Style>
+
+		<Style Selector="^[IsChecked=false][IsPointerOver=false]">
+			<Style Selector="^.removeLeft.center">
+				<Setter Property="BorderThickness" Value="{DynamicResource LeftOverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^.removeRight.center">
+				<Setter Property="BorderThickness" Value="{DynamicResource RightOverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^.removeLeftRight.center">
+				<Setter Property="BorderThickness" Value="{DynamicResource LeftRightOverlayBorderThickness}" />
+			</Style>
+		</Style>
+
+		<!--right-->
+		<Style Selector="^.right">
+			<Setter Property="CornerRadius" Value="{DynamicResource RightOverlayCornerRadius}" />
+		</Style>
+
+		<!--center-->
+		<Style Selector="^.center">
+			<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+		</Style>
+		
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignLikePrimaryButtonTheme" TargetType="RadioButton">
+		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource ButtonDefaultBackground }" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonFullForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush }" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedFullBackground}" />
+		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.5"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RadioButton">
+				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
+									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
+									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Background="{TemplateBinding Background}"
+								      BorderBrush="{TemplateBinding BorderBrush}"
+								      BorderThickness="{TemplateBinding BorderThickness}"
+								      CornerRadius="{TemplateBinding CornerRadius}"
+								      Content="{TemplateBinding Content}"
+								      ContentTemplate="{TemplateBinding ContentTemplate}"
+									  Foreground="{TemplateBinding Foreground}"
+								      Padding="{TemplateBinding Padding}"
+									  RecognizesAccessKey="True"
+								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+				</ripple:RippleEffect>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  PointerOver State  -->
+		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+		</Style>
+
+		<!--  Pressed State  -->
+		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+		</Style>
+
+		<!--  Disabled State  -->
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+		</Style>
+
+		<!--  Checked State  -->
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			</Style>
+		</Style>
+
+		<!--left-->
+		<Style Selector="^.left">
+			<Setter Property="CornerRadius" Value="{DynamicResource LeftOverlayCornerRadius}" />
+		</Style>
+
+		<!--right-->
+		<Style Selector="^.right">
+			<Setter Property="CornerRadius" Value="{DynamicResource RightOverlayCornerRadius}" />
+		</Style>
+
+		<!--center-->
+		<Style Selector="^.center">
+			<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+		</Style>
+
+		<Style Selector="^[IsChecked=false][IsPointerOver=false]">
+			<Style Selector="^.removeLeft.center">
+				<Setter Property="BorderThickness" Value="{DynamicResource LeftOverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^.removeRight.center">
+				<Setter Property="BorderThickness" Value="{DynamicResource RightOverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^.removeLeftRight.center">
+				<Setter Property="BorderThickness" Value="{DynamicResource LeftRightOverlayBorderThickness}" />
+			</Style>
+		</Style>
+
+	</ControlTheme>
+
 
 </ResourceDictionary>

@@ -25,9 +25,17 @@
 			<x:Double x:Key="FontSize">14</x:Double>
 			<Thickness x:Key="Padding">3</Thickness>
 			<Thickness x:Key="BorderThickness">0</Thickness>
-			<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
 			<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
 
+			<Thickness x:Key="OverlayBorderThickness">1</Thickness>
+			<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
+			<Thickness x:Key="RightOverlayBorderThickness">1,1,0,1</Thickness>
+			<Thickness x:Key="LeftRightOverlayBorderThickness">0,1,0,1</Thickness>
+
+			<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
+			<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
+			<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
+			
 			<!--Button-->
 			<Thickness x:Key="ButtonBorderThickness">1</Thickness>
 			<Thickness x:Key="ButtonPadding">3</Thickness>
