@@ -6,7 +6,7 @@
 			 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
-			 Background="Transparent"
+			 Background="White"
 			 >
     <Design.DataContext>
       <viewModels:MainViewModel />
