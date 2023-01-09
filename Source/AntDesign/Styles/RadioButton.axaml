@@ -117,8 +117,6 @@
 			</Style>
 			<Style Selector="^ /template/ Ellipse#OuterEllipse">
 				<Setter Property="Fill" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
-			</Style>
-			<Style Selector="^ /template/ Ellipse#OuterEllipse">
 				<Setter Property="RenderTransform" Value="scale(2.0)" />
 			</Style>
 		</Style>

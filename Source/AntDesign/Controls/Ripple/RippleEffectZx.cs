@@ -2,6 +2,7 @@
 using Avalonia.Data;
 using Avalonia.Input;
 using Avalonia.Media;
+using System.Reactive.Linq;
 
 namespace AntDesign.Controls.Ripple;
 public class RippleEffectZx : Border
@@ -12,14 +13,27 @@ public class RippleEffectZx : Border
         AddHandler(PointerReleasedEvent, PointerReleasedHandler);
         AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
 
+        IsPointerOverProperty.Changed.AddClassHandler<RippleEffectZx, bool>((s, e) => 
+        {
+            if (e.NewValue.Value == false)
+            {
+               
+            }
+        });
+
+        Background = Brushes.Transparent;
+        BorderThickness = new Thickness(1);
         RenderTransform = null;
+
+        var transformOperationsTransition = new TransformOperationsTransition
+        {
+            Property = Border.RenderTransformProperty,
+            Duration = TimeSpan.FromSeconds(0.075),
+        };
+
         Transitions = new Transitions
         {
-            new TransformOperationsTransition
-            {
-                Property = Border.RenderTransformProperty,
-                Duration = TimeSpan.FromSeconds(0.075),
-            }
+           transformOperationsTransition
         };
     }
 
@@ -34,7 +48,7 @@ public class RippleEffectZx : Border
 
 
     public static readonly StyledProperty<double> RippleColorAlphaProperty =
-                           AvaloniaProperty.Register<RippleEffectZx, double>(nameof(RippleColorAlpha), defaultBindingMode: BindingMode.TwoWay, defaultValue: 0.3d);
+                           AvaloniaProperty.Register<RippleEffectZx, double>(nameof(RippleColorAlpha), defaultBindingMode: BindingMode.TwoWay, defaultValue: 0.2d);
 
     public double RippleColorAlpha
     {
@@ -46,18 +60,19 @@ public class RippleEffectZx : Border
     {
         BorderBrush = new SolidColorBrush(RippleColor, RippleColorAlpha);
         Background = new SolidColorBrush(RippleColor, RippleColorAlpha);
-        RenderTransform = new ScaleTransform(2, 2);
+        RenderTransform = new ScaleTransform(2d, 2d);
     }
 
     void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
     {
         BorderBrush = null;
-        Background = null;
+        Background = Brushes.Transparent;
         RenderTransform = null;
     }
 
     void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
     {
-
+      
     }
+     
 }

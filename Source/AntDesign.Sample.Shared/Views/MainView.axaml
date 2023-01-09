@@ -117,6 +117,10 @@
 
 					<AutoCompleteBox x:Name="PART_AutoCompleteBox" Width="200" Watermark="12323"/>
 					<AutoCompleteBox x:Name="PART_AutoCompleteBox1" AutoCompleteBoxAssists.UseFloatingWatermark="True" Width="200" Watermark="12323"/>
+					<AutoCompleteBox IsEnabled="False" Width="200" Watermark="12323"/>
+					
+					
+					<RippleEffectZx Width="100" Height="20"/>
 					
 					
 				</StackPanel>
