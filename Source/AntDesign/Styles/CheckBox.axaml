@@ -61,10 +61,10 @@
 									  ContentTemplate="{TemplateBinding ContentTemplate}"
 									  Content="{TemplateBinding Content}"
 									  Margin="{TemplateBinding Padding}"
+									  TextWrapping="Wrap"
 									  RecognizesAccessKey="True"
 									  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-									  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-									  TextWrapping="Wrap" />
+									  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 				</Grid>
 			</ControlTemplate>
 		</Setter>
