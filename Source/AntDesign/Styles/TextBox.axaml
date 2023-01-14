@@ -298,7 +298,7 @@
 						<Panel>
 							<PathIcon Data="{StaticResource PasswordBoxRevealButtonData}"
 									  Height="8" Width="12"
-									  IsVisible="{Binding $parent[ToggleButton].!IsChecked}"/>
+									  IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
 							<PathIcon Data="{StaticResource PasswordBoxHideButtonData}"
 									  Height="12" Width="12"
 									  IsVisible="{Binding $parent[ToggleButton].IsChecked}"/>
