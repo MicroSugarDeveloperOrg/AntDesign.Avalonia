@@ -86,7 +86,7 @@
 			<!--ListBoxItem-->
 			<Thickness x:Key="ListBoxItemPadding">5,0,5,0</Thickness>
 			<Thickness x:Key="ListBoxItemMargin">0,1,0,1</Thickness>
-			<CornerRadius x:Key="ListBoxItemCornerRadius">8</CornerRadius>
+			<CornerRadius x:Key="ListBoxItemCornerRadius">0</CornerRadius>
 
 
 			
