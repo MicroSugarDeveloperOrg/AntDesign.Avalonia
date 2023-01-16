@@ -147,8 +147,8 @@
 		<Grid Grid.Column="2">
 			<ScrollViewer>
 				<StackPanel Spacing="10"> 
-					<CheckBox Content="Apple" />
 					<CheckBox Content="Apple" IsEnabled="False"/>
+					<CheckBox Content="Apple" />
 					<CheckBox Content="Apple" IsChecked="True" IsEnabled="False"/>
 					<CheckBox Content="Apple" IsChecked="True"/>
 					<CheckBox Content="Apple" IsThreeState="True" IsChecked="{x:Null}"    IsEnabled="False"/>
