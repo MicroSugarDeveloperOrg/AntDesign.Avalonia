@@ -14,6 +14,9 @@
 		</Border>
 	</Design.PreviewWith>
 
+	<StreamGeometry x:Key="CheckBoxGlyphIcon"> M389.7 604.3L198.2 447.4c-3.7-3-9.1-3-12.8 0.1l-73.3 61.4c-4.4 3.7-4.8 10.3-0.9 14.5l324.1 344.3c5 5.3 13.8 3.6 16.6-3.1 64.4-160.1 244.3-452.8 463.2-664.7 3-2.9 3.9-7.2 2.3-11l-13.7-33c-2.4-5.8-9.5-8-14.7-4.5-243.2 157.7-419.4 353.5-499.3 452.9z</StreamGeometry>
+
+
 	<ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="HorizontalAlignment" Value="Center" />
@@ -65,13 +68,13 @@
 									CornerRadius="{TemplateBinding CornerRadius}"
 									UseLayoutRounding="False">
 								<Viewbox UseLayoutRounding="False" Margin="{StaticResource OverlayPadding}">
-									<Path x:Name="CheckGlyph"
-								          Width="15"
-								          Height="15"
+									<Path x:Name="CheckGlyph" 
 								          IsVisible="false"
 								          Stretch="Uniform" 
 								          RenderTransform="scale(0.5)"
-								          Data="M1507 31L438 1101L-119 543L-29 453L438 919L1417 -59L1507 31Z"
+										  HorizontalAlignment="Center"
+										  VerticalAlignment="Bottom" 
+								          Data="{StaticResource CheckBoxGlyphIcon}"
 								          Fill="{TemplateBinding assists:CheckBoxAssists.GlyphFill}">
 										<Path.Transitions>
 											<Transitions>
