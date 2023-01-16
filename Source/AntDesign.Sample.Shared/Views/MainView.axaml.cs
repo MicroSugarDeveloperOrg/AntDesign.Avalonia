@@ -1,7 +1,4 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Converters;
-using Avalonia.Data;
 
 namespace AntDesign.Sample.Views;
 
@@ -33,7 +30,7 @@ public partial class MainView : UserControl
 
         //TextBox.CornerRadiusProperty
         CheckBox checkBox = new CheckBox();
-        
+
 
         States = BuildAllStates();
 
