@@ -6,6 +6,18 @@
 		<Color x:Key="ForegroundColor">#FFFFFF</Color>
 		<Color x:Key="BackgroundColor">#000000</Color>
 
+		<Color x:Key="PrimaryForegroundColor">#FFFFFF</Color>
+		<Color x:Key="SecondlyForegroundColor">#363636</Color>
+		<Color x:Key="ThirdlyForegroundColor">#363636</Color>
+
+		<Color x:Key="PrimaryBackgroundColor">#1677ff</Color>
+		<Color x:Key="SecondlyBackgroundColor">#4096ff</Color>
+		<Color x:Key="ThirdlyBackgroundColor">#0958d9</Color>
+
+		<Color x:Key="PrimaryBorderColor">#e0e0e0</Color>
+		<Color x:Key="SecondlyBorderColor">#56a2ff</Color>
+		<Color x:Key="ThirdlyBorderColor">#0958d9</Color>
+
 		<!--Button-->
 		<Color x:Key="ButtonDefaultForegroundColor">#363636</Color>
 		<Color x:Key="ButtonDefaultBorderColor">#e0e0e0</Color>
@@ -98,6 +110,17 @@
 		<!--AutoCompleteBox Popup-->
 		<Color x:Key="AutoCompletePopupBackgroundColor">White</Color>
 		<Color x:Key="AutoCompletePopupBorderColor">Transparent</Color>
+
+		<!--CheckBox-->
+		<Color x:Key="CheckBoxBackgroundColor">Transparent</Color>
+		<StaticResource x:Key="CheckBoxHoverBackgroundColor" ResourceKey="SecondlyBackgroundColor"/>
+		<StaticResource x:Key="CheckBoxPressedBackgroundColor" ResourceKey="ThirdlyBackgroundColor"/>
+		<StaticResource x:Key="CheckBoxForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+		<StaticResource x:Key="CheckBoxHoverForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+		<StaticResource x:Key="CheckBoxPressedForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+		<StaticResource x:Key="CheckBoxBorderColor" ResourceKey="PrimaryBorderColor"/>
+		<StaticResource x:Key="CheckBoxHoverBorderColor" ResourceKey="ThirdlyBorderColor"/>
+		<StaticResource x:Key="CheckBoxPressedBorderColor" ResourceKey="ThirdlyBorderColor"/>
 
 	</Style.Resources>
 

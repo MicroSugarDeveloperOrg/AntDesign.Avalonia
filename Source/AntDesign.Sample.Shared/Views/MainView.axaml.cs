@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Data;
 
 namespace AntDesign.Sample.Views;
 
@@ -30,9 +31,13 @@ public partial class MainView : UserControl
 
         //TextBox.CornerRadiusProperty
         CheckBox checkBox = new CheckBox();
-
-
+        //checkBox.IsChecked
+        //checkBox.Margin
+        //checkBox.Opacity
+        //checkBox.Width
+        //checkBox.IsVisible 
         States = BuildAllStates();
+        
 
         PART_AutoCompleteBox.Items = States;
         PART_AutoCompleteBox1.Items = States;

@@ -15,7 +15,7 @@ public class RippleEffectAx : Border
         Background = Brushes.Transparent;
         BorderThickness = new Thickness(1);
         BorderBrush = null;
-        RenderTransform = null;
+        RenderTransform = new ScaleTransform(RippleFromScal, RippleFromScal);
     }
 
     double _realSpeedRate = 30d;
@@ -34,7 +34,7 @@ public class RippleEffectAx : Border
     }
 
     public static readonly StyledProperty<double> DurationProperty =
-                       AvaloniaProperty.Register<RippleEffectAx, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 150d);
+                       AvaloniaProperty.Register<RippleEffectAx, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 75d);
 
     public double Duration
     {

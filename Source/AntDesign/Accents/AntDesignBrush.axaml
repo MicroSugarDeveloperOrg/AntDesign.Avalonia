@@ -129,8 +129,18 @@
 		<SolidColorBrush x:Key="ListBoxItemPressedBorderBrush" Color="{DynamicResource ListBoxItemPressedBorderColor}"/>
 
 		<!--ListBox-->
-		<SolidColorBrush x:Key="ListBoxBorderBrush" Color="{DynamicResource ListBoxBorderColor}"/>
+		<SolidColorBrush x:Key="CheckBoxBackground" Color="{DynamicResource CheckBoxBackgroundColor}"/>
+		<SolidColorBrush x:Key="CheckBoxHoverBackground" Color="{DynamicResource CheckBoxHoverBackgroundColor}"/>
+		<SolidColorBrush x:Key="CheckBoxPressedBackground" Color="{DynamicResource CheckBoxPressedBackgroundColor}"/>
+		<SolidColorBrush x:Key="CheckBoxForeground" Color="{DynamicResource CheckBoxForegroundColor}"/>
+		<SolidColorBrush x:Key="CheckBoxHoverForeground" Color="{DynamicResource CheckBoxHoverForegroundColor}"/>
+		<SolidColorBrush x:Key="CheckBoxPressedForeground" Color="{DynamicResource CheckBoxPressedForegroundColor}"/>
+		<SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{DynamicResource CheckBoxBorderColor}"/>
+		<SolidColorBrush x:Key="CheckBoxHoverBorderBrush" Color="{DynamicResource CheckBoxHoverBorderColor}"/>
+		<SolidColorBrush x:Key="CheckBoxPressedBorderBrush" Color="{DynamicResource CheckBoxPressedBorderColor}"/>
 
+		
+		
 
 	</Style.Resources>
 

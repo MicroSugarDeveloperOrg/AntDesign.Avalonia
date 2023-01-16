@@ -14,7 +14,7 @@
 
 	<Grid>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="0.3*"/>
+			<ColumnDefinition />
 			<ColumnDefinition/>
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
 			
 		</Border>
 
-		<Grid Grid.Column="1">
+		<Grid Grid.Column="0">
 			<ScrollViewer>
 				<StackPanel Spacing="10" >
 					<Button Content="1232323" Height="30" Width="120" />
@@ -74,7 +74,7 @@
 			
 		</Grid>
 
-		<Grid Grid.Column="2">
+		<Grid Grid.Column="1">
 			<ScrollViewer>
 				<StackPanel Spacing="10">
 					<DropDownButton Content="123123" ToolTip.Tip="123123"/>
@@ -143,7 +143,20 @@
 			</ScrollViewer>
 
 		</Grid>
-		
+
+		<Grid Grid.Column="2">
+			<ScrollViewer>
+				<StackPanel Spacing="10"> 
+					<CheckBox Content="Apple" />
+					<CheckBox Content="Apple" IsEnabled="False"/>
+					<CheckBox Content="Apple" IsChecked="True" IsEnabled="False"/>
+					<CheckBox Content="Apple" IsChecked="True"/>
+					<CheckBox Content="Apple" IsThreeState="True" IsChecked="{x:Null}"    IsEnabled="False"/>
+					<CheckBox Content="Apple" IsThreeState="True"    />
+				</StackPanel>
+				
+			</ScrollViewer>
+		</Grid>
 		
 	</Grid>
 	

@@ -9,6 +9,7 @@
 			<!--Converters-->
 			<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
 			<antConverters:ToBrushConverter x:Key="ToBrushConverter"/>
+			<antConverters:AutoSizeConverter x:Key="AutoSizeConverter"/>
 
 			<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
 			<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
@@ -25,6 +26,8 @@
 			<Thickness x:Key="Padding">3</Thickness>
 			<Thickness x:Key="BorderThickness">0</Thickness>
 			<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+
+			<Thickness x:Key="OverlayPadding">2</Thickness>
 
 			<Thickness x:Key="OverlayBorderThickness">1</Thickness>
 			<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
@@ -88,7 +91,8 @@
 			<Thickness x:Key="ListBoxItemMargin">0,1,0,1</Thickness>
 			<CornerRadius x:Key="ListBoxItemCornerRadius">0</CornerRadius>
 
-
+			<!--CheckBox-->
+			<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
 			
 
 		</ResourceDictionary>
