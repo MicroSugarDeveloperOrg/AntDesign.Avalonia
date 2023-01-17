@@ -19,7 +19,13 @@ public class MainViewModel : ViewModelBase
     public bool IsTrigger
     {
         get => _IsTrigger;
-        set => SetProperty(ref _IsTrigger, value);
+        set => SetProperty(ref _IsTrigger, value, o => 
+        {
+
+        }, (o, n) => 
+        {
+
+        });
     }
 
     public ReactiveCommand<Unit, Unit> TriggerClickCommand { get; }

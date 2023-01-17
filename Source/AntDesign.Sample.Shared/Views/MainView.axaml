@@ -19,10 +19,6 @@
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
 
-		<Border  >
-			
-		</Border>
-
 		<Grid Grid.Column="0">
 			<ScrollViewer>
 				<StackPanel Spacing="10" >
@@ -126,13 +122,19 @@
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
 						<TextBlock Text="RippleEffectAx"/>
-						<RippleEffectAx RippleBackgroundAlpha="0.1"/>
+						<RippleEffectAx RippleBackgroundAlpha="0"/>
 					</Panel>
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
-						<RippleEffectAx IsManualTrigger="True" IsTrigger="{Binding IsTrigger}" 
+						<RippleEffectAx IsManualTrigger="True" 
+										IsTrigger="{Binding IsTrigger}" 
 										CornerRadius="5"
-										RippleToScal="1.3"  RippleBackgroundAlpha="0.1"/>
+										IsReverse="True"
+										Duration="75"
+										RippleToScal="1.3"  
+										RippleColor="Red"
+										RippleColorAlpha="0.4"
+										RippleBackgroundAlpha="0.1"/>
 						<Button Height="40" Theme="{StaticResource PrimaryButtonTheme}" Content="Manual RippleEffectAx" Command="{Binding TriggerClickCommand}"/>
 					</Panel>
 
@@ -141,10 +143,13 @@
 						<RippleEffectx IsRipple="True"/>
 					</Panel>
 
-					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" IsReverse="False" Padding="4">
+						<TextBlock Text="RippleEffectAuto"/>
+					</RippleEffect>
+
+					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" RippleToSize="10" IsReverse="False" Padding="4">
 						<TextBlock Text="RippleEffect"/>
-						<RippleEffect Background="Transparent"/>
-					</Panel>
+					</RippleEffect>		
 					
 				</StackPanel>
 			</ScrollViewer>
