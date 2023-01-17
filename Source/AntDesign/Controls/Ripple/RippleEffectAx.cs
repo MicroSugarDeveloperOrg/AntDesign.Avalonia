@@ -12,6 +12,18 @@ public class RippleEffectAx : Border
         AddHandler(PointerReleasedEvent, PointerReleasedHandler);
         AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
 
+        IsTriggerProperty.Changed.AddClassHandler<RippleEffectAx, bool>((s, e) =>
+        {
+            if (s is null)
+                return;
+
+            if (!s.IsManualTrigger)
+                return;
+
+            if (e.NewValue.Value)
+                s.Trigger();
+        });
+
         Background = Brushes.Transparent;
         BorderThickness = new Thickness(1);
         BorderBrush = null;
@@ -32,6 +44,25 @@ public class RippleEffectAx : Border
         get => GetValue(IsRippleProperty);
         set => SetValue(IsRippleProperty, value);
     }
+
+    public static readonly StyledProperty<bool> IsManualTriggerProperty =
+                   AvaloniaProperty.Register<RippleEffectAx, bool>(nameof(IsManualTrigger), defaultBindingMode: BindingMode.TwoWay, defaultValue: false);
+
+    public bool IsManualTrigger
+    {
+        get => GetValue(IsManualTriggerProperty);
+        set => SetValue(IsManualTriggerProperty, value);
+    }
+
+    public static readonly StyledProperty<bool> IsTriggerProperty =
+                  AvaloniaProperty.Register<RippleEffectAx, bool>(nameof(IsTrigger), defaultBindingMode: BindingMode.TwoWay, defaultValue: false);
+
+    public bool IsTrigger
+    {
+        get => GetValue(IsTriggerProperty);
+        set => SetValue(IsTriggerProperty, value);
+    }
+
 
     public static readonly StyledProperty<double> DurationProperty =
                        AvaloniaProperty.Register<RippleEffectAx, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 75d);
@@ -111,11 +142,27 @@ public class RippleEffectAx : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        if (!IsManualTrigger)  
+            Trigger();
+    }
+
+    void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
+    {
+ 
+    }
+
+    void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
+    {
+
+    }
+
+    bool Trigger()
+    {
         if (!IsRipple)
-            return;
+            return false;
 
         if (Volatile.Read(ref _isRippling))
-            return;
+            return false;
 
         Volatile.Write(ref _isRippling, true);
         Volatile.Write(ref _progress, 0);
@@ -133,6 +180,7 @@ public class RippleEffectAx : Border
         BorderBrush = new SolidColorBrush(RippleColor, RippleColorAlpha);
         Background = new SolidColorBrush(RippleColor, RippleBackgroundAlpha);
 
+        IsTrigger = true;
         _timer = new(state =>
         {
             if (state is not RippleEffectAx rippleEffect)
@@ -152,18 +200,8 @@ public class RippleEffectAx : Border
             Volatile.Write(ref _progress, progress + 1);
 
         }, this, 0, period);
-    }
 
-    void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
-    {
-        //BorderBrush = null;
-        //Background = Brushes.Transparent;
-        //RenderTransform = null;
-    }
-
-    void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
-    {
-
+        return true;
     }
 
     bool Invoke(int progress)
@@ -191,6 +229,7 @@ public class RippleEffectAx : Border
             BorderBrush = null;
             Background = Brushes.Transparent;
             RenderTransform = null;
+            IsTrigger = false;
         });
 
         return true;

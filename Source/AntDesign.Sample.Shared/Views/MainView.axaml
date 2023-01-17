@@ -126,7 +126,14 @@
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
 						<TextBlock Text="RippleEffectAx"/>
-						<RippleEffectAx/>
+						<RippleEffectAx RippleBackgroundAlpha="0.1"/>
+					</Panel>
+
+					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+						<RippleEffectAx IsManualTrigger="True" IsTrigger="{Binding IsTrigger}" 
+										CornerRadius="5"
+										RippleToScal="1.3"  RippleBackgroundAlpha="0.1"/>
+						<Button Height="40" Theme="{StaticResource PrimaryButtonTheme}" Content="Manual RippleEffectAx" Command="{Binding TriggerClickCommand}"/>
 					</Panel>
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
