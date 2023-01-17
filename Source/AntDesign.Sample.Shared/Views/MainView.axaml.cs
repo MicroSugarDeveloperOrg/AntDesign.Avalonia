@@ -31,6 +31,8 @@ public partial class MainView : UserControl
 
         //TextBox.CornerRadiusProperty
         CheckBox checkBox = new CheckBox();
+        DataValidationErrors error = new();
+        //error.
         //checkBox.IsChecked
         //checkBox.Margin
         //checkBox.Opacity

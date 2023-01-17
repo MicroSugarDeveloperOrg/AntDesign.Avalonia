@@ -7,38 +7,11 @@ public class RippleEffectx : Border
 {
     public RippleEffectx()
     {
-        IsRippleProperty.Changed.AddClassHandler<RippleEffectx, bool>((s, e) =>
-        {
-            if (s is null)
-                return;
-
-            if (e.NewValue.Value)
-            {
-                var color = RippleColor;
-                if (RippleColor.A == 255)
-                    color = new Color((byte)(RippleColorAlpha * 255), RippleColor.R, RippleColor.G, RippleColor.B);
-
-                s.BoxShadow = new BoxShadows(new BoxShadow
-                {
-                    OffsetX = 0,
-                    OffsetY = 0,
-                    Blur = RippleBlur,
-                    Spread = RippleSpread,
-                    Color = color,
-                });
-            }
-            else
-            {
-                s.BoxShadow = new BoxShadows(new BoxShadow
-                {
-                    OffsetX = 0,
-                    OffsetY = 0,
-                    Blur = 0,
-                    Spread = 0,
-                    Color = Colors.Transparent,
-                });
-            }
-        });
+        IsRippleProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
+        RippleColorProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
+        RippleColorAlphaProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
+        RippleBlurProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
+        RippleSpreadProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
     }
 
     public static readonly StyledProperty<bool> IsRippleProperty =
@@ -86,4 +59,39 @@ public class RippleEffectx : Border
         get => GetValue(RippleSpreadProperty);
         set => SetValue(RippleSpreadProperty, value);
     }
+
+    bool ResetRipple(RippleEffectx thisRipple)
+    {
+        if (thisRipple is null)
+            return false;
+
+        if (!thisRipple.IsRipple)
+        {
+            thisRipple.BoxShadow = new BoxShadows(new BoxShadow
+            {
+                OffsetX = 0,
+                OffsetY = 0,
+                Blur = 0,
+                Spread = 0,
+                Color = Colors.Transparent,
+            });
+        }
+        else
+        {
+            var color = thisRipple.RippleColor;
+            if (color.A == 255)
+                color = Color.FromArgb((byte)(thisRipple.RippleColorAlpha * 255), color.R, color.G, color.B);
+
+            thisRipple.BoxShadow = new BoxShadows(new BoxShadow
+            {
+                OffsetX = 0,
+                OffsetY = 0,
+                Blur = thisRipple.RippleBlur,
+                Spread = thisRipple.RippleSpread,
+                Color = color,
+            });
+        }
+        return true;
+    }
+
 }

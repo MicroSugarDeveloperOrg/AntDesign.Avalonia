@@ -159,17 +159,15 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DataValidationErrors>
-					<Panel>
-						<ripple:RippleEffectx x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
-											  Background="{TemplateBinding Background}"
-											  BorderBrush="{TemplateBinding BorderBrush}"
-											  BorderThickness="{TemplateBinding BorderThickness}"
-											  CornerRadius="{TemplateBinding CornerRadius}"
-											  RippleColor="{TemplateBinding assists:TextBoxAssists.RippleColor}"
-										      RippleColorAlpha="{TemplateBinding assists:TextBoxAssists.RippleColorAlpha}"
-											  MinWidth="{TemplateBinding MinWidth}"
-											  MinHeight="{TemplateBinding MinHeight}">
-						</ripple:RippleEffectx>
+					<ripple:RippleEffectx x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
+										  Background="{TemplateBinding Background}"
+										  BorderBrush="{TemplateBinding BorderBrush}"
+										  BorderThickness="{TemplateBinding BorderThickness}"
+										  CornerRadius="{TemplateBinding CornerRadius}"
+										  RippleColor="{TemplateBinding assists:TextBoxAssists.RippleColor}"
+										  RippleColorAlpha="{TemplateBinding assists:TextBoxAssists.RippleColorAlpha}"
+										  MinWidth="{TemplateBinding MinWidth}"
+										  MinHeight="{TemplateBinding MinHeight}">
 
 						<Panel Margin="{TemplateBinding BorderThickness}">
 							<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_FloatingWatermark}"
@@ -232,7 +230,6 @@
 														   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 										</Panel>
 									</ScrollViewer>
-
 								</Panel>
 
 								<ContentPresenter Grid.Column="2"
@@ -241,8 +238,7 @@
 							</Grid>
 
 						</Panel>
-
-					</Panel>
+					</ripple:RippleEffectx>
 				</DataValidationErrors>
 			</ControlTemplate>
 		</Setter>
@@ -276,8 +272,15 @@
 			</Style>
 		</Style>
 
-		<Style Selector="^:error /template/ ripple|RippleEffectx#PART_BorderElement">
-			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}"/>
+		<!--Error State-->
+		
+		<Style Selector="^:error">
+
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
+				<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}"/>
+				<Setter Property="RippleColor" Value="Red"/>
+			</Style>
+ 
 		</Style>
 
 		<!--FloatingWatermark-->

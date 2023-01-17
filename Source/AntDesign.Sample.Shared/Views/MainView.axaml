@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
 			 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
+			 xmlns:sys="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
 			 Background="White"
@@ -54,6 +55,18 @@
 					<TextBox Classes="clearButton" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 					<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 					<TextBox IsEnabled="False" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+					<TextBox Width="120" Watermark="Error" UseFloatingWatermark="False">
+						<DataValidationErrors.Error>
+							<sys:Exception>
+								<x:Arguments>
+									<x:String>Error</x:String>
+								</x:Arguments>
+							</sys:Exception>
+						</DataValidationErrors.Error>
+					</TextBox>
+
+
+					
 
 					<Label Content="12312313231"/>
 
@@ -140,7 +153,7 @@
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
 						<TextBlock Text="RippleEffectx"/>
-						<RippleEffectx IsRipple="True"/>
+						<RippleEffectx IsRipple="True" RippleColor="Red" />
 					</Panel>
 
 					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" IsReverse="False" Padding="4">
