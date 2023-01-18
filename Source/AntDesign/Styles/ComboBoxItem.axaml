@@ -1,5 +1,8 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:helpers="using:AntDesign.Helpers"
+                    xmlns:ripple="using:AntDesign.Controls.Ripple"
+                    xmlns:assists="using:AntDesign.Assists">
   <Design.PreviewWith>
     <Border Padding="20">
       <Border>
@@ -21,17 +24,17 @@
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="Template">
       <ControlTemplate>
-        <ContentPresenter Name="PART_ContentPresenter"
+        <ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+                          Content="{TemplateBinding Content}"
                           Foreground="{TemplateBinding Foreground}"
                           Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
+                          Padding="{TemplateBinding Padding}" 
                           CornerRadius="{TemplateBinding CornerRadius}"
                           ContentTemplate="{TemplateBinding ContentTemplate}"
-                          Content="{TemplateBinding Content}"
                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                          Padding="{TemplateBinding Padding}" />
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
       </ControlTemplate>
     </Setter>
 

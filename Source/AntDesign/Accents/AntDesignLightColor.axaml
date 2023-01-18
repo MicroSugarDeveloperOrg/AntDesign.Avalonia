@@ -122,6 +122,9 @@
 		<StaticResource x:Key="CheckBoxHoverBorderColor" ResourceKey="ThirdlyBorderColor"/>
 		<StaticResource x:Key="CheckBoxPressedBorderColor" ResourceKey="ThirdlyBorderColor"/>
 		
+		<!--ComboBoxItem-->
+		<Color x:Key="ComboBoxItemBackgroundColor">Transparent</Color>
+		<StaticResource x:Key="CheckBoxForegroundColor" ResourceKey="SecondlyForegroundColor"/>
 
 	</Style.Resources>
 
