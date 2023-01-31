@@ -195,6 +195,9 @@ public class RippleEffectAx : Border
         if (!IsRipple)
             return false;
 
+         if (IsManualTrigger && !IsTrigger)
+            return false;
+
         if (Volatile.Read(ref _isRippling))
             return false;
 
@@ -267,7 +270,9 @@ public class RippleEffectAx : Border
             BorderBrush = null;
             Background = Brushes.Transparent;
             RenderTransform = null;
-            IsTrigger = false;
+
+            if (!IsForever)
+                IsTrigger = false;
         });
     }
 

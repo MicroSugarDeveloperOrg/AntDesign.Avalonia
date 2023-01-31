@@ -205,6 +205,9 @@ public class RippleEffect : Border
         if (!IsRipple)
             return false;
 
+        if (IsManualTrigger && !IsTrigger)
+            return false;
+
         if (Volatile.Read(ref _isRippling))
             return true;
 
@@ -283,26 +286,29 @@ public class RippleEffect : Border
     Task InvokeEnd()
     {
        return Dispatcher.UIThread.InvokeAsync(() =>
-        {
-            BoxShadow = new BoxShadows(new BoxShadow
-            {
-                OffsetX = 0,
-                OffsetY = 0,
-                Blur = 0,
-                Spread = 0,
-                Color = Colors.Red,
-            });
-        }); 
+       {
+           BoxShadow = new BoxShadows(new BoxShadow
+           {
+               OffsetX = 0,
+               OffsetY = 0,
+               Blur = 0,
+               Spread = 0,
+               Color = Colors.Red,
+           });
+
+           if (!IsForever)
+               IsTrigger = false;
+       }); 
     }
 
     Task LoopTrigger()
     {
        return Dispatcher.UIThread.InvokeAsync(() =>
-        {
-            if (!IsForever)
-                return;
+       {
+           if (!IsForever)
+               return;
 
-            Trigger();
-        }); 
+           Trigger();
+       }); 
     }
 }

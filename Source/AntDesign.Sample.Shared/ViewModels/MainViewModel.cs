@@ -9,7 +9,7 @@ public class MainViewModel : ViewModelBase
     {
         TriggerClickCommand = ReactiveCommand.Create(() =>
         {
-            IsTrigger = true;
+            IsTrigger = !IsTrigger;
         });
     }
 
