@@ -140,9 +140,10 @@
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
 						<RippleEffectAx IsManualTrigger="True" 
-										IsTrigger="{Binding IsTrigger}" 
-										CornerRadius="5"
+										IsTrigger="{Binding IsTrigger}"  
+										IsForever="True"
 										IsReverse="True"
+										CornerRadius="5"
 										Duration="75"
 										RippleToScal="1.3"  
 										RippleColor="Red"
@@ -153,14 +154,14 @@
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
 						<TextBlock Text="RippleEffectx"/>
-						<RippleEffectx IsRipple="True" RippleColor="Red" />
+						<RippleEffectx IsRipple="True"  RippleColor="Red" />
 					</Panel>
 
-					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" IsReverse="False" Padding="4">
+					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" IsReverse="True" IsForever="True" Padding="4" Duration="150">
 						<TextBlock Text="RippleEffectAuto"/>
 					</RippleEffect>
 
-					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" RippleToSize="10" IsReverse="False" Padding="4">
+					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" RippleToSize="10" IsReverse="False" Padding="4"  Duration="150">
 						<TextBlock Text="RippleEffect"/>
 					</RippleEffect>		
 					

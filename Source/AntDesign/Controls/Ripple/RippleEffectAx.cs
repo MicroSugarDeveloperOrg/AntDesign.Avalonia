@@ -24,6 +24,22 @@ public class RippleEffectAx : Border
                 s.Trigger();
         });
 
+        IsForeverProperty.Changed.AddClassHandler<RippleEffectAx, bool>((s, e) =>
+        {
+            if (s is null)
+                return;
+
+            s._isForever = e.NewValue.Value;
+        });
+
+        ForeverTriggerSpaceProperty.Changed.AddClassHandler<RippleEffectAx, int>((s, e) =>
+        {
+            if (s is null)
+                return;
+
+            s._foreverTriggerSpace = e.NewValue.Value;
+        });
+
         Background = Brushes.Transparent;
         BorderThickness = new Thickness(1);
         BorderBrush = null;
@@ -34,6 +50,10 @@ public class RippleEffectAx : Border
     bool _isRippling = false;
     int _progress = 0;
     double _rate = 0;
+
+    bool _isForever = false;
+    int _foreverTriggerSpace = 200;
+
     Timer? _timer;
 
     public static readonly StyledProperty<bool> IsRippleProperty =
@@ -63,6 +83,14 @@ public class RippleEffectAx : Border
         set => SetValue(IsTriggerProperty, value);
     }
 
+    public static readonly StyledProperty<bool> IsForeverProperty =
+                    AvaloniaProperty.Register<RippleEffectAx, bool>(nameof(IsForever), defaultBindingMode: BindingMode.TwoWay, defaultValue: false);
+
+    public bool IsForever
+    {
+        get => GetValue(IsForeverProperty);
+        set => SetValue(IsForeverProperty, value);
+    }
 
     public static readonly StyledProperty<double> DurationProperty =
                        AvaloniaProperty.Register<RippleEffectAx, double>(nameof(Duration), defaultBindingMode: BindingMode.TwoWay, defaultValue: 75d);
@@ -90,6 +118,15 @@ public class RippleEffectAx : Border
     {
         get => GetValue(IsReverseProperty);
         set => SetValue(IsReverseProperty, value);
+    }
+
+    public static readonly StyledProperty<int> ForeverTriggerSpaceProperty =
+                    AvaloniaProperty.Register<RippleEffectAx, int>(nameof(ForeverTriggerSpace), defaultBindingMode: BindingMode.TwoWay, defaultValue: 200);
+
+    public int ForeverTriggerSpace
+    {
+        get => GetValue(ForeverTriggerSpaceProperty);
+        set => SetValue(ForeverTriggerSpaceProperty, value);
     }
 
     public static readonly StyledProperty<Color> RippleColorProperty =
@@ -137,18 +174,15 @@ public class RippleEffectAx : Border
         set => SetValue(RippleToScalProperty, value);
     }
 
-
-
-
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
-        if (!IsManualTrigger)  
+        if (!IsManualTrigger)
             Trigger();
     }
 
     void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
     {
- 
+
     }
 
     void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
@@ -181,7 +215,7 @@ public class RippleEffectAx : Border
         Background = new SolidColorBrush(RippleColor, RippleBackgroundAlpha);
 
         IsTrigger = true;
-        _timer = new(state =>
+        _timer = new(async state =>
         {
             if (state is not RippleEffectAx rippleEffect)
                 return;
@@ -191,12 +225,18 @@ public class RippleEffectAx : Border
             {
                 rippleEffect._timer?.Dispose();
                 rippleEffect._timer = default;
-                rippleEffect.InvokeEnd();
+                await rippleEffect.InvokeEnd();
                 Volatile.Write(ref _isRippling, false);
+
+                if (_isForever)
+                {
+                    await Task.Delay(_foreverTriggerSpace);
+                    await LoopTrigger();
+                }
                 return;
             }
 
-            rippleEffect.Invoke(progress);
+            await rippleEffect.Invoke(progress);
             Volatile.Write(ref _progress, progress + 1);
 
         }, this, 0, period);
@@ -204,9 +244,9 @@ public class RippleEffectAx : Border
         return true;
     }
 
-    bool Invoke(int progress)
+    Task Invoke(int progress)
     {
-        Dispatcher.UIThread.InvokeAsync(() =>
+        return Dispatcher.UIThread.InvokeAsync(() =>
         {
             double spread = RippleFromScal + _rate * progress;
             if (progress > SpeedRate)
@@ -216,14 +256,12 @@ public class RippleEffectAx : Border
                 spread = RippleFromScal;
 
             RenderTransform = new ScaleTransform(spread, spread);
-        });
-
-        return true;
+        }); 
     }
 
-    bool InvokeEnd()
+    Task InvokeEnd()
     {
-        Dispatcher.UIThread.InvokeAsync(() =>
+        return Dispatcher.UIThread.InvokeAsync(() =>
         {
             RenderTransform = new ScaleTransform(RippleFromScal, RippleFromScal);
             BorderBrush = null;
@@ -231,8 +269,17 @@ public class RippleEffectAx : Border
             RenderTransform = null;
             IsTrigger = false;
         });
+    }
 
-        return true;
+    Task LoopTrigger()
+    {
+        return Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            if (!IsForever)
+                return;
+
+            Trigger();
+        });
     }
 
 }

@@ -12,9 +12,38 @@ public class RippleEffect : Border
         AddHandler(PointerPressedEvent, PointerPressedHandler);
         AddHandler(PointerReleasedEvent, PointerReleasedHandler);
         AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
+
         IsRippleProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
         {
+            
+        });
 
+        IsTriggerProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
+        {
+            if (s is null)
+                return;
+
+            if (!s.IsManualTrigger)
+                return;
+
+            if (e.NewValue.Value)
+                s.Trigger();
+        });
+
+        IsForeverProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
+        {
+            if (s is null)
+                return;
+
+            s._isForever = e.NewValue.Value;
+        });
+
+        ForeverTriggerSpaceProperty.Changed.AddClassHandler<RippleEffect, int>((s,e) =>
+        {
+            if (s is null)
+                return;
+
+            s._foreverTriggerSpace = e.NewValue.Value;
         });
 
         DurationProperty.Changed.AddClassHandler<RippleEffect, double>((s, e) =>
@@ -28,6 +57,9 @@ public class RippleEffect : Border
     int _progress = 0;
     double _rate = 0;
 
+    bool _isForever = false;
+    int _foreverTriggerSpace = 200;
+
     Timer? _timer;
 
     public static readonly StyledProperty<bool> IsRippleProperty =
@@ -37,6 +69,42 @@ public class RippleEffect : Border
     {
         get => GetValue(IsRippleProperty);
         set => SetValue(IsRippleProperty, value);
+    }
+
+    public static readonly StyledProperty<bool> IsManualTriggerProperty =
+               AvaloniaProperty.Register<RippleEffect, bool>(nameof(IsManualTrigger), defaultBindingMode: BindingMode.TwoWay, defaultValue: false);
+
+    public bool IsManualTrigger
+    {
+        get => GetValue(IsManualTriggerProperty);
+        set => SetValue(IsManualTriggerProperty, value);
+    }
+
+    public static readonly StyledProperty<bool> IsTriggerProperty =
+                  AvaloniaProperty.Register<RippleEffect, bool>(nameof(IsTrigger), defaultBindingMode: BindingMode.TwoWay, defaultValue: false);
+
+    public bool IsTrigger
+    {
+        get => GetValue(IsTriggerProperty);
+        set => SetValue(IsTriggerProperty, value);
+    }
+
+    public static readonly StyledProperty<bool> IsForeverProperty =
+                        AvaloniaProperty.Register<RippleEffect, bool>(nameof(IsForever), defaultBindingMode: BindingMode.TwoWay, defaultValue: false);
+
+    public bool IsForever
+    {
+        get => GetValue(IsForeverProperty);
+        set => SetValue(IsForeverProperty, value);
+    }
+
+    public static readonly StyledProperty<int> ForeverTriggerSpaceProperty =
+                    AvaloniaProperty.Register<RippleEffect, int>(nameof(ForeverTriggerSpace), defaultBindingMode: BindingMode.TwoWay, defaultValue: 200);
+
+    public int ForeverTriggerSpace
+    {
+        get => GetValue(ForeverTriggerSpaceProperty);
+        set => SetValue(ForeverTriggerSpaceProperty, value);
     }
 
     public static readonly StyledProperty<double> DurationProperty =
@@ -118,11 +186,27 @@ public class RippleEffect : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        if (!IsManualTrigger)
+            Trigger();
+    }
+
+    void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
+    {
+
+    }
+
+    void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
+    {
+
+    }
+
+    bool Trigger()
+    {
         if (!IsRipple)
-            return;
+            return false;
 
         if (Volatile.Read(ref _isRippling))
-            return;
+            return true;
 
         Volatile.Write(ref _isRippling, true);
         Volatile.Write(ref _progress, 0);
@@ -137,7 +221,7 @@ public class RippleEffect : Border
         uint period = (uint)(durationMillisecond / SpeedRate);
         _rate = (RippleToSize - RippleFromSize) / SpeedRate;
 
-        _timer = new(state =>
+        _timer = new(async state =>
         {
             if (state is not RippleEffect rippleEffect)
                 return;
@@ -147,31 +231,29 @@ public class RippleEffect : Border
             {
                 rippleEffect._timer?.Dispose();
                 rippleEffect._timer = default;
-                rippleEffect.InvokeEnd();
+                await rippleEffect.InvokeEnd();
                 Volatile.Write(ref _isRippling, false);
+
+                if (_isForever)
+                {
+                    await Task.Delay(_foreverTriggerSpace);
+                    await LoopTrigger();
+                }
+
                 return;
             }
 
-            rippleEffect.Invoke(progress);
+            await rippleEffect.Invoke(progress);
             Volatile.Write(ref _progress, progress + 1);
 
         }, this, 0, period);
 
+        return true;
     }
 
-    void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
+    Task Invoke(int progress)
     {
-
-    }
-
-    void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
-    {
-
-    }
-
-    bool Invoke(int progress)
-    {
-        Dispatcher.UIThread.InvokeAsync(() =>
+        return Dispatcher.UIThread.InvokeAsync(() =>
         {
             double spread = RippleFromSize + _rate * progress;
             if (progress > SpeedRate)
@@ -195,13 +277,12 @@ public class RippleEffect : Border
 
             BoxShadow = new BoxShadows(boxShadow);
         });
-
-        return true;
+         
     }
 
-    bool InvokeEnd()
+    Task InvokeEnd()
     {
-        Dispatcher.UIThread.InvokeAsync(() =>
+       return Dispatcher.UIThread.InvokeAsync(() =>
         {
             BoxShadow = new BoxShadows(new BoxShadow
             {
@@ -211,13 +292,17 @@ public class RippleEffect : Border
                 Spread = 0,
                 Color = Colors.Red,
             });
-        });
-
-        return true;
+        }); 
     }
 
-    public override void Render(DrawingContext context)
+    Task LoopTrigger()
     {
-        base.Render(context);
+       return Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            if (!IsForever)
+                return;
+
+            Trigger();
+        }); 
     }
 }

@@ -1,20 +1,19 @@
 using Avalonia.Controls;
-using Avalonia.Data;
 
 namespace AntDesign.Sample.Views;
 
 public class StateData
 {
-    public string Name { get; private set; }
-    public string Abbreviation { get; private set; }
-    public string Capital { get; private set; }
-
     public StateData(string name, string abbreviatoin, string capital)
     {
         Name = name;
         Abbreviation = abbreviatoin;
         Capital = capital;
     }
+
+    public string Name { get; private set; }
+    public string Abbreviation { get; private set; }
+    public string Capital { get; private set; }
 
     public override string ToString()
     {
@@ -39,7 +38,7 @@ public partial class MainView : UserControl
         //checkBox.Width
         //checkBox.IsVisible 
         States = BuildAllStates();
-        
+
 
         PART_AutoCompleteBox.Items = States;
         PART_AutoCompleteBox1.Items = States;

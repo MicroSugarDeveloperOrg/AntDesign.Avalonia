@@ -124,7 +124,7 @@
 		
 		<!--ComboBoxItem-->
 		<Color x:Key="ComboBoxItemBackgroundColor">Transparent</Color>
-		<StaticResource x:Key="CheckBoxForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+		<StaticResource x:Key="CheckBoxItemForegroundColor" ResourceKey="SecondlyForegroundColor"/>
 
 	</Style.Resources>
 
