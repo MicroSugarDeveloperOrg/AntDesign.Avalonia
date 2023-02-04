@@ -1,0 +1,16 @@
+<Styles x:Class="AntDesign.AntDesignTheme"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="/Accents/AntDesignBase.axaml" />
+                <MergeResourceInclude Source="/Accents/AntDesignColors.axaml" />
+                <MergeResourceInclude Source="/Accents/AntDesignLightColor.axaml" />
+                <MergeResourceInclude Source="/Accents/AntDesignBrush.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+    <!-- Add Resources Here -->
+    <StyleInclude Source="/Styles/AntDesignControls.axaml"/>
+</Styles>

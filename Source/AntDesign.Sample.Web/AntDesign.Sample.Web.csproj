@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia.Web" />
+		<PackageReference Include="Avalonia.Browser" />
 	</ItemGroup>
 
 	<ItemGroup>
