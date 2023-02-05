@@ -30,6 +30,7 @@
 				<ResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/TitleBar.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/ToolTip.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Styles/TransitioningContentControl.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/Window.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
