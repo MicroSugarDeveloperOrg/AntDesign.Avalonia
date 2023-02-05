@@ -1,7 +1,7 @@
-<Style xmlns="https://github.com/avaloniaui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
 
-	<Style.Resources>
+	<Styles.Resources>
 		<!--Global-->
 		<Color x:Key="ForegroundColor">#FFFFFF</Color>
 		<Color x:Key="BackgroundColor">#000000</Color>
@@ -19,17 +19,17 @@
 		<Color x:Key="ThirdlyBorderColor">#0958d9</Color>
 
 		<!--Button-->
-		<Color x:Key="ButtonDefaultForegroundColor">#363636</Color>
-		<Color x:Key="ButtonDefaultBorderColor">#e0e0e0</Color>
-		<Color x:Key="ButtonHoverDefaultForegroundColor">#56a2ff</Color>
-		<Color x:Key="ButtonHoverDefaultBorderColor">#56a2ff</Color>
-		<Color x:Key="ButtonPressedDefaultForegroundColor">#0958d9</Color>
-		<Color x:Key="ButtonPressedDefaultBorderColor">#0958d9</Color>
+		<Color x:Key="ButtonDefaultForegroundColor">#000000</Color>
+		<Color x:Key="ButtonDefaultBorderColor">#000000</Color>
+		<Color x:Key="ButtonHoverDefaultForegroundColor">#000000</Color>
+		<Color x:Key="ButtonHoverDefaultBorderColor">#000000</Color>
+		<Color x:Key="ButtonPressedDefaultForegroundColor">#000000</Color>
+		<Color x:Key="ButtonPressedDefaultBorderColor">#000000</Color>
 
-		<Color x:Key="ButtonFullBackgroundColor">#1677ff</Color>
-		<Color x:Key="ButtonFullForegroundColor">#f0f6ff</Color>
-		<Color x:Key="ButtonHoverFullBackgroundColor">#4096ff</Color>
-		<Color x:Key="ButtonPressedFullBackgroundColor">#0958d9</Color>
+		<Color x:Key="ButtonFullBackgroundColor">#000000</Color>
+		<Color x:Key="ButtonFullForegroundColor">#000000</Color>
+		<Color x:Key="ButtonHoverFullBackgroundColor">#000000</Color>
+		<Color x:Key="ButtonPressedFullBackgroundColor">#000000</Color>
 
 		<!--ScrollBar-->
 		<Color x:Key="ScrollBarThumbBackgroundColor">#c1c1c1</Color>
@@ -122,7 +122,9 @@
 		<StaticResource x:Key="CheckBoxHoverBorderColor" ResourceKey="ThirdlyBorderColor"/>
 		<StaticResource x:Key="CheckBoxPressedBorderColor" ResourceKey="ThirdlyBorderColor"/>
 
-	</Style.Resources>
+		<!--ComboBoxItem-->
+		<Color x:Key="ComboBoxItemBackgroundColor">Transparent</Color>
+		<StaticResource x:Key="CheckBoxItemForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+	</Styles.Resources>
 
-
-</Style>
+</Styles>

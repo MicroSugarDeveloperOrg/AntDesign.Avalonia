@@ -23,7 +23,7 @@
 		<Grid Grid.Column="0">
 			<ScrollViewer>
 				<StackPanel Spacing="10" >
-					<Button Content="1232323" Height="30" Width="120" />
+					<Button Content="1232323" Height="30" Width="120" Command="{Binding SwitchThemeCommand}" />
 					<Button Classes="danger" Content="1232323" Height="30" Width="120"/>
 					<Button Content="1232323" Height="30" Width="120" IsEnabled="False" />
 					<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>

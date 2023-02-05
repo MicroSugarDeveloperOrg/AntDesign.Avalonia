@@ -1,0 +1,19 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="AntDesign.AntDesign">
+
+	<Styles.Resources>
+		<ResourceDictionary> 
+			<ResourceDictionary.MergedDictionaries>
+				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBase.axaml" />
+				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignColors.axaml" />
+				<!--<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignLightColor.axaml" />-->
+				<!--<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignDarkColor.axaml" />-->
+				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBrush.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Styles.Resources>
+
+	<StyleInclude Source="avares://AntDesign/Styles/AntDesignControls.axaml" />
+	
+</Styles>

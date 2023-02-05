@@ -1,102 +1,95 @@
-<Style xmlns="https://github.com/avaloniaui"
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	   xmlns:converters="using:Avalonia.Controls.Converters"
 	   xmlns:antConverters="using:AntDesign.Converters"
 	   x:CompileBindings="True">
 
-	<Style.Resources>
-		<ResourceDictionary>
-			<!--Converters-->
-			<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
-			<antConverters:ToBrushConverter x:Key="ToBrushConverter"/>
-			<antConverters:AutoSizeConverter x:Key="AutoSizeConverter"/>
+	<!--Converters-->
+	<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
+	<antConverters:ToBrushConverter x:Key="ToBrushConverter"/>
+	<antConverters:AutoSizeConverter x:Key="AutoSizeConverter"/>
 
-			<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
-			<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
+	<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
+	<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
 
-			<converters:CornerRadiusFilterConverter x:Key="LeftCornerRadiusFilterConverter" Filter="TopLeft, BottomLeft"/>
-			<converters:CornerRadiusFilterConverter x:Key="RightCornerRadiusFilterConverter" Filter="TopRight, BottomRight"/>
-			<converters:CornerRadiusFilterConverter x:Key="TopCornerRadiusFilterConverter" Filter="TopLeft, TopRight"/>
-			<converters:CornerRadiusFilterConverter x:Key="BottomCornerRadiusFilterConverter" Filter="BottomLeft, BottomRight"/>
-			<converters:CornerRadiusToDoubleConverter x:Key="TopLeftCornerRadiusConverter" Corner="TopLeft" />
-			<converters:CornerRadiusToDoubleConverter x:Key="BottomRightCornerRadiusConverter" Corner="BottomRight" />
+	<converters:CornerRadiusFilterConverter x:Key="LeftCornerRadiusFilterConverter" Filter="TopLeft, BottomLeft"/>
+	<converters:CornerRadiusFilterConverter x:Key="RightCornerRadiusFilterConverter" Filter="TopRight, BottomRight"/>
+	<converters:CornerRadiusFilterConverter x:Key="TopCornerRadiusFilterConverter" Filter="TopLeft, TopRight"/>
+	<converters:CornerRadiusFilterConverter x:Key="BottomCornerRadiusFilterConverter" Filter="BottomLeft, BottomRight"/>
+	<converters:CornerRadiusToDoubleConverter x:Key="TopLeftCornerRadiusConverter" Corner="TopLeft" />
+	<converters:CornerRadiusToDoubleConverter x:Key="BottomRightCornerRadiusConverter" Corner="BottomRight" />
 
-			<!--Global-->
-			<x:Double x:Key="FontSize">14</x:Double>
-			<Thickness x:Key="Padding">3</Thickness>
-			<Thickness x:Key="BorderThickness">0</Thickness>
-			<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+	<!--Global-->
+	<x:Double x:Key="FontSize">14</x:Double>
+	<Thickness x:Key="Padding">3</Thickness>
+	<Thickness x:Key="BorderThickness">0</Thickness>
+	<CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
 
-			<Thickness x:Key="OverlayPadding">2</Thickness>
+	<Thickness x:Key="OverlayPadding">2</Thickness>
 
-			<Thickness x:Key="OverlayBorderThickness">1</Thickness>
-			<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
-			<Thickness x:Key="RightOverlayBorderThickness">1,1,0,1</Thickness>
-			<Thickness x:Key="LeftRightOverlayBorderThickness">0,1,0,1</Thickness>
+	<Thickness x:Key="OverlayBorderThickness">1</Thickness>
+	<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
+	<Thickness x:Key="RightOverlayBorderThickness">1,1,0,1</Thickness>
+	<Thickness x:Key="LeftRightOverlayBorderThickness">0,1,0,1</Thickness>
 
-			<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
-			<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
-			<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
+	<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
+	<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
+	<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
 
-			<!--Button-->
-			<Thickness x:Key="ButtonBorderThickness">1</Thickness>
-			<Thickness x:Key="ButtonPadding">3</Thickness>
-			<CornerRadius x:Key="ButtonCornerRadius">5</CornerRadius>
+	<!--Button-->
+	<Thickness x:Key="ButtonBorderThickness">1</Thickness>
+	<Thickness x:Key="ButtonPadding">3</Thickness>
+	<CornerRadius x:Key="ButtonCornerRadius">5</CornerRadius>
 
-			<!--PathIcon-->
-			<x:Double x:Key="IconHeight">20</x:Double>
-			<x:Double x:Key="IconWidth">20</x:Double>
+	<!--PathIcon-->
+	<x:Double x:Key="IconHeight">20</x:Double>
+	<x:Double x:Key="IconWidth">20</x:Double>
 
-			<!--ScrollBar-->
-			<x:Double x:Key="ScrollBarSize">16</x:Double>
-			<x:Double x:Key="ScrollBarButtonArrowIconFontSize">8</x:Double>
-			<x:Double x:Key="ScrollBarTrackBorderThemeThickness">0</x:Double>
+	<!--ScrollBar-->
+	<x:Double x:Key="ScrollBarSize">16</x:Double>
+	<x:Double x:Key="ScrollBarButtonArrowIconFontSize">8</x:Double>
+	<x:Double x:Key="ScrollBarTrackBorderThemeThickness">0</x:Double>
 
-			<!-- ScrollBar animation -->
-			<TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
-			<TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
+	<!-- ScrollBar animation -->
+	<TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
+	<TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
 
-			<!--TextBox-->
-			<x:Double x:Key="TextBoxMinHeight">30</x:Double>
-			<x:Double x:Key="TextBoxMinWidth">100</x:Double>
-			<Thickness x:Key="TextBoxBorderThickness">1</Thickness>
-			<Thickness x:Key="TextBoxPadding">5,0,5,0</Thickness>
-			<CornerRadius x:Key="TextBoxCornerRadius">5</CornerRadius>
+	<!--TextBox-->
+	<x:Double x:Key="TextBoxMinHeight">30</x:Double>
+	<x:Double x:Key="TextBoxMinWidth">100</x:Double>
+	<Thickness x:Key="TextBoxBorderThickness">1</Thickness>
+	<Thickness x:Key="TextBoxPadding">5,0,5,0</Thickness>
+	<CornerRadius x:Key="TextBoxCornerRadius">5</CornerRadius>
 
-			<!--AutoCompleteBox-->
-			<x:Double x:Key="AutoCompletePopupMaxHeight">374</x:Double>
-			<Thickness x:Key="AutoCompletePopupMargin">5</Thickness>
-			<Thickness x:Key="AutoCompletePopupPadding">5</Thickness>
-			<CornerRadius x:Key="AutoCompletePopupCornerRadius">10</CornerRadius>
+	<!--AutoCompleteBox-->
+	<x:Double x:Key="AutoCompletePopupMaxHeight">374</x:Double>
+	<Thickness x:Key="AutoCompletePopupMargin">5</Thickness>
+	<Thickness x:Key="AutoCompletePopupPadding">5</Thickness>
+	<CornerRadius x:Key="AutoCompletePopupCornerRadius">10</CornerRadius>
 
-			<!--ToolTip-->
-			<Thickness x:Key="ToolTipPadding">10</Thickness>
-			<Thickness x:Key="ToolTipBorderThickness">0</Thickness>
-			<x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
+	<!--ToolTip-->
+	<Thickness x:Key="ToolTipPadding">10</Thickness>
+	<Thickness x:Key="ToolTipBorderThickness">0</Thickness>
+	<x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
 
-			<!--Separator-->
-			<x:Double x:Key="SeparatorHeight">1</x:Double>
-			<Thickness x:Key="SeparatorPadding">12,0,12,0</Thickness>
+	<!--Separator-->
+	<x:Double x:Key="SeparatorHeight">1</x:Double>
+	<Thickness x:Key="SeparatorPadding">12,0,12,0</Thickness>
 
-			<!--RadioButton-->
-			<x:Double x:Key="RadioButtonStrokeThickness">1</x:Double>
+	<!--RadioButton-->
+	<x:Double x:Key="RadioButtonStrokeThickness">1</x:Double>
 
-			<!--FocusAdorner-->
-			<Thickness x:Key="FocusAdornerFocusVisualMargin">0</Thickness>
-			<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">2</Thickness>
-			<Thickness x:Key="FocusAdornerFocusVisualSecondaryThickness">1</Thickness>
+	<!--FocusAdorner-->
+	<Thickness x:Key="FocusAdornerFocusVisualMargin">0</Thickness>
+	<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">2</Thickness>
+	<Thickness x:Key="FocusAdornerFocusVisualSecondaryThickness">1</Thickness>
 
-			<!--ListBoxItem-->
-			<Thickness x:Key="ListBoxItemPadding">5,0,5,0</Thickness>
-			<Thickness x:Key="ListBoxItemMargin">0,1,0,1</Thickness>
-			<CornerRadius x:Key="ListBoxItemCornerRadius">0</CornerRadius>
+	<!--ListBoxItem-->
+	<Thickness x:Key="ListBoxItemPadding">5,0,5,0</Thickness>
+	<Thickness x:Key="ListBoxItemMargin">0,1,0,1</Thickness>
+	<CornerRadius x:Key="ListBoxItemCornerRadius">0</CornerRadius>
 
-			<!--CheckBox-->
-			<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
-			
+	<!--CheckBox-->
+	<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
 
-		</ResourceDictionary>
-
-	</Style.Resources>
-
-</Style>
+</ResourceDictionary>

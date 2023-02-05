@@ -3,11 +3,13 @@
              xmlns:local="using:AntDesign.Sample"
              x:Class="AntDesign.Sample.App"
 			 RequestedThemeVariant="Dark">
+	<!--RequestedThemeVariant="Dark"-->
+	
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>
 
     <Application.Styles>
-		<AntDesign Mode="Light"/>
+		<AntDesign/>
     </Application.Styles>
 </Application>

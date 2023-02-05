@@ -3,6 +3,7 @@ using AntDesign.Sample.Views;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Styling;
 
 namespace AntDesign.Sample;
 
@@ -10,7 +11,7 @@ public partial class App : Application
 {
     public override void Initialize()
     {
-        AvaloniaXamlLoader.Load(this);
+        AvaloniaXamlLoader.Load(this); 
     }
 
     public override void OnFrameworkInitializationCompleted()
