@@ -1,21 +1,29 @@
 ﻿<Project>
 	<PropertyGroup>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-		<AvaloniaVersion>11.0.0-preview4</AvaloniaVersion>
+		<AvaloniaVersion>11.0.0-preview5</AvaloniaVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="XamlNameReferenceGenerator" Version="1.5.1" />
-		<PackageVersion Include="Avalonia.Web" Version="$(AvaloniaVersion)" />
+		<!--<PackageVersion Include="Avalonia.Web" Version="$(AvaloniaVersion)" />-->
 		<PackageVersion Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
-		<PackageVersion Include="Avalonia.Web.Blazor" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Native" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Browser.Blazor" Version="$(AvaloniaVersion)" />
+		
+		<!--<PackageVersion Include="Avalonia.Web.Blazor" Version="$(AvaloniaVersion)" />-->
+		<PackageVersion Include="Avalonia.Direct2D1" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Headless.Vnc" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)" />
+		<PackageVersion Include="Avalonia.Markup.Xaml.Loader" Version="$(AvaloniaVersion)" />
 		<PackageVersion Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
 		<PackageVersion Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
 	</ItemGroup>

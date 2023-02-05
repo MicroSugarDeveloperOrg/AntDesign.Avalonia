@@ -4,7 +4,20 @@
 		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
 		<WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
 		<OutputType>Exe</OutputType>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
+		<WasmBuildNative>true</WasmBuildNative>
 		<RootNamespace>AntDesign.Sample</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<RunAOTCompilation>true</RunAOTCompilation>
+		<PublishTrimmed>true</PublishTrimmed>
+		<TrimMode>full</TrimMode>
+		<WasmBuildNative>true</WasmBuildNative>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<EmccCompileOptimizationFlag>-O2</EmccCompileOptimizationFlag>
+		<EmccLinkOptimizationFlag>-O2</EmccLinkOptimizationFlag>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -12,7 +25,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia.Web" />
+		<PackageReference Include="Avalonia.Browser" />
 	</ItemGroup>
 
 	<ItemGroup>
