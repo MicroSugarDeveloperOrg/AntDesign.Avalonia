@@ -11,9 +11,9 @@
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}">
 					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-					                AreVerticalSnapPointsRegular="{TemplateBinding AreVerticalSnapPointsRegular}"
-					                AreHorizontalSnapPointsRegular="{TemplateBinding AreHorizontalSnapPointsRegular}"
-					                ItemsPanel="{TemplateBinding ItemsPanel}"/>
+									ItemTemplate="{TemplateBinding ItemTemplate}"
+									Items="{TemplateBinding Items}"
+									ItemsPanel="{TemplateBinding ItemsPanel}" />
 				</Border>
 			</ControlTemplate>
 		</Setter>

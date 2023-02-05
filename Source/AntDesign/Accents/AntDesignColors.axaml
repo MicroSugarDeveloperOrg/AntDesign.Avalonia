@@ -1,7 +1,7 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-
+	<Style.Resources>
 		<!--Global-->
 		<Color x:Key="PrimaryColor">#4096ff</Color>
 		<Color x:Key="SecondlyColor">#000000</Color>
@@ -36,6 +36,7 @@
 		<!--TextBox-->
 
 
+	</Style.Resources>
 
 
-</ResourceDictionary>
+</Style>

@@ -1,6 +1,7 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+<Style xmlns="https://github.com/avaloniaui"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+	<Style.Resources>
 		<!--Global-->
 		<SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource PrimaryColor}"/>
 		<SolidColorBrush x:Key="SecondlyBrush" Color="{DynamicResource SecondlyColor}"/>
@@ -137,5 +138,9 @@
 		<SolidColorBrush x:Key="CheckBoxHoverBorderBrush" Color="{DynamicResource CheckBoxHoverBorderColor}"/>
 		<SolidColorBrush x:Key="CheckBoxPressedBorderBrush" Color="{DynamicResource CheckBoxPressedBorderColor}"/>
 
+		
+		
 
-</ResourceDictionary>
+	</Style.Resources>
+
+</Style>

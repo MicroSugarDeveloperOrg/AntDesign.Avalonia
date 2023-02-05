@@ -30,17 +30,16 @@
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}">
 					<ScrollViewer Name="{x:Static helpers:PARTNameHelper.PART_ScrollViewer}"
-					              VerticalSnapPointsType="{TemplateBinding (ScrollViewer.VerticalSnapPointsType)}"
-					              HorizontalSnapPointsType="{TemplateBinding (ScrollViewer.HorizontalSnapPointsType)}"
-					              HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-					              VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
-					              IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
-					              AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
+								  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+								  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+								  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+								  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
 						<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-						                AreVerticalSnapPointsRegular="{TemplateBinding AreVerticalSnapPointsRegular}"
-						                AreHorizontalSnapPointsRegular="{TemplateBinding AreHorizontalSnapPointsRegular}"
-						                ItemsPanel="{TemplateBinding ItemsPanel}"
-						                Margin="{TemplateBinding Padding}"/>
+										Items="{TemplateBinding Items}"
+										ItemsPanel="{TemplateBinding ItemsPanel}"
+										ItemTemplate="{TemplateBinding ItemTemplate}"
+										Margin="{TemplateBinding Padding}"
+										VirtualizationMode="{TemplateBinding VirtualizationMode}" />
 					</ScrollViewer>
 				</Border>
 			</ControlTemplate>

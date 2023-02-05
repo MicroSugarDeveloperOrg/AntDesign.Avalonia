@@ -1,9 +1,8 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-	<ResourceDictionary.ThemeDictionaries>
-		<ResourceDictionary x:Key="Light">
-				<!--Global-->
+	<Style.Resources>
+		<!--Global-->
 		<Color x:Key="ForegroundColor">#000000</Color>
 		<Color x:Key="BackgroundColor">#FFFFFF</Color>
 
@@ -126,9 +125,8 @@
 		<!--ComboBoxItem-->
 		<Color x:Key="ComboBoxItemBackgroundColor">Transparent</Color>
 		<StaticResource x:Key="CheckBoxItemForegroundColor" ResourceKey="SecondlyForegroundColor"/>
-		</ResourceDictionary>
-		
-	</ResourceDictionary.ThemeDictionaries>
+
+	</Style.Resources>
 
 
-</ResourceDictionary>
+</Style>

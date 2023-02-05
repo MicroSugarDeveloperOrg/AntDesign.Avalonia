@@ -7,9 +7,8 @@
 
 	<ItemGroup>
 	  <AvaloniaResource Include="Accents\*.axaml" />
-	  <AvaloniaResource Include="**/*.axaml" />
-	  <AvaloniaResource Include="Styles\*.axaml" />
-	  <AvaloniaResource Include="AntDesignTheme.axaml" />
+	  <AvaloniaResource Include="*.axaml" />
+	  <AvaloniaResource Include="Styles\*.axaml" />  
 	</ItemGroup>
 
 	<ItemGroup>
