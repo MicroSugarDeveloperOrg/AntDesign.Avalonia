@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Controls.Notifications;
 
 namespace AntDesign.Sample.Views;
 
@@ -27,6 +28,9 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
+
+        //WindowNotificationManager
+        //INotification
 
         //TextBox.CornerRadiusProperty
         CheckBox checkBox = new CheckBox();

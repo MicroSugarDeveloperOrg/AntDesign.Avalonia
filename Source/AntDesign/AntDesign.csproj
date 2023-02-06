@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AvaloniaXaml Remove="AntDesign.axaml" />
+		<AvaloniaXaml Remove="AntDesign.axaml" />
 	</ItemGroup>
 
 	<ItemGroup>

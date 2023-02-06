@@ -22,7 +22,6 @@ public class MainViewModel : ViewModelBase
                     Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
                 else
                     Application.Current.RequestedThemeVariant = ThemeVariant.Light;
-
             }
         });
     }

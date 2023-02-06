@@ -102,7 +102,7 @@
 
 	<ControlTheme x:Key="AntDesignTextBoxToggleButton" TargetType="ToggleButton">
 		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="BorderBrush" Value="TRansparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="Width" Value="18" />
 		<Setter Property="Height" Value="18" />
 		<Setter Property="Padding" Value="3" />
@@ -294,19 +294,29 @@
 		<Style Selector="^.revealPasswordButton[AcceptsReturn=False][IsReadOnly=False]:not(TextBox:empty)">
 			<Setter Property="InnerRightContent">
 				<Template>
-					<ToggleButton Theme="{StaticResource AntDesignTextBoxToggleButton}"
-								  IsChecked="{Binding $parent[TextBox].RevealPassword, Mode=TwoWay}"
-								  Margin="0,0,3,0"
-								  ClipToBounds="False">
-						<Panel>
-							<PathIcon Data="{StaticResource PasswordBoxRevealButtonData}"
-									  Height="8" Width="12"
-									  IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
-							<PathIcon Data="{StaticResource PasswordBoxHideButtonData}"
-									  Height="12" Width="12"
-									  IsVisible="{Binding $parent[ToggleButton].IsChecked}"/>
-						</Panel>
-					</ToggleButton>
+					<Panel Margin="0,0,3,0">
+						<Panel.Styles>
+							<Style Selector="ToggleButton[IsChecked=True]">
+								<Setter Property="(ToolTip.Tip)" Value="Hide Password" />
+							</Style>
+							<Style Selector="ToggleButton[IsChecked=False]">
+								<Setter Property="(ToolTip.Tip)" Value="Show Password" />
+							</Style>
+						</Panel.Styles>
+						<ToggleButton Theme="{StaticResource AntDesignTextBoxToggleButton}"
+								      IsChecked="{Binding $parent[TextBox].RevealPassword, Mode=TwoWay}"
+								      ClipToBounds="True">
+							<Panel>
+								<PathIcon Data="{StaticResource PasswordBoxRevealButtonData}"
+										  Height="8" Width="12"
+										  IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
+								<PathIcon Data="{StaticResource PasswordBoxHideButtonData}"
+										  Height="12" Width="12"
+										  IsVisible="{Binding $parent[ToggleButton].IsChecked}"/>
+							</Panel>
+						</ToggleButton>
+					</Panel>
+
 				</Template>
 			</Setter>
 		</Style>

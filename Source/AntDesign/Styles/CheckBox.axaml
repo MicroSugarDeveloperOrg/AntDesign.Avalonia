@@ -44,11 +44,13 @@
 				<Grid x:Name="RootGrid" ColumnDefinitions="Auto,*">
 					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Border}"
 							Grid.Column="0"
+							Padding="0"
+							BorderThickness="0"
 							VerticalAlignment="Center"
 							HorizontalAlignment="Center"
-							CornerRadius="{TemplateBinding CornerRadius}"
 							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}">
+							CornerRadius="{TemplateBinding CornerRadius}"
+							>
 						<Border.Width>
 							<MultiBinding Converter="{StaticResource AutoSizeConverter}">
 								<TemplateBinding Property="Width"/>
@@ -66,6 +68,8 @@
 							<Border x:Name="NormalRectangle"
 									Background="{TemplateBinding Background}"
 									CornerRadius="{TemplateBinding CornerRadius}"
+									BorderBrush="{TemplateBinding BorderBrush}"
+									BorderThickness="{TemplateBinding BorderThickness}"
 									UseLayoutRounding="False">
 								<Viewbox UseLayoutRounding="False" Margin="{StaticResource OverlayPadding}">
 									<Path x:Name="CheckGlyph" 
@@ -144,6 +148,7 @@
 			<!-- Checked Normal State -->			
 			<Style Selector="^ /template/ Border#NormalRectangle">
 				<Setter Property="Background" Value="{TemplateBinding assists:CheckBoxAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.PressedBorderBrush}" />
 			</Style>
 
 			<Style Selector="^ /template/ Path#CheckGlyph">
@@ -189,11 +194,16 @@
 		<Style Selector="^:indeterminate">
 			<!-- Indeterminate Normal State -->
 			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderThickness" Value="0"/>
 				<Setter Property="Margin" Value="{DynamicResource CheckBoxIndeterminatePadding}" />
 				<Setter Property="CornerRadius" Value="0" />
 				<Setter Property="Background" Value="{TemplateBinding assists:CheckBoxAssists.PressedBackground}" />
 			</Style>
 
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}"/>
+			</Style>
+			
 			<!-- Indeterminate PointerOver State -->
 			<Style Selector="^:pointerover">
 				<Style Selector="^ /template/ Border#PART_Border">

@@ -18,6 +18,7 @@
 				<MergeResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Styles/ListBox.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Styles/ListBoxItem.axaml" />
+				<MergeResourceInclude Source="avares://AntDesign/Styles/NotificationCard.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Styles/OverlayPopupHost.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Styles/PopupRoot.axaml" />
@@ -32,6 +33,7 @@
 				<MergeResourceInclude Source="avares://AntDesign/Styles/ToolTip.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Styles/TransitioningContentControl.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Styles/Window.axaml" />
+				<MergeResourceInclude Source="avares://AntDesign/Styles/WindowNotificationManager.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>

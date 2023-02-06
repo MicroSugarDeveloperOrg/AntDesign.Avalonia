@@ -91,5 +91,8 @@
 
 	<!--CheckBox-->
 	<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
+	
+	<!--NotificationCard-->
+	
 
 </ResourceDictionary>

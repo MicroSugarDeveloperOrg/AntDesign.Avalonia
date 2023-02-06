@@ -7,6 +7,13 @@ public static class PARTNameHelper
     //Windows
     public static string PART_TransparencyFallback => nameof(PART_TransparencyFallback);
 
+    //WindowNotificationManager
+    public static string PART_Items => nameof(PART_Items);
+
+    //NotificationCard
+    public static string PART_LayoutTransformControl => nameof(PART_LayoutTransformControl);
+    public static string PART_HeaderBar => nameof(PART_HeaderBar);
+
     //TitleBar
     public static string PART_MouseTracker => nameof(PART_MouseTracker);
     public static string PART_Container => nameof(PART_Container);
@@ -42,6 +49,7 @@ public static class PARTNameHelper
     public static string PART_FloatingWatermark => nameof(PART_FloatingWatermark);
     public static string PART_Watermark => nameof(PART_Watermark);
     public static string PART_TextPresenter => nameof(PART_TextPresenter);
+    public static string PART_ButtonLayoutBorder => nameof(PART_ButtonLayoutBorder);
 
     //ButtonSpinner
     public static string PART_SpinnerPanel => nameof(PART_SpinnerPanel);

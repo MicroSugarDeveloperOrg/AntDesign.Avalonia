@@ -7,7 +7,6 @@
 			 xmlns:sys="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
-			 Background="White"
 			 >
     <Design.DataContext>
       <viewModels:MainViewModel />
@@ -179,7 +178,11 @@
 					<CheckBox Content="Apple" IsChecked="True"/>
 					<CheckBox Content="Apple" IsThreeState="True" IsChecked="{x:Null}"    IsEnabled="False"/>
 					<CheckBox Content="Apple" IsThreeState="True"    />
+
+					<NotificationCard Content="1231231231312313"/>
+
 				</StackPanel>
+				
 				
 			</ScrollViewer>
 		</Grid>

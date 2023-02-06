@@ -122,6 +122,10 @@
 		<StaticResource x:Key="CheckBoxHoverBorderColor" ResourceKey="ThirdlyBorderColor"/>
 		<StaticResource x:Key="CheckBoxPressedBorderColor" ResourceKey="ThirdlyBorderColor"/>
 
+		<!--NotificationCard-->
+		<Color x:Key="NotificationCardBackgroundColor">#FFFFFF</Color>
+		<BoxShadows x:Key="NavigationCardShadow">0 6 8 0 #4FFFFFFF</BoxShadows>
+
 		<!--ComboBoxItem-->
 		<Color x:Key="ComboBoxItemBackgroundColor">Transparent</Color>
 		<StaticResource x:Key="CheckBoxItemForegroundColor" ResourceKey="SecondlyForegroundColor"/>

@@ -127,6 +127,9 @@
 	<SolidColorBrush x:Key="ListBoxItemPressedBorderBrush" Color="{DynamicResource ListBoxItemPressedBorderColor}"/>
 
 	<!--ListBox-->
+	<SolidColorBrush x:Key="ListBoxBorderBrush"  Color="{DynamicResource ListBoxBorderColor}"/>
+	
+	<!--CheckBox-->
 	<SolidColorBrush x:Key="CheckBoxBackground" Color="{DynamicResource CheckBoxBackgroundColor}"/>
 	<SolidColorBrush x:Key="CheckBoxHoverBackground" Color="{DynamicResource CheckBoxHoverBackgroundColor}"/>
 	<SolidColorBrush x:Key="CheckBoxPressedBackground" Color="{DynamicResource CheckBoxPressedBackgroundColor}"/>
@@ -136,5 +139,8 @@
 	<SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{DynamicResource CheckBoxBorderColor}"/>
 	<SolidColorBrush x:Key="CheckBoxHoverBorderBrush" Color="{DynamicResource CheckBoxHoverBorderColor}"/>
 	<SolidColorBrush x:Key="CheckBoxPressedBorderBrush" Color="{DynamicResource CheckBoxPressedBorderColor}"/>
+
+	<!--NotificationCard-->
+	<SolidColorBrush x:Key="NotificationCardBackground" Color="{DynamicResource NotificationCardBackgroundColor}" />
 
 </ResourceDictionary>
