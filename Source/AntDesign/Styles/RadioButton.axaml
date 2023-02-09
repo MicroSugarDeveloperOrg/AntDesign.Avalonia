@@ -16,7 +16,7 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type RadioButton}" TargetType="RadioButton">
-		<Setter Property="Background" Value="{DynamicResource Transparent}" />
+		<Setter Property="Background" Value="{DynamicResource RadioButtonBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource RadioButtonForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource RadioButtonBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
@@ -48,7 +48,7 @@
 								     Width="20"
 								     Height="20"
 									 Opacity="0"
-								     Fill="{DynamicResource Transparnet}"
+								     Fill="Transparent"
 								     Stroke="{TemplateBinding assists:ButtonAssists.RippleColor, Converter={StaticResource ToBrushConverter}}"
 								     StrokeThickness="{DynamicResource RadioButtonStrokeThickness}"
 								     UseLayoutRounding="False"
@@ -64,7 +64,7 @@
 								     Width="20"
 								     Height="20"
 								     Opacity="1"
-								     Fill="{DynamicResource Transparnet}"
+								     Fill="Transparent"
 								     Stroke="{DynamicResource ButtonDefaultBorderBrush}"
 								     StrokeThickness="{DynamicResource RadioButtonStrokeThickness}"
 								     UseLayoutRounding="False"/>
@@ -160,10 +160,10 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource Transparent}" />
+		<Setter Property="assists:ButtonAssists.HoverBackground" Value="Transparent" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource Transparent}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="Transparent" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.5"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />

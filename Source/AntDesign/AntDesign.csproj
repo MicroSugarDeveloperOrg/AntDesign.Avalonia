@@ -11,7 +11,7 @@
 	  <AvaloniaResource Include="Styles\*.axaml" />  
 	</ItemGroup>
 
-	<ItemGroup>
+	<ItemGroup> 
 		<AvaloniaXaml Remove="AntDesign.axaml" />
 	</ItemGroup>
 

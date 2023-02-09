@@ -115,14 +115,14 @@
 
 		<Style Selector="^:not(:checked)">
 			<Style Selector="^:pointerover">
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.HoverBorderBrush}" />
 				</Style>
 			</Style>
 
 			<!-- Unchecked Pressed State -->
 			<Style Selector="^:pressed">
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.PressedBorderBrush}" />
 				</Style>
 			</Style>
@@ -133,7 +133,7 @@
 					<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
 				</Style>
 
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 					<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 				</Style>
@@ -158,7 +158,7 @@
 
 			<!-- Checked PointerOver State -->
 			<Style Selector="^:pointerover">
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="Opacity" Value="0.8" />
 				</Style>
 			</Style>
@@ -171,13 +171,13 @@
 			<!-- Checked Disabled State -->
 			<Style Selector="^:disabled">
 
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 					<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 				</Style>
 
 				<Style Selector="^ /template/ Border#NormalRectangle">
-					<Setter Property="Background" Value="{DynamicResource Transparent}" />
+					<Setter Property="Background" Value="Transparent" />
 				</Style>
 				
 				<Style Selector="^ /template/ Path#CheckGlyph">

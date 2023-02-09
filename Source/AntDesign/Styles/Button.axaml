@@ -76,12 +76,12 @@
 		<Style Selector="^.danger">
 			<Style Selector="^">
 				<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
-				<Setter Property="Foreground" Value="{DynamicResource ButtonDangerBrush}" />
-				<Setter Property="BorderBrush" Value="{DynamicResource ButtonDangerBrush}" />
-				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonDangerHoverBrush}" />
-				<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonDangerHoverBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonDangerPressedBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonDangerPressedBrush}" />
+				<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource DangerBrush}" />
+				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource DangerHoverBrush}" />
+				<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource DangerHoverBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DangerPressedBrush}" />
 				<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
 			</Style>
 		</Style>
@@ -150,11 +150,11 @@
 
 		<Style Selector="^.danger">
 			<Style Selector="^">
-				<Setter Property="Background" Value="{DynamicResource ButtonDangerBrush}" />
+				<Setter Property="Background" Value="{DynamicResource DangerBrush}" />
 				<Setter Property="Foreground" Value="{DynamicResource ButtonFullForeground}" />
 				<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-				<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource ButtonDangerHoverBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonDangerPressedBrush}" />
+				<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource DangerHoverBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource DangerPressedBrush}" />
 				<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
 			</Style>
 		</Style>
@@ -235,9 +235,9 @@
 		<Style Selector="^.danger">
 			<Style Selector="^">
 				<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
-				<Setter Property="Foreground" Value="{DynamicResource ButtonDangerBrush}" />
-				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonDangerHoverBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonDangerPressedBrush}" />
+				<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource DangerHoverBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
 				<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
 			</Style>
 		</Style>
@@ -317,9 +317,9 @@
 
 		<Style Selector="^.danger">
 			<Style Selector="^">
-				<Setter Property="Foreground" Value="{DynamicResource ButtonDangerBrush}" />
-				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonDangerHoverBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonDangerPressedBrush}" />
+				<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+				<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource DangerHoverBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
 			</Style>
 		</Style>
 	</ControlTheme>

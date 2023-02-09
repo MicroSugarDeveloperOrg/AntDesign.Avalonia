@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+
+	<!--Status-->
+	<Color x:Key="DefaultColor">#bfbfbf</Color>
+	<Color x:Key="InfoColor">#1677ff</Color>
+	<Color x:Key="SuccessColor">#52c41a</Color>
+	<Color x:Key="ErrorColor">#ff4d4f</Color>
+	<Color x:Key="WarningColor">#faad14</Color>
+
+	<SolidColorBrush x:Key="DefaultBrush" Color="{DynamicResource DefaultColor}"/>
+	<SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}"/>
+	<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
+	<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
+
+	<!--Ripple-->
+	<Color x:Key="RippleColor">#9B40a9ff</Color>
+	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
+
+	<!--Danger-->
+	<Color x:Key="DangerColor">#ff4d4f</Color>
+	<Color x:Key="DangerHoverColor">#ff7875</Color>
+	<Color x:Key="DangerPressedColor">#d9363e</Color>
+
+	<SolidColorBrush x:Key="DangerBrush" Color="{DynamicResource DangerColor}"/>
+	<SolidColorBrush x:Key="DangerHoverBrush" Color="{DynamicResource DangerHoverColor}"/>
+	<SolidColorBrush x:Key="DangerPressedBrush" Color="{DynamicResource DangerPressedColor}"/>
+
+	<!--Error-->
+	<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>
+	<SolidColorBrush x:Key="ErrorBorderBrush" Color="{DynamicResource ErrorColor}"/>
+	<SolidColorBrush x:Key="ErrorBackground" Color="{DynamicResource ErrorColor}"/>
+	<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
+
+
+
+</ResourceDictionary>

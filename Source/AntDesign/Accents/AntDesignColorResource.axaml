@@ -1,0 +1,298 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					>
+	<ResourceDictionary.ThemeDictionaries>
+		<ResourceDictionary x:Key="Default">
+			<!--Global-->
+			<Color x:Key="ForegroundColor">#000000</Color>
+			<Color x:Key="BackgroundColor">#FFFFFF</Color>
+
+			<Color x:Key="PrimaryColor">#4096ff</Color>
+			<Color x:Key="SecondlyColor">#000000</Color>
+			<Color x:Key="ThirdlyColor">#000000</Color>
+
+			<Color x:Key="PrimaryForegroundColor">#FFFFFF</Color>
+			<Color x:Key="SecondlyForegroundColor">#363636</Color>
+			<Color x:Key="ThirdlyForegroundColor">#363636</Color>
+
+			<Color x:Key="PrimaryBackgroundColor">#1677ff</Color>
+			<Color x:Key="SecondlyBackgroundColor">#4096ff</Color>
+			<Color x:Key="ThirdlyBackgroundColor">#0958d9</Color>
+
+			<Color x:Key="PrimaryBorderColor">#e0e0e0</Color>
+			<Color x:Key="SecondlyBorderColor">#56a2ff</Color>
+			<Color x:Key="ThirdlyBorderColor">#0958d9</Color>
+
+			<!--Disable-->
+			<Color x:Key="DisableBackgroundColor">#f5f5f5</Color>
+			<Color x:Key="DisableFillColor">#b8b8b8</Color>
+			<Color x:Key="DisableForegroundColor">#c8c8c8</Color>
+			<Color x:Key="DisableBorderColor">#d9d9d9</Color>
+
+			<!--Button-->
+			<!--RepeatButton-->
+			<Color x:Key="ButtonDefaultForegroundColor">#363636</Color>
+			<Color x:Key="ButtonDefaultBackgroundColor">Transparent</Color>
+			<Color x:Key="ButtonDefaultBorderColor">#e0e0e0</Color>
+			<Color x:Key="ButtonHoverDefaultForegroundColor">#56a2ff</Color>
+			<Color x:Key="ButtonHoverDefaultBorderColor">#56a2ff</Color>
+			<Color x:Key="ButtonPressedDefaultForegroundColor">#0958d9</Color>
+			<Color x:Key="ButtonPressedDefaultBorderColor">#0958d9</Color>
+
+			<Color x:Key="ButtonFullBackgroundColor">#1677ff</Color>
+			<Color x:Key="ButtonFullForegroundColor">#f0f6ff</Color>
+			<Color x:Key="ButtonHoverFullBackgroundColor">#4096ff</Color>
+			<Color x:Key="ButtonPressedFullBackgroundColor">#0958d9</Color>
+
+			<!--ScrollBar-->
+			<Color x:Key="ScrollBarThumbBackgroundColor">#c1c1c1</Color>
+			<Color x:Key="ScrollBarThumbHoverBackgroundColor">#a8a8a8</Color>
+			<Color x:Key="ScrollBarThumbPressedBackgroundColor">#787878</Color>
+
+			<Color x:Key="ScrollBarLineButtonForegroundColor">#a3a3a3</Color>
+			<Color x:Key="ScrollBarLineButtonHoverForegroundColor">#505050</Color>
+			<Color x:Key="ScrollBarLineButtonPressedForegroundColor">#ffffff</Color>
+
+			<Color x:Key="ScrollBarLineButtonBackgroundColor">#f1f1f1</Color>
+			<Color x:Key="ScrollBarLineButtonHoverBackgroundColor">#d2d2d2</Color>
+			<Color x:Key="ScrollBarLineButtonPressedBackgroundColor">#787878</Color>
+
+			<Color x:Key="ScrollBarLineButtonBorderColor">Transparent</Color>
+
+			<Color x:Key="ScrollBarBackgroundColor">#f1f1f1</Color>
+			<Color x:Key="ScrollBarForegroundColor">#c1c1c1</Color>
+			<Color x:Key="ScrollBarBorderColor">Transparent</Color>
+
+			<Color x:Key="ScrollBarTrackBackgroundColor">#f1f1f1</Color>
+			<Color x:Key="ScrollBarTrackBorderColor">Transparent</Color>
+
+			<!--ScrollViewer-->
+			<Color x:Key="ScrollViewerScrollBarsSeparatorBackgroundColor">#E6E6E6</Color>
+
+			<!--TextBox-->
+			<!--AutoCompleteBox-->
+			<Color x:Key="TextControlCaretColor">Black</Color>
+			<Color x:Key="TextControlBackgroundColor">Transparent</Color>
+			<Color x:Key="TextControlForegroundColor">#3e3e3e</Color>
+			<Color x:Key="TextControlBorderColor">#d9d9d9</Color>
+			<Color x:Key="TextControlHoverBorderColor">#4096ff</Color>
+			<Color x:Key="TextControlPlaceholderForegroundColor">#d9d9d9</Color>
+			<Color x:Key="TextControlSelectionBackgroundColor">#3390ff</Color>
+			<Color x:Key="TextControlSelectionForegroundColor">White</Color>
+			<Color x:Key="TextControlFloatingForegroundColor">#4096ff</Color>
+
+			<Color x:Key="TextControlButtonBackgroundColor">#a6a6a6</Color>
+			<Color x:Key="TextControlButtonForegroundColor">White</Color>
+			<Color x:Key="TextControlButtonHoverBackgroundColor">#8c8c8c</Color>
+			<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>
+			<Color x:Key="TextControlButtonBorderColor">Transparent</Color>
+
+			<!--AutoCompleteBox Popup-->
+			<Color x:Key="AutoCompletePopupBackgroundColor">White</Color>
+			<Color x:Key="AutoCompletePopupBorderColor">Transparent</Color>
+
+			<!--ToolTip-->
+			<Color x:Key="ToolTipBackgroundColor">#262626</Color>
+			<Color x:Key="ToolTipForegroundColor">White</Color>
+			<Color x:Key="ToolTipBorderColor">Transparent</Color>
+
+			<!--Separator-->
+			<Color x:Key="SeparatorForegroundColor">#1f1f1f</Color>
+			<Color x:Key="SeparatorBackgroundColor">#a3a3a3</Color>
+			<Color x:Key="SeparatorContentBackgroundColor">White</Color>
+
+			<!--RadioButton-->
+			<Color x:Key="RadioButtonBackgroundColor">Transparent</Color>
+			<Color x:Key="RadioButtonForegroundColor">#393939</Color>
+			<Color x:Key="RadioButtonBorderColor">Transparent</Color>
+			<Color x:Key="RadioButtonFillColor">White</Color>
+
+			<!--FocusAdorner-->
+			<Color x:Key="FocusAdornerFocusVisualPrimaryColor">#FF000000</Color>
+			<Color x:Key="FocusAdornerFocusVisualSecondaryCoolor">#99FFFFFF</Color>
+
+			<!--GridSplitter-->
+			<Color x:Key="GridSplitterAltMediumLowColor">#66000000</Color>
+			<Color x:Key="GridSplitterAccentColor">#FF0078D7</Color>
+
+			<!--EmbeddableControlRoot-->
+			<Color x:Key="EmbeddableControlRootBackgroundColor">#FF000000</Color>
+
+			<!--ListBoxItem-->
+			<Color x:Key="ListBoxItemHoverBackgroundColor">#f0f0f0</Color>
+			<Color x:Key="ListBoxItemPressedBackgroundColor">#e6f4ff</Color>
+			<Color x:Key="ListBoxItemPressedForegroundColor">#3489ff</Color>
+			<Color x:Key="ListBoxItemPressedBorderColor">#e6f4ff</Color>
+
+			<!--ListBox-->
+			<Color x:Key="ListBoxBorderColor">#e0e0e0</Color>
+			<Color x:Key="ListBoxBackgroundColor">Transparent</Color>
+
+			<!--CheckBox-->
+			<Color x:Key="CheckBoxBackgroundColor">Transparent</Color>
+			<StaticResource x:Key="CheckBoxHoverBackgroundColor" ResourceKey="SecondlyBackgroundColor"/>
+			<StaticResource x:Key="CheckBoxPressedBackgroundColor" ResourceKey="ThirdlyBackgroundColor"/>
+			<StaticResource x:Key="CheckBoxForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+			<StaticResource x:Key="CheckBoxHoverForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+			<StaticResource x:Key="CheckBoxPressedForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+			<StaticResource x:Key="CheckBoxBorderColor" ResourceKey="PrimaryBorderColor"/>
+			<StaticResource x:Key="CheckBoxHoverBorderColor" ResourceKey="ThirdlyBorderColor"/>
+			<StaticResource x:Key="CheckBoxPressedBorderColor" ResourceKey="ThirdlyBorderColor"/>
+
+			<!--NotificationCard-->
+			<Color x:Key="NotificationCardBackgroundColor">#FFFFFF</Color>
+
+			<!--ComboBoxItem-->
+			<Color x:Key="ComboBoxItemBackgroundColor">Transparent</Color>
+			<StaticResource x:Key="CheckBoxItemForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+		</ResourceDictionary>
+		
+		<ResourceDictionary x:Key="Dark" >
+			<!--Global-->
+			<Color x:Key="ForegroundColor">#FFFFFF</Color>
+			<Color x:Key="BackgroundColor">#000000</Color>
+
+			<Color x:Key="PrimaryColor">#4096ff</Color>
+			<Color x:Key="SecondlyColor">#000000</Color>
+			<Color x:Key="ThirdlyColor">#000000</Color>
+
+			<Color x:Key="PrimaryForegroundColor">#FFFFFF</Color>
+			<Color x:Key="SecondlyForegroundColor">#363636</Color>
+			<Color x:Key="ThirdlyForegroundColor">#363636</Color>
+
+			<Color x:Key="PrimaryBackgroundColor">#1677ff</Color>
+			<Color x:Key="SecondlyBackgroundColor">#4096ff</Color>
+			<Color x:Key="ThirdlyBackgroundColor">#0958d9</Color>
+
+			<Color x:Key="PrimaryBorderColor">#e0e0e0</Color>
+			<Color x:Key="SecondlyBorderColor">#56a2ff</Color>
+			<Color x:Key="ThirdlyBorderColor">#0958d9</Color>
+
+			<!--Disable-->
+			<Color x:Key="DisableBackgroundColor">#f5f5f5</Color>
+			<Color x:Key="DisableFillColor">#b8b8b8</Color>
+			<Color x:Key="DisableForegroundColor">#c8c8c8</Color>
+			<Color x:Key="DisableBorderColor">#d9d9d9</Color>
+
+			<!--Button-->
+			<!--RepeatButton-->
+			<Color x:Key="ButtonDefaultForegroundColor">#000000</Color>
+			<Color x:Key="ButtonDefaultBackgroundColor">Transparent</Color>
+			<Color x:Key="ButtonDefaultBorderColor">#000000</Color>
+			<Color x:Key="ButtonHoverDefaultForegroundColor">#000000</Color>
+			<Color x:Key="ButtonHoverDefaultBorderColor">#000000</Color>
+			<Color x:Key="ButtonPressedDefaultForegroundColor">#000000</Color>
+			<Color x:Key="ButtonPressedDefaultBorderColor">#000000</Color>
+
+			<Color x:Key="ButtonFullBackgroundColor">#000000</Color>
+			<Color x:Key="ButtonFullForegroundColor">#000000</Color>
+			<Color x:Key="ButtonHoverFullBackgroundColor">#000000</Color>
+			<Color x:Key="ButtonPressedFullBackgroundColor">#000000</Color>
+
+			<!--ScrollBar-->
+			<Color x:Key="ScrollBarThumbBackgroundColor">#c1c1c1</Color>
+			<Color x:Key="ScrollBarThumbHoverBackgroundColor">#a8a8a8</Color>
+			<Color x:Key="ScrollBarThumbPressedBackgroundColor">#787878</Color>
+
+			<Color x:Key="ScrollBarLineButtonForegroundColor">#a3a3a3</Color>
+			<Color x:Key="ScrollBarLineButtonHoverForegroundColor">#505050</Color>
+			<Color x:Key="ScrollBarLineButtonPressedForegroundColor">#ffffff</Color>
+
+			<Color x:Key="ScrollBarLineButtonBackgroundColor">#f1f1f1</Color>
+			<Color x:Key="ScrollBarLineButtonHoverBackgroundColor">#d2d2d2</Color>
+			<Color x:Key="ScrollBarLineButtonPressedBackgroundColor">#787878</Color>
+
+			<Color x:Key="ScrollBarLineButtonBorderColor">Transparent</Color>
+
+			<Color x:Key="ScrollBarBackgroundColor">#f1f1f1</Color>
+			<Color x:Key="ScrollBarForegroundColor">#c1c1c1</Color>
+			<Color x:Key="ScrollBarBorderColor">Transparent</Color>
+
+			<Color x:Key="ScrollBarTrackBackgroundColor">#f1f1f1</Color>
+			<Color x:Key="ScrollBarTrackBorderColor">Transparent</Color>
+
+			<!--ScrollViewer-->
+			<Color x:Key="ScrollViewerScrollBarsSeparatorBackgroundColor">#E6E6E6</Color>
+
+			<!--TextBox-->
+			<!--AutoCompleteBox-->
+			<Color x:Key="TextControlCaretColor">Black</Color>
+			<Color x:Key="TextControlBackgroundColor">Transparent</Color>
+			<Color x:Key="TextControlForegroundColor">#3e3e3e</Color>
+			<Color x:Key="TextControlBorderColor">#d9d9d9</Color>
+			<Color x:Key="TextControlHoverBorderColor">#4096ff</Color>
+			<Color x:Key="TextControlPlaceholderForegroundColor">#d9d9d9</Color>
+			<Color x:Key="TextControlSelectionBackgroundColor">#3390ff</Color>
+			<Color x:Key="TextControlSelectionForegroundColor">White</Color>
+			<Color x:Key="TextControlFloatingForegroundColor">#4096ff</Color>
+
+			<Color x:Key="TextControlButtonBackgroundColor">#a6a6a6</Color>
+			<Color x:Key="TextControlButtonForegroundColor">White</Color>
+			<Color x:Key="TextControlButtonHoverBackgroundColor">#8c8c8c</Color>
+			<Color x:Key="TextControlButtonPressedBackgroundColor">#1f1f1f</Color>
+			<Color x:Key="TextControlButtonBorderColor">Transparent</Color>
+
+			<!--AutoCompleteBox Popup-->
+			<Color x:Key="AutoCompletePopupBackgroundColor">White</Color>
+			<Color x:Key="AutoCompletePopupBorderColor">Transparent</Color>
+
+			<!--ToolTip-->
+			<Color x:Key="ToolTipBackgroundColor">#262626</Color>
+			<Color x:Key="ToolTipForegroundColor">White</Color>
+			<Color x:Key="ToolTipBorderColor">Transparent</Color>
+
+			<!--Separator-->
+			<Color x:Key="SeparatorForegroundColor">#1f1f1f</Color>
+			<Color x:Key="SeparatorBackgroundColor">#a3a3a3</Color>
+			<Color x:Key="SeparatorContentBackgroundColor">White</Color>
+
+			<!--RadioButton-->
+			<Color x:Key="RadioButtonBackgroundColor">Transparent</Color>
+			<Color x:Key="RadioButtonForegroundColor">#393939</Color>
+			<Color x:Key="RadioButtonBorderColor">Transparent</Color>
+			<Color x:Key="RadioButtonFillColor">White</Color>
+
+			<!--FocusAdorner-->
+			<Color x:Key="FocusAdornerFocusVisualPrimaryColor">#FFFFFFFF</Color>
+			<Color x:Key="FocusAdornerFocusVisualSecondaryCoolor">#99000000</Color>
+
+			<!--GridSplitter-->
+			<Color x:Key="GridSplitterAltMediumLowColor">#66000000</Color>
+			<Color x:Key="GridSplitterAccentColor">#FF0078D7</Color>
+
+			<!--EmbeddableControlRoot-->
+			<Color x:Key="EmbeddableControlRootBackgroundColor">#FF000000</Color>
+
+			<!--ListBoxItem-->
+			<Color x:Key="ListBoxItemHoverBackgroundColor">#f0f0f0</Color>
+			<Color x:Key="ListBoxItemPressedBackgroundColor">#e6f4ff</Color>
+			<Color x:Key="ListBoxItemPressedForegroundColor">#3489ff</Color>
+			<Color x:Key="ListBoxItemPressedBorderColor">#e6f4ff</Color>
+
+			<!--ListBox-->
+			<Color x:Key="ListBoxBorderColor">#e0e0e0</Color>
+			<Color x:Key="ListBoxBackgroundColor">Transparent</Color>
+
+			<!--CheckBox-->
+			<Color x:Key="CheckBoxBackgroundColor">Transparent</Color>
+			<StaticResource x:Key="CheckBoxHoverBackgroundColor" ResourceKey="SecondlyBackgroundColor"/>
+			<StaticResource x:Key="CheckBoxPressedBackgroundColor" ResourceKey="ThirdlyBackgroundColor"/>
+			<StaticResource x:Key="CheckBoxForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+			<StaticResource x:Key="CheckBoxHoverForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+			<StaticResource x:Key="CheckBoxPressedForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+			<StaticResource x:Key="CheckBoxBorderColor" ResourceKey="PrimaryBorderColor"/>
+			<StaticResource x:Key="CheckBoxHoverBorderColor" ResourceKey="ThirdlyBorderColor"/>
+			<StaticResource x:Key="CheckBoxPressedBorderColor" ResourceKey="ThirdlyBorderColor"/>
+
+			<!--NotificationCard-->
+			<Color x:Key="NotificationCardBackgroundColor">#FFFFFF</Color> 
+
+			<!--ComboBoxItem-->
+			<Color x:Key="ComboBoxItemBackgroundColor">Transparent</Color>
+			<StaticResource x:Key="CheckBoxItemForegroundColor" ResourceKey="SecondlyForegroundColor"/>
+
+		</ResourceDictionary>
+	</ResourceDictionary.ThemeDictionaries>
+	 
+
+</ResourceDictionary>

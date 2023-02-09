@@ -1,5 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
+using Avalonia.Markup.Xaml.Styling;
+using Avalonia.Styling;
 
 namespace AntDesign.Sample.Views;
 
@@ -52,6 +54,10 @@ public partial class MainView : UserControl
         act1 = Test2;
         act2.Invoke();
         act1.Invoke();
+
+        //MergeResourceInclude;
+        //ResourceDictionary.ThemeDictionaries
+        //ResourceDictionary.MergedDictionaries
 
         //ToolTip.IsOpenProperty
         //RadioButton.IsPointerOverProperty

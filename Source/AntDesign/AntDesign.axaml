@@ -3,13 +3,17 @@
 		x:Class="AntDesign.AntDesign">
 
 	<Styles.Resources>
-		<ResourceDictionary> 
+		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBase.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignColors.axaml" />
+				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignColorsBrushes.axaml" />
+				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignColorResource.axaml" />
+				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBrushResource.axaml" />
+				
 				<!--<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignLightColor.axaml" />-->
 				<!--<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignDarkColor.axaml" />-->
-				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBrush.axaml" />
+				<!--<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBrush.axaml" />-->
+			 
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>
