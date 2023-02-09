@@ -6,7 +6,7 @@
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBase.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignColorsBrushes.axaml" />
+				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignCommon.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignColorResource.axaml" />
 				<MergeResourceInclude Source="avares://AntDesign/Accents/AntDesignBrushResource.axaml" />
 				
