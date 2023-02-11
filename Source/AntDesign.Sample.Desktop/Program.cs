@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Platform;
 using Avalonia.ReactiveUI;
 
 namespace AntDesign.Sample;
@@ -15,7 +16,7 @@ internal class Program
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
-            .UsePlatformDetect()
-            .LogToTrace()
-            .UseReactiveUI();
+                     .UsePlatformDetect()
+                     .LogToTrace()
+                     .UseReactiveUI();
 }
