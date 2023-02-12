@@ -1,4 +1,13 @@
 global using Avalonia;
+global using Avalonia.Controls;
 global using Avalonia.Controls.ApplicationLifetimes;
 global using Avalonia.Markup.Xaml;
 global using Avalonia.Platform;
+global using Avalonia.ReactiveUI;
+global using Avalonia.Styling;
+global using Microsoft.Extensions.DependencyInjection;
+global using ReactiveUI;
+global using System.ComponentModel;
+global using System.Reactive;
+global using System.Reactive.Disposables;
+global using System.Runtime.CompilerServices;

@@ -1,49 +1,22 @@
-﻿using Avalonia;
-using Avalonia.Styling;
-using ReactiveUI;
-using System.Reactive;
+﻿namespace AntDesign.Sample.ViewModels;
 
-namespace AntDesign.Sample.ViewModels;
-
-public class MainViewModel : ViewModelBase
+public class MainViewModel : ViewModelBase, IScreen
 {
-    public MainViewModel()
+    public MainViewModel(IViewLocator viewLocator)
     {
-        TriggerClickCommand = ReactiveCommand.Create(() =>
-        {
-            IsTrigger = !IsTrigger;
-        });
+        ViewLocator = viewLocator;
+    }
+ 
+    public RoutingState Router { get; } = new();
+    public IViewLocator ViewLocator { get; }
 
-        SwitchThemeCommand = ReactiveCommand.Create(() =>
-        {
-            if (Application.Current is not null)
-            {
-                if (Application.Current.ActualThemeVariant == ThemeVariant.Light || Application.Current.ActualThemeVariant == ThemeVariant.Default)
-                    Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
-                else
-                    Application.Current.RequestedThemeVariant = ThemeVariant.Light;
-            }
-        });
+    protected override void Activating()
+    {
+        base.Activating();
     }
 
-    public string Greeting => "Welcome to Avalonia!";
-
-    bool _IsTrigger = false;
-    public bool IsTrigger
+    protected override void Disposing()
     {
-        get => _IsTrigger;
-        set => SetProperty(ref _IsTrigger, value, o => 
-        {
-
-        }, (o, n) => 
-        {
-
-        });
+         base.Disposing();
     }
-
-    public ReactiveCommand<Unit, Unit> TriggerClickCommand { get; }
-    public ReactiveCommand<Unit, Unit> SwitchThemeCommand { get; }
-
-
-
 }

@@ -2,7 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
+             xmlns:rxui="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI"
+			 xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
 			 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
 			 xmlns:sys="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
@@ -12,190 +13,15 @@
       <viewModels:MainViewModel />
     </Design.DataContext>
 
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition />
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-
-		<Grid Grid.Column="0">
-			<ScrollViewer>
-				<StackPanel Spacing="10" >
-					<Button Content="1232323" Height="30" Width="120" Command="{Binding SwitchThemeCommand}" />
-					<Button Classes="danger" Content="1232323" Height="30" Width="120"/>
-					<Button Content="1232323" Height="30" Width="120" IsEnabled="False" />
-					<Button Theme="{StaticResource PrimaryButtonTheme}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>
-					<Button Theme="{StaticResource PrimaryButtonTheme}" Content="232323" Height="30" Width="120" />
-					<Button Theme="{StaticResource PrimaryButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-					<Button Theme="{StaticResource TextButtonTheme}"  Content="1232323" Height="30" Width="120" />
-					<Button Theme="{StaticResource TextButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-					<Button Theme="{StaticResource LinkButtonTheme}"  Content="1232323" Height="30" Width="120" />
-					<Button Theme="{StaticResource LinkButtonTheme}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-
-					<Button BorderBrush="Red"
-							Foreground="Red"
-							ButtonAssists.HoverBorderBrush="Red"
-							ButtonAssists.HoverForeground="Red"
-							ButtonAssists.PressedBorderBrush="Red"
-							ButtonAssists.PressedForeground="Red"
-							ButtonAssists.RippleColor="Red"
-							ButtonAssists.RippleColorAlpha="0.3"
-							Content="1232323" Height="30" Width="120"/>
-
-					<ScrollViewer Width="400" Height="300" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-						<Grid Height="1024" Width="500" Background="AliceBlue">
-
-						</Grid>
-					</ScrollViewer>
-
-					<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
-					<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="True"></TextBox>
-					<TextBox Classes="clearButton" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
-					<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
-					<TextBox IsEnabled="False" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
-					<TextBox Width="120" Watermark="Error" UseFloatingWatermark="False">
-						<DataValidationErrors.Error>
-							<sys:Exception>
-								<x:Arguments>
-									<x:String>Error</x:String>
-								</x:Arguments>
-							</sys:Exception>
-						</DataValidationErrors.Error>
-					</TextBox>
-
-
-					
-
-					<Label Content="12312313231"/>
-
-					<SelectableTextBlock  Text="12312312312313\r\n235454545546576576"/>
-					<SelectableTextBlock IsEnabled="False" Text="12312312312313\r\n235454545546576576"/>
-
-					<ButtonSpinner Content="12323" Width="200" Height="30" ButtonSpinnerLocation="Left"/>
-					<ButtonSpinner Content="12323" Width="200" Height="30" ButtonSpinnerLocation="Right"/>
-					<ButtonSpinner Content="12323" Width="200" Height="30" IsEnabled="False"/>
-					
-				</StackPanel>
-
-			</ScrollViewer>
-			
-		</Grid>
-
-		<Grid Grid.Column="1">
-			<ScrollViewer>
-				<StackPanel Spacing="10">
-					<DropDownButton Content="123123" ToolTip.Tip="123123"/>
-					<DropDownButton IsEnabled="False" Content="123123" />
-					<RepeatButton Content="1231233"/>
-					<RepeatButton IsEnabled="False" Content="1231233"/>
-
-					<Separator Classes="left" SeparatorAssists.Content="这是分界线"/>
-					<Separator Classes="right" SeparatorAssists.Content="这是分界线"/>
-					<Separator SeparatorAssists.Content="这是分界线"/>
-
-					<RadioButton Content="123"/>
-					<RadioButton Content="223"/>
-					<RadioButton Content="334" IsEnabled="False"/>
-
-					<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Width="120" Height="30" Content="123"/>
-					<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" IsEnabled="False" Width="120" Height="30" Content="123"/>
-
-					<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="left" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="right" Width="120" Height="30" Content="123"/>
-					</StackPanel>
-
-					<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="left" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="right" Width="120" Height="30" Content="123"/>
-					</StackPanel>
-
-					<ListBox Width="150">
-						<ListBoxItem Content="123"/>
-						<ListBoxItem Content="234" IsEnabled="False"/>
-						<ListBoxItem Content="432"/>
-						<ListBoxItem Content="345"/>
-						<ListBoxItem Content="567"/>	
-					</ListBox>
-
-					<AutoCompleteBox x:Name="PART_AutoCompleteBox" Width="200" Watermark="12323"/>
-					<AutoCompleteBox x:Name="PART_AutoCompleteBox1" AutoCompleteBoxAssists.UseFloatingWatermark="True" Width="200" Watermark="12323"/>
-					<AutoCompleteBox IsEnabled="False" Width="200" Watermark="12323"/>
-
-					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
-						<TextBlock Text="RippleEffectZx"/>
-						<RippleEffectZx/>
-					</Panel>
-
-					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
-						<TextBlock Text="RippleEffectAx"/>
-						<RippleEffectAx RippleBackgroundAlpha="0"/>
-					</Panel>
-
-					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
-						<RippleEffectAx IsManualTrigger="True" 
-										IsTrigger="{Binding IsTrigger}"  
-										IsForever="True"
-										IsReverse="True"
-										CornerRadius="5"
-										Duration="75"
-										RippleToScal="1.3"  
-										RippleColor="Red"
-										RippleColorAlpha="0.4"
-										RippleBackgroundAlpha="0.1"/>
-						<Button Height="40" Theme="{StaticResource PrimaryButtonTheme}" Content="Manual RippleEffectAx" Command="{Binding TriggerClickCommand}"/>
-					</Panel>
-
-					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
-						<TextBlock Text="RippleEffectx"/>
-						<RippleEffectx IsRipple="True"  RippleColor="Red" />
-					</Panel>
-
-					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" IsReverse="True" IsForever="True" Padding="4" Duration="150">
-						<TextBlock Text="RippleEffectAuto"/>
-					</RippleEffect>
-
-					<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" RippleToSize="10" IsReverse="False" Padding="4"  Duration="150">
-						<TextBlock Text="RippleEffect"/>
-					</RippleEffect>		
-					
-				</StackPanel>
-			</ScrollViewer>
-
-		</Grid>
-
-		<StackPanel Grid.Column="2">
-			<ThemeVariantScope  RequestedThemeVariant="Dark">
-				<Grid >
-					<ScrollViewer>
-						<StackPanel Spacing="10">
-							<CheckBox Content="Apple" IsEnabled="False"/>
-							<CheckBox Content="Apple" />
-							<CheckBox Content="Apple" IsChecked="True" IsEnabled="False"/>
-							<CheckBox Content="Apple" IsChecked="True"/>
-							<CheckBox Content="Apple" IsThreeState="True" IsChecked="{x:Null}"    IsEnabled="False"/>
-							<CheckBox Content="Apple" IsThreeState="True"    />
-
-							
-							<Button Content="1232323" Height="30" Width="120" />
-						</StackPanel>
-
-
-					</ScrollViewer>
-				</Grid>
-			</ThemeVariantScope>
-
-			<NotificationCard Content="1231231231312313"/>
-		</StackPanel>
-		
-		
-
-
+	<Grid ColumnDefinitions="Auto,*">
+		<ListBox Grid.Column="0" Width="180" BorderThickness="0" Background="Red"/>
+		<rxui:RoutedViewHost Grid.Column="1" Router="{Binding Router}">
+			<rxui:RoutedViewHost.DefaultContent>
+				<TextBlock Text="Loading..."
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+			</rxui:RoutedViewHost.DefaultContent>
+		</rxui:RoutedViewHost>
 	</Grid>
 	
 	

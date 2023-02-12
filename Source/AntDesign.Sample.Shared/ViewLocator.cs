@@ -1,5 +1,4 @@
 using AntDesign.Sample.ViewModels;
-using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 
 namespace AntDesign.Sample

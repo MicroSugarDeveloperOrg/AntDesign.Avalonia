@@ -2,9 +2,9 @@ using AntDesign.Sample.ViewModels;
 
 namespace AntDesign.Sample.Views;
 
-public partial class MainWindow : ReactiveWindow<MainViewModel>
+public partial class OverviewView : ReactiveUserControl<OverviewViewModel>
 {
-    public MainWindow()
+    public OverviewView()
     {
         InitializeComponent();
     }

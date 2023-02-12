@@ -1,11 +1,30 @@
-﻿using ReactiveUI;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿namespace AntDesign.Sample.ViewModels;
 
-namespace AntDesign.Sample.ViewModels;
-
-public class ViewModelBase : ReactiveObject
+public abstract class ViewModelBase : ReactiveObject, IActivatableViewModel
 {
+    public ViewModelBase()
+    {
+        Activator = new();
+        this.WhenActivated(disposables =>
+        {
+            Activating();
+            Disposable.Create(() => Disposing()).DisposeWith(disposables);
+        });
+    }
+
+    public ViewModelActivator Activator { get; }
+
+
+    protected virtual void Activating()
+    {
+
+    }
+
+    protected virtual void Disposing()
+    {
+
+    }
+
     public TRet SetProperty<TRet>(ref TRet backingField, TRet newValue, [CallerMemberName] string? propertyName = null) => this.RaiseAndSetIfChanged(ref backingField, newValue, propertyName);
 
     public TRet SetProperty<TRet>(ref TRet backingField, TRet newValue, Action<TRet> propertyChanging, [CallerMemberName] string? propertyName = null) =>
