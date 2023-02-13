@@ -1,5 +1,4 @@
 ﻿using AntDesign.Sample.Routers;
-using ReactiveUI;
 
 namespace AntDesign.Sample.ViewModels;
 
