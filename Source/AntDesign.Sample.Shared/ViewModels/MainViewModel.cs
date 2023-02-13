@@ -1,17 +1,18 @@
-﻿namespace AntDesign.Sample.ViewModels;
+﻿using AntDesign.Sample.Routers;
+
+namespace AntDesign.Sample.ViewModels;
 
 public class MainViewModel : ViewModelBase, IScreen
 {
-    public MainViewModel(IViewLocator viewLocator)
+    public MainViewModel(IMainRoutingViewLocator viewLocator)
     {
         ViewLocator = viewLocator;
+        Router = viewLocator.Make(this);
     }
- 
-    public RoutingState Router { get; } = new();
-    public IViewLocator ViewLocator { get; }
 
-    
-    
+    public RoutingState Router { get; }
+    public IMainRoutingViewLocator ViewLocator { get; }
+
     protected override void Activating()
     {
         base.Activating();
@@ -19,6 +20,6 @@ public class MainViewModel : ViewModelBase, IScreen
 
     protected override void Disposing()
     {
-         base.Disposing();
+        base.Disposing();
     }
 }

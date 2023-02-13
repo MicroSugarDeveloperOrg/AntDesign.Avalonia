@@ -3,17 +3,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:rxui="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI"
+			 xmlns:assists="using:AntDesign.Sample.Assists"
 			 xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
 			 >
-    <Design.DataContext>
-      <viewModels:MainViewModel />
-    </Design.DataContext>
-
+	<Design.DataContext>
+		<viewModels:MainViewModel />
+	</Design.DataContext>
+	
 	<Grid ColumnDefinitions="Auto,*">
 		<ListBox Grid.Column="0" Width="180" BorderThickness="0" Background="Red"/>
-		<rxui:RoutedViewHost Grid.Column="1" Router="{Binding Router}" ViewLocator="{Binding ViewLocator}">
+		<rxui:RoutedViewHost Grid.Column="1" Router="{Binding Router}" assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}" >
 			<rxui:RoutedViewHost.DefaultContent>
 				<TextBlock Text="Loading..."
                            HorizontalAlignment="Center"
@@ -21,6 +22,4 @@
 			</rxui:RoutedViewHost.DefaultContent>
 		</rxui:RoutedViewHost>
 	</Grid>
-	
-	
 </UserControl>

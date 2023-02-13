@@ -1,6 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Operations;
-
-namespace AntDesign.Sample.ViewModels;
+﻿namespace AntDesign.Sample.ViewModels;
 
 public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 {
@@ -25,8 +23,8 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
     }
 
     private readonly IServiceProvider _serviceProvider;
-    
-    
+
+
     bool _IsTrigger = false;
     public bool IsTrigger
     {
@@ -53,9 +51,9 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
         base.Disposing();
     }
 
-    protected override IScreen GetScreen()
-    {
-        var screen = _serviceProvider.GetRequiredService<IScreen>();
-        return screen;
-    }
+    //protected override IScreen GetScreen()
+    //{
+    //    var screen = _serviceProvider.GetRequiredService<IScreen>();
+    //    return screen;
+    //}
 }

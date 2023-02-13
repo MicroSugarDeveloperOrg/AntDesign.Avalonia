@@ -1,4 +1,4 @@
-using AntDesign.Sample.Extensions;
+using AntDesign.Sample.Routers;
 using AntDesign.Sample.ViewModels;
 using AntDesign.Sample.Views;
 using Avalonia.Toolkit.Extensions;
@@ -24,6 +24,7 @@ public partial class App : Application
     {
         base.RegisterServices();
         RegisterInternalServices();
+        RegisterRoutings();
         RegisterViewViewModels();
     }
 
@@ -50,18 +51,28 @@ public partial class App : Application
     bool RegisterInternalServices()
     {
         AvaloniaLocator.CurrentMutable.BindToConstant<IFontManagerImpl, ToolkitFontManagerImpl>();
+        _container.AddSingleton<IServiceCollection>(_container);
+        _container.AddSingleton<IGlobalThemeVariantProvider>(provider => AvaloniaLocator.Current.GetRequiredService<IGlobalThemeVariantProvider>());
+        return true;
+    }
+
+    bool RegisterRoutings()
+    {
+        var routingViewLocator = new MainRoutingViewLocator(_container);
+        _container.AddSingleton<IMainRoutingViewLocator>(routingViewLocator);
+
+        routingViewLocator.AddRouter<OverviewView, OverviewViewModel>();
+       
+
         return true;
     }
 
     bool RegisterViewViewModels()
     {
-        _container.AddSingleton<IViewLocator, RoutingViewLocator>();
         _container.AddSingleton<MainWindow>();
         _container.AddSingleton<MainView>();
-        _container.AddSingleton<IScreen, MainViewModel>();
+        _container.AddSingleton<MainViewModel>();
 
-        _container.AddScoped<OverviewView>();
-        _container.AddSingleton<OverviewViewModel>();
 
         return true;
     }
