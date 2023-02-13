@@ -10,6 +10,8 @@ public class MainViewModel : ViewModelBase, IScreen
     public RoutingState Router { get; } = new();
     public IViewLocator ViewLocator { get; }
 
+    
+    
     protected override void Activating()
     {
         base.Activating();

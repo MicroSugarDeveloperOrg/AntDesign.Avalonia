@@ -1,15 +1,22 @@
 ﻿namespace AntDesign.Sample.ViewModels;
+
+public abstract class ViewModelRoutableBase<T> : ViewModelRoutableBase
+{
+    public ViewModelRoutableBase() : base(nameof(T))
+    {
+        
+    }
+}
+
 public abstract class ViewModelRoutableBase : ViewModelBase, IRoutableViewModel
 {
-    public ViewModelRoutableBase(IAvaloniaDependencyResolver serviceProvider)
+    public ViewModelRoutableBase(string? urlPathSegment)
     {
-        _serviceProvider = serviceProvider;
-        HostScreen = serviceProvider.GetRequiredService<IScreen>();
+        UrlPathSegment = urlPathSegment;
     }
 
-    protected readonly IAvaloniaDependencyResolver _serviceProvider;
-
-    public string? UrlPathSegment { get; protected set; }
-
-    public IScreen HostScreen { get; protected set; }
+    protected abstract IScreen GetScreen(); 
+    
+    public string? UrlPathSegment { get;}
+    public IScreen HostScreen { get; set; } = default!;
 }

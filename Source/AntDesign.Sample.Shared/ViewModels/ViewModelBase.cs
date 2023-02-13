@@ -55,7 +55,6 @@ public abstract class ViewModelBase : ReactiveObject, IActivatableViewModel
         var ret = this.RaiseAndSetIfChanged(ref backingField, newValue, propertyName);
         this.PropertyChanging -= Invoking;
         this.PropertyChanged -= Invoked;
-
         return ret;
     }
 

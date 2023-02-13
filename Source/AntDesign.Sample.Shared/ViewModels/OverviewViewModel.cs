@@ -1,9 +1,12 @@
-﻿namespace AntDesign.Sample.ViewModels;
+﻿using Microsoft.CodeAnalysis.Operations;
 
-public class OverviewViewModel : ViewModelBase
+namespace AntDesign.Sample.ViewModels;
+
+public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 {
-    public OverviewViewModel()
+    public OverviewViewModel(IServiceProvider serviceProvider)
     {
+        _serviceProvider = serviceProvider;
         TriggerClickCommand = ReactiveCommand.Create(() =>
         {
             IsTrigger = !IsTrigger;
@@ -21,6 +24,9 @@ public class OverviewViewModel : ViewModelBase
         });
     }
 
+    private readonly IServiceProvider _serviceProvider;
+    
+    
     bool _IsTrigger = false;
     public bool IsTrigger
     {
@@ -45,5 +51,11 @@ public class OverviewViewModel : ViewModelBase
     protected override void Disposing()
     {
         base.Disposing();
+    }
+
+    protected override IScreen GetScreen()
+    {
+        var screen = _serviceProvider.GetRequiredService<IScreen>();
+        return screen;
     }
 }

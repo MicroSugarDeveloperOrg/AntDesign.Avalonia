@@ -23,10 +23,8 @@ public partial class App : Application
     public override void RegisterServices()
     {
         base.RegisterServices();
-        AvaloniaLocator.CurrentMutable.BindToConstant<IFontManagerImpl, ToolkitFontManagerImpl>();
-        _container.AddSingleton<IViewLocator, RoutingViewLocator>();
-        _container.AddSingleton<MainWindow>();
-        _container.AddViewWithViewModelSingleton<MainView, MainViewModel>();
+        RegisterInternalServices();
+        RegisterViewViewModels();
     }
 
     public override void OnFrameworkInitializationCompleted()
@@ -47,5 +45,24 @@ public partial class App : Application
         }
 
         base.OnFrameworkInitializationCompleted();
+    }
+
+    bool RegisterInternalServices()
+    {
+        AvaloniaLocator.CurrentMutable.BindToConstant<IFontManagerImpl, ToolkitFontManagerImpl>();
+        return true;
+    }
+
+    bool RegisterViewViewModels()
+    {
+        _container.AddSingleton<IViewLocator, RoutingViewLocator>();
+        _container.AddSingleton<MainWindow>();
+        _container.AddSingleton<MainView>();
+        _container.AddSingleton<IScreen, MainViewModel>();
+
+        _container.AddScoped<OverviewView>();
+        _container.AddSingleton<OverviewViewModel>();
+
+        return true;
     }
 }
