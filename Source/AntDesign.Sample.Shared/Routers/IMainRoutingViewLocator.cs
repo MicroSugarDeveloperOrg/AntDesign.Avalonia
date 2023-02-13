@@ -5,6 +5,7 @@ namespace AntDesign.Sample.Routers;
 public interface IMainRoutingViewLocator : IRoutingViewLocator
 {
     //bool AddHandler<>
+    ObservableCollection<Router> Routers();
     bool AddRouter<TView, TViewModel>(string token = nameof(TView), Func<string>? routerNameCallBack = default) 
         where TView : IViewFor 
         where TViewModel : ViewModelRoutableBase;

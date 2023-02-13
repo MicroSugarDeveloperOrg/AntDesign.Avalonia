@@ -111,7 +111,7 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         var serviceProvider = _serviceCollection.BuildServiceProvider();
 
         IViewFor? view = default;
-        switch (typeof(T).Name)
+        switch (viewModel.GetType().Name)
         {
             case nameof(OverviewViewModel):
                 view = serviceProvider.GetService<OverviewView>();
@@ -124,5 +124,24 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
             view.ViewModel = viewModel;
 
         return view;
+    }
+
+    public ObservableCollection<Router> Routers()
+    {
+        var collection = new ObservableCollection<Router>();
+        foreach (var viewModel in _mapRoutingViewViewModels)
+        {
+            var pair = _mapRoutingTokenCallBack.FirstOrDefault(pair => pair.Key == viewModel.Key);
+            var func = pair.Value;
+            var router = new Router(viewModel.Key, func)
+            {
+                ViewType = viewModel.Value.view,
+                ViewModelType = viewModel.Value.viewModel,
+            };
+
+            collection.Add(router);
+        }
+
+        return collection;
     }
 }

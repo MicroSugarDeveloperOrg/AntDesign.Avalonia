@@ -6,7 +6,7 @@ public partial class MainView : ReactiveUserControl<MainViewModel>
 {
     public MainView()
     {
-        InitializeComponent(); 
+        InitializeComponent();
     }
 
 }

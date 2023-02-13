@@ -61,7 +61,7 @@ public partial class App : Application
         var routingViewLocator = new MainRoutingViewLocator(_container);
         _container.AddSingleton<IMainRoutingViewLocator>(routingViewLocator);
 
-        routingViewLocator.AddRouter<OverviewView, OverviewViewModel>();
+        routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack:()=> "‘§¿¿");
        
 
         return true;

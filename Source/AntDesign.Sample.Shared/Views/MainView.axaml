@@ -5,6 +5,7 @@
              xmlns:rxui="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI"
 			 xmlns:assists="using:AntDesign.Sample.Assists"
 			 xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
+			 xmlns:routers="using:AntDesign.Sample.Routers"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
 			 >
@@ -13,7 +14,13 @@
 	</Design.DataContext>
 	
 	<Grid ColumnDefinitions="Auto,*">
-		<ListBox Grid.Column="0" Width="180" BorderThickness="0" Background="Red"/>
+		<ListBox Grid.Column="0" Width="180" BorderThickness="1" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
+			<ListBox.DataTemplates>
+				<DataTemplate DataType="{x:Type routers:Router}">
+					<TextBlock Text="{Binding LocalizedString.Localized}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</DataTemplate>
+			</ListBox.DataTemplates>
+		</ListBox>
 		<rxui:RoutedViewHost Grid.Column="1" Router="{Binding Router}" assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}" >
 			<rxui:RoutedViewHost.DefaultContent>
 				<TextBlock Text="Loading..."
