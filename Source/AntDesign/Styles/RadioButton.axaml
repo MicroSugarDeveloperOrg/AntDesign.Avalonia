@@ -19,8 +19,8 @@
 		<Setter Property="Background" Value="{DynamicResource RadioButtonBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource RadioButtonForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource RadioButtonBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
-		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPointerOverDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonPointerOverDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedFullBackground}" />
@@ -49,7 +49,7 @@
 								     Height="20"
 									 Opacity="0"
 								     Fill="Transparent"
-								     Stroke="{TemplateBinding assists:ButtonAssists.RippleColor, Converter={StaticResource ToBrushConverter}}"
+								     Stroke="{TemplateBinding assists:ButtonAssists.RippleColor, Converter={StaticResource ColorToBrushConverter}}"
 								     StrokeThickness="{DynamicResource RadioButtonStrokeThickness}"
 								     UseLayoutRounding="False"
 									 RenderTransform="none">
@@ -103,10 +103,10 @@
 		<!--  PointerOver State  -->
 		<Style Selector="^:pointerover">
 			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}"/>
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}"/>
 			</Style>
 			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
-				<Setter Property="Stroke" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
+				<Setter Property="Stroke" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
 			</Style>
 		</Style>
 
@@ -158,9 +158,9 @@
 		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
-		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverBackground" Value="Transparent" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPointerOverDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonPointerOverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="Transparent" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="Transparent" />
@@ -199,9 +199,9 @@
 
 		<!--  PointerOver State  -->
 		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
 		</Style>
 
 		<!--  Pressed State  -->
@@ -262,9 +262,9 @@
 		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
-		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource ButtonDefaultBackground }" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPointerOverDefaultForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonPointerOverDefaultBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource ButtonDefaultBackground }" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonFullForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush }" />
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedFullBackground}" />
@@ -303,9 +303,9 @@
 
 		<!--  PointerOver State  -->
 		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
 		</Style>
 
 		<!--  Pressed State  -->

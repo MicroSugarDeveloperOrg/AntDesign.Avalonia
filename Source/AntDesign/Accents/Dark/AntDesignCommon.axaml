@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<!--Global-->
+	<Color x:Key="AntDesignBackgroundColor">#FFFFFF</Color>
+	<Color x:Key="AntDesignForegroundColor">#000000</Color>
+	<Color x:Key="AntDesignAssistForegroundColor">#FFFFFF</Color>
+
+	<Color x:Key="AntDesignPrimaryColor">#FF1677FF</Color>
+	<Color x:Key="AntDesignSecondlyColor">#FF4096FF</Color>
+	<Color x:Key="AntDesignThirdlyColor">#FF0958D9</Color>
+
+	<StaticResource x:Key="AntDesignPrimaryForegroundColor" ResourceKey="AntDesignForegroundColor"/>
+	<StaticResource x:Key="AntDesignSecondlyForegroundColor" ResourceKey="AntDesignSecondlyColor"/>
+	<StaticResource x:Key="AntDesignThirdlyForegroundColor" ResourceKey="AntDesignThirdlyColor"/>
+
+	<StaticResource x:Key="AntDesignPrimaryBackgroundColor" ResourceKey="AntDesignPrimaryColor" />
+	<StaticResource x:Key="AntDesignSecondlyBackgroundColor" ResourceKey="AntDesignSecondlyColor" />
+	<StaticResource x:Key="AntDesignThirdlyBackgroundColor" ResourceKey="AntDesignThirdlyColor" />
+
+	<Color x:Key="AntDesignPrimaryBorderColor">#FFD9D9D9</Color>
+	<StaticResource x:Key="AntDesignSecondlyBorderColor" ResourceKey="AntDesignSecondlyColor"/>
+	<StaticResource x:Key="AntDesignThirdlyBorderColor" ResourceKey="AntDesignThirdlyColor"/>
+
+	<Color x:Key="AntDesignDisableForegroundColor">#FF4096FF</Color>
+	<Color x:Key="AntDesignDisableBackgroundColor">#FFD9D9D9</Color>
+	<Color x:Key="AntDesignDisableBorderColor">#FF0958D9</Color>
+
+</ResourceDictionary>

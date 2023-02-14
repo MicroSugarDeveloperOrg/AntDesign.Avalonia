@@ -2,10 +2,11 @@
 
 public abstract class ViewModelRoutableBase<T> : ViewModelRoutableBase
 {
-    public ViewModelRoutableBase() : base(nameof(T))
+    public ViewModelRoutableBase() : base(typeof(T).FullName)
     {
-        
     }
+
+    public T? ViewModel {  get; set; }
 }
 
 public abstract class ViewModelRoutableBase : ViewModelBase, IRoutableViewModel

@@ -14,28 +14,34 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton">
-		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
-		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
-		<Setter Property="assists:ButtonAssists.HoverBackground" Value="{DynamicResource ButtonDefaultBackground}" />
-		<Setter Property="assists:ButtonAssists.HoverForeground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
-		<Setter Property="assists:ButtonAssists.HoverBorderBrush" Value="{DynamicResource ButtonHoverDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonDefaultBackground}" />
-		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
-		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
+		<Setter Property="Background" Value="{DynamicResource RepeatButtonBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource RepeatButtonForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource RepeatButtonPointerOverBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource RepeatButtonPointerOverForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource RepeatButtonPointerOverBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource RepeatButtonPressedBackground}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource RepeatButtonPressedForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource RepeatButtonPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.35"/>
-		<Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
-		<Setter Property="Padding" Value="{StaticResource ButtonPadding}" />
-		<Setter Property="FontWeight" Value="Normal" />
+		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{StaticResource OverlayPadding}" />
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="HorizontalAlignment" Value="Center" />
-		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="FontWeight" Value="Normal" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="RenderTransform" Value="none" />
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.9)"/>
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+			</Transitions>
+		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
@@ -56,17 +62,22 @@
 		</Setter>
 
 		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.HoverBorderBrush}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
 		</Style>
 
-		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+		<Style Selector="^:pressed">
+		<Style Selector="^">
+			<Setter Property="RenderTransform" Value="{TemplateBinding assists:ButtonAssists.PressedRenderTransform}"/>
+		</Style>
+		<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
 			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
 			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
 			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
 		</Style>
-
+		</Style>
+		
 		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
 			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />

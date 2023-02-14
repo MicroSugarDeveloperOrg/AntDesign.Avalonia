@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	
+	<SolidColorBrush x:Key="RepeatButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="RepeatButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonBorderBrush" Color="{StaticResource AntDesignAssistColor1}"/>
+
+	<SolidColorBrush x:Key="RepeatButtonPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="RepeatButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="RepeatButtonPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="RepeatButtonPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	
+</ResourceDictionary>

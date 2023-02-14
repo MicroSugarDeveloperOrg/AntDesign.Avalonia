@@ -1,5 +1,4 @@
 ﻿using AntDesign.Sample.ViewModels;
-using AntDesign.Sample.Views;
 
 namespace AntDesign.Sample.Routers;
 public class MainRoutingViewLocator : IMainRoutingViewLocator
@@ -30,16 +29,23 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         return _router;
     }
 
-    public bool AddRouter<TView, TViewModel>(string token = nameof(TViewModel), Func<string>? routerNameCallBack = default)
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Trimming", "IL2087:Target parameter argument does not satisfy 'DynamicallyAccessedMembersAttribute' in call to target method. The generic parameter of the source method or type does not have matching annotations.", Justification = "<Pending>")]
+    public bool AddRouter<TView, TViewModel>(string? token = default, Func<string>? routerNameCallBack = default)
         where TView : IViewFor
         where TViewModel : ViewModelRoutableBase
     {
-        _serviceCollection.AddScoped<OverviewView>();
-        _serviceCollection.AddSingleton<OverviewViewModel>();
+        var viewType = typeof(TView);
+        var viewModelType = typeof(TViewModel);
 
-        _mapViewModelViews.TryAdd(typeof(OverviewView), typeof(OverviewViewModel));
+        if (string.IsNullOrWhiteSpace(token))
+            token = viewModelType.Name;
+
+        _serviceCollection.AddScoped(viewType);
+        _serviceCollection.AddSingleton(viewModelType);
+
+        _mapViewModelViews.TryAdd(viewModelType, viewType);
         _mapRoutingTokenCallBack.TryAdd(token, routerNameCallBack);
-        _mapRoutingViewViewModels.TryAdd(token, (typeof(OverviewView), typeof(OverviewViewModel)));
+        _mapRoutingViewViewModels.TryAdd(token, (viewType, viewModelType));
 
         return true;
     }
@@ -109,20 +115,16 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
             return default;
 
         var serviceProvider = _serviceCollection.BuildServiceProvider();
+        var viewModelType = viewModel.GetType();
+        _mapViewModelViews.TryGetValue(viewModelType, out var viewType);
+        if (viewType is null)
+            return default;
 
-        IViewFor? view = default;
-        switch (viewModel.GetType().Name)
-        {
-            case nameof(OverviewViewModel):
-                view = serviceProvider.GetService<OverviewView>();
-                break;
-            default:
-                break;
-        }
+        var viewIn = serviceProvider.GetService(viewType);
+        if (viewIn is not IViewFor view)
+            return default;
 
-        if (view is not null)
-            view.ViewModel = viewModel;
-
+        view.ViewModel = viewModel;
         return view;
     }
 

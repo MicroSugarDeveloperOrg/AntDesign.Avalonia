@@ -1,12 +1,8 @@
-﻿using Avalonia.Data.Converters;
-using Avalonia.Media;
-using System.Globalization;
-
-namespace AntDesign.Converters;
+﻿namespace AntDesign.Converters;
 /// <summary>
 /// Converts the given value into an <see cref="IBrush"/> when a conversion is possible.
 /// </summary>
-public class ToBrushConverter : IValueConverter
+public class ColorToBrushConverter : IValueConverter
 {
     /// <inheritdoc/>
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
@@ -25,11 +21,7 @@ public class ToBrushConverter : IValueConverter
     }
 
     /// <inheritdoc/>
-    public object? ConvertBack(
-        object? value,
-        Type targetType,
-        object? parameter,
-        CultureInfo culture)
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         return AvaloniaProperty.UnsetValue;
     }

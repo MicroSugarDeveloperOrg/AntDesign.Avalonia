@@ -15,8 +15,8 @@
 		<!-- Reusing BorderBrush to define pressed background color, as it's not used otherwise -->
 		<Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="Foreground" Value="Black"/>
-		<Setter Property="assists:ButtonAssists.HoverForeground" Value="Black" />
-		<Setter Property="assists:ButtonAssists.HoverBackground" Value="#e6eaef" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="Black" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="#e6eaef" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="Black" />
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="#e8eef3" />
 		<Setter Property="Width" Value="45"/>
@@ -31,8 +31,8 @@
 		</Setter>
 
 		<Style Selector="^:pointerover /template/ ContentPresenter">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
 		</Style>
 
 		<Style Selector="^:pressed /template/ ContentPresenter">
@@ -77,8 +77,8 @@
 						</Viewbox>
 					</Button>
 					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_CloseButton}"
-							assists:ButtonAssists.HoverForeground="White"
-							assists:ButtonAssists.HoverBackground="#c42b1c"
+							assists:ButtonAssists.PointerOverForeground="White"
+							assists:ButtonAssists.PointerOverBackground="#c42b1c"
 							assists:ButtonAssists.PressedForeground="White"
 							assists:ButtonAssists.PressedBackground="#c74031"
 							Theme="{StaticResource AntDesignCaptionButton}">

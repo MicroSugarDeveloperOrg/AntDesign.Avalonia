@@ -1,7 +1,5 @@
-﻿using Avalonia.Controls.Templates;
-using Avalonia.Media;
+﻿namespace AntDesign.Assists;
 
-namespace AntDesign.Assists;
 public static class SeparatorAssists
 {
     //public static readonly AvaloniaProperty<IBrush?> ForegroundProperty = AvaloniaProperty.RegisterAttached<TextBox, IBrush?>("Foreground", typeof(TextBoxAssists));

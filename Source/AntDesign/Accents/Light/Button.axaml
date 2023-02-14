@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<SolidColorBrush x:Key="ButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource AntDesignAssistColor1}"/>
+
+	<SolidColorBrush x:Key="ButtonPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="ButtonPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ButtonPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="ButtonPrimaryBackground" Color="{StaticResource AntDesignPrimaryColor}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryForeground" Color="{StaticResource AntDesignAssistColor1}"/> 
+	<SolidColorBrush x:Key="ButtonPrimaryBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonPrimaryPointerOverBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryPointerOverForeground" Color="{StaticResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonPrimaryPressedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryPressedForeground" Color="{StaticResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonTextBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ButtonTextForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ButtonTextBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonTextPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="ButtonTextPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ButtonTextPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonTextPressedBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ButtonTextPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ButtonTextPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonLinkBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ButtonLinkForeground" Color="{StaticResource AntDesignPrimaryColor}"/>
+	<SolidColorBrush x:Key="ButtonLinkBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonLinkPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ButtonLinkPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ButtonLinkPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ButtonLinkPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ButtonLinkPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ButtonLinkPressedBorderBrush" Color="Transparent"/>
+
+</ResourceDictionary>

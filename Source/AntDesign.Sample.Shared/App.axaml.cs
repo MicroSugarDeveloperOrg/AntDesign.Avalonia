@@ -61,9 +61,9 @@ public partial class App : Application
         var routingViewLocator = new MainRoutingViewLocator(_container);
         _container.AddSingleton<IMainRoutingViewLocator>(routingViewLocator);
 
-        routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack:()=> "预览");
+        routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack:()=> "组件总览");
+        routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack:()=> "Button 按钮");
        
-
         return true;
     }
 

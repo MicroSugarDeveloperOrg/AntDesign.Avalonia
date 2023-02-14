@@ -1,44 +1,39 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+				    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-	<Styles.Resources>
-		<ResourceDictionary>
-			<ResourceDictionary.MergedDictionaries>
-				<MergeResourceInclude Source="avares://AntDesign/Styles/AutoCompleteBox.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/Button.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ButtonSpinner.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/CaptionButtons.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/CheckBox.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ContentControl.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/DataValidationErrors.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/DropDownButton.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/EmbeddableControlRoot.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/GridSplitter.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ItemsControl.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ListBox.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ListBoxItem.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/NotificationCard.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/OverlayPopupHost.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/PopupRoot.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/RadioButton.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/RepeatButton.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ScrollBar.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ScrollViewer.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/SelectableTextBlock.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/Separator.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/TitleBar.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/ToolTip.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/TransitioningContentControl.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/Window.axaml" />
-				<MergeResourceInclude Source="avares://AntDesign/Styles/WindowNotificationManager.axaml" />
-			</ResourceDictionary.MergedDictionaries>
-		</ResourceDictionary>
-	</Styles.Resources>
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="avares://AntDesign/Styles/AutoCompleteBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/Button.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ButtonSpinner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/CaptionButtons.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/CheckBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ContentControl.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/DataValidationErrors.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/DropDownButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/EmbeddableControlRoot.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/FocusAdorner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/GridSplitter.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ItemsControl.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ListBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ListBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/NotificationCard.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/OverlayPopupHost.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/PopupRoot.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/RadioButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/RepeatButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ScrollBar.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ScrollViewer.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/SelectableTextBlock.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/Separator.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TitleBar.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ToolTip.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TransitioningContentControl.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/UserControl.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/Window.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/WindowNotificationManager.axaml" />
+	</ResourceDictionary.MergedDictionaries>
 
-	<StyleInclude Source="avares://AntDesign/Styles/UserControl.axaml" />
-	<StyleInclude Source="avares://AntDesign/Styles/FocusAdorner.axaml" />
-
-</Styles>
+</ResourceDictionary>

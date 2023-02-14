@@ -1,7 +1,4 @@
-﻿using Avalonia;
-using Avalonia.Media;
-
-namespace AntDesign.Assists;
+﻿namespace AntDesign.Assists;
 
 public static class AutoCompleteBoxAssists
 {

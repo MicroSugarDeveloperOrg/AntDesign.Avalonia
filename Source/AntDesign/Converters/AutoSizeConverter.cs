@@ -1,7 +1,5 @@
-﻿using Avalonia.Data.Converters;
-using System.Globalization;
+﻿namespace AntDesign.Converters;
 
-namespace AntDesign.Converters;
 public class AutoSizeConverter : IMultiValueConverter
 {
     public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)

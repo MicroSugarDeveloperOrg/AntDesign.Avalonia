@@ -30,7 +30,7 @@ public class ToolkitFontManagerImpl : IFontManagerImpl
         _userFontFamilyName_RealFontFamilyNameMaps = new();
     }
 
-    const string _resourceType = "resm";
+    const string _resourceType = "avares";
     const string _fontFolderPrefixName = "Avalonia.Toolkit.Assets.Fonts";
     const string _assemblyName = $"{nameof(Avalonia)}.{nameof(Toolkit)}" ;
     const string _fontFamilyPrefixName = "AlibabaPuHuiTi";

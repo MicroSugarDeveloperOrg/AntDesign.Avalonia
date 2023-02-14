@@ -4,7 +4,8 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 {
     public OverviewViewModel(IServiceProvider serviceProvider)
     {
-        _serviceProvider = serviceProvider;
+        ViewModel = this;
+        _serviceProvider = serviceProvider; 
         TriggerClickCommand = ReactiveCommand.Create(() =>
         {
             IsTrigger = !IsTrigger;
@@ -22,8 +23,7 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
         });
     }
 
-    private readonly IServiceProvider _serviceProvider;
-
+    readonly IServiceProvider _serviceProvider;
 
     bool _IsTrigger = false;
     public bool IsTrigger
@@ -50,10 +50,4 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
     {
         base.Disposing();
     }
-
-    //protected override IScreen GetScreen()
-    //{
-    //    var screen = _serviceProvider.GetRequiredService<IScreen>();
-    //    return screen;
-    //}
 }
