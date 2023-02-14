@@ -1,7 +1,4 @@
-﻿using Avalonia.Data;
-using Avalonia.Media; 
-
-namespace AntDesign.Controls.Ripple;
+﻿namespace AntDesign.Controls.Ripple;
 
 public class RippleEffectx : Border
 {

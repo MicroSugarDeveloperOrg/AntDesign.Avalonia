@@ -1,11 +1,5 @@
-﻿using Avalonia.Animation;
-using Avalonia.Animation.Easings;
-using Avalonia.Collections;
-using Avalonia.Data;
-using Avalonia.Input;
-using Avalonia.Media;
+﻿namespace AntDesign.Controls.Ripple;
 
-namespace AntDesign.Controls.Ripple;
 public class RippleEffectZx : Border
 {
     public RippleEffectZx()

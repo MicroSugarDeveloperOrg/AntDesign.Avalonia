@@ -2,28 +2,24 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 	<!--Global-->
-	<Color x:Key="AntDesignBackgroundColor">#FFFFFF</Color>
-	<Color x:Key="AntDesignForegroundColor">#000000</Color>
-	<Color x:Key="AntDesignAssistForegroundColor">#FFFFFF</Color>
+	<Color x:Key="AntDesignBackgroundColor">#000000</Color>
+	<Color x:Key="AntDesignForegroundColor">#FFFFFF</Color>
 
 	<Color x:Key="AntDesignPrimaryColor">#FF1677FF</Color>
 	<Color x:Key="AntDesignSecondlyColor">#FF4096FF</Color>
 	<Color x:Key="AntDesignThirdlyColor">#FF0958D9</Color>
 
-	<StaticResource x:Key="AntDesignPrimaryForegroundColor" ResourceKey="AntDesignForegroundColor"/>
-	<StaticResource x:Key="AntDesignSecondlyForegroundColor" ResourceKey="AntDesignSecondlyColor"/>
-	<StaticResource x:Key="AntDesignThirdlyForegroundColor" ResourceKey="AntDesignThirdlyColor"/>
+	<Color x:Key="AntDesignAssistColor1">#000000</Color>
+	<Color x:Key="AntDesignAssistColor2">#F0F0F0</Color>
+	<Color x:Key="AntDesigndAssistColor3">#D9D9D9</Color>
 
-	<StaticResource x:Key="AntDesignPrimaryBackgroundColor" ResourceKey="AntDesignPrimaryColor" />
-	<StaticResource x:Key="AntDesignSecondlyBackgroundColor" ResourceKey="AntDesignSecondlyColor" />
-	<StaticResource x:Key="AntDesignThirdlyBackgroundColor" ResourceKey="AntDesignThirdlyColor" />
+	<!--Disable-->
+	<Color x:Key="DisableBackgroundColor">#FFB8B8B8</Color>
+	<Color x:Key="DisableForegroundColor">#FFC8C8C8</Color>
+	<Color x:Key="DisableBorderColor">#FFD9D9D9</Color>
 
-	<Color x:Key="AntDesignPrimaryBorderColor">#FFD9D9D9</Color>
-	<StaticResource x:Key="AntDesignSecondlyBorderColor" ResourceKey="AntDesignSecondlyColor"/>
-	<StaticResource x:Key="AntDesignThirdlyBorderColor" ResourceKey="AntDesignThirdlyColor"/>
-
-	<Color x:Key="AntDesignDisableForegroundColor">#FF4096FF</Color>
-	<Color x:Key="AntDesignDisableBackgroundColor">#FFD9D9D9</Color>
-	<Color x:Key="AntDesignDisableBorderColor">#FF0958D9</Color>
+	<SolidColorBrush x:Key="DisableBackground" Color="{StaticResource DisableBackgroundColor}"/>
+	<SolidColorBrush x:Key="DisableForeground" Color="{StaticResource DisableForegroundColor}"/>
+	<SolidColorBrush x:Key="DisableBorderBrush" Color="{StaticResource DisableBorderColor}"/>
 
 </ResourceDictionary>

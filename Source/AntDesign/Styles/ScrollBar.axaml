@@ -36,7 +36,7 @@
 		</Setter>
 
 		<Style Selector="^:pointerover /template/ Border">
-			<Setter Property="Background" Value="{DynamicResource ScrollBarThumbHoverBackground}" />
+			<Setter Property="Background" Value="{DynamicResource ScrollBarThumbPointerOverBackground}" />
 		</Style>
 		<Style Selector="^:pressed  /template/ Border">
 			<Setter Property="Background" Value="{DynamicResource ScrollBarThumbPressedBackground}" />
@@ -75,10 +75,10 @@
 		</Setter>
 
 		<Style Selector="^:pointerover">
-			<Setter Property="TextElement.Foreground" Value="{DynamicResource ScrollBarLineButtonHoverForeground}"/>
+			<Setter Property="TextElement.Foreground" Value="{DynamicResource ScrollBarLineButtonPointerOverForeground}"/>
 
 			<Style Selector="^ /template/ ContentPresenter" >
-				<Setter Property="Background" Value="{DynamicResource ScrollBarLineButtonHoverBackground}" />
+				<Setter Property="Background" Value="{DynamicResource ScrollBarLineButtonPointerOverBackground}" />
 			</Style>
 		</Style>
 

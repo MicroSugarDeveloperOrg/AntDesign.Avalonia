@@ -12,3 +12,4 @@ global using System.ComponentModel;
 global using System.Reactive;
 global using System.Reactive.Disposables;
 global using System.Runtime.CompilerServices;
+global using System.Diagnostics.CodeAnalysis;

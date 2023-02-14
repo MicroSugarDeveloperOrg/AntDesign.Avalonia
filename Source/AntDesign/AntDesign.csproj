@@ -14,8 +14,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<AvaloniaXaml Remove="Accents\Dark\RepeatButton.axaml" />
-		<AvaloniaXaml Remove="Accents\Light\RepeatButton.axaml" />
 		<AvaloniaXaml Remove="AntDesign.axaml" />
 	</ItemGroup>
 

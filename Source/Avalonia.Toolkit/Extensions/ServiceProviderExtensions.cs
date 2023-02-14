@@ -1,8 +1,8 @@
-﻿namespace AntDesign.Extensions;
+﻿namespace Avalonia.Toolkit.Extensions;
 
-public static class ServiceProviderExtensions
+internal static class ServiceProviderExtensions
 {
-    public static T? GetService<T>(this IServiceProvider serviceProvider)
+    public static T? GetService<T>([DisallowNull] this IServiceProvider serviceProvider)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
         var tObject = serviceProvider.GetService(typeof(T));
@@ -13,7 +13,7 @@ public static class ServiceProviderExtensions
         return default;
     }
 
-    public static T GetRequiredService<T>(this IServiceProvider serviceProvider)
+    public static T GetRequiredService<T>([DisallowNull] this IServiceProvider serviceProvider)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
         var tObject = serviceProvider.GetService(typeof(T));

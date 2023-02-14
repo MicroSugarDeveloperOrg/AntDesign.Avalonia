@@ -2,21 +2,21 @@
 
 public static class IServiceCollectionExtensions
 {
-    public static IServiceCollection AddViewWithViewModelSingleton<View, ViewModel>(this IServiceCollection contaniner)
+    public static IServiceCollection AddViewWithViewModelSingleton<View, ViewModel>([DisallowNull] this IServiceCollection container)
         where View : class where ViewModel : class, INotifyPropertyChanged
     {
-      return  contaniner.AddSingleton<View>().AddSingleton<ViewModel>();
+      return container.AddSingleton<View>().AddSingleton<ViewModel>();
     }
 
-    public static IServiceCollection AddViewWithViewModelScoped<View, ViewModel>(this IServiceCollection contaniner)
+    public static IServiceCollection AddViewWithViewModelScoped<View, ViewModel>([DisallowNull] this IServiceCollection container)
         where View : class where ViewModel : class, INotifyPropertyChanged
     {
-        return contaniner.AddScoped<View>().AddScoped<ViewModel>();
+        return container.AddScoped<View>().AddScoped<ViewModel>();
     }
 
-    public static IServiceCollection AddViewWithViewModelTransient<View, ViewModel>(this IServiceCollection contaniner)
+    public static IServiceCollection AddViewWithViewModelTransient<View, ViewModel>([DisallowNull]this IServiceCollection container)
         where View : class where ViewModel : class, INotifyPropertyChanged
     {
-        return contaniner.AddTransient<View>().AddTransient<ViewModel>();
+        return container.AddTransient<View>().AddTransient<ViewModel>();
     }
 }

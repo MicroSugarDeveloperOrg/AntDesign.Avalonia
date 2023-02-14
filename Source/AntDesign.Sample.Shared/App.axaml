@@ -2,8 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              x:Class="AntDesign.Sample.App"
 			 RequestedThemeVariant="Light">
-	<!--RequestedThemeVariant="Dark"-->
-
     <Application.Styles>
 		<AntDesign/>
     </Application.Styles>

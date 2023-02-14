@@ -88,7 +88,7 @@
 		</Setter>
 
 		<Style Selector="^:pointerover /template/ ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource TextControlButtonHoverBackground}" />
+			<Setter Property="Background" Value="{DynamicResource TextControlButtonPointerOverBackground}" />
 		</Style>
 
 		<Style Selector="^:pressed /template/ ContentPresenter">
@@ -120,7 +120,7 @@
 		</Setter>
 
 		<Style Selector="^:pointerover /template/ ContentPresenter">
-			<Setter Property="Foreground" Value="{DynamicResource TextControlButtonHoverBackground}" />
+			<Setter Property="Foreground" Value="{DynamicResource TextControlButtonPointerOverBackground}" />
 		</Style>
 
 		<Style Selector="^:pressed /template/ ContentPresenter">
@@ -138,8 +138,8 @@
 		<Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
 		<Setter Property="CaretBrush" Value="{DynamicResource TextControlCaretBrush}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-		<Setter Property="assists:TextBoxAssists.HoverBorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
-		<Setter Property="assists:TextBoxAssists.FocusBorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
+		<Setter Property="assists:TextBoxAssists.PointerOverBorderBrush" Value="{DynamicResource TextControlPointerOverBorderBrush}"/>
+		<Setter Property="assists:TextBoxAssists.FocusBorderBrush" Value="{DynamicResource TextControlPointerOverBorderBrush}"/>
 		<Setter Property="assists:TextBoxAssists.FloatingForeground" Value="{DynamicResource TextControlFloatingForeground}"/>
 		<Setter Property="assists:TextBoxAssists.RippleColor" Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:TextBoxAssists.RippleColorAlpha" Value="0.35"/>
@@ -260,7 +260,7 @@
 		<!-- PointerOver State-->
 		<Style Selector="^:pointerover">
 			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
-				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.HoverBorderBrush}"/>
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.PointerOverBorderBrush}"/>
 			</Style>
 		</Style>
 

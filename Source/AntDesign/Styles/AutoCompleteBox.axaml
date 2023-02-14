@@ -9,8 +9,8 @@
 		<Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="assists:AutoCompleteBoxAssists.HoverBorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.FocusBorderBrush" Value="{DynamicResource TextControlHoverBorderBrush}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PointerOverBorderBrush" Value="{DynamicResource TextControlPointerOverBorderBrush}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.FocusBorderBrush" Value="{DynamicResource TextControlPointerOverBorderBrush}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.UseFloatingWatermark" Value="False"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.FloatingForeground" Value="{DynamicResource TextControlFloatingForeground}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.RippleColor" Value="{DynamicResource RippleColor}"/>
@@ -42,7 +42,7 @@
 							 FontFamily="{TemplateBinding FontFamily}"
 							 FontWeight="{TemplateBinding FontWeight}"
 							 UseFloatingWatermark="{TemplateBinding assists:AutoCompleteBoxAssists.UseFloatingWatermark}"
-							 assists:TextBoxAssists.HoverBorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.HoverBorderBrush}"
+							 assists:TextBoxAssists.PointerOverBorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.PointerOverBorderBrush}"
 							 assists:TextBoxAssists.FocusBorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.FocusBorderBrush}"
 							 assists:TextBoxAssists.FloatingForeground="{TemplateBinding assists:AutoCompleteBoxAssists.FloatingForeground}"
 							 assists:TextBoxAssists.RippleColor="{TemplateBinding assists:AutoCompleteBoxAssists.RippleColor}"

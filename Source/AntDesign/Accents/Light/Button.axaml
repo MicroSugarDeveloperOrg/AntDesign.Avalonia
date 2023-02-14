@@ -3,7 +3,7 @@
 
 	<SolidColorBrush x:Key="ButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
 	<SolidColorBrush x:Key="ButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>

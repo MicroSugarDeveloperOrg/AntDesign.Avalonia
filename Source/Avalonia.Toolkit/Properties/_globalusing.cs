@@ -5,3 +5,4 @@ global using Avalonia.Skia;
 global using SkiaSharp;
 global using System.Collections.Concurrent;  
 global using System.Globalization;
+global using System.Diagnostics.CodeAnalysis;

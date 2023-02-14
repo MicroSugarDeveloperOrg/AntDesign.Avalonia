@@ -52,7 +52,7 @@
 
 		<!--  PointerOver State  -->
 		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource ListBoxItemHoverBackground}" />
+			<Setter Property="Background" Value="{DynamicResource ListBoxItemPointerOverBackground}" />
 		</Style>
 
 		<!--  Pressed State  -->

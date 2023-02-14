@@ -3,9 +3,9 @@
 					xmlns:helpers="using:AntDesign.Helpers">
 
 	<ControlTheme x:Key="{x:Type Window}" TargetType="Window">
-		<Setter Property="Background" Value="{DynamicResource Background}"/>
-		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Background}" />
-		<Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
+		<Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource WindowBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource WindowForeground}"/>
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="Template">
 			<ControlTemplate>

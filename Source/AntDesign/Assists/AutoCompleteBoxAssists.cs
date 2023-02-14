@@ -2,9 +2,9 @@
 
 public static class AutoCompleteBoxAssists
 {
-    public static readonly AvaloniaProperty<IBrush?> HoverBorderBrushProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, IBrush?>("HoverBorderBrush", typeof(AutoCompleteBoxAssists));
-    public static void SetHoverBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(HoverBorderBrushProperty, value);
-    public static IBrush? GetHoverBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(HoverBorderBrushProperty);
+    public static readonly AvaloniaProperty<IBrush?> PointerOverBorderBrushProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, IBrush?>("PointerOverBorderBrush", typeof(AutoCompleteBoxAssists));
+    public static void SetPointerOverBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverBorderBrushProperty, value);
+    public static IBrush? GetPointerOverBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PointerOverBorderBrushProperty);
 
     public static readonly AvaloniaProperty<IBrush?> FocusBorderBrushProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, IBrush?>("FocusBorderBrush", typeof(AutoCompleteBoxAssists));
     public static void SetFocusBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(FocusBorderBrushProperty, value);

@@ -1,9 +1,4 @@
-﻿using Avalonia.Data;
-using Avalonia.Input;
-using Avalonia.Media;
-using Avalonia.Threading;
-
-namespace AntDesign.Controls.Ripple;
+﻿namespace AntDesign.Controls.Ripple;
 public class RippleEffectAx : Border
 {
     public RippleEffectAx()
@@ -195,7 +190,7 @@ public class RippleEffectAx : Border
         if (!IsRipple)
             return false;
 
-         if (IsManualTrigger && !IsTrigger)
+        if (IsManualTrigger && !IsTrigger)
             return false;
 
         if (Volatile.Read(ref _isRippling))
@@ -259,7 +254,7 @@ public class RippleEffectAx : Border
                 spread = RippleFromScal;
 
             RenderTransform = new ScaleTransform(spread, spread);
-        }); 
+        });
     }
 
     Task InvokeEnd()

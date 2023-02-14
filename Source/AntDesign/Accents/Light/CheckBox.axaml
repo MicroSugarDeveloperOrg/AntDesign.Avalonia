@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<SolidColorBrush x:Key="CheckBoxBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="CheckBoxPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CheckBoxPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="CheckBoxPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="CheckBoxPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CheckBoxPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CheckBoxPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	
+	<SolidColorBrush x:Key="CheckBoxGlyphFill" Color="{StaticResource AntDesignAssistColor1}"/>
+
+	<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
+
+</ResourceDictionary>
