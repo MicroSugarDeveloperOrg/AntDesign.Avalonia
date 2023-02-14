@@ -1,6 +1,12 @@
 ﻿namespace AntDesign.Sample.Routers;
-public class LocalizedString : AvaloniaObject
+public class LocalizedString : INotifyPropertyChanged
 {
+    public LocalizedString(IRoutingViewLocatorManager locatorManager, Func<string> generator)
+        : this(generator)
+    {
+        locatorManager.PropertyChanged += (s, e) => RaiseLocalizedChanged();
+    }
+
     public LocalizedString(Func<string> generator)
     {
         _generator = generator;
@@ -8,11 +14,11 @@ public class LocalizedString : AvaloniaObject
 
     readonly Func<string> _generator;
 
-    public string  Localized => _generator();
+    public event PropertyChangedEventHandler? PropertyChanged;
 
+    public string Localized => _generator();
 
-    public static implicit operator LocalizedString(Func<string> generator)
-    {
-        return new LocalizedString(generator);
-    }
+    public static implicit operator LocalizedString(Func<string> generator) => new LocalizedString(generator);
+
+    public void RaiseLocalizedChanged() => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Localized)));
 }
