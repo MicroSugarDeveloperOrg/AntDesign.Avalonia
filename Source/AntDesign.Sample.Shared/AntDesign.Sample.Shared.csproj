@@ -23,6 +23,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\AntDesign\AntDesign.csproj" />
+	  <ProjectReference Include="..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	  <ProjectReference Include="..\Avalonia.Toolkit\Avalonia.Toolkit.csproj" />
 	</ItemGroup>
 

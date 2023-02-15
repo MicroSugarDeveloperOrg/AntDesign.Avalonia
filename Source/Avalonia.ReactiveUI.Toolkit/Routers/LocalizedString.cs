@@ -1,4 +1,4 @@
-﻿namespace AntDesign.Sample.Routers;
+﻿namespace Avalonia.ReactiveUI.Toolkit.Routers;
 public class LocalizedString : INotifyPropertyChanged
 {
     public LocalizedString(IRoutingViewLocatorManager locatorManager, Func<string> generator)

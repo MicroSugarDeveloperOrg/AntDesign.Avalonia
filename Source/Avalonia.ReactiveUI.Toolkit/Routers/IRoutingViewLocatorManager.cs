@@ -1,6 +1,5 @@
-﻿using System.Globalization;
+﻿namespace Avalonia.ReactiveUI.Toolkit.Routers;
 
-namespace AntDesign.Sample.Routers;
 public interface IRoutingViewLocatorManager : INotifyPropertyChanged
 {
     CultureInfo CurrentCulture { get; set; }

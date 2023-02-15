@@ -1,29 +1,8 @@
-﻿namespace AntDesign.Sample.ViewModels;
+﻿namespace Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
 
-public abstract class ViewModelBase : ReactiveObject, IActivatableViewModel
+public class ReactiveObject<T> : ReactiveObject
 {
-    public ViewModelBase()
-    {
-        Activator = new();
-        this.WhenActivated(disposables =>
-        {
-            Activating();
-            Disposable.Create(() => Disposing()).DisposeWith(disposables);
-        });
-    }
-
-    public ViewModelActivator Activator { get; }
-
-
-    protected virtual void Activating()
-    {
-
-    }
-
-    protected virtual void Disposing()
-    {
-
-    }
+    public T? TObject { get; protected set; }
 
     public TRet SetProperty<TRet>(ref TRet backingField, TRet newValue, [CallerMemberName] string? propertyName = null) => this.RaiseAndSetIfChanged(ref backingField, newValue, propertyName);
 
@@ -57,5 +36,4 @@ public abstract class ViewModelBase : ReactiveObject, IActivatableViewModel
         this.PropertyChanged -= Invoked;
         return ret;
     }
-
 }

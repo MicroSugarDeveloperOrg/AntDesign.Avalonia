@@ -1,4 +1,4 @@
 ﻿namespace AntDesign.Sample.Routers;
-public class RouterChangedEventArgs
+internal class RouterChangedEventArgs
 {
 }
