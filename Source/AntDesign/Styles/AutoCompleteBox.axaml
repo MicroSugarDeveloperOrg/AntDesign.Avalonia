@@ -1,29 +1,30 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers" 
-					xmlns:assists="using:AntDesign.Assists">
+					xmlns:assists="using:AntDesign.Assists"
+					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type AutoCompleteBox}" TargetType="AutoCompleteBox">
 		<Setter Property="VerticalAlignment" Value="Top" />
-		<Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-		<Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="assists:AutoCompleteBoxAssists.PointerOverBorderBrush" Value="{DynamicResource TextControlPointerOverBorderBrush}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.FocusBorderBrush" Value="{DynamicResource TextControlPointerOverBorderBrush}"/>
+		<Setter Property="Foreground" Value="{DynamicResource AutoCompleteBoxBackground}" />
+		<Setter Property="Background" Value="{DynamicResource AutoCompleteBoxBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource AutoCompleteBoxBorderBrush}" />
+		<Setter Property="assists:AutoCompleteBoxAssists.PointerOverBorderBrush" Value="{DynamicResource AutoCompleteBoxPointerOverBorderBrush}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.FocusBorderBrush" Value="{DynamicResource AutoCompleteBoxFocusBorderBrush}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.UseFloatingWatermark" Value="False"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.FloatingForeground" Value="{DynamicResource TextControlFloatingForeground}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.FloatingForeground" Value="{DynamicResource AutoCompleteBoxFloatingForeground}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.RippleColor" Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.RippleColorAlpha" Value="0.35"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupBackground" Value="{DynamicResource AutoCompletePopupBackground}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupBoderBrush" Value="{DynamicResource AutoCompletePopupBorderBrush}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.RippleColorAlpha" Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupBackground" Value="{DynamicResource AutoCompleteBoxPopupBackground}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupBoderBrush" Value="{DynamicResource AutoCompleteBoxPopupBorderBrush}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupMargin" Value="{DynamicResource AutoCompleteBoxPopupMargin}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource AutoCompleteBoxPopupCornerRadius}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBoderThickness" Value="0"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupMargin" Value="{DynamicResource AutoCompletePopupMargin}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource AutoCompletePopupCornerRadius}"/>
+		<Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteBoxPopupMaxHeight}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />	
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="Padding" Value="{DynamicResource Padding}" />	
-		<Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompletePopupMaxHeight}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -49,11 +50,18 @@
 							 assists:TextBoxAssists.RippleColorAlpha="{TemplateBinding assists:AutoCompleteBoxAssists.RippleColorAlpha}"
 							 DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}" />
 					<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
-						   WindowManagerAddShadowHint="False"
-						   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+						   WindowManagerAddShadowHint="False" 
 						   MaxHeight="{TemplateBinding MaxDropDownHeight}" 
 						   IsLightDismissEnabled="True"
 						   PlacementTarget="{TemplateBinding}">
+						<!--MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"-->
+						<Popup.MinWidth>
+							<MultiBinding Converter="{StaticResource PopupSizeConverter}">
+								<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width"/>
+								<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:AutoCompleteBoxAssists.PopupMargin)"/>
+							</MultiBinding>
+						</Popup.MinWidth>
+						
 						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
 								Padding="{DynamicResource AutoCompletePopupPadding}"
 								Margin="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin}"

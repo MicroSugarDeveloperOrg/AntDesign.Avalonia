@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:ripple="using:AntDesign.Controls.Ripple"
 					xmlns:helpers="using:AntDesign.Helpers"
-					xmlns:assists="using:AntDesign.Assists">
+					xmlns:assists="using:AntDesign.Assists"
+					x:CompileBindings="True">
 
 	<Design.PreviewWith>
 		<Border Padding="20">
@@ -14,22 +15,23 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type DropDownButton}" TargetType="DropDownButton">
-		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
-		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
-		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource ButtonDefaultBackground}" />
-		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPointerOverDefaultForeground}" />
-		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonPointerOverDefaultBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonDefaultBackground}" />
-		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
-		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedDefaultBorderBrush}" />
+		<Setter Property="Background" Value="{DynamicResource DropDownButtonBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource DropDownButtonForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource DropDownButtonBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource DropDownButtonPointerOverBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource DropDownButtonPointerOverForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource DropDownButtonPointerOverBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource DropDownButtonPressedBackground}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DropDownButtonPressedForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DropDownButtonPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.35"/>
-		<Setter Property="Padding" Value="{StaticResource ButtonPadding}" />
-		<Setter Property="HorizontalAlignment" Value="Center" />
-		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="False"/>

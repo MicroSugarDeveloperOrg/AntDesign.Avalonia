@@ -1,9 +1,13 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
 
 	<!--Global-->
-	<Color x:Key="AntDesignBackgroundColor">#000000</Color>	
+	<Color x:Key="AntDesignBackgroundColor">#000000</Color>
+	<SolidColorBrush x:Key="AntDesignBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	
 	<Color x:Key="AntDesignForegroundColor">#FFFFFF</Color>
+	<SolidColorBrush x:Key="AntDesignForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 
 	<Color x:Key="AntDesignPrimaryColor">#FF1677FF</Color>
 	<Color x:Key="AntDesignSecondlyColor">#FF4096FF</Color>

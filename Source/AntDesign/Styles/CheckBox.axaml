@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:assists="using:AntDesign.Assists"
-					xmlns:ripple="using:AntDesign.Controls.Ripple">
+					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					x:CompileBindings="True">
 	<Design.PreviewWith>
 		<Border Padding="20">
 			<StackPanel Spacing="20">
@@ -111,7 +112,6 @@
 		</Setter>
 
 		<!-- Unchecked PointerOver State -->
-
 		<Style Selector="^:not(:checked)">
 			<Style Selector="^:pointerover">
 				<Style Selector="^ /template/ Border#NormalRectangle">

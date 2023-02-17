@@ -1,7 +1,23 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
- 
-	 
-	
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="AutoCompleteBoxBackground" Color="{StaticResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxFocusBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxFloatingForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxPopupBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<Thickness x:Key="AutoCompleteBoxPopupMargin">5</Thickness>
+	<CornerRadius x:Key="AutoCompleteBoxPopupCornerRadius">10</CornerRadius>
+
+	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">375</x:Double>
 	
 </ResourceDictionary>

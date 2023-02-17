@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<x:Double x:Key="ListBoxMinHeight">36</x:Double>
+	<Thickness x:Key="ListBoxItemBorderThickness">0</Thickness>
+	
+	<SolidColorBrush x:Key="ListBoxItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ListBoxItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemBorderBrush" Color="Transparent"/>
+ 
+</ResourceDictionary>

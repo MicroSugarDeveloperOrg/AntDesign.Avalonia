@@ -5,8 +5,8 @@
 	<Styles.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.ThemeDictionaries>
-				<ResourceInclude x:Key="Light" Source="avares://AntDesign/Accents/Light/AntDesignLight.axaml"/>
-				<ResourceInclude x:Key="Dark" Source="avares://AntDesign/Accents/Dark/AntDesignDark.axaml"/>
+				<ResourceInclude x:Key="Light" Source="avares://AntDesign/Accents/Light/_AntDesignLight.axaml"/>
+				<ResourceInclude x:Key="Dark" Source="avares://AntDesign/Accents/Dark/_AntDesignDark.axaml"/>
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignBase.axaml" />

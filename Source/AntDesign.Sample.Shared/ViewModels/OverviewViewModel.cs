@@ -31,9 +31,9 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
     public bool IsTrigger
     {
         get => _IsTrigger;
-        set => SetProperty(ref _IsTrigger, value, o =>
+        set => SetProperty(ref _IsTrigger, value, (o , n) =>
         {
-
+            return true;
         }, (o, n) =>
         {
 

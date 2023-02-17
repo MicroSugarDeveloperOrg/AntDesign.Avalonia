@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="CaptionButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CaptionButtonForeground" Color="Black"/>
+	<SolidColorBrush x:Key="CaptionButtonBorderBrush" Color="Transparent"/>
+	
+	<SolidColorBrush x:Key="CaptionButtonPointerOverBackground" Color="#e9e9e9"/>
+	<SolidColorBrush x:Key="CaptionButtonPointerOverForeground" Color="Black"/>
+	<SolidColorBrush x:Key="CaptionButtonPointerOverBorderBrush" Color="Transparent"/>
+	
+	<SolidColorBrush x:Key="CaptionButtonPressedBackground" Color="#ededed"/>
+	<SolidColorBrush x:Key="CaptionButtonPressedForeground" Color="Black"/>
+	<SolidColorBrush x:Key="CaptionButtonPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="CaptionCloseButtonPointerOverBackground" Color="#c42b1c"/>
+	<SolidColorBrush x:Key="CaptionCloseButtonPointerOverForeground" Color="White"/> 
+
+	<SolidColorBrush x:Key="CaptionCloseButtonPressedBackground" Color="#c73c31"/>
+	<SolidColorBrush x:Key="CaptionCloseButtonPressedForeground" Color="White"/> 
+
+</ResourceDictionary>

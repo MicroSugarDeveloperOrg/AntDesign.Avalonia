@@ -1,6 +1,4 @@
-﻿using ReactiveUI;
-
-namespace Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
+﻿namespace Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
 
 public class ReactiveObjectBase : ReactiveObject
 {
@@ -41,6 +39,6 @@ public class ReactiveObjectBase : ReactiveObject
 
     //public void RaisePropertyChanged([CallerMemberName] string? propertyName = null)
     //{
-       
+
     //}
 }

@@ -2,15 +2,11 @@
 
 public class RippleEffect : Border
 {
-    public RippleEffect()
+    static RippleEffect()
     {
-        AddHandler(PointerPressedEvent, PointerPressedHandler);
-        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
-        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
-
         IsRippleProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
         {
-            
+
         });
 
         IsTriggerProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
@@ -33,7 +29,7 @@ public class RippleEffect : Border
             s._isForever = e.NewValue.Value;
         });
 
-        ForeverTriggerSpaceProperty.Changed.AddClassHandler<RippleEffect, int>((s,e) =>
+        ForeverTriggerSpaceProperty.Changed.AddClassHandler<RippleEffect, int>((s, e) =>
         {
             if (s is null)
                 return;
@@ -45,6 +41,13 @@ public class RippleEffect : Border
         {
 
         });
+    }
+
+    public RippleEffect()
+    {
+        AddHandler(PointerPressedEvent, PointerPressedHandler);
+        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
+        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
     }
 
     double _realSpeedRate = 30d;

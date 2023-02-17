@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="DropDownButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="DropDownButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="DropDownButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="DropDownButtonPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="DropDownButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="DropDownButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="DropDownButtonPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="DropDownButtonPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="DropDownButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	
+</ResourceDictionary>

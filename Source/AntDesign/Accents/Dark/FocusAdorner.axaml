@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+	
+	<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">1</Thickness>
+	<Thickness x:Key="FocusAdornerFocusVisualMargin">3</Thickness>
+
+	<Thickness x:Key="FocusAdornerFocusVisualSecondaryThickness">1</Thickness>
+
+	<SolidColorBrush x:Key="FocusAdornerFocusVisualPrimaryBrush" Color="Gray"/>
+	<SolidColorBrush x:Key="FocusAdornerFocusVisualSecondaryBrush" Color="Gray"/>
+	
+</ResourceDictionary>

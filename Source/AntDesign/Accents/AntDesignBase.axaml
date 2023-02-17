@@ -8,6 +8,7 @@
 	<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
 	<antConverters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
 	<antConverters:AutoSizeConverter x:Key="AutoSizeConverter"/>
+	<antConverters:PopupSizeConverter x:Key="PopupSizeConverter"/>
 
 	<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
 	<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
@@ -74,5 +75,11 @@
 	<TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
 	<TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
  
-
+	<!--Icon-->
+	<x:Double x:Key="IconHeight">20</x:Double>
+	<x:Double x:Key="IconWidth">20</x:Double>
+	
+	<!--WindowNotificationManager-->
+	
+	
 </ResourceDictionary>

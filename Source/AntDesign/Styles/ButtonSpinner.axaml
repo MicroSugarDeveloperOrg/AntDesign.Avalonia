@@ -42,7 +42,7 @@
 	<StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M0,9 L10,0 20,9 19,10 10,2 1,10 z</StreamGeometry>
 	<StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,1 L10,10 20,1 19,0 10,8 1,0 z</StreamGeometry>
 
-	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButton" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
+	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButtonStyle" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
 		<Setter Property="MinWidth" Value="34" />
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="CornerRadius" Value="0" />
@@ -89,7 +89,7 @@
 										Orientation="Horizontal"
 										IsVisible="{TemplateBinding ShowButtonSpinner}">
 								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
-											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButton}"
+											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
 											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
 											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}" 
 											  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"
@@ -108,7 +108,7 @@
 								</RepeatButton>
 
 								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
-											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButton}"
+											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
 											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
 											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}" 
 											  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"

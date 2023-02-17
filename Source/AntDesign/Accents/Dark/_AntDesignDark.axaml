@@ -1,12 +1,18 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/AntDesignCommon.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/AutoCompleteBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Button.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ButtonSpinner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/CaptionButtons.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/CheckBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/DropDownButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/EmbeddableControlRoot.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/FocusAdorner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/GridSplitter.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ListBoxItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/RepeatButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Window.axaml" />
 	</ResourceDictionary.MergedDictionaries>

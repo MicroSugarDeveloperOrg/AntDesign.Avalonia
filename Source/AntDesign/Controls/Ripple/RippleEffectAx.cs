@@ -1,12 +1,8 @@
 ﻿namespace AntDesign.Controls.Ripple;
 public class RippleEffectAx : Border
 {
-    public RippleEffectAx()
+    static RippleEffectAx()
     {
-        AddHandler(PointerPressedEvent, PointerPressedHandler);
-        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
-        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
-
         IsTriggerProperty.Changed.AddClassHandler<RippleEffectAx, bool>((s, e) =>
         {
             if (s is null)
@@ -34,6 +30,13 @@ public class RippleEffectAx : Border
 
             s._foreverTriggerSpace = e.NewValue.Value;
         });
+    }
+
+    public RippleEffectAx()
+    {
+        AddHandler(PointerPressedEvent, PointerPressedHandler);
+        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
+        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
 
         Background = Brushes.Transparent;
         BorderThickness = new Thickness(1);
