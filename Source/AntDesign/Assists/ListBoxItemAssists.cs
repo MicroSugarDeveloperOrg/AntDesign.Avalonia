@@ -40,4 +40,9 @@ public static class ListBoxItemAssists
     public static void SetSelectedBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(SelectedBorderBrushProperty, value);
     public static IBrush? GetSelectedBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedBorderBrushProperty);
 
+    public static readonly AvaloniaProperty<IBrush?> SelectedNoFocusForegroundProperty = AvaloniaProperty.RegisterAttached<ListBoxItem, IBrush?>("SelectedNoFocusForeground", typeof(ListBoxItemAssists));
+    public static void SetSelectedNoFocusForeground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(SelectedNoFocusForegroundProperty, value);
+    public static IBrush? GetSelectedNoFocusForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedNoFocusForegroundProperty);
+
+
 }

@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
 	<Design.PreviewWith>
 		<Border Padding="0">
@@ -22,9 +23,18 @@
 		<Setter Property="Background" Value="{DynamicResource ListBoxItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ListBoxItemForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ListBoxItemBorderBrush}" />
-		
+		<Setter Property="assists:ListBoxItemAssists.PointerOverBackground" Value="{DynamicResource ListBoxItemPointerOverBackground}" />
+		<Setter Property="assists:ListBoxItemAssists.PointerOverForeground" Value="{DynamicResource ListBoxItemPointerOverForeground}" />
+		<Setter Property="assists:ListBoxItemAssists.PointerOverBorderBrush" Value="{DynamicResource ListBoxItemPointerOverBorderBrush}" />
+		<Setter Property="assists:ListBoxItemAssists.PressedBackground" Value="{DynamicResource ListBoxItemPressedBackground}" />
+		<Setter Property="assists:ListBoxItemAssists.PressedForeground" Value="{DynamicResource ListBoxItemPressedForeground}" />
+		<Setter Property="assists:ListBoxItemAssists.PressedBorderBrush" Value="{DynamicResource ListBoxItemPressedBorderBrush}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedBackground" Value="{DynamicResource ListBoxItemSelectedBackground}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedForeground" Value="{DynamicResource ListBoxItemSelectedForeground}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedBorderBrush" Value="{DynamicResource ListBoxItemSelectedBorderBrush}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedNoFocusForeground" Value="{DynamicResource ListBoxItemSelectedNoFocusForeground}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource ListBoxItemBorderThickness}" />
-		<Setter Property="Margin" Value="0" />
+		<Setter Property="Margin" Value="{DynamicResource ListBoxItemMargin}" /> 
 		<Setter Property="CornerRadius" Value="{DynamicResource ListBoxItemCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource ListBoxItemPadding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -49,39 +59,44 @@
 			</ControlTemplate>
 		</Setter>
 
-		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
-		</Style>
-
 		<!--  PointerOver State  -->
 		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource ListBoxItemPointerOverBackground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverBackground}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverForeground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverBorderBrush}" />
 		</Style>
 
 		<!--  Pressed State  -->
 		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource ListBoxItemPressedBackground}" />
-			<Setter Property="Foreground" Value="{DynamicResource ListBoxItemPressedForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.PressedBackground}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.PressedForeground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.PressedBorderBrush}" />
 		</Style>
 
 		<!--  Selected State  -->
 		<Style Selector="^:selected">
-
 			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="Background" Value="{DynamicResource ListBoxItemPressedBackground}" />
-				<Setter Property="Foreground" Value="{DynamicResource ListBoxItemPressedForeground}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedBackground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedForeground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedBorderBrush}" />
 			</Style>
 
 			<!--  Selected Unfocused State  -->
 			<Style Selector="^:not(:focus) /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="Foreground" Value="{DynamicResource Foreground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedNoFocusForeground}" />
 			</Style>
 
 			<!--  Selected Pressed State  -->
 			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+				<Setter Property="BorderThickness" Value="{DynamicResource ListBoxItemSelectedPressedBorderThickness}" />
 			</Style>
 		</Style>
+
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			<Setter Property="BorderBrush" Value="Transparent" />
+		</Style>
+		
 	</ControlTheme>
 </ResourceDictionary>

@@ -14,14 +14,14 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
-		<Setter Property="Foreground" Value="{DynamicResource Foreground}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Background" Value="{DynamicResource ListBoxBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ListBoxForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ListBoxBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ListBoxBorderThickness}" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Name="border"

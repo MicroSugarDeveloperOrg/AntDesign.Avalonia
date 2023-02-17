@@ -12,6 +12,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/EmbeddableControlRoot.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/FocusAdorner.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/GridSplitter.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ListBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ListBoxItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/RepeatButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Window.axaml" />
