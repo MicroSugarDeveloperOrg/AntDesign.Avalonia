@@ -43,51 +43,65 @@
 		<Setter Property="VerticalContentAlignment" Value="Center" />	
 		<Setter Property="Template">
 			<ControlTemplate>
-				<StackPanel Orientation="Horizontal" Spacing="10">
-					<Border x:Name="PART_InnerBorder" 
-							Width="{DynamicResource ListBoxItemInnerBorderWidth}" 
-							Height="{DynamicResource ListBoxItemInnerBorderHeight}"
-							Background="{DynamicResource ListBoxItemInnerBorderBackground}"
-							BorderThickness="0" IsVisible="False"/>
-					<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-									  Background="{TemplateBinding Background}"
-									  BorderBrush="{TemplateBinding BorderBrush}"
-									  BorderThickness="{TemplateBinding BorderThickness}"
-									  CornerRadius="{TemplateBinding CornerRadius}"
-									  Content="{TemplateBinding Content}"
-									  ContentTemplate="{TemplateBinding ContentTemplate}"
-									  FontSize="{TemplateBinding FontSize}"
-									  FontWeight="{TemplateBinding FontWeight}"
-									  Margin="{TemplateBinding Margin}"
-									  Padding="{TemplateBinding Padding}"
-									  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-									  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
-				</StackPanel>
-
-
+				<Border x:Name="PART_Container" 
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Margin="{TemplateBinding Margin}"
+						Padding="{TemplateBinding Padding}">
+					<Grid ColumnDefinitions="3,10,*" >
+						<Border x:Name="PART_InnerBorder"
+								Grid.Column="0"
+								Width="{DynamicResource ListBoxItemInnerBorderWidth}"
+								Height="{DynamicResource ListBoxItemInnerBorderHeight}"
+								Background="{DynamicResource ListBoxItemInnerBorderBackground}"
+								BorderThickness="0"
+								IsVisible="False"/>
+						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+										  Grid.Column="2" 
+										  Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
+										  FontSize="{TemplateBinding FontSize}"
+										  FontWeight="{TemplateBinding FontWeight}" 
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+					</Grid>
+				</Border>
 			</ControlTemplate>
 		</Setter>
 
 		<!--  PointerOver State  -->
-		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverBackground}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverForeground}" />
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverBorderBrush}" />
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.PointerOverForeground}" />
+			</Style>
 		</Style>
 
 		<!--  Pressed State  -->
-		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.PressedBackground}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.PressedForeground}" />
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.PressedBorderBrush}" />
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.PressedForeground}" />
+			</Style>
 		</Style>
 
 		<!--  Selected State  -->
 		<Style Selector="^:selected">
-			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^ /template/ Border#PART_Container">
 				<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedBackground}" />
-				<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedForeground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedBorderBrush}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedForeground}" />
 			</Style>
 
 			<Style  Selector="^ /template/ Border#PART_InnerBorder">
@@ -100,15 +114,19 @@
 			</Style>
 
 			<!--  Selected Pressed State  -->
-			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^:pressed /template/ Border#PART_Container">
 				<Setter Property="BorderThickness" Value="{DynamicResource ListBoxItemSelectedPressedBorderThickness}" />
 			</Style>
 		</Style>
 
-		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
-			<Setter Property="BorderBrush" Value="Transparent" />
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
 		</Style>
 		
 	</ControlTheme>

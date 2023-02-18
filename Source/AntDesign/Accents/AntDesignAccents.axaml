@@ -39,6 +39,7 @@
 	<StaticResource x:Key="CheckBoxPadding" ResourceKey="OverlayPadding"/>
 	<StaticResource x:Key="CheckBoxCheckGlyphMargin" ResourceKey="OverlayPadding"/>
 
+	<x:Double x:Key="CheckBoxRippleDuration">70</x:Double>
 	<x:Double x:Key="CheckBoxRippleFromScal">1</x:Double>
 	<x:Double x:Key="CheckBoxRippleToScal">1.7</x:Double>
 
@@ -83,7 +84,7 @@
 	<StaticResource x:Key="ListBoxItemBorderThickness" ResourceKey="BorderThickness"/>
 	<StaticResource x:Key="ListBoxItemSelectedPressedBorderThickness" ResourceKey="OverlayBorderThickness" />
 
-	<x:Double x:Key="ListBoxItemInnerBorderWidth">5</x:Double>
+	<x:Double x:Key="ListBoxItemInnerBorderWidth">3</x:Double>
 	<x:Double x:Key="ListBoxItemInnerBorderHeight">15</x:Double>
 
 	<!-- NotificationCard -->

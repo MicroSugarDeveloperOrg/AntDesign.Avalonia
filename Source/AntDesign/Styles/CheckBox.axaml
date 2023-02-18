@@ -87,7 +87,7 @@
 								</Viewbox>
 							</Border>
 							<ripple:RippleEffectAx CornerRadius="{TemplateBinding CornerRadius}"
-							                       Duration="100"
+							                       Duration="{DynamicResource CheckBoxRippleDuration}"
 												   RippleFromScal="{DynamicResource CheckBoxRippleFromScal}"
 												   RippleToScal="{DynamicResource CheckBoxRippleToScal}"
 												   RippleColor="{TemplateBinding assists:CheckBoxAssists.RippleColor}"
