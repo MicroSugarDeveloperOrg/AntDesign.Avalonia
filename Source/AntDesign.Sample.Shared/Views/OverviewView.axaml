@@ -169,7 +169,7 @@
 
 		</Grid>
 
-		<StackPanel Grid.Column="2">
+		<StackPanel Grid.Column="2" Spacing="20">
 			<ThemeVariantScope  RequestedThemeVariant="Dark">
 				<Grid >
 					<ScrollViewer  >
@@ -190,7 +190,7 @@
 				</Grid>
 			</ThemeVariantScope>
 
-			<NotificationCard Content="1231231231312313"/>
+			<NotificationCard Content="1231231231312313" />
 		</StackPanel>
 
 

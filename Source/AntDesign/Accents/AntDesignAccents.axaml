@@ -94,7 +94,7 @@
 	<Thickness x:Key="NotificationCardMargin">5,5,5,10</Thickness>
 	<StaticResource x:Key="NotificationCardPadding" ResourceKey="Padding"/>
 	<StaticResource x:Key="NotificationCardCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="NotificationCardBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="NotificationCardBorderThickness" ResourceKey="OverlayBorderThickness"/>
 
 	<x:Double x:Key="NotificationCardIconWidth">25</x:Double>
 	<x:Double x:Key="NotificationCardIconHeight">25</x:Double>
