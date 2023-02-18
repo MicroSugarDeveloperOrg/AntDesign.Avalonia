@@ -35,7 +35,8 @@
 								   Height="{DynamicResource NotificationCardPanelSize}"
 								   DockPanel.Dock="Top"
 								   Background="{DynamicResource DefaultBrush}"/>
-							<StackPanel Spacing="20" Orientation="Horizontal" Margin="5,0,5,0" >
+							<StackPanel Spacing="20" Orientation="Horizontal" 
+										Margin="5,0,5,0" >
 								<PathIcon x:Name="PART_CardIcon"
 										  Width="{DynamicResource NotificationCardIconWidth}"
 										  Height="{DynamicResource NotificationCardIconHeight}"
