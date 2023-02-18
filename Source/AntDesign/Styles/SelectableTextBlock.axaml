@@ -1,5 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+	
 	<Design.PreviewWith>
 		<SelectableTextBlock Text="Preview" />
 	</Design.PreviewWith>
@@ -16,7 +18,7 @@
 		<Style Selector="^">
 			<Setter Property="HorizontalAlignment" Value="Center" />
 			<Setter Property="VerticalAlignment" Value="Center" />
-			<Setter Property="SelectionBrush" Value="{DynamicResource TextControlSelectionBackground}"/>
+			<Setter Property="SelectionBrush" Value="{DynamicResource SelectableTextBlockSelectionBackground}"/>
 		</Style>
 		<Style Selector="^[IsEnabled=True]">
 			<Setter Property="Cursor" Value="IBeam" />

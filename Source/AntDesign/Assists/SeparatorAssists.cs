@@ -2,13 +2,17 @@
 
 public static class SeparatorAssists
 {
-    //public static readonly AvaloniaProperty<IBrush?> ForegroundProperty = AvaloniaProperty.RegisterAttached<TextBox, IBrush?>("Foreground", typeof(TextBoxAssists));
-    //public static void SetForeground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(ForegroundProperty, value);
-    //public static IBrush? GetForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(ForegroundProperty);
+    //public static readonly AvaloniaProperty<IBrush?> ContentPaddingProperty = AvaloniaProperty.RegisterAttached<TextBox, IBrush?>("ContentPadding", typeof(TextBoxAssists));
+    //public static void SetContentPadding(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(ContentPaddingProperty, value);
+    //public static IBrush? GetContentPadding(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(ContentPaddingProperty);
 
-    public static readonly AvaloniaProperty<IBrush?> BackgroundProperty = AvaloniaProperty.RegisterAttached<Separator, IBrush?>("Background", typeof(SeparatorAssists));
-    public static void SetBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(BackgroundProperty, value);
-    public static IBrush? GetBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(BackgroundProperty);
+    public static readonly AvaloniaProperty<IBrush?> ContentBackgroundProperty = AvaloniaProperty.RegisterAttached<Separator, IBrush?>("ContentBackground", typeof(SeparatorAssists));
+    public static void SetContentBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(ContentBackgroundProperty, value);
+    public static IBrush? GetContentBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(ContentBackgroundProperty);
+
+    public static readonly AvaloniaProperty<Thickness> ContentPaddingProperty = AvaloniaProperty.RegisterAttached<TextBox, Thickness>("ContentPadding", typeof(SeparatorAssists));
+    public static void SetContentPadding(AvaloniaObject dependencyObject, Thickness value) => dependencyObject.SetValue(ContentPaddingProperty, value);
+    public static Thickness GetContentPadding(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Thickness>(ContentPaddingProperty);
 
     public static readonly AvaloniaProperty<object?> ContentProperty = AvaloniaProperty.RegisterAttached<Separator, object?>("Content", typeof(SeparatorAssists));
     public static void SetContent(AvaloniaObject dependencyObject, object? value) => dependencyObject.SetValue(ContentProperty, value);

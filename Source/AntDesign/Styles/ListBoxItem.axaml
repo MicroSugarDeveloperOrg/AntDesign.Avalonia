@@ -19,7 +19,7 @@
 	<ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="FontWeight" Value="Normal" />
-		<Setter Property="MinHeight" Value="{DynamicResource ListBoxMinHeight}" />
+		<Setter Property="MinHeight" Value="{DynamicResource ListBoxItemMinHeight}" />
 		<Setter Property="Background" Value="{DynamicResource ListBoxItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ListBoxItemForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ListBoxItemBorderBrush}" />
@@ -43,19 +43,28 @@
 		<Setter Property="VerticalContentAlignment" Value="Center" />	
 		<Setter Property="Template">
 			<ControlTemplate>
-				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-								  Background="{TemplateBinding Background}"
-								  BorderBrush="{TemplateBinding BorderBrush}"
-								  BorderThickness="{TemplateBinding BorderThickness}"
-								  CornerRadius="{TemplateBinding CornerRadius}"
-								  Content="{TemplateBinding Content}"
-								  ContentTemplate="{TemplateBinding ContentTemplate}"
-								  FontSize="{TemplateBinding FontSize}"
-								  FontWeight="{TemplateBinding FontWeight}"
-								  Margin="{TemplateBinding Margin}"
-								  Padding="{TemplateBinding Padding}"
-								  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-								  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<Border x:Name="PART_InnerBorder" 
+							Width="{DynamicResource ListBoxItemInnerBorderWidth}" 
+							Height="{DynamicResource ListBoxItemInnerBorderHeight}"
+							Background="{DynamicResource ListBoxItemInnerBorderBackground}"
+							BorderThickness="0" IsVisible="False"/>
+					<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Background="{TemplateBinding Background}"
+									  BorderBrush="{TemplateBinding BorderBrush}"
+									  BorderThickness="{TemplateBinding BorderThickness}"
+									  CornerRadius="{TemplateBinding CornerRadius}"
+									  Content="{TemplateBinding Content}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}"
+									  FontSize="{TemplateBinding FontSize}"
+									  FontWeight="{TemplateBinding FontWeight}"
+									  Margin="{TemplateBinding Margin}"
+									  Padding="{TemplateBinding Padding}"
+									  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+				</StackPanel>
+
+
 			</ControlTemplate>
 		</Setter>
 
@@ -79,6 +88,10 @@
 				<Setter Property="Background" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedBackground}" />
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedForeground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ListBoxItemAssists.SelectedBorderBrush}" />
+			</Style>
+
+			<Style  Selector="^ /template/ Border#PART_InnerBorder">
+				<Setter Property="IsVisible" Value="True" />
 			</Style>
 
 			<!--  Selected Unfocused State  -->

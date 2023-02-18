@@ -14,10 +14,5 @@
 
 	<SolidColorBrush x:Key="AutoCompleteBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="AutoCompleteBoxPopupBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
-
-	<Thickness x:Key="AutoCompleteBoxPopupMargin">5</Thickness>
-	<CornerRadius x:Key="AutoCompleteBoxPopupCornerRadius">10</CornerRadius>
-
-	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">375</x:Double>
 	
 </ResourceDictionary>

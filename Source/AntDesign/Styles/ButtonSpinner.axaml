@@ -39,9 +39,6 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M0,9 L10,0 20,9 19,10 10,2 1,10 z</StreamGeometry>
-	<StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,1 L10,10 20,1 19,0 10,8 1,0 z</StreamGeometry>
-
 	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButtonStyle" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
 		<Setter Property="MinWidth" Value="34" />
 		<Setter Property="BorderThickness" Value="0" />
@@ -66,9 +63,9 @@
 		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerButtonPressedBackground}"/>
 		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerButtonPressedForeground}"/>
 		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPressedBorderBrush}"/>
-		<Setter Property="Padding" Value="0" />
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ButtonSpinnerBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ButtonSpinnerCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource ButtonSpinnerPadding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -102,9 +99,9 @@
 											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource LeftThicknessFilterConverter}}"
 											  VerticalAlignment="Stretch"
 											  VerticalContentAlignment="Center">
-									<PathIcon Width="16"
-											  Height="8"
-											  Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}" />
+									<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
+											  Height="{DynamicResource ButtonSpinnerIconHeight}"
+											  Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}" />
 								</RepeatButton>
 
 								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
@@ -121,9 +118,9 @@
 											  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
 											  VerticalAlignment="Stretch"
 											  VerticalContentAlignment="Center">
-									<PathIcon Width="16"
-											  Height="8"
-											  Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
+									<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
+											  Height="{DynamicResource ButtonSpinnerIconHeight}"
+											  Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}" />
 								</RepeatButton>
 							</StackPanel>
 

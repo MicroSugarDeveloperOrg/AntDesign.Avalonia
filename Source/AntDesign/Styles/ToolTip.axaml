@@ -17,21 +17,15 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<StreamGeometry x:Key="TooltipArrowUpButton">M511.997952 268.025732 146.975708 755.974268l730.048584 0L511.997952 268.025732</StreamGeometry>
-	<StreamGeometry x:Key="TooltipArrowDownButton">M511.997952 755.974268l365.02634-487.950584L146.975708 268.023684 511.997952 755.974268</StreamGeometry>
-	<StreamGeometry x:Key="TooltipArrowLeftButton">M268.025732 511.997952l487.950584 365.02634L755.976316 146.975708 268.025732 511.997952</StreamGeometry>
-	<StreamGeometry x:Key="TooltipArrowRightButton">M755.974268 512 268.025732 146.975708l0 730.048584L755.974268 512</StreamGeometry>
-
-
 	<ControlTheme x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Foreground" Value="{DynamicResource ToolTipForeground}" />
 		<Setter Property="Background" Value="{DynamicResource ToolTipBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ToolTipBorderBrush}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource ToolTipBorderThickness}" />
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ToolTipCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource ToolTipPadding}" />
 		<Setter Property="MaxWidth" Value="{DynamicResource ToolTipContentMaxWidth}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Opacity" Value="0" />
 		<Setter Property="Transitions">
 			<Transitions>

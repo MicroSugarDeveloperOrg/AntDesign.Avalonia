@@ -26,9 +26,9 @@
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ButtonCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
@@ -110,7 +110,7 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPrimaryPressedBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPrimaryPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPrimaryPressedBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource PrimaryButtonBorderThickness}" />
 	</ControlTheme>
 
 	<ControlTheme x:Key="TextButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
@@ -123,7 +123,7 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonTextPressedBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonTextPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonTextPressedBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource TextButtonBorderThickness}" />
 	</ControlTheme>
 
 	<ControlTheme x:Key="LinkButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
@@ -136,7 +136,7 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonLinkPressedBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonLinkPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonLinkPressedBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource LinkButtonBorderThickness}" />
 	</ControlTheme>
 
 </ResourceDictionary>

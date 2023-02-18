@@ -101,11 +101,11 @@
 					<ToolTip.Tip>
 						<ItemsControl Items="{ReflectionBinding}" />
 					</ToolTip.Tip>
-					<Path Width="14"
-						  Height="14"
-						  Data="M14,7 A7,7 0 0,0 0,7 M0,7 A7,7 0 1,0 14,7 M7,3l0,5 M7,9l0,2"
+					<Path Width="{DynamicResource DataValidationErrorsIconWidth}"
+						  Height="{DynamicResource DataValidationErrorsIconHeight}"
+						  Data="{DynamicResource TooltipDataValidationErrorIcon}"
 						  Stroke="{DynamicResource ErrorBorderBrush}"
-						  StrokeThickness="2" />
+						  StrokeThickness="{DynamicResource DataValidationErrorsIconStrokeThickness}" />
 				</Panel>
 			</DataTemplate>
 		</Setter>

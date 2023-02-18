@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+	
+	<BoxShadows x:Key="NavigationCardShadow">0 6 8 0 #4FFFFFFF</BoxShadows>
+
+	<SolidColorBrush x:Key="NavigationCardBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="NavigationCardForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="NavigationCardBorderBrush" Color="Transparent"/>
+	 
+</ResourceDictionary>

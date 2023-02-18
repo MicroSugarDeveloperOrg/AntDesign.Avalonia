@@ -1,6 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-		x:Class="AntDesign.AntDesign">
+		x:Class="AntDesign.AntDesign"
+		x:CompileBindings="True">
 
 	<Styles.Resources>
 		<ResourceDictionary>
@@ -9,7 +10,9 @@
 				<ResourceInclude x:Key="Dark" Source="avares://AntDesign/Accents/Dark/_AntDesignDark.axaml"/>
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignAccents.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignBase.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignGeometry.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Styles/AntDesignControls.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>	

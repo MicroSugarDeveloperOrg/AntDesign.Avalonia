@@ -51,11 +51,6 @@
 	<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
 	<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
 
-	<!--Ripple-->
-	<x:Double x:Key="RippleOpacity">0.4</x:Double>
-	<Color x:Key="RippleColor">#9B40a9ff</Color>
-	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
-
 	<!--Danger-->
 	<Color x:Key="DangerColor">#ff4d4f</Color>
 	<Color x:Key="DangerPointerOverColor">#ff7875</Color>
@@ -71,15 +66,9 @@
 	<SolidColorBrush x:Key="ErrorBackground" Color="{DynamicResource ErrorColor}"/>
 	<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
 
-	<!-- ScrollBar animation -->
-	<TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
-	<TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
- 
-	<!--Icon-->
-	<x:Double x:Key="IconHeight">20</x:Double>
-	<x:Double x:Key="IconWidth">20</x:Double>
-	
-	<!--WindowNotificationManager-->
-	
+	<!--Ripple-->
+	<x:Double x:Key="RippleOpacity">0.4</x:Double>
+	<Color x:Key="RippleColor">#9B40a9ff</Color>
+	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
 	
 </ResourceDictionary>

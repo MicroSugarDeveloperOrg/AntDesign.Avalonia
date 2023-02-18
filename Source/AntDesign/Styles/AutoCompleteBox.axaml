@@ -5,7 +5,7 @@
 					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type AutoCompleteBox}" TargetType="AutoCompleteBox">
-		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Foreground" Value="{DynamicResource AutoCompleteBoxBackground}" />
 		<Setter Property="Background" Value="{DynamicResource AutoCompleteBoxBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource AutoCompleteBoxBorderBrush}" />
@@ -21,10 +21,11 @@
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource AutoCompleteBoxPopupCornerRadius}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBoderThickness" Value="0"/>
 		<Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteBoxPopupMaxHeight}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />	
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource AutoCompleteBoxBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource AutoCompleteBoxCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource AutoCompleteBoxPadding}" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>

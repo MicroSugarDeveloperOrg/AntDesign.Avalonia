@@ -2,13 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<x:Double x:Key="ListBoxMinHeight">36</x:Double>
-	<Thickness x:Key="ListBoxItemMargin">0</Thickness>
-	<StaticResource x:Key="ListBoxItemPadding" ResourceKey="Padding"/>
-	<StaticResource x:Key="ListBoxItemCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="ListBoxItemBorderThickness" ResourceKey="BorderThickness"/>
-	<StaticResource x:Key="ListBoxItemSelectedPressedBorderThickness" ResourceKey="OverlayBorderThickness" />
-
 	<SolidColorBrush x:Key="ListBoxItemBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ListBoxItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ListBoxItemBorderBrush" Color="Transparent"/>
@@ -26,5 +19,7 @@
 	<SolidColorBrush x:Key="ListBoxItemSelectedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
 	<SolidColorBrush x:Key="ListBoxItemSelectedNoFocusForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	
+	<SolidColorBrush x:Key="ListBoxItemInnerBorderBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
 
 </ResourceDictionary>

@@ -1,0 +1,175 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:converters="using:Avalonia.Controls.Converters"
+					xmlns:antConverters="using:AntDesign.Converters"
+					x:CompileBindings="True">
+	
+	<!-- AutoCompleteBox -->
+	<StaticResource x:Key="AutoCompleteBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="AutoCompleteBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="AutoCompleteBoxPadding" ResourceKey="OverlayPadding"/>
+	
+	<Thickness x:Key="AutoCompleteBoxPopupMargin">5</Thickness>
+	<CornerRadius x:Key="AutoCompleteBoxPopupCornerRadius">10</CornerRadius>
+	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">375</x:Double>
+
+	<!-- Button -->
+	<StaticResource x:Key="ButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="ButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ButtonPadding" ResourceKey="OverlayPadding"/>
+
+	<Thickness x:Key="PrimaryButtonBorderThickness">0</Thickness>
+	<Thickness x:Key="TextButtonBorderThickness">0</Thickness>
+	<Thickness x:Key="LinkButtonBorderThickness">0</Thickness>
+
+	<!-- ButtonSpinner -->
+	<StaticResource x:Key="ButtonSpinnerBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="ButtonSpinnerCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ButtonSpinnerPadding" ResourceKey="Padding"/>
+	<x:Double x:Key="ButtonSpinnerIconWidth">16</x:Double>
+	<x:Double x:Key="ButtonSpinnerIconHeight">8</x:Double>
+
+	<!--CaptionButtons-->
+	<x:Double x:Key="CaptionButtonWidth">45</x:Double>
+	<x:Double x:Key="CaptionButtonHeight">30</x:Double>
+	
+	<!--CheckBox-->
+	<StaticResource x:Key="CheckBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="CheckBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="CheckBoxPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="CheckBoxCheckGlyphMargin" ResourceKey="OverlayPadding"/>
+
+	<x:Double x:Key="CheckBoxRippleFromScal">1</x:Double>
+	<x:Double x:Key="CheckBoxRippleToScal">1.7</x:Double>
+
+	<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
+
+	<!--DataValidationErrors-->
+	<x:Double x:Key="DataValidationErrorsIconHeight">14</x:Double>
+	<x:Double x:Key="DataValidationErrorsIconWidth">14</x:Double>
+	<x:Double x:Key="DataValidationErrorsIconStrokeThickness">2</x:Double>
+
+	<!-- DropDownButton -->
+	<StaticResource x:Key="DropDownButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="DropDownButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="DropDownButtonPadding" ResourceKey="OverlayPadding"/>
+	
+	<x:Double x:Key="DropDownButtonIconHeight">12</x:Double>
+	<x:Double x:Key="DropDownButtonIconWidth">12</x:Double>
+
+	<!-- FocusAdorner -->
+	<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">1</Thickness>
+	<Thickness x:Key="FocusAdornerFocusVisualMargin">3</Thickness>
+
+	<Thickness x:Key="FocusAdornerFocusVisualSecondaryThickness">1</Thickness>
+
+	<!-- GridSplitter -->
+	<x:Double x:Key="GridSplitterMinWidth">6</x:Double>
+	<x:Double x:Key="GridSplitterMinHeight">6</x:Double>
+	
+	<!-- Label -->
+	<StaticResource x:Key="LabelPadding" ResourceKey="OverlayPadding"/>
+
+	<!-- ListBox -->
+	<StaticResource x:Key="ListBoxPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="ListBoxCornerRadius" ResourceKey="CornerRadius"/>
+	<StaticResource x:Key="ListBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
+
+	<!-- ListBoxItem -->
+	<x:Double x:Key="ListBoxItemMinHeight">36</x:Double>
+	<Thickness x:Key="ListBoxItemMargin">0</Thickness>
+	<StaticResource x:Key="ListBoxItemPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="ListBoxItemCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ListBoxItemBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="ListBoxItemSelectedPressedBorderThickness" ResourceKey="OverlayBorderThickness" />
+
+	<x:Double x:Key="ListBoxItemInnerBorderWidth">5</x:Double>
+	<x:Double x:Key="ListBoxItemInnerBorderHeight">15</x:Double>
+
+	<!-- NotificationCard -->
+	<x:Double x:Key="NotificationCardWidth">135</x:Double>
+	<x:Double x:Key="NotificationCardPanelSize">4</x:Double>
+	<x:Double x:Key="NotificationCardContentMinHeight">60</x:Double>
+	<Thickness x:Key="NotificationCardMargin">5,5,5,10</Thickness>
+	<StaticResource x:Key="NotificationCardPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="NotificationCardCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="NotificationCardBorderThickness" ResourceKey="BorderThickness"/>
+
+	<x:Double x:Key="NotificationCardIconWidth">25</x:Double>
+	<x:Double x:Key="NotificationCardIconHeight">25</x:Double>
+
+	<!-- PathIcon -->
+	<x:Double x:Key="IconHeight">20</x:Double>
+	<x:Double x:Key="IconWidth">20</x:Double>
+
+	<!-- RadioButton -->
+	<StaticResource x:Key="RadioButtonPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="RadioButtonCornerRadius" ResourceKey="CornerRadius"/>
+	<StaticResource x:Key="RadioButtonBorderThickness" ResourceKey="BorderThickness"/>
+
+	<x:Double x:Key="RadioButtonStrokeThickness">1</x:Double>
+	<x:Double x:Key="RadioButtonOuterEllipseWidth">20</x:Double>
+	<x:Double x:Key="RadioButtonOuterEllipseHeight">20</x:Double>
+
+	<x:Double x:Key="RadioButtonInnerEllipseWidth">10</x:Double>
+	<x:Double x:Key="RadioButtonInnerEllipseHeight">10</x:Double>
+
+	<StaticResource x:Key="RadioLikeButtonPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="RadioLikeButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="RadioLikeButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
+
+	<StaticResource x:Key="RadioLikePrimaryButtonBorderThickness" ResourceKey="BorderThickness"/>
+	
+	<!-- RepeatButton -->
+	<StaticResource x:Key="RepeatButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="RepeatButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="RepeatButtonPadding" ResourceKey="OverlayPadding"/>
+
+	<!-- ScrollBar -->
+	<x:Double x:Key="ScrollBarMinWidth">16</x:Double>
+	<x:Double x:Key="ScrollBarMinHeight">16</x:Double>
+
+	<x:Double x:Key="ScrollBarTrackStrokeThickness">0</x:Double>
+	
+	<x:Double x:Key="ScrollBarButtonArrowIconWidth">8</x:Double>
+	<x:Double x:Key="ScrollBarButtonArrowIconHeight">8</x:Double>
+	
+	<!-- ScrollBar animation -->
+	<TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
+	<TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
+
+	<!-- Separator -->
+	<StaticResource x:Key="SeparatorBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="SeparatorCornerRadius" ResourceKey="CornerRadius"/> 
+	
+	<x:Double x:Key="SeparatorHeight">1</x:Double>
+	<Thickness x:Key="SeparatorMargin">5,0,5,0</Thickness>
+	<Thickness x:Key="SeparatorContentPadding">8,0,8,0</Thickness>
+	
+	<!-- Tooltip -->
+	<StaticResource x:Key="ToolTipBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="ToolTipCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ToolTipPadding" ResourceKey="OverlayPadding"/>
+	<x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
+
+	<!-- TextBox -->
+	<StaticResource x:Key="TextBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="TextBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="TextBoxPadding" ResourceKey="OverlayPadding"/>
+
+	<x:Double x:Key="TextBoxMinWidth">100</x:Double>
+	<x:Double x:Key="TextBoxMinHeight">30</x:Double>
+
+	<x:Double x:Key="TextBoxButtonIconWidth">8</x:Double>
+	<x:Double x:Key="TextBoxButtonIconHeight">8</x:Double>
+	<Thickness x:Key="TextBoxButtonIconMargin">0,0,3,0</Thickness>
+	
+	<Thickness x:Key="TextBoxFloatingMargin">0,-23,0,0</Thickness>
+
+
+
+
+	<!--WindowNotificationManager-->
+	
+	
+</ResourceDictionary>

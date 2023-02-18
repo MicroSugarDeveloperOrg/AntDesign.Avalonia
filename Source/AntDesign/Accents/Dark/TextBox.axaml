@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="TextBoxBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TextBoxForeground" Color="#3e3e3e"/>
+	<SolidColorBrush x:Key="TextBoxCaretBrush" Color="Black"/>
+	<SolidColorBrush x:Key="TextBoxBorderBrush" Color="#d9d9d9"/>
+	<SolidColorBrush x:Key="TextBoxSelectionBackground" Color="#3390ff"/>
+	<SolidColorBrush x:Key="TextBoxSelectionForeground" Color="White"/>
+
+	<SolidColorBrush x:Key="TextBoxPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="TextBoxPointerFocusBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="TextBoxFloatingForeground" Color="#4096ff"/>
+
+	<SolidColorBrush x:Key="TextBoxButtonBackground" Color="#a6a6a6"/>
+	<SolidColorBrush x:Key="TextBoxButtonForeground" Color="{StaticResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="TextBoxButtonForeground1" Color="{StaticResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TextBoxButtonBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TextBoxButtonPointerOverBackground" Color="#8c8c8c"/>
+
+	<SolidColorBrush x:Key="TextBoxButtonPressedBackground" Color="#8c8c8c"/>
+
+</ResourceDictionary>

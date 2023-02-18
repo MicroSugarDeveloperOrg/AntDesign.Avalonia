@@ -98,21 +98,21 @@
 					<RadioButton Content="223"/>
 					<RadioButton Content="334" IsEnabled="False"/>
 
-					<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Width="120" Height="30" Content="123"/>
-					<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" IsEnabled="False" Width="120" Height="30" Content="123"/>
+					<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Width="120" Height="30" Content="123"/>
+					<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" IsEnabled="False" Width="120" Height="30" Content="123"/>
 
 					<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="left" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikeButtonTheme}" Classes="right" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="left" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="right" Width="120" Height="30" Content="123"/>
 					</StackPanel>
 
 					<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="left" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
-						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonTheme}" Classes="right" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="left" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
+						<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="right" Width="120" Height="30" Content="123"/>
 					</StackPanel>
 
 					<ListBox Width="150">

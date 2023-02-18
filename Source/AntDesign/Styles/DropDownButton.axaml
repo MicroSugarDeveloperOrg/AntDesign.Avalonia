@@ -26,9 +26,9 @@
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DropDownButtonPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource DropDownButtonBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource DropDownButtonCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource DropDownButtonPadding}" />
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
@@ -63,8 +63,8 @@
 
 							<PathIcon Name="DropDownGlyph"
 									  Grid.Column="1"
-									  Width="12"
-									  Height="12"
+									  Width="{DynamicResource DropDownButtonIconWidth}"
+									  Height="{DynamicResource DropDownButtonIconHeight}"
 									  Margin="0,0,10,0"
 									  HorizontalAlignment="Right"
 									  VerticalAlignment="Center"
@@ -78,7 +78,7 @@
 		</Setter>
 
 		<Style Selector="^ /template/ PathIcon#DropDownGlyph">
-			<Setter Property="Data" Value="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z" />
+			<Setter Property="Data" Value="{DynamicResource DropDownButtonIcon}" />
 		</Style>
 
 		<Style Selector="^:pointerover">

@@ -4,10 +4,10 @@
 					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type PopupRoot}" TargetType="PopupRoot">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Background" Value="{x:Null}" />
 		<Setter Property="TransparencyLevelHint" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource AntDesignForeground}" />
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="FontWeight" Value="400" />
 		<Setter Property="FontStyle" Value="Normal" />
 		<Setter Property="Template">

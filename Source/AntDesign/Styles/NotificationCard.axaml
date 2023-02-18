@@ -8,33 +8,44 @@
 		</Border>
 	</Design.PreviewWith>
 	<ControlTheme x:Key="{x:Type NotificationCard}" TargetType="NotificationCard">
-		<Setter Property="UseLayoutRounding" Value="True"/>
-		<Setter Property="Width" Value="{DynamicResource NotificationCardWidth}"/>
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
-		<Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
+		<Setter Property="Width" Value="{DynamicResource NotificationCardWidth}"/>
+		<Setter Property="Foreground" Value="{DynamicResource NavigationCardForeground}"/>
+		<Setter Property="Background" Value="{DynamicResource NavigationCardBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource NavigationCardBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource NotificationCardBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource NotificationCardCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource NotificationCardPadding}"/>
+		<Setter Property="UseLayoutRounding" Value="True"/>
 		<Setter Property="RenderTransformOrigin" Value="50%,75%"/>
-		<Setter Property="BorderThickness" Value="0" />
-		<Setter Property="Background" Value="{DynamicResource NotificationCardBackground}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<LayoutTransformControl Name="{x:Static helpers:PARTNameHelper.PART_LayoutTransformControl}" UseRenderTransform="True">
-					<Border CornerRadius="{TemplateBinding CornerRadius}" 
-							BoxShadow="{DynamicResource NavigationCardShadow}" 
-							Margin="5 5 5 10">
+				<LayoutTransformControl x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutTransformControl}"
+										UseRenderTransform="True">
+					<Border CornerRadius="{TemplateBinding CornerRadius}"
+							BoxShadow="{DynamicResource NavigationCardShadow}"
+							Margin="{DynamicResource NotificationCardMargin}">
 						<Border Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
 								CornerRadius="{TemplateBinding CornerRadius}"
 								ClipToBounds="True">
 							<DockPanel>
-								<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_HeaderBar}" 
-									   Height="4" 
+								<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_HeaderBar}"
+									   Height="{DynamicResource NotificationCardPanelSize}"
 									   DockPanel.Dock="Top"
 									   Background="{DynamicResource DefaultBrush}"/>
-								<ContentControl Name="PART_Content" MinHeight="64"
-												Content="{TemplateBinding Content}"
-												TextElement.Foreground="{TemplateBinding Foreground}"/>
+								<StackPanel Spacing="20" Margin="20,0,0,0" >
+									<PathIcon x:Name="PART_CardIcon" 
+											  Width="{DynamicResource NotificationCardIconWidth}"
+											  Height="{DynamicResource NotificationCardIconHeight}"
+											  Foreground="{DynamicResource InfoBrush}"
+											  Data="{StaticResource InformationGeometry}" />
+									<ContentControl x:Name="PART_Content" 
+													MinHeight="{DynamicResource NotificationCardContentMinHeight}"
+													Content="{TemplateBinding Content}"
+													TextElement.Foreground="{TemplateBinding Foreground}"/>
+								</StackPanel>
 							</DockPanel>
 						</Border>
 					</Border>
@@ -92,17 +103,41 @@
 			</Style.Animations>
 		</Style>
 
-		<Style Selector="^:information /template/ Panel#PART_HeaderBar">
-			<Setter Property="Background" Value="{DynamicResource InfoBrush}"/>
+		<Style Selector="^:information">
+			<Style Selector="^ /template/ Panel#PART_HeaderBar">
+				<Setter Property="Background" Value="{DynamicResource InfoBrush}"/>
+			</Style>
 		</Style>
-		<Style Selector="^:success /template/ Panel#PART_HeaderBar">
-			<Setter Property="Background" Value="{DynamicResource SuccessBrush}"/>
+
+		<Style Selector="^:success">
+			<Style Selector="^ /template/ Panel#PART_HeaderBar">
+				<Setter Property="Background" Value="{DynamicResource SuccessBrush}"/>
+			</Style>
+			<Style Selector="^ /template/ PathIcon#PART_CardIcon">
+				<Setter Property="Foreground" Value="{DynamicResource SuccessBrush}"/>
+				<Setter Property="Data" Value="{StaticResource SucceedGeometry}"/>
+			</Style>
 		</Style>
-		<Style Selector="^:warning /template/ Panel#PART_HeaderBar">
-			<Setter Property="Background" Value="{DynamicResource WarningBrush}"/>
+
+		<Style Selector="^:warning">
+			<Style Selector="^ /template/ Panel#PART_HeaderBar">
+				<Setter Property="Background" Value="{DynamicResource WarningBrush}"/>
+			</Style>
+			<Style Selector="^ /template/ PathIcon#PART_CardIcon">
+				<Setter Property="Foreground" Value="{DynamicResource WarningBrush}"/>
+				<Setter Property="Data" Value="{StaticResource WarningGeometry}"/>
+			</Style>
 		</Style>
-		<Style Selector="^:error /template/ Panel#PART_HeaderBar">
-			<Setter Property="Background" Value="{DynamicResource ErrorBrush}"/>
+		
+		<Style Selector="^:error">
+			<Style Selector="^ /template/ Panel#PART_HeaderBar">
+				<Setter Property="Background" Value="{DynamicResource ErrorBrush}"/>
+			</Style>
+			<Style Selector="^ /template/ PathIcon#PART_CardIcon">
+				<Setter Property="Foreground" Value="{DynamicResource ErrorBrush}"/>
+				<Setter Property="Data" Value="{StaticResource ErrorGeometry}"/>
+			</Style>
 		</Style>
+		
 	</ControlTheme>
 </ResourceDictionary>
