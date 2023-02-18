@@ -26,6 +26,7 @@
 	<SolidColorBrush x:Key="ButtonPrimaryPressedForeground" Color="{StaticResource AntDesignAssistColor1}"/>
 	<SolidColorBrush x:Key="ButtonPrimaryPressedBorderBrush" Color="Transparent"/>
 
+	<!--TextButtonStyle-->
 	<SolidColorBrush x:Key="ButtonTextBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonTextForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ButtonTextBorderBrush" Color="Transparent"/>
@@ -38,6 +39,7 @@
 	<SolidColorBrush x:Key="ButtonTextPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ButtonTextPressedBorderBrush" Color="Transparent"/>
 
+	<!--LinkButtonStyle-->
 	<SolidColorBrush x:Key="ButtonLinkBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonLinkForeground" Color="{StaticResource AntDesignPrimaryColor}"/>
 	<SolidColorBrush x:Key="ButtonLinkBorderBrush" Color="Transparent"/>

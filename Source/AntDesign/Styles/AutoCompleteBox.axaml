@@ -6,7 +6,7 @@
 
 	<ControlTheme x:Key="{x:Type AutoCompleteBox}" TargetType="AutoCompleteBox">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="Foreground" Value="{DynamicResource AutoCompleteBoxBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource AutoCompleteBoxForeground}" />
 		<Setter Property="Background" Value="{DynamicResource AutoCompleteBoxBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource AutoCompleteBoxBorderBrush}" />
 		<Setter Property="assists:AutoCompleteBoxAssists.PointerOverBorderBrush" Value="{DynamicResource AutoCompleteBoxPointerOverBorderBrush}"/>

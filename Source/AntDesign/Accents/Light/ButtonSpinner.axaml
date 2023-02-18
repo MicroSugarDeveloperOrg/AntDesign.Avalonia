@@ -12,10 +12,10 @@
 
 	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
 	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
 </ResourceDictionary>

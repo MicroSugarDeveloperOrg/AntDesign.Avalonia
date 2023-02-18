@@ -2,6 +2,14 @@
 
 public static class ButtonAssists
 {
+    static ButtonAssists()
+    {
+        PressedRenderTransformProperty.Changed.AddClassHandler<Button, ITransform?>((s, e) =>
+        {
+
+        });
+    }
+
     public static readonly AvaloniaProperty<IBrush?> PointerOverBackgroundProperty = AvaloniaProperty.RegisterAttached<Button, IBrush?>("PointerOverBackground", typeof(ButtonAssists));
     public static void SetPointerOverBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverBackgroundProperty, value);
     public static IBrush? GetPointerOverBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PointerOverBackgroundProperty);
@@ -27,8 +35,12 @@ public static class ButtonAssists
     public static IBrush? GetPressedBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PressedBorderBrushProperty);
 
     public static readonly AvaloniaProperty<ITransform?> PressedRenderTransformProperty = AvaloniaProperty.RegisterAttached<Button, ITransform?>("PressedRenderTransform", typeof(ButtonAssists));
-    public static void SetPressedPressedRenderTransform(AvaloniaObject dependencyObject, ITransform value) => dependencyObject.SetValue(PressedRenderTransformProperty, value);
+    public static void SetPressedPressedRenderTransform(AvaloniaObject dependencyObject, ITransform? value) => dependencyObject.SetValue(PressedRenderTransformProperty, value);
     public static ITransform? GetPressedPressedRenderTransform(AvaloniaObject dependencyObject) => dependencyObject.GetValue<ITransform?>(PressedRenderTransformProperty);
+
+    public static readonly AvaloniaProperty<bool> IsRippleProperty = AvaloniaProperty.RegisterAttached<Button, bool>("IsRipple", typeof(ButtonAssists));
+    public static void SetIsRipple(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(IsRippleProperty, value);
+    public static bool GetIsRipple(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(IsRippleProperty);
 
     public static readonly AvaloniaProperty<Color> RippleColorProperty = AvaloniaProperty.RegisterAttached<Button, Color>("RippleColor", typeof(ButtonAssists));
     public static void SetRippleColor(AvaloniaObject dependencyObject, Color value) => dependencyObject.SetValue(RippleColorProperty, value);

@@ -24,6 +24,7 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.IsRipple"  Value="true"/>
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
@@ -36,16 +37,11 @@
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="RenderTransform" Value="none" />
-		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.9)"/>
-		<Setter Property="Transitions">
-			<Transitions>
-				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
-			</Transitions>
-		</Setter>
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}" 
+									 IsRipple="{TemplateBinding assists:ButtonAssists.IsRipple}"
 									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
@@ -58,7 +54,14 @@
 								      Padding="{TemplateBinding Padding}"
 								      RecognizesAccessKey="True"
 								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" 
+									  RenderTransform ="none">
+						<ContentPresenter.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+							</Transitions>
+						</ContentPresenter.Transitions>		
+					</ContentPresenter>
 				</ripple:RippleEffect>
 			</ControlTemplate>
 		</Setter>
@@ -70,10 +73,8 @@
 		</Style>
 
 		<Style Selector="^:pressed">
-			<Style Selector="^">
-				<Setter Property="RenderTransform" Value="{TemplateBinding assists:ButtonAssists.PressedRenderTransform}" />
-			</Style>
 			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="RenderTransform" Value="{TemplateBinding assists:ButtonAssists.PressedRenderTransform}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
 				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
@@ -111,6 +112,17 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPrimaryPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPrimaryPressedBorderBrush}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource PrimaryButtonBorderThickness}" />
+
+		<Style Selector="^.danger">
+			<Style Selector="^">
+				<Setter Property="Background" Value="{DynamicResource DangerBrush}" />
+				<Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
+				<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource DangerPointerOverBrush}" />
+				<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPrimaryPointerOverForeground}" />
+				<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource DangerPressedBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPrimaryPressedForeground}" />
+			</Style>
+		</Style>
 	</ControlTheme>
 
 	<ControlTheme x:Key="TextButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
@@ -123,7 +135,17 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonTextPressedBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonTextPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonTextPressedBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.IsRipple"  Value="false"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource TextButtonBorderThickness}" />
+
+		<Style Selector="^.danger">
+			<Style Selector="^">
+				<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+				<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource DangerPointerOverBrush}" />
+				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
+			</Style>
+		</Style>
+		
 	</ControlTheme>
 
 	<ControlTheme x:Key="LinkButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
@@ -136,6 +158,7 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonLinkPressedBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonLinkPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonLinkPressedBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.IsRipple"  Value="false"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource LinkButtonBorderThickness}" />
 	</ControlTheme>
 

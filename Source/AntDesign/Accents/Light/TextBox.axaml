@@ -3,7 +3,7 @@
 					x:CompileBindings="True">
 
 	<SolidColorBrush x:Key="TextBoxBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="TextBoxForeground" Color="#3e3e3e"/>
+	<SolidColorBrush x:Key="TextBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="TextBoxCaretBrush" Color="Black"/>
 	<SolidColorBrush x:Key="TextBoxBorderBrush" Color="#d9d9d9"/>
 	<SolidColorBrush x:Key="TextBoxSelectionBackground" Color="#3390ff"/>
