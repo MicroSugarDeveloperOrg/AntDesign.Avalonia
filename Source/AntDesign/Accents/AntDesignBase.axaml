@@ -67,7 +67,7 @@
 	<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
 
 	<!--Ripple-->
-	<x:Double x:Key="RippleOpacity">0.4</x:Double>
+	<x:Double x:Key="RippleOpacity">0.35</x:Double>
 	<Color x:Key="RippleColor">#9B40a9ff</Color>
 	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
 	

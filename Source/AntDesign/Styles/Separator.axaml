@@ -31,10 +31,9 @@
 									  Foreground="{TemplateBinding Foreground}"
 									  Background="{TemplateBinding assists:SeparatorAssists.ContentBackground}"
 									  Content="{TemplateBinding assists:SeparatorAssists.Content}"
-									  ContentTemplate="{TemplateBinding assists:SeparatorAssists.ContentTemplate}"
-									  Margin="{TemplateBinding Margin}"
-									  Padding="{TemplateBinding assists:SeparatorAssists.ContentPadding}"
-									  HorizontalAlignment="Left"
+									  ContentTemplate="{TemplateBinding assists:SeparatorAssists.ContentTemplate}" 
+									  Margin="{TemplateBinding assists:SeparatorAssists.ContentPadding}"
+									  HorizontalAlignment="Center"
 								      VerticalAlignment="Center"
 									  RecognizesAccessKey="True" />
 

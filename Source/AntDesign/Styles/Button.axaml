@@ -36,8 +36,7 @@
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/> 
 		<Setter Property="Template">
 			<ControlTemplate>
 				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}" 
@@ -136,6 +135,7 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonTextPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonTextPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.IsRipple"  Value="false"/>
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource TextButtonBorderThickness}" />
 
 		<Style Selector="^.danger">
@@ -159,6 +159,7 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonLinkPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonLinkPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.IsRipple"  Value="false"/>
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource LinkButtonBorderThickness}" />
 	</ControlTheme>
 

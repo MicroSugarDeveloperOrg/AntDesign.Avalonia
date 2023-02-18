@@ -150,6 +150,7 @@
 
 			<Style Selector="^ /template/ Path#CheckGlyph">
 				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Fill" Value="{TemplateBinding assists:CheckBoxAssists.GlyphFill}" />
 				<Setter Property="RenderTransform" Value="scale(1)" />
 			</Style>
 
@@ -178,7 +179,7 @@
 				</Style>
 				
 				<Style Selector="^ /template/ Path#CheckGlyph">
-					<Setter Property="Fill" Value="{DynamicResource DisableFillBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource DisableFill}" />
 				</Style>
 				
 				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
@@ -194,7 +195,7 @@
 				<Setter Property="BorderThickness" Value="0"/>
 				<Setter Property="Margin" Value="{DynamicResource CheckBoxIndeterminatePadding}" />
 				<Setter Property="CornerRadius" Value="0" />
-				<Setter Property="Background" Value="{TemplateBinding assists:CheckBoxAssists.PressedBackground}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:CheckBoxAssists.PressedForeground}" />
 			</Style>
 
 			<Style Selector="^ /template/ Border#PART_Border">
