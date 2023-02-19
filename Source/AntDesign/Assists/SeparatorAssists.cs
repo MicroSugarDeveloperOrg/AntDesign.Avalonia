@@ -1,6 +1,6 @@
 ﻿namespace AntDesign.Assists;
 
-public static class SeparatorAssists
+public class SeparatorAssists
 {
     //public static readonly AvaloniaProperty<IBrush?> ContentPaddingProperty = AvaloniaProperty.RegisterAttached<TextBox, IBrush?>("ContentPadding", typeof(TextBoxAssists));
     //public static void SetContentPadding(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(ContentPaddingProperty, value);

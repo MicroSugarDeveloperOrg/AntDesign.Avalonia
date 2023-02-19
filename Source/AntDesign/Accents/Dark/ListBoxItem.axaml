@@ -10,11 +10,11 @@
 	<SolidColorBrush x:Key="ListBoxItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ListBoxItemPointerOverBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="ListBoxItemPressedBackground" Color="#e6f4ff"/>
+	<SolidColorBrush x:Key="ListBoxItemPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
 	<SolidColorBrush x:Key="ListBoxItemPressedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="ListBoxItemPressedBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="ListBoxItemSelectedBackground" Color="#e6f4ff"/>
+	<SolidColorBrush x:Key="ListBoxItemSelectedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
 	<SolidColorBrush x:Key="ListBoxItemSelectedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="ListBoxItemSelectedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 

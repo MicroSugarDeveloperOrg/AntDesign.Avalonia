@@ -1,5 +1,5 @@
 ﻿namespace AntDesign.Assists;
-public static class CheckBoxAssists
+public class CheckBoxAssists
 {
     public static readonly AvaloniaProperty<IBrush?> PointerOverBackgroundProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("PointerOverBackground", typeof(CheckBoxAssists));
     public static void SetPointerOverBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverBackgroundProperty, value);

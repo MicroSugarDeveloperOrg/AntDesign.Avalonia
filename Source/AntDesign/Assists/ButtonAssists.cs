@@ -1,6 +1,6 @@
 ﻿namespace AntDesign.Assists;
 
-public static class ButtonAssists
+public class ButtonAssists
 {
     static ButtonAssists()
     {

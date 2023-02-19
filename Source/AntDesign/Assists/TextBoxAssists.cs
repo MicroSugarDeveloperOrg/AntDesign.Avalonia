@@ -1,6 +1,6 @@
 ﻿namespace AntDesign.Assists;
 
-public static class TextBoxAssists
+public class TextBoxAssists
 {
     public static readonly AvaloniaProperty<IBrush?> PointerOverBorderBrushProperty = AvaloniaProperty.RegisterAttached<TextBox, IBrush?>("PointerOverBorderBrush", typeof(TextBoxAssists));
     public static void SetPointerOverBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverBorderBrushProperty, value);

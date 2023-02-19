@@ -13,23 +13,26 @@
 		<viewModels:MainViewModel />
 	</Design.DataContext>
 	
-	<Grid ColumnDefinitions="Auto,*">
-		<ListBox Grid.Column="0" Width="180" BorderThickness="1" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
+	<Grid ColumnDefinitions="Auto,40,*">
+		<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
 			<ListBox.DataTemplates>
 				<DataTemplate DataType="{x:Type routers:Router}">
 					<TextBlock Text="{Binding LocalizedString.Localized}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 				</DataTemplate>
 			</ListBox.DataTemplates>
 		</ListBox>
-		<rxui:RoutedViewHost Grid.Column="1" Router="{Binding Router}" assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}">
-			<!--<rxui:RoutedViewHost.PageTransition>-->
+		<Grid Grid.Column="2" RowDefinitions="40,20,*">
+			<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" FontSize="30" FontWeight="Bold"/>
+			<rxui:RoutedViewHost Grid.Row="2" Router="{Binding Router}" assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}">
+				<!--<rxui:RoutedViewHost.PageTransition>-->
 				<!--<PageSlide Duration="0:0:0.3" />-->
-			<!--</rxui:RoutedViewHost.PageTransition>-->
-			<rxui:RoutedViewHost.DefaultContent>
-				<TextBlock Text="Loading..."
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center" />
-			</rxui:RoutedViewHost.DefaultContent>
-		</rxui:RoutedViewHost>
+				<!--</rxui:RoutedViewHost.PageTransition>-->
+				<rxui:RoutedViewHost.DefaultContent>
+					<TextBlock Text="Loading..."
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center" />
+				</rxui:RoutedViewHost.DefaultContent>
+			</rxui:RoutedViewHost>
+		</Grid>
 	</Grid>
 </UserControl>

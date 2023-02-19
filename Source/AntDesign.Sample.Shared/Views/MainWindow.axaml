@@ -7,9 +7,9 @@
         x:Class="AntDesign.Sample.Views.MainWindow"
         Icon="/Assets/antdesign@avalonia-logo.png" 
         Title="AntDesign.Sample">
-	<Grid RowDefinitions="Auto,20,*">
+	<Grid RowDefinitions="Auto,40,*">
 		<Border BorderThickness="0,0,0,0" BorderBrush="{DynamicResource AntDesignAssistBrush3}" 
-				BoxShadow="0 0 5 0 Gray">
+				BoxShadow="0 0 5 0 LightGray">
 			<Grid Height="65" ColumnDefinitions="15,Auto,Auto,*">
 				<StackPanel Grid.Column="1" Spacing="20" Orientation="Horizontal">
 					<Image Height="35" Width="35" Source="/Assets/antdesign@avalonia-logo.png"/>

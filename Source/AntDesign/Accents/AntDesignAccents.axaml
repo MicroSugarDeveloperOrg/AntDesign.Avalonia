@@ -45,6 +45,19 @@
 
 	<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
 
+	<!--ComboBox-->
+	<StaticResource x:Key="ComboBoxMargin" ResourceKey="Margin"/>
+	<StaticResource x:Key="ComboBoxPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="ComboBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ComboBoxBorderThickness" ResourceKey="BorderThickness"/>
+	
+	<!--ComboBoxItem-->
+	<StaticResource x:Key="ComboBoxItemMargin" ResourceKey="Margin"/>
+	<StaticResource x:Key="ComboBoxItemPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="ComboBoxItemCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ComboBoxItemBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="ComboBoxItemSelectedPressedBorderThickness" ResourceKey="OverlayBorderThickness" />
+
 	<!--DataValidationErrors-->
 	<x:Double x:Key="DataValidationErrorsIconHeight">14</x:Double>
 	<x:Double x:Key="DataValidationErrorsIconWidth">14</x:Double>
@@ -78,7 +91,7 @@
 
 	<!-- ListBoxItem -->
 	<x:Double x:Key="ListBoxItemMinHeight">36</x:Double>
-	<Thickness x:Key="ListBoxItemMargin">0</Thickness>
+	<StaticResource x:Key="ListBoxItemMargin" ResourceKey="Margin"/>
 	<StaticResource x:Key="ListBoxItemPadding" ResourceKey="Padding"/>
 	<StaticResource x:Key="ListBoxItemCornerRadius" ResourceKey="OverlayCornerRadius"/>
 	<StaticResource x:Key="ListBoxItemBorderThickness" ResourceKey="BorderThickness"/>

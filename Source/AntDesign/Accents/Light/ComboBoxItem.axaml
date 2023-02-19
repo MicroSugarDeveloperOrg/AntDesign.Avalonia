@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="ComboBoxItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxItemBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ComboBoxItemPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="ComboBoxItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxItemPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ComboBoxItemPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="ComboBoxItemPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxItemPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ComboBoxItemSelectedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="ComboBoxItemSelectedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxItemSelectedBorderBrush" Color="Transparent"/>
+	
+</ResourceDictionary>

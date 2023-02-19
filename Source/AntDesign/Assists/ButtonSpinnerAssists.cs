@@ -1,5 +1,5 @@
 ﻿namespace AntDesign.Assists;
-public static class ButtonSpinnerAssists
+public class ButtonSpinnerAssists
 {
     public static readonly AvaloniaProperty<IBrush?> BackgroundProperty = AvaloniaProperty.RegisterAttached<ButtonSpinner, IBrush?>("Background", typeof(ButtonSpinnerAssists));
     public static void SetBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(BackgroundProperty, value);

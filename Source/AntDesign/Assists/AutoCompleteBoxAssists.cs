@@ -1,6 +1,6 @@
 ﻿namespace AntDesign.Assists;
 
-public static class AutoCompleteBoxAssists
+public class AutoCompleteBoxAssists
 {
     public static readonly AvaloniaProperty<IBrush?> PointerOverBorderBrushProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, IBrush?>("PointerOverBorderBrush", typeof(AutoCompleteBoxAssists));
     public static void SetPointerOverBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverBorderBrushProperty, value);

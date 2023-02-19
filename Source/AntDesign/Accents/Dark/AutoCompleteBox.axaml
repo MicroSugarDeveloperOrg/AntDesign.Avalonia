@@ -2,7 +2,7 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<SolidColorBrush x:Key="AutoCompleteBoxBackground" Color="{StaticResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AutoCompleteBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="AutoCompleteBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
