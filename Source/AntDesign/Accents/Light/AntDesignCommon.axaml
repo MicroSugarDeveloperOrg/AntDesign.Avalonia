@@ -10,13 +10,25 @@
 	<SolidColorBrush x:Key="AntDesignForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 
 	<Color x:Key="AntDesignPrimaryColor">#FF1677FF</Color>
+	<SolidColorBrush x:Key="AntDesignPrimaryBrush" Color="{StaticResource AntDesignPrimaryColor}"/>
+
 	<Color x:Key="AntDesignSecondlyColor">#FF4096FF</Color>
+	<SolidColorBrush x:Key="AntDesignSecondlyBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+
 	<Color x:Key="AntDesignThirdlyColor">#FF0958D9</Color>
-	
+	<SolidColorBrush x:Key="AntDesignThirdlyBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+
 	<Color x:Key="AntDesignAssistColor1">#000000</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush1" Color="{StaticResource AntDesignAssistColor1}"/>
+
 	<Color x:Key="AntDesignAssistColor2">#F0F0F0</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush2" Color="{StaticResource AntDesignAssistColor2}"/>
+
 	<Color x:Key="AntDesigndAssistColor3">#D9D9D9</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush3" Color="{StaticResource AntDesigndAssistColor3}"/>
+
 	<Color x:Key="AntDesigndAssistColor4">#FFFFFF</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush4" Color="{StaticResource AntDesigndAssistColor4}"/>
 
 	<!--Disable-->
 	<Color x:Key="DisableBackgroundColor">#FFF5F5F5</Color> 

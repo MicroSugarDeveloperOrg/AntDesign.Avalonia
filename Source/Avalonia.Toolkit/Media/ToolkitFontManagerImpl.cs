@@ -86,10 +86,47 @@ public class ToolkitFontManagerImpl : IFontManagerImpl
     IGlyphTypeface IFontManagerImpl.CreateGlyphTypeface(Typeface typeface)
     {
         Typeface? needTypeface = default;
+        var fontWeight = typeface.Weight;
         switch (typeface.FontFamily.Name)
         {
             case FontFamily.DefaultFontFamilyName:
-                needTypeface = _defaultTypeface;
+                {
+                    needTypeface = _defaultTypeface;
+                    switch (fontWeight)
+                    {
+                        case FontWeight.Thin:
+                            needTypeface = _thinTypeface;
+                            break;
+                        case FontWeight.ExtraLight: 
+                        case FontWeight.Light:
+                        case FontWeight.SemiLight:
+                            needTypeface = _lightTypeface;
+                            break;
+                        case FontWeight.Regular:
+                            needTypeface = _regularTypeface;
+                            break;
+                        case FontWeight.Medium:
+                            needTypeface = _mediumTypeface;
+                            break;
+                        case FontWeight.SemiBold:
+                            needTypeface = _semiBoldTypeface;
+                            break;
+                        case FontWeight.Bold:
+                            needTypeface = _boldTypeface;
+                            break;
+                        case FontWeight.ExtraBold: 
+                            needTypeface = _extraBoldTypeface;
+                            break; 
+                        case FontWeight.Heavy:
+                            needTypeface = _heavyTypeface;
+                            break;
+                        case FontWeight.ExtraBlack: 
+                            needTypeface = _blackTypeface;
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 break;
             case _fontFamilyName:
                 needTypeface = typeface;
@@ -114,12 +151,12 @@ public class ToolkitFontManagerImpl : IFontManagerImpl
             var newFontFamilyName = fontFamilyNames?.FirstOrDefault();
             if (newFontFamilyName is not null)
             {
-                var newlightTypeface = new Typeface($"{userTypeface.FontFamily.Key}#{newFontFamilyName}",
+                var newLightTypeface = new Typeface($"{userTypeface.FontFamily.Key}#{newFontFamilyName}",
                     userTypeface.Style, userTypeface.Weight, userTypeface.Stretch);
 
                 var newTypefaceCollection =
-                    SKTypefaceCollectionCache.GetOrAddTypefaceCollection(newlightTypeface.FontFamily);
-                skTypeface = newTypefaceCollection.Get(newlightTypeface);        
+                    SKTypefaceCollectionCache.GetOrAddTypefaceCollection(newLightTypeface.FontFamily);
+                skTypeface = newTypefaceCollection.Get(newLightTypeface);        
             }
         }
         return skTypeface!;

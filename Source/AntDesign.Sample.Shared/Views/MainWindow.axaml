@@ -5,7 +5,23 @@
         xmlns:views="clr-namespace:AntDesign.Sample.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AntDesign.Sample.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico" 
+        Icon="/Assets/antdesign@avalonia-logo.png" 
         Title="AntDesign.Sample">
-        <views:MainView />
+	<Grid RowDefinitions="Auto,20,*">
+		<Border BorderThickness="0,0,0,0" BorderBrush="{DynamicResource AntDesignAssistBrush3}" 
+				BoxShadow="0 0 5 0 Gray">
+			<Grid Height="65" ColumnDefinitions="15,Auto,Auto,*">
+				<StackPanel Grid.Column="1" Spacing="20" Orientation="Horizontal">
+					<Image Height="35" Width="35" Source="/Assets/antdesign@avalonia-logo.png"/>
+					<TextBlock Text="Ant Design @ Avalonia" 
+							   VerticalAlignment="Center" 
+							   FontSize="16"  
+							   FontWeight="Black"/>
+				</StackPanel>
+			</Grid>
+		</Border>
+
+		<views:MainView Grid.Row="2"/>
+	</Grid>
+
 </Window>
