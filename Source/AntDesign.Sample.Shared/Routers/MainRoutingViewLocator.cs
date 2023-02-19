@@ -16,6 +16,9 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
     readonly IServiceCollection _serviceCollection;
     readonly RoutingState _router;
 
+    IServiceProvider? _serviceProvider;
+    protected IServiceProvider ServiceProvider => _serviceProvider ??= _serviceCollection.BuildServiceProvider();
+
     bool _isMake = false;
     IScreen _screen = default!;
 
@@ -41,7 +44,7 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         if (string.IsNullOrWhiteSpace(token))
             token = viewModelType.Name;
 
-        _serviceCollection.AddScoped(viewType);
+        _serviceCollection.AddSingleton(viewType);
         _serviceCollection.AddSingleton(viewModelType);
 
         _mapViewModelViews.TryAdd(viewModelType, viewType);
@@ -62,7 +65,7 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         if (view_viewModel.viewModel is null)
             return false;
 
-        var serviceProvider = _serviceCollection.BuildServiceProvider();
+        var serviceProvider = ServiceProvider;
         var viewModel = serviceProvider.GetRequiredService(view_viewModel.viewModel);
         if (viewModel is not ViewModelRoutableBase routableViewModel)
             return false;
@@ -81,7 +84,7 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         if (viewModelType.Key is null)
             return false;
 
-        var serviceProvider = _serviceCollection.BuildServiceProvider();
+        var serviceProvider = ServiceProvider;
         var viewModel = serviceProvider.GetRequiredService(viewModelType.Key);
         if (viewModel is not ViewModelRoutableBase routableViewModel)
             return false;
@@ -96,7 +99,7 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         if (!_isMake)
             return false;
 
-        var serviceProvider = _serviceCollection.BuildServiceProvider();
+        var serviceProvider = ServiceProvider;
         var viewModel = serviceProvider.GetRequiredService<TViewModel>();
 
         viewModel.HostScreen = _screen;
@@ -115,7 +118,7 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         if (viewModel is null)
             return default;
 
-        var serviceProvider = _serviceCollection.BuildServiceProvider();
+        var serviceProvider = ServiceProvider;
         var viewModelType = viewModel.GetType();
         _mapViewModelViews.TryGetValue(viewModelType, out var viewType);
         if (viewType is null)
