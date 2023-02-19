@@ -1,4 +1,4 @@
-using AntDesign.Sample.Routers;
+锘縰sing AntDesign.Sample.Routers;
 using AntDesign.Sample.ViewModels;
 using AntDesign.Sample.Views;
 using Avalonia.Toolkit.Extensions;
@@ -61,8 +61,8 @@ public partial class App : Application
         var routingViewLocator = new MainRoutingViewLocator(_container);
         _container.AddSingleton<IMainRoutingViewLocator>(routingViewLocator);
 
-        routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack: () => "组件总览");
-        routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack: () => "Button 按钮");
+        routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack: () => "缁勪欢鎬昏");
+        routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack: () => "Button 鎸夐挳");
 
         return true;
     }
