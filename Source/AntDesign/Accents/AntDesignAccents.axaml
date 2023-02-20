@@ -8,10 +8,12 @@
 	<StaticResource x:Key="AutoCompleteBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
 	<StaticResource x:Key="AutoCompleteBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
 	<StaticResource x:Key="AutoCompleteBoxPadding" ResourceKey="OverlayPadding"/>
-	
-	<Thickness x:Key="AutoCompleteBoxPopupMargin">5</Thickness>
+
+	<StaticResource x:Key="AutoCompleteBoxPopupMargin" ResourceKey="OverlayMargin"/>
+	<StaticResource x:Key="AutoCompletePopupPadding" ResourceKey="OverlayPadding"/>
+	<Thickness x:Key="AutoCompleteBoxPopupBorderThickness">0</Thickness>
 	<CornerRadius x:Key="AutoCompleteBoxPopupCornerRadius">10</CornerRadius>
-	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">375</x:Double>
+	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">504</x:Double>
 
 	<!-- Button -->
 	<StaticResource x:Key="ButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
@@ -49,11 +51,26 @@
 	<StaticResource x:Key="ComboBoxMargin" ResourceKey="Margin"/>
 	<StaticResource x:Key="ComboBoxPadding" ResourceKey="Padding"/>
 	<StaticResource x:Key="ComboBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="ComboBoxBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="ComboBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
+
+	<x:Double x:Key="InnerElementOpacity">0.5</x:Double>
+
+	<x:Double x:Key="DropDownGlyphBorderWidth">32</x:Double>
 	
+	<x:Double x:Key="DropDownGlyphIconWidth">12</x:Double>
+	<x:Double x:Key="DropDownGlyphIconHeight">12</x:Double>
+	
+	<x:Double x:Key="ComboBoxMaxDropDownHeight">504</x:Double>
+
+	<StaticResource x:Key="ComboBoxPopupMargin" ResourceKey="OverlayMargin"/> 
+	<Thickness x:Key="ComboBoxPopupPadding">10</Thickness>
+	<Thickness x:Key="ComboBoxPopupBorderThickness">0</Thickness>
+	<CornerRadius x:Key="ComboBoxPopupCornerRadius">10</CornerRadius> 
+	
+
 	<!--ComboBoxItem-->
 	<StaticResource x:Key="ComboBoxItemMargin" ResourceKey="Margin"/>
-	<StaticResource x:Key="ComboBoxItemPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="ComboBoxItemPadding" ResourceKey="OverlayPadding"/>
 	<StaticResource x:Key="ComboBoxItemCornerRadius" ResourceKey="OverlayCornerRadius"/>
 	<StaticResource x:Key="ComboBoxItemBorderThickness" ResourceKey="BorderThickness"/>
 	<StaticResource x:Key="ComboBoxItemSelectedPressedBorderThickness" ResourceKey="OverlayBorderThickness" />

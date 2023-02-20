@@ -5,7 +5,7 @@
 			 xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
 			 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
 			 xmlns:sys="clr-namespace:System;assembly=netstandard"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
              x:Class="AntDesign.Sample.Views.OverviewView"
 			 >
 
@@ -192,6 +192,32 @@
 			</ThemeVariantScope>
 
 			<NotificationCard Content="1231231231312313" />
+
+			<ComboBox PlaceholderText="ComboBox">
+				<ComboBoxItem Content="123"/>
+				<ComboBoxItem Content="321" IsEnabled="False"/>
+				<ComboBoxItem Content="245"/>
+			</ComboBox>
+
+			<ComboBox PlaceholderText="ComboBox" IsEnabled="False">
+				<ComboBoxItem Content="123"/>
+				<ComboBoxItem Content="321" IsEnabled="False"/>
+				<ComboBoxItem Content="245"/>
+			</ComboBox>
+
+			<ComboBox PlaceholderText="ComboBoxError">
+				<DataValidationErrors.Error>
+					<sys:Exception>
+						<x:Arguments>
+							<x:String>Error</x:String>
+						</x:Arguments>
+					</sys:Exception>
+				</DataValidationErrors.Error>
+				<ComboBoxItem Content="123"/>
+				<ComboBoxItem Content="321" IsEnabled="False"/>
+				<ComboBoxItem Content="245"/>
+			</ComboBox>
+
 		</StackPanel>
 
 

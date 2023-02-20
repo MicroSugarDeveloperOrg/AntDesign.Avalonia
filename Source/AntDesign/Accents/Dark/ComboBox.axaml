@@ -2,23 +2,21 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
+	<BoxShadows x:Key="ComboBoxShadow">0 0 10 1 #4FFFFFFF</BoxShadows>
+
 	<SolidColorBrush x:Key="ComboBoxBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ComboBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ComboBoxBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
-	<SolidColorBrush x:Key="ComboBoxPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="ComboBoxPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ComboBoxPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ComboBoxPointerOverBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
 
-	<SolidColorBrush x:Key="ComboBoxPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="ComboBoxPressedBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ComboBoxPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ComboBoxPressedBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxPressedBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
 
-
-	<SolidColorBrush x:Key="ComboBoxTiggerStatusForeground" Color="Transparent"/>
-	<SolidColorBrush x:Key="ComboBoxPlaceHolderForeground" Color="Transparent"/>
-
-	<SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="LightGray"/>
-
+	<SolidColorBrush x:Key="ComboBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxPopupBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
 </ResourceDictionary>

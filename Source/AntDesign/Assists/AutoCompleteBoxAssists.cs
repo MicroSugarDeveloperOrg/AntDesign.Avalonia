@@ -30,13 +30,13 @@ public class AutoCompleteBoxAssists
     public static void SetPopupBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PopupBackgroundProperty, value);
     public static IBrush? GetPopupBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PopupBackgroundProperty);
 
-    public static readonly AvaloniaProperty<IBrush?> PopupBoderBrushProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, IBrush?>("PopupBoderBrush", typeof(AutoCompleteBoxAssists));
-    public static void SetPopupBoderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PopupBoderBrushProperty, value);
-    public static IBrush? GetPopupBoderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PopupBoderBrushProperty);
+    public static readonly AvaloniaProperty<IBrush?> PopupBorderBrushProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, IBrush?>("PopupBorderBrush", typeof(AutoCompleteBoxAssists));
+    public static void SetPopupBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PopupBorderBrushProperty, value);
+    public static IBrush? GetPopupBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PopupBorderBrushProperty);
 
-    public static readonly AvaloniaProperty<Thickness> PopupBoderThicknessProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, Thickness>("PopupBoderThickness", typeof(AutoCompleteBoxAssists));
-    public static void SetPopupBoderThickness(AvaloniaObject dependencyObject, Thickness value) => dependencyObject.SetValue(PopupBoderThicknessProperty, value);
-    public static Thickness GetPopupBoderThickness(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Thickness>(PopupBoderThicknessProperty);
+    public static readonly AvaloniaProperty<Thickness> PopupBorderThicknessProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, Thickness>("PopupBorderThickness", typeof(AutoCompleteBoxAssists));
+    public static void SetPopupBorderThickness(AvaloniaObject dependencyObject, Thickness value) => dependencyObject.SetValue(PopupBorderThicknessProperty, value);
+    public static Thickness GetPopupBorderThickness(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Thickness>(PopupBorderThicknessProperty);
 
     public static readonly AvaloniaProperty<Thickness> PopupMarginProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, Thickness>("PopupMargin", typeof(AutoCompleteBoxAssists));
     public static void SetPopupMargin(AvaloniaObject dependencyObject, Thickness value) => dependencyObject.SetValue(PopupMarginProperty, value);

@@ -2,7 +2,7 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<BoxShadows x:Key="AutoCompleteBoxShadow">0 0 10 1 #4FFFFFFF</BoxShadows>
+	<BoxShadows x:Key="AutoCompleteBoxShadow">0 0 10 1 #4F000000</BoxShadows>
 
 	<SolidColorBrush x:Key="AutoCompleteBoxBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AutoCompleteBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>

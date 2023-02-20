@@ -40,9 +40,4 @@ public class ControlAssists
     public static readonly AvaloniaProperty<IBrush?> SelectedBorderBrushProperty = AvaloniaProperty.RegisterAttached<Control, IBrush?>("SelectedBorderBrush", typeof(ControlAssists));
     public static void SetSelectedBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(SelectedBorderBrushProperty, value);
     public static IBrush? GetSelectedBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedBorderBrushProperty);
-
-    public static readonly AvaloniaProperty<IBrush?> TiggerStatusForegroundProperty = AvaloniaProperty.RegisterAttached<Control, IBrush?>("TiggerStatusForeground", typeof(ControlAssists));
-    public static void SetTiggerStatusForeground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(TiggerStatusForegroundProperty, value);
-    public static IBrush? GetTiggerStatusForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(TiggerStatusForegroundProperty);
-
 }

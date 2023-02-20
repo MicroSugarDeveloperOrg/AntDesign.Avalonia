@@ -58,8 +58,8 @@
 		<!--  PointerOver state  -->
 		<Style Selector="^:pointerover /template/ ContentPresenter">
 			<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PointerOverBackground}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PointerOverBorderBrush}" />
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PointerOverBorderBrush}" />
 		</Style>
 
 		<!--  Pressed state  -->
