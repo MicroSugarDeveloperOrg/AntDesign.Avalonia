@@ -14,4 +14,11 @@
 	<SolidColorBrush x:Key="ComboBoxPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ComboBoxPressedBorderBrush" Color="Transparent"/>
 
+
+	<SolidColorBrush x:Key="ComboBoxTiggerStatusForeground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxPlaceHolderForeground" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="LightGray"/>
+
+
 </ResourceDictionary>

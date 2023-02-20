@@ -17,4 +17,6 @@
 	<SolidColorBrush x:Key="ComboBoxTiggerStatusForeground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ComboBoxPlaceHolderForeground" Color="Transparent"/>
 
+	<SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="LightGray"/>
+
 </ResourceDictionary>

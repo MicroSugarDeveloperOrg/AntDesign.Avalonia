@@ -88,11 +88,12 @@
 								IsVisible="False"/>
 						<TextBlock x:Name="PlaceholderTextBlock"
 								   Grid.Column="0"
+								   Opacity="0.5"
 								   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
 								   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
 								   Margin="{TemplateBinding Padding}"
 								   Text="{TemplateBinding PlaceholderText}"
-								   Foreground="{TemplateBinding PlaceholderForeground}"
+								   Foreground="{TemplateBinding Foreground}"
 								   IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
 						<ContentControl x:Name="ContentPresenter"
 										Content="{TemplateBinding SelectionBoxItem}"
