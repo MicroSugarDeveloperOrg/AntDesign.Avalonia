@@ -7,5 +7,8 @@
 	<SolidColorBrush x:Key="NavigationCardBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="NavigationCardForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="NavigationCardBorderBrush" Color="Transparent"/>
-	 
+
+	<SolidColorBrush x:Key="NavigationCardHeaderBackground" Color="{StaticResource DefaultColor}"/>
+	<SolidColorBrush x:Key="NavigationCardIconForeground" Color="{StaticResource DefaultColor}"/>
+
 </ResourceDictionary>

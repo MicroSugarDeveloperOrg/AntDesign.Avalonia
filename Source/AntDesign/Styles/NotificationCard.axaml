@@ -21,6 +21,7 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<LayoutTransformControl x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutTransformControl}"
+										Width="{TemplateBinding Width}"
 										UseRenderTransform="True">
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
@@ -34,17 +35,18 @@
 							<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_HeaderBar}"
 								   Height="{DynamicResource NotificationCardPanelSize}"
 								   DockPanel.Dock="Top"
-								   Background="{DynamicResource DefaultBrush}"/>
+								   Background="{DynamicResource NavigationCardHeaderBackground}"/>
 							<StackPanel Spacing="20" Orientation="Horizontal" 
 										Margin="5,0,5,0" >
 								<PathIcon x:Name="PART_CardIcon"
 										  Width="{DynamicResource NotificationCardIconWidth}"
 										  Height="{DynamicResource NotificationCardIconHeight}"
-										  Foreground="{DynamicResource InfoBrush}"
+										  Foreground="{DynamicResource NavigationCardIconForeground}"
 										  Data="{StaticResource InformationGeometry}" />
 								<ContentControl x:Name="PART_Content"
 												MinHeight="{DynamicResource NotificationCardContentMinHeight}"
 												Content="{TemplateBinding Content}"
+												ContentTemplate="{TemplateBinding ContentTemplate}"
 												VerticalContentAlignment="Center"
 												TextElement.Foreground="{TemplateBinding Foreground}"/>
 							</StackPanel>

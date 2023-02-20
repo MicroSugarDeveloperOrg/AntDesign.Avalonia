@@ -13,7 +13,7 @@
 		<viewModels:MainViewModel />
 	</Design.DataContext>
 	
-	<Grid ColumnDefinitions="Auto,40,*">
+	<Grid ColumnDefinitions="Auto,30,*">
 		<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
 			<ListBox.DataTemplates>
 				<DataTemplate DataType="{x:Type routers:Router}">
@@ -23,7 +23,9 @@
 		</ListBox>
 		<Grid Grid.Column="2" RowDefinitions="40,20,*">
 			<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" FontSize="30" FontWeight="Bold"/>
-			<rxui:RoutedViewHost Grid.Row="2" Router="{Binding Router}" assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}">
+			<rxui:RoutedViewHost Grid.Row="2" 
+								 Router="{Binding Router}" 
+								 assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}">
 				<!--<rxui:RoutedViewHost.PageTransition>-->
 				<!--<PageSlide Duration="0:0:0.3" />-->
 				<!--</rxui:RoutedViewHost.PageTransition>-->

@@ -6,6 +6,6 @@ public partial class OverviewView : ReactiveUserControl<OverviewViewModel>
 {
     public OverviewView()
     {
-        InitializeComponent(); 
+        InitializeComponent();
     }
 }
