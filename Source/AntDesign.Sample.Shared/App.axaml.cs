@@ -1,8 +1,9 @@
 ﻿using AntDesign.Sample.Routers;
+using AntDesign.Sample.Services;
 using AntDesign.Sample.ViewModels;
 using AntDesign.Sample.Views;
 using Avalonia.Toolkit.Extensions;
-using Avalonia.Toolkit.Media;
+using Avalonia.Toolkit;
 
 namespace AntDesign.Sample;
 
@@ -50,9 +51,11 @@ public partial class App : Application
 
     bool RegisterInternalServices()
     {
-        AvaloniaLocator.CurrentMutable.BindToConstant<IFontManagerImpl, ToolkitFontManagerImpl>();
+        AvaloniaLocator.CurrentMutable.UseToolkitFontManager();
         _container.AddSingleton<IServiceCollection>(_container);
         _container.AddSingleton<IGlobalThemeVariantProvider>(provider => AvaloniaLocator.Current.GetRequiredService<IGlobalThemeVariantProvider>());
+        _container.AddSingleton<IThemeService, ThemeService>();
+
         return true;
     }
 

@@ -101,7 +101,7 @@
 	<x:Double x:Key="ListBoxItemInnerBorderHeight">15</x:Double>
 
 	<!-- NotificationCard -->
-	<x:Double x:Key="NotificationCardWidth">390</x:Double>
+	<x:Double x:Key="NotificationCardWidth">200</x:Double>
 	<x:Double x:Key="NotificationCardPanelSize">4</x:Double>
 	<x:Double x:Key="NotificationCardContentMinHeight">60</x:Double>
 	<Thickness x:Key="NotificationCardMargin">5,5,5,10</Thickness>

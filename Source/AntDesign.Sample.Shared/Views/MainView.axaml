@@ -12,29 +12,103 @@
 	<Design.DataContext>
 		<viewModels:MainViewModel />
 	</Design.DataContext>
-	
-	<Grid ColumnDefinitions="Auto,30,*">
-		<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
-			<ListBox.DataTemplates>
-				<DataTemplate DataType="{x:Type routers:Router}">
-					<TextBlock Text="{Binding LocalizedString.Localized}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-				</DataTemplate>
-			</ListBox.DataTemplates>
-		</ListBox>
-		<Grid Grid.Column="2" RowDefinitions="40,20,*">
-			<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" FontSize="30" FontWeight="Bold"/>
-			<rxui:RoutedViewHost Grid.Row="2" 
-								 Router="{Binding Router}" 
-								 assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}">
-				<!--<rxui:RoutedViewHost.PageTransition>-->
-				<!--<PageSlide Duration="0:0:0.3" />-->
-				<!--</rxui:RoutedViewHost.PageTransition>-->
-				<rxui:RoutedViewHost.DefaultContent>
-					<TextBlock Text="Loading..."
-							   HorizontalAlignment="Center"
-							   VerticalAlignment="Center" />
-				</rxui:RoutedViewHost.DefaultContent>
-			</rxui:RoutedViewHost>
+
+	<Grid RowDefinitions="Auto,40,*">
+		<Border BorderThickness="0,0,0,0" BorderBrush="{DynamicResource AntDesignAssistBrush3}"
+			BoxShadow="0 0 5 0 LightGray">
+			<Grid Height="65" ColumnDefinitions="15,Auto,*,Auto,Auto,15">
+				<StackPanel Grid.Column="1" Spacing="20" Orientation="Horizontal">
+					<Image Height="35" Width="35" Source="/Assets/antdesign@avalonia-logo.png"/>
+					<TextBlock Text="Ant Design @ Avalonia"
+							   VerticalAlignment="Center"
+							   FontSize="16"
+							   FontWeight="Black"/>
+				</StackPanel>
+
+				<StackPanel Grid.Column="3" Spacing="20" VerticalAlignment="Center">
+					
+					<Button Width="32" Height="32" Theme="{StaticResource TextButtonStyle}" Command="{Binding StartGitHubCommand}">
+						<Button.Content>
+							<PathIcon Data="{StaticResource GitHubGeometry}"/>
+						</Button.Content>
+					</Button>
+					
+				</StackPanel>
+				
+			</Grid>
+		</Border>
+
+		<Grid Grid.Row="2" ColumnDefinitions="Auto,30,*">
+			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
+				<ListBox.DataTemplates>
+					<DataTemplate DataType="{x:Type routers:Router}">
+						<TextBlock Text="{Binding LocalizedString.Localized}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+					</DataTemplate>
+				</ListBox.DataTemplates>
+			</ListBox>
+			<Grid Grid.Column="2" RowDefinitions="40,20,*">
+				<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" FontSize="30" FontWeight="Bold"/>
+				<rxui:RoutedViewHost Grid.Row="2"
+									 Router="{Binding Router}"
+									 assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}">
+					<!--<rxui:RoutedViewHost.PageTransition>-->
+					<!--<PageSlide Duration="0:0:0.3" />-->
+					<!--</rxui:RoutedViewHost.PageTransition>-->
+					<rxui:RoutedViewHost.DefaultContent>
+						<TextBlock Text="Loading..."
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center" />
+					</rxui:RoutedViewHost.DefaultContent>
+				</rxui:RoutedViewHost>
+			</Grid>
+		</Grid>
+
+		<Grid Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="50,50">
+
+			<Popup PlacementTarget="{Binding #PART_ToolPopButtonContainer}"
+				   IsOpen="{Binding IsPopupOpen, Mode=TwoWay}"
+				   PlacementAnchor="Top" 
+				   PlacementMode="Top"
+				   InheritsTransform="True"
+				   OverlayDismissEventPassThrough="True"
+				   VerticalOffset="-15">
+
+				<Border Padding="5">
+					<StackPanel Spacing="20">
+						<Border Width="40" Height="40" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+							<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding ToolPopOpenCommand}">
+								<Button.Content>
+									<PathIcon Data="{StaticResource ThemeEditorGeometry}"/>
+								</Button.Content>
+							</Button>
+						</Border>
+						<Border Width="40" Height="40" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+							<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding SwitchThemeCommand}">
+								<Button.Content>
+									<PathIcon Data="{StaticResource ThemeSwitchGeometry}"/>
+								</Button.Content>
+							</Button>
+						</Border>
+						<Border Width="40" Height="40" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+							<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding ToolPopOpenCommand}">
+								<Button.Content>
+									<PathIcon Data="{StaticResource ThemeChangeGeometry}"/>
+								</Button.Content>
+							</Button>
+						</Border>
+					</StackPanel>
+				</Border>
+			</Popup>
+
+			<Grid x:Name="PART_ToolPopButtonContainer" Width="50" >
+				<Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+					<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding ToolPopOpenCommand}">
+						<Button.Content>
+							<PathIcon Data="{StaticResource ToolPopButtonGeometry}"/>
+						</Button.Content>
+					</Button>
+				</Border>
+			</Grid>
 		</Grid>
 	</Grid>
 </UserControl>

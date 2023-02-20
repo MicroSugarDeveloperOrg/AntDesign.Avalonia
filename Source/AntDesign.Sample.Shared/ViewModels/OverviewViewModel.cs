@@ -7,22 +7,14 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
     public OverviewViewModel(IServiceProvider serviceProvider)
     {
         ViewModel = this;
-        _serviceProvider = serviceProvider; 
+        _serviceProvider = serviceProvider;
+
         TriggerClickCommand = ReactiveCommand.Create(() =>
         {
             IsTrigger = !IsTrigger;
         });
 
-        SwitchThemeCommand = ReactiveCommand.Create(() =>
-        {
-            if (Application.Current is not null)
-            {
-                if (Application.Current.ActualThemeVariant == ThemeVariant.Light || Application.Current.ActualThemeVariant == ThemeVariant.Default)
-                    Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
-                else
-                    Application.Current.RequestedThemeVariant = ThemeVariant.Light;
-            }
-        });
+
     }
 
     readonly IServiceProvider _serviceProvider;
@@ -31,7 +23,7 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
     public bool IsTrigger
     {
         get => _IsTrigger;
-        set => SetProperty(ref _IsTrigger, value, (o , n) =>
+        set => SetProperty(ref _IsTrigger, value, (o, n) =>
         {
             return true;
         }, (o, n) =>
@@ -41,7 +33,6 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
     }
 
     public ReactiveCommand<Unit, Unit> TriggerClickCommand { get; }
-    public ReactiveCommand<Unit, Unit> SwitchThemeCommand { get; }
 
     protected override void Activating()
     {

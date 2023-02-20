@@ -120,7 +120,7 @@
 								  HorizontalAlignment="Right"
 								  VerticalAlignment="Center"
 								  Foreground="{DynamicResource ComboBoxDropDownGlyphForeground}"
-								  Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z"/>
+								  Data="{DynamicResource ComboBoxButtonIcon}"/>
 
 						<Popup Name="PART_Popup"
 							   WindowManagerAddShadowHint="False"
@@ -152,19 +152,21 @@
 
 		<!--  PointerOver State  -->
 		<Style Selector="^:pointerover /template/ Border#Background">
-			<Setter Property="Background" Value="{DynamicResource ComboBoxBackgroundPointerOver}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushPointerOver}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PointerOverBackground}" />
+			<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PointerOverBorderBrush}" />
 		</Style>
 
 		<!--  Pressed State  -->
 		<Style Selector="^:pressed /template/ Border#Background">
-			<Setter Property="Background" Value="{DynamicResource ComboBoxBackgroundPressed}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushPressed}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PressedBackground}" />
+			<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:ControlAssists.PressedForeground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PressedBorderBrush}" />
 		</Style>
 
 		<!-- Error State -->
 		<Style Selector="^:error /template/ Border#Background">
-			<Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBackground}" />
 		</Style>
 
 		<!--  Focus Pressed State  -->

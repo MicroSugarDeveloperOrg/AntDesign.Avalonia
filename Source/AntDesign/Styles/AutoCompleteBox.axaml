@@ -71,7 +71,7 @@
 								BorderThickness="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBoderThickness}"
 								CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}"
 								ClipToBounds="False"
-								BoxShadow="0 0 10 1 LightGray">
+								BoxShadow="{DynamicResource AutoCompleteBoxShadow}">
 							<ListBox x:Name="{x:Static helpers:PARTNameHelper.PART_SelectingItemsControl}"
 									 BorderThickness="0"
 									 Background="Transparent"

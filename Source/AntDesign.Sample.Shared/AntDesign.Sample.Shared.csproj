@@ -7,7 +7,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<AvaloniaResource Include="Assets\**" /> 
+		<AvaloniaResource Include="Assets\**" />
+		<AvaloniaResource Include="Assets\Styles\**" /> 
 		<TrimmerRootDescriptor Include="Roots.xml" />
 	</ItemGroup>
 

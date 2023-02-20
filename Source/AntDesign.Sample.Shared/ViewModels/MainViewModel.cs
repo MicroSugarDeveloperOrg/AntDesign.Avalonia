@@ -1,16 +1,34 @@
 ﻿using AntDesign.Sample.Routers;
+using AntDesign.Sample.Services;
 using Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
-using Avalonia.ReactiveUI.Toolkit.Routers;
 
 namespace AntDesign.Sample.ViewModels;
 
 public class MainViewModel : ViewModelBase, IScreen
 {
-    public MainViewModel(IMainRoutingViewLocator viewLocator)
+    public MainViewModel(IMainRoutingViewLocator viewLocator, IThemeService themeService)
     {
         ViewLocator = viewLocator;
         Router = viewLocator.Make(this);
         Routers = viewLocator.Routers();
+
+        ToolPopOpenCommand = ReactiveCommand.Create(() => 
+        {
+            IsPopupOpen = !IsPopupOpen;
+        });
+
+        SwitchThemeCommand = ReactiveCommand.Create(() =>
+        {
+            if (themeService.ActualThemeName is "Light" or "Default")
+                themeService.Switch("Dark");
+            else
+                themeService.Switch("Light");
+        });
+
+        StartGitHubCommand = ReactiveCommand.Create(() =>
+        {
+
+        });
     }
 
     public RoutingState Router { get; }
@@ -29,6 +47,17 @@ public class MainViewModel : ViewModelBase, IScreen
             ViewLocator.Navigate(n.Token);
         });
     }
+
+    private bool _isPopupOpen = false;
+    public bool IsPopupOpen
+    {
+        get => _isPopupOpen;
+        set => SetProperty(ref _isPopupOpen, value);
+    }
+
+    public ReactiveCommand<Unit, Unit> ToolPopOpenCommand { get; }
+    public ReactiveCommand<Unit, Unit> SwitchThemeCommand { get; }
+    public ReactiveCommand<Unit, Unit> StartGitHubCommand { get; }
 
     protected override void Activating()
     {

@@ -1,7 +1,7 @@
 ﻿using Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
-using Avalonia.ReactiveUI.Toolkit.Routers;
 
 namespace AntDesign.Sample.Routers;
+
 public class MainRoutingViewLocator : IMainRoutingViewLocator
 {
     public MainRoutingViewLocator(IServiceCollection serviceCollection)
