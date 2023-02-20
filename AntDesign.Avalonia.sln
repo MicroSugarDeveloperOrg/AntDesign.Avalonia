@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Toolkit", "Source\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.ReactiveUI.Toolkit", "Source\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj", "{5CE934BE-6C44-4893-B6EC-F760AFA448BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntDesign.Icons", "Source\AntDesign.Icons\AntDesign.Icons.csproj", "{CEE81A97-90B0-4959-AAE4-4E78771AE380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Icons", "Source\AntDesign.Icons\AntDesign.Icons.csproj", "{CEE81A97-90B0-4959-AAE4-4E78771AE380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntDesign.Controls", "Source\AntDesign.Controls\AntDesign.Controls.csproj", "{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{CEE81A97-90B0-4959-AAE4-4E78771AE380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEE81A97-90B0-4959-AAE4-4E78771AE380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEE81A97-90B0-4959-AAE4-4E78771AE380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
