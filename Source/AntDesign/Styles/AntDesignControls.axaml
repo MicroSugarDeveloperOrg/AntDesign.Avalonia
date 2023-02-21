@@ -20,6 +20,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ListBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ListBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/MenuScrollViewer.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/NotificationCard.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/OverlayPopupHost.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />

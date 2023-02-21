@@ -89,8 +89,8 @@
 							<TextBlock x:Name="PlaceholderTextBlock"
 									   Grid.Column="0"
 									   Text="{TemplateBinding PlaceholderText}"
-									   Foreground="{TemplateBinding Foreground}"
-									   Opacity="{DynamicResource InnerElementOpacity}"
+									   Opacity="{DynamicResource InnerPlaceholderOpacity}"
+									   Foreground="{DynamicResource ComboBoxPlaceholderTextForeground}"
 									   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
 									   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
 									   IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
@@ -110,8 +110,8 @@
 										  IsHitTestVisible="False"
 										  Height="{DynamicResource DropDownGlyphIconHeight}"
 										  Width="{DynamicResource DropDownGlyphIconWidth}"
-										  Opacity="{DynamicResource InnerElementOpacity}"
-										  Foreground="{TemplateBinding Foreground}"
+										  Opacity="{DynamicResource InnerIconOpacity}"
+										  Foreground="{DynamicResource ComboBoxDropDownGlyphForeground}"
 										  Data="{DynamicResource ComboBoxButtonIcon}"
 										  HorizontalAlignment="Center"
 										  VerticalAlignment="Center" />

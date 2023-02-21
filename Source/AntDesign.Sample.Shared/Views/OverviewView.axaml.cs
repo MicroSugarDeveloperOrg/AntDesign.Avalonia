@@ -1,6 +1,4 @@
 using AntDesign.Sample.ViewModels;
-using Avalonia.Controls.Presenters;
-using Avalonia.Controls.Primitives;
 
 namespace AntDesign.Sample.Views;
 

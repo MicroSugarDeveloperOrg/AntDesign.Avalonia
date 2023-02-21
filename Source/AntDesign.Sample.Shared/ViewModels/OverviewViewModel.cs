@@ -14,6 +14,10 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
             IsTrigger = !IsTrigger;
         });
 
+        TriggerClickCommand1 = ReactiveCommand.Create(() =>
+        {
+            IsTrigger1 = true;
+        });
 
     }
 
@@ -32,7 +36,21 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
         });
     }
 
+    bool _IsTrigger1 = false;
+    public bool IsTrigger1
+    {
+        get => _IsTrigger1;
+        set => SetProperty(ref _IsTrigger1, value, (o, n) =>
+        {
+            return true;
+        }, (o, n) =>
+        {
+
+        });
+    }
+
     public ReactiveCommand<Unit, Unit> TriggerClickCommand { get; }
+    public ReactiveCommand<Unit, Unit> TriggerClickCommand1 { get; }
 
     protected override void Activating()
     {

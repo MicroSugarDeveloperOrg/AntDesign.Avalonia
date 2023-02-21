@@ -53,7 +53,8 @@
 	<StaticResource x:Key="ComboBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
 	<StaticResource x:Key="ComboBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
 
-	<x:Double x:Key="InnerElementOpacity">0.5</x:Double>
+	<x:Double x:Key="InnerPlaceholderOpacity">0.5</x:Double>
+	<x:Double x:Key="InnerIconOpacity">0.5</x:Double>
 
 	<x:Double x:Key="DropDownGlyphBorderWidth">32</x:Double>
 	
@@ -117,6 +118,12 @@
 	<x:Double x:Key="ListBoxItemInnerBorderWidth">3</x:Double>
 	<x:Double x:Key="ListBoxItemInnerBorderHeight">15</x:Double>
 
+	<!-- MenuScrollViewer -->
+	<x:Double x:Key="MenuScrollViewerIconViewBoxWidth">8</x:Double>
+	<x:Double x:Key="MenuScrollViewerIconViewBoxHeight">8</x:Double>
+	<x:Double x:Key="MenuScrollViewerIconWidth">20</x:Double>
+	<x:Double x:Key="MenuScrollViewerIconHeight">20</x:Double>
+	
 	<!-- NotificationCard -->
 	<x:Double x:Key="NotificationCardWidth">200</x:Double>
 	<x:Double x:Key="NotificationCardPanelSize">4</x:Double>

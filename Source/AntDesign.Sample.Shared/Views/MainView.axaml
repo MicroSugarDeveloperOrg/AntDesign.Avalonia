@@ -70,7 +70,9 @@
 				   PlacementAnchor="Top" 
 				   PlacementMode="Top"
 				   InheritsTransform="True"
+				   WindowManagerAddShadowHint="False"
 				   OverlayDismissEventPassThrough="True"
+				   IsLightDismissEnabled="True" 
 				   VerticalOffset="-15">
 
 				<Border Padding="5">

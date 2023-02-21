@@ -5,13 +5,20 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.ButtonView">
 	<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,Auto">
-		
-		<StackPanel>
-			<Border Background="#1677ff" Width="100" Height="100"/>
-			<Border Background="#4096ff" Width="100" Height="100"/>
-			<Border Background="#FF0958d9" Width="100" Height="100"/>
 
-		</StackPanel>
+		<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
+			<StackPanel Spacing="20">
+				<TextBlock>Item 1</TextBlock>
+				<TextBlock>Item 2</TextBlock>
+				<TextBlock>Item 3</TextBlock>
+				<TextBlock>Item 4</TextBlock>
+				<TextBlock>Item 5</TextBlock>
+				<TextBlock>Item 6</TextBlock>
+				<TextBlock>Item 7</TextBlock>
+				<TextBlock>Item 8</TextBlock>
+				<TextBlock>Item 9</TextBlock>
+			</StackPanel>
+		</ScrollViewer>
  
 		
 	</Grid>

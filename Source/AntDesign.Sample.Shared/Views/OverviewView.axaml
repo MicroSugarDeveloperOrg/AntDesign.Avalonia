@@ -139,6 +139,20 @@
 					</Panel>
 
 					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+						<RippleEffectAx RippleColor="Red" 
+										Duration="200"
+										IsReverse="False"
+										CornerRadius="5"
+										RippleBackgroundAlpha="0.3" 
+										RippleColorAlpha="0" 
+										RippleToScal="1.3"
+										IsManualTrigger="True" 
+										IsTrigger="{Binding IsTrigger1}"/>
+					    <Button Height="40" Theme="{StaticResource PrimaryButtonStyle}" Content="RippleEffectAx"  Command="{Binding TriggerClickCommand1}"/>
+						
+					</Panel>
+					
+					<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
 						<RippleEffectAx IsManualTrigger="True"
 										IsTrigger="{Binding IsTrigger}"
 										IsForever="True"

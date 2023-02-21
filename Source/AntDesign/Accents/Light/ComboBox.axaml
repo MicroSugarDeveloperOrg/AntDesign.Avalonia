@@ -19,4 +19,7 @@
 	<SolidColorBrush x:Key="ComboBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="ComboBoxPopupBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
+	<SolidColorBrush x:Key="ComboBoxPlaceholderTextForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+
 </ResourceDictionary>

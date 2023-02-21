@@ -7,6 +7,7 @@
     <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageVersion Include="Quic.NET" Version="1.0.0" />
     <PackageVersion Include="XamlNameReferenceGenerator" Version="1.5.1" />
     <!--<PackageVersion Include="Avalonia.Web" Version="$(AvaloniaVersion)" />-->
     <PackageVersion Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
@@ -25,7 +26,7 @@
     <PackageVersion Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)" />
     <PackageVersion Include="Avalonia.Markup.Xaml.Loader" Version="$(AvaloniaVersion)" />
     <PackageVersion Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
-    <PackageVersion Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="PolySharp" Version="1.12.1" />
