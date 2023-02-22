@@ -130,14 +130,32 @@
 	
 	<!-- MenuItem -->
 	<StaticResource x:Key="MenuItemMargin" ResourceKey="Margin"/>
-	<StaticResource x:Key="MenuItemPadding" ResourceKey="OverlayPadding"/>
+	<Thickness x:Key="MenuItemPadding" >5</Thickness>
 	<StaticResource x:Key="MenuItemCornerRadius" ResourceKey="OverlayCornerRadius"/>
 	<StaticResource x:Key="MenuItemBorderThickness" ResourceKey="BorderThickness"/>
 
 	<Thickness x:Key="MenuIconPresenterMargin">3</Thickness>
+	<Thickness x:Key="MenuInputGestureTextMargin">6,0,0,0</Thickness>
 	<x:Double x:Key="MenuIconWidth">16</x:Double>
 	<x:Double x:Key="MenuIconHeight">16</x:Double>
-	
+
+	<x:Double x:Key="MenuInputGestureTextOpacity">0.5</x:Double>
+	<Thickness x:Key="MenuFlyoutItemChevronMargin">3</Thickness>
+	<x:Double x:Key="MenuFlyoutSubItemPopupHorizontalOffset">1</x:Double>
+
+	<StaticResource x:Key="MenuFlyoutPresenterBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="MenuFlyoutPresenterCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="MenuFlyoutPresenterPadding" ResourceKey="OverlayPadding"/>
+
+	<Thickness x:Key="MenuItemPopupShadowBorderPadding">10</Thickness>
+	<Thickness x:Key="MenuItemPopupScrollerMargin">3</Thickness>
+
+	<x:Double x:Key="MenuItemPopupMaxWidth">200</x:Double>
+	<x:Double x:Key="MenuItemPopupMinHeight">40</x:Double>
+
+	<x:Double x:Key="MenuItemIconHeight">12</x:Double>
+	<x:Double x:Key="MenuItemIconWidth">8</x:Double>
+
 	<!-- MenuScrollViewer -->
 	<x:Double x:Key="MenuScrollViewerIconViewBoxWidth">8</x:Double>
 	<x:Double x:Key="MenuScrollViewerIconViewBoxHeight">8</x:Double>

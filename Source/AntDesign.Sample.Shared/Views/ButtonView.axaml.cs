@@ -6,5 +6,6 @@ public partial class ButtonView : ReactiveUserControl<ButtonViewModel>
     public ButtonView()
     {
         InitializeComponent(); 
+        //Border.MarginProperty
     }
 }

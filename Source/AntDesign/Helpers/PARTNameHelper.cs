@@ -69,4 +69,9 @@ public static class PARTNameHelper
     //ListBox
     public static string PART_ScrollViewer => nameof(PART_ScrollViewer);
 
+    //MenuItem
+    public static string PART_IconPresenter => nameof(PART_IconPresenter);
+    public static string PART_HeaderPresenter => nameof(PART_HeaderPresenter);
+    public static string PART_InputGestureText => nameof(PART_InputGestureText);
+    public static string PART_ChevronPath => nameof(PART_ChevronPath);
 }

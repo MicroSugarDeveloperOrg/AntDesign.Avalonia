@@ -4,54 +4,104 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.ButtonView">
-	<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,Auto">
 
-		<StackPanel Spacing="20">
-			<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
-				<StackPanel Spacing="20">
-					<TextBlock>Item 1</TextBlock>
-					<TextBlock>Item 2</TextBlock>
-					<TextBlock>Item 3</TextBlock>
-					<TextBlock>Item 4</TextBlock>
-					<TextBlock>Item 5</TextBlock>
-					<TextBlock>Item 6</TextBlock>
-					<TextBlock>Item 7</TextBlock>
-					<TextBlock>Item 8</TextBlock>
-					<TextBlock>Item 9</TextBlock>
-				</StackPanel>
-			</ScrollViewer>
+	<ScrollViewer>
+		<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,Auto">
+
+			<StackPanel Spacing="20">
+				<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
+					<StackPanel Spacing="20">
+						<TextBlock>Item 1</TextBlock>
+						<TextBlock>Item 2</TextBlock>
+						<TextBlock>Item 3</TextBlock>
+						<TextBlock>Item 4</TextBlock>
+						<TextBlock>Item 5</TextBlock>
+						<TextBlock>Item 6</TextBlock>
+						<TextBlock>Item 7</TextBlock>
+						<TextBlock>Item 8</TextBlock>
+						<TextBlock>Item 9</TextBlock>
+					</StackPanel>
+				</ScrollViewer>
 
 
-			<Border Margin="16"
-					Padding="48"
-					Width="400"
-					Background="Red"
-					Height="200">
-				<Border.ContextMenu>
-					<ContextMenu>
-						<MenuItem Header="Standard _Menu Item" />
-						<MenuItem Header="Disabled" IsEnabled="False" />
-						<Separator />
-						<MenuItem Header="Menu with _Submenu">
-							<MenuItem Header="Submenu _1" />
-							<MenuItem Header="Submenu _2" />
-						</MenuItem>
-						<MenuItem Header="Menu Item with _Icon" />
-						<MenuItem Header="Menu Item with _Checkbox">
+				<Border Margin="16"
+						Padding="48"
+						Width="400"
+						Background="Red"
+						Height="200">
+					<Border.ContextMenu>
+						<ContextMenu>
+							<MenuItem Header="Standard _Menu Item" />
+							<MenuItem Header="Disabled" IsEnabled="False" />
+							<Separator />
+							<MenuItem Header="Menu with _Submenu">
+								<MenuItem Header="Submenu _1" />
+								<MenuItem Header="Submenu _2" />
+							</MenuItem>
+							<MenuItem Header="Menu Item with _Icon" />
+							<MenuItem Header="Menu Item with _Checkbox">
+								<MenuItem.Icon>
+									<CheckBox BorderThickness="0"
+											  IsHitTestVisible="False"
+											  IsChecked="True" />
+								</MenuItem.Icon>
+							</MenuItem>
+						</ContextMenu>
+					</Border.ContextMenu>
+					<TextBlock Text="Defined in XAML" />
+				</Border>
+
+
+				<Border Padding="20" Width="320">
+					<StackPanel Spacing="20" HorizontalAlignment="Left">
+						<MenuItem Header="_Standard"/>
+						<MenuItem IsSelected="True" Header="Selected"/>
+						<MenuItem Header="With Icon">
 							<MenuItem.Icon>
-								<CheckBox BorderThickness="0"
-										  IsHitTestVisible="False"
-										  IsChecked="True" />
+								<TextBlock>😊</TextBlock>
 							</MenuItem.Icon>
 						</MenuItem>
-					</ContextMenu>
-				</Border.ContextMenu>
-				<TextBlock Text="Defined in XAML" />
-			</Border>
+						<MenuItem Header="With CheckBox">
+							<MenuItem.Icon>
+								<CheckBox IsChecked="True"/>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="Input Gesture" InputGesture="Ctrl+G"/>
+						<MenuItem Header="Disabled" IsEnabled="False"/>
+						<MenuItem Header="-"/>
+						<MenuItem Header="Parent" IsSubMenuOpen="True">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+							<Separator/>
+							<MenuItem Header="Child 4"/>
+							<MenuItem Header="Child 5"/>
+							<MenuItem Header="Child 6"/>
+							<MenuItem Header="Child 7"/>
+							<MenuItem Header="Child 8"/>
+							<MenuItem Header="Child 9"/>
+							<MenuItem Header="Child 10"/>
+							<MenuItem Header="Child 11"/>
+							<MenuItem Header="Child 12"/>
+							<MenuItem Header="Child 13"/>
+							<MenuItem Header="Child 14"/>
+							<MenuItem Header="Child 15"/>
+							<MenuItem Header="Child 16"/>
+							<MenuItem Header="Child 17"/>
+							<MenuItem Header="Child 18"/>
+							<MenuItem Header="Child 19"/>
+						</MenuItem>
+						<MenuItem Header="Disabled Parent" IsEnabled="False">
+							<MenuItem Header="Child"/>
+						</MenuItem>
+					</StackPanel>
+				</Border>
 
-		</StackPanel>
+			</StackPanel>
+
+
+
+		</Grid>
+	</ScrollViewer>
 	
-		
-		
-	</Grid>
 </UserControl>

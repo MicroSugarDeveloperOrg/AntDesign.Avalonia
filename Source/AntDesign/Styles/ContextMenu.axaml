@@ -3,7 +3,7 @@
 					xmlns:helpers="using:AntDesign.Helpers"
 					x:CompileBindings="True">
 	<Design.PreviewWith>
-		<Border Background="{DynamicResource SystemAccentColor}"
+		<Border Background="Red"
 				Margin="16"
 				Padding="48"
 				Width="400"

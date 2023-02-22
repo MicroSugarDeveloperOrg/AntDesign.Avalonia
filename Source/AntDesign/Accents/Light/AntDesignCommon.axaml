@@ -39,10 +39,10 @@
 
 	<!--Disable-->
 	<Color x:Key="DisableBackgroundColor">#FFF5F5F5</Color> 
-	<SolidColorBrush x:Key="DisableForeground" Color="{StaticResource DisableForegroundColor}"/>
+	<SolidColorBrush x:Key="DisableBackground" Color="{StaticResource DisableBackgroundColor}"/>
 	
 	<Color x:Key="DisableForegroundColor">#FFC8C8C8</Color>
-	<SolidColorBrush x:Key="DisableBackground" Color="{StaticResource DisableBackgroundColor}"/>
+	<SolidColorBrush x:Key="DisableForeground" Color="{StaticResource DisableForegroundColor}"/>
 	
 	<Color x:Key="DisableBorderColor">#FFD9D9D9</Color>
 	<SolidColorBrush x:Key="DisableBorderBrush" Color="{StaticResource DisableBorderColor}"/>
