@@ -11,6 +11,8 @@
 	<antConverters:PopupSizeConverter x:Key="PopupSizeConverter"/>
 	<antConverters:PopupHorizontalOffsetConverter x:Key="PopupHorizontalOffsetConverter"/>
 
+	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
+
 	<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
 	<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
 

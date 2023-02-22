@@ -6,20 +6,52 @@
              x:Class="AntDesign.Sample.Views.ButtonView">
 	<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,Auto">
 
-		<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
-			<StackPanel Spacing="20">
-				<TextBlock>Item 1</TextBlock>
-				<TextBlock>Item 2</TextBlock>
-				<TextBlock>Item 3</TextBlock>
-				<TextBlock>Item 4</TextBlock>
-				<TextBlock>Item 5</TextBlock>
-				<TextBlock>Item 6</TextBlock>
-				<TextBlock>Item 7</TextBlock>
-				<TextBlock>Item 8</TextBlock>
-				<TextBlock>Item 9</TextBlock>
-			</StackPanel>
-		</ScrollViewer>
- 
+		<StackPanel Spacing="20">
+			<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
+				<StackPanel Spacing="20">
+					<TextBlock>Item 1</TextBlock>
+					<TextBlock>Item 2</TextBlock>
+					<TextBlock>Item 3</TextBlock>
+					<TextBlock>Item 4</TextBlock>
+					<TextBlock>Item 5</TextBlock>
+					<TextBlock>Item 6</TextBlock>
+					<TextBlock>Item 7</TextBlock>
+					<TextBlock>Item 8</TextBlock>
+					<TextBlock>Item 9</TextBlock>
+				</StackPanel>
+			</ScrollViewer>
+
+
+			<Border Margin="16"
+					Padding="48"
+					Width="400"
+					Background="Red"
+					Height="200">
+				<Border.ContextMenu>
+					<ContextMenu>
+						<MenuItem Header="Standard _Menu Item" />
+						<MenuItem Header="Disabled" IsEnabled="False" />
+						<Separator />
+						<MenuItem Header="Menu with _Submenu">
+							<MenuItem Header="Submenu _1" />
+							<MenuItem Header="Submenu _2" />
+						</MenuItem>
+						<MenuItem Header="Menu Item with _Icon" />
+						<MenuItem Header="Menu Item with _Checkbox">
+							<MenuItem.Icon>
+								<CheckBox BorderThickness="0"
+										  IsHitTestVisible="False"
+										  IsChecked="True" />
+							</MenuItem.Icon>
+						</MenuItem>
+					</ContextMenu>
+				</Border.ContextMenu>
+				<TextBlock Text="Defined in XAML" />
+			</Border>
+
+		</StackPanel>
+	
+		
 		
 	</Grid>
 </UserControl>

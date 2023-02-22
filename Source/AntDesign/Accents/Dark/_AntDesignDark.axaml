@@ -17,6 +17,8 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/GridSplitter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ListBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ListBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/MenuItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/MenuScrollViewer.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/NotificationCard.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/RadioButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/RepeatButton.axaml" />

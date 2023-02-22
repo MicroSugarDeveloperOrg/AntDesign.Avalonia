@@ -32,34 +32,41 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu">
-		<Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
-		<Setter Property="MaxWidth" Value="{DynamicResource FlyoutThemeMaxWidth}" />
-		<Setter Property="MinHeight" Value="{DynamicResource MenuFlyoutThemeMinHeight}" />
-		<Setter Property="Padding" Value="{DynamicResource MenuFlyoutPresenterThemePadding}" />
 		<Setter Property="TextBlock.FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource ContextMenuBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ContextMenuBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ContextMenuBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ContextMenuBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ContextMenuCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource ContextMenuPadding}" />
+		<Setter Property="MaxWidth" Value="{DynamicResource ContextMenuMaxWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource ContextMenuMinHeight}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="WindowManagerAddShadowHint" Value="False" />
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						Padding="{TemplateBinding Padding}"
-						MaxWidth="{TemplateBinding MaxWidth}"
-						MinHeight="{TemplateBinding MinHeight}"
-						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-						CornerRadius="{TemplateBinding CornerRadius}">
-					<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
-						<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-										ItemsPanel="{TemplateBinding ItemsPanel}"
-										Margin="{DynamicResource MenuFlyoutScrollerMargin}"
-										KeyboardNavigation.TabNavigation="Continue"
-										Grid.IsSharedSizeScope="True" />
-					</ScrollViewer>
+				<Border Background="Transparent" 
+						Padding="{DynamicResource ContextMenuShadowBorderPadding}">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Padding="{TemplateBinding Padding}"
+							MaxWidth="{TemplateBinding MaxWidth}"
+							MinHeight="{TemplateBinding MinHeight}"
+							HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							BoxShadow="{DynamicResource ContextMenuShadow}">
+						<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
+							<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+											ItemsPanel="{TemplateBinding ItemsPanel}"
+											Margin="{DynamicResource ContextMenuMargin}"
+											KeyboardNavigation.TabNavigation="Continue"
+											Grid.IsSharedSizeScope="True" />
+						</ScrollViewer>
+					</Border>
 				</Border>
+			
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>

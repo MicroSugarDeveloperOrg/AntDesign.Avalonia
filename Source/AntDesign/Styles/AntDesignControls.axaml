@@ -11,6 +11,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/ComboBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ComboBoxItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ContentControl.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ContextMenu.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/DataValidationErrors.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/DropDownButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/EmbeddableControlRoot.axaml" />
@@ -20,6 +21,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ListBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ListBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/MenuItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/MenuScrollViewer.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/NotificationCard.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/OverlayPopupHost.axaml" />
