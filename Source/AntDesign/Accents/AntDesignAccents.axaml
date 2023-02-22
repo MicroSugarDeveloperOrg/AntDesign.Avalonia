@@ -132,8 +132,13 @@
 	<x:Double x:Key="MenuBarHeight">32</x:Double>
 	<StaticResource x:Key="MenuMargin" ResourceKey="Margin"/>
 	<StaticResource x:Key="MenuPadding" ResourceKey="Padding"/>
-	<StaticResource x:Key="MenuCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="MenuBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="MenuCornerRadius" ResourceKey="CornerRadius"/>
+	<Thickness x:Key="MenuBorderThickness">0,0,0,1</Thickness>
+	
+	<Thickness x:Key="AntMenuItemPopupShadowBorderPadding">10,5,10,10</Thickness>
+	<Thickness x:Key="AntMenuItemBorderThickness">0</Thickness>
+	<StaticResource x:Key="AntMenuItemCornerRadius" ResourceKey="CornerRadius"/>
+	<StaticResource x:Key="AntMenuItemPadding" ResourceKey="Padding"/>
 	
 	<!-- MenuItem -->
 	<StaticResource x:Key="MenuItemMargin" ResourceKey="Margin"/>

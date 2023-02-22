@@ -97,6 +97,20 @@
 					</StackPanel>
 				</Border>
 
+				<StackPanel>
+					<Menu>
+						<MenuItem Header="Child 12023">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+						</MenuItem>
+						<MenuItem Header="123"/>
+						<MenuItem Header="123"/>
+						<MenuItem Header="123"/>
+						
+					</Menu>
+				</StackPanel>
+				
 			</StackPanel>
 
 

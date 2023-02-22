@@ -4,6 +4,139 @@
 					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
 
+	<ControlTheme x:Key="AntDesignMenuItemStyle" TargetType="MenuItem">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource AntMenuItemBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource AntMenuItemForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource AntMenuItemBorderBrush}" />
+		<Setter Property="assists:MenuItemAssists.PointerOverBackground" Value="{DynamicResource AntMenuItemPointerOverBackground}" />
+		<Setter Property="assists:MenuItemAssists.PointerOverForeground" Value="{DynamicResource AntMenuItemPointerOverForeground}" />
+		<Setter Property="assists:MenuItemAssists.PointerOverBorderBrush" Value="{DynamicResource AntMenuItemPointerOverBorderBrush}" />
+		<Setter Property="assists:MenuItemAssists.PointerOverBottomBackground" Value="{DynamicResource AntMenuItemPointerOverBottomBackground}" />
+		<Setter Property="assists:MenuItemAssists.PressedBackground" Value="{DynamicResource AntMenuItemPressedBackground}" />
+		<Setter Property="assists:MenuItemAssists.PressedForeground" Value="{DynamicResource AntMenuItemPressedForeground}" />
+		<Setter Property="assists:MenuItemAssists.PressedBorderBrush" Value="{DynamicResource AntMenuItemPressedBorderBrush}" />
+		<Setter Property="assists:MenuItemAssists.PressedBottomBackground" Value="{DynamicResource AntMenuItemPressedBottomBackground}" />
+		<Setter Property="assists:MenuItemAssists.SelectedBackground" Value="{DynamicResource AntMenuItemSelectedBackground}" />
+		<Setter Property="assists:MenuItemAssists.SelectedForeground" Value="{DynamicResource AntMenuItemSelectedForeground}" />
+		<Setter Property="assists:MenuItemAssists.SelectedBorderBrush" Value="{DynamicResource AntMenuItemSelectedBorderBrush}" />
+		<Setter Property="assists:MenuItemAssists.SelectedBottomBackground" Value="{DynamicResource AntMenuItemSelectedBottomBackground}" />
+		<Setter Property="assists:MenuItemAssists.PopupPadding" Value="{DynamicResource AntMenuItemPopupShadowBorderPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource AntMenuItemBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource AntMenuItemCornerRadius}" />
+		<!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
+		<Setter Property="Padding" Value="{DynamicResource AntMenuItemPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource MenuItemMargin}" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid RowDefinitions="*,Auto">	
+					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							Margin="{TemplateBinding Margin}">
+						<Grid ColumnDefinitions="Auto,*">
+							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_HeaderPresenter}"
+											  Content="{TemplateBinding Header}"
+											  VerticalAlignment="Center"
+											  HorizontalAlignment="Stretch"
+											  RecognizesAccessKey="True"
+											  Margin="{TemplateBinding Padding}"/>
+							<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
+								   WindowManagerAddShadowHint="False"
+								   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
+								   PlacementTarget="{TemplateBinding}"
+								   IsLightDismissEnabled="True"
+								   HorizontalOffset="{TemplateBinding assists:MenuItemAssists.PopupPadding, Converter={StaticResource PopupHorizontalOffsetConverter}}"
+								   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
+								<Popup.MinWidth>
+									<MultiBinding Converter="{StaticResource PopupSizeConverter}">
+										<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width"/>
+										<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:MenuItemAssists.PopupPadding)"/>
+									</MultiBinding>
+								</Popup.MinWidth>
+
+								<Border Background="{DynamicResource MenuItemPopupBackground}"
+										TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
+										BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
+										BorderThickness="{DynamicResource MenuItemPopupBorderThickness}"
+										CornerRadius="{DynamicResource MenuItemPopupCornerRadius}"
+										Padding="{DynamicResource MenuItemPopupPadding}"
+										Margin="{TemplateBinding assists:MenuItemAssists.PopupPadding}"
+										HorizontalAlignment="Stretch"
+										ClipToBounds="False"
+										BoxShadow="{DynamicResource MenuItemPopupShadow}">
+									<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
+										<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+														ItemsPanel="{TemplateBinding ItemsPanel}"
+														Margin="{DynamicResource MenuItemPopupScrollerMargin}"
+														Grid.IsSharedSizeScope="True" />
+									</ScrollViewer>
+								</Border>
+							</Popup>
+						</Grid>
+					</Border>
+
+					<Border x:Name="PART_BottomPresenter" Grid.Row="1" Height="2" Background="Transparent" Margin="0,0,0,-1"/>
+				</Grid>
+			
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.SelectedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.SelectedForeground}" />
+			</Style>
+			<Style Selector =" ^ /template/ Border#PART_BottomPresenter">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.SelectedBottomBackground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBorderBrush}" /> 
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
+			</Style>
+			<Style Selector =" ^ /template/ Border#PART_BottomPresenter">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBottomBackground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PressedForeground}" />
+			</Style>
+			<Style Selector =" ^ /template/ Border#PART_BottomPresenter">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PressedBottomBackground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
+		</Style>
+
+	</ControlTheme>
+
+
 	<ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
 		<Setter Property="Background" Value="{DynamicResource MenuBackground}" />
 		<Setter Property="TextElement.Foreground" Value="{DynamicResource MenuForeground}" />

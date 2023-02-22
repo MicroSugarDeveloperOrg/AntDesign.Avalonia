@@ -17,6 +17,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/GridSplitter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ListBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ListBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Menu.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/MenuFlyoutPresenter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/MenuItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/MenuScrollViewer.axaml" />

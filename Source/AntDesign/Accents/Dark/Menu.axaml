@@ -2,27 +2,30 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<BoxShadows x:Key="MenuItemPopupShadow">0 0 10 1 #4F000000</BoxShadows>
+	<SolidColorBrush x:Key="MenuBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="MenuForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="MenuBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
+	<SolidColorBrush x:Key="AntMenuItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="MenuItemBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="MenuItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="MenuItemBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemPointerOverBorderBrush" Color="Transparent"/>
+	
+	<SolidColorBrush x:Key="AntMenuItemPointerOverBottomBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
 
-	<SolidColorBrush x:Key="MenuItemPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="MenuItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="MenuItemPointerOverBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemPressedBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="MenuItemPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
-	<SolidColorBrush x:Key="MenuItemPressedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="MenuItemPressedBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemPressedBottomBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
 
-	<SolidColorBrush x:Key="MenuItemSelectedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
-	<SolidColorBrush x:Key="MenuItemSelectedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="MenuItemSelectedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
-
-	<SolidColorBrush x:Key="MenuItemPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
-	<SolidColorBrush x:Key="MenuItemPopupForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="MenuItemPopupBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemSelectedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntMenuItemSelectedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemSelectedBorderBrush" Color="Transparent"/>
+	
+	<SolidColorBrush x:Key="AntMenuItemSelectedBottomBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
 
 </ResourceDictionary>

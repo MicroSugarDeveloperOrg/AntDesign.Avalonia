@@ -4,7 +4,6 @@
 
 	<BoxShadows x:Key="MenuItemPopupShadow">0 0 10 1 #4F000000</BoxShadows>
 
-
 	<SolidColorBrush x:Key="MenuItemBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="MenuItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="MenuItemBorderBrush" Color="Transparent"/>
@@ -21,8 +20,10 @@
 	<SolidColorBrush x:Key="MenuItemSelectedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="MenuItemSelectedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
+
 	<SolidColorBrush x:Key="MenuItemPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="MenuItemPopupForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="MenuItemPopupBorderBrush" Color="Transparent"/>
+
 
 </ResourceDictionary>
