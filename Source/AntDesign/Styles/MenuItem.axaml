@@ -125,7 +125,7 @@
 								  Height="{DynamicResource MenuItemIconHeight}"
 								  Data="{StaticResource MenuItemChevronPathData}"
 								  Fill="{TemplateBinding Foreground}"
-								  Margin="{DynamicResource MenuFlyoutItemChevronMargin}"
+								  Margin="{DynamicResource MenuItemChevronMargin}"
 								  VerticalAlignment="Center"
 								  Grid.Column="3" />
 						</Grid>
@@ -134,7 +134,7 @@
 					<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 						   WindowManagerAddShadowHint="False"
 						   PlacementMode="Right"
-						   HorizontalOffset="{DynamicResource MenuFlyoutSubItemPopupHorizontalOffset}"
+						   HorizontalOffset="{DynamicResource MenuSubItemPopupHorizontalOffset}"
 						   IsLightDismissEnabled="False"
 						   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
 						<Border Background="Transparent"
@@ -142,9 +142,9 @@
 							<Border Background="{DynamicResource MenuItemPopupBackground}"
 									TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
 									BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
-									BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThickness}"
-									CornerRadius="{DynamicResource MenuFlyoutPresenterCornerRadius}"
-									Padding="{DynamicResource MenuFlyoutPresenterPadding}"
+									BorderThickness="{DynamicResource MenuItemPopupBorderThickness}"
+									CornerRadius="{DynamicResource MenuItemPopupCornerRadius}"
+									Padding="{DynamicResource MenuItemPopupPadding}"
 									MaxWidth="{DynamicResource MenuItemPopupMaxWidth}"
 									MinHeight="{DynamicResource MenuItemPopupMinHeight}"
 									HorizontalAlignment="Stretch"
@@ -168,52 +168,52 @@
 			<Setter Property="IsVisible" Value="True" />
 		</Style>
 
-		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
+		<Style Selector="^:pointerover">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">
-				<Setter Property="Background" Value="{DynamicResource MenuItemPointerOverBackground}" />
-				<Setter Property="BorderBrush" Value="{DynamicResource MenuItemPointerOverBorderBrush}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PointerOverBorderBrush}" />
 			</Style>
 			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
-				<Setter Property="Foreground" Value="{DynamicResource MenuItemPointerOverForeground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
 			</Style>
 			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
-				<Setter Property="Foreground" Value="{DynamicResource MenuItemPointerOverForeground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
 			</Style>
 			<Style Selector="^ /template/ Path#PART_ChevronPath">
-				<Setter Property="Fill" Value="{DynamicResource MenuItemPointerOverForeground}" />
+				<Setter Property="Fill" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
 			</Style>
 		</Style>
 
 		<Style Selector="^:selected">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">
-				<Setter Property="Background" Value="{DynamicResource MenuItemSelectedBackground}" />
-				<Setter Property="BorderBrush" Value="{DynamicResource MenuItemSelectedBorderBrush}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.SelectedBorderBrush}" />			
 			</Style>
 			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
-				<Setter Property="Foreground" Value="{DynamicResource MenuItemSelectedForeground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.SelectedForeground}" />
 			</Style>
 			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
-				<Setter Property="Foreground" Value="{DynamicResource MenuItemSelectedForeground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.SelectedForeground}" />
 			</Style>
 			<Style Selector="^ /template/ Path#PART_ChevronPath">
-				<Setter Property="Fill" Value="{DynamicResource MenuItemSelectedForeground}" />
+				<Setter Property="Fill" Value="{TemplateBinding assists:ControlAssists.SelectedForeground}" />
 			</Style>
 		</Style>
 
 		<!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
-		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed">
+		<Style Selector="^:pressed">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">
-				<Setter Property="Background" Value="{DynamicResource MenuItemPressedBackground}" />
-				<Setter Property="BorderBrush" Value="{DynamicResource MenuItemPressedBorderBrush}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PressedBorderBrush}" />
 			</Style>
 			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
-				<Setter Property="Foreground" Value="{DynamicResource MenuItemPressedForeground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PressedForeground}" />
 			</Style>
 			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
-				<Setter Property="Foreground" Value="{DynamicResource MenuItemPressedForeground}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PressedForeground}" />
 			</Style>
 			<Style Selector="^ /template/ Path#PART_ChevronPath">
-				<Setter Property="Fill" Value="{DynamicResource MenuItemPressedForeground}" />
+				<Setter Property="Fill" Value="{TemplateBinding assists:ControlAssists.PressedForeground}" />
 			</Style>
 		</Style>
 
@@ -248,5 +248,113 @@
 			</Setter>
 		</Style>
 	</ControlTheme>
-	 
+
+	<ControlTheme x:Key="AntDesignMenuItemStyle" TargetType="MenuItem">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource MenuItemBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource MenuItemForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource MenuItemBorderBrush}" />
+		<Setter Property="assists:ControlAssists.PointerOverBackground" Value="{DynamicResource MenuItemPointerOverBackground}" />
+		<Setter Property="assists:ControlAssists.PointerOverForeground" Value="{DynamicResource MenuItemPointerOverForeground}" />
+		<Setter Property="assists:ControlAssists.PointerOverBorderBrush" Value="{DynamicResource MenuItemPointerOverBorderBrush}" />
+		<Setter Property="assists:ControlAssists.PressedBackground" Value="{DynamicResource MenuItemPressedBackground}" />
+		<Setter Property="assists:ControlAssists.PressedForeground" Value="{DynamicResource MenuItemPressedForeground}" />
+		<Setter Property="assists:ControlAssists.PressedBorderBrush" Value="{DynamicResource MenuItemPressedBorderBrush}" />
+		<Setter Property="assists:ControlAssists.SelectedBackground" Value="{DynamicResource MenuItemSelectedBackground}" />
+		<Setter Property="assists:ControlAssists.SelectedForeground" Value="{DynamicResource MenuItemSelectedForeground}" />
+		<Setter Property="assists:ControlAssists.SelectedBorderBrush" Value="{DynamicResource MenuItemSelectedBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource MenuItemBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource MenuItemCornerRadius}" />
+		<!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
+		<Setter Property="Padding" Value="{DynamicResource MenuItemPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource MenuItemMargin}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Padding="{TemplateBinding Padding}"
+						Margin="{TemplateBinding Margin}">
+					<Panel>
+						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_HeaderPresenter}"
+										  Content="{TemplateBinding Header}"
+										  VerticalAlignment="Center"
+										  HorizontalAlignment="Stretch"
+										  RecognizesAccessKey="True"
+										  Margin="{TemplateBinding Padding}"/>
+						<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
+							   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+							   WindowManagerAddShadowHint="False"
+							   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
+							   IsLightDismissEnabled="True"
+							   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
+							<Border Background="Transparent"
+									Padding="{DynamicResource MenuItemPopupShadowBorderPadding}">
+								<Border Background="{DynamicResource MenuItemPopupBackground}"
+										TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
+										BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
+										BorderThickness="{DynamicResource MenuItemPopupBorderThickness}"
+										CornerRadius="{DynamicResource MenuItemPopupCornerRadius}"
+										Padding="{DynamicResource MenuItemPopupPadding}"
+										MaxWidth="{DynamicResource MenuItemPopupMaxWidth}"
+										MinHeight="{DynamicResource MenuItemPopupMinHeight}"
+										HorizontalAlignment="Stretch"
+										BoxShadow="{DynamicResource MenuItemPopupShadow}"> 
+									<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
+										<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+														ItemsPanel="{TemplateBinding ItemsPanel}"
+														Margin="{DynamicResource MenuItemPopupScrollerMargin}"
+														Grid.IsSharedSizeScope="True" />
+									</ScrollViewer>
+								</Border>
+							</Border>
+						</Popup>
+					</Panel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.SelectedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.SelectedForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PointerOverBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
+			</Style> 
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ControlAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PressedForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
+		</Style>
+
+	</ControlTheme>
+
 </ResourceDictionary>

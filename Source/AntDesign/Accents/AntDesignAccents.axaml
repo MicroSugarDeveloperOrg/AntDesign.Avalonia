@@ -128,6 +128,13 @@
 	<x:Double x:Key="ListBoxItemInnerBorderWidth">3</x:Double>
 	<x:Double x:Key="ListBoxItemInnerBorderHeight">15</x:Double>
 	
+	<!--Menu-->
+	<x:Double x:Key="MenuBarHeight">32</x:Double>
+	<StaticResource x:Key="MenuMargin" ResourceKey="Margin"/>
+	<StaticResource x:Key="MenuPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="MenuCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="MenuBorderThickness" ResourceKey="BorderThickness"/>
+	
 	<!-- MenuItem -->
 	<StaticResource x:Key="MenuItemMargin" ResourceKey="Margin"/>
 	<Thickness x:Key="MenuItemPadding" >5</Thickness>
@@ -140,21 +147,31 @@
 	<x:Double x:Key="MenuIconHeight">16</x:Double>
 
 	<x:Double x:Key="MenuInputGestureTextOpacity">0.5</x:Double>
-	<Thickness x:Key="MenuFlyoutItemChevronMargin">3</Thickness>
-	<x:Double x:Key="MenuFlyoutSubItemPopupHorizontalOffset">1</x:Double>
+	<Thickness x:Key="MenuItemChevronMargin">3</Thickness>
+	<x:Double x:Key="MenuSubItemPopupHorizontalOffset">1</x:Double>
 
-	<StaticResource x:Key="MenuFlyoutPresenterBorderThickness" ResourceKey="BorderThickness"/>
-	<StaticResource x:Key="MenuFlyoutPresenterCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="MenuFlyoutPresenterPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="MenuItemPopupBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="MenuItemPopupCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="MenuItemPopupPadding" ResourceKey="OverlayPadding"/>
 
 	<Thickness x:Key="MenuItemPopupShadowBorderPadding">10</Thickness>
 	<Thickness x:Key="MenuItemPopupScrollerMargin">3</Thickness>
 
-	<x:Double x:Key="MenuItemPopupMaxWidth">200</x:Double>
+	<x:Double x:Key="MenuItemPopupMaxWidth">500</x:Double>
 	<x:Double x:Key="MenuItemPopupMinHeight">40</x:Double>
 
 	<x:Double x:Key="MenuItemIconHeight">12</x:Double>
 	<x:Double x:Key="MenuItemIconWidth">8</x:Double>
+
+	<!-- MenuFlyoutPresenter -->
+	<StaticResource x:Key="MenuFlyoutPresentBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="MenuFlyoutPresentCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="MenuFlyoutPresentPadding" ResourceKey="OverlayPadding"/>
+	
+	<x:Double x:Key="MenuFlyoutPresenterMaxWidth">500</x:Double>
+	<x:Double x:Key="MenuFlyoutPresenterMinHeight">40</x:Double>
+
+	<Thickness x:Key="MenuFlyoutPresenterItemMargin">3</Thickness>
 
 	<!-- MenuScrollViewer -->
 	<x:Double x:Key="MenuScrollViewerIconViewBoxWidth">8</x:Double>

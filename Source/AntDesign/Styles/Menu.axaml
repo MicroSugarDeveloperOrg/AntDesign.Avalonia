@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:assists="using:AntDesign.Assists"
+					x:CompileBindings="True">
+
+	<ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
+		<Setter Property="Background" Value="{DynamicResource MenuBackground}" />
+		<Setter Property="TextElement.Foreground" Value="{DynamicResource MenuForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource MenuBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource MenuBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource MenuCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource MenuPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource MenuMargin}" />
+		<Setter Property="Height" Value="{DynamicResource MenuBarHeight}" />
+		<Setter Property="ItemContainerTheme" Value="{StaticResource AntDesignMenuItemStyle}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Padding="{TemplateBinding Padding}"
+						Margin="{TemplateBinding Margin}"
+						HorizontalAlignment="Stretch">
+					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+									ItemsPanel="{TemplateBinding ItemsPanel}"
+									VerticalAlignment="Stretch"
+									KeyboardNavigation.TabNavigation="Continue" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	
+	
+</ResourceDictionary>
