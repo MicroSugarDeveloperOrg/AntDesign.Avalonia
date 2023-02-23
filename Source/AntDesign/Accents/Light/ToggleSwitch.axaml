@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
+
 	<SolidColorBrush x:Key="TooggleButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="TooggleButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="TooggleButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
@@ -21,25 +22,6 @@
 	<SolidColorBrush x:Key="TooggleButtonIndeterminateForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="TooggleButtonIndeterminateBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
-	<!-- Primary -->
-	<SolidColorBrush x:Key="TooggleButtonPrimaryBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
-
-	<SolidColorBrush x:Key="TooggleButtonPrimaryPointerOverBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryPointerOverForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryPointerOverBorderBrush" Color="Transparent"/>
-
-	<SolidColorBrush x:Key="TooggleButtonPrimaryPressedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryPressedForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryPressedBorderBrush" Color="Transparent"/>
-
-	<SolidColorBrush x:Key="TooggleButtonPrimaryCheckedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryCheckedForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryCheckedBorderBrush" Color="Transparent"/>
-
-	<SolidColorBrush x:Key="TooggleButtonPrimaryIndeterminateBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryIndeterminateForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="TooggleButtonPrimaryIndeterminateBorderBrush" Color="Transparent"/>
+ 
 	
 </ResourceDictionary>

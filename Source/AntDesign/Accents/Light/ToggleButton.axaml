@@ -23,7 +23,6 @@
 	<SolidColorBrush x:Key="TooggleButtonIndeterminateBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
 	<!-- Primary -->
-	
 	<SolidColorBrush x:Key="TooggleButtonPrimaryBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="TooggleButtonPrimaryForeground" Color="{StaticResource AntDesignForegroundColor}"/> 
 	<SolidColorBrush x:Key="TooggleButtonPrimaryBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
@@ -43,6 +42,5 @@
 	<SolidColorBrush x:Key="TooggleButtonPrimaryIndeterminateBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
 	<SolidColorBrush x:Key="TooggleButtonPrimaryIndeterminateForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="TooggleButtonPrimaryIndeterminateBorderBrush" Color="Transparent"/>
-	
 	
 </ResourceDictionary>

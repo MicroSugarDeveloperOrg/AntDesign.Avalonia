@@ -283,12 +283,19 @@
 	
 	<Thickness x:Key="TextBoxFloatingMargin">0,-23,0,0</Thickness>
 
-	<!--RefreshVisualizer-->
+	<!-- RefreshVisualizer -->
 	<x:Double x:Key="RefreshVisualizerMinHeight">80</x:Double>
 	<x:Double x:Key="RefreshVisualizerHeight">100</x:Double>
 
-	<!--ThemeVariantScope-->
-	<Thickness x:Key="ThemeVariantScopePadding">5</Thickness>
+	<!-- ToggleButton -->
+	<StaticResource x:Key="ToogleButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="ToogleButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ToogleButtonPadding" ResourceKey="OverlayPadding"/>
+	
+	<!-- ToggleSwitch -->
+	<StaticResource x:Key="ToogleSwitchBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="ToogleSwitchCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ToogleSwitchPadding" ResourceKey="OverlayPadding"/>
 	
 	<!--WindowNotificationManager-->
 	

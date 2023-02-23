@@ -14,6 +14,8 @@
 	</ItemGroup>
 
 	<ItemGroup> 
+		<AvaloniaXaml Remove="Accents\Dark\ToggleSwitch.axaml" /> 
+		<AvaloniaXaml Remove="Accents\Light\ToggleSwitch.axaml" /> 
 		<AvaloniaXaml Remove="AntDesign.axaml" /> 
 	</ItemGroup>
 

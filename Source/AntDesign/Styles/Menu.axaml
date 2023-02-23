@@ -139,6 +139,9 @@
 		</Style>
 
 		<Style Selector="^:pointerover">
+			<Style Selector="^:not(:empty)">
+				<Setter Property="IsSubMenuOpen" Value="True" />
+			</Style>
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBackground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBorderBrush}" /> 
