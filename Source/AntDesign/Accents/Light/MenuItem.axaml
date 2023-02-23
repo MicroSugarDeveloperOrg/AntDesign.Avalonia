@@ -4,7 +4,6 @@
 
 	<BoxShadows x:Key="MenuItemPopupShadow">0 0 10 1 #4F000000</BoxShadows>
 
-
 	<SolidColorBrush x:Key="MenuItemBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="MenuItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="MenuItemBorderBrush" Color="Transparent"/>

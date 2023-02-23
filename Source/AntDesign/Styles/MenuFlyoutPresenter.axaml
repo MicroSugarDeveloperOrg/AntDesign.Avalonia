@@ -17,22 +17,27 @@
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
-						Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						Padding="{TemplateBinding Padding}"
-						CornerRadius="{TemplateBinding CornerRadius}">
-					<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}" 
-								  HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"  
-								  VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
-						<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-										ItemsPanel="{TemplateBinding ItemsPanel}"
-										Margin="{DynamicResource MenuFlyoutPresenterItemMargin}"
-										KeyboardNavigation.TabNavigation="Continue"
-										Grid.IsSharedSizeScope="True" />
-					</ScrollViewer>
+				<Border Background="Transparent"
+					    Padding="{DynamicResource MenuFlyoutPresenterShadowBorderPadding}">
+					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Padding="{TemplateBinding Padding}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							BoxShadow="{DynamicResource MenuFlyoutPresenterShadow}"	>
+						<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}"
+									  HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+									  VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+							<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+											ItemsPanel="{TemplateBinding ItemsPanel}"
+											Margin="{DynamicResource MenuFlyoutPresenterItemMargin}"
+											KeyboardNavigation.TabNavigation="Continue"
+											Grid.IsSharedSizeScope="True" />
+						</ScrollViewer>
+					</Border>
 				</Border>
+				
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>

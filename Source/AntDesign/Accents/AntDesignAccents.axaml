@@ -179,6 +179,7 @@
 	<x:Double x:Key="MenuFlyoutPresenterMinHeight">40</x:Double>
 
 	<Thickness x:Key="MenuFlyoutPresenterItemMargin">3</Thickness>
+	<Thickness x:Key="MenuFlyoutPresenterShadowBorderPadding">10</Thickness>
 
 	<!-- MenuScrollViewer -->
 	<x:Double x:Key="MenuScrollViewerIconViewBoxWidth">8</x:Double>
