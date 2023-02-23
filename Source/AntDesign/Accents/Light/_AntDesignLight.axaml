@@ -31,6 +31,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/SelectableTextBlock.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Separator.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/TextBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToggleButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToolTip.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Window.axaml" />
 	</ResourceDictionary.MergedDictionaries>

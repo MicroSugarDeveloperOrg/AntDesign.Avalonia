@@ -117,7 +117,18 @@
 						<Flyout Content="Should never be visible" />
 					</Border.ContextFlyout>
 				</Border>
+
+
+				<ToggleButton Width="130" Height="40" Content="ToggleButton"/>
 				
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True"/>
+
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
+
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
+
+				
+
 			</StackPanel>
 
 

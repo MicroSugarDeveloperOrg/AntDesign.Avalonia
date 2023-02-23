@@ -13,3 +13,4 @@ global using Avalonia.Media.Imaging;
 global using Avalonia.Styling;
 global using Avalonia.Threading;
 global using System.Globalization;
+global using Avalonia.Controls.Primitives;
