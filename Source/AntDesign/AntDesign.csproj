@@ -15,6 +15,7 @@
 
 	<ItemGroup> 
 		<AvaloniaXaml Remove="AntDesign.axaml" /> 
+		<AvaloniaXaml Remove="Styles\ThemeVariantScope.axaml" /> 
 	</ItemGroup>
 
 	<ItemGroup>

@@ -40,6 +40,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/SelectableTextBlock.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/Separator.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/ThemeVariantScope.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TitleBar.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ToolTip.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TransitioningContentControl.axaml" />
