@@ -1,5 +1,4 @@
 using AntDesign.Sample.ViewModels;
-using Avalonia.Data;
 
 namespace AntDesign.Sample.Views;
 
@@ -16,7 +15,7 @@ public partial class OverviewView : ReactiveUserControl<OverviewViewModel>
         //var vm = new OverviewView();
 
         //JsonSerializer.Serialize(vm, JsonSerializerOptions.);
-        //new Binding
+        //new Binding 
 
     }
 }
