@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers"
+					x:CompileBindings="True">
+
+	<ControlTheme x:Key="{x:Type RefreshVisualizer}" TargetType="RefreshVisualizer">
+		<Setter Property="IsTabStop" Value="False"/>
+		<Setter Property="IsHitTestVisible" Value="False"/>
+		<Setter Property="Height" Value="{DynamicResource RefreshVisualizerHeight}"/>
+		<Setter Property="Background" Value="{DynamicResource RefreshVisualizerBackground}"/>
+		<Setter Property="Foreground" Value="{DynamicResource RefreshVisualizerForeground}"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Name="{x:Static helpers:PARTNameHelper.PART_Root}"
+					  MinHeight="{DynamicResource RefreshVisualizerMinHeight}"
+					  Background="{TemplateBinding Background}">
+					<Grid.Styles>
+						<Style Selector="PathIcon#PART_Icon">
+							<Setter Property="Data" Value="{StaticResource RefreshVisualizerIconGeometry}"/>
+						</Style>
+					</Grid.Styles>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+</ResourceDictionary>

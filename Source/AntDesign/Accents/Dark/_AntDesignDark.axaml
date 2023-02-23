@@ -24,6 +24,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/MenuScrollViewer.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/NotificationCard.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/RadioButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/RefreshVisualizer.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/RepeatButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ScrollBar.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ScrollViewer.axaml" />

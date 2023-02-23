@@ -32,6 +32,8 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/PathIcon.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/PopupRoot.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/RadioButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/RefreshContainer.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/RefreshVisualizer.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/RepeatButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ScrollBar.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ScrollViewer.axaml" />

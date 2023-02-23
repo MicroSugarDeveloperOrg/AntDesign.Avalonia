@@ -3,6 +3,7 @@ public static class PARTNameHelper
 {
     //Global
     public static string PART_ContentPresenter => nameof(PART_ContentPresenter);
+    public static string PART_Root => nameof(PART_Root);
 
     //Windows
     public static string PART_TransparencyFallback => nameof(PART_TransparencyFallback);
@@ -74,4 +75,8 @@ public static class PARTNameHelper
     public static string PART_HeaderPresenter => nameof(PART_HeaderPresenter);
     public static string PART_InputGestureText => nameof(PART_InputGestureText);
     public static string PART_ChevronPath => nameof(PART_ChevronPath);
+
+    //RefreshContainer
+    public static string PART_RefreshVisualizerPresenter => nameof(PART_RefreshVisualizerPresenter);
+
 }

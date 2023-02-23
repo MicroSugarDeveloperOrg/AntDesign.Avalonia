@@ -283,7 +283,9 @@
 	
 	<Thickness x:Key="TextBoxFloatingMargin">0,-23,0,0</Thickness>
 
-
+	<!--RefreshVisualizer-->
+	<x:Double x:Key="RefreshVisualizerMinHeight">80</x:Double>
+	<x:Double x:Key="RefreshVisualizerHeight">100</x:Double>
 
 
 	<!--WindowNotificationManager-->
