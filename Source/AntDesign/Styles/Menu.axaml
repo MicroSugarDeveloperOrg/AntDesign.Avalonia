@@ -26,25 +26,30 @@
 		<Setter Property="CornerRadius" Value="{DynamicResource AntMenuItemCornerRadius}" />
 		<!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
 		<Setter Property="Padding" Value="{DynamicResource AntMenuItemPadding}" />
-		<Setter Property="Margin" Value="{DynamicResource MenuItemMargin}" />
+		<Setter Property="Margin" Value="{DynamicResource AntMenuItemMargin}" />
 		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="VerticalAlignment" Value="Stretch"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid RowDefinitions="*,Auto">	
+				<Grid >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="{DynamicResource AntMenuHeightSpacing}"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
-							CornerRadius="{TemplateBinding CornerRadius}"
-							Padding="{TemplateBinding Padding}"
-							Margin="{TemplateBinding Margin}">
-						<Grid ColumnDefinitions="Auto,*">
+							CornerRadius="{TemplateBinding CornerRadius}" >
+						<Panel>
 							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_HeaderPresenter}"
 											  Content="{TemplateBinding Header}"
 											  VerticalAlignment="Center"
 											  HorizontalAlignment="Stretch"
 											  RecognizesAccessKey="True"
-											  Margin="{TemplateBinding Padding}"/>
+											  Padding="{TemplateBinding Padding}"/>
+							
 							<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 								   WindowManagerAddShadowHint="False"
 								   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
@@ -77,12 +82,15 @@
 									</ScrollViewer>
 								</Border>
 							</Popup>
-						</Grid>
+						</Panel>
 					</Border>
 
-					<Border x:Name="PART_BottomPresenter" Grid.Row="1" Height="2" Background="Transparent" Margin="0,0,0,-1"/>
-				</Grid>
-			
+					<Border x:Name="PART_BottomPresenter"
+							Grid.Row="2"
+							Height="2"
+							Background="Transparent"
+							Margin="{TemplateBinding Margin, Converter={StaticResource BorderOffsetMarginConverter}, ConverterParameter=1}"/>
+				</Grid>	
 			</ControlTemplate>
 		</Setter>
 
@@ -145,7 +153,7 @@
 		<Setter Property="CornerRadius" Value="{DynamicResource MenuCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource MenuPadding}" />
 		<Setter Property="Margin" Value="{DynamicResource MenuMargin}" />
-		<Setter Property="Height" Value="{DynamicResource MenuBarHeight}" />
+		<Setter Property="MinHeight" Value="{DynamicResource MenuBarHeight}" />
 		<Setter Property="ItemContainerTheme" Value="{StaticResource AntDesignMenuItemStyle}" />
 		<Setter Property="Template">
 			<ControlTemplate>

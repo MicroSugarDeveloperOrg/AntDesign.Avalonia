@@ -139,6 +139,8 @@
 	<Thickness x:Key="AntMenuItemBorderThickness">0</Thickness>
 	<StaticResource x:Key="AntMenuItemCornerRadius" ResourceKey="CornerRadius"/>
 	<StaticResource x:Key="AntMenuItemPadding" ResourceKey="Padding"/>
+	<Thickness x:Key="AntMenuItemMargin">10,0,10,0</Thickness>
+	<x:Double x:Key="AntMenuHeightSpacing">10</x:Double>
 	
 	<!-- MenuItem -->
 	<StaticResource x:Key="MenuItemMargin" ResourceKey="Margin"/>

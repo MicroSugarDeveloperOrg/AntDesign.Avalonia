@@ -10,6 +10,7 @@
 	<antConverters:AutoSizeConverter x:Key="AutoSizeConverter"/>
 	<antConverters:PopupSizeConverter x:Key="PopupSizeConverter"/>
 	<antConverters:PopupHorizontalOffsetConverter x:Key="PopupHorizontalOffsetConverter"/>
+	<antConverters:BorderOffsetMarginConverter x:Key="BorderOffsetMarginConverter"/>
 
 	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
 
