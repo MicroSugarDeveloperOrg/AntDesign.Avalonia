@@ -14,9 +14,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<AvaloniaXaml Remove="Accents\Dark\FlyoutPresenter.axaml" />
 		<AvaloniaXaml Remove="Accents\Dark\Menu.axaml" />
+		<AvaloniaXaml Remove="Accents\Light\FlyoutPresenter.axaml" />
 		<AvaloniaXaml Remove="Accents\Light\Menu.axaml" />
 		<AvaloniaXaml Remove="AntDesign.axaml" />
+		<AvaloniaXaml Remove="Styles\FlyoutPresenter.axaml" />
+		<AvaloniaXaml Remove="Styles\NativeMenuBar.axaml" />
 	</ItemGroup>
 
 	<ItemGroup>

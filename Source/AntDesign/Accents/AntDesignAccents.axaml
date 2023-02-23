@@ -99,6 +99,18 @@
 	<x:Double x:Key="DropDownButtonIconHeight">12</x:Double>
 	<x:Double x:Key="DropDownButtonIconWidth">12</x:Double>
 
+	<!-- FlyoutPresenter -->
+	<x:Double x:Key="FlyoutPresenterMinWidth">96</x:Double>
+	<x:Double x:Key="FlyoutPresenterMaxWidth">456</x:Double>
+	<x:Double x:Key="FlyoutPresenterMinHeight">40</x:Double>
+	<x:Double x:Key="FlyoutPresenterMaxHeight">758</x:Double>
+
+	<Thickness x:Key="FlyoutPresenterPadding">10</Thickness>
+	<StaticResource x:Key="FlyoutPresenterCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="FlyoutPresenterBorderThickness" ResourceKey="BorderThickness"/>
+
+	<Thickness x:Key="FlyoutPresenterShadowBorderPadding">10</Thickness>
+
 	<!-- FocusAdorner -->
 	<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">1</Thickness>
 	<Thickness x:Key="FocusAdornerFocusVisualMargin">3</Thickness>
@@ -141,6 +153,10 @@
 	<StaticResource x:Key="AntMenuItemPadding" ResourceKey="Padding"/>
 	<Thickness x:Key="AntMenuItemMargin">10,0,10,0</Thickness>
 	<x:Double x:Key="AntMenuHeightSpacing">10</x:Double>
+
+	<Thickness x:Key="AntMenuIconPresenterMargin">3</Thickness> 
+	<x:Double x:Key="AntMenuIconWidth">16</x:Double>
+	<x:Double x:Key="AntMenuIconHeight">16</x:Double>
 	
 	<!-- MenuItem -->
 	<StaticResource x:Key="MenuItemMargin" ResourceKey="Margin"/>

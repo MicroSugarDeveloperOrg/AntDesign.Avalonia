@@ -9,6 +9,7 @@ global using Avalonia.Data.Converters;
 global using Avalonia.Input;
 global using Avalonia.Markup.Xaml;
 global using Avalonia.Media;
+global using Avalonia.Media.Imaging;
 global using Avalonia.Styling;
 global using Avalonia.Threading;
 global using System.Globalization;

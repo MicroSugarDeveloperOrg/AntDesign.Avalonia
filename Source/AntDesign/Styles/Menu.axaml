@@ -31,68 +31,93 @@
 		<Setter Property="VerticalAlignment" Value="Stretch"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid >
-					<Grid.RowDefinitions>
-						<RowDefinition Height="*"/>
-						<RowDefinition Height="{DynamicResource AntMenuHeightSpacing}"/>
-						<RowDefinition Height="Auto"/>
-					</Grid.RowDefinitions>
-					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
-							Background="{TemplateBinding Background}"
-							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}"
-							CornerRadius="{TemplateBinding CornerRadius}" >
-						<Panel>
-							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_HeaderPresenter}"
-											  Content="{TemplateBinding Header}"
-											  VerticalAlignment="Center"
-											  HorizontalAlignment="Stretch"
-											  RecognizesAccessKey="True"
-											  Padding="{TemplateBinding Padding}"/>
-							
-							<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
-								   WindowManagerAddShadowHint="False"
-								   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
-								   PlacementTarget="{TemplateBinding}"
-								   IsLightDismissEnabled="True"
-								   HorizontalOffset="{TemplateBinding assists:MenuItemAssists.PopupPadding, Converter={StaticResource PopupHorizontalOffsetConverter}}"
-								   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
-								<Popup.MinWidth>
-									<MultiBinding Converter="{StaticResource PopupSizeConverter}">
-										<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width"/>
-										<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:MenuItemAssists.PopupPadding)"/>
-									</MultiBinding>
-								</Popup.MinWidth>
+				<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}" >
+					<Grid >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="{DynamicResource AntMenuHeightSpacing}"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
+						<Border Padding="{TemplateBinding Padding}">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto"
+													  SharedSizeGroup="AntMenuItemIcon" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
 
-								<Border Background="{DynamicResource MenuItemPopupBackground}"
-										TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
-										BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
-										BorderThickness="{DynamicResource MenuItemPopupBorderThickness}"
-										CornerRadius="{DynamicResource MenuItemPopupCornerRadius}"
-										Padding="{DynamicResource MenuItemPopupPadding}"
-										Margin="{TemplateBinding assists:MenuItemAssists.PopupPadding}"
-										HorizontalAlignment="Stretch"
-										ClipToBounds="False"
-										BoxShadow="{DynamicResource MenuItemPopupShadow}">
-									<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
-										<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-														ItemsPanel="{TemplateBinding ItemsPanel}"
-														Margin="{DynamicResource MenuItemPopupScrollerMargin}"
-														Grid.IsSharedSizeScope="True" />
-									</ScrollViewer>
-								</Border>
-							</Popup>
-						</Panel>
-					</Border>
+								<Viewbox Name="{x:Static helpers:PARTNameHelper.PART_IconPresenter}"
+										 Margin="{DynamicResource AntMenuIconPresenterMargin}"
+										 StretchDirection="DownOnly"
+										 HorizontalAlignment="Center"
+										 VerticalAlignment="Center"
+										 IsVisible="False"
+										 Width="{DynamicResource AntMenuIconWidth}"
+										 Height="{DynamicResource AntMenuIconHeight}">
+									<ContentPresenter Content="{TemplateBinding Icon}"/>
+								</Viewbox>
 
-					<Border x:Name="PART_BottomPresenter"
-							Grid.Row="2"
-							Height="2"
-							Background="Transparent"
-							Margin="{TemplateBinding Margin, Converter={StaticResource BorderOffsetMarginConverter}, ConverterParameter=1}"/>
-				</Grid>	
+								<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_HeaderPresenter}"
+												  Grid.Column="1"
+												  Content="{TemplateBinding Header}"
+												  VerticalAlignment="Center"
+												  HorizontalAlignment="Stretch"
+												  RecognizesAccessKey="True"/>
+							</Grid>
+						</Border>
+
+						<Border x:Name="PART_BottomPresenter"
+								Grid.Row="2"
+								Height="2"
+								Background="Transparent"
+								Margin="{TemplateBinding Margin, Converter={StaticResource BorderOffsetMarginConverter}, ConverterParameter=1}"/>
+
+						<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
+							   WindowManagerAddShadowHint="False"
+							   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
+							   PlacementTarget="{TemplateBinding}"
+							   IsLightDismissEnabled="True"
+							   HorizontalOffset="{TemplateBinding assists:MenuItemAssists.PopupPadding, Converter={StaticResource PopupHorizontalOffsetConverter}}"
+							   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
+							<Popup.MinWidth>
+								<MultiBinding Converter="{StaticResource PopupSizeConverter}">
+									<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width"/>
+									<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:MenuItemAssists.PopupPadding)"/>
+								</MultiBinding>
+							</Popup.MinWidth>
+
+							<Border Background="{DynamicResource MenuItemPopupBackground}"
+									TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
+									BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
+									BorderThickness="{DynamicResource MenuItemPopupBorderThickness}"
+									CornerRadius="{DynamicResource MenuItemPopupCornerRadius}"
+									Padding="{DynamicResource MenuItemPopupPadding}"
+									Margin="{TemplateBinding assists:MenuItemAssists.PopupPadding}"
+									HorizontalAlignment="Stretch"
+									ClipToBounds="False"
+									BoxShadow="{DynamicResource MenuItemPopupShadow}">
+								<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
+									<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+													ItemsPanel="{TemplateBinding ItemsPanel}"
+													Margin="{DynamicResource MenuItemPopupScrollerMargin}"
+													Grid.IsSharedSizeScope="True" />
+								</ScrollViewer>
+							</Border>
+						</Popup>
+
+					</Grid>
+				</Border>
 			</ControlTemplate>
 		</Setter>
+
+		<Style Selector="^:icon /template/ Viewbox#PART_IconPresenter">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
 
 		<Style Selector="^:selected">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">

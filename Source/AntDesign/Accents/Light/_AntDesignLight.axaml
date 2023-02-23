@@ -13,6 +13,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ContextMenu.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/DropDownButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/EmbeddableControlRoot.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/FlyoutPresenter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/FocusAdorner.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/GridSplitter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ListBox.axaml" />
