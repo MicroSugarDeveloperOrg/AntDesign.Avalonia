@@ -132,6 +132,12 @@
 			</Style>
 		</Style>
 
+		<Style Selector="^:focus-within">
+			<Style Selector =" ^ /template/ Border#PART_BottomPresenter">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.SelectedBottomBackground}" />
+			</Style>
+		</Style>
+
 		<Style Selector="^:pointerover">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBackground}" />

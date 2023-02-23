@@ -10,5 +10,7 @@ public partial class ButtonView : ReactiveUserControl<ButtonViewModel>
         //MenuItem.IsSubMenuOpenProperty
         //Button.Cursor
         //Popup.IsOpen
+        //ComboBox.focus - visible
+
     }
 }

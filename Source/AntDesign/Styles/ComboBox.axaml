@@ -214,6 +214,19 @@
 			</Style>
 		</Style>
 
+		<!--  Focused - Within State  -->
+		<Style Selector="^:focus-within">
+			<Style Selector="^ /template/ RippleEffectx#PART_BorderElement">
+				<Setter Property="IsRipple" Value="True" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ComboBoxAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ComboBoxAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ComboBoxAssists.PressedForeground}" />
+				<Setter Property="Opacity" Value="{DynamicResource InnerElementOpacity} " />
+			</Style>
+		</Style>
+
 		<Style Selector="^[IsDropDownOpen=true]:not(:focused)">
 			<Style Selector="^ /template/ RippleEffectx#PART_BorderElement">
 				<Setter Property="IsRipple" Value="True" />
