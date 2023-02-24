@@ -288,15 +288,26 @@
 	<x:Double x:Key="RefreshVisualizerHeight">100</x:Double>
 
 	<!-- ToggleButton -->
-	<StaticResource x:Key="ToogleButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="ToogleButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="ToogleButtonPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="ToggleButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="ToggleButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ToggleButtonPadding" ResourceKey="OverlayPadding"/>
 	
 	<!-- ToggleSwitch -->
-	<StaticResource x:Key="ToogleSwitchBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="ToogleSwitchCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="ToogleSwitchPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="ToggleSwitchBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="ToggleSwitchCornerRadius" ResourceKey="CornerRadius"/>
+	<StaticResource x:Key="ToggleSwitchPadding" ResourceKey="Padding"/>
+
+	<x:Double x:Key="ToggleSwitchRowSpacing">5</x:Double>
+	<x:Double x:Key="ToggleSwitchColumnSpacing">5</x:Double>
+	<x:Double x:Key="ToggleSwitchWidth">50</x:Double>
+	<x:Double x:Key="ToggleSwitchHeight">25</x:Double>
+	<Thickness x:Key="ToggleSwitchTopHeaderMargin">0</Thickness>
+ 
+	<Thickness x:Key="ToggleSwitchKnobPadding">2</Thickness>
 	
+	<x:Double x:Key="ToggleSwitchEdgeOffset">1</x:Double>
+
+
 	<!--WindowNotificationManager-->
 	
 	

@@ -12,6 +12,10 @@
 	<antConverters:PopupHorizontalOffsetConverter x:Key="PopupHorizontalOffsetConverter"/>
 	<antConverters:BorderOffsetMarginConverter x:Key="BorderOffsetMarginConverter"/>
 	<antConverters:IBitmapToImageConverter x:Key="IBitmapToImageConverter"/>
+	<antConverters:Height2CornerRadiusConverter x:Key="Height2CornerRadiusConverter"/>
+	<antConverters:Size2SizeConverters x:Key="Size2SizeConverters"/>
+	<antConverters:Double2MarginConverters Direction="Left" x:Key="LeftDouble2MarginConverters"/>
+	<antConverters:Double2MarginConverters Direction="Right" x:Key="RightDouble2MarginConverters"/>
 
 	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
 

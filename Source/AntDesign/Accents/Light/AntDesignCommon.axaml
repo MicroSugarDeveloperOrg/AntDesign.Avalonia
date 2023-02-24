@@ -37,6 +37,14 @@
 	<Color x:Key="AntDesigndAssistColor5">#E6F4FF</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush5" Color="{StaticResource AntDesigndAssistColor5}"/>
 
+	<!-- ToogleSwitch等切换颜色 -->
+	<Color x:Key="AntDesigndAssistColor6">#8C8C8C</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush6" Color="{StaticResource AntDesigndAssistColor6}"/>
+
+	<Color x:Key="AntDesigndAssistColor7">#BFBFBF</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush7" Color="{StaticResource AntDesigndAssistColor7}"/>
+	
+
 	<!--Disable-->
 	<Color x:Key="DisableBackgroundColor">#FFF5F5F5</Color> 
 	<SolidColorBrush x:Key="DisableBackground" Color="{StaticResource DisableBackgroundColor}"/>

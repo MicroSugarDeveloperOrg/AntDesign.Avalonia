@@ -17,27 +17,27 @@
 
 	<ControlTheme x:Key="{x:Type ToggleButton}" TargetType="ToggleButton">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
-		<Setter Property="Background" Value="{DynamicResource TooggleButtonBackground}" />
-		<Setter Property="Foreground" Value="{DynamicResource TooggleButtonForeground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TooggleButtonBorderBrush}" />
-		<Setter Property="assists:ToggleButtonAssists.PointerOverBackground" Value="{DynamicResource TooggleButtonPointerOverBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.PointerOverForeground" Value="{DynamicResource TooggleButtonPointerOverForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.PointerOverBorderBrush" Value="{DynamicResource TooggleButtonPointerOverBorderBrush}" />
-		<Setter Property="assists:ToggleButtonAssists.PressedBackground" Value="{DynamicResource TooggleButtonPressedBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.PressedForeground" Value="{DynamicResource TooggleButtonPressedForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.PressedBorderBrush" Value="{DynamicResource TooggleButtonPressedBorderBrush}" />
-		<Setter Property="assists:ToggleButtonAssists.CheckedBackground" Value="{DynamicResource TooggleButtonCheckedBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.CheckedForeground" Value="{DynamicResource TooggleButtonCheckedForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.CheckedBorderBrush" Value="{DynamicResource TooggleButtonCheckedBorderBrush}" />
-		<Setter Property="assists:ToggleButtonAssists.IndeterminateBackground" Value="{DynamicResource TooggleButtonIndeterminateBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.IndeterminateForeground" Value="{DynamicResource TooggleButtonIndeterminateForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.IndeterminateBorderBrush" Value="{DynamicResource TooggleButtonIndeterminateBorderBrush}" />	
+		<Setter Property="Background" Value="{DynamicResource ToggleButtonBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ToggleButtonForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleButtonBorderBrush}" />
+		<Setter Property="assists:ToggleButtonAssists.PointerOverBackground" Value="{DynamicResource ToggleButtonPointerOverBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.PointerOverForeground" Value="{DynamicResource ToggleButtonPointerOverForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ToggleButtonPointerOverBorderBrush}" />
+		<Setter Property="assists:ToggleButtonAssists.PressedBackground" Value="{DynamicResource ToggleButtonPressedBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.PressedForeground" Value="{DynamicResource ToggleButtonPressedForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.PressedBorderBrush" Value="{DynamicResource ToggleButtonPressedBorderBrush}" />
+		<Setter Property="assists:ToggleButtonAssists.CheckedBackground" Value="{DynamicResource ToggleButtonCheckedBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.CheckedForeground" Value="{DynamicResource ToggleButtonCheckedForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.CheckedBorderBrush" Value="{DynamicResource ToggleButtonCheckedBorderBrush}" />
+		<Setter Property="assists:ToggleButtonAssists.IndeterminateBackground" Value="{DynamicResource ToggleButtonIndeterminateBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.IndeterminateForeground" Value="{DynamicResource ToggleButtonIndeterminateForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.IndeterminateBorderBrush" Value="{DynamicResource ToggleButtonIndeterminateBorderBrush}" />	
 		<Setter Property="assists:ToggleButtonAssists.IsRipple"  Value="true"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource ToogleButtonBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ToogleButtonCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ToogleButtonPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ToggleButtonBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ToggleButtonCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource ToggleButtonPadding}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -129,21 +129,21 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="PrimaryToggleButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type ToggleButton}}">
-		<Setter Property="Background" Value="{DynamicResource TooggleButtonPrimaryBackground}" />
-		<Setter Property="Foreground" Value="{DynamicResource TooggleButtonPrimaryForeground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TooggleButtonPrimaryBorderBrush}" />	
-		<Setter Property="assists:ToggleButtonAssists.PointerOverBackground" Value="{DynamicResource TooggleButtonPrimaryPointerOverBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.PointerOverForeground" Value="{DynamicResource TooggleButtonPrimaryPointerOverForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.PointerOverBorderBrush" Value="{DynamicResource TooggleButtonPrimaryPointerOverBorderBrush}" />		
-		<Setter Property="assists:ToggleButtonAssists.PressedBackground" Value="{DynamicResource TooggleButtonPrimaryPressedBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.PressedForeground" Value="{DynamicResource TooggleButtonPrimaryPressedForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.PressedBorderBrush" Value="{DynamicResource TooggleButtonPrimaryPressedBorderBrush}" />
-		<Setter Property="assists:ToggleButtonAssists.CheckedBackground" Value="{DynamicResource TooggleButtonPrimaryCheckedBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.CheckedForeground" Value="{DynamicResource TooggleButtonPrimaryCheckedForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.CheckedBorderBrush" Value="{DynamicResource TooggleButtonPrimaryCheckedBorderBrush}" />
-		<Setter Property="assists:ToggleButtonAssists.IndeterminateBackground" Value="{DynamicResource TooggleButtonPrimaryIndeterminateBackground}" />
-		<Setter Property="assists:ToggleButtonAssists.IndeterminateForeground" Value="{DynamicResource TooggleButtonPrimaryIndeterminateForeground}" />
-		<Setter Property="assists:ToggleButtonAssists.IndeterminateBorderBrush" Value="{DynamicResource TooggleButtonPrimaryIndeterminateBorderBrush}" />
+		<Setter Property="Background" Value="{DynamicResource ToggleButtonPrimaryBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ToggleButtonPrimaryForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleButtonPrimaryBorderBrush}" />	
+		<Setter Property="assists:ToggleButtonAssists.PointerOverBackground" Value="{DynamicResource ToggleButtonPrimaryPointerOverBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.PointerOverForeground" Value="{DynamicResource ToggleButtonPrimaryPointerOverForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ToggleButtonPrimaryPointerOverBorderBrush}" />		
+		<Setter Property="assists:ToggleButtonAssists.PressedBackground" Value="{DynamicResource ToggleButtonPrimaryPressedBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.PressedForeground" Value="{DynamicResource ToggleButtonPrimaryPressedForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.PressedBorderBrush" Value="{DynamicResource ToggleButtonPrimaryPressedBorderBrush}" />
+		<Setter Property="assists:ToggleButtonAssists.CheckedBackground" Value="{DynamicResource ToggleButtonPrimaryCheckedBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.CheckedForeground" Value="{DynamicResource ToggleButtonPrimaryCheckedForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.CheckedBorderBrush" Value="{DynamicResource ToggleButtonPrimaryCheckedBorderBrush}" />
+		<Setter Property="assists:ToggleButtonAssists.IndeterminateBackground" Value="{DynamicResource ToggleButtonPrimaryIndeterminateBackground}" />
+		<Setter Property="assists:ToggleButtonAssists.IndeterminateForeground" Value="{DynamicResource ToggleButtonPrimaryIndeterminateForeground}" />
+		<Setter Property="assists:ToggleButtonAssists.IndeterminateBorderBrush" Value="{DynamicResource ToggleButtonPrimaryIndeterminateBorderBrush}" />
 		
 		<Style Selector="^.danger">
 			<Style Selector="^">

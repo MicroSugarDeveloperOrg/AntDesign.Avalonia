@@ -1,4 +1,6 @@
-﻿namespace AntDesign.Controls.Ripple;
+﻿using Avalonia.Interactivity;
+
+namespace AntDesign.Controls.Ripple;
 
 public class RippleEffect : Border
 {
@@ -45,7 +47,7 @@ public class RippleEffect : Border
 
     public RippleEffect()
     {
-        AddHandler(PointerPressedEvent, PointerPressedHandler);
+        AddHandler(PointerPressedEvent, PointerPressedHandler, RoutingStrategies.Tunnel);
         AddHandler(PointerReleasedEvent, PointerReleasedHandler);
         AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
     }

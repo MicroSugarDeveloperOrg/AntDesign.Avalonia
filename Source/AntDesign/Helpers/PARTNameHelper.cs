@@ -79,4 +79,8 @@ public static class PARTNameHelper
     //RefreshContainer
     public static string PART_RefreshVisualizerPresenter => nameof(PART_RefreshVisualizerPresenter);
 
+    //ToggleSwitch
+    public static string PART_SwitchKnob => nameof(PART_SwitchKnob);
+    public static string PART_MovingKnobs => nameof(PART_MovingKnobs);
+
 }

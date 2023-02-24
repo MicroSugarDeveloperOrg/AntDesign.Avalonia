@@ -104,7 +104,7 @@
 							<MenuItem Header="Child 2"/>
 							<MenuItem Header="Child 3"/>
 						</MenuItem>
-						<MenuItem Header="123"/>
+						<MenuItem Header="123" IsSelected="True"/>
 						<MenuItem Header="123"/>
 						<MenuItem Header="123"/>
 						
@@ -134,6 +134,19 @@
 			</StackPanel>
 
 
+			<StackPanel Grid.Column="2" Spacing="20" >
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsChecked="True" IsEnabled="False"/>
+
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsChecked="True" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
+
+
+			</StackPanel>
+			
+			
 
 		</Grid>
 	</ScrollViewer>
