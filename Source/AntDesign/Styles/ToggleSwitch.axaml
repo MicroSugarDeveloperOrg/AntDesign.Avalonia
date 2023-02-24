@@ -81,7 +81,7 @@
 											 RippleColorAlpha="{TemplateBinding assists:ToggleSwitchAssists.RippleColorAlpha}"
 											 Width="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchWidth}"
 											 Height="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight}"
-											 TextElement.Foreground="{TemplateBinding Foreground}"
+											 TextElement.Foreground="{TemplateBinding Foreground}" 
 											 CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}">
 
 							<Panel>
@@ -93,13 +93,13 @@
 								<Panel x:Name="PART_Container"
 									   Margin="{DynamicResource ToggleSwitchKnobPadding}">
 									<Canvas x:Name="{x:Static helpers:PARTNameHelper.PART_SwitchKnob}"
-											Width="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}"
+											Width="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}, ConverterParameter=true}"
 											Height="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}"
 											VerticalAlignment="Center"
 											HorizontalAlignment="Left">
 										<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_MovingKnobs}"
-											   Width="{Binding $parent.Width}"
-											   Height="{Binding $parent.Height}">
+											   Width="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}"
+											   Height="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}">
 											<Ellipse x:Name="SwitchKnobs"
 													 Fill="{TemplateBinding assists:ToggleSwitchAssists.KnobOffBackground}" >
 												<Ellipse.Transitions>
@@ -112,17 +112,16 @@
 									</Canvas>
 								</Panel>
 							</Panel>
-
 						</ripple:RippleEffect>
 
 						<ContentPresenter x:Name="PART_OffContentPresenter"
-																	  Grid.Column="2"
-																	  Opacity="1"
-																	  Foreground="{TemplateBinding Foreground}"
-																	  Content="{TemplateBinding OffContent}"
-																	  ContentTemplate="{TemplateBinding OffContentTemplate}"
-																	  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-																	  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+										  Grid.Column="2"
+										  Opacity="1"
+										  Foreground="{TemplateBinding Foreground}"
+										  Content="{TemplateBinding OffContent}"
+										  ContentTemplate="{TemplateBinding OffContentTemplate}"
+										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
 						<ContentPresenter x:Name="PART_OnContentPresenter"
 										  Grid.Column="2"
@@ -309,37 +308,38 @@
 										BorderBrush="{TemplateBinding BorderBrush}"
 										CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}"/>
 
-								<ContentPresenter x:Name="PART_OffContentPresenter"
-										  Grid.Column="2"
-										  Opacity="1"
-										  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
-										  Content="{TemplateBinding OffContent}"
-										  ContentTemplate="{TemplateBinding OffContentTemplate}"
-										  HorizontalAlignment="Right"
-										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-										  Margin="{Binding ElementName=PART_LayoutRoot, Path=Bounds, Converter={StaticResource LeftDouble2MarginConverters}, ConverterParameter={StaticResource ToggleSwitchEdgeOffset}}"/>
+								<Panel HorizontalAlignment="Stretch" 
+									   Margin="{Binding ElementName=PART_Container, Path=Bounds, Converter={StaticResource LeftDouble2MarginConverters}, ConverterParameter={StaticResource ToggleSwitchEdgeOffset}}">
+									<ContentPresenter x:Name="PART_OffContentPresenter"
+													  Opacity="1"
+													  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
+													  Content="{TemplateBinding OffContent}"
+													  ContentTemplate="{TemplateBinding OffContentTemplate}"
+													  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+													  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+								</Panel>
 
-								<ContentPresenter x:Name="PART_OnContentPresenter"
-												  Grid.Column="2"
-												  Opacity="0"
-												  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
-												  Content="{TemplateBinding OnContent}"
-												  ContentTemplate="{TemplateBinding OnContentTemplate}"
-												  HorizontalAlignment="Left"
-												  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-												  Margin="{Binding ElementName=PART_LayoutRoot, Path=Bounds, Converter={StaticResource RightDouble2MarginConverters}, ConverterParameter={StaticResource ToggleSwitchEdgeOffset}}"/>
-
+								<Panel HorizontalAlignment="Stretch"
+									   Margin="{Binding ElementName=PART_Container, Path=Bounds, Converter={StaticResource RightDouble2MarginConverters}, ConverterParameter={StaticResource ToggleSwitchEdgeOffset}}">
+									<ContentPresenter x:Name="PART_OnContentPresenter"
+													  Opacity="0"
+													  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
+													  Content="{TemplateBinding OnContent}"
+													  ContentTemplate="{TemplateBinding OnContentTemplate}" 
+													  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+													  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+								</Panel>
+							
 								<Panel x:Name="PART_Container"
 									   Margin="{DynamicResource ToggleSwitchKnobPadding}">
 									<Canvas x:Name="{x:Static helpers:PARTNameHelper.PART_SwitchKnob}"
-											Grid.Row="1"
-											Width="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}"
+											Width="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}, ConverterParameter=true}"
 											Height="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}"
 											VerticalAlignment="Center"
 											HorizontalAlignment="Left">
 										<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_MovingKnobs}"
-											   Width="{Binding $parent.Width}"
-											   Height="{Binding $parent.Height}">
+											   Width="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}"
+											   Height="{Binding #PART_Container.Bounds, Converter={StaticResource Size2SizeConverters}}">
 											<Ellipse x:Name="SwitchKnobs"
 													 Fill="{TemplateBinding assists:ToggleSwitchAssists.KnobOffBackground}" >
 												<Ellipse.Transitions>

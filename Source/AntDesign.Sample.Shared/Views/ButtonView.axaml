@@ -139,9 +139,9 @@
 				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False"/>
 				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsChecked="True" IsEnabled="False"/>
 
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" Theme="{StaticResource AntDesignToggleSwitchStyle}" IsChecked="True" IsEnabled="True" />
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" IsChecked="True" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
 				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsChecked="True" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
 
 
 			</StackPanel>
