@@ -6,6 +6,11 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/AutoCompleteBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/Button.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ButtonSpinner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/Calendar.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/CalendarButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/CalendarDatePicker.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/CalendarDayButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/CalendarItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/CaptionButtons.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/CheckBox.axaml" /> 
 		<ResourceInclude Source="avares://AntDesign/Styles/ComboBox.axaml" />
