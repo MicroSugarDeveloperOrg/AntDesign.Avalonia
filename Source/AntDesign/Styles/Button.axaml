@@ -81,12 +81,15 @@
 
 		</Style>
 
-		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+		<Style Selector="^:disabled">
+			<Setter Property="Cursor" Value="No" />
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			</Style>
 		</Style>
-
+		
 		<Style Selector="^.danger">
 			<Style Selector="^"> 
 				<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />

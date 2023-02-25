@@ -226,6 +226,7 @@
 
 		<!--  DisabledState  -->
 		<Style Selector="^:disabled">
+			<Setter Property="Cursor" Value="No" />
 			<Style Selector="^ /template/ Border#PART_BorderElement">
 				<Setter Property="Opacity" Value="0.5"/>
 			</Style>
@@ -448,6 +449,9 @@
 
 		<!--  DisabledState  -->
 		<Style Selector="^:disabled">
+			<Style Selector="^">
+				<Setter Property="Cursor" Value="No" />
+			</Style>
 			<Style Selector="^ /template/ Border#PART_BorderElement">
 				<Setter Property="Opacity" Value="0.5"/>
 			</Style>
