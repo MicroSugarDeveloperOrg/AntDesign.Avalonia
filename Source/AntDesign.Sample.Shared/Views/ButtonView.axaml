@@ -120,8 +120,9 @@
 
 
 				<ToggleButton Width="130" Height="40" Content="ToggleButton"/>
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsChecked="True" IsEnabled="False"/>
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger"/>
-
+ 
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True"/>
 
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" Theme="{StaticResource PrimaryToggleButtonStyle}"/>

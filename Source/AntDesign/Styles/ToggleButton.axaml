@@ -107,9 +107,7 @@
 		
 		<Style Selector="^:disabled">
 			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+				<Setter Property="Opacity" Value="0.5" /> 
 			</Style>
 		</Style>
 
