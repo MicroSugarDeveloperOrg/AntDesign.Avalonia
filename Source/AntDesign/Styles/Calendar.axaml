@@ -1,10 +1,39 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=netstandard"
-                    xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
-					xmlns:helpers="using:AntDesign.Helpers"
-					xmlns:ripple="using:AntDesign.Controls.Ripple"
-					xmlns:assists="using:AntDesign.Assists"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+					xmlns:helpers="using:AntDesign.Helpers"  
                     x:CompileBindings="True">
- 
+
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<Calendar />
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type Calendar}" TargetType="Calendar">
+		<Setter Property="Background" Value="{DynamicResource CalendarBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource CalendarForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CalendarBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource CalendarBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CalendarCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource CalendarPadding}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<StackPanel
+					Name="{x:Static helpers:PARTNameHelper.PART_Root}"
+					HorizontalAlignment="Center"
+					ClipToBounds="True">
+					<CalendarItem
+						Name="{x:Static helpers:PARTNameHelper.PART_CalendarItem}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						HeaderBackground="{TemplateBinding HeaderBackground}" />
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
 </ResourceDictionary>

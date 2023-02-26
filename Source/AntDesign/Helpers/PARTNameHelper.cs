@@ -83,4 +83,12 @@ public static class PARTNameHelper
     public static string PART_SwitchKnob => nameof(PART_SwitchKnob);
     public static string PART_MovingKnobs => nameof(PART_MovingKnobs);
 
+    //Calendar PART_CalendarItem
+    public static string PART_CalendarItem => nameof(PART_CalendarItem);
+    public static string PART_HeaderButton => nameof(PART_HeaderButton);
+    public static string PART_PreviousButton => nameof(PART_PreviousButton);
+    public static string PART_NextButton => nameof(PART_NextButton);
+    public static string PART_MonthView => nameof(PART_MonthView);
+    public static string PART_YearView => nameof(PART_YearView);
+    
 }

@@ -74,6 +74,10 @@ public class RippleEffectZx : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        var pointer = e.GetCurrentPoint(this);
+        if (!pointer.Properties.IsLeftButtonPressed)
+            return;
+
         BorderBrush = new SolidColorBrush(RippleColor, RippleColorAlpha);
         //Background = new SolidColorBrush(RippleColor, RippleColorAlpha);
         RenderTransform = new ScaleTransform(2d, 2d);

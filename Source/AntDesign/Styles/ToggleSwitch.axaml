@@ -43,7 +43,7 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource ToggleSwitchBorderThickness}"/>
 		<Setter Property="CornerRadius" Value="{DynamicResource ToggleSwitchCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource ToggleSwitchPadding}" />
-		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
@@ -72,7 +72,7 @@
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="{DynamicResource ToggleSwitchColumnSpacing}"/>
-							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
 						</Grid.ColumnDefinitions>
 
 						<ripple:RippleEffect Grid.Column="0"
@@ -116,7 +116,7 @@
 
 						<ContentPresenter x:Name="PART_OffContentPresenter"
 										  Grid.Column="2"
-										  Opacity="1"
+										  Opacity="1" 
 										  Foreground="{TemplateBinding Foreground}"
 										  Content="{TemplateBinding OffContent}"
 										  ContentTemplate="{TemplateBinding OffContentTemplate}"
@@ -128,7 +128,7 @@
 										  Opacity="0"
 										  Foreground="{TemplateBinding Foreground}"
 										  Content="{TemplateBinding OnContent}"
-										  ContentTemplate="{TemplateBinding OnContentTemplate}"
+										  ContentTemplate="{TemplateBinding OnContentTemplate}" 
 										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
@@ -270,7 +270,7 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource ToggleSwitchBorderThickness}"/>
 		<Setter Property="CornerRadius" Value="{DynamicResource ToggleSwitchCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource ToggleSwitchPadding}" />
-		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />

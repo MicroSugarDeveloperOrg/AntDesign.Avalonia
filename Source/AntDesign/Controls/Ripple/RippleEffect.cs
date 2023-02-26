@@ -186,6 +186,10 @@ public class RippleEffect : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        var pointer = e.GetCurrentPoint(this);
+        if (!pointer.Properties.IsLeftButtonPressed)
+            return;
+
         if (!IsManualTrigger)
             Trigger();
     }

@@ -307,7 +307,11 @@
 	
 	<x:Double x:Key="ToggleSwitchEdgeOffset">5</x:Double>
 
-
+	<!-- Calendar -->
+	<StaticResource x:Key="CalendarBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="CalendarCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="CalendarPadding" ResourceKey="Padding"/>
+	
 	<!--WindowNotificationManager-->
 	
 	
