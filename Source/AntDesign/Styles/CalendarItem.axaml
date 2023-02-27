@@ -1,8 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="using:System" 
-					xmlns:helpers="using:AntDesign.Helpers"
-					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					xmlns:helpers="using:AntDesign.Helpers" 
 					xmlns:assists="using:AntDesign.Assists"
                     x:CompileBindings="True">
 	
@@ -22,43 +21,66 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="AntDesignCalendarButton" TargetType="Button">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource CalendarItemButtonBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource CalendarItemButtonForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CalendarItemButtonBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource CalendarItemButtonPointerOverBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource CalendarItemButtonPointerOverForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource CalendarItemButtonPointerOverBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource CalendarItemButtonPressedBackground}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource CalendarItemButtonPressedForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource CalendarItemButtonPressedBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource CalendarItemButtonBorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource CalendarItemButtonCornerRadius}"/>
+		<Setter Property="Padding" Value="{DynamicResource CalendarItemButtonPadding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="FontSize" Value="20" />
-		<Setter Property="Background" Value="{DynamicResource CalendarViewNavigationButtonBackground}" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<ContentPresenter Name="Text" Background="{TemplateBinding Background}"
-								  BorderBrush="{DynamicResource CalendarViewNavigationButtonBorderBrush}"
+				<ContentPresenter x:Name="Text" 
+								  Background="{TemplateBinding Background}"
+								  Foreground="{TemplateBinding Foreground}"
+								  BorderBrush="{TemplateBinding BorderBrush}"
 								  BorderThickness="{TemplateBinding BorderThickness}"
-								  Content="{TemplateBinding Content}"
 								  Margin="{TemplateBinding Padding}"
-								  HorizontalContentAlignment="Stretch"
+								  Content="{TemplateBinding Content}"
+								  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 								  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
 			</ControlTemplate>
 		</Setter>
-
 		<Style Selector="^:pointerover /template/ ContentPresenter#Text">
-			<Setter Property="BorderBrush" Value="{DynamicResource CalendarViewNavigationButtonBorderBrushPointerOver}" />
-			<Setter Property="Foreground" Value="{DynamicResource CalendarViewNavigationButtonForegroundPointerOver}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
 		</Style>
 		<Style Selector="^:pressed /template/ ContentPresenter#Text">
-			<Setter Property="Foreground" Value="{DynamicResource CalendarViewNavigationButtonForegroundPressed}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
 		</Style>
-		<Style Selector="^:disabled /template/ ContentPresenter">
-			<Setter Property="Foreground" Value="{DynamicResource CalendarViewWeekDayForegroundDisabled}" />
+		<Style Selector="^:disabled /template/ ContentPresenter#Text">
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			<Setter Property="BorderThickness" Value="0" />
+			<Setter Property="Background" Value="Transparent" />
 		</Style>
 	</ControlTheme>
 
 	<ControlTheme x:Key="{x:Type CalendarItem}" TargetType="CalendarItem">
-		<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+		<Setter Property="Background" Value="{DynamicResource CalendarItemBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CalendarItemBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource CalendarItemBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CalendarItemCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource CalendarItemPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource CalendarItemMargin}" />
 		<Setter Property="DayTitleTemplate">
 			<Template x:DataType="x:String">
 				<TextBlock Text="{Binding}"
+						   FontSize="{DynamicResource FontSize}"
 						   HorizontalAlignment="Center"
-						   VerticalAlignment="Center"
-						   FontSize="12" />
+						   VerticalAlignment="Center"/>
 			</Template>
 		</Setter>
 		<Setter Property="Template">
@@ -67,47 +89,54 @@
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						CornerRadius="{TemplateBinding CornerRadius}">
-					<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" RowDefinitions="40,*" MinWidth="294">
-						<Grid ColumnDefinitions="*,5*,*">
+					<Grid VerticalAlignment="Stretch" 
+						  HorizontalAlignment="Stretch"
+						  MinWidth="{DynamicResource CalendarItemMinHeight}">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="{DynamicResource CalendarItemHeaderHeight}"/>
+							<RowDefinition Height="*"/> 
+						</Grid.RowDefinitions> 
+						<Border BorderThickness="0,0,0,1" 
+								BorderBrush="{TemplateBinding BorderBrush}"
+								Padding="0">
+							<Grid ColumnDefinitions="*,5*,*">
+								<Button x:Name="{x:Static helpers:PARTNameHelper.PART_PreviousButton}"
+										Grid.Column="0" 
+										Theme="{StaticResource AntDesignCalendarButton}"
+										HorizontalContentAlignment="Center">
+									<Path Stretch="Uniform"
+										  Height="16"
+										  Fill="{TemplateBinding Foreground}"
+										  Data="{StaticResource LeftIconGeometry}"
+										  HorizontalAlignment="Center"
+										  VerticalAlignment="Center" />
+								</Button>
 
-							<Button Name="PART_PreviousButton"
-								Grid.Column="0"
-								Theme="{StaticResource AntDesignCalendarButton}"
-								Foreground="{TemplateBinding Foreground}"
-								Padding="1"
-								HorizontalContentAlignment="Left">
-								<!--Path mimics Segoe MDL2 Assets font glyph used in WinUI-->
-								<Path Stroke="{DynamicResource CalendarViewForeground}"
-									  StrokeThickness="1.5"
-									  Data="M 0,9 L 9,0 L 18,9"
-									  HorizontalAlignment="Center"
-									  VerticalAlignment="Center" />
-							</Button>
+								<Button Name="{x:Static helpers:PARTNameHelper.PART_HeaderButton}"
+										Grid.Column="1" 
+										Theme="{StaticResource AntDesignCalendarButton}"
+										HorizontalContentAlignment="Center" />
 
-							<Button Name="PART_HeaderButton"
-									Grid.Column="1"
-									Theme="{StaticResource AntDesignCalendarButton}"
-									Foreground="{TemplateBinding Foreground}"
-									Padding="12,0,0,0"
-									HorizontalContentAlignment="Left" />
+								<Button Name="{x:Static helpers:PARTNameHelper.PART_NextButton}"
+										Grid.Column="2" 
+										Theme="{StaticResource AntDesignCalendarButton}"
+										HorizontalContentAlignment="Center">
+									<Path Stretch="Uniform"
+										  Height="16"
+										  Fill="{TemplateBinding Foreground}"
+										  Data="{StaticResource RightIconGeometry}"
+										  HorizontalAlignment="Center"
+										  VerticalAlignment="Center" />
+								</Button>
+							</Grid>
+						</Border>
 						
-							<Button Name="PART_NextButton"
-									Grid.Column="2"
-									Theme="{StaticResource AntDesignCalendarButton}"
-									Foreground="{TemplateBinding Foreground}"
-									Padding="1"
-									HorizontalContentAlignment="Left">
-								<Path Stroke="{DynamicResource CalendarViewForeground}"
-									  StrokeThickness="1.5"
-									  Data="M 0,0 L 9,9 L 18,0"
-									  HorizontalAlignment="Center"
-									  VerticalAlignment="Center" />
-							</Button>
-						</Grid>
-						<Border Name="BackgroundLayer" Background="{TemplateBinding BorderBrush}" Margin="0,38,0,0" IsVisible="{Binding #PART_MonthView.IsVisible}" Grid.Row="1" />
-						<Grid Name="PART_MonthView" Grid.Row="1" IsVisible="False" MinHeight="290">
+						<Grid Name="{x:Static helpers:PARTNameHelper.PART_MonthView}" 
+							  Grid.Row="1" 
+							  IsVisible="False" 
+							  Background="{DynamicResource CalendarItemContentBackground}" 
+							  MinHeight="{DynamicResource CalendarItemContentMinHeight}">
 							<Grid.RowDefinitions>
-								<!--This should always be the week day names??-->
 								<RowDefinition Height="38" />
 								<RowDefinition Height="Auto" />
 								<RowDefinition Height="Auto" />
@@ -126,11 +155,11 @@
 								<ColumnDefinition Width="Auto" />
 							</Grid.ColumnDefinitions>
 						</Grid>
-						<Grid Name="PART_YearView"
-							  Background="{TemplateBinding BorderBrush}"
-							  MinHeight="290"
+						<Grid Name="{x:Static helpers:PARTNameHelper.PART_YearView}"
 							  Grid.Row="1"
-							  IsVisible="False">
+							  IsVisible="False"
+							  Background="{DynamicResource CalendarItemContentBackground}" 
+							  MinHeight="{DynamicResource CalendarItemContentMinHeight}">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="*" />
 								<RowDefinition Height="*" />
@@ -147,11 +176,12 @@
 				</Border>
 			</ControlTemplate>
 		</Setter>
+
 		<Style Selector="^ /template/ Button:pointerover > Path">
-			<Setter Property="Stroke" Value="{DynamicResource CalendarViewNavigationButtonForegroundPointerOver}" />
+			<Setter Property="Fill" Value="{DynamicResource CalendarItemButtonPointerOverForeground}" />
 		</Style>
 		<Style Selector="^ /template/ Button:pressed > Path">
-			<Setter Property="Stroke" Value="{DynamicResource CalendarViewNavigationButtonForegroundPressed}" />
+			<Setter Property="Fill" Value="{DynamicResource CalendarItemButtonPressedForeground}" />
 		</Style>
 	</ControlTheme>
 

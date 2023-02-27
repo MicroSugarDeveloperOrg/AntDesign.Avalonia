@@ -15,7 +15,7 @@ public class ToolkitFontManagerImpl : IFontManagerImpl
         _extraBoldTypeface = new($"{_resourceType}:{_fontFolderPrefixName}.{_fontFamilyPrefixName}-{nameof(FontWeight.ExtraBold)}.{_fontFileSuffixName}?assembly={_assemblyName}#{_fontFamilyName}",weight:FontWeight.ExtraBold);
         _heavyTypeface = new($"{_resourceType}:{_fontFolderPrefixName}.{_fontFamilyPrefixName}-{nameof(FontWeight.Heavy)}.{_fontFileSuffixName}?assembly={_assemblyName}#{_fontFamilyName}",weight:FontWeight.Heavy);
         _blackTypeface = new($"{_resourceType}:{_fontFolderPrefixName}.{_fontFamilyPrefixName}-{nameof(FontWeight.Black)}.{_fontFileSuffixName}?assembly={_assemblyName}#{_fontFamilyName}",weight:FontWeight.Black);
-        _defaultTypeface = _lightTypeface;
+        _defaultTypeface = _regularTypeface;
 
         _bcp47 = new[] 
         {

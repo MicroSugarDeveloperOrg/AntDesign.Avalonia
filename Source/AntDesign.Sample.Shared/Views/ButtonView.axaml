@@ -144,7 +144,17 @@
 				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" IsChecked="True" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
 				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
 
+			
+			</StackPanel>
 
+
+			<StackPanel  Grid.Column="4" Spacing="20">
+				<Border Padding="20">
+					<Calendar />
+				</Border>
+
+				<Path Stretch="Uniform" Fill="Red" Height="16" Width="16" Data="{StaticResource RightIconGeometry}"/>
+				
 			</StackPanel>
 			
 			

@@ -152,7 +152,7 @@
 	<StaticResource x:Key="AntMenuItemCornerRadius" ResourceKey="CornerRadius"/>
 	<StaticResource x:Key="AntMenuItemPadding" ResourceKey="Padding"/>
 	<Thickness x:Key="AntMenuItemMargin">10,0,10,0</Thickness>
-	<x:Double x:Key="AntMenuHeightSpacing">10</x:Double>
+	<GridLength x:Key="AntMenuHeightSpacing">10</GridLength>
 
 	<Thickness x:Key="AntMenuIconPresenterMargin">3</Thickness> 
 	<x:Double x:Key="AntMenuIconWidth">16</x:Double>
@@ -297,8 +297,8 @@
 	<StaticResource x:Key="ToggleSwitchCornerRadius" ResourceKey="CornerRadius"/>
 	<StaticResource x:Key="ToggleSwitchPadding" ResourceKey="Padding"/>
 
-	<x:Double x:Key="ToggleSwitchRowSpacing">5</x:Double>
-	<x:Double x:Key="ToggleSwitchColumnSpacing">5</x:Double>
+	<GridLength x:Key="ToggleSwitchRowSpacing">5</GridLength>
+	<GridLength x:Key="ToggleSwitchColumnSpacing">5</GridLength>
 	<x:Double x:Key="ToggleSwitchWidth">50</x:Double>
 	<x:Double x:Key="ToggleSwitchHeight">25</x:Double>
 	<Thickness x:Key="ToggleSwitchTopHeaderMargin">0</Thickness>
@@ -307,11 +307,28 @@
 	
 	<x:Double x:Key="ToggleSwitchEdgeOffset">5</x:Double>
 
+	<GridLength x:Key="ToggleSwitchPreContentMargin">6</GridLength>
+	<GridLength x:Key="ToggleSwitchPostContentMargin">6</GridLength>
+
 	<!-- Calendar -->
 	<StaticResource x:Key="CalendarBorderThickness" ResourceKey="OverlayBorderThickness"/>
 	<StaticResource x:Key="CalendarCornerRadius" ResourceKey="OverlayCornerRadius"/>
 	<StaticResource x:Key="CalendarPadding" ResourceKey="Padding"/>
-	
+
+	<!-- CalendarItem -->
+	<StaticResource x:Key="CalendarItemBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="CalendarItemCornerRadius" ResourceKey="CornerRadius"/>
+	<StaticResource x:Key="CalendarItemPadding" ResourceKey="Padding"/>
+	<StaticResource x:Key="CalendarItemMargin" ResourceKey="Margin"/>
+
+	<x:Double x:Key="CalendarItemMinHeight">294</x:Double>
+	<GridLength x:Key="CalendarItemHeaderHeight">40</GridLength>
+	<x:Double x:Key="CalendarItemContentMinHeight">290</x:Double>
+
+	<StaticResource x:Key="CalendarItemButtonBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="CalendarItemButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="CalendarItemButtonPadding" ResourceKey="Padding"/> 
+
 	<!--WindowNotificationManager-->
 	
 	

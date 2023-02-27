@@ -13,9 +13,7 @@
 		<AvaloniaResource Include="Styles\*.axaml" />
 	</ItemGroup>
 
-	<ItemGroup> 
-		<AvaloniaXaml Remove="Accents\Dark\Calendar.axaml" /> 
-		<AvaloniaXaml Remove="Accents\Light\Calendar.axaml" /> 
+	<ItemGroup>  
 		<AvaloniaXaml Remove="AntDesign.axaml" />  
 	</ItemGroup>
 

@@ -6,6 +6,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/AutoCompleteBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Button.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ButtonSpinner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Calendar.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/CaptionButtons.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/CheckBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ComboBox.axaml" />
