@@ -111,19 +111,44 @@
 			<Style Selector="^ /template/ Border#Border">
 				<Setter Property="IsVisible" Value="True" />
 			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#Root">
+					<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ ContentControl#Content">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverForeground}" />
+				</Style>
+			</Style>
+			<Style Selector="^:selected">
+				<Style Selector="^ /template/ Border#Root">
+					<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ ContentControl#Content">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedForeground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#Border">
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBorderBrush}" />
+				</Style>
+			</Style>
 		</Style>
 
 		<!-- WinUI calls this OutOfFocus -->
 		<Style Selector="^:inactive">
-			 
+			<Style Selector="^ /template/ ContentControl#Content">
+				<Setter Property="Opacity" Value="0.5" />
+			</Style>
 		</Style>
 
-		<Style Selector="^:blackout /template/ ContentControl#Content">
-			 
+		<Style Selector="^:blackout">
+			<Style Selector="^ /template/ ContentControl#Content">
+				<Setter Property="Opacity" Value="0.5" />
+			</Style>
 		</Style>
 
-		<Style Selector="^:disabled /template/ ContentControl#Content">
-			 
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5" />
 		</Style>
 	</ControlTheme>
 

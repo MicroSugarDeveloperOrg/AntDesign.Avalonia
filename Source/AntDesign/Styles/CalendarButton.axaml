@@ -13,103 +13,142 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type CalendarButton}" TargetType="CalendarButton">
-		<Setter Property="ClickMode" Value="Release" />
-		<Setter Property="MinWidth" Value="40" />
-		<Setter Property="MinHeight" Value="40" />
-		<Setter Property="Margin" Value="1" />
-		<Setter Property="Padding" Value="0,0,0,0" />
-		<!--These are actually set on the CalendarView in WinUI-->
-		<Setter Property="Foreground" Value="{DynamicResource CalendarViewCalendarItemForeground}" />
-		<Setter Property="Background" Value="{DynamicResource CalendarViewCalendarItemRevealBackground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource CalendarViewCalendarItemRevealBorderBrush}" />
-		<Setter Property="BorderThickness" Value="2" />
-		<Setter Property="FontSize" Value="20" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="MinWidth" Value="{DynamicResource CalendarButtonMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource CalendarButtonMinHeight}" />
+		<Setter Property="Background" Value="{DynamicResource CalendarButtonBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource CalendarButtonForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CalendarButtonBorderBrush}" />
+		<Setter Property="assists:CalendarButtonAssists.PointerOverBackground" Value="{DynamicResource CalendarButtonPointerOverBackground}" />
+		<Setter Property="assists:CalendarButtonAssists.PointerOverForeground" Value="{DynamicResource CalendarButtonPointerOverForeground}" />
+		<Setter Property="assists:CalendarButtonAssists.PointerOverBorderBrush" Value="{DynamicResource CalendarButtonPointerOverBorderBrush}" />
+		<Setter Property="assists:CalendarButtonAssists.PressedBackground" Value="{DynamicResource CalendarButtonPressedBackground}" />
+		<Setter Property="assists:CalendarButtonAssists.PressedForeground" Value="{DynamicResource CalendarButtonPressedForeground}" />
+		<Setter Property="assists:CalendarButtonAssists.PressedBorderBrush" Value="{DynamicResource CalendarButtonPressedBorderBrush}" />
+		<Setter Property="assists:CalendarButtonAssists.SelectedBackground" Value="{DynamicResource CalendarButtonSelectedBackground}" />
+		<Setter Property="assists:CalendarButtonAssists.SelectedForeground" Value="{DynamicResource CalendarButtonSelectedForeground}" />
+		<Setter Property="assists:CalendarButtonAssists.SelectedBorderBrush" Value="{DynamicResource CalendarButtonSelectedBorderBrush}" />
+		<Setter Property="assists:CalendarButtonAssists.TodayBackground" Value="{DynamicResource CalendarButtonTodayBackground}" />
+		<Setter Property="assists:CalendarButtonAssists.TodayForeground" Value="{DynamicResource CalendarButtonTodayForeground}" />
+		<Setter Property="assists:CalendarButtonAssists.TodayBorderBrush" Value="{DynamicResource CalendarButtonTodayBorderBrush}" />
+		<Setter Property="assists:CalendarButtonAssists.TodayBorderThickness" Value="{DynamicResource CalendarButtonTodayBorderThickness}" />
+		<Setter Property="assists:CalendarButtonAssists.BlackOutBackground" Value="{DynamicResource CalendarButtonBlackOutBackground}" />
+		<Setter Property="assists:CalendarButtonAssists.BlackOutForeground" Value="{DynamicResource CalendarButtonBlackOutForeground}" />
+		<Setter Property="assists:CalendarButtonAssists.BlackOutBorderBrush" Value="{DynamicResource CalendarButtonBlackOutBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource CalendarButtonBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CalendarButtonCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource CalendarButtonPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource CalendarButtonMargin}" />
 		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="ClickMode" Value="Release" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Panel>
-					<!-- To mimic WinUI SystemFocusVisual, Focus visual is drawn outside the bounds of the item -->
-					<Border Name="Root" Background="{TemplateBinding Background}"
-							BorderThickness="0" ClipToBounds="True">
-						<ContentPresenter Name="Content"
-										  ContentTemplate="{TemplateBinding ContentTemplate}"
-										  Content="{TemplateBinding Content}"
-										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-										  FontSize="{TemplateBinding FontSize}"
-										  Margin="{TemplateBinding Padding}" />
+				<Panel Margin="{TemplateBinding Padding}">
+					<Border x:Name="Root"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							ClipToBounds="True">
+
+						<ContentControl x:Name="Content"
+										FontSize="{TemplateBinding FontSize}"
+										Content="{TemplateBinding Content}"
+										ContentTemplate="{TemplateBinding ContentTemplate}"
+										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 					</Border>
 
-					<!-- Drawn Border should render on top of background to preserve the 1px margin between items -->
-					<Border Name="Border"
-							BorderThickness="2"
-							BorderBrush="{TemplateBinding BorderBrush}" />
+					<Border x:Name="Border"
+							IsVisible="False"
+							BorderBrush="{TemplateBinding assists:CalendarButtonAssists.TodayBorderBrush}"
+							BorderThickness="{TemplateBinding assists:CalendarButtonAssists.TodayBorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"/>
 				</Panel>
 			</ControlTemplate>
 		</Setter>
 
-		<Style Selector="^:pointerover /template/ Border#Border">
-			<Setter Property="BorderBrush" Value="{DynamicResource CalendarViewHoverBorderBrush}" />
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#Root">
+				<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentControl#Content">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverForeground}" />
+			</Style>
 		</Style>
 
-		<Style Selector="^:pressed /template/ Border#Border">
-			<Setter Property="BorderBrush" Value="{DynamicResource SystemAccentColorDark2}" />
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#Root">
+				<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentControl#Content">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.PressedForeground}" />
+			</Style>
 		</Style>
 
-		<!-- Adjusted :selected to look like :today from DayItem -->
 		<Style Selector="^:selected">
 			<Style Selector="^ /template/ Border#Root">
-				<Setter Property="Background" Value="{DynamicResource SystemAccentColor}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBorderBrush}" />
 			</Style>
+			<Style Selector="^ /template/ ContentControl#Content">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedForeground}" />
+			</Style>
+		</Style>
 
+		<Style Selector="^:today">
+			<Style Selector="^ /template/ Border#Root">
+				<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.TodayBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.TodayBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentControl#Content">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.TodayForeground}" />
+			</Style>
 			<Style Selector="^ /template/ Border#Border">
-				<Setter Property="BorderBrush" Value="{DynamicResource CalendarViewSelectedBorderBrush}" />
+				<Setter Property="IsVisible" Value="True" />
 			</Style>
-
-			<Style Selector="^ /template/ ContentPresenter#Content">
-				<Setter Property="Foreground" Value="{DynamicResource CalendarViewTodayForeground}" />
-				<Setter Property="FontWeight" Value="SemiBold" />
-			</Style>
-
 			<Style Selector="^:pointerover">
-				<Style Selector="^ /template/ Border#Border">
-					<Setter Property="BorderBrush" Value="{DynamicResource SystemAccentColorDark1}" />
-				</Style>
 				<Style Selector="^ /template/ Border#Root">
-					<Setter Property="Background" Value="{DynamicResource SystemAccentColor}" />
+					<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ ContentControl#Content">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.PointerOverForeground}" />
 				</Style>
 			</Style>
-
-			<Style Selector="^:pressed">
-				<Style Selector="^ /template/ Border#Border">
-					<Setter Property="BorderBrush" Value="{DynamicResource SystemAccentColorDark2}" />
-				</Style>
-
+			<Style Selector="^:selected">
 				<Style Selector="^ /template/ Border#Root">
-					<Setter Property="Background" Value="{DynamicResource SystemAccentColor}" />
+					<Setter Property="Background" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ ContentControl#Content">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedForeground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#Border">
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CalendarButtonAssists.SelectedBorderBrush}" />
 				</Style>
 			</Style>
 		</Style>
 
 		<!-- WinUI calls this OutOfFocus -->
 		<Style Selector="^:inactive">
-			<Style Selector="^ /template/ Border#Root">
-				<!-- These are probably set in code, but consistent -->
-				<Setter Property="Background" Value="{DynamicResource CalendarViewOutOfScopeBackground}"/>
-			</Style>
 			<Style Selector="^ /template/ ContentControl#Content">
-				<Setter Property="Foreground" Value="{DynamicResource CalendarViewOutOfScopeForeground}"/>
+				<Setter Property="Opacity" Value="0.5" />
 			</Style>
 		</Style>
 
-		<Style Selector="^:blackout /template/ ContentControl#Content">
-			<Setter Property="Foreground" Value="{DynamicResource CalendarViewBlackoutForeground}" />
+		<Style Selector="^:blackout">
+			<Style Selector="^ /template/ ContentControl#Content">
+				<Setter Property="Opacity" Value="0.5" />
+			</Style>
 		</Style>
 
-		<Style Selector="^:disabled /template/ ContentControl#Content">
-			<Setter Property="Foreground" Value="{DynamicResource CalendarViewWeekDayForegroundDisabled}" />
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5" />
 		</Style>
 	</ControlTheme>
 

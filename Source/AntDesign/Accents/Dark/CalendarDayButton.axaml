@@ -2,9 +2,28 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<!-- CalendarItem -->
-	<SolidColorBrush x:Key="CalendarItemBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="CalendarItemBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
-	<SolidColorBrush x:Key="CalendarItemContentBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDayButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDayButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonPointerOverBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonPressedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonSelectedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonSelectedForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonSelectedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonTodayBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDayButtonTodayForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonTodayBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonBlackOutBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDayButtonBlackOutForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonBlackOutBorderBrush" Color="Transparent"/>
  
 </ResourceDictionary>
