@@ -96,7 +96,7 @@
 							<RowDefinition Height="{DynamicResource CalendarItemHeaderHeight}"/>
 							<RowDefinition Height="*"/> 
 						</Grid.RowDefinitions> 
-						<Border BorderThickness="0,0,0,1" 
+						<Border BorderThickness="{DynamicResource CalendarItemHeaderBorderThickness}" 
 								BorderBrush="{TemplateBinding BorderBrush}"
 								Padding="0">
 							<Grid ColumnDefinitions="*,5*,*">
@@ -105,7 +105,7 @@
 										Theme="{StaticResource AntDesignCalendarButton}"
 										HorizontalContentAlignment="Center">
 									<Path Stretch="Uniform"
-										  Height="16"
+										  Height="{DynamicResource CalendarItemButtonIconHeight}"
 										  Fill="{TemplateBinding Foreground}"
 										  Data="{StaticResource LeftIconGeometry}"
 										  HorizontalAlignment="Center"
@@ -122,7 +122,7 @@
 										Theme="{StaticResource AntDesignCalendarButton}"
 										HorizontalContentAlignment="Center">
 									<Path Stretch="Uniform"
-										  Height="16"
+										  Height="{DynamicResource CalendarItemButtonIconHeight}"
 										  Fill="{TemplateBinding Foreground}"
 										  Data="{StaticResource RightIconGeometry}"
 										  HorizontalAlignment="Center"
@@ -137,22 +137,22 @@
 							  Background="{DynamicResource CalendarItemContentBackground}" 
 							  MinHeight="{DynamicResource CalendarItemContentMinHeight}">
 							<Grid.RowDefinitions>
-								<RowDefinition Height="38" />
-								<RowDefinition Height="Auto" />
-								<RowDefinition Height="Auto" />
-								<RowDefinition Height="Auto" />
-								<RowDefinition Height="Auto" />
-								<RowDefinition Height="Auto" />
-								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+								<RowDefinition Height="*" />
+								<RowDefinition Height="*" />
+								<RowDefinition Height="*" />
+								<RowDefinition Height="*" />
+								<RowDefinition Height="*" />
+								<RowDefinition Height="*" />
 							</Grid.RowDefinitions>
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
 							</Grid.ColumnDefinitions>
 						</Grid>
 						<Grid Name="{x:Static helpers:PARTNameHelper.PART_YearView}"

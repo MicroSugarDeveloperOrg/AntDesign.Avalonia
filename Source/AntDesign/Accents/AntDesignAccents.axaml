@@ -325,9 +325,24 @@
 	<GridLength x:Key="CalendarItemHeaderHeight">40</GridLength>
 	<x:Double x:Key="CalendarItemContentMinHeight">290</x:Double>
 
+	<Thickness x:Key="CalendarItemHeaderBorderThickness">0,0,0,1</Thickness>
+	
 	<StaticResource x:Key="CalendarItemButtonBorderThickness" ResourceKey="BorderThickness"/>
 	<StaticResource x:Key="CalendarItemButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="CalendarItemButtonPadding" ResourceKey="Padding"/> 
+	<StaticResource x:Key="CalendarItemButtonPadding" ResourceKey="Padding"/>
+
+	<x:Double x:Key="CalendarItemButtonIconHeight">15</x:Double>
+
+	<!-- CalendarDayButton -->
+	<x:Double x:Key="CalendarDayButtonMinWidth">25</x:Double>
+	<x:Double x:Key="CalendarDayButtonMinHeight">25</x:Double>
+
+	<StaticResource x:Key="CalendarDayButtonBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="CalendarDayButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="CalendarDayButtonPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="CalendarDayButtonMargin" ResourceKey="Margin"/>
+
+	<StaticResource x:Key="CalendarDayButtonTodayBorderThickness" ResourceKey="OverlayBorderThickness"/>
 
 	<!--WindowNotificationManager-->
 	
