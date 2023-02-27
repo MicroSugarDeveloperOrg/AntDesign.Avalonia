@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<BoxShadows x:Key="CalendarDatePickerShadow">0 0 10 1 #4F000000</BoxShadows>
+
+	<SolidColorBrush x:Key="CalendarDatePickerBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDatePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDatePickerBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="CalendarDatePickerPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	
+	<SolidColorBrush x:Key="CalendarDatePickerFocusBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="CalendarDatePickerFloatingForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="CalendarDatePickerPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDatePickerPopupBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/> 
+	
+</ResourceDictionary>

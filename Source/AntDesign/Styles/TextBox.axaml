@@ -167,7 +167,7 @@
 										  MinWidth="{TemplateBinding MinWidth}"
 										  MinHeight="{TemplateBinding MinHeight}">
 
-						<Panel Margin="{TemplateBinding BorderThickness}">
+						<Panel>
 							<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_FloatingWatermark}"
 									   FontSize="{TemplateBinding FontSize}"
 									   IsVisible="False"
@@ -234,7 +234,6 @@
 												  Grid.ColumnSpan="1"
 												  Content="{TemplateBinding InnerRightContent}"/>
 							</Grid>
-
 						</Panel>
 					</ripple:RippleEffectx>
 				</DataValidationErrors>

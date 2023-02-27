@@ -10,7 +10,7 @@
 	<StaticResource x:Key="AutoCompleteBoxPadding" ResourceKey="OverlayPadding"/>
 
 	<StaticResource x:Key="AutoCompleteBoxPopupMargin" ResourceKey="OverlayMargin"/>
-	<StaticResource x:Key="AutoCompletePopupPadding" ResourceKey="OverlayPadding"/>
+	<StaticResource x:Key="AutoCompleteBoxPopupPadding" ResourceKey="OverlayPadding"/>
 	<Thickness x:Key="AutoCompleteBoxPopupBorderThickness">0</Thickness>
 	<CornerRadius x:Key="AutoCompleteBoxPopupCornerRadius">10</CornerRadius>
 	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">504</x:Double>
@@ -343,6 +343,20 @@
 	<StaticResource x:Key="CalendarDayButtonMargin" ResourceKey="Margin"/>
 
 	<StaticResource x:Key="CalendarDayButtonTodayBorderThickness" ResourceKey="OverlayBorderThickness"/>
+
+	<!-- CalendarDatePicker -->
+	<StaticResource x:Key="CalendarDatePickerBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="CalendarDatePickerCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="CalendarDatePickerPadding" ResourceKey="OverlayPadding"/>
+
+	<StaticResource x:Key="CalendarDatePickerPopupMargin" ResourceKey="OverlayMargin"/>
+	<StaticResource x:Key="CalendarDatePickerPopupPadding" ResourceKey="OverlayPadding"/>
+	<Thickness x:Key="CalendarDatePickerPopupBorderThickness">0</Thickness>
+	<CornerRadius x:Key="CalendarDatePickerPopupCornerRadius">10</CornerRadius>
+
+	<x:Double x:Key="CalendarDatePickerButtonWidth">35</x:Double>
+	<Thickness x:Key="CalendarDatePickerButtonBorderThickness">1,0,0,0</Thickness>
+	<CornerRadius x:Key="CalendarDatePickerButtonCornerRadius">0,5,5,0</CornerRadius>
 
 	<!--WindowNotificationManager-->
 	

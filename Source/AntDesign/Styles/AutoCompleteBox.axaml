@@ -65,7 +65,7 @@
 						</Popup.MinWidth>
 						
 						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
-								Padding="{DynamicResource AutoCompletePopupPadding}"
+								Padding="{DynamicResource AutoCompleteBoxPopupPadding}"
 								Margin="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin}"
 								Background="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBackground}"
 								BorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderBrush}"

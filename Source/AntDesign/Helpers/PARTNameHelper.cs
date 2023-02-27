@@ -90,5 +90,8 @@ public static class PARTNameHelper
     public static string PART_NextButton => nameof(PART_NextButton);
     public static string PART_MonthView => nameof(PART_MonthView);
     public static string PART_YearView => nameof(PART_YearView);
+
+    public static string PART_Button => nameof(PART_Button);
+    public static string PART_Calendar => nameof(PART_Calendar);
     
 }

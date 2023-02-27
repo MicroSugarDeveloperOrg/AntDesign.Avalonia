@@ -8,6 +8,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ButtonSpinner.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Calendar.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarDatePicker.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarDayButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/CaptionButtons.axaml" />
