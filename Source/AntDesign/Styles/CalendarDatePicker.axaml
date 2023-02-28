@@ -70,8 +70,19 @@
 									assists:ButtonAssists.PressedBorderBrush="{Binding $parent.(assists:TextBoxAssists.FocusBorderBrush)}"
 									assists:ButtonAssists.RippleColor="{Binding $parent.(assists:TextBoxAssists.RippleColor)}"
 									BorderThickness="{DynamicResource CalendarDatePickerButtonBorderThickness}"
-									CornerRadius="{DynamicResource CalendarDatePickerButtonCornerRadius}"
-									Content="{Binding Source={x:Static sys:DateTime.Today}, Path=Day}"/>
+									CornerRadius="{DynamicResource CalendarDatePickerButtonCornerRadius}">
+								<Button.Content>
+									<StackPanel Orientation="Horizontal">
+										<TextBlock Text="{Binding Source={x:Static sys:DateTime.Today}, Path=Day}" IsVisible="False"/>
+										<Path Stretch="Uniform" 
+											  Width="12"
+											  Opacity="0.5"
+											  VerticalAlignment="Center"
+											  Fill="{Binding $parent[Button].Foreground}"
+											  Data="{StaticResource CalendarGeometry}" />
+									</StackPanel>
+								</Button.Content>
+							</Button>
 						</TextBox.InnerRightContent>
 					</TextBox>
 					

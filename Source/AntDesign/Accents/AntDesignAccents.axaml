@@ -355,7 +355,7 @@
 	<CornerRadius x:Key="CalendarDatePickerPopupCornerRadius">10</CornerRadius>
 
 	<x:Double x:Key="CalendarDatePickerButtonWidth">35</x:Double>
-	<Thickness x:Key="CalendarDatePickerButtonBorderThickness">1,0,0,0</Thickness>
+	<Thickness x:Key="CalendarDatePickerButtonBorderThickness">0,0,0,0</Thickness>
 	<CornerRadius x:Key="CalendarDatePickerButtonCornerRadius">0,5,5,0</CornerRadius>
 	
 	<!-- TreeViewItem -->

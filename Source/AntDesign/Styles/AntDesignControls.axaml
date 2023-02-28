@@ -46,6 +46,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/Separator.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ThemeVariantScope.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TimePicker.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TitleBar.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ToggleButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ToggleSwitch.axaml" />

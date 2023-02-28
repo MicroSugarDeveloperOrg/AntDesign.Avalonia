@@ -94,10 +94,23 @@ public static class PARTNameHelper
     public static string PART_Button => nameof(PART_Button);
     public static string PART_Calendar => nameof(PART_Calendar);
 
+    //TreeViewItem
     public static string PART_Header => nameof(PART_Header);
     public static string PART_ExpandCollapseChevronContainer => nameof(PART_ExpandCollapseChevronContainer);
     public static string PART_ExpandCollapseChevron => nameof(PART_ExpandCollapseChevron);
 
-    
+    //TimePicker
+    public static string PART_FlyoutButton => nameof(PART_FlyoutButton);
+    public static string PART_FlyoutButtonContentGrid => nameof(PART_FlyoutButtonContentGrid);
+    public static string PART_FirstPickerHost => nameof(PART_FirstPickerHost);
+    public static string PART_FirstColumnDivider => nameof(PART_FirstColumnDivider);
+    public static string PART_HourTextBlock => nameof(PART_HourTextBlock);
+    public static string PART_MinuteTextBlock => nameof(PART_MinuteTextBlock);
+    public static string PART_SecondPickerHost => nameof(PART_SecondPickerHost);
+    public static string PART_SecondColumnDivider => nameof(PART_SecondColumnDivider);
+    public static string PART_ThirdPickerHost => nameof(PART_ThirdPickerHost);
+    public static string PART_PeriodTextBlock => nameof(PART_PeriodTextBlock);
+    public static string PART_PickerPresenter => nameof(PART_PickerPresenter);
+
 
 }
