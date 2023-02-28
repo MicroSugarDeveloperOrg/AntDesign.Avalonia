@@ -18,6 +18,8 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/ContentControl.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ContextMenu.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/DataValidationErrors.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/DatePicker.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/DateTimePickerShared.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/DropDownButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/EmbeddableControlRoot.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/FlyoutPresenter.axaml" />

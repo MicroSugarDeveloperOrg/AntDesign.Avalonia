@@ -13,11 +13,8 @@
 		<AvaloniaResource Include="Styles\*.axaml" />
 	</ItemGroup>
 
-	<ItemGroup>     
-		<AvaloniaXaml Remove="Accents\Dark\TreeViewItem.axaml" />     
-		<AvaloniaXaml Remove="Accents\Light\TreeViewItem.axaml" />     
-		<AvaloniaXaml Remove="AntDesign.axaml" />     
-		<AvaloniaXaml Remove="Styles\TimePicker.axaml" />      
+	<ItemGroup>              
+		<AvaloniaXaml Remove="AntDesign.axaml" />         
 	</ItemGroup>
 
 	<ItemGroup>

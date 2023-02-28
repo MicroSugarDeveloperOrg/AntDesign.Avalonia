@@ -111,6 +111,24 @@ public static class PARTNameHelper
     public static string PART_ThirdPickerHost => nameof(PART_ThirdPickerHost);
     public static string PART_PeriodTextBlock => nameof(PART_PeriodTextBlock);
     public static string PART_PickerPresenter => nameof(PART_PickerPresenter);
+    
+    public static string PART_PickerContainer => nameof(PART_PickerContainer);
+    public static string PART_HourHost => nameof(PART_HourHost);
+    public static string PART_HourSelector => nameof(PART_HourSelector);
+    public static string PART_HourUpButton => nameof(PART_HourUpButton);
+    public static string PART_HourDownButton => nameof(PART_HourDownButton);
+    public static string PART_MinuteHost => nameof(PART_MinuteHost);
+    public static string PART_MinuteSelector => nameof(PART_MinuteSelector);
+    public static string PART_MinuteUpButton => nameof(PART_MinuteUpButton);
+    public static string PART_MinuteDownButton => nameof(PART_MinuteDownButton);
+    public static string PART_PeriodHost => nameof(PART_PeriodHost);
+    public static string PART_PeriodSelector => nameof(PART_PeriodSelector);
+    public static string PART_PeriodUpButton => nameof(PART_PeriodUpButton);
+    public static string PART_PeriodDownButton => nameof(PART_PeriodDownButton);
+    public static string PART_FirstSpacer => nameof(PART_FirstSpacer);
+    public static string PART_SecondSpacer => nameof(PART_SecondSpacer);
+    public static string PART_AcceptButton => nameof(PART_AcceptButton);
+    public static string PART_DismissButton => nameof(PART_DismissButton); 
 
 
 }

@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="TimePickerBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TimePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TimePickerBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="TimePickerSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="TimePickerPresenterBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="TimePickerPresenterForeground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="TimePickerPresenterBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="TimePickerPresenterSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+	
+</ResourceDictionary>
