@@ -243,7 +243,6 @@
 		<!-- Disabled State -->
 		<Style Selector="^:disabled">
 			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-
 			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
 				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
@@ -270,15 +269,11 @@
 		</Style>
 
 		<!--Error State-->
-		
 		<Style Selector="^:error">
+			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}"/>
 			<Setter Property="assists:TextBoxAssists.PointerOverBorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 			<Setter Property="assists:TextBoxAssists.FocusBorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 			<Setter Property="assists:TextBoxAssists.RippleColor"  Value="{DynamicResource ErrorColor}"/>
-			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
-				<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}"/>
-			</Style>
- 
 		</Style>
 
 		<!--FloatingWatermark-->

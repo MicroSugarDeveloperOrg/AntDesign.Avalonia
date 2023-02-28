@@ -78,28 +78,23 @@
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
 				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
 			</Style>
-
 		</Style>
 
 		<Style Selector="^:disabled">
 			<Setter Property="Cursor" Value="No" />
-			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
-			</Style>
+			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 		</Style>
 		
 		<Style Selector="^.danger">
-			<Style Selector="^"> 
-				<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
-				<Setter Property="BorderBrush" Value="{DynamicResource DangerBrush}" />
-				<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource DangerPointerOverBrush}" />
-				<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource DangerPointerOverBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DangerPressedBrush}" />
-				<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
-			</Style>
+			<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource DangerBrush}" />
+			<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource DangerPointerOverBrush}" />
+			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource DangerPointerOverBrush}" />
+			<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
+			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DangerPressedBrush}" />
+			<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
 		</Style>
 	</ControlTheme>
 
@@ -116,14 +111,12 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource PrimaryButtonBorderThickness}" />
 
 		<Style Selector="^.danger">
-			<Style Selector="^">
-				<Setter Property="Background" Value="{DynamicResource DangerBrush}" />
-				<Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
-				<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource DangerPointerOverBrush}" />
-				<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPrimaryPointerOverForeground}" />
-				<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource DangerPressedBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPrimaryPressedForeground}" />
-			</Style>
+			<Setter Property="Background" Value="{DynamicResource DangerBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
+			<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource DangerPointerOverBrush}" />
+			<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPrimaryPointerOverForeground}" />
+			<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource DangerPressedBrush}" />
+			<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPrimaryPressedForeground}" />
 		</Style>
 	</ControlTheme>
 
@@ -142,11 +135,9 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource TextButtonBorderThickness}" />
 
 		<Style Selector="^.danger">
-			<Style Selector="^">
-				<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
-				<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource DangerPointerOverBrush}" />
-				<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
-			</Style>
+			<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+			<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource DangerPointerOverBrush}" />
+			<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
 		</Style>
 		
 	</ControlTheme>

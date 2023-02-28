@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:sys="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.ButtonView">
 
@@ -156,6 +157,22 @@
 
 				<Border Margin="20, 20, 20, 200">
 					<CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+				</Border>
+
+				<Border Margin="20, 20, 20, 200">
+					<CalendarDatePicker Width="200" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+				</Border>
+
+				<Border Margin="20, 20, 20, 200">
+					<CalendarDatePicker Width="200" IsEnabled="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+						<DataValidationErrors.Error>
+							<sys:Exception>
+								<x:Arguments>
+									<x:String>Error</x:String>
+								</x:Arguments>
+							</sys:Exception>
+						</DataValidationErrors.Error>
+					</CalendarDatePicker>
 				</Border>
 
 			</StackPanel>

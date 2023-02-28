@@ -37,68 +37,68 @@
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<DataValidationErrors>
-					<Panel  >
-						<TextBox x:Name="{x:Static helpers:PARTNameHelper.PART_TextBox}"
-								 Padding="{TemplateBinding Padding}"
-								 Width="{TemplateBinding Width}"
-								 Height="{TemplateBinding Height}"
-								 Watermark="{TemplateBinding Watermark}"
-								 Foreground="{TemplateBinding Foreground}"
-								 Background="{TemplateBinding Background}"
-								 BorderBrush="{TemplateBinding BorderBrush}"
-								 CornerRadius="{TemplateBinding CornerRadius}"
-								 BorderThickness="{TemplateBinding BorderThickness}"
-								 FontSize="{TemplateBinding FontSize}"
-								 FontFamily="{TemplateBinding FontFamily}"
-								 FontWeight="{TemplateBinding FontWeight}"
-								 UseFloatingWatermark="{TemplateBinding assists:CalendarDatePickerAssists.UseFloatingWatermark}"
-								 assists:TextBoxAssists.PointerOverBorderBrush="{TemplateBinding assists:CalendarDatePickerAssists.PointerOverBorderBrush}"
-								 assists:TextBoxAssists.FocusBorderBrush="{TemplateBinding assists:CalendarDatePickerAssists.FocusBorderBrush}"
-								 assists:TextBoxAssists.FloatingForeground="{TemplateBinding assists:CalendarDatePickerAssists.FloatingForeground}"
-								 assists:TextBoxAssists.RippleColor="{TemplateBinding assists:CalendarDatePickerAssists.RippleColor}"
-								 assists:TextBoxAssists.RippleColorAlpha="{TemplateBinding assists:CalendarDatePickerAssists.RippleColorAlpha}"
-								 DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
-								 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-								 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
-							<TextBox.InnerRightContent>
-								<Button x:Name="{x:Static helpers:PARTNameHelper.PART_Button}"
-										Focusable="False"
-										HorizontalAlignment="Right"
-										Width="{DynamicResource CalendarDatePickerButtonWidth}"
-										BorderThickness="{DynamicResource CalendarDatePickerButtonBorderThickness}"
-										CornerRadius="{DynamicResource CalendarDatePickerButtonCornerRadius}"
-										Content="{Binding Source={x:Static sys:DateTime.Today}, Path=Day}"/>
-							</TextBox.InnerRightContent>
-						</TextBox>
-						
-						<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
-							   IsLightDismissEnabled="True"
-							   PlacementTarget="{TemplateBinding}"
-							   HorizontalOffset="{TemplateBinding assists:CalendarDatePickerAssists.PopupMargin, Converter={StaticResource PopupHorizontalOffsetConverter}}">
-							<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
-									ClipToBounds="False"
-									Padding="{DynamicResource CalendarDatePickerPopupPadding}"
-									Margin="{TemplateBinding assists:CalendarDatePickerAssists.PopupMargin}"
-									Background="{TemplateBinding assists:CalendarDatePickerAssists.PopupBackground}"
-									BorderBrush="{TemplateBinding assists:CalendarDatePickerAssists.PopupBorderBrush}"
-									BorderThickness="{TemplateBinding assists:CalendarDatePickerAssists.PopupBorderThickness}"
-									CornerRadius="{TemplateBinding assists:CalendarDatePickerAssists.PopupCornerRadius}"
-									BoxShadow="{DynamicResource CalendarDatePickerShadow}">
-								<Calendar x:Name="{x:Static helpers:PARTNameHelper.PART_Calendar}"
-										  FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
-										  IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
-										  BorderThickness="0"
-										  SelectedDate="{TemplateBinding SelectedDate, Mode=TwoWay}"
-										  DisplayDate="{TemplateBinding DisplayDate}"
-										  DisplayDateStart="{TemplateBinding DisplayDateStart}"
-										  DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
-							</Border>
-
-
-						</Popup>
-					</Panel>
-				</DataValidationErrors>
+				<Panel>
+					<TextBox x:Name="{x:Static helpers:PARTNameHelper.PART_TextBox}"
+							 Padding="{TemplateBinding Padding}"
+							 Width="{TemplateBinding Width}"
+							 Height="{TemplateBinding Height}"
+							 Watermark="{TemplateBinding Watermark}"
+							 Foreground="{TemplateBinding Foreground}"
+							 Background="{TemplateBinding Background}"
+							 BorderBrush="{TemplateBinding BorderBrush}"
+							 CornerRadius="{TemplateBinding CornerRadius}"
+							 BorderThickness="{TemplateBinding BorderThickness}"
+							 FontSize="{TemplateBinding FontSize}"
+							 FontFamily="{TemplateBinding FontFamily}"
+							 FontWeight="{TemplateBinding FontWeight}"
+							 UseFloatingWatermark="{TemplateBinding assists:CalendarDatePickerAssists.UseFloatingWatermark}"
+							 assists:TextBoxAssists.PointerOverBorderBrush="{TemplateBinding assists:CalendarDatePickerAssists.PointerOverBorderBrush}"
+							 assists:TextBoxAssists.FocusBorderBrush="{TemplateBinding assists:CalendarDatePickerAssists.FocusBorderBrush}"
+							 assists:TextBoxAssists.FloatingForeground="{TemplateBinding assists:CalendarDatePickerAssists.FloatingForeground}"
+							 assists:TextBoxAssists.RippleColor="{TemplateBinding assists:CalendarDatePickerAssists.RippleColor}"
+							 assists:TextBoxAssists.RippleColorAlpha="{TemplateBinding assists:CalendarDatePickerAssists.RippleColorAlpha}"
+							 DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
+							 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
+						<TextBox.InnerRightContent>
+							<Button x:Name="{x:Static helpers:PARTNameHelper.PART_Button}"
+									Focusable="False"
+									HorizontalAlignment="Right"
+									Width="{DynamicResource CalendarDatePickerButtonWidth}"
+									BorderBrush="{Binding $parent.BorderBrush}"
+									assists:ButtonAssists.PointerOverBorderBrush="{Binding $parent.(assists:TextBoxAssists.PointerOverBorderBrush)}"
+									assists:ButtonAssists.PressedBorderBrush="{Binding $parent.(assists:TextBoxAssists.FocusBorderBrush)}"
+									assists:ButtonAssists.RippleColor="{Binding $parent.(assists:TextBoxAssists.RippleColor)}"
+									BorderThickness="{DynamicResource CalendarDatePickerButtonBorderThickness}"
+									CornerRadius="{DynamicResource CalendarDatePickerButtonCornerRadius}"
+									Content="{Binding Source={x:Static sys:DateTime.Today}, Path=Day}"/>
+						</TextBox.InnerRightContent>
+					</TextBox>
+					
+					<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
+						   IsLightDismissEnabled="True"
+						   PlacementTarget="{TemplateBinding}"
+						   HorizontalOffset="{TemplateBinding assists:CalendarDatePickerAssists.PopupMargin, Converter={StaticResource PopupHorizontalOffsetConverter}}">
+						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
+								ClipToBounds="False"
+								Padding="{DynamicResource CalendarDatePickerPopupPadding}"
+								Margin="{TemplateBinding assists:CalendarDatePickerAssists.PopupMargin}"
+								Background="{TemplateBinding assists:CalendarDatePickerAssists.PopupBackground}"
+								BorderBrush="{TemplateBinding assists:CalendarDatePickerAssists.PopupBorderBrush}"
+								BorderThickness="{TemplateBinding assists:CalendarDatePickerAssists.PopupBorderThickness}"
+								CornerRadius="{TemplateBinding assists:CalendarDatePickerAssists.PopupCornerRadius}"
+								BoxShadow="{DynamicResource CalendarDatePickerShadow}">
+							<Calendar x:Name="{x:Static helpers:PARTNameHelper.PART_Calendar}"
+									  FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+									  IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+									  BorderThickness="0"
+									  SelectedDate="{TemplateBinding SelectedDate, Mode=TwoWay}"
+									  DisplayDate="{TemplateBinding DisplayDate}"
+									  DisplayDateStart="{TemplateBinding DisplayDateStart}"
+									  DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
+						</Border>
+					</Popup>
+				</Panel>
 			</ControlTemplate>
 		</Setter>
 
@@ -124,8 +124,13 @@
 
 		<!-- Error State -->
 		<Style Selector="^:error">
-
+			<Style Selector="^ /template/ Button#PART_Button">
+				<Setter Property="BorderBrush"  Value="Red"/>
+				<Setter Property="assists:ButtonAssists.RippleColor"  Value="Red"/>
+			</Style>
 		</Style>
+
+
 	</ControlTheme>
 
 </ResourceDictionary>
