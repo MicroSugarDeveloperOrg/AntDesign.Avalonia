@@ -93,5 +93,11 @@ public static class PARTNameHelper
 
     public static string PART_Button => nameof(PART_Button);
     public static string PART_Calendar => nameof(PART_Calendar);
+
+    public static string PART_Header => nameof(PART_Header);
+    public static string PART_ExpandCollapseChevronContainer => nameof(PART_ExpandCollapseChevronContainer);
+    public static string PART_ExpandCollapseChevron => nameof(PART_ExpandCollapseChevron);
+
     
+
 }

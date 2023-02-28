@@ -39,6 +39,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToggleButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToggleSwitch.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToolTip.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/TreeViewItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Window.axaml" />
 	</ResourceDictionary.MergedDictionaries>
 

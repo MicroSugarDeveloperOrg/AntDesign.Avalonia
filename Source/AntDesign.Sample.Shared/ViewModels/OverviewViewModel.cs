@@ -11,7 +11,7 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 
         TriggerClickCommand = ReactiveCommand.Create(() =>
         {
-            IsTrigger = !IsTrigger;
+            IsTrigger = !IsTrigger; 
         });
 
         TriggerClickCommand1 = ReactiveCommand.Create(() =>
@@ -61,4 +61,5 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
     {
         base.Disposing();
     }
+ 
 }

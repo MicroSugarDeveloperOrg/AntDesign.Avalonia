@@ -167,7 +167,26 @@
 					</DataValidationErrors.Error>
 				</CalendarDatePicker>
 
-				<TextBlock><Run/></TextBlock>
+				<TreeView>
+					<TreeViewItem Header="Level 1" IsExpanded="True">
+						<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+							<TreeViewItem Header="Level 3.1" />
+							<TreeViewItem Header="Level 3.2" >
+								<TreeViewItem Header="Level 4" />
+							</TreeViewItem>
+						</TreeViewItem>
+						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
+					</TreeViewItem>
+					<TreeViewItem Header="Level 2" IsExpanded="True">
+						<TreeViewItem Header="Level 2.1" >
+							<TreeViewItem Header="Level 3.1" />
+							<TreeViewItem Header="Level 3.2" >
+								<TreeViewItem Header="Level 4" />
+							</TreeViewItem>
+						</TreeViewItem>
+						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
+					</TreeViewItem>
+				</TreeView>
 				
 			</StackPanel>
 

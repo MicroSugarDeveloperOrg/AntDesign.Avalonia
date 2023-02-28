@@ -2,5 +2,20 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
- 
+	<SolidColorBrush x:Key="TreeViewItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TreeViewItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TreeViewItemPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="TreeViewItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TreeViewItemPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="TreeViewItemPressedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TreeViewItemSelectedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="TreeViewItemSelectedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemSelectedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
 </ResourceDictionary>

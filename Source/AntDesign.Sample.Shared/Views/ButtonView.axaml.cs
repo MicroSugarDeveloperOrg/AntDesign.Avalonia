@@ -35,10 +35,12 @@ public partial class ButtonView : ReactiveUserControl<ButtonViewModel>
         //TextPresenter
 
         //RowDefinition
-      
+
         //TreeView
 
         //int.TryParse(,System.Globalization.NumberStyles.HexNumber)
-
+        //TryException();
+        //RotateTransform
     }
+
 }
