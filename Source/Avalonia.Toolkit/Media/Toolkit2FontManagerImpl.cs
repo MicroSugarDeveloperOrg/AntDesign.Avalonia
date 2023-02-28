@@ -2,7 +2,7 @@
 
 namespace Avalonia.Toolkit.Media;
 
-public class Toolkit2FontManagerImpl : IFontManagerImpl
+public class Toolkit2FontManagerImpl : FontManagerBase, IFontManagerImpl
 {
     public Toolkit2FontManagerImpl()
     {
@@ -40,8 +40,6 @@ public class Toolkit2FontManagerImpl : IFontManagerImpl
     readonly string _toolkitFamilyName;
     readonly string[] _bcp47;
     
-    readonly Typeface _defaultTypeface;
-
     readonly Typeface _boldTypeface;
     readonly Typeface _extraLightTypeface; 
     readonly Typeface _heavyTypeface; 
@@ -131,25 +129,5 @@ public class Toolkit2FontManagerImpl : IFontManagerImpl
             skTypeface = GetRealTypeface(needTypeface.Value);
         return new GlyphTypefaceImpl(skTypeface,FontSimulations.None);
     }
-
-    SKTypeface GetRealTypeface(Typeface userTypeface)
-    {
-        var typefaceCollection = SKTypefaceCollectionCache.GetOrAddTypefaceCollection(userTypeface.FontFamily);
-        var skTypeface = typefaceCollection.Get(_defaultTypeface);
-        if (skTypeface is null)
-        {
-            var fontFamilyNames = FontFamilyHelper.GetFontFamilyName(userTypeface.FontFamily.Key);   
-            var newFontFamilyName = fontFamilyNames?.FirstOrDefault();
-            if (newFontFamilyName is not null)
-            {
-                var newLightTypeface = new Typeface($"{userTypeface.FontFamily.Key}#{newFontFamilyName}",
-                    userTypeface.Style, userTypeface.Weight, userTypeface.Stretch);
-
-                var newTypefaceCollection =
-                    SKTypefaceCollectionCache.GetOrAddTypefaceCollection(newLightTypeface.FontFamily);
-                skTypeface = newTypefaceCollection.Get(newLightTypeface);        
-            }
-        }
-        return skTypeface!;
-    }
+     
 }
