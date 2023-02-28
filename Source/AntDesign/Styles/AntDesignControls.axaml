@@ -51,6 +51,8 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/ToggleSwitch.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ToolTip.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TransitioningContentControl.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TreeView.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TreeViewItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/UserControl.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/Window.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/WindowNotificationManager.axaml" />

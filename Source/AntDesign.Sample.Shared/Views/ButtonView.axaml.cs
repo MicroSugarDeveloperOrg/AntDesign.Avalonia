@@ -36,5 +36,9 @@ public partial class ButtonView : ReactiveUserControl<ButtonViewModel>
 
         //RowDefinition
       
+        //TreeView
+
+        //int.TryParse(,System.Globalization.NumberStyles.HexNumber)
+
     }
 }

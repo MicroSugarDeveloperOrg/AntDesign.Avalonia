@@ -14,6 +14,8 @@
 	</ItemGroup>
 
 	<ItemGroup>     
+		<AvaloniaXaml Remove="Accents\Dark\TreeViewItem.axaml" />     
+		<AvaloniaXaml Remove="Accents\Light\TreeViewItem.axaml" />     
 		<AvaloniaXaml Remove="AntDesign.axaml" />      
 	</ItemGroup>
 

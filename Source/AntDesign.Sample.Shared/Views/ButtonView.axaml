@@ -24,7 +24,6 @@
 					</StackPanel>
 				</ScrollViewer>
 
-
 				<Border Margin="16"
 						Padding="48"
 						Width="400"
@@ -108,7 +107,7 @@
 						<MenuItem Header="123" IsSelected="True"/>
 						<MenuItem Header="123"/>
 						<MenuItem Header="123"/>
-						
+
 					</Menu>
 				</StackPanel>
 
@@ -123,7 +122,7 @@
 				<ToggleButton Width="130" Height="40" Content="ToggleButton"/>
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsChecked="True" IsEnabled="False"/>
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger"/>
- 
+
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True"/>
 
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
@@ -131,7 +130,7 @@
 
 				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
 
-				
+
 
 			</StackPanel>
 
@@ -145,7 +144,7 @@
 				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" IsChecked="True" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
 				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
 
-			
+
 			</StackPanel>
 
 
@@ -154,32 +153,27 @@
 					<Calendar />
 				</Border>
 
+				<CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
 
-				<Border Margin="20, 20, 20, 200">
-					<CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-				</Border>
+				<CalendarDatePicker Width="200" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
 
-				<Border Margin="20, 20, 20, 200">
-					<CalendarDatePicker Width="200" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-				</Border>
+				<CalendarDatePicker Width="200" IsEnabled="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+					<DataValidationErrors.Error>
+						<sys:Exception>
+							<x:Arguments>
+								<x:String>Error</x:String>
+							</x:Arguments>
+						</sys:Exception>
+					</DataValidationErrors.Error>
+				</CalendarDatePicker>
 
-				<Border Margin="20, 20, 20, 200">
-					<CalendarDatePicker Width="200" IsEnabled="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-						<DataValidationErrors.Error>
-							<sys:Exception>
-								<x:Arguments>
-									<x:String>Error</x:String>
-								</x:Arguments>
-							</sys:Exception>
-						</DataValidationErrors.Error>
-					</CalendarDatePicker>
-				</Border>
-
+				<TextBlock><Run/></TextBlock>
+				
 			</StackPanel>
-			
-			
+
+
 
 		</Grid>
 	</ScrollViewer>
-	
+
 </UserControl>
