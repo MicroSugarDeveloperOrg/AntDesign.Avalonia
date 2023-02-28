@@ -41,6 +41,8 @@ public partial class ButtonView : ReactiveUserControl<ButtonViewModel>
         //int.TryParse(,System.Globalization.NumberStyles.HexNumber)
         //TryException();
         //RotateTransform
+        //TreeView.ItemsPanelProperty
+         
     }
 
 }
