@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="using:System" 
-					xmlns:helpers="using:AntDesign.Helpers" 
+                    xmlns:sys="using:System"
+					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:assists="using:AntDesign.Assists"
                     x:CompileBindings="True">
-	
+
 	<Design.PreviewWith>
 		<Border Padding="20">
 			<Calendar DisplayDate="2000-01-01">
@@ -40,7 +40,7 @@
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<ContentPresenter x:Name="Text" 
+				<ContentPresenter x:Name="Text"
 								  Background="{TemplateBinding Background}"
 								  Foreground="{TemplateBinding Foreground}"
 								  BorderBrush="{TemplateBinding BorderBrush}"
@@ -89,19 +89,21 @@
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						CornerRadius="{TemplateBinding CornerRadius}">
-					<Grid VerticalAlignment="Stretch" 
+					<Grid VerticalAlignment="Stretch"
 						  HorizontalAlignment="Stretch"
 						  MinWidth="{DynamicResource CalendarItemMinHeight}">
 						<Grid.RowDefinitions>
-							<RowDefinition Height="{DynamicResource CalendarItemHeaderHeight}"/>
-							<RowDefinition Height="*"/> 
-						</Grid.RowDefinitions> 
-						<Border BorderThickness="{DynamicResource CalendarItemHeaderBorderThickness}" 
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						<Border Grid.Row="0" 
+								Height="{DynamicResource CalendarItemHeaderHeight}"
 								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{DynamicResource CalendarItemHeaderBorderThickness}"
 								Padding="0">
 							<Grid ColumnDefinitions="*,5*,*">
 								<Button x:Name="{x:Static helpers:PARTNameHelper.PART_PreviousButton}"
-										Grid.Column="0" 
+										Grid.Column="0"
 										Theme="{StaticResource AntDesignCalendarButton}"
 										HorizontalContentAlignment="Center">
 									<Path Stretch="Uniform"
@@ -113,12 +115,12 @@
 								</Button>
 
 								<Button Name="{x:Static helpers:PARTNameHelper.PART_HeaderButton}"
-										Grid.Column="1" 
+										Grid.Column="1"
 										Theme="{StaticResource AntDesignCalendarButton}"
 										HorizontalContentAlignment="Center" />
 
 								<Button Name="{x:Static helpers:PARTNameHelper.PART_NextButton}"
-										Grid.Column="2" 
+										Grid.Column="2"
 										Theme="{StaticResource AntDesignCalendarButton}"
 										HorizontalContentAlignment="Center">
 									<Path Stretch="Uniform"
@@ -130,11 +132,11 @@
 								</Button>
 							</Grid>
 						</Border>
-						
-						<Grid Name="{x:Static helpers:PARTNameHelper.PART_MonthView}" 
-							  Grid.Row="1" 
-							  IsVisible="False" 
-							  Background="{DynamicResource CalendarItemContentBackground}" 
+
+						<Grid Name="{x:Static helpers:PARTNameHelper.PART_MonthView}"
+							  Grid.Row="1"
+							  IsVisible="False"
+							  Background="{DynamicResource CalendarItemContentBackground}"
 							  MinHeight="{DynamicResource CalendarItemContentMinHeight}">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="*" />
@@ -158,7 +160,7 @@
 						<Grid Name="{x:Static helpers:PARTNameHelper.PART_YearView}"
 							  Grid.Row="1"
 							  IsVisible="False"
-							  Background="{DynamicResource CalendarItemContentBackground}" 
+							  Background="{DynamicResource CalendarItemContentBackground}"
 							  MinHeight="{DynamicResource CalendarItemContentMinHeight}">
 							<Grid.RowDefinitions>
 								<RowDefinition Height="*" />

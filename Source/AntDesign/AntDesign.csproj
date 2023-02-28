@@ -14,11 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>     
-		<AvaloniaXaml Remove="Accents\Dark\CalendarButton.axaml" />     
-		<AvaloniaXaml Remove="Accents\Dark\CalendarDatePicker.axaml" />     
-		<AvaloniaXaml Remove="Accents\Light\CalendarButton.axaml" />     
-		<AvaloniaXaml Remove="Accents\Light\CalendarDatePicker.axaml" />     
-		<AvaloniaXaml Remove="AntDesign.axaml" />  
+		<AvaloniaXaml Remove="AntDesign.axaml" />      
 	</ItemGroup>
 
 	<ItemGroup>

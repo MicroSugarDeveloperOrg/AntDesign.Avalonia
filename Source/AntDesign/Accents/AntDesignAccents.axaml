@@ -322,7 +322,7 @@
 	<StaticResource x:Key="CalendarItemMargin" ResourceKey="Margin"/>
 
 	<x:Double x:Key="CalendarItemMinHeight">294</x:Double>
-	<GridLength x:Key="CalendarItemHeaderHeight">40</GridLength>
+	<x:Double x:Key="CalendarItemHeaderHeight">40</x:Double>
 	<x:Double x:Key="CalendarItemContentMinHeight">290</x:Double>
 
 	<Thickness x:Key="CalendarItemHeaderBorderThickness">0,0,0,1</Thickness>
