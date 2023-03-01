@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="DatePickerBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="DatePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="DatePickerBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="DatePickerSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="DatePickerPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="DatePickerPopupBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="DatePickerPresenterBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="DatePickerPresenterForeground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="DatePickerPresenterBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="DatePickerButtonBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="DatePickerButtonPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="DatePickerButtonPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
+
+	<SolidColorBrush x:Key="DateTimePickerPanelListBoxItemSelectedNoFocusForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
+
+</ResourceDictionary>

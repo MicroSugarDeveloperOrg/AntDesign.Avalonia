@@ -33,6 +33,7 @@
 		<Setter Property="assists:ListBoxItemAssists.SelectedForeground" Value="{DynamicResource ListBoxItemSelectedForeground}" />
 		<Setter Property="assists:ListBoxItemAssists.SelectedBorderBrush" Value="{DynamicResource ListBoxItemSelectedBorderBrush}" />
 		<Setter Property="assists:ListBoxItemAssists.SelectedNoFocusForeground" Value="{DynamicResource ListBoxItemSelectedNoFocusForeground}" />
+		<Setter Property="assists:ListBoxItemAssists.InnerBorderBackground" Value="{DynamicResource ListBoxItemInnerBorderBackground}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource ListBoxItemBorderThickness}" />
 		<Setter Property="Margin" Value="{DynamicResource ListBoxItemMargin}" /> 
 		<Setter Property="CornerRadius" Value="{DynamicResource ListBoxItemCornerRadius}" />
@@ -55,7 +56,7 @@
 								Grid.Column="0"
 								Width="{DynamicResource ListBoxItemInnerBorderWidth}"
 								Height="{DynamicResource ListBoxItemInnerBorderHeight}"
-								Background="{DynamicResource ListBoxItemInnerBorderBackground}"
+								Background="{TemplateBinding assists:ListBoxItemAssists.InnerBorderBackground}"
 								BorderThickness="0"
 								IsVisible="False"/>
 						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
@@ -130,4 +131,17 @@
 		</Style>
 		
 	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignListBoxItemStyle" TargetType="ListBoxItem" 
+				  BasedOn="{StaticResource {x:Type ListBoxItem}}"> 
+		<Setter Property="assists:ListBoxItemAssists.PressedBackground" Value="{DynamicResource ListBoxItemPrimaryPressedBackground}" />
+		<Setter Property="assists:ListBoxItemAssists.PressedForeground" Value="{DynamicResource ListBoxItemPrimaryPressedForeground}" />
+		<Setter Property="assists:ListBoxItemAssists.PressedBorderBrush" Value="{DynamicResource ListBoxItemPrimaryPressedBorderBrush}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedBackground" Value="{DynamicResource ListBoxItemPrimarySelectedBackground}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedForeground" Value="{DynamicResource ListBoxItemPrimarySelectedForeground}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedBorderBrush" Value="{DynamicResource ListBoxItemPrimarySelectedBorderBrush}" />
+		<Setter Property="assists:ListBoxItemAssists.SelectedNoFocusForeground" Value="{DynamicResource ListBoxItemPrimarySelectedNoFocusForeground}" />
+		<Setter Property="assists:ListBoxItemAssists.InnerBorderBackground" Value="{DynamicResource ListBoxItemPrimaryInnerBorderBackground}" />
+	</ControlTheme>
+
 </ResourceDictionary>

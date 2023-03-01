@@ -52,4 +52,7 @@
 	<SolidColorBrush x:Key="ButtonLinkPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="ButtonLinkPressedBorderBrush" Color="Transparent"/>
 
+	<!-- ShadowButtonStyle -->
+	<BoxShadows x:Key="ButtonShadow">0 0 4 2 #9f40a9ff</BoxShadows>
+	
 </ResourceDictionary>

@@ -22,4 +22,16 @@
 	
 	<SolidColorBrush x:Key="ListBoxItemInnerBorderBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
 
+	<SolidColorBrush x:Key="ListBoxItemPrimaryPressedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimaryPressedForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimaryPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedNoFocusForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+
+	<SolidColorBrush x:Key="ListBoxItemPrimaryInnerBorderBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
+
 </ResourceDictionary>

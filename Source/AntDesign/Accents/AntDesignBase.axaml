@@ -81,6 +81,7 @@
 	<!--Ripple-->
 	<x:Double x:Key="RippleOpacity">0.4</x:Double>
 	<Color x:Key="RippleColor">#9B40a9ff</Color>
+	<Color x:Key="ErrorRippleColor">#9Bff4d4f</Color>
 	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
 	
 </ResourceDictionary>

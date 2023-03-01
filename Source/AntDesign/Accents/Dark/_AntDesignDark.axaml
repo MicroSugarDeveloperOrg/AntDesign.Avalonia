@@ -16,6 +16,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ComboBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ComboBoxItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ContextMenu.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/DatePicker.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/DropDownButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/EmbeddableControlRoot.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/FlyoutPresenter.axaml" />

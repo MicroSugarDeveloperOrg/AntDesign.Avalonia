@@ -1,4 +1,5 @@
 ﻿using Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
+using System.Collections;
 
 namespace AntDesign.Sample.ViewModels;
 
@@ -54,7 +55,7 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 
     protected override void Activating()
     {
-        base.Activating();
+        base.Activating(); 
     }
 
     protected override void Disposing()

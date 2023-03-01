@@ -26,4 +26,7 @@ public class TextBoxAssists
     public static void SetRippleColorAlpha(AvaloniaObject dependencyObject, double value) => dependencyObject.SetValue(RippleColorAlphaProperty, value);
     public static double GetRippleColorAlpha(AvaloniaObject dependencyObject) => dependencyObject.GetValue<double>(RippleColorAlphaProperty);
 
+    public static readonly AvaloniaProperty<BoxShadows> ShadowsProperty = AvaloniaProperty.RegisterAttached<TextBox, BoxShadows>("Shadows", typeof(TextBoxAssists));
+    public static void SetShadows(AvaloniaObject dependencyObject, BoxShadows value) => dependencyObject.SetValue(ShadowsProperty, value);
+    public static BoxShadows GetShadows(AvaloniaObject dependencyObject) => dependencyObject.GetValue<BoxShadows>(ShadowsProperty);
 }

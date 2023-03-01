@@ -45,4 +45,7 @@ public class ListBoxItemAssists
     public static IBrush? GetSelectedNoFocusForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedNoFocusForegroundProperty);
 
 
+    public static readonly AvaloniaProperty<IBrush?> InnerBorderBackgroundProperty = AvaloniaProperty.RegisterAttached<ListBoxItem, IBrush?>("InnerBorderBackground", typeof(ListBoxItemAssists));
+    public static void SetInnerBorderBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(InnerBorderBackgroundProperty, value);
+    public static IBrush? GetInnerBorderBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(InnerBorderBackgroundProperty);
 }

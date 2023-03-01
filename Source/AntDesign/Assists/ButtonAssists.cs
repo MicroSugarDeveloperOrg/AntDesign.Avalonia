@@ -50,4 +50,8 @@ public class ButtonAssists
     public static void SetRippleColorAlpha(AvaloniaObject dependencyObject, double value) => dependencyObject.SetValue(RippleColorAlphaProperty, value);
     public static double GetRippleColorAlpha(AvaloniaObject dependencyObject) => dependencyObject.GetValue<double>(RippleColorAlphaProperty);
 
+    public static readonly AvaloniaProperty<BoxShadows> ShadowsProperty = AvaloniaProperty.RegisterAttached<Button, BoxShadows>("Shadows", typeof(ButtonAssists));
+    public static void SetShadows(AvaloniaObject dependencyObject, BoxShadows value) => dependencyObject.SetValue(ShadowsProperty, value);
+    public static BoxShadows GetShadows(AvaloniaObject dependencyObject) => dependencyObject.GetValue<BoxShadows>(ShadowsProperty);
+
 }

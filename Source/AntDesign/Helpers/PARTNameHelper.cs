@@ -128,7 +128,26 @@ public static class PARTNameHelper
     public static string PART_FirstSpacer => nameof(PART_FirstSpacer);
     public static string PART_SecondSpacer => nameof(PART_SecondSpacer);
     public static string PART_AcceptButton => nameof(PART_AcceptButton);
-    public static string PART_DismissButton => nameof(PART_DismissButton); 
+    public static string PART_DismissButton => nameof(PART_DismissButton);
+
+    //DatePicker
+    public static string PART_ButtonContentGrid => nameof(PART_ButtonContentGrid);
+    public static string PART_DayTextBlock => nameof(PART_DayTextBlock);
+    public static string PART_MonthTextBlock => nameof(PART_MonthTextBlock);
+    public static string PART_YearTextBlock => nameof(PART_YearTextBlock);
+
+    public static string PART_MonthHost => nameof(PART_MonthHost);
+    public static string PART_MonthSelector => nameof(PART_MonthSelector);
+    public static string PART_MonthUpButton => nameof(PART_MonthUpButton);
+    public static string PART_MonthDownButton => nameof(PART_MonthDownButton);
+    public static string PART_DayHost => nameof(PART_DayHost);
+    public static string PART_DaySelector => nameof(PART_DaySelector);
+    public static string PART_DayUpButton => nameof(PART_DayUpButton);
+    public static string PART_DayDownButton => nameof(PART_DayDownButton);
+    public static string PART_YearHost => nameof(PART_YearHost);
+    public static string PART_YearSelector => nameof(PART_YearSelector);
+    public static string PART_YearUpButton => nameof(PART_YearUpButton);
+    public static string PART_YearDownButton => nameof(PART_YearDownButton); 
 
 
 }

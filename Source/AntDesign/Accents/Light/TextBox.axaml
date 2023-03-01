@@ -22,5 +22,8 @@
 	<SolidColorBrush x:Key="TextBoxButtonPointerOverBackground" Color="#8c8c8c"/>
 	
 	<SolidColorBrush x:Key="TextBoxButtonPressedBackground" Color="#8c8c8c"/>
-	
+
+	<!-- ShadowTextBooxStyle -->
+	<BoxShadows x:Key="TextBoxShadow">0 0 4 2 #9f40a9ff</BoxShadows>
+
 </ResourceDictionary>

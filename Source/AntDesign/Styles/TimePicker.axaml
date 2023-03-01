@@ -170,20 +170,21 @@
 			<ControlTemplate>
 				<DataValidationErrors>
 					<Grid Name="LayoutRoot" Margin="{TemplateBinding Padding}">
-						<Button x:Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButton}" 
+						<Button x:Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButton}"
 								IsEnabled="{TemplateBinding IsEnabled}"
+								Theme="{StaticResource ShadowButtonStyle}" 
 								Foreground="{TemplateBinding Foreground}"
 								Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
 								CornerRadius="{TemplateBinding CornerRadius}"
-								Padding="{TemplateBinding Padding}"
-								assists:ButtonAssists.IsRipple="False"
+								Padding="{TemplateBinding Padding}" 
 								MinWidth="{DynamicResource TimePickerMinWidth}"
 								MaxWidth="{DynamicResource TimePickerMaxWidth}"
 								HorizontalAlignment="Stretch"
-								VerticalAlignment="Center">
-							<Grid Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButtonContentGrid}"> 
+								VerticalAlignment="Center"
+								TemplatedControl.IsTemplateFocusTarget="True">
+							<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButtonContentGrid}"> 
 								<Border x:Name="{x:Static helpers:PARTNameHelper.PART_FirstPickerHost}"
 										Grid.Column="0"
 										HorizontalAlignment="Stretch"

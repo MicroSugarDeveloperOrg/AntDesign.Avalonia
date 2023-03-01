@@ -7,7 +7,7 @@
              x:Class="AntDesign.Sample.Views.ButtonView">
 
 	<ScrollViewer>
-		<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,Auto">
+		<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,10,Auto">
 
 			<StackPanel Spacing="20">
 				<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
@@ -210,6 +210,24 @@
 				</TreeView>
 			</StackPanel>
 
+
+			<StackPanel Grid.Column="6" Spacing="20">
+				<StackPanel Spacing="20" VerticalAlignment="Center">
+					<DatePicker />
+					<DatePicker DayFormat="d(ddd)" YearVisible="False"/>
+					<DatePicker IsEnabled="False" />
+					<DatePicker>
+						<DataValidationErrors.Error>
+							<sys:Exception>
+								<x:Arguments>
+									<x:String>Error</x:String>
+								</x:Arguments>
+							</sys:Exception>
+						</DataValidationErrors.Error>
+					</DatePicker>
+				</StackPanel>
+			</StackPanel>
+			
 
 
 		</Grid>
