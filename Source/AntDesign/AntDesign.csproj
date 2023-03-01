@@ -13,10 +13,10 @@
 		<AvaloniaResource Include="Styles\*.axaml" />
 	</ItemGroup>
 
-	<ItemGroup>              
-		<AvaloniaXaml Remove="Accents\Dark\DatePicker.axaml" />              
-		<AvaloniaXaml Remove="Accents\Light\DatePicker.axaml" />              
-		<AvaloniaXaml Remove="AntDesign.axaml" />         
+	<ItemGroup>                            
+		<AvaloniaXaml Remove="Accents\Dark\Expander.axaml" />                            
+		<AvaloniaXaml Remove="Accents\Light\Expander.axaml" />                            
+		<AvaloniaXaml Remove="AntDesign.axaml" />                  
 	</ItemGroup>
 
 	<ItemGroup>

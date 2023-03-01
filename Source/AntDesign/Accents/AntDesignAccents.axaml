@@ -435,6 +435,11 @@
 	<Thickness x:Key="DatePickerPopupBorderThickness">0</Thickness>
 	<CornerRadius x:Key="DatePickerPopupCornerRadius">10</CornerRadius>
 
+	<!-- Expander -->
+	<x:Double x:Key="ExpanderMinHeight">40</x:Double>
+	<StaticResource x:Key="ExpanderBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="ExpanderCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ExpanderPadding" ResourceKey="OverlayPadding"/>
 
 	<!--WindowNotificationManager-->
 	

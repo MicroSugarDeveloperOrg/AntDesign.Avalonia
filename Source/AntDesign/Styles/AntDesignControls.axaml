@@ -22,6 +22,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/DateTimePickerShared.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/DropDownButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/EmbeddableControlRoot.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/Expander.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/FlyoutPresenter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/FocusAdorner.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/GridSplitter.axaml" />

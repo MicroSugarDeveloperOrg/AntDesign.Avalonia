@@ -31,7 +31,7 @@
 											  Left="True"
 											  x:Key="TreeViewItemxLeftMarginConverter"/>
 
-	<ControlTheme x:Key="AntDesignTreeViewToogleButtonStyle" TargetType="ToggleButton">
+	<ControlTheme x:Key="AntDesignTreeViewToggleButtonStyle" TargetType="ToggleButton">
 		<Setter Property="Margin" Value="0" />
 		<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
 		<Setter Property="Height" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
@@ -104,7 +104,7 @@
 								<ToggleButton x:Name="{x:Static helpers:PARTNameHelper.PART_ExpandCollapseChevron}"
 											  Focusable="False"
 											  Foreground="{Binding #PART_HeaderPresenter.Foreground}"
-											  Theme="{StaticResource AntDesignTreeViewToogleButtonStyle}"
+											  Theme="{StaticResource AntDesignTreeViewToggleButtonStyle}"
 											  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
 							</Panel>
 							<ContentPresenter x:Name="PART_HeaderPresenter"
@@ -263,7 +263,7 @@
 								<ToggleButton Name="{x:Static helpers:PARTNameHelper.PART_ExpandCollapseChevron}"
 											  Focusable="False"
 											  Foreground="{Binding #PART_HeaderPresenter.Foreground}"
-											  Theme="{StaticResource AntDesignTreeViewToogleButtonStyle}"
+											  Theme="{StaticResource AntDesignTreeViewToggleButtonStyle}"
 											  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
 							</Panel>
 							<ContentPresenter Name="PART_HeaderPresenter"

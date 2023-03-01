@@ -19,6 +19,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/DatePicker.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/DropDownButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/EmbeddableControlRoot.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Expander.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/FlyoutPresenter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/FocusAdorner.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/GridSplitter.axaml" />

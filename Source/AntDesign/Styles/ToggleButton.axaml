@@ -34,7 +34,7 @@
 		<Setter Property="assists:ToggleButtonAssists.IndeterminateBorderBrush" Value="{DynamicResource ToggleButtonIndeterminateBorderBrush}" />	
 		<Setter Property="assists:ToggleButtonAssists.IsRipple"  Value="true"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:ToggleButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="assists:ToggleButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/> 
 		<Setter Property="BorderThickness" Value="{DynamicResource ToggleButtonBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource ToggleButtonCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource ToggleButtonPadding}" />
@@ -46,62 +46,79 @@
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
+				<ripple:RippleEffect x:Name="PART_Container" 
+									 Background="{TemplateBinding Background}"
+									 BorderBrush="{TemplateBinding BorderBrush}"
+								     BorderThickness="{TemplateBinding BorderThickness}"
+									 CornerRadius="{TemplateBinding CornerRadius}" 
 									 IsRipple="{TemplateBinding assists:ToggleButtonAssists.IsRipple}"
 									 RippleColor="{TemplateBinding assists:ToggleButtonAssists.RippleColor}"
 									 RippleColorAlpha="{TemplateBinding assists:ToggleButtonAssists.RippleColorAlpha}">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-								      Background="{TemplateBinding Background}"
-								      BorderBrush="{TemplateBinding BorderBrush}"
-								      BorderThickness="{TemplateBinding BorderThickness}"
-								      CornerRadius="{TemplateBinding CornerRadius}"
-								      Content="{TemplateBinding Content}"
-								      ContentTemplate="{TemplateBinding ContentTemplate}"
-								      Padding="{TemplateBinding Padding}"
-								      RecognizesAccessKey="True"
-								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-									  RenderTransform ="none">
-						<ContentPresenter.Transitions>
-							<Transitions>
-								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
-							</Transitions>
-						</ContentPresenter.Transitions>
-					</ContentPresenter>
+					<Grid>
+						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
+										  Foreground="{TemplateBinding Foreground}" 
+										  Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
+										  Padding="{TemplateBinding Padding}"
+										  RecognizesAccessKey="True" 
+										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										  RenderTransform ="none">
+							<ContentPresenter.Transitions>
+								<Transitions>
+									<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+								</Transitions>
+							</ContentPresenter.Transitions>
+						</ContentPresenter>
+						<ContentPresenter x:Name="PART_InnerContent" 
+										  HorizontalAlignment="Right"
+										  VerticalAlignment="Center" 
+										  Content="{TemplateBinding assists:ToggleButtonAssists.InnerContent}"
+										  ContentTemplate="{TemplateBinding assists:ToggleButtonAssists.InnerContentTemplate}"
+										  Foreground="{TemplateBinding Foreground}"/>
+					</Grid>
 				</ripple:RippleEffect>
 			</ControlTemplate>
 		</Setter>
 
 		<Style Selector="^:pointerover">
-			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^ /template/ ripple|RippleEffect#PART_Container">
 				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.PointerOverBackground}" />
-				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.PointerOverForeground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.PointerOverBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.PointerOverForeground}" />
 			</Style>
 		</Style>
 
 		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ ripple|RippleEffect#PART_Container">
+				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.PressedBorderBrush}" />
+			</Style>
 			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
 				<Setter Property="RenderTransform" Value="{TemplateBinding assists:ToggleButtonAssists.PressedRenderTransform}" />
-				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.PressedBackground}" />
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.PressedForeground}" />
-				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.PressedBorderBrush}" />
 			</Style>
 		</Style>
 
 		<Style Selector="^:checked">
-			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^ /template/ ripple|RippleEffect#PART_Container">
 				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.CheckedBackground}" />
-				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.CheckedForeground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.CheckedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.CheckedForeground}" />
 			</Style>
 		</Style>
 
 		<Style Selector="^:indeterminate">
-			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^ /template/ ripple|RippleEffect#PART_Container">
 				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.IndeterminateBackground}" />
-				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.IndeterminateForeground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.IndeterminateBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.IndeterminateForeground}" />
 			</Style>
 		</Style>
 		

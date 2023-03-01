@@ -242,6 +242,12 @@
 					</TimePicker>
 				</StackPanel>
 
+				<Expander ExpandDirection="Up" Header="Expand Up">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+				
 
 			</StackPanel>
 

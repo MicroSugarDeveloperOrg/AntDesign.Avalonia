@@ -53,6 +53,7 @@
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								      Background="{TemplateBinding Background}"
+									  Foreground="{TemplateBinding Foreground}"
 								      BorderBrush="{TemplateBinding BorderBrush}"
 								      BorderThickness="{TemplateBinding BorderThickness}"
 								      CornerRadius="{TemplateBinding CornerRadius}"
@@ -65,11 +66,15 @@
 			</ControlTemplate>
 		</Setter>
 
-		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
+			</Style>
 		</Style>
+
+		
 
 		<Style Selector="^:pressed">
 		<Style Selector="^">

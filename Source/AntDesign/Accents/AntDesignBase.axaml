@@ -60,8 +60,6 @@
 
 	<SolidColorBrush x:Key="DefaultBrush" Color="{DynamicResource DefaultColor}"/>
 	<SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}"/>
-	<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
-	<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
 
 	<!--Danger-->
 	<Color x:Key="DangerColor">#ff4d4f</Color>
@@ -72,6 +70,18 @@
 	<SolidColorBrush x:Key="DangerPointerOverBrush" Color="{DynamicResource DangerPointerOverColor}"/>
 	<SolidColorBrush x:Key="DangerPressedBrush" Color="{DynamicResource DangerPressedColor}"/>
 
+	<!--Success-->
+	<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
+	<SolidColorBrush x:Key="SuccessBorderBrush" Color="{DynamicResource SuccessColor}"/>
+	<SolidColorBrush x:Key="SuccessBackground" Color="{DynamicResource SuccessColor}"/>
+	<SolidColorBrush x:Key="SuccessForeground" Color="{DynamicResource SuccessColor}"/>
+
+	<!--Warnnig-->
+	<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
+	<SolidColorBrush x:Key="WarningBorderBrush" Color="{DynamicResource WarningColor}"/>
+	<SolidColorBrush x:Key="WarningBackground" Color="{DynamicResource WarningColor}"/>
+	<SolidColorBrush x:Key="WarningForeground" Color="{DynamicResource WarningColor}"/>
+	
 	<!--Error-->
 	<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>
 	<SolidColorBrush x:Key="ErrorBorderBrush" Color="{DynamicResource ErrorColor}"/>
@@ -81,6 +91,8 @@
 	<!--Ripple-->
 	<x:Double x:Key="RippleOpacity">0.4</x:Double>
 	<Color x:Key="RippleColor">#9B40a9ff</Color>
+	<Color x:Key="SuccessRippleColor">#9B52c41a</Color>
+	<Color x:Key="WarningRippleColor">#9Bfaad14</Color>
 	<Color x:Key="ErrorRippleColor">#9Bff4d4f</Color>
 	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
 	

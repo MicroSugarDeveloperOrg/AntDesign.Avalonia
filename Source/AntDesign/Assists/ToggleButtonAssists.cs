@@ -65,4 +65,14 @@ public class ToggleButtonAssists
     public static readonly AvaloniaProperty<double> RippleColorAlphaProperty = AvaloniaProperty.RegisterAttached<ToggleButton, double>("RippleColorAlpha", typeof(ToggleButtonAssists));
     public static void SetRippleColorAlpha(AvaloniaObject dependencyObject, double value) => dependencyObject.SetValue(RippleColorAlphaProperty, value);
     public static double GetRippleColorAlpha(AvaloniaObject dependencyObject) => dependencyObject.GetValue<double>(RippleColorAlphaProperty);
+
+
+    public static readonly AvaloniaProperty<object?> InnerContentProperty = AvaloniaProperty.RegisterAttached<ToggleButton, object?>("InnerContent", typeof(ToggleButtonAssists));
+    public static void SetInnerContent(AvaloniaObject dependencyObject, object? value) => dependencyObject.SetValue(InnerContentProperty, value);
+    public static object? GetInnerContent(AvaloniaObject dependencyObject) => dependencyObject.GetValue<object?>(InnerContentProperty);
+
+    public static readonly AvaloniaProperty<IDataTemplate?> InnerContentTemplateProperty = AvaloniaProperty.RegisterAttached<ToggleButton, IDataTemplate?>("InnerContentTemplate", typeof(ToggleButtonAssists));
+    public static void SetInnerContentTemplate(AvaloniaObject dependencyObject, IDataTemplate? value) => dependencyObject.SetValue(InnerContentTemplateProperty, value);
+    public static IDataTemplate? GetInnerContentTemplate(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IDataTemplate?>(InnerContentTemplateProperty);
+
 }

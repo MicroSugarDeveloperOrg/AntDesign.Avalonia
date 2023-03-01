@@ -32,8 +32,7 @@
 				<Path Stretch="Uniform"
 					  Width="{DynamicResource DatePickerButtonIconWidth}"
 					  Height="{DynamicResource DatePickerButtonIconHeight}"
-					  Stroke="{Binding $parent[RepeatButton].Foreground}"
-					  StrokeThickness="1"
+					  Fill="{Binding $parent[RepeatButton].Foreground}" 
 					  Data="{StaticResource UpIconGeometry}"
 					  HorizontalAlignment="Center"
 					  VerticalAlignment="Center"/> 
@@ -57,8 +56,7 @@
 				<Path Stretch="Uniform"
 					  Width="{DynamicResource DatePickerButtonIconWidth}"
 					  Height="{DynamicResource DatePickerButtonIconHeight}"
-					  Stroke="{Binding $parent[RepeatButton].Foreground}" 
-					  StrokeThickness="1" 
+					  Fill="{Binding $parent[RepeatButton].Foreground}"  
 					  Data="{StaticResource DownIconGeometry}"
 					  HorizontalAlignment="Center"
 					  VerticalAlignment="Center"/>

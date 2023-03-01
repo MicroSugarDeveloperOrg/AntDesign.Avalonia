@@ -60,12 +60,12 @@
 
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 									  Grid.Row="0"
-									  VerticalAlignment="Center"
-									  HorizontalAlignment="Left"
+									  Foreground="{TemplateBinding Foreground}" 
 									  Content="{TemplateBinding Content}"
 									  ContentTemplate="{TemplateBinding ContentTemplate}"
 									  Margin="{DynamicResource ToggleSwitchTopHeaderMargin}"
-									  Foreground="{TemplateBinding Foreground}"
+									  VerticalAlignment="Center"
+									  HorizontalAlignment="Left"
 									  RecognizesAccessKey="True" />
 
 					<Grid Grid.Row="2">

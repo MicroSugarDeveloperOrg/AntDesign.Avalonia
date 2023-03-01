@@ -45,6 +45,7 @@
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								      Background="{TemplateBinding Background}"
+									  Foreground="{TemplateBinding Foreground}"
 								      BorderBrush="{TemplateBinding BorderBrush}"
 								      BorderThickness="{TemplateBinding BorderThickness}"
 								      CornerRadius="{TemplateBinding CornerRadius}"
@@ -192,6 +193,7 @@
 						BoxShadow="{TemplateBinding assists:ButtonAssists.Shadows}">
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								      Background="{TemplateBinding Background}"
+									  Foreground="{TemplateBinding Foreground}"
 								      BorderBrush="{TemplateBinding BorderBrush}"
 								      BorderThickness="{TemplateBinding BorderThickness}"
 								      CornerRadius="{TemplateBinding CornerRadius}"
