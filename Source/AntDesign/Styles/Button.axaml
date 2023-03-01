@@ -97,12 +97,9 @@
 			<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
 		</Style>
 
-		<Style Selector="^.error">
-			<Setter Property="Foreground" Value="{DynamicResource ErrorForeground}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
-			<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ErrorBorderBrush}" />
-			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
-			<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ErrorBorderBrush}" />
+		<Style Selector="^.error"> 
+			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
+			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
 			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 			<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource ErrorRippleColor}"/>
 		</Style>
@@ -246,12 +243,9 @@
 			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DangerPressedBrush}" /> 
 		</Style>
 
-		<Style Selector="^.error">
-			<Setter Property="Foreground" Value="{DynamicResource ErrorForeground}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
-			<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ErrorBorderBrush}" />
-			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
-			<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ErrorBorderBrush}" />
+		<Style Selector="^.error"> 
+			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
+			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
 			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
 		</Style>
 		
