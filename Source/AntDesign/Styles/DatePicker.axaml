@@ -180,43 +180,54 @@
 								VerticalAlignment="Center"
 								HorizontalContentAlignment="Stretch" 
 								TemplatedControl.IsTemplateFocusTarget="True">
-							
-							<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_ButtonContentGrid}">
-								
-								<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_YearTextBlock}" 
-										   Text="year"
-										   FontSize="{TemplateBinding FontSize}"
-										   FontFamily="{TemplateBinding FontFamily}"
-										   FontWeight="{TemplateBinding FontWeight}"
-										   Padding="{DynamicResource DatePickerHostPadding}"
-										   HorizontalAlignment="Center"/>
-								
-								<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_MonthTextBlock}" 
-										   Text="month" 
-										   TextAlignment="Center"
-										   FontSize="{TemplateBinding FontSize}"
-										   FontFamily="{TemplateBinding FontFamily}"
-										   FontWeight="{TemplateBinding FontWeight}"
-										   Padding="{DynamicResource DatePickerHostMonthPadding}"/>
 
-								<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_DayTextBlock}" 
-										   Text="day"
-									       FontSize="{TemplateBinding FontSize}"
-										   FontFamily="{TemplateBinding FontFamily}"
-										   FontWeight="{TemplateBinding FontWeight}"
-										   Padding="{DynamicResource DatePickerHostPadding}"
-										   HorizontalAlignment="Center"/>
-					
-								<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_FirstSpacer}" 
-										   Width="{DynamicResource DatePickerSpacerWidth}"
-										   Fill="{DynamicResource DatePickerSpacerFill}"
-										   HorizontalAlignment="Center"/>
-								
-								<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_SecondSpacer}" 
-										   Width="{DynamicResource DatePickerSpacerWidth}"
-										   Fill="{DynamicResource DatePickerSpacerFill}"
-										   HorizontalAlignment="Center"/>
+							<Grid ColumnDefinitions="*,Auto">
+								<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_ButtonContentGrid}">
+									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_YearTextBlock}"
+											   Text="year"
+											   FontSize="{TemplateBinding FontSize}"
+											   FontFamily="{TemplateBinding FontFamily}"
+											   FontWeight="{TemplateBinding FontWeight}"
+											   Padding="{DynamicResource DatePickerHostPadding}"
+											   HorizontalAlignment="Center"/>
+
+									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_MonthTextBlock}"
+											   Text="month"
+											   TextAlignment="Center"
+											   FontSize="{TemplateBinding FontSize}"
+											   FontFamily="{TemplateBinding FontFamily}"
+											   FontWeight="{TemplateBinding FontWeight}"
+											   Padding="{DynamicResource DatePickerHostMonthPadding}"/>
+
+									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_DayTextBlock}"
+											   Text="day"
+											   FontSize="{TemplateBinding FontSize}"
+											   FontFamily="{TemplateBinding FontFamily}"
+											   FontWeight="{TemplateBinding FontWeight}"
+											   Padding="{DynamicResource DatePickerHostPadding}"
+											   HorizontalAlignment="Center"/>
+
+									<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_FirstSpacer}"
+											   Width="{DynamicResource DatePickerSpacerWidth}"
+											   Fill="{DynamicResource DatePickerSpacerFill}"
+											   HorizontalAlignment="Center"/>
+
+									<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_SecondSpacer}"
+											   Width="{DynamicResource DatePickerSpacerWidth}"
+											   Fill="{DynamicResource DatePickerSpacerFill}"
+											   HorizontalAlignment="Center"/>
+								</Grid>
+
+								<Path Grid.Column="1" 
+									  Stretch="Uniform"
+									  Width="{DynamicResource DatePickerPresenterRightIconWidth}"
+									  Opacity="0.5"
+									  VerticalAlignment="Center"
+									  HorizontalAlignment="Center"
+									  Fill="{Binding $parent[Button].Foreground}"
+									  Data="{StaticResource CalendarGeometry}" />
 							</Grid>
+						
 						</Button>
 
 						<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}" 

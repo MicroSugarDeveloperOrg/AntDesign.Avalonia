@@ -75,7 +75,7 @@
 									<StackPanel Orientation="Horizontal">
 										<TextBlock Text="{Binding Source={x:Static sys:DateTime.Today}, Path=Day}" IsVisible="False"/>
 										<Path Stretch="Uniform" 
-											  Width="12"
+											  Width="{DynamicResource CalendarDatePickerButtonIconWidth}"
 											  Opacity="0.5"
 											  VerticalAlignment="Center"
 											  Fill="{Binding $parent[Button].Foreground}"

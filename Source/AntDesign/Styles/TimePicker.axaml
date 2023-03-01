@@ -179,57 +179,69 @@
 								VerticalAlignment="Center" 
 								HorizontalContentAlignment="Stretch" 
 								TemplatedControl.IsTemplateFocusTarget="True">
-							
-							<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButtonContentGrid}"> 
-								
-								<Border x:Name="{x:Static helpers:PARTNameHelper.PART_FirstPickerHost}"
-										Grid.Column="0"
-										HorizontalAlignment="Stretch"
-										VerticalAlignment="Stretch">
-									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_HourTextBlock}" 
-											   FontSize="{TemplateBinding FontSize}"
-											   FontFamily="{TemplateBinding FontFamily}"
-											   FontWeight="{TemplateBinding FontWeight}" 
-											   Padding="{DynamicResource TimePickerHostPadding}"
+
+							<Grid ColumnDefinitions="*,Auto">
+								<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButtonContentGrid}">
+
+									<Border x:Name="{x:Static helpers:PARTNameHelper.PART_FirstPickerHost}"
+											Grid.Column="0"
+											HorizontalAlignment="Stretch"
+											VerticalAlignment="Stretch">
+										<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_HourTextBlock}"
+												   FontSize="{TemplateBinding FontSize}"
+												   FontFamily="{TemplateBinding FontFamily}"
+												   FontWeight="{TemplateBinding FontWeight}"
+												   Padding="{DynamicResource TimePickerHostPadding}"
+												   HorizontalAlignment="Center"/>
+									</Border>
+
+									<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_FirstColumnDivider}"
+											   Grid.Column="1"
+											   Fill="{DynamicResource TimePickerSpacerFill}"
+											   Width="{DynamicResource TimePickerSpacerWidth}"
 											   HorizontalAlignment="Center"/>
-								</Border>
 
-								<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_FirstColumnDivider}"
-										   Grid.Column="1"
-										   Fill="{DynamicResource TimePickerSpacerFill}"
-										   Width="{DynamicResource TimePickerSpacerWidth}"
-										   HorizontalAlignment="Center"/>
+									<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SecondPickerHost}"
+											Grid.Column="2"
+											HorizontalAlignment="Stretch"
+											VerticalAlignment="Stretch">
+										<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_MinuteTextBlock}"
+												   FontSize="{TemplateBinding FontSize}"
+												   FontFamily="{TemplateBinding FontFamily}"
+												   FontWeight="{TemplateBinding FontWeight}"
+												   Padding="{DynamicResource TimePickerHostPadding}"
+												   HorizontalAlignment="Center"/>
+									</Border>
 
-								<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SecondPickerHost}"
-										Grid.Column="2"
-										HorizontalAlignment="Stretch"
-										VerticalAlignment="Stretch">
-									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_MinuteTextBlock}"
-											   FontSize="{TemplateBinding FontSize}"
-											   FontFamily="{TemplateBinding FontFamily}"
-											   FontWeight="{TemplateBinding FontWeight}"
-											   Padding="{DynamicResource TimePickerHostPadding}"
+									<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_SecondColumnDivider}"
+											   Grid.Column="3"
+											   Fill="{DynamicResource TimePickerSpacerFill}"
+											   Width="{DynamicResource TimePickerSpacerWidth}"
 											   HorizontalAlignment="Center"/>
-								</Border>
 
-								<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_SecondColumnDivider}"
-										   Grid.Column="3"
-										   Fill="{DynamicResource TimePickerSpacerFill}"
-										   Width="{DynamicResource TimePickerSpacerWidth}"
-										   HorizontalAlignment="Center"/>
+									<Border x:Name="{x:Static helpers:PARTNameHelper.PART_ThirdPickerHost}"
+											Grid.Column="4"
+											HorizontalAlignment="Stretch"
+											VerticalAlignment="Stretch">
+										<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_PeriodTextBlock}"
+												   FontSize="{TemplateBinding FontSize}"
+												   FontFamily="{TemplateBinding FontFamily}"
+												   FontWeight="{TemplateBinding FontWeight}"
+												   Padding="{DynamicResource TimePickerHostPadding}"
+												   HorizontalAlignment="Center"/>
+									</Border>
+								</Grid>
 
-								<Border x:Name="{x:Static helpers:PARTNameHelper.PART_ThirdPickerHost}"
-										Grid.Column="4"
-										HorizontalAlignment="Stretch"
-										VerticalAlignment="Stretch">
-									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_PeriodTextBlock}"
-											   FontSize="{TemplateBinding FontSize}"
-											   FontFamily="{TemplateBinding FontFamily}"
-											   FontWeight="{TemplateBinding FontWeight}"
-											   Padding="{DynamicResource TimePickerHostPadding}"
-											   HorizontalAlignment="Center"/>
-								</Border>
+								<Path Grid.Column="1"
+									  Stretch="Uniform"
+									  Width="{DynamicResource TimePickerPresenterRightIconWidth}"
+									  Opacity="0.5"
+									  VerticalAlignment="Center"
+									  HorizontalAlignment="Center"
+									  Fill="{Binding $parent[Button].Foreground}"
+									  Data="{StaticResource ClockGeometry}" />
 							</Grid>
+
 						</Button>
 
 						<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
