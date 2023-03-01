@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
+	<BoxShadows x:Key="DatePickerShadow">0 0 10 1 #4F000000</BoxShadows>
+
 	<SolidColorBrush x:Key="DatePickerBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="DatePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="DatePickerBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
@@ -15,10 +17,12 @@
 	<SolidColorBrush x:Key="DatePickerPresenterForeground" Color="{StaticResource AntDesigndAssistColor3}"/>
 	<SolidColorBrush x:Key="DatePickerPresenterBorderBrush" Color="Transparent"/>
 
+	<SolidColorBrush x:Key="DatePickerPresenterSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+
 	<SolidColorBrush x:Key="DatePickerButtonBackground" Color="{StaticResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="DatePickerButtonPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="DatePickerButtonPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
 	
-	<SolidColorBrush x:Key="DateTimePickerPanelListBoxItemSelectedNoFocusForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="DatePickerPanelListBoxItemSelectedNoFocusForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
 	
 </ResourceDictionary>

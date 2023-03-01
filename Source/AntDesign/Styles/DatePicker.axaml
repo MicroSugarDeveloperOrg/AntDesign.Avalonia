@@ -4,7 +4,6 @@
 					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:assists="using:AntDesign.Assists"
 					xmlns:extensions="using:AntDesign.Extensions"
-					
                     x:CompileBindings="True">
 
 	<Design.PreviewWith>
@@ -52,7 +51,8 @@
 						<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_PickerContainer}">
 							<Grid.Styles>
 								<Style Selector="DateTimePickerPanel > ListBoxItem">
-									<Setter Property="assists:ListBoxItemAssists.SelectedNoFocusForeground" Value="{DynamicResource DateTimePickerPanelListBoxItemSelectedNoFocusForeground}" />
+									<Setter Property="assists:ListBoxItemAssists.SelectedNoFocusForeground" 
+											Value="{DynamicResource DatePickerPanelListBoxItemSelectedNoFocusForeground}" />
 									<Setter Property="Theme" Value="{StaticResource AntDesignListBoxItemStyle}" />
 								</Style>
 							</Grid.Styles>
@@ -99,16 +99,16 @@
 											  Theme="{StaticResource AntDesignDateTimePickerDownButtonStyle}"/>
 							</Panel>
 																
-							<Rectangle Name="{x:Static helpers:PARTNameHelper.PART_FirstSpacer}"
+							<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_FirstSpacer}"
 									   Grid.Column="1"
 									   Width="{DynamicResource DatePickerSpacerWidth}"
-									   Fill="{DynamicResource DatePickerFlyoutPresenterSpacerFill}"
+									   Fill="{DynamicResource DatePickerPresenterSpacerFill}"
 									   HorizontalAlignment="Center"/>
 							
-							<Rectangle Name="{x:Static helpers:PARTNameHelper.PART_SecondSpacer}"
-									    Grid.Column="3"
+							<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_SecondSpacer}"
+									   Grid.Column="3"
 									   Width="{DynamicResource DatePickerSpacerWidth}"
-									   Fill="{DynamicResource DatePickerFlyoutPresenterSpacerFill}"
+									   Fill="{DynamicResource DatePickerPresenterSpacerFill}"
 									   HorizontalAlignment="Center"/>
 						</Grid>
 
@@ -161,6 +161,7 @@
 		<Setter Property="Padding" Value="{DynamicResource DatePickerPadding}"/>
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DataValidationErrors>
@@ -230,7 +231,7 @@
 									Background="{DynamicResource DatePickerPopupBackground}"
 									BorderBrush="{DynamicResource DatePickerPopupBorderBrush}"
 									ClipToBounds="False"
-									BoxShadow="{DynamicResource AutoCompleteBoxShadow}">
+									BoxShadow="{DynamicResource DatePickerShadow}">
 								<DatePickerPresenter Name="{x:Static helpers:PARTNameHelper.PART_PickerPresenter}" />
 							</Border>
 							

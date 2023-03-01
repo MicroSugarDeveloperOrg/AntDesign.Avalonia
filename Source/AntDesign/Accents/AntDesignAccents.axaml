@@ -382,13 +382,19 @@
 
 	<x:Double x:Key="TimePickerPresenterMinWidth">242</x:Double>
 	<x:Double x:Key="TimePickerPresenterMaxHeight">398</x:Double>
-	<StaticResource x:Key="TimePickerPresenterBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="TimePickerPresenterCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="TimePickerPresenterBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="TimePickerPresenterCornerRadius" ResourceKey="CornerRadius"/>
 	<StaticResource x:Key="TimePickerPresenterPadding" ResourceKey="OverlayPadding"/>
 
 	<x:Double x:Key="TimePickerPresenterItemHeight">40</x:Double>
 	<x:Double x:Key="TimePickerPresenterHighlightHeight">40</x:Double>
 	<x:Double x:Key="TimePickerPresenterAcceptDismissHostGridHeight">41</x:Double>
+	<x:Double x:Key="TimePickerPresenterAcceptDismissHostIconHeight">14</x:Double>
+
+	<StaticResource x:Key="TimePickerPopupMargin" ResourceKey="OverlayMargin"/>
+	<StaticResource x:Key="TimePickerPopupPadding" ResourceKey="OverlayPadding"/>
+	<Thickness x:Key="TimePickerPopupBorderThickness">0</Thickness>
+	<CornerRadius x:Key="TimePickerPopupCornerRadius">10</CornerRadius>
 
 	<!-- DataPicker -->
 	<StaticResource x:Key="DatePickerBorderThickness" ResourceKey="OverlayBorderThickness"/>
@@ -403,8 +409,8 @@
 	
 	<x:Double x:Key="DatePickerPresenterMinWidth">296</x:Double>
 	<x:Double x:Key="DatePickerPresenterMaxHeight">398</x:Double>
-	<StaticResource x:Key="DatePickerPresenterBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="DatePickerPresenterCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="DatePickerPresenterBorderThickness" ResourceKey="BorderThickness"/>
+	<StaticResource x:Key="DatePickerPresenterCornerRadius" ResourceKey="CornerRadius"/>
 	<StaticResource x:Key="DatePickerPresenterPadding" ResourceKey="OverlayPadding"/>
 	
 	<x:Double x:Key="DatePickerPresenterItemHeight">40</x:Double>

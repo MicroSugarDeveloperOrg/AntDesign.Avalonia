@@ -226,9 +226,26 @@
 						</DataValidationErrors.Error>
 					</DatePicker>
 				</StackPanel>
-			</StackPanel>
-			
 
+				<StackPanel Spacing="20" VerticalAlignment="Center">
+					<TimePicker />
+					<TimePicker  ClockIdentifier="12HourClock"/>
+					<TimePicker IsEnabled="False"/>
+					<TimePicker>
+						<DataValidationErrors.Error>
+							<sys:Exception>
+								<x:Arguments>
+									<x:String>Error</x:String>
+								</x:Arguments>
+							</sys:Exception>
+						</DataValidationErrors.Error>
+					</TimePicker>
+				</StackPanel>
+
+
+			</StackPanel>
+
+			
 
 		</Grid>
 	</ScrollViewer>

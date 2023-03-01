@@ -3,22 +3,7 @@ public static class Classes
 {
     static Classes()
     {
-        errorProperty.Changed.AddClassHandler<Control, bool>((s, e) =>
-        {
-            if (s is null)
-                return;
-
-            if (!e.NewValue.Value)
-            {
-                if (s.Classes.Contains(_errorClass))
-                    s.Classes.Remove(_errorClass);
-            }
-            else
-            {
-                if (!s.Classes.Contains(_errorClass))
-                    s.Classes.Add(_errorClass);
-            }
-        });
+        errorProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_errorClass, e.NewValue.Value));
     }
 
     private const string _errorClass = "error";
