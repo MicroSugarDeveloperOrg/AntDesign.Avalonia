@@ -442,8 +442,6 @@
 	<StaticResource x:Key="ExpanderPadding" ResourceKey="OverlayPadding"/>
 
 	<x:Double x:Key="ExpanderIconSize">12</x:Double>
-	<Thickness x:Key="ExpanderIconPadding">0,0,10,0</Thickness> 
-
 
 	<!--WindowNotificationManager-->
 	
