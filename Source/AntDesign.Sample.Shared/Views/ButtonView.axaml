@@ -247,7 +247,30 @@
 						<TextBlock>Expanded content</TextBlock>
 					</StackPanel>
 				</Expander>
+
+				<Expander ExpandDirection="Down" Header="Expand Down">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+
+				<Expander ExpandDirection="Left" Header="Expand Down">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+
+				<Expander ExpandDirection="Right" Header="Expand Down">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
 				
+				<Expander Classes="end" ExpandDirection="Down" Header="Expand Up">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
 
 			</StackPanel>
 

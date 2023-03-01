@@ -53,6 +53,9 @@ public partial class ButtonView : ReactiveUserControl<ButtonViewModel>
         //Classes.error
 
         //Button
+        //BorderThicknessFilterConverter
+        //CornerRadiusFilterConverter
+         
     }
 
 }

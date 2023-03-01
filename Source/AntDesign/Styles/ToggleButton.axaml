@@ -54,12 +54,13 @@
 									 IsRipple="{TemplateBinding assists:ToggleButtonAssists.IsRipple}"
 									 RippleColor="{TemplateBinding assists:ToggleButtonAssists.RippleColor}"
 									 RippleColorAlpha="{TemplateBinding assists:ToggleButtonAssists.RippleColorAlpha}">
-					<Grid>
+					<Grid ColumnDefinitions="Auto, *"
+						  Margin="{TemplateBinding Padding}">
 						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
+										  Grid.Column="1"
 										  Foreground="{TemplateBinding Foreground}" 
 										  Content="{TemplateBinding Content}"
-										  ContentTemplate="{TemplateBinding ContentTemplate}"
-										  Padding="{TemplateBinding Padding}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}" 
 										  RecognizesAccessKey="True" 
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -71,7 +72,8 @@
 							</ContentPresenter.Transitions>
 						</ContentPresenter>
 						<ContentPresenter x:Name="PART_InnerContent" 
-										  HorizontalAlignment="Right"
+										  Grid.Column="0"
+										  HorizontalAlignment="Center"
 										  VerticalAlignment="Center" 
 										  Content="{TemplateBinding assists:ToggleButtonAssists.InnerContent}"
 										  ContentTemplate="{TemplateBinding assists:ToggleButtonAssists.InnerContentTemplate}"
@@ -123,12 +125,8 @@
 		</Style>
 		
 		<Style Selector="^:disabled">
-			<Style Selector="^">
-				<Setter Property="Cursor" Value="No" />
-			</Style>
-			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="Opacity" Value="0.5" /> 
-			</Style>
+			<Setter Property="Cursor" Value="No" />
+			<Setter Property="Opacity" Value="0.5" />
 		</Style>
 
 		<Style Selector="^.danger">
@@ -144,9 +142,49 @@
 				<Setter Property="assists:ToggleButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
 			</Style>
 		</Style>
+
+		<Style Selector="^.end">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<ripple:RippleEffect x:Name="PART_Container"
+										 Background="{TemplateBinding Background}"
+										 BorderBrush="{TemplateBinding BorderBrush}"
+										 BorderThickness="{TemplateBinding BorderThickness}"
+										 CornerRadius="{TemplateBinding CornerRadius}"
+										 IsRipple="{TemplateBinding assists:ToggleButtonAssists.IsRipple}"
+										 RippleColor="{TemplateBinding assists:ToggleButtonAssists.RippleColor}"
+										 RippleColorAlpha="{TemplateBinding assists:ToggleButtonAssists.RippleColorAlpha}">
+						<Grid ColumnDefinitions="*,Auto" 
+							  Margin="{TemplateBinding Padding}">
+							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+											  Foreground="{TemplateBinding Foreground}"
+											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}" 
+											  RecognizesAccessKey="True"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  RenderTransform ="none">
+								<ContentPresenter.Transitions>
+									<Transitions>
+										<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+									</Transitions>
+								</ContentPresenter.Transitions>
+							</ContentPresenter>
+							<ContentPresenter x:Name="PART_InnerContent"
+											  Grid.Column="1" 
+											  HorizontalAlignment="Center"
+											  VerticalAlignment="Center"
+											  Content="{TemplateBinding assists:ToggleButtonAssists.InnerContent}"
+											  ContentTemplate="{TemplateBinding assists:ToggleButtonAssists.InnerContentTemplate}"
+											  Foreground="{TemplateBinding Foreground}"/>
+						</Grid>
+					</ripple:RippleEffect>
+				</ControlTemplate>
+			</Setter>
+		</Style>
 	</ControlTheme>
 
-	<ControlTheme x:Key="PrimaryToggleButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type ToggleButton}}">
+	<ControlTheme x:Key="PrimaryToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
 		<Setter Property="Background" Value="{DynamicResource ToggleButtonPrimaryBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ToggleButtonPrimaryForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ToggleButtonPrimaryBorderBrush}" />	

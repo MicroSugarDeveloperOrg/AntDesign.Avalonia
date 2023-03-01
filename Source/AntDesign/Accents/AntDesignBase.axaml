@@ -17,6 +17,11 @@
 	<antConverters:Double2MarginConverters Direction="Left" x:Key="LeftDouble2MarginConverters"/>
 	<antConverters:Double2MarginConverters Direction="Right" x:Key="RightDouble2MarginConverters"/>
 
+	<antConverters:BorderThicknessFilterConverter Edges="Top,Right,Bottom" x:Key="NoLeftBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left,Right,Bottom" x:Key="NoTopBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Bottom" x:Key="NoRightBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Right" x:Key="NoBottomBorderThickness"/>
+
 	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
 
 	<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />

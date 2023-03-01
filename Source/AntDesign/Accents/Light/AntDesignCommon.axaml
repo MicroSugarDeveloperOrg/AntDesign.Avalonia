@@ -43,7 +43,10 @@
 
 	<Color x:Key="AntDesigndAssistColor7">#BFBFBF</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush7" Color="{StaticResource AntDesigndAssistColor7}"/>
-	
+
+	<Color x:Key="AntDesigndAssistColor8">#FAFAFA</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush8" Color="{StaticResource AntDesigndAssistColor8}"/>
+
 
 	<!--Disable-->
 	<Color x:Key="DisableBackgroundColor">#FFF5F5F5</Color> 

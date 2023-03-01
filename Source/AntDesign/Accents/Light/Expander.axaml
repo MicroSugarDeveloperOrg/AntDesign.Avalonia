@@ -6,5 +6,16 @@
 	<SolidColorBrush x:Key="ExpanderForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ExpanderBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
 
+	<SolidColorBrush x:Key="ExpanderHeaderBackground" Color="{StaticResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+
+	<SolidColorBrush x:Key="ExpanderHeaderPointerOverBackground" Color="{StaticResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+
+	<SolidColorBrush x:Key="ExpanderHeaderPressedBackground" Color="{StaticResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+
+	<SolidColorBrush x:Key="ExpanderHeaderSelectedBackground" Color="{StaticResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderSelectedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 
 </ResourceDictionary>
