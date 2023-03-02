@@ -25,6 +25,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/GridSplitter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ListBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ListBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ManagedFileChooser.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Menu.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/MenuFlyoutPresenter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/MenuItem.axaml" />

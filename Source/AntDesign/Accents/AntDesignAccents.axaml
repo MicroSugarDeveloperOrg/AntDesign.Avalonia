@@ -3,6 +3,9 @@
 					xmlns:converters="using:Avalonia.Controls.Converters"
 					xmlns:antConverters="using:AntDesign.Converters"
 					x:CompileBindings="True">
+	<!-- Windows -->
+	<x:Double x:Key="WindowDefaultWidth">1000</x:Double>
+	<x:Double x:Key="WindowDefaultHeight">600</x:Double>
 	
 	<!-- AutoCompleteBox -->
 	<StaticResource x:Key="AutoCompleteBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
@@ -442,6 +445,25 @@
 	<StaticResource x:Key="ExpanderPadding" ResourceKey="OverlayPadding"/>
 
 	<x:Double x:Key="ExpanderIconSize">12</x:Double>
+
+	<!--ManagedFileChooser-->
+
+	<x:Double x:Key="NavBarHeight">50</x:Double>
+	<x:Double x:Key="NavBarButtonHeight">30</x:Double>
+	<x:Double x:Key="NavBarButtonWidth">40</x:Double> 
+	
+	<x:Double x:Key="BottomHeight">90</x:Double>
+	<Thickness x:Key="BottomBorderThickness">0,1,0,0</Thickness>
+
+	<x:Double x:Key="QuickLinksWidth">160</x:Double>
+	<Thickness x:Key="QuickLinksBorderThickness">0,0,1,0</Thickness>
+
+	<x:Double x:Key="QuickLinksIconSize">16</x:Double>
+
+	<x:Double x:Key="BottomButtonWidth">120</x:Double>
+	<x:Double x:Key="BottomButtonHeight">40</x:Double>
+	<x:Double x:Key="FilesHeaderHeight">30</x:Double>
+
 
 	<!--WindowNotificationManager-->
 	

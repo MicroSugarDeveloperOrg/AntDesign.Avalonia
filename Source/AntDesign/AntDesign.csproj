@@ -13,11 +13,10 @@
 		<AvaloniaResource Include="Styles\*.axaml" />
 	</ItemGroup>
 
-	<ItemGroup>                            
-		<AvaloniaXaml Remove="Accents\Dark\Expander.axaml" />                            
-		<AvaloniaXaml Remove="Accents\Light\Expander.axaml" />                            
-		<AvaloniaXaml Remove="AntDesign.axaml" />                            
-		<AvaloniaXaml Remove="Styles\ManagedFileChooser.axaml" />                  
+	<ItemGroup>                                                      
+		<AvaloniaXaml Remove="Accents\Dark\ManagedFileChooser.axaml" />                                                      
+		<AvaloniaXaml Remove="Accents\Light\ManagedFileChooser.axaml" />                                                      
+		<AvaloniaXaml Remove="AntDesign.axaml" />                                
 	</ItemGroup>
 
 	<ItemGroup>

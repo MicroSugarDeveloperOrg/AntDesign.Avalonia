@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<BoxShadows x:Key="ManagedFileChooserNavBarShadow">0 0 5 0 LightGray</BoxShadows>
+
+	<SolidColorBrush x:Key="QuickLinksBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="GridSplitterBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	
+	<SolidColorBrush x:Key="BottomBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+
+</ResourceDictionary>

@@ -7,5 +7,7 @@ public partial class MainWindow : ReactiveWindow<MainViewModel>
     public MainWindow()
     {
         InitializeComponent();
+        //ShowInTaskbar
+        //WindowStartupLocation=
     }
 }

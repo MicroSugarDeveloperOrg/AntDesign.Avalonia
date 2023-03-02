@@ -72,6 +72,7 @@ public partial class App : Application
         routingViewLocator.AddRouter<MenuView, MenuViewModel>(routerNameCallBack: () => "Menu 菜单");
         routingViewLocator.AddRouter<TabsView, TabsViewModel>(routerNameCallBack: () => "Tabs 标签页");
         routingViewLocator.AddRouter<TreesView, TreesViewModel>(routerNameCallBack: () => "Tree 树形控件");
+        routingViewLocator.AddRouter<DialogsView, DialogsViewModel>(routerNameCallBack: () => "Dialogs 窗口");
 
         return true;
     }
