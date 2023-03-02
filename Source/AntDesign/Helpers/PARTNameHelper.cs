@@ -147,7 +147,9 @@ public static class PARTNameHelper
     public static string PART_YearHost => nameof(PART_YearHost);
     public static string PART_YearSelector => nameof(PART_YearSelector);
     public static string PART_YearUpButton => nameof(PART_YearUpButton);
-    public static string PART_YearDownButton => nameof(PART_YearDownButton); 
+    public static string PART_YearDownButton => nameof(PART_YearDownButton);
 
+    //NumericUpDown
+    public static string PART_Spinner => nameof(PART_Spinner);
 
 }

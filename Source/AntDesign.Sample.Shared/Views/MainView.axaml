@@ -38,7 +38,7 @@
 			</Grid>
 		</Border>
 
-		<Grid Grid.Row="2" ColumnDefinitions="Auto,30,*">
+		<Grid Grid.Row="2" ColumnDefinitions="Auto,15,*,15">
 			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
 				<ListBox.DataTemplates>
 					<DataTemplate DataType="{x:Type routers:Router}">

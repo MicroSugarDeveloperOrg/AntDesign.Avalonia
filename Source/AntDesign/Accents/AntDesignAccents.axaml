@@ -447,7 +447,6 @@
 	<x:Double x:Key="ExpanderIconSize">12</x:Double>
 
 	<!--ManagedFileChooser-->
-
 	<x:Double x:Key="NavBarHeight">50</x:Double>
 	<x:Double x:Key="NavBarButtonHeight">30</x:Double>
 	<x:Double x:Key="NavBarButtonWidth">40</x:Double> 
@@ -463,7 +462,6 @@
 	<x:Double x:Key="BottomButtonWidth">120</x:Double>
 	<x:Double x:Key="BottomButtonHeight">40</x:Double>
 	<x:Double x:Key="FilesHeaderHeight">30</x:Double>
-
 
 	<!--WindowNotificationManager-->
 	

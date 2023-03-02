@@ -8,7 +8,8 @@
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
-		<AvaloniaResource Include="Assets\Styles\**" /> 
+		<AvaloniaResource Include="Assets\Styles\**" />
+		<AvaloniaResource Include="Assets\Images\**" />
 		<TrimmerRootDescriptor Include="Roots.xml" />
 	</ItemGroup>
 
@@ -27,12 +28,5 @@
 	  <ProjectReference Include="..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	  <ProjectReference Include="..\Avalonia.Toolkit\Avalonia.Toolkit.csproj" /> 
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\TreesView.axaml.cs">
-	    <DependentUpon>TreesView.axaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
 	 
 </Project>
