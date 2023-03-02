@@ -4,5 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.DialogsView">
-  Welcome to Avalonia!
+	<StackPanel Spacing="20">
+
+		<NumericUpDown Minimum="0"
+					   Maximum="10"
+					   Increment="0.5"
+					   Height="40"
+					   Width="160"
+					   Margin="10"
+					   Watermark="Enter text" />
+		<NumericUpDown Minimum="0"
+					   Maximum="10"
+					   Increment="0.5"
+					   Height="40"
+					   Width="160"
+					   Margin="10"
+					   VerticalContentAlignment="Center"
+					   HorizontalContentAlignment="Center"
+					   ButtonSpinnerLocation="Left"
+					   Watermark="Enter text" />
+	</StackPanel>
 </UserControl>

@@ -78,8 +78,7 @@
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
-							CornerRadius="{TemplateBinding CornerRadius}"
-							Padding="{TemplateBinding Padding}">
+							CornerRadius="{TemplateBinding CornerRadius}">
 						<DockPanel>
 							<StackPanel Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}"
 										DockPanel.Dock="Right"
@@ -125,9 +124,10 @@
 							</StackPanel>
 
 							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
-											  Foreground="{TemplateBinding Foreground}"
+											  Foreground="{TemplateBinding Foreground}" 
 											  Content="{TemplateBinding Content}"
 											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Padding="{TemplateBinding Padding}"
 											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
 						</DockPanel>

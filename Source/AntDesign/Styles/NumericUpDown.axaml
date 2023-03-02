@@ -22,15 +22,18 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
-		<Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-		<Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-		<Setter Property="MinHeight" Value="{DynamicResource TextControlThemeMinHeight}" />
-		<Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
-		<Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
-		<Setter Property="Padding" Value="{DynamicResource TextControlThemePadding}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonSpinnerForeground}" />
+		<Setter Property="Background" Value="{DynamicResource ButtonSpinnerBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonSpinnerBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ButtonSpinnerBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ButtonSpinnerCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource ButtonSpinnerPadding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/> 
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<ButtonSpinner x:Name="{x:Static helpers:PARTNameHelper.PART_Spinner}"
@@ -38,8 +41,7 @@
 							   BorderThickness="{TemplateBinding BorderThickness}"
 							   BorderBrush="{TemplateBinding BorderBrush}"
 							   CornerRadius="{TemplateBinding CornerRadius}"
-							   Padding="0"
-							   MinWidth="0"
+							   Padding="0" 
 							   HorizontalContentAlignment="Stretch"
 							   VerticalContentAlignment="Stretch"
 							   AllowSpin="{TemplateBinding AllowSpin}"
@@ -51,9 +53,11 @@
 							 Background="Transparent"
 							 Foreground="{TemplateBinding Foreground}"
 							 BorderBrush="Transparent"
-							 Margin="-1"
-							 Padding="{TemplateBinding Padding}"
+							 BorderThickness="0"
 							 MinWidth="0"
+							 MinHeight="0"
+							 CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
+							 Margin="{TemplateBinding Padding}" 
 							 Watermark="{TemplateBinding Watermark}"
 							 IsReadOnly="{TemplateBinding IsReadOnly}"
 							 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -64,6 +68,13 @@
 				</ButtonSpinner>
 			</ControlTemplate>
 		</Setter>
+
+		<Style Selector="^[ButtonSpinnerLocation=Left]">
+			<Style Selector="^ /template/ TextBox#PART_TextBox">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"/>
+			</Style>
+		</Style>
+		
 	</ControlTheme>
  
 </ResourceDictionary>

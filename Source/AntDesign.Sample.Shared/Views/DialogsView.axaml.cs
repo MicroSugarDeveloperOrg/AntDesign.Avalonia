@@ -8,5 +8,6 @@ public partial class DialogsView : ReactiveUserControl<DialogsViewModel>
     public DialogsView()
     {
         InitializeComponent();
+        //NumericUpDown.ButtonSpinnerLocationProperty
     }
 }
