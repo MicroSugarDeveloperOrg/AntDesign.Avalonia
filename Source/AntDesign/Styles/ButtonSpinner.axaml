@@ -160,4 +160,111 @@
 		</Style>
 	</ControlTheme>
 
+	<ControlTheme x:Key="AntDesignButtonSpinnerStyle" TargetType="ButtonSpinner">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonSpinnerForeground}" />
+		<Setter Property="Background" Value="{DynamicResource ButtonSpinnerBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonSpinnerBorderBrush}" />
+		<Setter Property="assists:ButtonSpinnerAssists.Background" Value="{DynamicResource ButtonSpinnerButtonBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.Foreground" Value="{DynamicResource ButtonSpinnerButtonForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.BorderBrush" Value="{DynamicResource ButtonSpinnerButtonBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBackground" Value="{DynamicResource ButtonSpinnerButtonPointerOverBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverForeground" Value="{DynamicResource ButtonSpinnerButtonPointerOverForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPointerOverBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerButtonPressedBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerButtonPressedForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPressedBorderBrush}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource ButtonSpinnerBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ButtonSpinnerCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource ButtonSpinnerPadding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Focusable" Value="True"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<DataValidationErrors>
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}" 
+							  ColumnDefinitions="Auto,*,Auto">
+							<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
+										  Grid.Column="0"
+										  IsVisible="{TemplateBinding ShowButtonSpinner}"
+										  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
+										  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
+										  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}"
+										  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"
+										  assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBackground}"
+										  assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverForeground}"
+										  assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBorderBrush}"
+										  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
+										  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
+										  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
+										  VerticalAlignment="Stretch"
+										  VerticalContentAlignment="Center">
+								<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
+										  Height="{DynamicResource ButtonSpinnerIconHeight}"
+										  Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}" />
+							</RepeatButton>
+							
+							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+											  Grid.Column="1"
+											  Foreground="{TemplateBinding Foreground}"
+											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Padding="{TemplateBinding Padding}"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+							
+							<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
+										  Grid.Column="2"
+										  IsVisible="{TemplateBinding ShowButtonSpinner}"
+										  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
+										  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
+										  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}"
+										  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"
+										  assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBackground}"
+										  assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverForeground}"
+										  assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBorderBrush}"
+										  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
+										  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
+										  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
+										  VerticalAlignment="Stretch"
+										  VerticalContentAlignment="Center">
+								<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
+										  Height="{DynamicResource ButtonSpinnerIconHeight}"
+										  Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}" />
+							</RepeatButton>
+						</Grid>
+					</Border>
+				</DataValidationErrors>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^">
+			<Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyRightBorderThickness}}"/>
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"/>
+			</Style>
+			<Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftBorderThickness}}"/>
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"/>
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+		</Style>
+
+		<Style Selector="^:error">
+			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
+		</Style>
+	</ControlTheme>
+
 </ResourceDictionary>

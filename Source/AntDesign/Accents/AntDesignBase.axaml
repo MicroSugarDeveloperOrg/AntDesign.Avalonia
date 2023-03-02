@@ -22,6 +22,10 @@
 	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Bottom" x:Key="NoRightBorderThickness"/>
 	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Right" x:Key="NoBottomBorderThickness"/>
 
+	<antConverters:BorderThicknessFilterConverter Edges="Left" x:Key="OnlyLeftBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/>
+
+
 	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
 
 	<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />

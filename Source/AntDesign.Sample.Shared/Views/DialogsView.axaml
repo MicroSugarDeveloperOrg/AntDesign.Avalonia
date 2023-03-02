@@ -6,6 +6,8 @@
              x:Class="AntDesign.Sample.Views.DialogsView">
 	<StackPanel Spacing="20">
 
+		<ButtonSpinner Theme="{StaticResource AntDesignButtonSpinnerStyle}" AllowSpin="False" Width="130" Height="40"/>
+		
 		<NumericUpDown Minimum="0"
 					   Maximum="10"
 					   Increment="0.5"
