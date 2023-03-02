@@ -67,6 +67,12 @@ public partial class App : Application
         routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack: () => "组件总览");
         routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack: () => "Button 按钮");
 
+        routingViewLocator.AddRouter<CalendarView, CalendarViewModel>(routerNameCallBack: () => "Calendar 日历");
+        routingViewLocator.AddRouter<CollapseView, CollapseViewModel>(routerNameCallBack: () => "Collapse 折叠面板");
+        routingViewLocator.AddRouter<MenuView, MenuViewModel>(routerNameCallBack: () => "Menu 菜单");
+        routingViewLocator.AddRouter<TabsView, TabsViewModel>(routerNameCallBack: () => "Tabs 标签页");
+        routingViewLocator.AddRouter<TreesView, TreesViewModel>(routerNameCallBack: () => "Tree 树形控件");
+
         return true;
     }
 

@@ -18,7 +18,7 @@
 		<PackageReference Include="Avalonia.ReactiveUI" />
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
 		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
-		<PackageReference Include="DryIoc" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
 		<PackageReference Include="XamlNameReferenceGenerator" />
 	</ItemGroup>
 
@@ -26,6 +26,12 @@
 	  <ProjectReference Include="..\AntDesign\AntDesign.csproj" />
 	  <ProjectReference Include="..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	  <ProjectReference Include="..\Avalonia.Toolkit\Avalonia.Toolkit.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\TreesView.axaml.cs">
+	    <DependentUpon>TreesView.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	 

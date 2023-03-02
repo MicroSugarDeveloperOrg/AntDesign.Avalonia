@@ -16,7 +16,8 @@
 	<ItemGroup>                            
 		<AvaloniaXaml Remove="Accents\Dark\Expander.axaml" />                            
 		<AvaloniaXaml Remove="Accents\Light\Expander.axaml" />                            
-		<AvaloniaXaml Remove="AntDesign.axaml" />                  
+		<AvaloniaXaml Remove="AntDesign.axaml" />                            
+		<AvaloniaXaml Remove="Styles\ManagedFileChooser.axaml" />                  
 	</ItemGroup>
 
 	<ItemGroup>
