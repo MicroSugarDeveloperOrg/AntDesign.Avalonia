@@ -218,8 +218,8 @@
 
 			<Style Selector="^:pressed">
 				<Style Selector="^ /template/ Ellipse#SwitchKnobs">
-					<Setter Property="RenderTransformOrigin" Value="0,0.5" />
-					<Setter Property="RenderTransform" Value="translateX(-3px) scalex(1.2)" />
+					<Setter Property="RenderTransformOrigin" Value="100%,100%" />
+					<Setter Property="RenderTransform" Value="scalex(1.2)" />
 				</Style>
 			</Style>
 		</Style>

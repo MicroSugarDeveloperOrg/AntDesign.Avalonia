@@ -210,7 +210,7 @@
 								  Height="{DynamicResource ExpanderIconSize}"
 							      Width="{DynamicResource ExpanderIconSize}"
 								  HorizontalAlignment="Center"
-								  VerticalAlignment="Center" >
+								  VerticalAlignment="Center">
 								<Path.Transitions>
 									<Transitions>
 										<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.100" />
@@ -307,6 +307,11 @@
 							HorizontalAlignment="Stretch"
 							VerticalAlignment="Stretch"
 							Padding="{TemplateBinding Padding}">
+						<Border.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.100" />
+							</Transitions>
+						</Border.Transitions>
 						<ContentPresenter x:Name="PART_ContentPresenter"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -325,6 +330,8 @@
 				<Setter Property="Theme" Value="{StaticResource ExpanderToggleButtonLeftStyle}"/>
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
+				<Setter Property="RenderTransformOrigin" Value="100%,100%"/>
+				<Setter Property="RenderTransform" Value="scaleX(0)"/>
 				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoRightBorderThickness}}" />
 			</Style>
 
@@ -336,6 +343,8 @@
 				<Setter Property="Theme" Value="{StaticResource ExpanderToggleButtonUpStyle}"/>
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
+				<Setter Property="RenderTransformOrigin" Value="100%,100%"/>
+				<Setter Property="RenderTransform" Value="scaleY(0)"/>
 				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoBottomBorderThickness}}" />
 			</Style>
 
@@ -348,6 +357,8 @@
 				<Setter Property="Theme" Value="{StaticResource ExpanderToggleButtonRightStyle}"/>
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
+				<Setter Property="RenderTransformOrigin" Value="0,0"/>
+				<Setter Property="RenderTransform" Value="scaleX(0)"/>
 				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
 			</Style>
 		</Style>
@@ -358,6 +369,8 @@
 				<Setter Property="Theme" Value="{StaticResource ExpanderToggleButtonDownStyle}"/>
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
+				<Setter Property="RenderTransformOrigin" Value="0,0"/>
+				<Setter Property="RenderTransform" Value="scaleY(0)"/>
 				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoTopBorderThickness}}" />
 			</Style>
 		</Style>
@@ -372,6 +385,7 @@
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource TopCornerRadiusFilterConverter}}" />
+				<Setter Property="RenderTransform" Value="scaleY(1)"/>
 			</Style>
 		</Style>
 
@@ -381,6 +395,7 @@
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource BottomCornerRadiusFilterConverter}}" />
+				<Setter Property="RenderTransform" Value="scaleY(1)"/>
 			</Style>
 		</Style>
 
@@ -390,6 +405,7 @@
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+				<Setter Property="RenderTransform" Value="scaleX(1)"/>
 			</Style>
 		</Style>
 
@@ -399,6 +415,7 @@
 			</Style>
 			<Style Selector="^ /template/ Border#ExpanderContent">
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
+				<Setter Property="RenderTransform" Value="scaleX(1)"/>
 			</Style>
 		</Style>
 

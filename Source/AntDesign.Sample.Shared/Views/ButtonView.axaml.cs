@@ -1,4 +1,5 @@
 using AntDesign.Sample.ViewModels;
+using Avalonia.Animation;
 using Avalonia.Controls.Converters;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
@@ -55,7 +56,10 @@ public partial class ButtonView : ReactiveUserControl<ButtonViewModel>
         //Button
         //BorderThicknessFilterConverter
         //CornerRadiusFilterConverter
-         
+        //DoubleTransition
+        //ColorTransition
+        //CornerRadiusTransition
+        
     }
 
 }
