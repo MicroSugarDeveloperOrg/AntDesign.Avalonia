@@ -13,7 +13,7 @@
 	<SolidColorBrush x:Key="ComboBoxPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="ComboBoxPressedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="ComboBoxPressedForeground" Color="{DynamicResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ComboBoxPressedBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="ComboBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>

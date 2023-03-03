@@ -6,7 +6,7 @@
 	<SolidColorBrush x:Key="CalendarDayButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="CalendarDayButtonBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="CalendarDayButtonPointerOverBackground" Color="{StaticResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="CalendarDayButtonPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="CalendarDayButtonPointerOverBorderBrush" Color="Transparent"/>
 

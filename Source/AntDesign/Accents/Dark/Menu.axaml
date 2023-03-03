@@ -11,7 +11,7 @@
 	<SolidColorBrush x:Key="AntMenuItemBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="AntMenuItemPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="AntMenuItemPointerOverForeground" Color="{DynamicResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="AntMenuItemPointerOverBorderBrush" Color="Transparent"/>
 	
 	<SolidColorBrush x:Key="AntMenuItemPointerOverBottomBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>

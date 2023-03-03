@@ -17,7 +17,7 @@
 	<SolidColorBrush x:Key="TimePickerPresenterForeground" Color="{StaticResource AntDesignBorderColor}"/>
 	<SolidColorBrush x:Key="TimePickerPresenterBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="TimePickerPresenterSpacerFill" Color="{DynamicResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="TimePickerPresenterSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="TimePickerButtonBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="TimePickerButtonPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
