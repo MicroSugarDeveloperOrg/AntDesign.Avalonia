@@ -28,7 +28,7 @@
 	<SolidColorBrush x:Key="AntDesignAssistBrush4" Color="{DynamicResource AntDesigndAssistColor4}"/>
 
 	<!--ListBox等选中背景色-->
-	<Color x:Key="AntDesigndAssistColor5">#E6F4FF</Color>
+	<Color x:Key="AntDesigndAssistColor5">#4F9ad2ff</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush5" Color="{DynamicResource AntDesigndAssistColor5}"/>
 
 	<!-- ToogleSwitch等切换颜色 -->
@@ -40,7 +40,6 @@
 
 	<Color x:Key="AntDesigndAssistColor8">#5FA3A3A3</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush8" Color="{DynamicResource AntDesigndAssistColor8}"/>
-
 
 	<!--Status-->
 	<Color x:Key="DefaultColor">#bfbfbf</Color>
