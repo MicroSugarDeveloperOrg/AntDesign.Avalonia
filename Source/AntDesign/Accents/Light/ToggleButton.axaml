@@ -4,7 +4,7 @@
 
 	<SolidColorBrush x:Key="ToggleButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ToggleButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ToggleButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ToggleButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="ToggleButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ToggleButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
@@ -20,12 +20,12 @@
 
 	<SolidColorBrush x:Key="ToggleButtonIndeterminateBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ToggleButtonIndeterminateForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="ToggleButtonIndeterminateBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ToggleButtonIndeterminateBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<!-- Primary -->
 	<SolidColorBrush x:Key="ToggleButtonPrimaryBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ToggleButtonPrimaryForeground" Color="{StaticResource AntDesignForegroundColor}"/> 
-	<SolidColorBrush x:Key="ToggleButtonPrimaryBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ToggleButtonPrimaryBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="ToggleButtonPrimaryPointerOverBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="ToggleButtonPrimaryPointerOverForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
@@ -39,7 +39,7 @@
 	<SolidColorBrush x:Key="ToggleButtonPrimaryCheckedForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
 	<SolidColorBrush x:Key="ToggleButtonPrimaryCheckedBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="ToggleButtonPrimaryIndeterminateBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ToggleButtonPrimaryIndeterminateBackground" Color="{StaticResource AntDesignBorderColor}"/>
 	<SolidColorBrush x:Key="ToggleButtonPrimaryIndeterminateForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="ToggleButtonPrimaryIndeterminateBorderBrush" Color="Transparent"/>
 	

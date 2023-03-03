@@ -4,7 +4,7 @@
 	
 	<SolidColorBrush x:Key="RepeatButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RepeatButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="RepeatButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="RepeatButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="RepeatButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RepeatButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>

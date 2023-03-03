@@ -4,7 +4,7 @@
 
 	<SolidColorBrush x:Key="ButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="ButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
@@ -35,7 +35,7 @@
 	<SolidColorBrush x:Key="ButtonTextPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ButtonTextPointerOverBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="ButtonTextPressedBackground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ButtonTextPressedBackground" Color="{StaticResource AntDesignBorderColor}"/>
 	<SolidColorBrush x:Key="ButtonTextPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ButtonTextPressedBorderBrush" Color="Transparent"/>
 

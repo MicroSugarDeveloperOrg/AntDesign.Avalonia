@@ -4,7 +4,7 @@
 	
 	<SolidColorBrush x:Key="CheckBoxBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="CheckBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="CheckBoxPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="CheckBoxPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>

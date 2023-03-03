@@ -4,6 +4,6 @@
 
 	<SolidColorBrush x:Key="CalendarBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="CalendarForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="CalendarBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="CalendarBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 </ResourceDictionary>

@@ -4,6 +4,6 @@
 
 	<SolidColorBrush x:Key="ListBoxBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ListBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ListBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ListBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 </ResourceDictionary>

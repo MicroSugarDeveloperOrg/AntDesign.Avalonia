@@ -6,7 +6,7 @@
 
 	<SolidColorBrush x:Key="AutoCompleteBoxBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AutoCompleteBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="AutoCompleteBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="AutoCompleteBoxPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
 	
@@ -15,6 +15,6 @@
 	<SolidColorBrush x:Key="AutoCompleteBoxFloatingForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="AutoCompleteBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
-	<SolidColorBrush x:Key="AutoCompleteBoxPopupBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/> 
+	<SolidColorBrush x:Key="AutoCompleteBoxPopupBorderBrush" Color="{StaticResource AntDesignBorderColor}"/> 
 	
 </ResourceDictionary>

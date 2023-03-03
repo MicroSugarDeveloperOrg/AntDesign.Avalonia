@@ -4,7 +4,7 @@
 
 	<SolidColorBrush x:Key="DropDownButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="DropDownButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="DropDownButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="DropDownButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="DropDownButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="DropDownButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>

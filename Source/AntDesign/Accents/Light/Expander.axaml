@@ -4,7 +4,7 @@
 
 	<SolidColorBrush x:Key="ExpanderBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ExpanderForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ExpanderBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ExpanderBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="ExpanderHeaderBackground" Color="{StaticResource AntDesigndAssistColor8}"/>
 	<SolidColorBrush x:Key="ExpanderHeaderForeground" Color="{StaticResource AntDesignForegroundColor}"/>

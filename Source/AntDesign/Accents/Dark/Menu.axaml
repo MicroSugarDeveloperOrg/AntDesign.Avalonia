@@ -4,7 +4,7 @@
 
 	<SolidColorBrush x:Key="MenuBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="MenuForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="MenuBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="MenuBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="AntMenuItemBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AntMenuItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>

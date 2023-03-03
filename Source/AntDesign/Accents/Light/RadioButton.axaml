@@ -4,7 +4,7 @@
 	
 	<SolidColorBrush x:Key="RadioButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="RadioButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="RadioButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="RadioButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioButtonPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
@@ -14,14 +14,14 @@
 	<SolidColorBrush x:Key="RadioButtonPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="RadioButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
 
-	<SolidColorBrush x:Key="RadioButtonOuterStroke" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="RadioButtonOuterStroke" Color="{StaticResource AntDesignBorderColor}"/>
 	
 	<SolidColorBrush x:Key="RadioButtonInnerFill" Color="{StaticResource AntDesignThirdlyColor}"/>
 
 	<!--LikeButton-->
 	<SolidColorBrush x:Key="RadioLikeButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioLikeButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="RadioLikeButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="RadioLikeButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="RadioLikeButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioLikeButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
@@ -34,7 +34,7 @@
 	<!--LikePrimaryButton-->
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="RadioLikePrimaryButtonBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="RadioLikePrimaryButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverForeground" Color="{StaticResource AntDesignAssistColor1}"/>

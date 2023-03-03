@@ -1,0 +1,90 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<!--Global-->
+	<!-- 主题颜色 -->
+	<Color x:Key="AntDesignPrimaryColor">#FF1677FF</Color>
+	<SolidColorBrush x:Key="AntDesignPrimaryBrush" Color="{StaticResource AntDesignPrimaryColor}"/>
+
+	<Color x:Key="AntDesignSecondlyColor">#FF4096FF</Color>
+	<SolidColorBrush x:Key="AntDesignSecondlyBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+
+	<Color x:Key="AntDesignThirdlyColor">#FF0958D9</Color>
+	<SolidColorBrush x:Key="AntDesignThirdlyBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+
+	<!--黑色-->
+	<Color x:Key="AntDesignAssistColor1">#000000</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush1" Color="{StaticResource AntDesignAssistColor1}"/>
+
+	<Color x:Key="AntDesignAssistColor2">#F0F0F0</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush2" Color="{StaticResource AntDesignAssistColor2}"/>
+
+	<Color x:Key="AntDesignAssistColor3">#D9D9D9</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush3" Color="{StaticResource AntDesignAssistColor3}"/>
+
+	<!--白色-->
+	<Color x:Key="AntDesigndAssistColor4">#FFFFFF</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush4" Color="{StaticResource AntDesigndAssistColor4}"/>
+
+	<!--ListBox等选中背景色-->
+	<Color x:Key="AntDesigndAssistColor5">#E6F4FF</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush5" Color="{StaticResource AntDesigndAssistColor5}"/>
+
+	<!-- ToogleSwitch等切换颜色 -->
+	<Color x:Key="AntDesigndAssistColor6">#8C8C8C</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush6" Color="{StaticResource AntDesigndAssistColor6}"/>
+
+	<Color x:Key="AntDesigndAssistColor7">#BFBFBF</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush7" Color="{StaticResource AntDesigndAssistColor7}"/>
+
+	<Color x:Key="AntDesigndAssistColor8">#FAFAFA</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush8" Color="{StaticResource AntDesigndAssistColor8}"/>
+
+
+	<!--Status-->
+	<Color x:Key="DefaultColor">#bfbfbf</Color>
+	<Color x:Key="InfoColor">#1677ff</Color>
+	<Color x:Key="SuccessColor">#52c41a</Color>
+	<Color x:Key="ErrorColor">#ff4d4f</Color>
+	<Color x:Key="WarningColor">#faad14</Color>
+
+	<SolidColorBrush x:Key="DefaultBrush" Color="{DynamicResource DefaultColor}"/>
+	<SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}"/>
+
+	<!--Danger-->
+	<Color x:Key="DangerColor">#ff4d4f</Color>
+	<Color x:Key="DangerPointerOverColor">#ff7875</Color>
+	<Color x:Key="DangerPressedColor">#d9363e</Color>
+
+	<SolidColorBrush x:Key="DangerBrush" Color="{DynamicResource DangerColor}"/>
+	<SolidColorBrush x:Key="DangerPointerOverBrush" Color="{DynamicResource DangerPointerOverColor}"/>
+	<SolidColorBrush x:Key="DangerPressedBrush" Color="{DynamicResource DangerPressedColor}"/>
+
+	<!--Success-->
+	<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
+	<SolidColorBrush x:Key="SuccessBorderBrush" Color="{DynamicResource SuccessColor}"/>
+	<SolidColorBrush x:Key="SuccessBackground" Color="{DynamicResource SuccessColor}"/>
+	<SolidColorBrush x:Key="SuccessForeground" Color="{DynamicResource SuccessColor}"/>
+
+	<!--Warnnig-->
+	<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
+	<SolidColorBrush x:Key="WarningBorderBrush" Color="{DynamicResource WarningColor}"/>
+	<SolidColorBrush x:Key="WarningBackground" Color="{DynamicResource WarningColor}"/>
+	<SolidColorBrush x:Key="WarningForeground" Color="{DynamicResource WarningColor}"/>
+	
+	<!--Error-->
+	<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>
+	<SolidColorBrush x:Key="ErrorBorderBrush" Color="{DynamicResource ErrorColor}"/>
+	<SolidColorBrush x:Key="ErrorBackground" Color="{DynamicResource ErrorColor}"/>
+	<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
+
+	<!--Ripple-->
+	<x:Double x:Key="RippleOpacity">0.4</x:Double>
+	<Color x:Key="RippleColor">#9B40a9ff</Color>
+	<Color x:Key="SuccessRippleColor">#9B52c41a</Color>
+	<Color x:Key="WarningRippleColor">#9Bfaad14</Color>
+	<Color x:Key="ErrorRippleColor">#9Bff4d4f</Color>
+	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
+	
+</ResourceDictionary>

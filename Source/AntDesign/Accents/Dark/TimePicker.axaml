@@ -6,18 +6,18 @@
 
 	<SolidColorBrush x:Key="TimePickerBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="TimePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="TimePickerBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="TimePickerBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
-	<SolidColorBrush x:Key="TimePickerSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="TimePickerSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="TimePickerPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="TimePickerPopupBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="TimePickerPresenterBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="TimePickerPresenterForeground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="TimePickerPresenterForeground" Color="{StaticResource AntDesignBorderColor}"/>
 	<SolidColorBrush x:Key="TimePickerPresenterBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="TimePickerPresenterSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="TimePickerPresenterSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="TimePickerButtonBackground" Color="{StaticResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="TimePickerButtonPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>

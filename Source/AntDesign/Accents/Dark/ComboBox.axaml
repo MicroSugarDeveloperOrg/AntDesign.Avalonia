@@ -6,7 +6,7 @@
 
 	<SolidColorBrush x:Key="ComboBoxBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ComboBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="ComboBoxPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="ComboBoxPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
@@ -17,7 +17,7 @@
 	<SolidColorBrush x:Key="ComboBoxPressedBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="ComboBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
-	<SolidColorBrush x:Key="ComboBoxPopupBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="ComboBoxPopupBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="ComboBoxPlaceholderTextForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="{StaticResource AntDesignForegroundColor}"/>

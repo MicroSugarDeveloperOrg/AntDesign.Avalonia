@@ -60,49 +60,4 @@
 	<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
 	<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
 	
-	<!--Status-->
-	<Color x:Key="DefaultColor">#bfbfbf</Color>
-	<Color x:Key="InfoColor">#1677ff</Color>
-	<Color x:Key="SuccessColor">#52c41a</Color>
-	<Color x:Key="ErrorColor">#ff4d4f</Color>
-	<Color x:Key="WarningColor">#faad14</Color>
-
-	<SolidColorBrush x:Key="DefaultBrush" Color="{DynamicResource DefaultColor}"/>
-	<SolidColorBrush x:Key="InfoBrush" Color="{DynamicResource InfoColor}"/>
-
-	<!--Danger-->
-	<Color x:Key="DangerColor">#ff4d4f</Color>
-	<Color x:Key="DangerPointerOverColor">#ff7875</Color>
-	<Color x:Key="DangerPressedColor">#d9363e</Color>
-
-	<SolidColorBrush x:Key="DangerBrush" Color="{DynamicResource DangerColor}"/>
-	<SolidColorBrush x:Key="DangerPointerOverBrush" Color="{DynamicResource DangerPointerOverColor}"/>
-	<SolidColorBrush x:Key="DangerPressedBrush" Color="{DynamicResource DangerPressedColor}"/>
-
-	<!--Success-->
-	<SolidColorBrush x:Key="SuccessBrush" Color="{DynamicResource SuccessColor}"/>
-	<SolidColorBrush x:Key="SuccessBorderBrush" Color="{DynamicResource SuccessColor}"/>
-	<SolidColorBrush x:Key="SuccessBackground" Color="{DynamicResource SuccessColor}"/>
-	<SolidColorBrush x:Key="SuccessForeground" Color="{DynamicResource SuccessColor}"/>
-
-	<!--Warnnig-->
-	<SolidColorBrush x:Key="WarningBrush" Color="{DynamicResource WarningColor}"/>
-	<SolidColorBrush x:Key="WarningBorderBrush" Color="{DynamicResource WarningColor}"/>
-	<SolidColorBrush x:Key="WarningBackground" Color="{DynamicResource WarningColor}"/>
-	<SolidColorBrush x:Key="WarningForeground" Color="{DynamicResource WarningColor}"/>
-	
-	<!--Error-->
-	<SolidColorBrush x:Key="ErrorBrush" Color="{DynamicResource ErrorColor}"/>
-	<SolidColorBrush x:Key="ErrorBorderBrush" Color="{DynamicResource ErrorColor}"/>
-	<SolidColorBrush x:Key="ErrorBackground" Color="{DynamicResource ErrorColor}"/>
-	<SolidColorBrush x:Key="ErrorForeground" Color="{DynamicResource ErrorColor}"/>
-
-	<!--Ripple-->
-	<x:Double x:Key="RippleOpacity">0.4</x:Double>
-	<Color x:Key="RippleColor">#9B40a9ff</Color>
-	<Color x:Key="SuccessRippleColor">#9B52c41a</Color>
-	<Color x:Key="WarningRippleColor">#9Bfaad14</Color>
-	<Color x:Key="ErrorRippleColor">#9Bff4d4f</Color>
-	<Color x:Key="DangerRippleColor">#9Bff7875</Color>
-	
 </ResourceDictionary>

@@ -6,18 +6,18 @@
 
 	<SolidColorBrush x:Key="DatePickerBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="DatePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="DatePickerBorderBrush" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="DatePickerBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
-	<SolidColorBrush x:Key="DatePickerSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="DatePickerSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="DatePickerPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="DatePickerPopupBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="DatePickerPresenterBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="DatePickerPresenterForeground" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="DatePickerPresenterForeground" Color="{StaticResource AntDesignBorderColor}"/>
 	<SolidColorBrush x:Key="DatePickerPresenterBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="DatePickerPresenterSpacerFill" Color="{StaticResource AntDesigndAssistColor3}"/>
+	<SolidColorBrush x:Key="DatePickerPresenterSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="DatePickerButtonBackground" Color="{StaticResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="DatePickerButtonPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
