@@ -54,4 +54,7 @@ public class ButtonAssists
     public static void SetShadows(AvaloniaObject dependencyObject, BoxShadows value) => dependencyObject.SetValue(ShadowsProperty, value);
     public static BoxShadows GetShadows(AvaloniaObject dependencyObject) => dependencyObject.GetValue<BoxShadows>(ShadowsProperty);
 
+    public static readonly AvaloniaProperty<AvaloniaList<double>?> BorderDashArrayProperty = AvaloniaProperty.RegisterAttached<Button, AvaloniaList<double>?>("BorderDashArray", typeof(ButtonAssists));
+    public static void SetBorderDashArray(AvaloniaObject dependencyObject, AvaloniaList<double>? value) => dependencyObject.SetValue(BorderDashArrayProperty, value);
+    public static AvaloniaList<double>? GetBorderDashArray(AvaloniaObject dependencyObject) => dependencyObject.GetValue<AvaloniaList<double>?>(BorderDashArrayProperty);
 }

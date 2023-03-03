@@ -2,281 +2,108 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:sys="clr-namespace:System;assembly=netstandard"
+			 xmlns:assists="using:AntDesign.Assists"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.ButtonView">
 
-	<ScrollViewer>
-		<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,10,Auto">
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="按钮用于开始一个即时操作。"/>
 
-			<StackPanel Spacing="20">
-				<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
-					<StackPanel Spacing="20">
-						<TextBlock>Item 1</TextBlock>
-						<TextBlock>Item 2</TextBlock>
-						<TextBlock>Item 3</TextBlock>
-						<TextBlock>Item 4</TextBlock>
-						<TextBlock>Item 5</TextBlock>
-						<TextBlock>Item 6</TextBlock>
-						<TextBlock>Item 7</TextBlock>
-						<TextBlock>Item 8</TextBlock>
-						<TextBlock>Item 9</TextBlock>
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" FontSize="20"/>
+			<TextBlock  Text="按钮用于开始一个即时操作。"/>
+			<TextBlock  Text="在 Ant Design 中我们提供了六种按钮。"/>
+			<TextBlock  Text=">>  默认按钮：用于没有主次之分的一组行动点。"/> 
+			<TextBlock  Text=">>  主按钮：用于主行动点，一个操作区域只能有一个主按钮。"/>
+			<TextBlock  Text=">>  文本按钮：用于最次级的行动点。"/>
+			<TextBlock  Text=">>  链接按钮：一般用于链接，即导航至某位置。"/>
+			<TextBlock  Text=">>  虚线按钮：常用于添加操作。"/>
+			<TextBlock  Text=">>  阴影按钮：用于有自定义按钮阴影需求的场景。"/>
+			<TextBlock  Text="以及一种状态Classes和一种属性与上面配合使用。"/>
+			<TextBlock  Text=">>  危险：删除/移动/修改权限等危险操作，一般需要二次确认。"/>
+			<TextBlock  Text=">>  禁用：行动点不可用的时候，一般需要文案解释。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" FontSize="20"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Button Height="35" Width="120" Content="Default Button"/>
+							<Button Height="35" Width="120" Content="Primary Button" Theme="{StaticResource PrimaryButtonStyle}"/>
+							<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}"/>
+							<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Button Height="35" Width="120" Content="Dashed Button" 
+									Theme="{StaticResource DashedButtonStyle}"/>
+							<Button Height="35" Width="120" Content="Shadow Button" 
+									Theme="{StaticResource ShadowButtonStyle}"
+									assists:ButtonAssists.Shadows="0 0 10 1 Green"/>
+						</StackPanel>
 					</StackPanel>
-				</ScrollViewer>
 
-				<Border Margin="16"
-						Padding="48"
-						Width="400"
-						Background="Red"
-						Height="200">
-					<Border.ContextMenu>
-						<ContextMenu>
-							<MenuItem Header="Standard _Menu Item" />
-							<MenuItem Header="Disabled" IsEnabled="False" />
-							<Separator />
-							<MenuItem Header="Menu with _Submenu">
-								<MenuItem Header="Submenu _1" />
-								<MenuItem Header="Submenu _2" />
-							</MenuItem>
-							<MenuItem Header="Menu Item with _Icon" />
-							<MenuItem Header="Menu Item with _Checkbox">
-								<MenuItem.Icon>
-									<CheckBox BorderThickness="0"
-											  IsHitTestVisible="False"
-											  IsChecked="True" />
-								</MenuItem.Icon>
-							</MenuItem>
-						</ContextMenu>
-					</Border.ContextMenu>
-					<TextBlock Text="Defined in XAML" />
-				</Border>
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
 
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
 
-				<Border Padding="20" Width="320">
-					<StackPanel Spacing="20" HorizontalAlignment="Left">
-						<MenuItem Header="_Standard"/>
-						<MenuItem IsSelected="True" Header="Selected"/>
-						<MenuItem Header="With Icon">
-							<MenuItem.Icon>
-								<TextBlock>😊</TextBlock>
-							</MenuItem.Icon>
-						</MenuItem>
-						<MenuItem Header="With CheckBox">
-							<MenuItem.Icon>
-								<CheckBox IsChecked="True"/>
-							</MenuItem.Icon>
-						</MenuItem>
-						<MenuItem Header="Input Gesture" InputGesture="Ctrl+G"/>
-						<MenuItem Header="Disabled" IsEnabled="False"/>
-						<MenuItem Header="-"/>
-						<MenuItem Header="Parent" IsSubMenuOpen="True">
-							<MenuItem Header="Child 1"/>
-							<MenuItem Header="Child 2"/>
-							<MenuItem Header="Child 3"/>
-							<Separator/>
-							<MenuItem Header="Child 4"/>
-							<MenuItem Header="Child 5"/>
-							<MenuItem Header="Child 6"/>
-							<MenuItem Header="Child 7"/>
-							<MenuItem Header="Child 8"/>
-							<MenuItem Header="Child 9"/>
-							<MenuItem Header="Child 10"/>
-							<MenuItem Header="Child 11"/>
-							<MenuItem Header="Child 12"/>
-							<MenuItem Header="Child 13"/>
-							<MenuItem Header="Child 14"/>
-							<MenuItem Header="Child 15"/>
-							<MenuItem Header="Child 16"/>
-							<MenuItem Header="Child 17"/>
-							<MenuItem Header="Child 18"/>
-							<MenuItem Header="Child 19"/>
-						</MenuItem>
-						<MenuItem Header="Disabled Parent" IsEnabled="False">
-							<MenuItem Header="Child"/>
-						</MenuItem>
+						<TextBlock Text="通过Theme设置不同按钮的样式"/> 
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.Shadows设置ShadowButtonStyle按钮Shadow(这是AntDesign库提供的一个扩展依赖属性)"/>
+
 					</StackPanel>
-				</Border>
 
-				<StackPanel>
-					<Menu>
-						<MenuItem Header="Child 12023">
-							<MenuItem Header="Child 1"/>
-							<MenuItem Header="Child 2"/>
-							<MenuItem Header="Child 3"/>
-						</MenuItem>
-						<MenuItem Header="123" IsSelected="True"/>
-						<MenuItem Header="123"/>
-						<MenuItem Header="123"/>
+				</Grid>
 
-					</Menu>
-				</StackPanel>
+			</Border>
 
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
 
-				<Border Width="120" Height="50" Background="Blue">
-					<Border.ContextFlyout>
-						<Flyout Content="Should never be visible" />
-					</Border.ContextFlyout>
-				</Border>
-
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton"/>
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsChecked="True" IsEnabled="False"/>
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger"/>
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True"/>
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
-
-
-
-			</StackPanel>
-
-
-			<StackPanel Grid.Column="2" Spacing="20" >
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF"/>
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False"/>
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsChecked="True" IsEnabled="False"/>
-
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" Theme="{StaticResource AntDesignToggleSwitchStyle}" IsChecked="True" IsEnabled="True" />
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" IsChecked="True" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
-
-
-			</StackPanel>
-
-
-			<StackPanel  Grid.Column="4" Spacing="20">
-				<Border Padding="20">
-					<Calendar />
-				</Border>
-
-				<CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-
-				<CalendarDatePicker Width="200" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-
-				<CalendarDatePicker Width="200" IsEnabled="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-					<DataValidationErrors.Error>
-						<sys:Exception>
-							<x:Arguments>
-								<x:String>Error</x:String>
-							</x:Arguments>
-						</sys:Exception>
-					</DataValidationErrors.Error>
-				</CalendarDatePicker>
-
-				<TreeView>
-					<TreeViewItem Header="Level 1" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-					<TreeViewItem Header="Level 2" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" >
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-				</TreeView>
-
-				<TreeView ItemContainerTheme="{StaticResource AntDesignTreeViewItemStyle}">
-					<TreeViewItem Header="Level 1" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-					<TreeViewItem Header="Level 2" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" >
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-				</TreeView>
-			</StackPanel>
-
-
-			<StackPanel Grid.Column="6" Spacing="20">
-				<StackPanel Spacing="20" VerticalAlignment="Center">
-					<DatePicker />
-					<DatePicker DayFormat="d(ddd)" YearVisible="False"/>
-					<DatePicker IsEnabled="False" />
-					<DatePicker>
-						<DataValidationErrors.Error>
-							<sys:Exception>
-								<x:Arguments>
-									<x:String>Error</x:String>
-								</x:Arguments>
-							</sys:Exception>
-						</DataValidationErrors.Error>
-					</DatePicker>
-				</StackPanel>
-
-				<StackPanel Spacing="20" VerticalAlignment="Center">
-					<TimePicker />
-					<TimePicker  ClockIdentifier="12HourClock"/>
-					<TimePicker IsEnabled="False"/>
-					<TimePicker>
-						<DataValidationErrors.Error>
-							<sys:Exception>
-								<x:Arguments>
-									<x:String>Error</x:String>
-								</x:Arguments>
-							</sys:Exception>
-						</DataValidationErrors.Error>
-					</TimePicker>
-				</StackPanel>
-
-				<Expander ExpandDirection="Up" Header="Expand Up">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						 
 					</StackPanel>
-				</Expander>
 
-				<Expander ExpandDirection="Down" Header="Expand Down">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过Items设置自动完成的数据源"/>
+						<TextBlock Text="通过ValueMemberBinding设置数据源中需要显示的数据"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:AutoCompleteBoxAssists.UseFloatingWatermark设置是否启用FloatingWatermark(这是AntDesign库提供的一个扩展依赖属性)"/>
+
 					</StackPanel>
-				</Expander>
 
-				<Expander ExpandDirection="Left" Header="Expand Down">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
+				</Grid>
 
-				<Expander ExpandDirection="Right" Header="Expand Down">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
-				
-				<Expander Classes="end" ExpandDirection="Down" Header="Expand Up">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
+			</Border>
 
-			</StackPanel>
 
-			
 
 		</Grid>
-	</ScrollViewer>
+
+
+
+	</Grid>
+
 
 </UserControl>

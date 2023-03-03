@@ -65,7 +65,14 @@ public partial class App : Application
         _container.AddSingleton<IMainRoutingViewLocator>(routingViewLocator);
 
         routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack: () => "组件总览");
+
+        //通用
         routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack: () => "Button 按钮");
+
+        //数据录入
+        routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
+        routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");
+
 
         routingViewLocator.AddRouter<CalendarView, CalendarViewModel>(routerNameCallBack: () => "Calendar 日历");
         routingViewLocator.AddRouter<CollapseView, CollapseViewModel>(routerNameCallBack: () => "Collapse 折叠面板");

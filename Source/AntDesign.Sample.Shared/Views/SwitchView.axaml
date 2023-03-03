@@ -1,0 +1,508 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.SwitchView">
+	<ScrollViewer>
+		<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,10,Auto">
+
+			<StackPanel Spacing="20">
+				<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
+					<StackPanel Spacing="20">
+						<TextBlock>Item 1</TextBlock>
+						<TextBlock>Item 2</TextBlock>
+						<TextBlock>Item 3</TextBlock>
+						<TextBlock>Item 4</TextBlock>
+						<TextBlock>Item 5</TextBlock>
+						<TextBlock>Item 6</TextBlock>
+						<TextBlock>Item 7</TextBlock>
+						<TextBlock>Item 8</TextBlock>
+						<TextBlock>Item 9</TextBlock>
+					</StackPanel>
+				</ScrollViewer>
+
+				<Border Margin="16"
+						Padding="48"
+						Width="400"
+						Background="Red"
+						Height="200">
+					<Border.ContextMenu>
+						<ContextMenu>
+							<MenuItem Header="Standard _Menu Item" />
+							<MenuItem Header="Disabled" IsEnabled="False" />
+							<Separator />
+							<MenuItem Header="Menu with _Submenu">
+								<MenuItem Header="Submenu _1" />
+								<MenuItem Header="Submenu _2" />
+							</MenuItem>
+							<MenuItem Header="Menu Item with _Icon" />
+							<MenuItem Header="Menu Item with _Checkbox">
+								<MenuItem.Icon>
+									<CheckBox BorderThickness="0"
+											  IsHitTestVisible="False"
+											  IsChecked="True" />
+								</MenuItem.Icon>
+							</MenuItem>
+						</ContextMenu>
+					</Border.ContextMenu>
+					<TextBlock Text="Defined in XAML" />
+				</Border>
+
+
+				<Border Padding="20" Width="320">
+					<StackPanel Spacing="20" HorizontalAlignment="Left">
+						<MenuItem Header="_Standard"/>
+						<MenuItem IsSelected="True" Header="Selected"/>
+						<MenuItem Header="With Icon">
+							<MenuItem.Icon>
+								<TextBlock>😊</TextBlock>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="With CheckBox">
+							<MenuItem.Icon>
+								<CheckBox IsChecked="True"/>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="Input Gesture" InputGesture="Ctrl+G"/>
+						<MenuItem Header="Disabled" IsEnabled="False"/>
+						<MenuItem Header="-"/>
+						<MenuItem Header="Parent" IsSubMenuOpen="True">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+							<Separator/>
+							<MenuItem Header="Child 4"/>
+							<MenuItem Header="Child 5"/>
+							<MenuItem Header="Child 6"/>
+							<MenuItem Header="Child 7"/>
+							<MenuItem Header="Child 8"/>
+							<MenuItem Header="Child 9"/>
+							<MenuItem Header="Child 10"/>
+							<MenuItem Header="Child 11"/>
+							<MenuItem Header="Child 12"/>
+							<MenuItem Header="Child 13"/>
+							<MenuItem Header="Child 14"/>
+							<MenuItem Header="Child 15"/>
+							<MenuItem Header="Child 16"/>
+							<MenuItem Header="Child 17"/>
+							<MenuItem Header="Child 18"/>
+							<MenuItem Header="Child 19"/>
+						</MenuItem>
+						<MenuItem Header="Disabled Parent" IsEnabled="False">
+							<MenuItem Header="Child"/>
+						</MenuItem>
+					</StackPanel>
+				</Border>
+
+				<StackPanel>
+					<Menu>
+						<MenuItem Header="Child 12023">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+						</MenuItem>
+						<MenuItem Header="123" IsSelected="True"/>
+						<MenuItem Header="123"/>
+						<MenuItem Header="123"/>
+
+					</Menu>
+				</StackPanel>
+
+
+				<Border Width="120" Height="50" Background="Blue">
+					<Border.ContextFlyout>
+						<Flyout Content="Should never be visible" />
+					</Border.ContextFlyout>
+				</Border>
+
+
+				<ToggleButton Width="130" Height="40" Content="ToggleButton"/>
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsChecked="True" IsEnabled="False"/>
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger"/>
+
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True"/>
+
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
+
+				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
+
+
+
+			</StackPanel>
+
+
+			<StackPanel Grid.Column="2" Spacing="20" >
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsChecked="True" IsEnabled="False"/>
+
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" Theme="{StaticResource AntDesignToggleSwitchStyle}" IsChecked="True" IsEnabled="True" />
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" IsChecked="True" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
+				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
+
+
+			</StackPanel>
+
+
+			<StackPanel  Grid.Column="4" Spacing="20">
+				<Border Padding="20">
+					<Calendar />
+				</Border>
+
+				<CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+
+				<CalendarDatePicker Width="200" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+
+				<CalendarDatePicker Width="200" IsEnabled="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+					<DataValidationErrors.Error>
+						<sys:Exception>
+							<x:Arguments>
+								<x:String>Error</x:String>
+							</x:Arguments>
+						</sys:Exception>
+					</DataValidationErrors.Error>
+				</CalendarDatePicker>
+
+				<TreeView>
+					<TreeViewItem Header="Level 1" IsExpanded="True">
+						<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+							<TreeViewItem Header="Level 3.1" />
+							<TreeViewItem Header="Level 3.2" >
+								<TreeViewItem Header="Level 4" />
+							</TreeViewItem>
+						</TreeViewItem>
+						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
+					</TreeViewItem>
+					<TreeViewItem Header="Level 2" IsExpanded="True">
+						<TreeViewItem Header="Level 2.1" >
+							<TreeViewItem Header="Level 3.1" />
+							<TreeViewItem Header="Level 3.2" >
+								<TreeViewItem Header="Level 4" />
+							</TreeViewItem>
+						</TreeViewItem>
+						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
+					</TreeViewItem>
+				</TreeView>
+
+				<TreeView ItemContainerTheme="{StaticResource AntDesignTreeViewItemStyle}">
+					<TreeViewItem Header="Level 1" IsExpanded="True">
+						<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+							<TreeViewItem Header="Level 3.1" />
+							<TreeViewItem Header="Level 3.2" >
+								<TreeViewItem Header="Level 4" />
+							</TreeViewItem>
+						</TreeViewItem>
+						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
+					</TreeViewItem>
+					<TreeViewItem Header="Level 2" IsExpanded="True">
+						<TreeViewItem Header="Level 2.1" >
+							<TreeViewItem Header="Level 3.1" />
+							<TreeViewItem Header="Level 3.2" >
+								<TreeViewItem Header="Level 4" />
+							</TreeViewItem>
+						</TreeViewItem>
+						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
+					</TreeViewItem>
+				</TreeView>
+			</StackPanel>
+
+
+			<StackPanel Grid.Column="6" Spacing="20">
+				<StackPanel Spacing="20" VerticalAlignment="Center">
+					<DatePicker />
+					<DatePicker DayFormat="d(ddd)" YearVisible="False"/>
+					<DatePicker IsEnabled="False" />
+					<DatePicker>
+						<DataValidationErrors.Error>
+							<sys:Exception>
+								<x:Arguments>
+									<x:String>Error</x:String>
+								</x:Arguments>
+							</sys:Exception>
+						</DataValidationErrors.Error>
+					</DatePicker>
+				</StackPanel>
+
+				<StackPanel Spacing="20" VerticalAlignment="Center">
+					<TimePicker />
+					<TimePicker  ClockIdentifier="12HourClock"/>
+					<TimePicker IsEnabled="False"/>
+					<TimePicker>
+						<DataValidationErrors.Error>
+							<sys:Exception>
+								<x:Arguments>
+									<x:String>Error</x:String>
+								</x:Arguments>
+							</sys:Exception>
+						</DataValidationErrors.Error>
+					</TimePicker>
+				</StackPanel>
+
+				<Expander ExpandDirection="Up" Header="Expand Up">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+
+				<Expander ExpandDirection="Down" Header="Expand Down">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+
+				<Expander ExpandDirection="Left" Header="Expand Down">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+
+				<Expander ExpandDirection="Right" Header="Expand Down">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+
+				<Expander Classes="end" ExpandDirection="Down" Header="Expand Up">
+					<StackPanel>
+						<TextBlock>Expanded content</TextBlock>
+					</StackPanel>
+				</Expander>
+
+
+				<Grid IsVisible="False">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<Grid Grid.Column="0">
+						<ScrollViewer>
+							<StackPanel Spacing="10">
+								<Button Content="1232323" Margin="0,10,0,0" Height="30" Width="120" />
+								<Button Classes="danger" Content="1232323" Height="30" Width="120"/>
+								<Button Content="1232323" Height="30" Width="120" IsEnabled="False" />
+								<Button Theme="{StaticResource PrimaryButtonStyle}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>
+								<Button Theme="{StaticResource PrimaryButtonStyle}" Content="232323" Height="30" Width="120" />
+								<Button Theme="{StaticResource PrimaryButtonStyle}" Classes="danger" Content="1232323" Height="30" Width="120"/>
+								<Button Theme="{StaticResource TextButtonStyle}"  Content="1232323" Height="30" Width="120" />
+								<Button Theme="{StaticResource TextButtonStyle}" Classes="danger" Content="1232323" Height="30" Width="120"/>
+								<Button Theme="{StaticResource LinkButtonStyle}"  Content="1232323" Height="30" Width="120" />
+								<Button Theme="{StaticResource LinkButtonStyle}" Classes="danger" Content="1232323" Height="30" Width="120"/>
+
+								<Button BorderBrush="Red"
+										Foreground="Red"
+										ButtonAssists.PointerOverBorderBrush="Red"
+										ButtonAssists.PointerOverForeground="Red"
+										ButtonAssists.PressedBorderBrush="Red"
+										ButtonAssists.PressedForeground="Red"
+										ButtonAssists.RippleColor="Red"
+										ButtonAssists.RippleColorAlpha="0.3"
+										Content="1232323" Height="30" Width="120"/>
+
+								<ScrollViewer Width="400" Height="300" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+									<Grid Height="1024" Width="500" Background="AliceBlue">
+
+									</Grid>
+								</ScrollViewer>
+
+								<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+								<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="True"></TextBox>
+								<TextBox Classes="clearButton" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+								<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+								<TextBox IsEnabled="False" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+								<TextBox Width="120" Watermark="Error" UseFloatingWatermark="False">
+									<DataValidationErrors.Error>
+										<sys:Exception>
+											<x:Arguments>
+												<x:String>Error</x:String>
+											</x:Arguments>
+										</sys:Exception>
+									</DataValidationErrors.Error>
+								</TextBox>
+
+
+
+
+								<Label Content="12312313231"/>
+
+								<SelectableTextBlock  Text="12312312312313\r\n235454545546576576"/>
+								<SelectableTextBlock IsEnabled="False" Text="12312312312313\r\n235454545546576576"/>
+
+								<ButtonSpinner Content="12323" Width="200" Height="30" ButtonSpinnerLocation="Left"/>
+								<ButtonSpinner Content="12323" Width="200" Height="30" ButtonSpinnerLocation="Right"/>
+								<ButtonSpinner Content="12323" Width="200" Height="30" IsEnabled="False"/>
+
+							</StackPanel>
+
+						</ScrollViewer>
+
+					</Grid>
+
+					<Grid Grid.Column="1">
+						<ScrollViewer>
+							<StackPanel Spacing="10">
+								<DropDownButton Content="123123" ToolTip.Tip="123123"/>
+								<DropDownButton IsEnabled="False" Content="123123" />
+								<RepeatButton Content="1231233"/>
+								<RepeatButton IsEnabled="False" Content="1231233"/>
+
+								<Separator Classes="left" SeparatorAssists.Content="这是分界线"/>
+								<Separator Classes="right" SeparatorAssists.Content="这是分界线"/>
+								<Separator SeparatorAssists.Content="这是分界线"/>
+
+								<RadioButton Content="123"/>
+								<RadioButton Content="223"/>
+								<RadioButton Content="334" IsEnabled="False"/>
+
+								<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Width="120" Height="30" Content="123"/>
+								<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" IsEnabled="False" Width="120" Height="30" Content="123"/>
+
+								<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
+									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="left" Width="120" Height="30" Content="123"/>
+									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
+									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
+									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="right" Width="120" Height="30" Content="123"/>
+								</StackPanel>
+
+								<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
+									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="left" Width="120" Height="30" Content="123"/>
+									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
+									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
+									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="right" Width="120" Height="30" Content="123"/>
+								</StackPanel>
+
+								<ListBox Width="150">
+									<ListBoxItem Content="123"/>
+									<ListBoxItem Content="234" IsEnabled="False"/>
+									<ListBoxItem Content="432"/>
+									<ListBoxItem Content="345"/>
+									<ListBoxItem Content="567"/>
+								</ListBox>
+
+								<AutoCompleteBox x:Name="PART_AutoCompleteBox" Width="200" Watermark="12323"/>
+								<AutoCompleteBox x:Name="PART_AutoCompleteBox1" AutoCompleteBoxAssists.UseFloatingWatermark="True" Width="200" Watermark="12323"/>
+								<AutoCompleteBox IsEnabled="False" Width="200" Watermark="12323"/>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<TextBlock Text="RippleEffectZx"/>
+									<RippleEffectZx/>
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<TextBlock Text="RippleEffectAx"/>
+									<RippleEffectAx RippleBackgroundAlpha="0"/>
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<RippleEffectAx RippleColor="Red"
+													Duration="200"
+													IsReverse="False"
+													CornerRadius="5"
+													RippleBackgroundAlpha="0.3"
+													RippleColorAlpha="0"
+													RippleToScal="1.3"
+													IsManualTrigger="True"
+													IsTrigger="{Binding IsTrigger1}"/>
+									<Button Height="40" Theme="{StaticResource PrimaryButtonStyle}" Content="RippleEffectAx"  Command="{Binding TriggerClickCommand1}"/>
+
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<RippleEffectAx IsManualTrigger="True"
+													IsTrigger="{Binding IsTrigger}"
+													IsForever="True"
+													IsReverse="True"
+													CornerRadius="5"
+													Duration="75"
+													RippleToScal="1.3"
+													RippleColor="Red"
+													RippleColorAlpha="0.4"
+													RippleBackgroundAlpha="0.1"/>
+									<Button Height="40" Theme="{StaticResource PrimaryButtonStyle}" Content="Manual RippleEffectAx" Command="{Binding TriggerClickCommand}"/>
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<TextBlock Text="RippleEffectx"/>
+									<RippleEffectx IsRipple="True"  RippleColor="Red" />
+								</Panel>
+
+								<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" IsReverse="True" IsForever="True" Padding="4" Duration="150">
+									<TextBlock Text="RippleEffectAuto"/>
+								</RippleEffect>
+
+								<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" RippleToSize="10" IsReverse="False" Padding="4"  Duration="150">
+									<TextBlock Text="RippleEffect"/>
+								</RippleEffect>
+
+							</StackPanel>
+						</ScrollViewer>
+
+					</Grid>
+
+					<StackPanel Grid.Column="2" Spacing="20">
+						<ThemeVariantScope  RequestedThemeVariant="Dark">
+							<Grid >
+								<ScrollViewer  >
+									<StackPanel Spacing="10" ClipToBounds="False">
+										<CheckBox Content="Apple" IsEnabled="False"/>
+										<CheckBox Content="Apple" />
+										<CheckBox Content="Apple" IsChecked="True" IsEnabled="False"/>
+										<CheckBox Content="Apple" IsChecked="True"/>
+										<CheckBox Content="Apple" IsThreeState="True" IsChecked="{x:Null}"    IsEnabled="False"/>
+										<CheckBox Content="Apple" IsThreeState="True"    />
+
+
+										<Button Content="1232323" Margin="0,0,0,20" Height="30" Width="120" />
+									</StackPanel>
+
+
+								</ScrollViewer>
+							</Grid>
+						</ThemeVariantScope>
+
+						<NotificationCard Content="1231231231312313" />
+
+						<ComboBox PlaceholderText="ComboBox">
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+						<ComboBox PlaceholderText="ComboBox" IsEnabled="False">
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+						<ComboBox PlaceholderText="ComboBoxError">
+							<DataValidationErrors.Error>
+								<sys:Exception>
+									<x:Arguments>
+										<x:String>Error</x:String>
+									</x:Arguments>
+								</sys:Exception>
+							</DataValidationErrors.Error>
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+					</StackPanel>
+
+
+
+
+				</Grid>
+
+
+			</StackPanel>
+
+
+
+		</Grid>
+	</ScrollViewer>
+</UserControl>

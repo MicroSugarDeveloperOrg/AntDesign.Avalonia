@@ -15,7 +15,7 @@
 	<SolidColorBrush x:Key="AntDesignAssistForeground" Color="{StaticResource AntDesignAssistForegroundColor}"/>
 
 	<!--边框专用色-->
-	<Color x:Key="AntDesignBorderColor">#313131</Color>
+	<DynamicResource x:Key="AntDesignBorderColor" ResourceKey="AntDesignAssistColor10"/>
 	<SolidColorBrush x:Key="AntDesignBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 	
 	<!--Disable-->

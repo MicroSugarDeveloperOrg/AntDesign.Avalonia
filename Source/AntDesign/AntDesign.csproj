@@ -13,9 +13,8 @@
 		<AvaloniaResource Include="Styles\*.axaml" />
 	</ItemGroup>
 
-	<ItemGroup>                                                                                                            
-		<AvaloniaXaml Remove="Accents\AntDesignColorMatching.axaml" />                                                                                                            
-		<AvaloniaXaml Remove="AntDesign.axaml" />                                            
+	<ItemGroup>                                                                                                                                                                                                                     
+		<AvaloniaXaml Remove="AntDesign.axaml" />                                                     
 	</ItemGroup>
 
 	<ItemGroup>

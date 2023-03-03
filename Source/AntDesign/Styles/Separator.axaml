@@ -8,12 +8,15 @@
 		<Setter Property="Foreground" Value="{DynamicResource SeparatorForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource SeparatorBorderBrush}" />
 		<Setter Property="assists:SeparatorAssists.Height" Value="{DynamicResource SeparatorHeight}" />
+		<Setter Property="assists:SeparatorAssists.ContentMargin" Value="{DynamicResource SeparatorContentMargin}" />
 		<Setter Property="assists:SeparatorAssists.ContentPadding" Value="{DynamicResource SeparatorContentPadding}" />
+		<Setter Property="assists:SeparatorAssists.ContentHorizontalAlignment" Value="Left" />
 		<Setter Property="assists:SeparatorAssists.ContentBackground" Value="{DynamicResource SeparatorContentBackground}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource SeparatorBorderThickness}"/>
-		<Setter Property="CornerRadius" Value="{DynamicResource SeparatorCornerRadius}"/>
-		<Setter Property="Margin" Value="{DynamicResource SeparatorMargin}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}"/>
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="Focusable" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -32,9 +35,10 @@
 									  Background="{TemplateBinding assists:SeparatorAssists.ContentBackground}"
 									  Content="{TemplateBinding assists:SeparatorAssists.Content}"
 									  ContentTemplate="{TemplateBinding assists:SeparatorAssists.ContentTemplate}" 
-									  Margin="{TemplateBinding assists:SeparatorAssists.ContentPadding}"
-									  HorizontalAlignment="Center"
-								      VerticalAlignment="Center"
+									  Padding="{TemplateBinding assists:SeparatorAssists.ContentPadding}"
+									  Margin="{TemplateBinding assists:SeparatorAssists.ContentMargin}"
+									  HorizontalAlignment="{TemplateBinding assists:SeparatorAssists.ContentHorizontalAlignment}"
+								      VerticalAlignment="Center" 
 									  RecognizesAccessKey="True" />
 
 				</Panel>

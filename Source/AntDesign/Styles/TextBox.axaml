@@ -144,9 +144,9 @@
 		<Setter Property="assists:TextBoxAssists.FloatingMargin" Value="{DynamicResource TextBoxFloatingMargin}"/>
 		<Setter Property="assists:TextBoxAssists.RippleColor" Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:TextBoxAssists.RippleColorAlpha" Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource TextBoxPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="MinWidth" Value="{DynamicResource TextBoxMinWidth}" />
 		<Setter Property="MinHeight" Value="{DynamicResource TextBoxMinHeight}" />
 		<Setter Property="ClipToBounds" Value="False" />
@@ -331,32 +331,18 @@
 				</Template>
 			</Setter>
 		</Style>
+
+		<!-- Danger -->
+		<Style Selector="^.danger">
+			 
+		</Style>
+
+		<!-- Warning -->
+		
+		
 	</ControlTheme>
 
-
-	<ControlTheme x:Key="ShadowTextBoxStyle" TargetType="TextBox">
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="Background" Value="{DynamicResource TextBoxBackground}" />
-		<Setter Property="Foreground" Value="{DynamicResource TextBoxForeground}" />
-		<Setter Property="CaretBrush" Value="{DynamicResource TextBoxCaretBrush}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
-		<Setter Property="SelectionBrush" Value="{DynamicResource TextBoxSelectionBackground}" />
-		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource TextBoxSelectionForeground}"/>
-		<Setter Property="assists:TextBoxAssists.PointerOverBorderBrush" Value="{DynamicResource TextBoxPointerOverBorderBrush}"/>
-		<Setter Property="assists:TextBoxAssists.FocusBorderBrush" Value="{DynamicResource TextBoxPointerFocusBorderBrush}"/>
-		<Setter Property="assists:TextBoxAssists.FloatingForeground" Value="{DynamicResource TextBoxFloatingForeground}"/>
-		<Setter Property="assists:TextBoxAssists.FloatingMargin" Value="{DynamicResource TextBoxFloatingMargin}"/>
-		<Setter Property="assists:TextBoxAssists.Shadows" Value="{DynamicResource TextBoxShadow}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource TextBoxPadding}" />
-		<Setter Property="MinWidth" Value="{DynamicResource TextBoxMinWidth}" />
-		<Setter Property="MinHeight" Value="{DynamicResource TextBoxMinHeight}" />
-		<Setter Property="ClipToBounds" Value="False" />
-		<Setter Property="FocusAdorner" Value="{x:Null}" />
-		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
-		<Setter Property="ContextFlyout" Value="{StaticResource DefaultTextBoxContextFlyout}" />
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
+	<ControlTheme x:Key="ShadowTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DataValidationErrors>
@@ -532,6 +518,5 @@
 			</Setter>
 		</Style>
 	</ControlTheme>
-
 
 </ResourceDictionary>

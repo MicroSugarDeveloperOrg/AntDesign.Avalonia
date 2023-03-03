@@ -21,9 +21,13 @@
 	<Color x:Key="AntDesignAssistColor2">#5FA3A3A3</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush2" Color="{DynamicResource AntDesignAssistColor2}"/>
 
+	<!--边框色-->
 	<Color x:Key="AntDesignAssistColor3">#D9D9D9</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush3" Color="{DynamicResource AntDesignAssistColor3}"/>
 
+	<Color x:Key="AntDesignAssistColor10">#313131</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush10" Color="{DynamicResource AntDesignAssistColor10}"/>
+	
 	<!--白色-->
 	<Color x:Key="AntDesigndAssistColor4">#FFFFFF</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush4" Color="{DynamicResource AntDesigndAssistColor4}"/>

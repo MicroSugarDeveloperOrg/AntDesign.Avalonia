@@ -1,5 +1,4 @@
 ﻿using Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
-using System.Collections;
 
 namespace AntDesign.Sample.ViewModels;
 
@@ -12,7 +11,7 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 
         TriggerClickCommand = ReactiveCommand.Create(() =>
         {
-            IsTrigger = !IsTrigger; 
+            IsTrigger = !IsTrigger;
         });
 
         TriggerClickCommand1 = ReactiveCommand.Create(() =>
@@ -55,12 +54,12 @@ public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 
     protected override void Activating()
     {
-        base.Activating(); 
+        base.Activating();
     }
 
     protected override void Disposing()
     {
         base.Disposing();
     }
- 
+
 }

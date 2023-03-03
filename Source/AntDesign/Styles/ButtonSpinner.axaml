@@ -63,9 +63,9 @@
 		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerButtonPressedBackground}"/>
 		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerButtonPressedForeground}"/>
 		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPressedBorderBrush}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource ButtonSpinnerBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ButtonSpinnerCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ButtonSpinnerPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -160,29 +160,7 @@
 		</Style>
 	</ControlTheme>
 
-	<ControlTheme x:Key="AntDesignButtonSpinnerStyle" TargetType="ButtonSpinner">
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="Foreground" Value="{DynamicResource ButtonSpinnerForeground}" />
-		<Setter Property="Background" Value="{DynamicResource ButtonSpinnerBackground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource ButtonSpinnerBorderBrush}" />
-		<Setter Property="assists:ButtonSpinnerAssists.Background" Value="{DynamicResource ButtonSpinnerButtonBackground}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.Foreground" Value="{DynamicResource ButtonSpinnerButtonForeground}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.BorderBrush" Value="{DynamicResource ButtonSpinnerButtonBorderBrush}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBackground" Value="{DynamicResource ButtonSpinnerButtonPointerOverBackground}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.PointerOverForeground" Value="{DynamicResource ButtonSpinnerButtonPointerOverForeground}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPointerOverBorderBrush}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerButtonPressedBackground}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerButtonPressedForeground}"/>
-		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPressedBorderBrush}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource ButtonSpinnerBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ButtonSpinnerCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ButtonSpinnerPadding}" />
-		<Setter Property="HorizontalAlignment" Value="Stretch" />
-		<Setter Property="VerticalAlignment" Value="Stretch" />
-		<Setter Property="HorizontalContentAlignment" Value="Center" />
-		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="ClipToBounds" Value="False" />
-		<Setter Property="Focusable" Value="True"/>
+	<ControlTheme x:Key="AntDesignButtonSpinnerStyle" TargetType="ButtonSpinner" BasedOn="{StaticResource {x:Type ButtonSpinner}}"> 
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DataValidationErrors>

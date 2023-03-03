@@ -1,11 +1,9 @@
-﻿namespace AntDesign.Assists;
+﻿using Avalonia.Layout;
+
+namespace AntDesign.Assists;
 
 public class SeparatorAssists
 {
-    //public static readonly AvaloniaProperty<IBrush?> ContentPaddingProperty = AvaloniaProperty.RegisterAttached<TextBox, IBrush?>("ContentPadding", typeof(TextBoxAssists));
-    //public static void SetContentPadding(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(ContentPaddingProperty, value);
-    //public static IBrush? GetContentPadding(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(ContentPaddingProperty);
-
     public static readonly AvaloniaProperty<IBrush?> ContentBackgroundProperty = AvaloniaProperty.RegisterAttached<Separator, IBrush?>("ContentBackground", typeof(SeparatorAssists));
     public static void SetContentBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(ContentBackgroundProperty, value);
     public static IBrush? GetContentBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(ContentBackgroundProperty);
@@ -13,6 +11,14 @@ public class SeparatorAssists
     public static readonly AvaloniaProperty<Thickness> ContentPaddingProperty = AvaloniaProperty.RegisterAttached<TextBox, Thickness>("ContentPadding", typeof(SeparatorAssists));
     public static void SetContentPadding(AvaloniaObject dependencyObject, Thickness value) => dependencyObject.SetValue(ContentPaddingProperty, value);
     public static Thickness GetContentPadding(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Thickness>(ContentPaddingProperty);
+
+    public static readonly AvaloniaProperty<Thickness> ContentMarginProperty = AvaloniaProperty.RegisterAttached<TextBox, Thickness>("ContentMargin", typeof(SeparatorAssists));
+    public static void SetContentMargin(AvaloniaObject dependencyObject, Thickness value) => dependencyObject.SetValue(ContentMarginProperty, value);
+    public static Thickness GetContentMargin(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Thickness>(ContentMarginProperty);
+
+    public static readonly AvaloniaProperty<HorizontalAlignment> ContentHorizontalAlignmentProperty = AvaloniaProperty.RegisterAttached<TextBox, HorizontalAlignment>("ContentHorizontalAlignment", typeof(SeparatorAssists));
+    public static void SetContentHorizontalAlignment(AvaloniaObject dependencyObject, HorizontalAlignment value) => dependencyObject.SetValue(ContentHorizontalAlignmentProperty, value);
+    public static HorizontalAlignment GetContentHorizontalAlignment(AvaloniaObject dependencyObject) => dependencyObject.GetValue<HorizontalAlignment>(ContentHorizontalAlignmentProperty);
 
     public static readonly AvaloniaProperty<object?> ContentProperty = AvaloniaProperty.RegisterAttached<Separator, object?>("Content", typeof(SeparatorAssists));
     public static void SetContent(AvaloniaObject dependencyObject, object? value) => dependencyObject.SetValue(ContentProperty, value);

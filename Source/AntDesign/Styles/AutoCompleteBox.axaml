@@ -17,13 +17,13 @@
 		<Setter Property="assists:AutoCompleteBoxAssists.RippleColorAlpha" Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBackground" Value="{DynamicResource AutoCompleteBoxPopupBackground}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderBrush" Value="{DynamicResource AutoCompleteBoxPopupBorderBrush}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupMargin" Value="{DynamicResource AutoCompleteBoxPopupMargin}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource AutoCompleteBoxPopupCornerRadius}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderThickness" Value="{DynamicResource AutoCompleteBoxPopupBorderThickness}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupMargin" Value="{DynamicResource FlyoutShadowPadding}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource FlyoutCornerRadius}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderThickness" Value="{DynamicResource FlyoutBorderThickness}"/>
 		<Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteBoxPopupMaxHeight}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource AutoCompleteBoxBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource AutoCompleteBoxCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource AutoCompleteBoxPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="ClipToBounds" Value="False" />
@@ -63,21 +63,25 @@
 								<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:AutoCompleteBoxAssists.PopupMargin)"/>
 							</MultiBinding>
 						</Popup.MinWidth>
-						
-						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
-								Padding="{DynamicResource AutoCompleteBoxPopupPadding}"
-								Margin="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin}"
-								Background="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBackground}"
-								BorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderBrush}"
-								BorderThickness="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderThickness}"
-								CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}"
-								ClipToBounds="False"
-								BoxShadow="{DynamicResource AutoCompleteBoxShadow}">
-							<ListBox x:Name="{x:Static helpers:PARTNameHelper.PART_SelectingItemsControl}"
-									 BorderThickness="0"
-									 Background="Transparent"
-									 ItemTemplate="{TemplateBinding ItemTemplate}"/>
+
+						<Border CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}" 
+								Padding="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin}">
+							<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
+									Padding="{DynamicResource FlyoutPadding}"
+									Background="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBackground}"
+									BorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderBrush}"
+									BorderThickness="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderThickness}"
+									CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}"
+									ClipToBounds="False"
+									BoxShadow="{DynamicResource AutoCompleteBoxShadow}">
+								<ListBox x:Name="{x:Static helpers:PARTNameHelper.PART_SelectingItemsControl}"
+										 BorderThickness="0"
+										 Background="Transparent"
+										 ItemTemplate="{TemplateBinding ItemTemplate}"/>
+							</Border>
 						</Border>
+
+
 					</Popup>
 				</Grid>
 			</ControlTemplate>

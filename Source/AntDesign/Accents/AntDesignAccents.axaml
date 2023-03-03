@@ -8,29 +8,9 @@
 	<x:Double x:Key="WindowDefaultHeight">600</x:Double>
 	
 	<!-- AutoCompleteBox -->
-	<StaticResource x:Key="AutoCompleteBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="AutoCompleteBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="AutoCompleteBoxPadding" ResourceKey="OverlayPadding"/>
-
-	<StaticResource x:Key="AutoCompleteBoxPopupMargin" ResourceKey="OverlayMargin"/>
-	<StaticResource x:Key="AutoCompleteBoxPopupPadding" ResourceKey="OverlayPadding"/>
-	<Thickness x:Key="AutoCompleteBoxPopupBorderThickness">0</Thickness>
-	<CornerRadius x:Key="AutoCompleteBoxPopupCornerRadius">10</CornerRadius>
 	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">504</x:Double>
 
-	<!-- Button -->
-	<StaticResource x:Key="ButtonBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="ButtonCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="ButtonPadding" ResourceKey="OverlayPadding"/>
-
-	<Thickness x:Key="PrimaryButtonBorderThickness">0</Thickness>
-	<Thickness x:Key="TextButtonBorderThickness">0</Thickness>
-	<Thickness x:Key="LinkButtonBorderThickness">0</Thickness>
-
 	<!-- ButtonSpinner -->
-	<StaticResource x:Key="ButtonSpinnerBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="ButtonSpinnerCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="ButtonSpinnerPadding" ResourceKey="Padding"/>
 	<x:Double x:Key="ButtonSpinnerIconWidth">16</x:Double>
 	<x:Double x:Key="ButtonSpinnerIconHeight">8</x:Double>
 
@@ -259,12 +239,9 @@
 	<TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
 
 	<!-- Separator -->
-	<StaticResource x:Key="SeparatorBorderThickness" ResourceKey="BorderThickness"/>
-	<StaticResource x:Key="SeparatorCornerRadius" ResourceKey="CornerRadius"/> 
-	
-	<x:Double x:Key="SeparatorHeight">1</x:Double>
-	<Thickness x:Key="SeparatorMargin">5,0,5,0</Thickness>
-	<Thickness x:Key="SeparatorContentPadding">20,0,20,0</Thickness>
+	<x:Double x:Key="SeparatorHeight">1</x:Double> 
+	<Thickness x:Key="SeparatorContentPadding">10,0,10,0</Thickness>
+	<Thickness x:Key="SeparatorContentMargin">20,0,20,0</Thickness>
 	
 	<!-- Tooltip -->
 	<StaticResource x:Key="ToolTipBorderThickness" ResourceKey="BorderThickness"/>
@@ -273,10 +250,6 @@
 	<x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
 
 	<!-- TextBox -->
-	<StaticResource x:Key="TextBoxBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="TextBoxCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="TextBoxPadding" ResourceKey="OverlayPadding"/>
-
 	<x:Double x:Key="TextBoxMinWidth">100</x:Double>
 	<x:Double x:Key="TextBoxMinHeight">30</x:Double>
 
@@ -462,6 +435,11 @@
 	<x:Double x:Key="BottomButtonWidth">120</x:Double>
 	<x:Double x:Key="BottomButtonHeight">40</x:Double>
 	<x:Double x:Key="FilesHeaderHeight">30</x:Double>
+
+	<!--ProgressBar-->
+	<StaticResource x:Key="ProgressBarBorderThickness" ResourceKey="OverlayBorderThickness"/>
+	<StaticResource x:Key="ProgressBarCornerRadius" ResourceKey="OverlayCornerRadius"/>
+	<StaticResource x:Key="ProgressBarPadding" ResourceKey="Padding"/>
 
 	<!--WindowNotificationManager-->
 	

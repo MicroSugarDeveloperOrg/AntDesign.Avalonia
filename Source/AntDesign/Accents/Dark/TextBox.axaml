@@ -5,7 +5,7 @@
 	<SolidColorBrush x:Key="TextBoxBackground" Color="Transparent"/>
 	<!--<SolidColorBrush x:Key="TextBoxForeground" Color="#3e3e3e"/>-->
 	<SolidColorBrush x:Key="TextBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="TextBoxCaretBrush" Color="{DynamicResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="TextBoxCaretBrush" Color="{DynamicResource AntDesigndAssistColor4}"/>
 	<SolidColorBrush x:Key="TextBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 	<SolidColorBrush x:Key="TextBoxSelectionBackground" Color="{DynamicResource AntDesigndAssistColor9}"/>
 	<SolidColorBrush x:Key="TextBoxSelectionForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
