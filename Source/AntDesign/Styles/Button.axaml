@@ -106,13 +106,6 @@
 			<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource DangerRippleColor}"/>
 		</Style>
 
-		<Style Selector="^.error"> 
-			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
-			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
-			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
-			<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource ErrorRippleColor}"/>
-		</Style>
-
 		<Style Selector="^.round">
 			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
 				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />

@@ -34,10 +34,11 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 						<AutoCompleteBox  Items="{Binding AutoCompletes}"
+										  x:DataType="models:AutoCompletionModel"
 										  Watermark="input here"
 										  Width="200" Height="35"
 										  HorizontalAlignment="Left"
-										  ValueMemberBinding="{Binding Name, x:DataType=models:AutoCompletionModel}" />
+										  ValueMemberBinding="{Binding Name}" />
 
 						<AutoCompleteBox  Items="{Binding AutoCompletes}"
 										  Watermark="floating mode"

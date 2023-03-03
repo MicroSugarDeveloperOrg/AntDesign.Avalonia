@@ -19,8 +19,9 @@
 			<TextBlock  Text=">>  链接按钮：一般用于链接，即导航至某位置。"/>
 			<TextBlock  Text=">>  虚线按钮：常用于添加操作。"/>
 			<TextBlock  Text=">>  阴影按钮：用于有自定义按钮阴影需求的场景。"/>
-			<TextBlock  Text="以及一种状态Classes和一种属性与上面配合使用。"/>
+			<TextBlock  Text="以及两种状态Classes和一种属性与上面配合使用。"/>
 			<TextBlock  Text=">>  危险：删除/移动/修改权限等危险操作，一般需要二次确认。"/>
+			<TextBlock  Text=">>  圆形：使得按钮具有圆形效果。"/>
 			<TextBlock  Text=">>  禁用：行动点不可用的时候，一般需要文案解释。"/>
 		</StackPanel>
 
@@ -92,6 +93,13 @@
 							<Button Height="35" Width="120" Content="Shadow Button"
 									Theme="{StaticResource ShadowButtonStyle}"
 									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="danger"/>
+
+							<Button Height="35" Width="160" Content="Custom Button"
+									Background="Green" Foreground="Red" BorderBrush="Blue"
+									assists:ButtonAssists.PointerOverBackground="Pink"
+									assists:ButtonAssists.PressedBackground="Orange"
+									assists:ButtonAssists.RippleColor="Purple"/>
+							
 						</StackPanel>
 
 					</StackPanel>
@@ -103,6 +111,8 @@
 								VerticalAlignment="Center">
 
 						<TextBlock Text="通过赋予Classes danger值来开启该能力"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.PointerOverBackground,assists:ButtonAssists.Background, assists:ButtonAssists.RippleColor等扩展属性可以完全自定义一个全新的按钮形态(这些是AntDesign库提供的一个扩展依赖属性)"/>
+
 					</StackPanel>
 
 				</Grid>
@@ -168,13 +178,13 @@
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<Button Height="35" Width="120" Content="Dashed Button"
 									Theme="{StaticResource DashedButtonStyle}" Classes="round"/>
-							<Button Height="35" Width="120" Content="Shadow Button"
+							<Button Height="35" Width="120" Content=""
 									Theme="{StaticResource ShadowButtonStyle}"
 									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
 
 							<Button Height="35" Width="35" Content="Dashed Button"
 									Theme="{StaticResource DashedButtonStyle}" Classes="round"/>
-							<Button Height="35" Width="35" Content="Shadow Button"
+							<Button Height="35" Width="35" Content=""
 									Theme="{StaticResource ShadowButtonStyle}"
 									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
 						</StackPanel>
