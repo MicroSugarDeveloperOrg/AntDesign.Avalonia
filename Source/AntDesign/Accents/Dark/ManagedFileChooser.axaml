@@ -5,8 +5,8 @@
 	<BoxShadows x:Key="ManagedFileChooserNavBarShadow">0 0 5 0 LightGray</BoxShadows>
 
 	<SolidColorBrush x:Key="QuickLinksBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="GridSplitterBackground" Color="{StaticResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="GridSplitterBackground" Color="{DynamicResource AntDesignBorderColor}"/>
 	
-	<SolidColorBrush x:Key="BottomBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="BottomBorderBrush" Color="{DynamicResource AntDesignBorderColor}"/>
 
 </ResourceDictionary>

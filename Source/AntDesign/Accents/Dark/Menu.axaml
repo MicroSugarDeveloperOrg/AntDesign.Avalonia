@@ -11,21 +11,21 @@
 	<SolidColorBrush x:Key="AntMenuItemBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="AntMenuItemPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="AntMenuItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemPointerOverForeground" Color="{DynamicResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="AntMenuItemPointerOverBorderBrush" Color="Transparent"/>
 	
-	<SolidColorBrush x:Key="AntMenuItemPointerOverBottomBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemPointerOverBottomBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="AntMenuItemPressedBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AntMenuItemPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="AntMenuItemPressedBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="AntMenuItemPressedBottomBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemPressedBottomBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="AntMenuItemSelectedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="AntMenuItemSelectedForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="AntMenuItemSelectedBorderBrush" Color="Transparent"/>
 	
-	<SolidColorBrush x:Key="AntMenuItemSelectedBottomBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntMenuItemSelectedBottomBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 </ResourceDictionary>

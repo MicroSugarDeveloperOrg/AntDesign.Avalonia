@@ -10,14 +10,14 @@
 	<SolidColorBrush x:Key="TextBoxSelectionBackground" Color="#3390ff"/>
 	<SolidColorBrush x:Key="TextBoxSelectionForeground" Color="White"/>
 
-	<SolidColorBrush x:Key="TextBoxPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="TextBoxPointerFocusBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="TextBoxPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="TextBoxPointerFocusBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 	<SolidColorBrush x:Key="TextBoxFloatingForeground" Color="#4096ff"/>
 
 	<SolidColorBrush x:Key="TextBoxButtonBackground" Color="#a6a6a6"/>
-	<SolidColorBrush x:Key="TextBoxButtonForeground" Color="{StaticResource AntDesignAssistColor1}"/>
-	<SolidColorBrush x:Key="TextBoxButtonForeground1" Color="{StaticResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TextBoxButtonForeground" Color="{DynamicResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="TextBoxButtonForeground1" Color="{DynamicResource AntDesigndAssistColor4}"/>
 	<SolidColorBrush x:Key="TextBoxButtonBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="TextBoxButtonPointerOverBackground" Color="#8c8c8c"/>

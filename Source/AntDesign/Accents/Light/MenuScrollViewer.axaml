@@ -3,10 +3,10 @@
 					x:CompileBindings="True">
 
 	<SolidColorBrush x:Key="MenuScrollViewerIconFill" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="MenuScrollViewerIconPointerOverFill" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="MenuScrollViewerIconPressedFill" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="MenuScrollViewerIconPointerOverFill" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="MenuScrollViewerIconPressedFill" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
-	<SolidColorBrush x:Key="MenuScrollViewerIconPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="MenuScrollViewerIconPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/> 
+	<SolidColorBrush x:Key="MenuScrollViewerIconPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="MenuScrollViewerIconPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/> 
 
 </ResourceDictionary>

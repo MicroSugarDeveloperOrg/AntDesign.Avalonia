@@ -8,11 +8,11 @@
 	<SolidColorBrush x:Key="CalendarDatePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="CalendarDatePickerBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
-	<SolidColorBrush x:Key="CalendarDatePickerPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="CalendarDatePickerPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	
-	<SolidColorBrush x:Key="CalendarDatePickerFocusBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CalendarDatePickerFocusBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
-	<SolidColorBrush x:Key="CalendarDatePickerFloatingForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="CalendarDatePickerFloatingForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="CalendarDatePickerPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="CalendarDatePickerPopupBorderBrush" Color="{StaticResource AntDesignBorderColor}"/> 

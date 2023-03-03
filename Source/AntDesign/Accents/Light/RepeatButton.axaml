@@ -7,11 +7,11 @@
 	<SolidColorBrush x:Key="RepeatButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="RepeatButtonPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="RepeatButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="RepeatButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPointerOverForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="RepeatButtonPressedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="RepeatButtonPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="RepeatButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 </ResourceDictionary>

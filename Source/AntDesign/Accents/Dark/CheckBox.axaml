@@ -7,13 +7,13 @@
 	<SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="CheckBoxPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="CheckBoxPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="CheckBoxPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="CheckBoxPointerOverForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="CheckBoxPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="CheckBoxPressedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="CheckBoxPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="CheckBoxPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CheckBoxPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CheckBoxPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
-	<SolidColorBrush x:Key="CheckBoxGlyphFill" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CheckBoxGlyphFill" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	
 </ResourceDictionary>

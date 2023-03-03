@@ -7,11 +7,11 @@
 	<SolidColorBrush x:Key="DropDownButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="DropDownButtonPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="DropDownButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="DropDownButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="DropDownButtonPointerOverForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="DropDownButtonPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="DropDownButtonPressedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="DropDownButtonPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="DropDownButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="DropDownButtonPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="DropDownButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 </ResourceDictionary>

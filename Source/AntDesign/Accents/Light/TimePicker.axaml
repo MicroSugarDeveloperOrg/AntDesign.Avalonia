@@ -19,10 +19,10 @@
 	
 	<SolidColorBrush x:Key="TimePickerPresenterSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
 
-	<SolidColorBrush x:Key="TimePickerButtonBackground" Color="{StaticResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="TimePickerButtonPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="TimePickerButtonPressedBackground" Color="{StaticResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="TimePickerButtonBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="TimePickerButtonPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="TimePickerButtonPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
 
-	<SolidColorBrush x:Key="TimePickerPanelListBoxItemSelectedNoFocusForeground" Color="{StaticResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TimePickerPanelListBoxItemSelectedNoFocusForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
 
 </ResourceDictionary>

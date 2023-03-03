@@ -8,15 +8,15 @@
 
 	<SolidColorBrush x:Key="RadioButtonPointerOverBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioButtonPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="RadioButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RadioButtonPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="RadioButtonPressedBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioButtonPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="RadioButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RadioButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 	<SolidColorBrush x:Key="RadioButtonOuterStroke" Color="{StaticResource AntDesignBorderColor}"/>
 
-	<SolidColorBrush x:Key="RadioButtonInnerFill" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RadioButtonInnerFill" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 	<!--LikeButton-->
 	<SolidColorBrush x:Key="RadioLikeButtonBackground" Color="Transparent"/>
@@ -24,24 +24,24 @@
 	<SolidColorBrush x:Key="RadioLikeButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="RadioLikeButtonPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="RadioLikeButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="RadioLikeButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikeButtonPointerOverForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikeButtonPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 	<SolidColorBrush x:Key="RadioLikeButtonPressedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="RadioLikeButtonPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="RadioLikeButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikeButtonPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikeButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 	<!--LikePrimaryButton-->
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
-	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverBackground" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverForeground" Color="{StaticResource AntDesignAssistColor1}"/>
-	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverForeground" Color="{DynamicResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="RadioLikePrimaryButtonPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
-	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedBackground" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedForeground" Color="{StaticResource AntDesignAssistColor1}"/>
-	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedForeground" Color="{DynamicResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 </ResourceDictionary>
