@@ -14,6 +14,7 @@
 	<antConverters:IBitmapToImageConverter x:Key="IBitmapToImageConverter"/>
 	<antConverters:Height2CornerRadiusConverter x:Key="Height2CornerRadiusConverter"/>
 	<antConverters:Size2SizeConverters x:Key="Size2SizeConverters"/>
+	<antConverters:Size2RoundConverter x:Key="Size2RoundConverter"/>
 	<antConverters:Double2MarginConverters Direction="Left" x:Key="LeftDouble2MarginConverters"/>
 	<antConverters:Double2MarginConverters Direction="Right" x:Key="RightDouble2MarginConverters"/>
 

@@ -5,7 +5,7 @@ public partial class AutoCompleteView : ReactiveUserControl<AutoCompleteViewMode
 {
     public AutoCompleteView()
     {
-        InitializeComponent();
-
+        InitializeComponent(); 
+       
     }
 }

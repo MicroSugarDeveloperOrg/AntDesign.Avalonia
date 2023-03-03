@@ -46,6 +46,7 @@
 			<Grid Grid.Column="2" RowDefinitions="40,20,*">
 				<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" FontSize="30" FontWeight="Bold"/>
 				<rxui:RoutedViewHost Grid.Row="2"
+									 Margin="0,0,0,10"
 									 Router="{Binding Router}"
 									 assists:RoutedViewHostAssists.ViewLocator="{Binding ViewLocator}">
 					<!--<rxui:RoutedViewHost.PageTransition>-->

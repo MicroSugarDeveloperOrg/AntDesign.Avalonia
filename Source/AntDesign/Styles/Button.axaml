@@ -112,6 +112,12 @@
 			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 			<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource ErrorRippleColor}"/>
 		</Style>
+
+		<Style Selector="^.round">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
+		</Style>
 		
 	</ControlTheme>
 
@@ -230,28 +236,12 @@
 			</Style>
 		</Style>
 
-		<Style Selector="^:disabled">
-			<Setter Property="Cursor" Value="No" />
-			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+		<Style Selector="^.round">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
 		</Style>
 
-		<Style Selector="^.danger">
-			<Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource DangerBrush}" />
-			<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource DangerPointerOverBrush}" />
-			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource DangerPointerOverBrush}" />
-			<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DangerPressedBrush}" />
-			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DangerPressedBrush}" /> 
-		</Style>
-
-		<Style Selector="^.error"> 
-			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
-			<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
-			<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ErrorBorderBrush}" /> 
-		</Style>
-		
 	</ControlTheme>
 	
 </ResourceDictionary>
