@@ -87,9 +87,11 @@
 							<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}" Classes="danger"/>
 							<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}" Classes="danger"/>
 						</StackPanel>
+					
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<Button Height="35" Width="120" Content="Dashed Button"
 									Theme="{StaticResource DashedButtonStyle}" Classes="danger"/>
+							
 							<Button Height="35" Width="120" Content="Shadow Button"
 									Theme="{StaticResource ShadowButtonStyle}"
 									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="danger"/>
@@ -99,7 +101,6 @@
 									assists:ButtonAssists.PointerOverBackground="Pink"
 									assists:ButtonAssists.PressedBackground="Orange"
 									assists:ButtonAssists.RippleColor="Purple"/>
-							
 						</StackPanel>
 
 					</StackPanel>
@@ -174,8 +175,6 @@
 							<Button Height="35" Width="120" Content="" Theme="{StaticResource PrimaryButtonStyle}" Classes="round"/>
 							<Button Height="35" Width="35" Content="" Classes="round"/>
 							<Button Height="35" Width="35" Content="" Theme="{StaticResource PrimaryButtonStyle}"  Classes="round"/>
-						</StackPanel>
-						<StackPanel Orientation="Horizontal" Spacing="10">
 							<Button Height="35" Width="120" Content="Dashed Button"
 									Theme="{StaticResource DashedButtonStyle}" Classes="round"/>
 							<Button Height="35" Width="120" Content=""
@@ -188,6 +187,11 @@
 									Theme="{StaticResource ShadowButtonStyle}"
 									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
 						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="0">
+							<Button Height="35" Width="120" Content="Default Button" Classes="left"/>
+							<Button Height="35" Width="120" Content="Default Button" Classes="center"/>
+							<Button Height="35" Width="120" Content="Default Button" Classes="right"/>
+						</StackPanel>
 
 					</StackPanel>
 
@@ -197,7 +201,7 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="通过赋予Classes round值来开启该能力"/> 
+						<TextBlock Text="通过赋予Classes round值来开启该能力"/>
 					</StackPanel>
 
 				</Grid>

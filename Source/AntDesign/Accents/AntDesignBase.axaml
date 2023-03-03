@@ -24,7 +24,7 @@
 	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Right" x:Key="NoBottomBorderThickness"/>
 
 	<antConverters:BorderThicknessFilterConverter Edges="Left" x:Key="OnlyLeftBorderThickness"/>
-	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/> 
 
 	<converters:StringFormatConverter x:Key="StringFormatConverter"/>
 
