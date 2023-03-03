@@ -17,6 +17,7 @@
 	<Color x:Key="AntDesignAssistColor1">#000000</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush1" Color="{DynamicResource AntDesignAssistColor1}"/>
 
+	<!--PointerOver-->
 	<Color x:Key="AntDesignAssistColor2">#5FA3A3A3</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush2" Color="{DynamicResource AntDesignAssistColor2}"/>
 
@@ -41,6 +42,10 @@
 	<Color x:Key="AntDesigndAssistColor8">#5FA3A3A3</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush8" Color="{DynamicResource AntDesigndAssistColor8}"/>
 
+	<!-- TextBoxSelectionColor -->
+	<Color x:Key="AntDesigndAssistColor9">#3390ff</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush9" Color="{DynamicResource AntDesigndAssistColor9}"/>
+	
 	<!--Status-->
 	<Color x:Key="DefaultColor">#bfbfbf</Color>
 	<Color x:Key="InfoColor">#1677ff</Color>
