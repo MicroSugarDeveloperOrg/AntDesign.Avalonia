@@ -71,6 +71,7 @@ public partial class App : Application
 
         //数据录入
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
+        routingViewLocator.AddRouter<CheckBoxView, CheckBoxViewModel>(routerNameCallBack: () => "Checkbox 多选框");
         routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");
 
 
