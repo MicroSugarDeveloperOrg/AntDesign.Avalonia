@@ -183,6 +183,8 @@
 										  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
 										  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
 										  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
+										  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource OnlyRightBorderThickness}}"
+										  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
 										  VerticalAlignment="Stretch"
 										  VerticalContentAlignment="Center">
 								<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
@@ -212,6 +214,8 @@
 										  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
 										  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
 										  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
+										  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftBorderThickness}}"
+										  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
 										  VerticalAlignment="Stretch"
 										  VerticalContentAlignment="Center">
 								<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
@@ -223,17 +227,7 @@
 				</DataValidationErrors>
 			</ControlTemplate>
 		</Setter>
-		<Style Selector="^">
-			<Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
-				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyRightBorderThickness}}"/>
-				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"/>
-			</Style>
-			<Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
-				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftBorderThickness}}"/>
-				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"/>
-			</Style>
-		</Style>
-
+		
 		<Style Selector="^:disabled">
 			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
