@@ -20,11 +20,13 @@
 	<x:Double x:Key="CaptionButtonHeight">30</x:Double>
 	
 	<!-- CheckBox -->
+	<x:Double x:Key="CheckBoxHeight">23</x:Double>
+
 	<x:Double x:Key="CheckBoxRippleDuration">100</x:Double>
 	<x:Double x:Key="CheckBoxRippleFromScal">1</x:Double>
 	<x:Double x:Key="CheckBoxRippleToScal">1.7</x:Double>
 
-	<Thickness x:Key="CheckBoxIndeterminatePadding">4</Thickness>
+	<Thickness x:Key="CheckBoxIndeterminatePadding">5</Thickness>
 
 	<!-- ComboBox -->
 	<x:Double x:Key="InnerPlaceholderOpacity">0.5</x:Double>

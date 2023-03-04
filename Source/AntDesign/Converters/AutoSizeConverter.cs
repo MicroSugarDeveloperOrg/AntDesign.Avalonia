@@ -1,18 +1,20 @@
 ﻿namespace AntDesign.Converters;
 
-public class AutoSizeConverter : IMultiValueConverter
+public class AutoSizeConverter : IValueConverter
 {
-    public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (values is null || values.Count < 2)
-            return AvaloniaProperty.UnsetValue;
+        if (value is not Rect rect)
+            return 23d;
 
-        double.TryParse(values[0]?.ToString(), out var value1);
-        double.TryParse(values[1]?.ToString(), out var value2);
+        if (rect.Width == 0 && rect.Height == 0)
+            return 23d;
 
-        if (double.IsNaN(value1) || double.IsNaN(value2))
-            return 20d;
+        return Math.Min(rect.Width, rect.Height);
+    }
 
-        return Math.Min(value1, value2);
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
     }
 }

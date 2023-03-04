@@ -17,6 +17,7 @@
 
 	<ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Height" Value="{DynamicResource CheckBoxHeight}"/>
 		<Setter Property="Background" Value="{DynamicResource CheckBoxBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource CheckBoxForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource CheckBoxBorderBrush}" />
@@ -48,19 +49,8 @@
 							HorizontalAlignment="Center"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							CornerRadius="{TemplateBinding CornerRadius}"
-							>
-						<Border.Width>
-							<MultiBinding Converter="{StaticResource AutoSizeConverter}">
-								<TemplateBinding Property="Width"/>
-								<TemplateBinding Property="Height"/>
-							</MultiBinding>
-						</Border.Width>
-						<Border.Height>
-							<MultiBinding Converter="{StaticResource AutoSizeConverter}">
-								<TemplateBinding Property="Width"/>
-								<TemplateBinding Property="Height"/>
-							</MultiBinding>
-						</Border.Height>
+							Width="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}}"
+							Height="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}}">
 
 						<Panel>
 							<Border x:Name="NormalRectangle"

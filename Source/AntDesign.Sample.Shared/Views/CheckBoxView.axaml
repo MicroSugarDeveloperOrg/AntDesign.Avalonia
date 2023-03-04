@@ -30,7 +30,8 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<CheckBox Content="CheckBox"/> 
+							<CheckBox Content="CheckBox"/>
+							<CheckBox Height="40" Content="CheckBox"/> 
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" Spacing="10"> 
 							<CheckBox Content="Three State" IsThreeState="True"/>
