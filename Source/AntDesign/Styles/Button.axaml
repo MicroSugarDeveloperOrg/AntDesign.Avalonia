@@ -69,17 +69,17 @@
 		</Setter>
 
 		<Style Selector="^:pointerover">
-			<Style Selector="^:pointerover /template/ RippleEffect#PART_LayoutRoot">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
 			</Style>
-			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
 			</Style>
 		</Style>
 
 		<Style Selector="^:pressed">
-			<Style Selector="^:pointerover /template/ RippleEffect#PART_LayoutRoot">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
 			</Style>
@@ -109,7 +109,7 @@
 		<Style Selector="^.round">
 			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
 				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
-			</Style>
+			</Style> 
 		</Style>
 
 		<Style Selector="^.left">
@@ -123,12 +123,32 @@
 				<Setter Property="CornerRadius" Value="0" />
 				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
 			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
 		</Style>
 
 		<Style Selector="^.right">
 			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
 				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
 			</Style>
 		</Style>
 
@@ -199,6 +219,7 @@
 
 	<ControlTheme x:Key="ShadowButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
 		<Setter Property="assists:ButtonAssists.Shadows" Value="{DynamicResource ButtonShadow}" />
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
@@ -229,17 +250,17 @@
 		</Setter>
 
 		<Style Selector="^:pointerover">
-			<Style Selector="^:pointerover /template/ Border#PART_LayoutRoot">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
 			</Style>
-			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
 				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
 			</Style>
 		</Style>
 
 		<Style Selector="^:pressed">
-			<Style Selector="^:pointerover /template/ Border#PART_LayoutRoot">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
 			</Style>
@@ -252,6 +273,46 @@
 		<Style Selector="^.round">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">
 				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.left">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.center">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="0" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Border#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^.right">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Border#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
 			</Style>
 		</Style>
 

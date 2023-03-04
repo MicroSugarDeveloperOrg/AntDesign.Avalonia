@@ -195,13 +195,14 @@
 
 					</StackPanel>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="Round按钮"/>
+					<Separator Grid.Row="1" SeparatorAssists.Content="Round及组合按钮"/>
 
 					<StackPanel Grid.Row="2" Spacing="10"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="通过赋予Classes round值来开启该能力"/>
+						<TextBlock Text="通过赋予Classes round值来开启弧形按钮能力"/>
+						<TextBlock Text="通过赋予Classes left，center，right值来实现按钮拼接"/>
 					</StackPanel>
 
 				</Grid>
