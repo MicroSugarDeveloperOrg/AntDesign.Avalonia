@@ -34,10 +34,10 @@
 		<Setter Property="assists:ListBoxItemAssists.SelectedBorderBrush" Value="{DynamicResource ListBoxItemSelectedBorderBrush}" />
 		<Setter Property="assists:ListBoxItemAssists.SelectedNoFocusForeground" Value="{DynamicResource ListBoxItemSelectedNoFocusForeground}" />
 		<Setter Property="assists:ListBoxItemAssists.InnerBorderBackground" Value="{DynamicResource ListBoxItemInnerBorderBackground}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource ListBoxItemBorderThickness}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="Margin" Value="{DynamicResource ListBoxItemMargin}" /> 
-		<Setter Property="CornerRadius" Value="{DynamicResource ListBoxItemCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ListBoxItemPadding}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -116,7 +116,7 @@
 
 			<!--  Selected Pressed State  -->
 			<Style Selector="^:pressed /template/ Border#PART_Container">
-				<Setter Property="BorderThickness" Value="{DynamicResource ListBoxItemSelectedPressedBorderThickness}" />
+				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 			</Style>
 		</Style>
 

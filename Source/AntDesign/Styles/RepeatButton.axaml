@@ -29,9 +29,9 @@
 		<Setter Property="assists:ButtonAssists.IsRipple"  Value="True"/>
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource RepeatButtonBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource RepeatButtonCornerRadius}" />
-		<Setter Property="Padding" Value="{StaticResource RepeatButtonPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{StaticResource OverlayPadding}" />
 		<Setter Property="FontWeight" Value="Normal" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />

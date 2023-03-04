@@ -31,9 +31,9 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource CalendarItemButtonPressedBackground}" />
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource CalendarItemButtonPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource CalendarItemButtonPressedBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource CalendarItemButtonBorderThickness}"/>
-		<Setter Property="CornerRadius" Value="{DynamicResource CalendarItemButtonCornerRadius}"/>
-		<Setter Property="Padding" Value="{DynamicResource CalendarItemButtonPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}"/>
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -71,10 +71,10 @@
 	<ControlTheme x:Key="{x:Type CalendarItem}" TargetType="CalendarItem">
 		<Setter Property="Background" Value="{DynamicResource CalendarItemBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource CalendarItemBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource CalendarItemBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource CalendarItemCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource CalendarItemPadding}" />
-		<Setter Property="Margin" Value="{DynamicResource CalendarItemMargin}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="DayTitleTemplate">
 			<Template x:DataType="x:String">
 				<TextBlock Text="{Binding}"

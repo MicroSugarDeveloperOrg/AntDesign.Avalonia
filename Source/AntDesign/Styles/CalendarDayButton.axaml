@@ -31,14 +31,14 @@
 		<Setter Property="assists:CalendarButtonAssists.TodayBackground" Value="{DynamicResource CalendarDayButtonTodayBackground}" />
 		<Setter Property="assists:CalendarButtonAssists.TodayForeground" Value="{DynamicResource CalendarDayButtonTodayForeground}" />
 		<Setter Property="assists:CalendarButtonAssists.TodayBorderBrush" Value="{DynamicResource CalendarDayButtonTodayBorderBrush}" />
-		<Setter Property="assists:CalendarButtonAssists.TodayBorderThickness" Value="{DynamicResource CalendarDayButtonTodayBorderThickness}" />
+		<Setter Property="assists:CalendarButtonAssists.TodayBorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="assists:CalendarButtonAssists.BlackOutBackground" Value="{DynamicResource CalendarDayButtonBlackOutBackground}" />
 		<Setter Property="assists:CalendarButtonAssists.BlackOutForeground" Value="{DynamicResource CalendarDayButtonBlackOutForeground}" />
 		<Setter Property="assists:CalendarButtonAssists.BlackOutBorderBrush" Value="{DynamicResource CalendarDayButtonBlackOutBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource CalendarDayButtonBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource CalendarDayButtonCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource CalendarDayButtonPadding}" />
-		<Setter Property="Margin" Value="{DynamicResource CalendarDayButtonMargin}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="ClickMode" Value="Release" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />

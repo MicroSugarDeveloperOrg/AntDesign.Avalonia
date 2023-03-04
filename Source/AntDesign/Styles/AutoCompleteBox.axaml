@@ -17,9 +17,9 @@
 		<Setter Property="assists:AutoCompleteBoxAssists.RippleColorAlpha" Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBackground" Value="{DynamicResource AutoCompleteBoxPopupBackground}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderBrush" Value="{DynamicResource AutoCompleteBoxPopupBorderBrush}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupMargin" Value="{DynamicResource FlyoutShadowPadding}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource FlyoutCornerRadius}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderThickness" Value="{DynamicResource FlyoutBorderThickness}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupMargin" Value="{DynamicResource PopupShadowPadding}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource PopupCornerRadius}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderThickness" Value="{DynamicResource PopupBorderThickness}"/>
 		<Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteBoxPopupMaxHeight}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
@@ -67,7 +67,7 @@
 						<Border CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}" 
 								Padding="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin}">
 							<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
-									Padding="{DynamicResource FlyoutPadding}"
+									Padding="{DynamicResource PopupPadding}"
 									Background="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBackground}"
 									BorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderBrush}"
 									BorderThickness="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderThickness}"

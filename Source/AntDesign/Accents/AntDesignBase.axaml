@@ -27,7 +27,7 @@
 	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/> 
 
 	<converters:StringFormatConverter x:Key="StringFormatConverter"/>
-
+	
 	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
 
 	<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
@@ -47,26 +47,25 @@
 	
 	<Thickness x:Key="Padding">0</Thickness>
 	<Thickness x:Key="OverlayPadding">3</Thickness>
-	<Thickness x:Key="FlyoutShadowPadding">10</Thickness>
-	<Thickness x:Key="FlyoutPadding">3</Thickness>
-
+	
 	<Thickness x:Key="Margin">0</Thickness>
 	<Thickness x:Key="OverlayMargin">5</Thickness>
-	<Thickness x:Key="FlyoutMargin">5</Thickness>
 	
 	<Thickness x:Key="BorderThickness">0</Thickness>
 	<Thickness x:Key="OverlayBorderThickness">1</Thickness>
-	<Thickness x:Key="FlyoutBorderThickness">0</Thickness>
 	<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
 	<Thickness x:Key="RightOverlayBorderThickness">1,1,0,1</Thickness>
 	<Thickness x:Key="LeftRightOverlayBorderThickness">0,1,0,1</Thickness>
 
 	<CornerRadius x:Key="CornerRadius">0</CornerRadius>
 	<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
-	<CornerRadius x:Key="FlyoutCornerRadius">10</CornerRadius>
 	<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
 	<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
-	
-	
+
+	<Thickness x:Key="PopupShadowPadding">10</Thickness>
+	<Thickness x:Key="PopupBorderThickness">0</Thickness>
+	<CornerRadius x:Key="PopupCornerRadius">10</CornerRadius>
+	<Thickness x:Key="PopupPadding">3</Thickness>
+	<Thickness x:Key="PopupMargin">5</Thickness>
 	
 </ResourceDictionary>

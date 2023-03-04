@@ -17,17 +17,13 @@
 					   Maximum="10"
 					   Increment="0.5"
 					   Height="40"
-					   Width="160"
-					   Margin="10"
+					   Width="160" 
 					   Watermark="Enter text" />
 		<NumericUpDown Minimum="0"
 					   Maximum="10"
 					   Increment="0.5"
 					   Height="40"
-					   Width="160"
-					   Margin="10"
-					   VerticalContentAlignment="Center"
-					   HorizontalContentAlignment="Center"
+					   Width="160"  
 					   ButtonSpinnerLocation="Left"
 					   Watermark="Enter text" />
 
@@ -36,10 +32,7 @@
 					   Maximum="10"
 					   Increment="0.5"
 					   Height="40"
-					   Width="160"
-					   Margin="10"
-					   VerticalContentAlignment="Center"
-					   HorizontalContentAlignment="Center"
+					   Width="160"  
 					   ButtonSpinnerLocation="Left"
 					   Watermark="Enter text" />
 	</StackPanel>

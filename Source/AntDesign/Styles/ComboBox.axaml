@@ -32,14 +32,6 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<Thickness x:Key="ComboBoxTopHeaderMargin">0,0,0,4</Thickness>
-	<x:Int32 x:Key="ComboBoxPopupMaxNumberOfItems">15</x:Int32>
-	<x:Int32 x:Key="ComboBoxPopupMaxNumberOfItemsThatCanBeShownOnOneSide">7</x:Int32>
-
-	<Thickness x:Key="ComboBoxPadding">12,5,0,7</Thickness>
-	<Thickness x:Key="ComboBoxEditableTextPadding">11,5,32,6</Thickness>
-	<x:Double x:Key="ComboBoxMinHeight">32</x:Double>
-
 	<ControlTheme x:Key="{x:Type ComboBox}" TargetType="ComboBox">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
@@ -58,15 +50,15 @@
 		<Setter Property="assists:ComboBoxAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="assists:ComboBoxAssists.PopupBackground" Value="{DynamicResource ComboBoxPopupBackground}"/>
 		<Setter Property="assists:ComboBoxAssists.PopupBorderBrush" Value="{DynamicResource ComboBoxPopupBorderBrush}"/>
-		<Setter Property="assists:ComboBoxAssists.PopupBorderThickness" Value="{DynamicResource ComboBoxPopupBorderThickness}"/>
-		<Setter Property="assists:ComboBoxAssists.PopupCornerRadius" Value="{DynamicResource ComboBoxPopupCornerRadius}"/>
-		<Setter Property="assists:ComboBoxAssists.PopupMargin" Value="{DynamicResource ComboBoxPopupMargin}"/>
+		<Setter Property="assists:ComboBoxAssists.PopupBorderThickness" Value="{DynamicResource PopupBorderThickness}"/>
+		<Setter Property="assists:ComboBoxAssists.PopupCornerRadius" Value="{DynamicResource PopupCornerRadius}"/>
+		<Setter Property="assists:ComboBoxAssists.PopupMargin" Value="{DynamicResource OverlayMargin}"/>
 		<Setter Property="MaxDropDownHeight" Value="{DynamicResource ComboBoxMaxDropDownHeight}" />
 		<Setter Property="PlaceholderForeground" Value="{DynamicResource ComboBoxPlaceHolderForeground}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource ComboBoxBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ComboBoxCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ComboBoxPadding}" />
-		<Setter Property="Margin" Value="{DynamicResource ComboBoxMargin}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
@@ -134,7 +126,7 @@
 								</Popup.MinWidth>
 
 								<Border x:Name="PopupBorder"
-										Padding="{DynamicResource ComboBoxPopupPadding}"
+										Padding="{DynamicResource PopupShadowPadding}"
 										Margin="{TemplateBinding assists:ComboBoxAssists.PopupMargin}"
 										Background="{TemplateBinding assists:ComboBoxAssists.PopupBackground}"
 										BorderBrush="{TemplateBinding assists:ComboBoxAssists.PopupBorderBrush}"

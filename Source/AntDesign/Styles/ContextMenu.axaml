@@ -36,9 +36,9 @@
 		<Setter Property="Background" Value="{DynamicResource ContextMenuBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ContextMenuBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ContextMenuBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource ContextMenuBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ContextMenuCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ContextMenuPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="MaxWidth" Value="{DynamicResource ContextMenuMaxWidth}" />
 		<Setter Property="MinHeight" Value="{DynamicResource ContextMenuMinHeight}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -47,7 +47,7 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Background="Transparent" 
-						Padding="{DynamicResource ContextMenuShadowBorderPadding}">
+						Padding="{DynamicResource PopupShadowPadding}">
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
@@ -60,7 +60,7 @@
 						<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
 							<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
 											ItemsPanel="{TemplateBinding ItemsPanel}"
-											Margin="{DynamicResource ContextMenuMargin}"
+											Margin="{DynamicResource Margin}"
 											KeyboardNavigation.TabNavigation="Continue"
 											Grid.IsSharedSizeScope="True" />
 						</ScrollViewer>

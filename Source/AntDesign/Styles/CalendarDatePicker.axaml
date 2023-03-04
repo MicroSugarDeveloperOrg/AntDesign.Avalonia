@@ -24,12 +24,12 @@
 		<Setter Property="assists:CalendarDatePickerAssists.RippleColorAlpha" Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="assists:CalendarDatePickerAssists.PopupBackground" Value="{DynamicResource CalendarDatePickerPopupBackground}"/>
 		<Setter Property="assists:CalendarDatePickerAssists.PopupBorderBrush" Value="{DynamicResource CalendarDatePickerPopupBorderBrush}"/>
-		<Setter Property="assists:CalendarDatePickerAssists.PopupMargin" Value="{DynamicResource CalendarDatePickerPopupMargin}"/>
-		<Setter Property="assists:CalendarDatePickerAssists.PopupCornerRadius" Value="{DynamicResource CalendarDatePickerPopupCornerRadius}"/>
-		<Setter Property="assists:CalendarDatePickerAssists.PopupBorderThickness" Value="{DynamicResource CalendarDatePickerPopupBorderThickness}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource CalendarDatePickerBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource CalendarDatePickerCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource CalendarDatePickerPadding}" />
+		<Setter Property="assists:CalendarDatePickerAssists.PopupMargin" Value="{DynamicResource OverlayMargin}"/>
+		<Setter Property="assists:CalendarDatePickerAssists.PopupCornerRadius" Value="{DynamicResource PopupCornerRadius}"/>
+		<Setter Property="assists:CalendarDatePickerAssists.PopupBorderThickness" Value="{DynamicResource BorderThickness}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -92,7 +92,7 @@
 						   HorizontalOffset="{TemplateBinding assists:CalendarDatePickerAssists.PopupMargin, Converter={StaticResource PopupHorizontalOffsetConverter}}">
 						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
 								ClipToBounds="False"
-								Padding="{DynamicResource CalendarDatePickerPopupPadding}"
+								Padding="{DynamicResource OverlayPadding}"
 								Margin="{TemplateBinding assists:CalendarDatePickerAssists.PopupMargin}"
 								Background="{TemplateBinding assists:CalendarDatePickerAssists.PopupBackground}"
 								BorderBrush="{TemplateBinding assists:CalendarDatePickerAssists.PopupBorderBrush}"

@@ -26,9 +26,9 @@
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DropDownButtonPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource DropDownButtonBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource DropDownButtonCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource DropDownButtonPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />

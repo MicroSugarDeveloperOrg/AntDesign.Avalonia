@@ -64,11 +64,11 @@
 		<Setter Property="assists:MenuItemAssists.SelectedBackground" Value="{DynamicResource MenuItemSelectedBackground}" />
 		<Setter Property="assists:MenuItemAssists.SelectedForeground" Value="{DynamicResource MenuItemSelectedForeground}" />
 		<Setter Property="assists:MenuItemAssists.SelectedBorderBrush" Value="{DynamicResource MenuItemSelectedBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource MenuItemBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource MenuItemCornerRadius}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
 		<Setter Property="Padding" Value="{DynamicResource MenuItemPadding}" />
-		<Setter Property="Margin" Value="{DynamicResource MenuItemMargin}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel>
@@ -138,13 +138,13 @@
 						   IsLightDismissEnabled="False"
 						   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
 						<Border Background="Transparent"
-							    Padding="{DynamicResource MenuItemPopupShadowBorderPadding}">
+							    Padding="{DynamicResource PopupShadowPadding}">
 							<Border Background="{DynamicResource MenuItemPopupBackground}"
 									TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
 									BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
-									BorderThickness="{DynamicResource MenuItemPopupBorderThickness}"
-									CornerRadius="{DynamicResource MenuItemPopupCornerRadius}"
-									Padding="{DynamicResource MenuItemPopupPadding}"
+									BorderThickness="{DynamicResource BorderThickness}"
+									CornerRadius="{DynamicResource OverlayCornerRadius}"
+									Padding="{DynamicResource PopupPadding}"
 									MaxWidth="{DynamicResource MenuItemPopupMaxWidth}"
 									MinHeight="{DynamicResource MenuItemPopupMinHeight}"
 									HorizontalAlignment="Stretch"

@@ -10,9 +10,9 @@
 		<Setter Property="MaxHeight" Value="{DynamicResource FlyoutPresenterMaxHeight}" />
 		<Setter Property="Background" Value="{DynamicResource FlyoutPresenterBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource FlyoutPresenterBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource FlyoutPresenterBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource FlyoutPresenterCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource FlyoutPresenterPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -20,7 +20,7 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Background="Transparent"
-						Padding="{DynamicResource FlyoutPresenterShadowBorderPadding}">
+						Padding="{DynamicResource PopupShadowPadding}">
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"

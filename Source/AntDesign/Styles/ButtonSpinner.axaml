@@ -40,9 +40,9 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButtonStyle" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
-		<Setter Property="MinWidth" Value="34" />
-		<Setter Property="BorderThickness" Value="0" />
-		<Setter Property="CornerRadius" Value="0" />
+		<Setter Property="MinWidth" Value="{DynamicResource ButtonSpinnerRepeatButtonMinWidth}" />
+		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="assists:ButtonAssists.PressedRenderTransform" Value="{x:Null}"/>
@@ -68,8 +68,8 @@
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
-		<Setter Property="HorizontalContentAlignment" Value="Center" />
-		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Focusable" Value="True"/>
 		<Setter Property="Template">
@@ -80,11 +80,11 @@
 							BorderThickness="{TemplateBinding BorderThickness}"
 							CornerRadius="{TemplateBinding CornerRadius}">
 						<DockPanel>
-							<StackPanel Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}"
+							<StackPanel x:Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}"
 										DockPanel.Dock="Right"
 										Orientation="Horizontal"
 										IsVisible="{TemplateBinding ShowButtonSpinner}">
-								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
+								<RepeatButton x:Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
 											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
 											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
 											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}" 
@@ -103,7 +103,7 @@
 											  Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}" />
 								</RepeatButton>
 
-								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
+								<RepeatButton x:Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
 											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
 											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
 											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}" 
@@ -123,7 +123,7 @@
 								</RepeatButton>
 							</StackPanel>
 
-							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
+							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
 											  Foreground="{TemplateBinding Foreground}" 
 											  Content="{TemplateBinding Content}"
 											  ContentTemplate="{TemplateBinding ContentTemplate}"

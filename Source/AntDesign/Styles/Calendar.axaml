@@ -13,9 +13,9 @@
 		<Setter Property="Background" Value="{DynamicResource CalendarBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource CalendarForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource CalendarBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource CalendarBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource CalendarCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource CalendarPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="True" />

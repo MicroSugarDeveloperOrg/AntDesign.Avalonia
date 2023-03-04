@@ -22,15 +22,15 @@
 		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource ButtonPointerOverBackground}" />
 		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource ButtonPointerOverForeground}" />
 		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonPointerOverBorderBrush}" />
-		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedBackground}" />
-		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedForeground}" />
-		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedBackground}"/>
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedForeground}"/>
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedBorderBrush}"/>
 		<Setter Property="assists:ButtonAssists.IsRipple"  Value="true"/>
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" /> 
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />

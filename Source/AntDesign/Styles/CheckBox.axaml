@@ -29,9 +29,9 @@
 		<Setter Property="assists:CheckBoxAssists.GlyphFill" Value="{DynamicResource CheckBoxGlyphFill}" />
 		<Setter Property="assists:CheckBoxAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:CheckBoxAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource CheckBoxBorderThickness}"/>
-		<Setter Property="CornerRadius" Value="{DynamicResource CheckBoxCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource CheckBoxPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -69,7 +69,7 @@
 									BorderBrush="{TemplateBinding BorderBrush}"
 									BorderThickness="{TemplateBinding BorderThickness}"
 									UseLayoutRounding="False">
-								<Viewbox UseLayoutRounding="False" Margin="{DynamicResource CheckBoxCheckGlyphMargin}">
+								<Viewbox UseLayoutRounding="False" Margin="{DynamicResource OverlayPadding}">
 									<Path x:Name="CheckGlyph" 
 								          IsVisible="false"
 								          Stretch="Uniform" 

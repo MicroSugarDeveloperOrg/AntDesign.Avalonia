@@ -35,10 +35,10 @@
 		<Setter Property="assists:CalendarButtonAssists.BlackOutBackground" Value="{DynamicResource CalendarButtonBlackOutBackground}" />
 		<Setter Property="assists:CalendarButtonAssists.BlackOutForeground" Value="{DynamicResource CalendarButtonBlackOutForeground}" />
 		<Setter Property="assists:CalendarButtonAssists.BlackOutBorderBrush" Value="{DynamicResource CalendarButtonBlackOutBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource CalendarButtonBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource CalendarButtonCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource CalendarButtonPadding}" />
-		<Setter Property="Margin" Value="{DynamicResource CalendarButtonMargin}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="ClickMode" Value="Release" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
