@@ -43,10 +43,8 @@
 		<Setter Property="MinWidth" Value="{DynamicResource ButtonSpinnerRepeatButtonMinWidth}" />
 		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />
-		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
-		<Setter Property="assists:ButtonAssists.PressedRenderTransform" Value="{x:Null}"/>
-		<Setter Property="Transitions" Value="{x:Null}"/>
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
 	</ControlTheme>
 
 	<ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
@@ -96,8 +94,7 @@
 											  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
 											  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
 											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource LeftThicknessFilterConverter}}"
-											  VerticalAlignment="Stretch"
-											  VerticalContentAlignment="Center">
+											  >
 									<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
 											  Height="{DynamicResource ButtonSpinnerIconHeight}"
 											  Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}" />
@@ -115,8 +112,7 @@
 											  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
 											  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
 											  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
-											  VerticalAlignment="Stretch"
-											  VerticalContentAlignment="Center">
+											  >
 									<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
 											  Height="{DynamicResource ButtonSpinnerIconHeight}"
 											  Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}" />
@@ -236,6 +232,10 @@
 
 		<Style Selector="^:error">
 			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
+		</Style>
+
+		<Style Selector="^:left">
+			
 		</Style>
 	</ControlTheme>
 

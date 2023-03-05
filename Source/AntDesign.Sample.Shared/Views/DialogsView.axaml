@@ -6,13 +6,13 @@
              x:Class="AntDesign.Sample.Views.DialogsView">
 	<StackPanel Spacing="20">
 
-		<ButtonSpinner Width="130" Height="40"/>
-		<ButtonSpinner AllowSpin="False" Width="130" Height="40"/>
-		<ButtonSpinner ButtonSpinnerLocation="Left"  Width="130" Height="40"/>
-		<ButtonSpinner ButtonSpinnerLocation="Left" AllowSpin="False" Width="130" Height="40"/>
-		<ButtonSpinner Theme="{StaticResource AntDesignButtonSpinnerStyle}" Width="130" Height="40"/>
-		<ButtonSpinner Theme="{StaticResource AntDesignButtonSpinnerStyle}" AllowSpin="False" Width="130" Height="40"/>
-		
+		<Border CornerRadius="5" Width="120" Height="30" BorderBrush="Gray" BorderThickness="1" ClipToBounds="False">
+			<Grid ClipToBounds="False">
+				<Border ClipToBounds="False" BorderThickness="1,0,1,1" Height="30" BorderBrush="Gray" CornerRadius="5,0,0,5" HorizontalAlignment="Left" Width="34" BoxShadow="0 0 10 2 Red"/>
+				<Border ClipToBounds="False" BorderThickness="1,0,1,1" Height="30" BorderBrush="Gray" CornerRadius="0,5,5,0" HorizontalAlignment="Right" Width="34" BoxShadow="0 0 10 2 Red"/>
+			</Grid>
+		</Border>
+
 		<NumericUpDown Minimum="0"
 					   Maximum="10"
 					   Increment="0.5"
