@@ -243,4 +243,32 @@
 		</Style>
 	</ControlTheme>
 
+	<ControlTheme x:Key="PrimaryButtonSpinnerStyle" TargetType="ButtonSpinner" BasedOn="{StaticResource {x:Type ButtonSpinner}}">
+		<Setter Property="assists:ButtonSpinnerAssists.Background" Value="{DynamicResource ButtonSpinnerPrimaryBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.Foreground" Value="{DynamicResource ButtonSpinnerPrimaryForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.BorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBackground" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverForeground" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerPrimaryPressedBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerPrimaryPressedForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryPressedBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.LeftSpinnerContent" Value="{StaticResource IncreaseSpinnerContent}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.RightSpinnerContent" Value="{StaticResource DecreaseSpinnerContent}"/>
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignPrimaryButtonSpinnerStyle" TargetType="ButtonSpinner" BasedOn="{StaticResource AntDesignButtonSpinnerStyle}">
+		<Setter Property="assists:ButtonSpinnerAssists.Background" Value="{DynamicResource ButtonSpinnerPrimaryBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.Foreground" Value="{DynamicResource ButtonSpinnerPrimaryForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.BorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBackground" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverForeground" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerPrimaryPressedBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerPrimaryPressedForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryPressedBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.LeftSpinnerContent" Value="{StaticResource IncreaseSpinnerContent}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.RightSpinnerContent" Value="{StaticResource DecreaseSpinnerContent}"/>
+	</ControlTheme>
+
 </ResourceDictionary>

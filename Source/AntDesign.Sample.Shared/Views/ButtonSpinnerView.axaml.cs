@@ -1,5 +1,4 @@
 using AntDesign.Sample.ViewModels;
-using Avalonia.Controls;
 
 namespace AntDesign.Sample.Views;
 public partial class ButtonSpinnerView : ReactiveUserControl<ButtonSpinnerViewModel>
@@ -7,5 +6,11 @@ public partial class ButtonSpinnerView : ReactiveUserControl<ButtonSpinnerViewMo
     public ButtonSpinnerView()
     {
         InitializeComponent();
+        //PART_ButtonSpinner.Spin += PART_ButtonSpinner_Spin;
+    }
+
+    private void PART_ButtonSpinner_Spin(object? sender, SpinEventArgs e)
+    {
+
     }
 }

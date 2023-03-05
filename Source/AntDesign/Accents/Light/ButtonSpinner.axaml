@@ -11,11 +11,24 @@
 	<SolidColorBrush x:Key="ButtonSpinnerButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerButtonPointerOverBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerButtonPressedBorderBrush" Color="Transparent"/>
+
+	<!--PrimaryButtonSpinnerStyle-->
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryBackground" Color="{DynamicResource AntDesignPrimaryColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryBorderBrush" Color="{DynamicResource AntDesignPrimaryColor}"/>
+
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryPointerOverBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryPointerOverForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ButtonSpinnerPrimaryPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 </ResourceDictionary>

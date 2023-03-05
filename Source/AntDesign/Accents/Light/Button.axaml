@@ -14,6 +14,7 @@
 	<SolidColorBrush x:Key="ButtonPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="ButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
+	<!--PrimaryButtonStyle-->
 	<SolidColorBrush x:Key="ButtonPrimaryBackground" Color="{DynamicResource AntDesignPrimaryColor}"/>
 	<SolidColorBrush x:Key="ButtonPrimaryForeground" Color="{DynamicResource AntDesigndAssistColor4}"/> 
 	<SolidColorBrush x:Key="ButtonPrimaryBorderBrush" Color="Transparent"/>
