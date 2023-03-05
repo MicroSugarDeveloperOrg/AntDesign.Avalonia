@@ -93,7 +93,6 @@
 											  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
 											  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
 											  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
-											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource LeftThicknessFilterConverter}}"
 											  >
 									<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
 											  Height="{DynamicResource ButtonSpinnerIconHeight}"
@@ -120,7 +119,9 @@
 							</StackPanel>
 
 							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
-											  Foreground="{TemplateBinding Foreground}" 
+											  Foreground="{TemplateBinding Foreground}"
+											  BorderBrush="{TemplateBinding BorderBrush}"
+											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource OnlyRightBorderThickness}}"
 											  Content="{TemplateBinding Content}"
 											  ContentTemplate="{TemplateBinding ContentTemplate}"
 											  Padding="{TemplateBinding Padding}"
@@ -136,12 +137,13 @@
 				<Setter Property="DockPanel.Dock" Value="Left"/>
 			</Style>
 			<Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
-				<Setter Property="BorderThickness" Value="0"/>
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"/>
 			</Style>
 			<Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
-				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource RightThicknessFilterConverter}}"/>
 				<Setter Property="CornerRadius" Value="0"/>
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftBorderThickness}}"/>
 			</Style>
 		</Style>
 
@@ -179,7 +181,6 @@
 										  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
 										  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
 										  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
-										  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource OnlyRightBorderThickness}}"
 										  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
 										  VerticalAlignment="Stretch"
 										  VerticalContentAlignment="Center">
@@ -191,6 +192,8 @@
 							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 											  Grid.Column="1"
 											  Foreground="{TemplateBinding Foreground}"
+											  BorderBrush="{TemplateBinding BorderBrush}"
+											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource LeftRightBorderThickness}}"
 											  Content="{TemplateBinding Content}"
 											  ContentTemplate="{TemplateBinding ContentTemplate}"
 											  Padding="{TemplateBinding Padding}"
@@ -210,7 +213,6 @@
 										  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
 										  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
 										  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
-										  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftBorderThickness}}"
 										  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
 										  VerticalAlignment="Stretch"
 										  VerticalContentAlignment="Center">

@@ -33,6 +33,11 @@
 							<RepeatButton Content="RepeatButton" Width="120" Height="35" />
 							 
 						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}"/>
+						</StackPanel>
+
 					</StackPanel>
 
 					<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
@@ -89,7 +94,10 @@
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<RepeatButton Content="RepeatButton" Width="120" Height="35" IsEnabled="False" />
-							 
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" IsEnabled="False" />
 						</StackPanel>
 					</StackPanel>
 
@@ -125,14 +133,14 @@
 						
 					</StackPanel>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+					<Separator Grid.Row="1" SeparatorAssists.Content="连续事件触发"/>
 
 					<StackPanel Grid.Row="2" Spacing="10"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="RepeatButton 不可用。"/>
-						<TextBlock Text="通过修改IsEnabled属性来控制是否可用。"/>
+						<TextBlock Text="注册RepeatButton Click事件，当鼠标点击不释放将会按照一定频率连续触发点击事件。"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Foreground="Red" Text="注意目前不可以通过绑定RepeatButton的Command在viewmodel中获取连续点击效果（这可能是个bug），您可以通过将Event转发到后台的方式使用。"/>
 					</StackPanel>
 				</Grid>
 			</Border>

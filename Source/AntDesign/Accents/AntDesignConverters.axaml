@@ -25,6 +25,7 @@
 
 	<antConverters:BorderThicknessFilterConverter Edges="Left" x:Key="OnlyLeftBorderThickness"/>
 	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left, Right" x:Key="LeftRightBorderThickness"/>
 
 
 	<antConverters:Thickness2MarginConverter Edges="Left" Reverse="True" x:Key="OnlyLeftReverseMargin"/>

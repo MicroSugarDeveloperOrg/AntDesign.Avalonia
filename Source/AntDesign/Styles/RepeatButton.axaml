@@ -140,4 +140,19 @@
 
 
 	</ControlTheme>
+
+	<ControlTheme x:Key="PrimaryRepeatButtonStyle" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
+		<Setter Property="Background" Value="{DynamicResource ButtonPrimaryBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonPrimaryBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource RepeatButtonPrimaryPointerOverBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource RepeatButtonPrimaryPointerOverForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource RepeatButtonPrimaryPointerOverBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource RepeatButtonPrimaryPressedBackground}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource RepeatButtonPrimaryPressedForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource RepeatButtonPrimaryPressedBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+
+	</ControlTheme>
+	
 </ResourceDictionary>
