@@ -68,6 +68,8 @@ public partial class App : Application
 
         //通用
         routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack: () => "Button 按钮");
+        routingViewLocator.AddRouter<ButtonSpinnerView, ButtonSpinnerViewModel>(routerNameCallBack: () => "ButtonSpinner 控制按钮");
+        routingViewLocator.AddRouter<RepeatButtonView, RepeatButtonViewModel>(routerNameCallBack: () => "RepeatButton 连点按钮");
 
         //数据录入
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");

@@ -48,8 +48,6 @@ public class RippleEffect : Border
     public RippleEffect()
     {
         AddHandler(PointerPressedEvent, PointerPressedHandler, RoutingStrategies.Tunnel);
-        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
-        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
     }
 
     double _realSpeedRate = 30d;
@@ -192,16 +190,6 @@ public class RippleEffect : Border
 
         if (!IsManualTrigger)
             Trigger();
-    }
-
-    void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
-    {
-
-    }
-
-    void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
-    {
-
     }
 
     bool Trigger()

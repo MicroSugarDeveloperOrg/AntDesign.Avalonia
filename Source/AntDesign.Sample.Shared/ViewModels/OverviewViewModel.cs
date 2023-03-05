@@ -5,8 +5,7 @@ namespace AntDesign.Sample.ViewModels;
 public class OverviewViewModel : ViewModelRoutableBase<OverviewViewModel>
 {
     public OverviewViewModel(IServiceProvider serviceProvider)
-    {
-        ViewModel = this;
+    { 
         _serviceProvider = serviceProvider;
 
         TriggerClickCommand = ReactiveCommand.Create(() =>

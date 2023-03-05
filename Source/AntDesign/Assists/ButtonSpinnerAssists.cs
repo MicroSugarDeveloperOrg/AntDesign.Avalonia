@@ -37,4 +37,11 @@ public class ButtonSpinnerAssists
     public static void SetPressedBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PressedBorderBrushProperty, value);
     public static IBrush? GetPressedBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PressedBorderBrushProperty);
 
+    public static readonly AvaloniaProperty<object?> LeftSpinnerContentProperty = AvaloniaProperty.RegisterAttached<ButtonSpinner, object?>("LeftSpinnerContent", typeof(ButtonSpinnerAssists));
+    public static void SetLeftSpinnerContent(AvaloniaObject dependencyObject, object value) => dependencyObject.SetValue(LeftSpinnerContentProperty, value);
+    public static object? GetLeftSpinnerContent(AvaloniaObject dependencyObject) => dependencyObject.GetValue<object?>(LeftSpinnerContentProperty);
+
+    public static readonly AvaloniaProperty<object?> RightSpinnerContentProperty = AvaloniaProperty.RegisterAttached<ButtonSpinner, object?>("RightSpinnerContent", typeof(ButtonSpinnerAssists));
+    public static void SetRightSpinnerContent(AvaloniaObject dependencyObject, object value) => dependencyObject.SetValue(RightSpinnerContentProperty, value);
+    public static object? GetRightSpinnerContent(AvaloniaObject dependencyObject) => dependencyObject.GetValue<object?>(RightSpinnerContentProperty);
 }
