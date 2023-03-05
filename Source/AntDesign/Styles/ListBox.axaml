@@ -18,7 +18,7 @@
 		<Setter Property="Background" Value="{DynamicResource ListBoxBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ListBoxForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ListBoxBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />

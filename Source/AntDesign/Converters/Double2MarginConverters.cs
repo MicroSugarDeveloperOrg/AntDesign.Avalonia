@@ -1,13 +1,5 @@
 ﻿namespace AntDesign.Converters;
 
-public enum Direction
-{
-    Left,
-    Right,
-    Top,
-    Bottom, 
-}
-
 public class Double2MarginConverters : IValueConverter
 {
     public Direction Direction { get; set; }

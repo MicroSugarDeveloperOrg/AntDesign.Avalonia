@@ -32,7 +32,7 @@
 											  x:Key="TreeViewItemxLeftMarginConverter"/>
 
 	<ControlTheme x:Key="AntDesignTreeViewToggleButtonStyle" TargetType="ToggleButton">
-		<Setter Property="Margin" Value="0" />
+		<Setter Property="Margin" Value="{StaticResource Margin}" />
 		<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
 		<Setter Property="Height" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
 		<Setter Property="Template">
@@ -79,9 +79,9 @@
 		<Setter Property="assists:TreeViewItemAssists.SelectedForeground" Value="{DynamicResource TreeViewItemSelectedForeground}" />
 		<Setter Property="assists:TreeViewItemAssists.SelectedBorderBrush" Value="{DynamicResource TreeViewItemSelectedBorderBrush}" />
 		<Setter Property="assists:TreeViewItemAssists.SelectedNoFocusForeground" Value="{DynamicResource TreeViewItemSelectedNoFocusForeground}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource TreeViewItemBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource TreeViewItemCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource TreeViewItemPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -176,7 +176,7 @@
 			 
 			<!--  Selected Pressed state  -->
 			<Style Selector="^:pressed">
-				<Setter Property="BorderThickness" Value="{DynamicResource TreeViewItemSelectedPressedBorderThickness}" />
+				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 			</Style>
 
 			<Style Selector="^:not(:focus) /template/ ContentPresenter#PART_HeaderPresenter">
@@ -251,10 +251,6 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="AntDesignTreeViewItemStyle" TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
-		<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}" />
-		<Setter Property="Background" Value="{DynamicResource TreeViewItemBackground}" />
-		<Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrush}" />
 		<Setter Property="assists:TreeViewItemAssists.PointerOverBackground" Value="{DynamicResource TreeViewItemPointerOverBackground}" />
 		<Setter Property="assists:TreeViewItemAssists.PointerOverForeground" Value="{DynamicResource TreeViewItemPointerOverForeground}" />
 		<Setter Property="assists:TreeViewItemAssists.PointerOverBorderBrush" Value="{DynamicResource TreeViewItemPointerOverBorderBrush}" />
@@ -265,10 +261,6 @@
 		<Setter Property="assists:TreeViewItemAssists.SelectedForeground" Value="{DynamicResource TreeViewItemPrimarySelectedForeground}" />
 		<Setter Property="assists:TreeViewItemAssists.SelectedBorderBrush" Value="{DynamicResource TreeViewItemPrimarySelectedBorderBrush}" />
 		<Setter Property="assists:TreeViewItemAssists.SelectedNoFocusForeground" Value="{DynamicResource TreeViewItemPrimarySelectedNoFocusForeground}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource TreeViewItemBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource TreeViewItemCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource TreeViewItemPadding}" />
-		<Setter Property="VerticalAlignment" Value="Center" />
 	</ControlTheme>
 
 </ResourceDictionary>

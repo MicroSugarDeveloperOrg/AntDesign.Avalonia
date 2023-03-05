@@ -49,9 +49,8 @@
 							HorizontalAlignment="Center"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							CornerRadius="{TemplateBinding CornerRadius}"
-							Width="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}}"
-							Height="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}}">
-
+							Width="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}, ConverterParameter=23.0}"
+							Height="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}, ConverterParameter=23.0}">
 						<Panel>
 							<Border x:Name="NormalRectangle"
 									Background="{TemplateBinding Background}"

@@ -7,7 +7,7 @@
 	<!--Converters-->
 	<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
 	<antConverters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
-	<antConverters:AutoSizeConverter x:Key="AutoSizeConverter"/>
+	<antConverters:AutoSizeConverter Default="23" x:Key="AutoSizeConverter"/>
 	<antConverters:PopupSizeConverter x:Key="PopupSizeConverter"/>
 	<antConverters:PopupHorizontalOffsetConverter x:Key="PopupHorizontalOffsetConverter"/>
 	<antConverters:BorderOffsetMarginConverter x:Key="BorderOffsetMarginConverter"/>
@@ -24,7 +24,11 @@
 	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Right" x:Key="NoBottomBorderThickness"/>
 
 	<antConverters:BorderThicknessFilterConverter Edges="Left" x:Key="OnlyLeftBorderThickness"/>
-	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/> 
+	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/>
+
+
+	<antConverters:Thickness2MarginConverter Edges="Left" Reverse="True" x:Key="OnlyLeftReverseMargin"/>
+	<antConverters:Thickness2MarginConverter Edges="Right" Reverse="True" x:Key="OnlyRightReverseMargin"/>
 
 	<converters:StringFormatConverter x:Key="StringFormatConverter"/>
 	
@@ -40,32 +44,7 @@
 	<converters:CornerRadiusToDoubleConverter x:Key="TopLeftCornerRadiusConverter" Corner="TopLeft" />
 	<converters:CornerRadiusToDoubleConverter x:Key="BottomRightCornerRadiusConverter" Corner="BottomRight" />
 
-	<!--Global-->
-	<x:Double x:Key="TitleFontSize">18</x:Double>
-	<x:Double x:Key="FontSize">14</x:Double>
-	<x:Double x:Key="SmallFontSize">12</x:Double>
-	
-	<Thickness x:Key="Padding">0</Thickness>
-	<Thickness x:Key="OverlayPadding">3</Thickness>
-	
-	<Thickness x:Key="Margin">0</Thickness>
-	<Thickness x:Key="OverlayMargin">5</Thickness>
-	
-	<Thickness x:Key="BorderThickness">0</Thickness>
-	<Thickness x:Key="OverlayBorderThickness">1</Thickness>
-	<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
-	<Thickness x:Key="RightOverlayBorderThickness">1,1,0,1</Thickness>
-	<Thickness x:Key="LeftRightOverlayBorderThickness">0,1,0,1</Thickness>
 
-	<CornerRadius x:Key="CornerRadius">0</CornerRadius>
-	<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
-	<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
-	<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
 
-	<Thickness x:Key="PopupShadowPadding">10</Thickness>
-	<Thickness x:Key="PopupBorderThickness">0</Thickness>
-	<CornerRadius x:Key="PopupCornerRadius">10</CornerRadius>
-	<Thickness x:Key="PopupPadding">3</Thickness>
-	<Thickness x:Key="PopupMargin">5</Thickness>
 	
 </ResourceDictionary>

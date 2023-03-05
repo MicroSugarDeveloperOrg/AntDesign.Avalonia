@@ -3,6 +3,35 @@
 					xmlns:converters="using:Avalonia.Controls.Converters"
 					xmlns:antConverters="using:AntDesign.Converters"
 					x:CompileBindings="True">
+
+	<!--Global-->
+	<x:Double x:Key="TitleFontSize">18</x:Double>
+	<x:Double x:Key="FontSize">14</x:Double>
+	<x:Double x:Key="SmallFontSize">12</x:Double>
+
+	<Thickness x:Key="Padding">0</Thickness>
+	<Thickness x:Key="OverlayPadding">3</Thickness>
+
+	<Thickness x:Key="Margin">0</Thickness>
+	<Thickness x:Key="OverlayMargin">5</Thickness>
+
+	<Thickness x:Key="BorderThickness">0</Thickness>
+	<Thickness x:Key="OverlayBorderThickness">1</Thickness>
+	<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
+	<Thickness x:Key="RightOverlayBorderThickness">1,1,0,1</Thickness>
+	<Thickness x:Key="LeftRightOverlayBorderThickness">0,1,0,1</Thickness>
+
+	<CornerRadius x:Key="CornerRadius">0</CornerRadius>
+	<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
+	<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
+	<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
+
+	<Thickness x:Key="PopupShadowPadding">10</Thickness>
+	<Thickness x:Key="PopupBorderThickness">0</Thickness>
+	<CornerRadius x:Key="PopupCornerRadius">10</CornerRadius>
+	<Thickness x:Key="PopupPadding">3</Thickness>
+	<Thickness x:Key="PopupMargin">5</Thickness>
+	
 	<!-- Windows -->
 	<x:Double x:Key="WindowDefaultWidth">1000</x:Double>
 	<x:Double x:Key="WindowDefaultHeight">600</x:Double>
@@ -251,8 +280,6 @@
 	<StaticResource x:Key="CalendarDayButtonPadding" ResourceKey="OverlayPadding"/>
 	<StaticResource x:Key="CalendarDayButtonMargin" ResourceKey="Margin"/>
 
-	<StaticResource x:Key="CalendarDayButtonTodayBorderThickness" ResourceKey="OverlayBorderThickness"/>
-
 	<!-- CalendarDatePicker -->
 	<StaticResource x:Key="CalendarDatePickerBorderThickness" ResourceKey="OverlayBorderThickness"/>
 	<StaticResource x:Key="CalendarDatePickerCornerRadius" ResourceKey="OverlayCornerRadius"/>
@@ -272,9 +299,6 @@
 	<!-- TreeViewItem -->
 	<x:Double x:Key="TreeViewItemIndent">16</x:Double>
 	<x:Double x:Key="TreeViewItemMinHeight">32</x:Double>
-	<StaticResource x:Key="TreeViewItemBorderThickness" ResourceKey="BorderThickness"/>
-	<StaticResource x:Key="TreeViewItemCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="TreeViewItemPadding" ResourceKey="OverlayPadding"/>
 
 	<x:Double x:Key="TreeViewItemExpandCollapseChevronSize">12</x:Double>
 	<Thickness x:Key="TreeViewItemExpandCollapseChevronMargin">12, 0, 12, 0</Thickness>
