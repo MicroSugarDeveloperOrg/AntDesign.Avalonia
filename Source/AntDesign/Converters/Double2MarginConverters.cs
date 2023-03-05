@@ -1,4 +1,6 @@
-﻿namespace AntDesign.Converters;
+﻿using AntDesign.Enums;
+
+namespace AntDesign.Converters;
 
 public class Double2MarginConverters : IValueConverter
 {

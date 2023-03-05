@@ -1,4 +1,6 @@
-﻿namespace AntDesign.Converters;
+﻿using AntDesign.Enums;
+
+namespace AntDesign.Converters;
 public class BorderThicknessFilterConverter : IValueConverter
 {
     public BorderEdges Edges { get; set; }

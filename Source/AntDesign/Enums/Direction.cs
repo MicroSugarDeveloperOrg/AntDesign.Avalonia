@@ -1,7 +1,7 @@
-﻿namespace AntDesign.Converters;
+﻿namespace AntDesign.Enums;
 
 [Flags]
-public enum BorderEdges
+public enum Direction
 {
     None = 0x0,
     Left = 0x1,
