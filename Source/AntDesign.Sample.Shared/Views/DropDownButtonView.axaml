@@ -8,13 +8,13 @@
 		<TextBlock Grid.Row="0" Text="一种具有下拉图标的按钮。"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
-			<TextBlock  Text="何时使用" FontSize="20"/>
+			<TextBlock  Text="何时使用" Classes="h3"/>
 			<TextBlock  Text=">>  在需要使用的按钮具有下拉图标时使用。"/>
 			<TextBlock  Text=">>  可以获取控制按钮的事件，根据不同事件进行相应的值的变化。"/>
 			<TextBlock  Text=">>  这是Button按钮的一种扩展，完全等同于Button。"/>
 		</StackPanel>
 
-		<TextBlock Grid.Row="4" Text="代码演示" FontSize="20"/>
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
 
 		<Grid Grid.Row="6"
 			  ColumnDefinitions="*,20,*"

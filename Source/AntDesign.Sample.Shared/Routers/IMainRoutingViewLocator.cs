@@ -11,6 +11,8 @@ public interface IMainRoutingViewLocator : IRoutingViewLocator
         where TView : IViewFor
         where TViewModel : ViewModelRoutableBase;
 
+    bool AddGroupRouter(Func<string>? routerNameCallBack);
+
     bool Navigate(string token);
     bool NavigateWithView<TView>() where TView : IViewFor;
     bool NavigateWithViewModel<TViewModel>() where TViewModel : ViewModelRoutableBase;

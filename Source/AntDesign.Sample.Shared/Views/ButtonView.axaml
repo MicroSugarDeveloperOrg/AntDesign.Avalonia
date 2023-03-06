@@ -10,7 +10,7 @@
 		<TextBlock Grid.Row="0" Text="按钮用于开始一个即时操作。"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
-			<TextBlock  Text="何时使用" FontSize="20"/>
+			<TextBlock  Text="何时使用" Classes="h3"/>
 			<TextBlock  Text="按钮用于开始一个即时操作。"/>
 			<TextBlock  Text="在 Ant Design 中我们提供了六种按钮。"/>
 			<TextBlock  Text=">>  默认按钮：用于没有主次之分的一组行动点。"/>
@@ -25,7 +25,7 @@
 			<TextBlock  Text=">>  禁用：行动点不可用的时候，一般需要文案解释。"/>
 		</StackPanel>
 
-		<TextBlock Grid.Row="4" Text="代码演示" FontSize="20"/>
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
 
 		<Grid Grid.Row="6"
 			  ColumnDefinitions="*,20,*"

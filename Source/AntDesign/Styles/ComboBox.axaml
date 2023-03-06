@@ -120,8 +120,9 @@
 
 								<Popup.MinWidth>
 									<MultiBinding Converter="{StaticResource PopupSizeConverter}">
-										<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width"/>
-										<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:ComboBoxAssists.PopupMargin)"/>
+										<TemplateBinding Property="Bounds"/>
+										<TemplateBinding Property="(assists:ComboBoxAssists.PopupMargin)"/>
+									 
 									</MultiBinding>
 								</Popup.MinWidth>
 

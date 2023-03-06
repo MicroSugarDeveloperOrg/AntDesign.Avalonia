@@ -36,15 +36,17 @@
 		</Border>
 
 		<Grid Grid.Row="2" ColumnDefinitions="Auto,15,*,15">
-			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}" >
+			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" 
+					 Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}">
 				<ListBox.DataTemplates>
 					<DataTemplate DataType="{x:Type routers:Router}">
-						<TextBlock Text="{Binding LocalizedString.Localized}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+						<TextBlock Text="{Binding LocalizedString.Localized}" 
+								   VerticalAlignment="Center" HorizontalAlignment="Center"/>
 					</DataTemplate>
 				</ListBox.DataTemplates>
 			</ListBox>
 			<Grid Grid.Column="2" RowDefinitions="40,20,*">
-				<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" FontSize="30" FontWeight="Bold"/>
+				<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" Classes="h2"/>
 				<rxui:RoutedViewHost Grid.Row="2"
 									 Margin="0,0,0,10"
 									 Router="{Binding Router}"

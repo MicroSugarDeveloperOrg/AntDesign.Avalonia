@@ -11,7 +11,7 @@ public class Router
         else
             LocalizedString = generator;
     }
-
+    public bool IsPlaceholder { get; set; } = false;
     public string Token { get; }
     public LocalizedString LocalizedString { get; }
     public Type? ViewType { get; set; }

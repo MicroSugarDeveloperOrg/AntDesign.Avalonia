@@ -1,4 +1,5 @@
 ﻿using Avalonia.ReactiveUI.Toolkit.ReactiveObjects;
+using System.Collections.Generic;
 
 namespace AntDesign.Sample.Routers;
 
@@ -50,6 +51,18 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
         _mapViewModelViews.TryAdd(viewModelType, viewType);
         _mapRoutingTokenCallBack.TryAdd(token, routerNameCallBack);
         _mapRoutingViewViewModels.TryAdd(token, (viewType, viewModelType));
+
+        return true;
+    }
+
+    public bool AddGroupRouter(Func<string>? routerNameCallBack)
+    {
+        if (routerNameCallBack is null)
+            return false;
+
+        var token = Guid.NewGuid().ToString();
+        _mapRoutingViewViewModels.TryAdd(token, (typeof(Guid), default!));
+        _mapRoutingTokenCallBack.TryAdd(token, routerNameCallBack);
 
         return true;
     }
@@ -144,6 +157,9 @@ public class MainRoutingViewLocator : IMainRoutingViewLocator
                 ViewType = viewModel.Value.view,
                 ViewModelType = viewModel.Value.viewModel,
             };
+
+            if (viewModel.Value.view == typeof(Guid))
+                router.IsPlaceholder = true;
 
             collection.Add(router);
         }

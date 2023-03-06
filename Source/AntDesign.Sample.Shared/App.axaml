@@ -11,5 +11,18 @@
 	</Application.Resources>
     <Application.Styles>
 		<AntDesign/>
+		
+		<Style Selector="TextBlock.h1">
+			<Setter Property="FontSize" Value="35" />
+			<Setter Property="FontWeight" Value="Heavy" />
+		</Style>
+		<Style Selector="TextBlock.h2">
+			<Setter Property="FontSize" Value="30" />
+			<Setter Property="FontWeight" Value="Bold" />
+		</Style>
+		<Style Selector="TextBlock.h3">
+			<Setter Property="FontSize" Value="20" />
+		</Style>
+		
     </Application.Styles>
 </Application>

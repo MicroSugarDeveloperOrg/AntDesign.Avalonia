@@ -10,7 +10,7 @@
 		<TextBlock Grid.Row="0" Text="输入框自动完成功能"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
-			<TextBlock  Text="何时使用" FontSize="20"/>
+			<TextBlock  Text="何时使用" Classes="h3"/>
 			<TextBlock  Text=">>  需要一个输入框而不是选择器。"/>
 			<TextBlock  Text=">>  需要一个输入框而不是选择器。"/>
 			<TextBlock  Text="和 Select 的区别是："/>
@@ -18,7 +18,7 @@
 			<TextBlock  Text=">>  Select 是在限定的可选项中进行选择，关键词是选择。"/>
 		</StackPanel>
 
-		<TextBlock Grid.Row="4" Text="代码演示" FontSize="20"/>
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
 
 		<Grid Grid.Row="6"
 			  ColumnDefinitions="*,20,*"

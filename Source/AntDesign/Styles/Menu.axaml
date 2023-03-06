@@ -92,8 +92,8 @@
 							   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
 							<Popup.MinWidth>
 								<MultiBinding Converter="{StaticResource PopupSizeConverter}">
-									<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width"/>
-									<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:MenuItemAssists.PopupPadding)"/>
+									<TemplateBinding Property="Bounds"/>
+									<TemplateBinding Property="(assists:MenuItemAssists.PopupPadding)"/>
 								</MultiBinding>
 							</Popup.MinWidth>
 

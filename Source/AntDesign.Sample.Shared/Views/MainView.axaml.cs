@@ -10,6 +10,8 @@ public partial class MainView : ReactiveUserControl<MainViewModel>
     {
         InitializeComponent();
         //Popup.WindowManagerAddShadowHintProperty
+       // ListBox.ItemContainerTheme
+       //ListBox.ItemContainerThemeProperty
     }
 
 }

@@ -59,8 +59,8 @@
 						<!--MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"-->
 						<Popup.MinWidth>
 							<MultiBinding Converter="{StaticResource PopupSizeConverter}">
-								<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width"/>
-								<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="(assists:AutoCompleteBoxAssists.PopupMargin)"/>
+								<TemplateBinding Property="Bounds"/>
+								<TemplateBinding Property="(assists:AutoCompleteBoxAssists.PopupMargin)"/>
 							</MultiBinding>
 						</Popup.MinWidth>
 

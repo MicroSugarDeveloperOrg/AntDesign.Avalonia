@@ -8,13 +8,13 @@
 		<TextBlock Grid.Row="0" Text="一种可连续响应的按钮。"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
-			<TextBlock  Text="何时使用" FontSize="20"/>
+			<TextBlock  Text="何时使用" Classes="h3"/>
 			<TextBlock  Text=">>  在需要进行点击按钮不释放却能够不断响应点击事件的场景中使用。"/>
 			<TextBlock  Text=">>  可以获取控制按钮的事件，根据不同事件进行相应的值的变化。"/>
 			<TextBlock  Text=">>  和 Button 类似。区别在于Button一次点击只能获取到一次点击事件。"/>
 		</StackPanel>
 
-		<TextBlock Grid.Row="4" Text="代码演示" FontSize="20"/>
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
 
 		<Grid Grid.Row="6"
 			  ColumnDefinitions="*,20,*"

@@ -9,10 +9,12 @@ public class PopupSizeConverter : IMultiValueConverter
         if (values.Count < 2)
             return default;
 
-        if (values[1] is not Thickness thickness)
+        if (values[0] is not Rect rect)
             return default;
 
-        double.TryParse(values[0]?.ToString(), out var width);
-        return width + thickness.Left + thickness.Right;
+        if (values[1] is not Thickness thickness)
+            return default;
+    
+        return rect.Width + thickness.Left + thickness.Right;
     }
 }

@@ -129,6 +129,31 @@
 				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
 			</Style>
 		</Style>
+
+		<Style Selector="^.group:disabled">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Border x:Name="PART_Container" 
+							Margin="{TemplateBinding Margin}" 
+							Padding="{TemplateBinding Padding}">
+						<Grid ColumnDefinitions="3,10,*,10,3" > 
+							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+											  Grid.Column="2"
+											  Margin="0,3,0,3"
+											  BorderBrush ="{DynamicResource DisableBorderBrush}"
+											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  FontSize="{TemplateBinding FontSize}"
+											  FontWeight="{TemplateBinding FontWeight}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+
+
+		</Style>
 		
 	</ControlTheme>
 
