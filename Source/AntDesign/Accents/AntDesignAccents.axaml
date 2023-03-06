@@ -394,10 +394,7 @@
 	<x:Double x:Key="FilesHeaderHeight">30</x:Double>
 
 	<!--ProgressBar-->
-	<StaticResource x:Key="ProgressBarBorderThickness" ResourceKey="OverlayBorderThickness"/>
-	<StaticResource x:Key="ProgressBarCornerRadius" ResourceKey="OverlayCornerRadius"/>
-	<StaticResource x:Key="ProgressBarPadding" ResourceKey="Padding"/>
-
+ 
 	<!--WindowNotificationManager-->
 	
 	

@@ -25,12 +25,12 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type ProgressBar}" TargetType="ProgressBar">
-		<Setter Property="Foreground" Value="{DynamicResource SystemControlHighlightAccentBrush}" />
 		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundBaseLowBrush}" />
+		<Setter Property="Foreground" Value="{DynamicResource SystemControlHighlightAccentBrush}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource SystemControlHighlightTransparentBrush}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource SystemControlHighlightTransparentBrush}" />
 		<Setter Property="MinHeight" Value="{DynamicResource ProgressBarThemeMinHeight}" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="Template">
@@ -48,11 +48,10 @@
 									<DoubleTransition Property="Opacity" Duration="0:0:0.197" />
 								</Transitions>
 							</Panel.Transitions>
-							<Border
-								x:Name="PART_Indicator"
-								Margin="{TemplateBinding Padding}"
-								Background="{TemplateBinding Foreground}"
-								CornerRadius="{TemplateBinding CornerRadius}" />
+							<Border x:Name="PART_Indicator"
+									Margin="{TemplateBinding Padding}"
+									Background="{TemplateBinding Foreground}"
+									CornerRadius="{TemplateBinding CornerRadius}" />
 						</Panel>
 						<Panel x:Name="IndeterminateRoot" Opacity="0">
 							<Panel.Transitions>
@@ -60,22 +59,19 @@
 									<DoubleTransition Property="Opacity" Duration="0:0:0.197" />
 								</Transitions>
 							</Panel.Transitions>
-							<Border
-								x:Name="IndeterminateProgressBarIndicator"
-								Margin="{TemplateBinding Padding}"
-								Background="{TemplateBinding Foreground}"
-								CornerRadius="{TemplateBinding CornerRadius}" />
-							<Border
-								x:Name="IndeterminateProgressBarIndicator2"
-								Margin="{TemplateBinding Padding}"
-								Background="{TemplateBinding Foreground}"
-								CornerRadius="{TemplateBinding CornerRadius}" />
+							<Border x:Name="IndeterminateProgressBarIndicator"
+									Margin="{TemplateBinding Padding}"
+									Background="{TemplateBinding Foreground}"
+									CornerRadius="{TemplateBinding CornerRadius}" />
+							<Border x:Name="IndeterminateProgressBarIndicator2"
+									Margin="{TemplateBinding Padding}"
+									Background="{TemplateBinding Foreground}"
+									CornerRadius="{TemplateBinding CornerRadius}" />
 						</Panel>
-						<LayoutTransformControl
-							x:Name="PART_LayoutTransformControl"
-							HorizontalAlignment="Center"
-							VerticalAlignment="Center"
-							IsVisible="{TemplateBinding ShowProgressText}">
+						<LayoutTransformControl x:Name="PART_LayoutTransformControl"
+												HorizontalAlignment="Center"
+												VerticalAlignment="Center"
+												IsVisible="{TemplateBinding ShowProgressText}">
 							<TextBlock Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}">
 								<TextBlock.Text>
 									<MultiBinding Converter="{StaticResource StringFormatConverter}">
