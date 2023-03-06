@@ -4,36 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.DialogsView">
-	<StackPanel Spacing="20">
-
-		<Border CornerRadius="5" Width="120" Height="30" BorderBrush="Gray" BorderThickness="1" ClipToBounds="False">
-			<Grid ClipToBounds="False">
-				<Border ClipToBounds="False" BorderThickness="1,0,1,1" Height="30" BorderBrush="Gray" CornerRadius="5,0,0,5" HorizontalAlignment="Left" Width="34" BoxShadow="0 0 10 2 Red"/>
-				<Border ClipToBounds="False" BorderThickness="1,0,1,1" Height="30" BorderBrush="Gray" CornerRadius="0,5,5,0" HorizontalAlignment="Right" Width="34" BoxShadow="0 0 10 2 Red"/>
-			</Grid>
-		</Border>
-
-		<NumericUpDown Minimum="0"
-					   Maximum="10"
-					   Increment="0.5"
-					   Height="40"
-					   Width="160" 
-					   Watermark="Enter text" />
-		<NumericUpDown Minimum="0"
-					   Maximum="10"
-					   Increment="0.5"
-					   Height="40"
-					   Width="160"  
-					   ButtonSpinnerLocation="Left"
-					   Watermark="Enter text" />
-
-		<NumericUpDown Theme="{StaticResource AntDesignNumericUpDownStyle}" 
-					   Minimum="0"
-					   Maximum="10"
-					   Increment="0.5"
-					   Height="40"
-					   Width="160"  
-					   ButtonSpinnerLocation="Left"
-					   Watermark="Enter text" />
+	<StackPanel Orientation="Horizontal" Spacing="10">
+		<StackPanel Spacing="10">
+			<ProgressBar Value="5" Maximum="10" />
+			<ProgressBar Value="50" Width="150"/>
+			<ProgressBar Value="50" Minimum="25" Maximum="75" />
+			<ProgressBar IsIndeterminate="True" Value="50" Minimum="25" Maximum="75"/>
+			<ProgressBar ShowProgressText="True" Value="50"/>
+			<ProgressBar ShowProgressText="True" Value="5" Maximum="10" Theme="{StaticResource AntDesignProgressBar}" />
+			<ProgressBar ShowProgressText="True"
+						 ProgressTextFormat="\{1\} percent"
+						 Minimum="50"
+						 Maximum="100"
+						 Value="70"/>
+		</StackPanel>
+		<ProgressBar IsIndeterminate="True" Orientation="Vertical" />
+		<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical"/>
 	</StackPanel>
 </UserControl>

@@ -10,7 +10,7 @@
 	<Color x:Key="AntDesignSecondlyColor">#FF4096FF</Color>
 	<SolidColorBrush x:Key="AntDesignSecondlyBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
-	<Color x:Key="AntDesignThirdlyColor">#FF0958D9</Color>
+	<Color x:Key="AntDesignThirdlyColor">#FF1668DC</Color>
 	<SolidColorBrush x:Key="AntDesignThirdlyBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 	<!--黑色-->
@@ -21,7 +21,7 @@
 	<Color x:Key="AntDesignAssistColor2">#5FA3A3A3</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush2" Color="{DynamicResource AntDesignAssistColor2}"/>
 
-	<!--边框色-->
+	<!--边框色 白色 黑色 背景下的不同实现-->
 	<Color x:Key="AntDesignAssistColor3">#D9D9D9</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush3" Color="{DynamicResource AntDesignAssistColor3}"/>
 

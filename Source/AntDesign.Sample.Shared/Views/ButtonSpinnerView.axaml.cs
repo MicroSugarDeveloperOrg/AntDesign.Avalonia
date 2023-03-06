@@ -11,6 +11,8 @@ public partial class ButtonSpinnerView : ReactiveUserControl<ButtonSpinnerViewMo
 
     private void PART_ButtonSpinner_Spin(object? sender, SpinEventArgs e)
     {
-
+        //LayoutTransformControl
+        //LayoutTransformControl
+        //ProgressBar.HorizontalAlignmentProperty
     }
 }
