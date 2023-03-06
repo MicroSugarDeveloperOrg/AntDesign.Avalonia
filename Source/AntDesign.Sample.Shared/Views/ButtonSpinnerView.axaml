@@ -37,11 +37,12 @@
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ButtonSpinner Width="120" Height="35" />
 							<ButtonSpinner Width="120" Height="35" ButtonSpinnerLocation="Left" />
-							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource AntDesignButtonSpinnerStyle}" />
+							<ButtonSpinner Width="120" Height="35" Classes="center" />
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}" />
-							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource AntDesignPrimaryButtonSpinnerStyle}" />
+							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}" ButtonSpinnerLocation="Left"/>
+							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}" Classes="center"  />
 						</StackPanel>
 					</StackPanel>
 
@@ -53,6 +54,7 @@
 
 						<TextBlock Text="简单的 ButtonSpinner。"/>
 						<TextBlock Text="可以通过修改ButtonSpinnerLocation属性来变换Spinner的显示位置"/>
+						<TextBlock Text="可以通过修改Classes属性来变换Spinner的显示位置"/>
 						<TextBlock Text="两种设计风格可以随意选择，通过修改Theme属性值进行不同的样式显示"/>
 						<TextBlock Text="ButtonSpinner的Content属性可以放入任何有效的控件元素，包括文字，图像等等"/>
 					</StackPanel>
@@ -86,7 +88,33 @@
 									<TextBlock Text="456"/>
 								</assists:ButtonSpinnerAssists.RightSpinnerContent>
 							</ButtonSpinner>
-							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource AntDesignButtonSpinnerStyle}">
+							<ButtonSpinner Width="120" Height="35" Classes="center" >
+								<assists:ButtonSpinnerAssists.LeftSpinnerContent>
+									<TextBlock Text="456"/>
+								</assists:ButtonSpinnerAssists.LeftSpinnerContent>
+								<assists:ButtonSpinnerAssists.RightSpinnerContent>
+									<TextBlock Text="789"/>
+								</assists:ButtonSpinnerAssists.RightSpinnerContent>
+							</ButtonSpinner>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}">
+								<assists:ButtonSpinnerAssists.LeftSpinnerContent>
+									<TextBlock Text="123"/>
+								</assists:ButtonSpinnerAssists.LeftSpinnerContent>
+								<assists:ButtonSpinnerAssists.RightSpinnerContent>
+									<TextBlock Text="345"/>
+								</assists:ButtonSpinnerAssists.RightSpinnerContent>
+							</ButtonSpinner>
+							<ButtonSpinner Width="120" Height="35" ButtonSpinnerLocation="Left"  Theme="{StaticResource PrimaryButtonSpinnerStyle}">
+								<assists:ButtonSpinnerAssists.LeftSpinnerContent>
+									<TextBlock Text="234"/>
+								</assists:ButtonSpinnerAssists.LeftSpinnerContent>
+								<assists:ButtonSpinnerAssists.RightSpinnerContent>
+									<TextBlock Text="456"/>
+								</assists:ButtonSpinnerAssists.RightSpinnerContent>
+							</ButtonSpinner>
+							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}">
 								<assists:ButtonSpinnerAssists.LeftSpinnerContent>
 									<TextBlock Text="456"/>
 								</assists:ButtonSpinnerAssists.LeftSpinnerContent>
@@ -122,8 +150,13 @@
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ButtonSpinner Width="120" Height="35" IsEnabled="False" />
 							<ButtonSpinner Width="120" Height="35" ButtonSpinnerLocation="Left" IsEnabled="False" />
-							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource AntDesignButtonSpinnerStyle}" IsEnabled="False"  />
-						</StackPanel> 
+							<ButtonSpinner Width="120" Height="35" Classes="center" IsEnabled="False"  />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}" IsEnabled="False" />
+							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}" ButtonSpinnerLocation="Left" IsEnabled="False" />
+							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}" Classes="center" IsEnabled="False"  />
+						</StackPanel>
 					</StackPanel>
 
 					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
@@ -162,14 +195,13 @@
 						</StackPanel>
 					</StackPanel>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+					<Separator Grid.Row="1" SeparatorAssists.Content="Spin事件"/>
 
 					<StackPanel Grid.Row="2" Spacing="10"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="ButtonSpinner 不可用。"/>
-						<TextBlock Text="通过修改IsEnabled属性来控制是否可用。"/>
+						<TextBlock Text="通过监听Spin事件来获取点击结果。"/> 
 					</StackPanel>
 				</Grid>
 			</Border>
