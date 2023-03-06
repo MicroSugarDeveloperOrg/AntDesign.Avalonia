@@ -4,11 +4,13 @@
 					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type UserControl}" TargetType="UserControl">
+		<Setter Property="Foreground" Value="{DynamicResource AntDesignForeground}"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="UserControl">
 				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								  Padding="{TemplateBinding Padding}"
 								  Background="{TemplateBinding Background}"
+								  Foreground="{TemplateBinding Foreground}"
 								  CornerRadius="{TemplateBinding CornerRadius}"
 								  BorderBrush="{TemplateBinding BorderBrush}"
 								  BorderThickness="{TemplateBinding BorderThickness}"
