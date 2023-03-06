@@ -152,4 +152,9 @@ public static class PARTNameHelper
     //NumericUpDown
     public static string PART_Spinner => nameof(PART_Spinner);
 
+    //ProgressBar
+    public static string PART_Indicator => nameof(PART_Indicator);
+
+    
+
 }
