@@ -69,7 +69,7 @@
 									assists:ButtonAssists.PointerOverBorderBrush="{Binding $parent.(assists:TextBoxAssists.PointerOverBorderBrush)}"
 									assists:ButtonAssists.PressedBorderBrush="{Binding $parent.(assists:TextBoxAssists.FocusBorderBrush)}"
 									assists:ButtonAssists.RippleColor="{Binding $parent.(assists:TextBoxAssists.RippleColor)}"
-									BorderThickness="{DynamicResource CalendarDatePickerButtonBorderThickness}"
+									BorderThickness="{DynamicResource BorderThickness}"
 									CornerRadius="{DynamicResource CalendarDatePickerButtonCornerRadius}">
 								<Button.Content>
 									<StackPanel Orientation="Horizontal">

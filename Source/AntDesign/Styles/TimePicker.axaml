@@ -31,9 +31,9 @@
 		<Setter Property="Background" Value="{DynamicResource TimePickerPresenterBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource TimePickerPresenterForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource TimePickerPresenterBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource TimePickerPresenterBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource TimePickerPresenterCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource TimePickerPresenterPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Name="Background"
@@ -155,9 +155,9 @@
 		<Setter Property="Background" Value="{DynamicResource TimePickerBackground}"/>
 		<Setter Property="Foreground" Value="{DynamicResource TimePickerForeground}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource TimePickerBorderBrush}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource TimePickerBorderThickness}"/>
-		<Setter Property="CornerRadius" Value="{DynamicResource TimePickerCornerRadius}"/>
-		<Setter Property="Padding" Value="{DynamicResource TimePickerPadding}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}"/>
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}"/>
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="False" />
@@ -249,10 +249,10 @@
 							   WindowManagerAddShadowHint="False"
 							   PlacementMode="Bottom"
 							   PlacementTarget="{TemplateBinding}">
-							<Border Margin="{DynamicResource TimePickerPopupMargin}"
-									Padding="{DynamicResource TimePickerPopupPadding}"
-									CornerRadius="{DynamicResource TimePickerPopupCornerRadius}"
-									BorderThickness="{DynamicResource TimePickerPopupBorderThickness}"
+							<Border Margin="{DynamicResource OverlayMargin}"
+									Padding="{DynamicResource OverlayPadding}"
+									CornerRadius="{DynamicResource PopupCornerRadius}"
+									BorderThickness="{DynamicResource PopupBorderThickness}"
 									Background="{DynamicResource TimePickerPopupBackground}"
 									BorderBrush="{DynamicResource TimePickerPopupBorderBrush}"
 									ClipToBounds="False"

@@ -13,9 +13,9 @@
 		<Setter Property="Foreground" Value="{DynamicResource NavigationCardForeground}"/>
 		<Setter Property="Background" Value="{DynamicResource NavigationCardBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource NavigationCardBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource NotificationCardBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource NotificationCardCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource NotificationCardPadding}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}"/>
 		<Setter Property="UseLayoutRounding" Value="True"/>
 		<Setter Property="RenderTransformOrigin" Value="50%,75%"/>
 		<Setter Property="Template">

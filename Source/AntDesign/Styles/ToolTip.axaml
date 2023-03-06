@@ -22,9 +22,9 @@
 		<Setter Property="Foreground" Value="{DynamicResource ToolTipForeground}" />
 		<Setter Property="Background" Value="{DynamicResource ToolTipBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ToolTipBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource ToolTipBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ToolTipCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ToolTipPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="MaxWidth" Value="{DynamicResource ToolTipContentMaxWidth}" />
 		<Setter Property="Opacity" Value="0" />
 		<Setter Property="Transitions">

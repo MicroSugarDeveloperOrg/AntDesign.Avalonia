@@ -8,9 +8,9 @@
 		<Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}" />
 		<Setter Property="TextElement.Foreground" Value="{DynamicResource MenuFlyoutPresenterForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource MenuFlyoutPresentBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource MenuFlyoutPresentCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource MenuFlyoutPresentPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="MaxWidth" Value="{DynamicResource MenuFlyoutPresenterMaxWidth}" />
 		<Setter Property="MinHeight" Value="{DynamicResource MenuFlyoutPresenterMinHeight}" />
 		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
@@ -18,7 +18,7 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Background="Transparent"
-					    Padding="{DynamicResource MenuFlyoutPresenterShadowBorderPadding}">
+					    Padding="{DynamicResource PopupShadowPadding}">
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"

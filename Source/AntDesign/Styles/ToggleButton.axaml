@@ -35,9 +35,9 @@
 		<Setter Property="assists:ToggleButtonAssists.IsRipple"  Value="true"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/> 
-		<Setter Property="BorderThickness" Value="{DynamicResource ToggleButtonBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ToggleButtonCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource ToggleButtonPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />

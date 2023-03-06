@@ -34,9 +34,9 @@
 		<Setter Property="Background" Value="{DynamicResource DatePickerPresenterBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource DatePickerPresenterForeground}" />	
 		<Setter Property="BorderBrush" Value="{DynamicResource DatePickerPresenterBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource DatePickerPresenterBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource DatePickerPresenterCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource DatePickerPresenterPadding}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border x:Name="Background" 
@@ -156,9 +156,9 @@
 		<Setter Property="Background" Value="{DynamicResource DatePickerBackground}"/>
 		<Setter Property="Foreground" Value="{DynamicResource DatePickerForeground}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource DatePickerBorderBrush}"/>
-		<Setter Property="BorderThickness" Value="{DynamicResource DatePickerBorderThickness}"/>
-		<Setter Property="CornerRadius" Value="{DynamicResource DatePickerCornerRadius}"/>
-		<Setter Property="Padding" Value="{DynamicResource DatePickerPadding}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}"/>
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}"/>
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="False" />
@@ -235,10 +235,10 @@
 							   WindowManagerAddShadowHint="False"
 							   PlacementMode="Bottom"
 							   PlacementTarget="{TemplateBinding}">
-							<Border Margin="{DynamicResource DatePickerPopupMargin}"
-									Padding="{DynamicResource DatePickerPopupPadding}"
-									CornerRadius="{DynamicResource DatePickerPopupCornerRadius}"
-									BorderThickness="{DynamicResource DatePickerPopupBorderThickness}"
+							<Border Margin="{DynamicResource OverlayMargin}"
+									Padding="{DynamicResource OverlayPadding}"
+									CornerRadius="{DynamicResource PopupCornerRadius}"
+									BorderThickness="{DynamicResource PopupBorderThickness}"
 									Background="{DynamicResource DatePickerPopupBackground}"
 									BorderBrush="{DynamicResource DatePickerPopupBorderBrush}"
 									ClipToBounds="False"
