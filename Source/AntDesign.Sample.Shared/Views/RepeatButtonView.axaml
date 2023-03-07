@@ -129,21 +129,29 @@
 								VerticalAlignment="Center">
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<RepeatButton x:Name="PART_RepeatButton" Content="RepeatButton" Width="120" Height="35" />
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Classes="round"/>
+							<RepeatButton Content="RepeatButton" Width="120" Height="35"
+										  Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="round"/>
+
+							<RepeatButton Content="RepeatButton" Width="120" Height="35"
+										  Theme="{StaticResource ShadowRepeatButtonStyle}"
+										  assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton x:Name="PART_RepeatButton" Content="RepeatButton" Width="120" Height="35" />
 							<TextBlock x:Name="PART_TextBlock" />
 						</StackPanel>
 						
 					</StackPanel>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="连续事件触发"/>
+					<Separator Grid.Row="1" SeparatorAssists.Content="圆形按钮以及连续事件触发"/>
 
 					<StackPanel Grid.Row="2" Spacing="10"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
+						<TextBlock Text="通过修改Classes 值为round来开启圆形按钮的效果"/>
 						<TextBlock Text="注册RepeatButton Click事件，当鼠标点击不释放将会按照一定频率连续触发点击事件。"/>
 						<TextBlock TextWrapping="WrapWithOverflow" Foreground="Red" Text="注意目前不可以通过绑定RepeatButton的Command在viewmodel中获取连续点击效果（这可能是个bug），您可以通过将Event转发到后台的方式使用。"/>
 					</StackPanel>

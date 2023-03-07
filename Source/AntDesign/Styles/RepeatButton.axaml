@@ -94,6 +94,12 @@
 			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
 		</Style>
 
+		<Style Selector="^.round">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
+		</Style>
+
 		<Style Selector="^.left">
 			<Style Selector="^ /template/ ripple|RippleEffect#PART_LayoutRoot">
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
@@ -203,6 +209,12 @@
 			</Style>
 		</Style>
 
+		<Style Selector="^.round">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
+		</Style>
+		
 		<Style Selector="^.left">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
