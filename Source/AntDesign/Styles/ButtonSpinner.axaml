@@ -85,7 +85,7 @@
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Focusable" Value="True"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ButtonSpinner">
 				<DataValidationErrors>
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
@@ -167,7 +167,7 @@
 
 		<Style Selector="^.center">
 			<Setter Property="Template">
-				<ControlTemplate>
+				<ControlTemplate TargetType="ButtonSpinner">
 					<DataValidationErrors>
 						<Border Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
@@ -236,7 +236,7 @@
 
 	<ControlTheme x:Key="AntDesignButtonSpinnerStyle" TargetType="ButtonSpinner" BasedOn="{StaticResource {x:Type ButtonSpinner}}"> 
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ButtonSpinner">
 				<DataValidationErrors>
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"

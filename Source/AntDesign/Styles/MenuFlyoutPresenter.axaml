@@ -16,7 +16,7 @@
 		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="MenuFlyoutPresenter">
 				<Border Background="Transparent"
 					    Padding="{DynamicResource PopupShadowPadding}">
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"

@@ -11,7 +11,7 @@
 		<Setter Property="FontWeight" Value="400" />
 		<Setter Property="FontStyle" Value="Normal" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="PopupRoot">
 				<LayoutTransformControl LayoutTransform="{TemplateBinding Transform}">
 					<Panel>
 						<Border Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" IsHitTestVisible="False" />

@@ -38,7 +38,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Button">
 				<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 									 Background="{TemplateBinding Background}"
 									 BorderBrush="{TemplateBinding BorderBrush}"
@@ -225,7 +225,7 @@
 		<Setter Property="assists:ButtonAssists.Shadows" Value="{DynamicResource ButtonShadow}" />
 		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Button">
 				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"

@@ -13,9 +13,8 @@
 		<AvaloniaResource Include="Styles\*.axaml" />
 	</ItemGroup>
 
-	<ItemGroup>                                                                                                                                                                                                                     
-		<AvaloniaXaml Remove="AntDesign.axaml" />                                                                                                                                                                                                                     
-		<AvaloniaXaml Remove="Styles\Slider.axaml" />                                                     
+	<ItemGroup>                                                                                                                                                                                                                                                      
+		<AvaloniaXaml Remove="AntDesign.axaml" />                                                          
 	</ItemGroup>
 
 	<ItemGroup>

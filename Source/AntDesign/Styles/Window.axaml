@@ -13,7 +13,7 @@
 		<Setter Property="Foreground" Value="{DynamicResource WindowForeground}"/>
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Window">
 				<Panel>
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" IsHitTestVisible="False" />
 					<Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />

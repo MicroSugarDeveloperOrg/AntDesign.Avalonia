@@ -37,7 +37,7 @@
 		<Setter Property="ClipToBounds" Value="False"/>
 		<Setter Property="Template">
 			<Setter.Value>
-				<ControlTemplate>
+				<ControlTemplate TargetType="DropDownButton">
 					<ripple:RippleEffect Name="RootBorder"
 									     Background="{TemplateBinding Background}"
 									     BorderBrush="{TemplateBinding BorderBrush}"
@@ -48,10 +48,8 @@
 
 						<Grid Name="InnerGrid">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="5" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="5" />
+								<ColumnDefinition Width="*" /> 
+								<ColumnDefinition Width="Auto" /> 
 							</Grid.ColumnDefinitions>
 
 							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
@@ -64,14 +62,14 @@
 											  RecognizesAccessKey="True" />
 
 							<PathIcon Name="DropDownGlyph"
-									  Grid.Column="2"
+									  Grid.Column="1"
+									  IsHitTestVisible="False"
+									  Margin="{DynamicResource DropDownButtonIconMargin}"
 									  Width="{DynamicResource DropDownButtonIconWidth}"
 									  Height="{DynamicResource DropDownButtonIconHeight}" 
 									  HorizontalAlignment="Right"
 									  VerticalAlignment="Center"
-									  IsHitTestVisible="False"
 									  UseLayoutRounding="False" />
-
 						</Grid>
 					</ripple:RippleEffect >
 				</ControlTemplate>
@@ -126,8 +124,6 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource DropDownButtonPrimaryPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource DropDownButtonPrimaryPressedBorderBrush}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
-
 	</ControlTheme>
-
 
 </ResourceDictionary>

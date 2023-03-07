@@ -8,7 +8,7 @@
 		<Setter Property="FontWeight" Value="400" />
 		<Setter Property="FontStyle" Value="Normal" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="OverlayPopupHost">
 				<LayoutTransformControl LayoutTransform="{TemplateBinding Transform}">
 					<VisualLayerManager IsPopup="True">
 						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"

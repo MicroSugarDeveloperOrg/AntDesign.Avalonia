@@ -80,6 +80,7 @@
 	<!-- DropDownButton -->	
 	<x:Double x:Key="DropDownButtonIconHeight">12</x:Double>
 	<x:Double x:Key="DropDownButtonIconWidth">12</x:Double>
+	<Thickness x:Key="DropDownButtonIconMargin">6,0,6,0</Thickness>
 
 	<!-- FlyoutPresenter -->
 	<x:Double x:Key="FlyoutPresenterMinWidth">96</x:Double>
@@ -308,6 +309,8 @@
 	<x:Double x:Key="FilesHeaderHeight">30</x:Double>
 
 	<!--ProgressBar-->
+	<x:Double x:Key="ProgressBarSize1">250</x:Double>
+	<x:Double x:Key="ProgressBarSize2">8</x:Double>
 
 	<!--WindowNotificationManager-->
 	

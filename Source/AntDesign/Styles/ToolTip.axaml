@@ -33,11 +33,10 @@
 			</Transitions>
 		</Setter>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ToolTip">
 				<DockPanel x:Name="TooltipPanel">
 					<PathIcon x:Name="TooltipArrowButton"
-							  Foreground="{TemplateBinding Background}"
-						      />
+							  Foreground="{TemplateBinding Background}"/>
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							BorderThickness="{TemplateBinding BorderThickness}"
 							Background="{TemplateBinding Background}"

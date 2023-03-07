@@ -4,7 +4,7 @@
 
 	<ControlTheme x:Key="{x:Type NativeMenuBar}" TargetType="NativeMenuBar">
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="NativeMenuBar">
 				<Menu IsVisible="{Binding !$parent[TopLevel].(NativeMenu.IsNativeMenuExported)}"
 					  Items="{Binding $parent[TopLevel].(NativeMenu.Menu).Items}">
 					<Menu.Styles>

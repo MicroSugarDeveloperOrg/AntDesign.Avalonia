@@ -39,6 +39,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ScrollViewer.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/SelectableTextBlock.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Separator.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Dark/Slider.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/TextBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/TimePicker.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Dark/ToggleButton.axaml" />

@@ -35,7 +35,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Center"/> 
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="NumericUpDown">
 				<ButtonSpinner x:Name="{x:Static helpers:PARTNameHelper.PART_Spinner}"
 							   Background="{TemplateBinding Background}"
 							   BorderThickness="{TemplateBinding BorderThickness}"
@@ -92,7 +92,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="NumericUpDown">
 				<ButtonSpinner x:Name="{x:Static helpers:PARTNameHelper.PART_Spinner}"
 							   Theme="{StaticResource AntDesignButtonSpinnerStyle}"
 							   Background="{TemplateBinding Background}"

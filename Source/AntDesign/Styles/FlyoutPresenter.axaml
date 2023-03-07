@@ -18,7 +18,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Stretch" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="FlyoutPresenter">
 				<Border Background="Transparent"
 						Padding="{DynamicResource PopupShadowPadding}">
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"

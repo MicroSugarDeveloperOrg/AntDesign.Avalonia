@@ -50,7 +50,7 @@
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ToggleSwitch">
 				<Grid TemplatedControl.IsTemplateFocusTarget="True">
 					<Grid.RowDefinitions >
 						<RowDefinition Height="Auto"/>
@@ -277,7 +277,7 @@
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ToggleSwitch">
 				<Grid TemplatedControl.IsTemplateFocusTarget="True">
 					<Grid.ColumnDefinitions >
 						<ColumnDefinition Width="Auto"/>

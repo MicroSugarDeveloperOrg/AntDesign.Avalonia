@@ -44,7 +44,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="CalendarDayButton">
 				<Panel Margin="{TemplateBinding Padding}">
 					<Border x:Name="Root"
 							Background="{TemplateBinding Background}"

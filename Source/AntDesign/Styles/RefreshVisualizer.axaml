@@ -10,7 +10,7 @@
 		<Setter Property="Background" Value="{DynamicResource RefreshVisualizerBackground}"/>
 		<Setter Property="Foreground" Value="{DynamicResource RefreshVisualizerForeground}"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="RefreshVisualizer">
 				<Grid Name="{x:Static helpers:PARTNameHelper.PART_Root}"
 					  MinHeight="{DynamicResource RefreshVisualizerMinHeight}"
 					  Background="{TemplateBinding Background}">

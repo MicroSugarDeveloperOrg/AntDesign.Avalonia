@@ -4,11 +4,10 @@
 					x:CompileBindings="True"
                     x:DataType="WindowNotificationManager">
 	
-	<ControlTheme x:Key="{x:Type WindowNotificationManager}" 
-				  TargetType="WindowNotificationManager">
+	<ControlTheme x:Key="{x:Type WindowNotificationManager}" TargetType="WindowNotificationManager">
 		<Setter Property="Margin" Value="0 0" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="WindowNotificationManager">
 				<ReversibleStackPanel Name="{x:Static helpers:PARTNameHelper.PART_Items}">
 					<ReversibleStackPanel.DataTemplates>
 						<DataTemplate DataType="INotification">

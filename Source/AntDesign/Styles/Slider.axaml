@@ -49,7 +49,7 @@
 
 	<ControlTheme x:Key="FluentSliderHorizontalRepeatButton" TargetType="RepeatButton">
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="RepeatButton">
 				<Grid>
 					<Border Name="FocusTarget" Margin="0,-10" Background="Transparent" />
 					<Border Name="TrackBackground"
@@ -64,7 +64,7 @@
 
 	<ControlTheme x:Key="FluentSliderVerticalRepeatButton" TargetType="RepeatButton">
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="RepeatButton">
 				<Grid>
 					<Border Name="FocusTarget" Margin="0,-10" Background="Transparent" />
 					<Border Name="TrackBackground"
@@ -91,7 +91,7 @@
 
 	<ControlTheme x:Key="{x:Type Slider}" TargetType="Slider">
 		<Setter Property="Background" Value="{DynamicResource SliderTrackFill}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource SliderBorderThemeThickness}" />
+		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
 		<Setter Property="Foreground" Value="{DynamicResource SliderTrackValueFill}" />
 		<Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
 		<Style Selector="^:horizontal">

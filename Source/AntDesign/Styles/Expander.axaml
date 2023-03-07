@@ -76,8 +76,8 @@
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
-			<ControlTemplate>
-				<Border x:Name="PART_Container"
+			<ControlTemplate TargetType="ToggleButton">
+				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
@@ -181,8 +181,8 @@
 
 		<Style Selector="^.end">
 			<Setter Property="Template">
-				<ControlTemplate>
-					<Border x:Name="PART_Container"
+				<ControlTemplate TargetType="ToggleButton">
+					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"
 							Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
@@ -269,7 +269,7 @@
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Expander">
 				<DockPanel MinWidth="{TemplateBinding MinWidth}"
 						   MaxWidth="{TemplateBinding MaxWidth}">
 					<ToggleButton x:Name="ExpanderHeader" 

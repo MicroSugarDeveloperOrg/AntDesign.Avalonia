@@ -43,8 +43,8 @@
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />	
 		<Setter Property="Template">
-			<ControlTemplate>
-				<Border x:Name="PART_Container" 
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}" 
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
@@ -132,8 +132,8 @@
 
 		<Style Selector="^.group:disabled">
 			<Setter Property="Template">
-				<ControlTemplate>
-					<Border x:Name="PART_Container" 
+				<ControlTemplate TargetType="ListBoxItem">
+					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}" 
 							Margin="{TemplateBinding Margin}" 
 							Padding="{TemplateBinding Padding}">
 						<Grid ColumnDefinitions="3,10,*,10,3" > 

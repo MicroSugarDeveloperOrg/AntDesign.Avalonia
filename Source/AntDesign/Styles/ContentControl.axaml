@@ -4,7 +4,7 @@
 					x:CompileBindings="True">
 	<ControlTheme x:Key="{x:Type ContentControl}" TargetType="ContentControl">
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ContentControl">
 				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								  Background="{TemplateBinding Background}"
 								  BorderBrush="{TemplateBinding BorderBrush}"

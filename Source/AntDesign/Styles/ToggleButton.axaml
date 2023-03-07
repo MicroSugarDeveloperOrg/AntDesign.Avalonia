@@ -45,8 +45,8 @@
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
-			<ControlTemplate>
-				<ripple:RippleEffect x:Name="PART_Container" 
+			<ControlTemplate TargetType="ToggleButton">
+				<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_Container}" 
 									 Background="{TemplateBinding Background}"
 									 BorderBrush="{TemplateBinding BorderBrush}"
 								     BorderThickness="{TemplateBinding BorderThickness}"
@@ -145,8 +145,8 @@
 
 		<Style Selector="^.end">
 			<Setter Property="Template">
-				<ControlTemplate>
-					<ripple:RippleEffect x:Name="PART_Container"
+				<ControlTemplate TargetType="ToggleButton">
+					<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"
 										 Background="{TemplateBinding Background}"
 										 BorderBrush="{TemplateBinding BorderBrush}"
 										 BorderThickness="{TemplateBinding BorderThickness}"

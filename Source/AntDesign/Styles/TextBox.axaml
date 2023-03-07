@@ -157,7 +157,7 @@
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="TextBox">
 				<DataValidationErrors>
 					<ripple:RippleEffectx x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
 										  Background="{TemplateBinding Background}"
@@ -344,7 +344,7 @@
 
 	<ControlTheme x:Key="ShadowTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="TextBox">
 				<DataValidationErrors>
 					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
 							Background="{TemplateBinding Background}"

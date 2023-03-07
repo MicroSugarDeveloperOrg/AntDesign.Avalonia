@@ -24,7 +24,7 @@
 		<Setter Property="Background" Value="{DynamicResource ScrollBarThumbBackground}"/>
 		<Setter Property="Template">
 			<Setter.Value>
-				<ControlTemplate>
+				<ControlTemplate  TargetType="Thumb">
 					<Border Background="{TemplateBinding Background}"
 							CornerRadius="{TemplateBinding CornerRadius}"/>
 				</ControlTemplate>
@@ -54,7 +54,7 @@
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="Opacity" Value="0" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="RepeatButton">
 				<Border Background="{TemplateBinding Background}" />
 			</ControlTemplate>
 		</Setter>
@@ -64,7 +64,7 @@
 		<Setter Property="Opacity" Value="0" />
 		<Setter Property="TextElement.Foreground" Value="{DynamicResource ScrollBarLineButtonForeground}"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="RepeatButton">
 				<ContentPresenter Background="{DynamicResource ScrollBarLineButtonBackground}"
 								  BorderBrush="{DynamicResource ScrollBarLineButtonBorderBrush}"
 								  Content="{TemplateBinding Content}"/>
@@ -110,7 +110,7 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource ScrollBarBorderBrush}" />
 		<Style Selector="^:vertical">
 			<Setter Property="Template">
-				<ControlTemplate>
+				<ControlTemplate TargetType="ScrollBar">
 					<Grid x:Name="Root">
 						<Border x:Name="VerticalRoot"
 								Background="{TemplateBinding Background}"
@@ -187,7 +187,7 @@
 
 		<Style Selector="^:horizontal">
 			<Setter Property="Template">
-				<ControlTemplate>
+				<ControlTemplate TargetType="ScrollBar">
 					<Grid x:Name="Root">
 						<Border x:Name="HorizontalRoot"
 								Background="{TemplateBinding Background}"

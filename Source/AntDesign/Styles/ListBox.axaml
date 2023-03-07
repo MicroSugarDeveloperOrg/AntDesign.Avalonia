@@ -25,7 +25,7 @@
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ListBox">
 				<Border Name="border"
 						ClipToBounds="{TemplateBinding ClipToBounds}"
 						Background="{TemplateBinding Background}"

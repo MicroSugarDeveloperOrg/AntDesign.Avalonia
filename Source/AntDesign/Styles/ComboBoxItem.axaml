@@ -40,7 +40,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ComboBoxItem">
 				<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								  Content="{TemplateBinding Content}"
 								  Foreground="{TemplateBinding Foreground}"

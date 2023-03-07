@@ -36,7 +36,7 @@
 		<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
 		<Setter Property="Height" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ToggleButton">
 				<Border Background="Transparent"
 						Width="{TemplateBinding Width}"
 						Height="{TemplateBinding Height}"
@@ -84,7 +84,7 @@
 		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="TreeViewItem">
 				<StackPanel>
 					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							Classes="TreeViewItemLayoutRoot"
@@ -203,7 +203,7 @@
 
 		<Style Selector="^.end">
 			<Setter Property="Template">
-				<ControlTemplate>
+				<ControlTemplate TargetType="TreeViewItem">
 					<StackPanel>
 						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 								Classes="TreeViewItemLayoutRoot"

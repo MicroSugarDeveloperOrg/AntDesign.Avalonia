@@ -6,7 +6,7 @@
 
 	<ControlTheme x:Key="{x:Type Carousel}" TargetType="Carousel">
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Carousel">
 				<ScrollViewer Name="{x:Static helpers:PARTNameHelper.PART_ScrollViewer}"
 							  Background="{TemplateBinding Background}"
 							  BorderBrush="{TemplateBinding BorderBrush}"

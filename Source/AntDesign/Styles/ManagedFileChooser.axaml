@@ -139,7 +139,7 @@
 			</ResourceDictionary>
 		</ControlTheme.Resources> 
 		<Setter Property="Template" x:DataType="internal:ManagedFileChooserViewModel">
-			<ControlTemplate>
+			<ControlTemplate TargetType="dialogs:ManagedFileChooser">
 				<Grid RowDefinitions="Auto,*,Auto">
 					<Border x:Name="NavBar"
 							Grid.Row="0"
@@ -218,8 +218,8 @@
 								<Grid.Styles>
 									<Style Selector="GridSplitter">
 										<Setter Property="Background" Value="{DynamicResource GridSplitterBackground}"/>
-										<Setter Property="Template">
-											<ControlTemplate>
+										<Setter Property="Template" >
+											<ControlTemplate TargetType="GridSplitter">
 												<Border VerticalAlignment="Stretch"
 														BorderThickness="0"
 														Background="#01000000">

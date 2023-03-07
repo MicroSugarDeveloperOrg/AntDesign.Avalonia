@@ -108,17 +108,17 @@
 		</Style>
 		
 		<Style Selector="^:horizontal">
-			<Setter Property="Width" Value="250" />
+			<Setter Property="Width" Value="{DynamicResource ProgressBarSize1}" />
 			<Style Selector="^[ShowProgressText=False]">
-				<Setter Property="Height" Value="8" />
+				<Setter Property="Height" Value="{DynamicResource ProgressBarSize2}" />
 			</Style>
 		</Style>
 		
 		<Style Selector="^:vertical">
 			<Style Selector="^[ShowProgressText=False]">
-				<Setter Property="Width" Value="8" />
+				<Setter Property="Width" Value="{DynamicResource ProgressBarSize2}" />
 			</Style>
-			<Setter Property="Height" Value="250" />
+			<Setter Property="Height" Value="{DynamicResource ProgressBarSize1}" />
 		</Style>
 		
 		<Style Selector="^:vertical /template/ LayoutTransformControl#PART_LayoutTransformControl">
@@ -231,8 +231,8 @@
 		<Setter Property="Foreground" Value="{DynamicResource ProgressBarForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ProgressBarBorderBrush}" />
 		<Setter Property="assists:ProgressBarAssists.ContentForeground" Value="{DynamicResource AntDesignForegroundColor}" />
-		<Setter Property="assists:ProgressBarAssists.BarWidth" Value="250" />
-		<Setter Property="assists:ProgressBarAssists.BarHeight" Value="8" />
+		<Setter Property="assists:ProgressBarAssists.BarWidth" Value="{DynamicResource ProgressBarSize1}" />
+		<Setter Property="assists:ProgressBarAssists.BarHeight" Value="{DynamicResource ProgressBarSize2}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
@@ -316,8 +316,8 @@
 		</Setter>
 
 		<Style Selector="^:vertical">
-			<Setter Property="assists:ProgressBarAssists.BarWidth" Value="8" />
-			<Setter Property="assists:ProgressBarAssists.BarHeight" Value="250" />
+			<Setter Property="assists:ProgressBarAssists.BarWidth" Value="{DynamicResource ProgressBarSize2}" />
+			<Setter Property="assists:ProgressBarAssists.BarHeight" Value="{DynamicResource ProgressBarSize1}" />
 			<Setter Property="Template">
 				<ControlTemplate TargetType="ProgressBar">
 					<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}" RowDefinitions="*,10,Auto">

@@ -7,7 +7,7 @@
 		<Setter Property="Background" Value="{DynamicResource EmbeddableControlRootBackground}"/>
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="EmbeddableControlRoot">
 				<Panel>
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" IsHitTestVisible="False" />
 					<Border Background="{TemplateBinding Background}">

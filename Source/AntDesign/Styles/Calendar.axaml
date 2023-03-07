@@ -20,18 +20,16 @@
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="True" />
 		<Setter Property="Template">
-			<ControlTemplate>
-				<StackPanel
-					Name="{x:Static helpers:PARTNameHelper.PART_Root}"
-					HorizontalAlignment="Center"
-					ClipToBounds="True">
-					<CalendarItem
-						Name="{x:Static helpers:PARTNameHelper.PART_CalendarItem}"
-						Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						CornerRadius="{TemplateBinding CornerRadius}"
-						HeaderBackground="{TemplateBinding HeaderBackground}" />
+			<ControlTemplate TargetType="Calendar">
+				<StackPanel x:Name="{x:Static helpers:PARTNameHelper.PART_Root}"
+							HorizontalAlignment="Center"
+							ClipToBounds="True">
+					<CalendarItem x:Name="{x:Static helpers:PARTNameHelper.PART_CalendarItem}"
+								  Background="{TemplateBinding Background}"
+								  BorderBrush="{TemplateBinding BorderBrush}"
+								  BorderThickness="{TemplateBinding BorderThickness}"
+								  CornerRadius="{TemplateBinding CornerRadius}"
+								  HeaderBackground="{TemplateBinding HeaderBackground}" />
 				</StackPanel>
 			</ControlTemplate>
 		</Setter>

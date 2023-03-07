@@ -39,7 +39,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Button">
 				<ContentPresenter x:Name="Text"
 								  Background="{TemplateBinding Background}"
 								  Foreground="{TemplateBinding Foreground}"
@@ -84,7 +84,7 @@
 			</Template>
 		</Setter>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="CalendarItem">
 				<Border BorderThickness="{TemplateBinding BorderThickness}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"

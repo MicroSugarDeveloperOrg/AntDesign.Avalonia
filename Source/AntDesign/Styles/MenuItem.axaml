@@ -70,7 +70,7 @@
 		<Setter Property="Padding" Value="{DynamicResource MenuItemPadding}" />
 		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="MenuItem">
 				<Panel>
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							Background="{TemplateBinding Background}"
@@ -257,7 +257,7 @@
 
 		<Style Selector="^:separator">
 			<Setter Property="Template">
-				<ControlTemplate>
+				<ControlTemplate TargetType="MenuItem">
 					<Separator/>
 				</ControlTemplate>
 			</Setter>

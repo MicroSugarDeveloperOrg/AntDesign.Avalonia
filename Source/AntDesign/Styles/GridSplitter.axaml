@@ -12,7 +12,7 @@
 			</Template>
 		</Setter>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="GridSplitter">
 				<Border BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}"

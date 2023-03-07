@@ -23,7 +23,7 @@
 	<ControlTheme x:Key="{x:Type ScrollViewer}" TargetType="ScrollViewer">
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ScrollViewer">
 				<Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
 					<ScrollContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 											Grid.Row="0"

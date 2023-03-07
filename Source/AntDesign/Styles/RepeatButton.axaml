@@ -39,7 +39,7 @@
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="RepeatButton">
 				<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 								     Background="{TemplateBinding Background}"		
 									 BorderBrush="{TemplateBinding BorderBrush}"
@@ -156,7 +156,7 @@
 
 	<ControlTheme x:Key="ShadowRepeatButtonStyle" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="RepeatButton">
 				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"

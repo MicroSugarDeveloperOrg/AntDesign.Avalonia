@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:assists="using:AntDesign.Assists"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.RepeatButtonView">
 	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
@@ -31,11 +32,14 @@
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<RepeatButton Content="RepeatButton" Width="120" Height="35" />
-							 
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" 
+										  Theme="{StaticResource PrimaryRepeatButtonStyle}"/>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}"/>
+							<RepeatButton Content="RepeatButton" Width="120" Height="35"
+										  Theme="{StaticResource ShadowRepeatButtonStyle}"
+										  assists:ButtonAssists.Shadows="0 0 10 1 Green"/>
 						</StackPanel>
 
 					</StackPanel>
@@ -48,6 +52,7 @@
 
 						<TextBlock Text="简单的 RepeatButton。"/>  
 						<TextBlock Text="RepeatButton的Content属性可以放入任何有效的控件元素，包括文字，图像等等"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.Shadows设置ShadowRepeatButtonStyle按钮Shadow(这是AntDesign库提供的一个扩展依赖属性)"/>
 					</StackPanel>
 				</Grid>
 

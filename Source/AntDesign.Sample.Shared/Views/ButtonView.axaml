@@ -64,7 +64,6 @@
 						<TextBlock Text="通过Theme设置不同按钮的样式"/>
 						<TextBlock Text="可以在按钮中放置任何东西包括文字，图片，Path等"/>
 						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.Shadows设置ShadowButtonStyle按钮Shadow(这是AntDesign库提供的一个扩展依赖属性)"/>
-
 					</StackPanel>
 
 				</Grid>

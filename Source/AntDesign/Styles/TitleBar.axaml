@@ -15,7 +15,7 @@
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="Background" Value="#eef4f9" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="TitleBar">
 				<Panel HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
 					   VerticalAlignment="Stretch">
 					<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_MouseTracker}"

@@ -19,7 +19,7 @@
 		<Setter Property="UseLayoutRounding" Value="True"/>
 		<Setter Property="RenderTransformOrigin" Value="50%,75%"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="NotificationCard">
 				<LayoutTransformControl x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutTransformControl}"
 										Width="{TemplateBinding Width}"
 										UseRenderTransform="True">

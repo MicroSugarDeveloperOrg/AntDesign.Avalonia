@@ -19,7 +19,7 @@
 		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="Focusable" Value="False" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Separator">
 				<Panel>
 					<Border Height="{TemplateBinding assists:SeparatorAssists.Height}"
 							Background="{TemplateBinding Background}"

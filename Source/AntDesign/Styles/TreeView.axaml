@@ -26,7 +26,7 @@
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="TreeView">
 				<Border BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}">
