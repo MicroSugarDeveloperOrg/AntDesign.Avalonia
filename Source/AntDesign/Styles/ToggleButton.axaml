@@ -34,7 +34,8 @@
 		<Setter Property="assists:ToggleButtonAssists.IndeterminateBorderBrush" Value="{DynamicResource ToggleButtonIndeterminateBorderBrush}" />	
 		<Setter Property="assists:ToggleButtonAssists.IsRipple"  Value="true"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:ToggleButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/> 
+		<Setter Property="assists:ToggleButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="assists:ToggleButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
@@ -51,11 +52,11 @@
 									 BorderBrush="{TemplateBinding BorderBrush}"
 								     BorderThickness="{TemplateBinding BorderThickness}"
 									 CornerRadius="{TemplateBinding CornerRadius}" 
+									 Padding="{TemplateBinding Padding}" 
 									 IsRipple="{TemplateBinding assists:ToggleButtonAssists.IsRipple}"
 									 RippleColor="{TemplateBinding assists:ToggleButtonAssists.RippleColor}"
 									 RippleColorAlpha="{TemplateBinding assists:ToggleButtonAssists.RippleColorAlpha}">
-					<Grid ColumnDefinitions="Auto, *"
-						  Margin="{TemplateBinding Padding}">
+					<Grid ColumnDefinitions="Auto, *">
 						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
 										  Grid.Column="1"
 										  Foreground="{TemplateBinding Foreground}" 
@@ -151,11 +152,11 @@
 										 BorderBrush="{TemplateBinding BorderBrush}"
 										 BorderThickness="{TemplateBinding BorderThickness}"
 										 CornerRadius="{TemplateBinding CornerRadius}"
+										 Padding="{TemplateBinding Padding}" 
 										 IsRipple="{TemplateBinding assists:ToggleButtonAssists.IsRipple}"
 										 RippleColor="{TemplateBinding assists:ToggleButtonAssists.RippleColor}"
 										 RippleColorAlpha="{TemplateBinding assists:ToggleButtonAssists.RippleColorAlpha}">
-						<Grid ColumnDefinitions="*,Auto" 
-							  Margin="{TemplateBinding Padding}">
+						<Grid ColumnDefinitions="*,Auto">
 							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 											  Foreground="{TemplateBinding Foreground}"
 											  Content="{TemplateBinding Content}"
@@ -181,6 +182,56 @@
 					</ripple:RippleEffect>
 				</ControlTemplate>
 			</Setter>
+		</Style>
+
+		<Style Selector="^.round">
+			<Style Selector="^ /template/ RippleEffect#PART_Container">
+				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
+		</Style>
+		
+		<Style Selector="^.left">
+			<Style Selector="^ /template/ RippleEffect#PART_Container">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.center">
+			<Style Selector="^ /template/ RippleEffect#PART_Container">
+				<Setter Property="CornerRadius" Value="0" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ RippleEffect#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:checked">
+				<Style Selector="^ /template/ RippleEffect#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^.right">
+			<Style Selector="^ /template/ RippleEffect#PART_Container">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ RippleEffect#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:checked">
+				<Style Selector="^ /template/ RippleEffect#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
 		</Style>
 	</ControlTheme>
 
@@ -212,6 +263,178 @@
 				<Setter Property="assists:ToggleButtonAssists.IndeterminateForeground" Value="{DynamicResource ButtonPrimaryPressedForeground}" />
 			</Style>
 		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="ShadowToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+		<Setter Property="assists:ToggleButtonAssists.Shadows" Value="{DynamicResource ButtonShadow}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Padding="{TemplateBinding Padding}"
+						BoxShadow="{TemplateBinding assists:ToggleButtonAssists.Shadows}">
+					<Grid ColumnDefinitions="Auto, *"
+						  Margin="{TemplateBinding Padding}">
+						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+										  Grid.Column="1"
+										  Foreground="{TemplateBinding Foreground}"
+										  Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
+										  RecognizesAccessKey="True"
+										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										  RenderTransform ="none">
+							<ContentPresenter.Transitions>
+								<Transitions>
+									<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+								</Transitions>
+							</ContentPresenter.Transitions>
+						</ContentPresenter>
+						<ContentPresenter x:Name="PART_InnerContent"
+										  Grid.Column="0"
+										  HorizontalAlignment="Center"
+										  VerticalAlignment="Center"
+										  Content="{TemplateBinding assists:ToggleButtonAssists.InnerContent}"
+										  ContentTemplate="{TemplateBinding assists:ToggleButtonAssists.InnerContentTemplate}"
+										  Foreground="{TemplateBinding Foreground}"/>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.PointerOverBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.PointerOverForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="RenderTransform" Value="{TemplateBinding assists:ToggleButtonAssists.PressedRenderTransform}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.PressedForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.CheckedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.CheckedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.CheckedForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:indeterminate">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssists.IndeterminateBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleButtonAssists.IndeterminateBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleButtonAssists.IndeterminateForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.end">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="ToggleButton">
+					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							BoxShadow="{TemplateBinding assists:ToggleButtonAssists.Shadows}">
+						<Grid ColumnDefinitions="*,Auto"
+							  Margin="{TemplateBinding Padding}">
+							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+											  Foreground="{TemplateBinding Foreground}"
+											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  RecognizesAccessKey="True"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  RenderTransform ="none">
+								<ContentPresenter.Transitions>
+									<Transitions>
+										<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+									</Transitions>
+								</ContentPresenter.Transitions>
+							</ContentPresenter>
+							<ContentPresenter x:Name="PART_InnerContent"
+											  Grid.Column="1"
+											  HorizontalAlignment="Center"
+											  VerticalAlignment="Center"
+											  Content="{TemplateBinding assists:ToggleButtonAssists.InnerContent}"
+											  ContentTemplate="{TemplateBinding assists:ToggleButtonAssists.InnerContentTemplate}"
+											  Foreground="{TemplateBinding Foreground}"/>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="^.round">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.left">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.center">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="CornerRadius" Value="0" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:checked">
+				<Style Selector="^ /template/ Border#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^.right">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:checked">
+				<Style Selector="^ /template/ Border#PART_Container">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+		</Style>
+		
 	</ControlTheme>
 	
 </ResourceDictionary>

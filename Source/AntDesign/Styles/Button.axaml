@@ -28,6 +28,7 @@
 		<Setter Property="assists:ButtonAssists.IsRipple"  Value="true"/>
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" /> 
@@ -191,7 +192,7 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonTextPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonTextPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.IsRipple"  Value="false"/>
-		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
+
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 
 		<Style Selector="^.danger">
@@ -213,7 +214,6 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonLinkPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonLinkPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.IsRipple"  Value="false"/>
-		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 	</ControlTheme>
 
@@ -223,7 +223,6 @@
 
 	<ControlTheme x:Key="ShadowButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
 		<Setter Property="assists:ButtonAssists.Shadows" Value="{DynamicResource ButtonShadow}" />
-		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Button">
 				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"

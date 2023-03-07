@@ -83,4 +83,7 @@ public class ToggleButtonAssists
     public static void SetInnerContentTemplate(AvaloniaObject dependencyObject, IDataTemplate? value) => dependencyObject.SetValue(InnerContentTemplateProperty, value);
     public static IDataTemplate? GetInnerContentTemplate(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IDataTemplate?>(InnerContentTemplateProperty);
 
+    public static readonly AvaloniaProperty<BoxShadows> ShadowsProperty = AvaloniaProperty.RegisterAttached<ToggleButton, BoxShadows>("Shadows", typeof(ToggleButtonAssists));
+    public static void SetShadows(AvaloniaObject dependencyObject, BoxShadows value) => dependencyObject.SetValue(ShadowsProperty, value);
+    public static BoxShadows GetShadows(AvaloniaObject dependencyObject) => dependencyObject.GetValue<BoxShadows>(ShadowsProperty);
 }

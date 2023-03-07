@@ -72,13 +72,14 @@ public partial class App : Application
         routingViewLocator.AddRouter<RepeatButtonView, RepeatButtonViewModel>(routerNameCallBack: () => "RepeatButton 连点按钮");
         routingViewLocator.AddRouter<ButtonSpinnerView, ButtonSpinnerViewModel>(routerNameCallBack: () => "ButtonSpinner 控制按钮");
         routingViewLocator.AddRouter<DropDownButtonView, DropDownButtonViewModel>(routerNameCallBack: () => "DropDownButton 下拉按钮");
+        routingViewLocator.AddRouter<ToggleButtonView, ToggleButtonViewModel>(routerNameCallBack: () => "ToggleButton 确认按钮");
+        routingViewLocator.AddRouter<ToggleSwitchView, ToggleSwitchViewModel>(routerNameCallBack: () => "ToggleSwitch 切换开关");
 
         //数据录入
         routingViewLocator.AddGroupRouter(() => "数据录入");
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
         routingViewLocator.AddRouter<CheckBoxView, CheckBoxViewModel>(routerNameCallBack: () => "Checkbox 多选框");
         routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");
-
 
         routingViewLocator.AddRouter<CalendarView, CalendarViewModel>(routerNameCallBack: () => "Calendar 日历");
         routingViewLocator.AddRouter<CollapseView, CollapseViewModel>(routerNameCallBack: () => "Collapse 折叠面板");
