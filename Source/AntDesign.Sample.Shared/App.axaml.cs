@@ -67,13 +67,14 @@ public partial class App : Application
         routingViewLocator.AddRouter<OverviewView, OverviewViewModel>(routerNameCallBack: () => "组件总览");
 
         //通用
-        //routingViewLocator.AddGroupRouter(() => "通用");
+        routingViewLocator.AddGroupRouter(() => "通用");
         routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack: () => "Button 按钮");
         routingViewLocator.AddRouter<RepeatButtonView, RepeatButtonViewModel>(routerNameCallBack: () => "RepeatButton 连点按钮");
         routingViewLocator.AddRouter<ButtonSpinnerView, ButtonSpinnerViewModel>(routerNameCallBack: () => "ButtonSpinner 控制按钮");
         routingViewLocator.AddRouter<DropDownButtonView, DropDownButtonViewModel>(routerNameCallBack: () => "DropDownButton 下拉按钮");
 
         //数据录入
+        routingViewLocator.AddGroupRouter(() => "数据录入");
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
         routingViewLocator.AddRouter<CheckBoxView, CheckBoxViewModel>(routerNameCallBack: () => "Checkbox 多选框");
         routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");

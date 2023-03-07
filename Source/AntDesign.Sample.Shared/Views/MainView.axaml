@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:rxui="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI"
 			 xmlns:assists="using:AntDesign.Sample.Assists"
-			 xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
+			 xmlns:extensions="using:AntDesign.Extensions"
+			 xmlns:viewModels="using:AntDesign.Sample.ViewModels"
 			 xmlns:routers="using:AntDesign.Sample.Routers"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
@@ -38,12 +39,18 @@
 		<Grid Grid.Row="2" ColumnDefinitions="Auto,15,*,15">
 			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" 
 					 Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}">
-				<ListBox.DataTemplates>
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem" x:DataType="routers:Router">
+						<Setter Property="extensions:Classes.group" Value="{Binding IsPlaceholder}"/>
+						<Setter Property="IsEnabled" Value="{Binding !IsPlaceholder}"/>
+					</Style>
+				</ListBox.Styles>
+				<ListBox.ItemTemplate>
 					<DataTemplate DataType="{x:Type routers:Router}">
-						<TextBlock Text="{Binding LocalizedString.Localized}" 
+						<TextBlock Text="{Binding LocalizedString.Localized}"
 								   VerticalAlignment="Center" HorizontalAlignment="Center"/>
 					</DataTemplate>
-				</ListBox.DataTemplates>
+				</ListBox.ItemTemplate>
 			</ListBox>
 			<Grid Grid.Column="2" RowDefinitions="40,20,*">
 				<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" Classes="h2"/>

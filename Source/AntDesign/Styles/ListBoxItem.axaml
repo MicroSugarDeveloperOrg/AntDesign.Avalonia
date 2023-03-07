@@ -131,15 +131,24 @@
 		</Style>
 
 		<Style Selector="^.group:disabled">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
 			<Setter Property="Template">
 				<ControlTemplate TargetType="ListBoxItem">
-					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}" 
+					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"  
 							Margin="{TemplateBinding Margin}" 
+							BorderThickness="0"
 							Padding="{TemplateBinding Padding}">
-						<Grid ColumnDefinitions="3,10,*,10,3" > 
+						<Grid ColumnDefinitions="3,10,*,10,3" 
+							  Margin="0,3,0,3" > 
 							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 											  Grid.Column="2"
-											  Margin="0,3,0,3"
+											  BorderThickness="0,0,0,1"
 											  BorderBrush ="{DynamicResource DisableBorderBrush}"
 											  Content="{TemplateBinding Content}"
 											  ContentTemplate="{TemplateBinding ContentTemplate}"
