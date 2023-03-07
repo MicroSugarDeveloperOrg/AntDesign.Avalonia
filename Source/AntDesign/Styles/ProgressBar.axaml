@@ -237,6 +237,7 @@
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="assists:ProgressBarAssists.Content">
 			<Setter.Value>
 				<Template>
