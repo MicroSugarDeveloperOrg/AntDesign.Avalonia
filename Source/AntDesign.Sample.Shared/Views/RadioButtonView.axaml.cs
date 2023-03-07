@@ -1,9 +1,9 @@
 using AntDesign.Sample.ViewModels;
 
 namespace AntDesign.Sample.Views;
-public partial class AutoCompleteView : ReactiveUserControl<AutoCompleteViewModel>
+public partial class RadioButtonView : ReactiveUserControl<RadioButtonViewModel>
 {
-    public AutoCompleteView()
+    public RadioButtonView()
     {
         InitializeComponent();
     }

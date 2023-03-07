@@ -1,6 +1,4 @@
 using AntDesign.Sample.ViewModels;
-using Avalonia.Controls;
-using Avalonia.Interactivity;
 
 namespace AntDesign.Sample.Views;
 public partial class RepeatButtonView : ReactiveUserControl<RepeatButtonViewModel>
@@ -13,9 +11,9 @@ public partial class RepeatButtonView : ReactiveUserControl<RepeatButtonViewMode
     }
 
     int _count;
-    private void PART_RepeatButton_Click(object? sender,  RoutedEventArgs e)
+    private void PART_RepeatButton_Click(object? sender, RoutedEventArgs e)
     {
-      
+
         PART_TextBlock.Text = $"{_count++}";
     }
 }
