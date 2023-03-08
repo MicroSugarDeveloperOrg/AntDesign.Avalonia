@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					xmlns:behaviors="using:AntDesign.Behaviors"
 					xmlns:assists="using:AntDesign.Assists"
                     x:CompileBindings="True">
 
@@ -24,6 +25,11 @@
 		<Setter Property="Background" Value="{DynamicResource ToggleSwitchBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ToggleSwitchForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitchBorderBrush}" />
+		<Setter Property="behaviors:Interaction.Behaviors">
+			<Setter.Value>
+				<behaviors:ToggleSwitchBehaviors/>
+			</Setter.Value>
+		</Setter>
 		<Setter Property="assists:ToggleSwitchAssists.ToggleSwitchWidth" Value="{DynamicResource ToggleSwitchWidth}" />
 		<Setter Property="assists:ToggleSwitchAssists.ToggleSwitchHeight" Value="{DynamicResource ToggleSwitchHeight}" />
 		<Setter Property="assists:ToggleSwitchAssists.PointerOverBackground" Value="{DynamicResource ToggleSwitchPointerOverBackground}" />
@@ -462,6 +468,5 @@
 		</Style>
 
 	</ControlTheme>
-
 
 </ResourceDictionary>

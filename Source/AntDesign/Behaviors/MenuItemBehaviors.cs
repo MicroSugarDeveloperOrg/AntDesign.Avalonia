@@ -30,6 +30,4 @@ public class MenuItemBehaviors : Behavior<MenuItem>
         _snapshot.TryGetValue(menuItem, out var pointer);
         pointer.Detach(menuItem);
     }
-
-
 }

@@ -72,6 +72,11 @@
 							<RepeatButton Content="RepeatButton" Width="120" Height="35" Classes="center" />
 							<RepeatButton Content="RepeatButton" Width="120" Height="35" Classes="right"/>
 						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="0">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="left"/>
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="center" />
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="right"/>
+						</StackPanel>
 					</StackPanel>
 
 					<Separator Grid.Row="1" SeparatorAssists.Content="组合用法"/>

@@ -6,212 +6,218 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.ButtonView">
 
-	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
-		<TextBlock Grid.Row="0" Text="按钮用于开始一个即时操作。"/>
+	<ScrollViewer>
+		<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+			<TextBlock Grid.Row="0" Text="按钮用于开始一个即时操作。"/>
 
-		<StackPanel Grid.Row="2" Spacing="10">
-			<TextBlock  Text="何时使用" Classes="h3"/>
-			<TextBlock  Text="按钮用于开始一个即时操作。"/>
-			<TextBlock  Text="在 Ant Design 中我们提供了六种按钮。"/>
-			<TextBlock  Text=">>  默认按钮：用于没有主次之分的一组行动点。"/>
-			<TextBlock  Text=">>  主按钮：用于主行动点，一个操作区域只能有一个主按钮。"/>
-			<TextBlock  Text=">>  文本按钮：用于最次级的行动点。"/>
-			<TextBlock  Text=">>  链接按钮：一般用于链接，即导航至某位置。"/>
-			<TextBlock  Text=">>  虚线按钮：常用于添加操作。"/>
-			<TextBlock  Text=">>  阴影按钮：用于有自定义按钮阴影需求的场景。"/>
-			<TextBlock  Text="以及两种状态Classes和一种属性与上面配合使用。"/>
-			<TextBlock  Text=">>  危险：删除/移动/修改权限等危险操作，一般需要二次确认。"/>
-			<TextBlock  Text=">>  圆形：使得按钮具有圆形效果。"/>
-			<TextBlock  Text=">>  禁用：行动点不可用的时候，一般需要文案解释。"/>
-		</StackPanel>
+			<StackPanel Grid.Row="2" Spacing="10">
+				<TextBlock  Text="何时使用" Classes="h3"/>
+				<TextBlock  Text="按钮用于开始一个即时操作。"/>
+				<TextBlock  Text="在 Ant Design 中我们提供了六种按钮。"/>
+				<TextBlock  Text=">>  默认按钮：用于没有主次之分的一组行动点。"/>
+				<TextBlock  Text=">>  主按钮：用于主行动点，一个操作区域只能有一个主按钮。"/>
+				<TextBlock  Text=">>  文本按钮：用于最次级的行动点。"/>
+				<TextBlock  Text=">>  链接按钮：一般用于链接，即导航至某位置。"/>
+				<TextBlock  Text=">>  虚线按钮：常用于添加操作。"/>
+				<TextBlock  Text=">>  阴影按钮：用于有自定义按钮阴影需求的场景。"/>
+				<TextBlock  Text="以及两种状态Classes和一种属性与上面配合使用。"/>
+				<TextBlock  Text=">>  危险：删除/移动/修改权限等危险操作，一般需要二次确认。"/>
+				<TextBlock  Text=">>  圆形：使得按钮具有圆形效果。"/>
+				<TextBlock  Text=">>  禁用：行动点不可用的时候，一般需要文案解释。"/>
+			</StackPanel>
 
-		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+			<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
 
-		<Grid Grid.Row="6"
-			  ColumnDefinitions="*,20,*"
-			  RowDefinitions="*,20,*">
+			<Grid Grid.Row="6"
+				  ColumnDefinitions="*,20,*"
+				  RowDefinitions="*,20,*">
 
-			<Border Grid.Column="0" Grid.Row="0"
-					BorderThickness="{StaticResource OverlayBorderThickness}"
-					CornerRadius="{StaticResource OverlayCornerRadius}"
-					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+				<Border Grid.Column="0" Grid.Row="0"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
 
-				<Grid RowDefinitions="1.3*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Button Height="35" Width="120" Content="Default Button"/>
-							<Button Height="35" Width="120" Content="Primary Button" Theme="{StaticResource PrimaryButtonStyle}"/>
-							<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}"/>
-							<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}"/>
-						</StackPanel>
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Button Height="35" Width="120" Content="Dashed Button"
-									Theme="{StaticResource DashedButtonStyle}"/>
-							<Button Height="35" Width="120" Content="Shadow Button"
-									Theme="{StaticResource ShadowButtonStyle}"
-									assists:ButtonAssists.Shadows="0 0 10 1 Green"/>
-						</StackPanel>
-					</StackPanel>
-
-					<Separator Grid.Row="1" SeparatorAssists.Content="按钮样式"/>
-
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-						<TextBlock Text="通过Theme设置不同按钮的样式"/>
-						<TextBlock Text="可以在按钮中放置任何东西包括文字，图片，Path等"/>
-						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.Shadows设置ShadowButtonStyle按钮Shadow(这是AntDesign库提供的一个扩展依赖属性)"/>
-					</StackPanel>
-
-				</Grid>
-
-			</Border>
-
-			<Border Grid.Column="2" Grid.Row="0"
-					BorderThickness="{StaticResource OverlayBorderThickness}"
-					CornerRadius="{StaticResource OverlayCornerRadius}"
-					BorderBrush="{DynamicResource AntDesignBorderBrush}">
-
-				<Grid RowDefinitions="1.3*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Button Height="35" Width="120" Content="Default Button" Classes="danger"/>
-							<Button Height="35" Width="120" Content="Primary Button" Theme="{StaticResource PrimaryButtonStyle}" Classes="danger"/>
-							<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}" Classes="danger"/>
-							<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}" Classes="danger"/>
-						</StackPanel>
-					
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Button Height="35" Width="120" Content="Dashed Button"
-									Theme="{StaticResource DashedButtonStyle}" Classes="danger"/>
-							
-							<Button Height="35" Width="120" Content="Shadow Button"
-									Theme="{StaticResource ShadowButtonStyle}"
-									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="danger"/>
-
-							<Button Height="35" Width="160" Content="Custom Button"
-									Background="Green" Foreground="Red" BorderBrush="Blue"
-									assists:ButtonAssists.PointerOverBackground="Pink"
-									assists:ButtonAssists.PressedBackground="Orange"
-									assists:ButtonAssists.RippleColor="Purple"/>
+					<Grid RowDefinitions="1.3*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<Button Height="35" Width="120" Content="Default Button"/>
+								<Button Height="35" Width="120" Content="Primary Button" Theme="{StaticResource PrimaryButtonStyle}"/>
+								<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}"/>
+								<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<Button Height="35" Width="120" Content="Dashed Button"
+										Theme="{StaticResource DashedButtonStyle}"/>
+								<Button Height="35" Width="120" Content="Shadow Button"
+										Theme="{StaticResource ShadowButtonStyle}"
+										assists:ButtonAssists.Shadows="0 0 10 1 Green"/>
+							</StackPanel>
 						</StackPanel>
 
-					</StackPanel>
+						<Separator Grid.Row="1" SeparatorAssists.Content="按钮样式"/>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="危险按钮"/>
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
 
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-						<TextBlock Text="通过赋予Classes danger值来开启该能力"/>
-						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.PointerOverBackground,assists:ButtonAssists.Background, assists:ButtonAssists.RippleColor等扩展属性可以完全自定义一个全新的按钮形态(这些是AntDesign库提供的一个扩展依赖属性)"/>
-
-					</StackPanel>
-
-				</Grid>
-
-			</Border>
-
-
-			<Border Grid.Column="0" Grid.Row="2"
-					BorderThickness="{StaticResource OverlayBorderThickness}"
-					CornerRadius="{StaticResource OverlayCornerRadius}"
-					BorderBrush="{DynamicResource AntDesignBorderBrush}">
-
-				<Grid RowDefinitions="1.3*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Button Height="35" Width="120" Content="Default Button" IsEnabled="False"/>
-							<Button Height="35" Width="120" Content="Primary Button" Theme="{StaticResource PrimaryButtonStyle}" IsEnabled="False"/>
-							<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}" IsEnabled="False"/>
-							<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}" IsEnabled="False"/>
-						</StackPanel>
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Button Height="35" Width="120" Content="Dashed Button"
-									Theme="{StaticResource DashedButtonStyle}" IsEnabled="False"/>
-							<Button Height="35" Width="120" Content="Shadow Button"
-									Theme="{StaticResource ShadowButtonStyle}"
-									assists:ButtonAssists.Shadows="0 0 10 1 Green" IsEnabled="False"/>
+							<TextBlock Text="通过Theme设置不同按钮的样式"/>
+							<TextBlock Text="可以在按钮中放置任何东西包括文字，图片，Path等"/>
+							<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.Shadows设置ShadowButtonStyle按钮Shadow(这是AntDesign库提供的一个扩展依赖属性)"/>
 						</StackPanel>
 
-					</StackPanel>
+					</Grid>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+				</Border>
 
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
+				<Border Grid.Column="2" Grid.Row="0"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
 
-						<TextBlock Text="通过设置IsEnable属性即可让按钮处于不可用状态，同时按钮样式也会改变"/>
-					</StackPanel>
+					<Grid RowDefinitions="1.3*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
 
-				</Grid>
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<Button Height="35" Width="120" Content="Default Button" Classes="danger"/>
+								<Button Height="35" Width="120" Content="Primary Button" Theme="{StaticResource PrimaryButtonStyle}" Classes="danger"/>
+								<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}" Classes="danger"/>
+								<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}" Classes="danger"/>
+							</StackPanel>
 
-			</Border>
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<Button Height="35" Width="120" Content="Dashed Button"
+										Theme="{StaticResource DashedButtonStyle}" Classes="danger"/>
 
-			<Border Grid.Column="2" Grid.Row="2"
-					BorderThickness="{StaticResource OverlayBorderThickness}"
-					CornerRadius="{StaticResource OverlayCornerRadius}"
-					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+								<Button Height="35" Width="120" Content="Shadow Button"
+										Theme="{StaticResource ShadowButtonStyle}"
+										assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="danger"/>
 
-				<Grid RowDefinitions="1.3*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
+								<Button Height="35" Width="160" Content="Custom Button"
+										Background="Green" Foreground="Red" BorderBrush="Blue"
+										assists:ButtonAssists.PointerOverBackground="Pink"
+										assists:ButtonAssists.PressedBackground="Orange"
+										assists:ButtonAssists.RippleColor="Purple"/>
+							</StackPanel>
 
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Button Height="35" Width="120" Content="" Classes="round"/>
-							<Button Height="35" Width="120" Content="" Theme="{StaticResource PrimaryButtonStyle}" Classes="round"/>
-							<Button Height="35" Width="35" Content="" Classes="round"/>
-							<Button Height="35" Width="35" Content="" Theme="{StaticResource PrimaryButtonStyle}"  Classes="round"/>
-							<Button Height="35" Width="120" Content="Dashed Button"
-									Theme="{StaticResource DashedButtonStyle}" Classes="round"/>
-							<Button Height="35" Width="120" Content=""
-									Theme="{StaticResource ShadowButtonStyle}"
-									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
-
-							<Button Height="35" Width="35" Content="Dashed Button"
-									Theme="{StaticResource DashedButtonStyle}" Classes="round"/>
-							<Button Height="35" Width="35" Content=""
-									Theme="{StaticResource ShadowButtonStyle}"
-									assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
-						</StackPanel>
-						<StackPanel Orientation="Horizontal" Spacing="0">
-							<Button Height="35" Width="120" Content="Default Button" Classes="left"/>
-							<Button Height="35" Width="120" Content="Default Button" Classes="center"/>
-							<Button Height="35" Width="120" Content="Default Button" Classes="right"/>
 						</StackPanel>
 
-					</StackPanel>
+						<Separator Grid.Row="1" SeparatorAssists.Content="危险按钮"/>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="Round及组合按钮"/>
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
 
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
+							<TextBlock Text="通过赋予Classes danger值来开启该能力"/>
+							<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.PointerOverBackground,assists:ButtonAssists.Background, assists:ButtonAssists.RippleColor等扩展属性可以完全自定义一个全新的按钮形态(这些是AntDesign库提供的一个扩展依赖属性)"/>
 
-						<TextBlock Text="通过赋予Classes round值来开启弧形按钮能力"/>
-						<TextBlock Text="通过赋予Classes left，center，right值来实现按钮拼接"/>
-					</StackPanel>
+						</StackPanel>
 
-				</Grid>
+					</Grid>
 
-			</Border>
+				</Border>
+
+				<Border Grid.Column="0" Grid.Row="2"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="1.3*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<Button Height="35" Width="120" Content="Default Button" IsEnabled="False"/>
+								<Button Height="35" Width="120" Content="Primary Button" Theme="{StaticResource PrimaryButtonStyle}" IsEnabled="False"/>
+								<Button Height="35" Width="120" Content="Text Button" Theme="{StaticResource TextButtonStyle}" IsEnabled="False"/>
+								<Button Height="35" Width="120" Content="Link Button" Theme="{StaticResource LinkButtonStyle}" IsEnabled="False"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<Button Height="35" Width="120" Content="Dashed Button"
+										Theme="{StaticResource DashedButtonStyle}" IsEnabled="False"/>
+								<Button Height="35" Width="120" Content="Shadow Button"
+										Theme="{StaticResource ShadowButtonStyle}"
+										assists:ButtonAssists.Shadows="0 0 10 1 Green" IsEnabled="False"/>
+							</StackPanel>
+
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="通过设置IsEnable属性即可让按钮处于不可用状态，同时按钮样式也会改变"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="2" Grid.Row="2"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="1.3*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<Button Height="35" Width="120" Content="" Classes="round"/>
+								<Button Height="35" Width="120" Content="" Theme="{StaticResource PrimaryButtonStyle}" Classes="round"/>
+								<Button Height="35" Width="35" Content="" Classes="round"/>
+								<Button Height="35" Width="35" Content="" Theme="{StaticResource PrimaryButtonStyle}"  Classes="round"/>
+								<Button Height="35" Width="120" Content="Dashed Button"
+										Theme="{StaticResource DashedButtonStyle}" Classes="round"/>
+								<Button Height="35" Width="120" Content=""
+										Theme="{StaticResource ShadowButtonStyle}"
+										assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
+
+								<Button Height="35" Width="35" Content="Dashed Button"
+										Theme="{StaticResource DashedButtonStyle}" Classes="round"/>
+								<Button Height="35" Width="35" Content=""
+										Theme="{StaticResource ShadowButtonStyle}"
+										assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal" Spacing="0">
+								<Button Height="35" Width="120" Content="Default Button" Classes="left"/>
+								<Button Height="35" Width="120" Content="Default Button" Classes="center"/>
+								<Button Height="35" Width="120" Content="Default Button" Classes="right"/>
+							</StackPanel>
+
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="Round及组合按钮"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="通过赋予Classes round值来开启弧形按钮能力"/>
+							<TextBlock Text="通过赋予Classes left，center，right值来实现按钮拼接"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+			</Grid>
+
+
 
 		</Grid>
-
-
-
-	</Grid>
+	</ScrollViewer>
+	
 
 </UserControl>
