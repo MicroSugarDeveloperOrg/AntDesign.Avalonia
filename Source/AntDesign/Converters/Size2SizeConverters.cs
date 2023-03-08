@@ -11,9 +11,12 @@ public class Size2SizeConverters : IValueConverter
 
         if (bool.TryParse(parameter?.ToString(), out var bRet))
         {
-            var max = Math.Max(width, height);
-            var min = Math.Min(width, height);
-            return max - min;
+            if (bRet)
+            {
+                var max = Math.Max(width, height);
+                var min = Math.Min(width, height);
+                return max - min;
+            }
         }
 
         return Math.Min(width, height);

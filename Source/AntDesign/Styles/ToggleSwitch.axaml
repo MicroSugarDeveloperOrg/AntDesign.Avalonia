@@ -52,14 +52,14 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleSwitch">
 				<Grid TemplatedControl.IsTemplateFocusTarget="True">
-					<Grid.RowDefinitions >
-						<RowDefinition Height="Auto"/>
-						<RowDefinition Height="{DynamicResource ToggleSwitchRowSpacing}"/>
-						<RowDefinition Height="*"/>
-					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions >
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="{StaticResource ToggleSwitchColumnSpacing}"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
 
 					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-									  Grid.Row="0"
+									  Grid.Column="0"
 									  Foreground="{TemplateBinding Foreground}" 
 									  Content="{TemplateBinding Content}"
 									  ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -68,10 +68,10 @@
 									  HorizontalAlignment="Left"
 									  RecognizesAccessKey="True" />
 
-					<Grid Grid.Row="2">
+					<Grid Grid.Column="2">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="Auto"/>
-							<ColumnDefinition Width="{DynamicResource ToggleSwitchColumnSpacing}"/>
+							<ColumnDefinition Width="{StaticResource ToggleSwitchColumnSpacing}"/>
 							<ColumnDefinition Width="*"/>
 						</Grid.ColumnDefinitions>
 
@@ -281,7 +281,7 @@
 				<Grid TemplatedControl.IsTemplateFocusTarget="True">
 					<Grid.ColumnDefinitions >
 						<ColumnDefinition Width="Auto"/>
-						<ColumnDefinition Width="{DynamicResource ToggleSwitchColumnSpacing}"/>
+						<ColumnDefinition Width="{StaticResource ToggleSwitchColumnSpacing}"/>
 						<ColumnDefinition Width="*"/>
 					</Grid.ColumnDefinitions>
 
