@@ -64,6 +64,8 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="AntDesignSliderThumbStyle" TargetType="Thumb">
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -162,6 +164,7 @@
                                                       Height="{TemplateBinding assists:SliderAssists.TrackSize}"
                                                       Background="{TemplateBinding Foreground}"
 													  CornerRadius="{TemplateBinding CornerRadius}"
+													  VerticalAlignment="Center" 
                                                       Focusable="False" />
 									</Track.DecreaseButton>
 									<Track.IncreaseButton>
@@ -171,19 +174,18 @@
                                                       Height="{TemplateBinding assists:SliderAssists.TrackSize}"
                                                       Background="{TemplateBinding Background}"
 													  CornerRadius="{TemplateBinding CornerRadius}"
+													  VerticalAlignment="Center" 
                                                       Focusable="False" />
 									</Track.IncreaseButton>
-									<Thumb x:Name="thumb" 
-                                           DataContext="{TemplateBinding Value}" 
+									<Thumb x:Name="thumb"
+                                           DataContext="{TemplateBinding Value}"
                                            Theme="{StaticResource AntDesignSliderThumbStyle}"
                                            Width="{TemplateBinding assists:SliderAssists.ThumbSize}"
                                            Height="{TemplateBinding assists:SliderAssists.ThumbSize}"
                                            Background="{TemplateBinding assists:SliderAssists.ThumbBackground}"
                                            BorderBrush="{TemplateBinding assists:SliderAssists.ThumbBorderBrush}"
                                            BorderThickness="{TemplateBinding assists:SliderAssists.ThumbBorderThickness}"
-										   RenderTransform="scale(1.2)">
-										
-									</Thumb>
+										   RenderTransform="scale(1.2)"/>
 								</Track>
 							</Grid>
 						</Grid>
@@ -242,6 +244,7 @@
                                                       Width="{TemplateBinding assists:SliderAssists.TrackSize}"
                                                       Background="{TemplateBinding Foreground}"
 													  CornerRadius="{TemplateBinding CornerRadius}"
+													  HorizontalAlignment="Center"
                                                       Focusable="False" />
 									</Track.DecreaseButton>
 									<Track.IncreaseButton>
@@ -251,25 +254,18 @@
                                                       Width="{TemplateBinding assists:SliderAssists.TrackSize}"
                                                       Background="{TemplateBinding Background}"
 													  CornerRadius="{TemplateBinding CornerRadius}"
+													  HorizontalAlignment="Center"
                                                       Focusable="False" />
 									</Track.IncreaseButton>
-									<Thumb x:Name="SliderThumb" 
-                                           DataContext="{TemplateBinding Value}" 
+									<Thumb x:Name="SliderThumb"
+                                           DataContext="{TemplateBinding Value}"
                                            Theme="{StaticResource AntDesignSliderThumbStyle}"
                                            Width="{TemplateBinding assists:SliderAssists.ThumbSize}"
                                            Height="{TemplateBinding assists:SliderAssists.ThumbSize}"
                                            Background="{TemplateBinding assists:SliderAssists.ThumbBackground}"
                                            BorderBrush="{TemplateBinding assists:SliderAssists.ThumbBorderBrush}"
                                            BorderThickness="{TemplateBinding assists:SliderAssists.ThumbBorderThickness}"
-										   RenderTransform="scale(1.2)">
-										<Thumb.Transitions>
-											<Transitions>
-												<ThicknessTransition  Property="BorderThickness" Duration="0:0:.075" />
-												<DoubleTransition Property="Width" Duration="0:0:.075"/>
-												<DoubleTransition Property="Height" Duration="0:0:.075"/>
-											</Transitions>
-										</Thumb.Transitions>
-									</Thumb>
+										   RenderTransform="scale(1.2)"/>
 								</Track>
 							</Grid>
 						</Grid>
