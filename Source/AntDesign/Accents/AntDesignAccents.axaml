@@ -312,6 +312,12 @@
 	<x:Double x:Key="ProgressBarSize1">250</x:Double>
 	<x:Double x:Key="ProgressBarSize2">8</x:Double>
 
+	<!--Slider-->
+	<x:Double x:Key="SliderTickBarSize">8</x:Double>
+	<x:Double x:Key="SliderThumbSize">15</x:Double> 
+	<x:Double x:Key="SliderTrackSize">5</x:Double> 
+	<Thickness x:Key="SliderThumbBorderThickness">2</Thickness>
+	
 	<!--WindowNotificationManager-->
 	
 	

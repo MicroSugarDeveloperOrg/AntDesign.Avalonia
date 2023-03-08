@@ -35,6 +35,7 @@ public partial class App : Application
         var serviceProvider = _container.BuildServiceProvider();
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
+            desktop.ShutdownMode = ShutdownMode.OnMainWindowClose;
             var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
             mainWindow.DataContext = serviceProvider.GetRequiredService<MainViewModel>();
             desktop.MainWindow = mainWindow;

@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="using:System"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.DialogsView">
 	<StackPanel Orientation="Horizontal" Spacing="10">
@@ -22,12 +23,45 @@
 						 Maximum="100"
 						 Value="70"/>
 		</StackPanel>
-		<ProgressBar IsIndeterminate="True" Orientation="Vertical" />
-		<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical"/>
-		<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" />
-		<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" Classes="error" />
-		<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" Classes="success" />
-		<ProgressBar IsIndeterminate="True" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}"/>
-
+		
+		<StackPanel Spacing="10">
+			<ProgressBar IsIndeterminate="True" Orientation="Vertical" />
+			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical"/>
+			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" />
+			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" Classes="error" />
+			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" Classes="success" />
+			<ProgressBar IsIndeterminate="True" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}"/>
+		</StackPanel>
+		
+		<StackPanel Spacing="10">
+			<Slider Value="50" Width="200"  Height="20"/>
+			<Slider IsDirectionReversed="True" Value="50" />
+			<Slider Value="50" TickPlacement="TopLeft" TickFrequency="10" />
+			<Slider Value="50" TickPlacement="BottomRight" TickFrequency="10" />
+			<Slider Value="50" TickPlacement="Outside" TickFrequency="10" />
+			<Slider IsEnabled="False" Value="50" />
+			<Slider Value="50">
+				<DataValidationErrors.Error>
+					<sys:Exception>
+						<x:Arguments>
+							<x:String>Error</x:String>
+						</x:Arguments>
+					</sys:Exception>
+				</DataValidationErrors.Error>
+			</Slider>
+		</StackPanel>
+		
+		<StackPanel Spacing="10" Orientation="Horizontal">
+			<Slider Value="50" Orientation="Vertical" />
+			<Slider IsDirectionReversed="True" Value="50" Orientation="Vertical" />
+			<Slider IsEnabled="False" Orientation="Vertical" Value="50" />
+			<Slider Value="50" TickPlacement="TopLeft" TickFrequency="10" Orientation="Vertical" />
+			<Slider Value="50" TickPlacement="BottomRight" TickFrequency="10" Orientation="Vertical" />
+			<Slider Value="50" TickPlacement="Outside" TickFrequency="10" Orientation="Vertical" />
+		</StackPanel>
+		
 	</StackPanel>
+	
+	
+	
 </UserControl>

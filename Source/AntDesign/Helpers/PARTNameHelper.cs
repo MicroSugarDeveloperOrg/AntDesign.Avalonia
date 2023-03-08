@@ -155,6 +155,7 @@ public static class PARTNameHelper
     //ProgressBar
     public static string PART_Indicator => nameof(PART_Indicator);
 
-    
+    //Slider
+    public static string PART_Track => nameof(PART_Track);
 
 }

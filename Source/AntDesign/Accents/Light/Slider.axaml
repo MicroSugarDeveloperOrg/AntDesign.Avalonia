@@ -2,10 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<SolidColorBrush x:Key="ScrollBarThumbBackground" Color="#c1c1c1"/>
-	<SolidColorBrush x:Key="ScrollBarThumbPointerOverBackground" Color="#a8a8a8"/>
-	<SolidColorBrush x:Key="ScrollBarThumbPressedBackground" Color="#787878"/>
+	<SolidColorBrush x:Key="SliderBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="SliderForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="SliderBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="SliderPointerOverForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	
+	<SolidColorBrush x:Key="SliderTickBarFill" Color="{StaticResource AntDesignAssistColor2}"/>
 
- 
-
+	<SolidColorBrush x:Key="SliderThumbBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="SliderThumbPointerOverBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="SliderThumbPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	
 </ResourceDictionary>
