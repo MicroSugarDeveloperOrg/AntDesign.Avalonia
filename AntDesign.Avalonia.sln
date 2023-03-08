@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Build", ".Build", "{3DA99C
 		Directory.build.targets = Directory.build.targets
 		Directory.Packages.props = Directory.Packages.props
 		global.json = global.json
+		license.md = license.md
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -27,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Sample.iOS", "Sou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Sample.Web", "Source\AntDesign.Sample.Web\AntDesign.Sample.Web.csproj", "{FC88A6CA-E875-4DE2-98F8-69A8728BB55C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.SourceGenerator", "Source\Avalonia.SourceGenerator\Avalonia.SourceGenerator.csproj", "{8148DE74-5328-4198-8067-8B6339B9CAB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.SourceGenerator", "Source\Avalonia.SourceGenerator\Avalonia.SourceGenerator.csproj", "{8148DE74-5328-4198-8067-8B6339B9CAB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
