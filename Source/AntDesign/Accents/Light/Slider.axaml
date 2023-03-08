@@ -9,6 +9,7 @@
 	
 	<SolidColorBrush x:Key="SliderTickBarFill" Color="{StaticResource AntDesignAssistColor2}"/>
 
+	<SolidColorBrush x:Key="SliderThumbBackground" Color="{StaticResource AntDesigndAssistColor4}"/>
 	<SolidColorBrush x:Key="SliderThumbBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="SliderThumbPointerOverBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="SliderThumbPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
