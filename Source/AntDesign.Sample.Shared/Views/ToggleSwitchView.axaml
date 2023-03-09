@@ -7,13 +7,13 @@
              x:Class="AntDesign.Sample.Views.ToggleSwitchView">
 
 	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
-		<TextBlock Grid.Row="0" Text="选中按钮。"/>
+		<TextBlock Grid.Row="0" Text="开关按钮。"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
 			<TextBlock  Text="何时使用" Classes="h3"/>
 			<TextBlock  Text=">>  在需要使用的按钮具有选中确认效果时使用。"/>
 			<TextBlock  Text=">>  可以获取控制按钮的事件，根据不同事件进行相应的值的变化。"/>
-			<TextBlock  Text=">>  这是一种类似于Checkbox选中框的按钮，和CheckBox不同的是显示外观，外观跟Button相似，功能完全不同于Button。"/>
+			<TextBlock  Text=">>  这是一种类似于Checkbox选中框的按钮，和CheckBox不同的是显示外观，这是一种具有开和关两种状态的按钮。"/>
 		</StackPanel>
 
 		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
@@ -155,7 +155,6 @@
 						<TextBlock Text="ToggleSwitch的assists:ToggleSwitchAssists.KnobContent属性可以放入任何有效的控件元素，包括文字，图像等等"/>
 					</StackPanel>
 				</Grid>
-
 			</Border>
 			
 		</Grid>

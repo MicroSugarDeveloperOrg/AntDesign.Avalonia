@@ -7,7 +7,7 @@
              x:Class="AntDesign.Sample.Views.ToggleButtonView">
 
 	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
-		<TextBlock Grid.Row="0" Text="选中按钮。"/>
+		<TextBlock Grid.Row="0" Text="一种具有选中状态的按钮。"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
 			<TextBlock  Text="何时使用" Classes="h3"/>

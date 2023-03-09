@@ -196,6 +196,12 @@
 								<Button Height="35" Width="120" Content="Default Button" Classes="right"/>
 							</StackPanel>
 
+							<StackPanel Orientation="Horizontal" Spacing="0">
+								<Button Height="35" Width="120" Content="Default Button" Theme="{StaticResource PrimaryButtonStyle}" Classes="left"/>
+								<Button Height="35" Width="120" Content="Default Button" Theme="{StaticResource PrimaryButtonStyle}" Classes="center"/>
+								<Button Height="35" Width="120" Content="Default Button" Theme="{StaticResource PrimaryButtonStyle}" Classes="right"/>
+							</StackPanel>
+
 						</StackPanel>
 
 						<Separator Grid.Row="1" SeparatorAssists.Content="Round及组合按钮"/>
@@ -213,8 +219,6 @@
 				</Border>
 
 			</Grid>
-
-
 
 		</Grid>
 	</ScrollViewer>

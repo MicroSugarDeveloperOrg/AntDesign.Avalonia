@@ -72,6 +72,8 @@ public partial class App : Application
         routingViewLocator.AddRouter<ButtonView, ButtonViewModel>(routerNameCallBack: () => "Button 按钮");
         routingViewLocator.AddRouter<ButtonSpinnerView, ButtonSpinnerViewModel>(routerNameCallBack: () => "ButtonSpinner 控制按钮");
         routingViewLocator.AddRouter<DropDownButtonView, DropDownButtonViewModel>(routerNameCallBack: () => "DropDownButton 下拉按钮");
+        routingViewLocator.AddRouter<SplitButtonView, SplitButtonViewModel>(routerNameCallBack: () => "SplitButton 分离按钮");
+        routingViewLocator.AddRouter<ToggleSplitButtonView, ToggleSplitButtonViewModel>(routerNameCallBack: () => "ToggleSplitButton 分离按钮");
         routingViewLocator.AddRouter<RepeatButtonView, RepeatButtonViewModel>(routerNameCallBack: () => "RepeatButton 连点按钮");
         routingViewLocator.AddRouter<ToggleButtonView, ToggleButtonViewModel>(routerNameCallBack: () => "ToggleButton 确认按钮");
         routingViewLocator.AddRouter<ToggleSwitchView, ToggleSwitchViewModel>(routerNameCallBack: () => "ToggleSwitch 切换开关");
