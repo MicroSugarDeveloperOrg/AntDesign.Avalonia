@@ -128,17 +128,17 @@
 										  Foreground="{TemplateBinding Foreground}"
 										  Content="{TemplateBinding OffContent}"
 										  ContentTemplate="{TemplateBinding OffContentTemplate}"
-										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+									      HorizontalContentAlignment="Left"
+									      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
 						<ContentPresenter x:Name="PART_OnContentPresenter"
 										  Grid.Column="2"
 										  Opacity="0"
 										  Foreground="{TemplateBinding Foreground}"
 										  Content="{TemplateBinding OnContent}"
-										  ContentTemplate="{TemplateBinding OnContentTemplate}" 
-										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+										  ContentTemplate="{TemplateBinding OnContentTemplate}"
+										  HorizontalContentAlignment="Left"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
 					</Grid>
 
@@ -316,38 +316,38 @@
 								<Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
 										Background="{TemplateBinding Background}"
 										BorderBrush="{TemplateBinding BorderBrush}"
-										CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}"/>
+										CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}">
+									<Panel HorizontalAlignment="Stretch">
+										<Panel.Width>
+											<MultiBinding Converter="{StaticResource Bounds2SizeConverter}">
+												<Binding ElementName="PART_OffContentPresenter" Path="Bounds"/>
+												<Binding ElementName="PART_OnContentPresenter" Path="Bounds"/>
+												<TemplateBinding Property="assists:ToggleSwitchAssists.ToggleSwitchHeight"/>
+												<Binding ElementName="PART_OnContentPresenter" Path="Padding"/>
+											</MultiBinding>
+										</Panel.Width>
+										<ContentPresenter x:Name="PART_OffContentPresenter"
+														  Opacity="1"
+														  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
+														  Content="{TemplateBinding OffContent}"
+														  ContentTemplate="{TemplateBinding OffContentTemplate}"
+														  HorizontalAlignment="Right"
+														  Padding="{DynamicResource ToggleSwitchRightEdgeMargin}"
+														  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+														  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
 
-								<Panel HorizontalAlignment="Stretch">
-									<Panel.Width>
-										<MultiBinding Converter="{StaticResource Bounds2SizeConverter}">
-											<Binding ElementName="PART_OffContentPresenter" Path="Bounds"/>
-											<Binding ElementName="PART_OnContentPresenter" Path="Bounds"/>
-											<TemplateBinding Property="assists:ToggleSwitchAssists.ToggleSwitchHeight"/>
-											<Binding ElementName="PART_OnContentPresenter" Path="Padding"/>  
-										</MultiBinding>
-									</Panel.Width>
-									<ContentPresenter x:Name="PART_OffContentPresenter"
-													  Opacity="1"
-													  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
-													  Content="{TemplateBinding OffContent}"
-													  ContentTemplate="{TemplateBinding OffContentTemplate}"
-													  HorizontalAlignment="Right"
-													  Padding="{DynamicResource ToggleSwitchRightEdgeMargin}"
-													  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-													  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+										<ContentPresenter x:Name="PART_OnContentPresenter"
+														  Opacity="0"
+														  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
+														  Content="{TemplateBinding OnContent}"
+														  ContentTemplate="{TemplateBinding OnContentTemplate}"
+														  Padding="{DynamicResource ToggleSwitchLeftEdgeMargin}"
+														  HorizontalAlignment="Left"
+														  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+														  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+									</Panel>
+								</Border>
 
-									<ContentPresenter x:Name="PART_OnContentPresenter"
-													  Opacity="0"
-													  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
-													  Content="{TemplateBinding OnContent}"
-													  ContentTemplate="{TemplateBinding OnContentTemplate}"
-													  Padding="{DynamicResource ToggleSwitchLeftEdgeMargin}"
-													  HorizontalAlignment="Left"
-													  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-													  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-								</Panel>
-							
 								<Panel x:Name="PART_Container"
 									   Margin="{DynamicResource ToggleSwitchKnobPadding}">
 									<Canvas x:Name="{x:Static helpers:PARTNameHelper.PART_SwitchKnob}" 
