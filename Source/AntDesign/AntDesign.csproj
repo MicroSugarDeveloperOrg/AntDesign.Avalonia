@@ -14,6 +14,8 @@
 	</ItemGroup>
 
 	<ItemGroup>                                                                                                                                                                                                                                                      
+		<AvaloniaXaml Remove="Accents\Dark\SplitButton.axaml" />                                                                                                                                                                                                                                                      
+		<AvaloniaXaml Remove="Accents\Light\SplitButton.axaml" />                                                                                                                                                                                                                                                      
 		<AvaloniaXaml Remove="AntDesign.axaml" />                                                                                                                                                                                                                                                      
 		<AvaloniaXaml Remove="Styles\SplitButton.axaml" />                                                          
 	</ItemGroup>

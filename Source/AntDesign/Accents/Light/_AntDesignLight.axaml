@@ -40,6 +40,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/SelectableTextBlock.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Separator.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Slider.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/SplitButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/TextBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/TimePicker.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToggleButton.axaml" />

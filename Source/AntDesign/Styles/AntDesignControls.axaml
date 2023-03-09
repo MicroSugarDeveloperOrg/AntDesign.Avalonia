@@ -51,6 +51,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/SelectableTextBlock.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/Separator.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/Slider.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/SplitButton.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ThemeVariantScope.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TimePicker.axaml" />

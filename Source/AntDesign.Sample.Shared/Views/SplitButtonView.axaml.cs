@@ -6,5 +6,6 @@ public partial class SplitButtonView : ReactiveUserControl<SplitButtonViewModel>
     public SplitButtonView()
     {
         InitializeComponent();
+        //ToggleSplitButton
     }
 }
