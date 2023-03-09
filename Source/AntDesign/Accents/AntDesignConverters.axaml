@@ -27,6 +27,7 @@
 	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/>
 	<antConverters:BorderThicknessFilterConverter Edges="Left, Right" x:Key="LeftRightBorderThickness"/>
 
+	<antConverters:Bounds2SizeConverter x:Key="Bounds2SizeConverter"/>
 
 	<antConverters:Thickness2MarginConverter Edges="Left" Reverse="True" x:Key="OnlyLeftReverseMargin"/>
 	<antConverters:Thickness2MarginConverter Edges="Right" Reverse="True" x:Key="OnlyRightReverseMargin"/>
@@ -44,8 +45,5 @@
 	<converters:CornerRadiusFilterConverter x:Key="BottomCornerRadiusFilterConverter" Filter="BottomLeft, BottomRight"/>
 	<converters:CornerRadiusToDoubleConverter x:Key="TopLeftCornerRadiusConverter" Corner="TopLeft" />
 	<converters:CornerRadiusToDoubleConverter x:Key="BottomRightCornerRadiusConverter" Corner="BottomRight" />
-
-
-
 	
 </ResourceDictionary>

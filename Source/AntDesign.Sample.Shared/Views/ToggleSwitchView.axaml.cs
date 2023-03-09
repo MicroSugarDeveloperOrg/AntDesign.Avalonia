@@ -9,5 +9,6 @@ public partial class ToggleSwitchView : ReactiveUserControl<ToggleSwitchViewMode
     {
         InitializeComponent(); 
         //TranslateTransform
+        //ToggleSwitch.CheckedEvent
     }
 }

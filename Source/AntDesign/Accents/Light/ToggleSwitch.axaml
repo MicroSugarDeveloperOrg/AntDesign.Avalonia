@@ -22,5 +22,6 @@
 	<SolidColorBrush x:Key="ToggleSwitchKnobOffBackground" Color="{DynamicResource AntDesigndAssistColor4}"/>
 
 	<SolidColorBrush x:Key="ToggleSwitchInnerForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ToggleSwitchKnobForeground" Color="{DynamicResource AntDesignAssistColor1}"/>
 
 </ResourceDictionary>

@@ -5,7 +5,7 @@ namespace AntDesign.Sample.ViewModels;
 public class AutoCompleteViewModel : ViewModelRoutableBase<AutoCompleteViewModel>
 {
     public AutoCompleteViewModel()
-    { 
+    {
         for (int i = 0; i < 10; i++)
         {
             var data = new AutoCompletionModel

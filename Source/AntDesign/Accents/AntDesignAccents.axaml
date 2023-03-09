@@ -212,8 +212,10 @@
 	<x:Double x:Key="ToggleSwitchHeight">25</x:Double>
 	<x:Double x:Key="ToggleSwitchSize">25</x:Double>
 	<Thickness x:Key="ToggleSwitchTopHeaderMargin">0</Thickness>
- 
+
 	<Thickness x:Key="ToggleSwitchKnobPadding">2</Thickness>
+	<Thickness x:Key="ToggleSwitchLeftEdgeMargin">6,0,0,0</Thickness>
+	<Thickness x:Key="ToggleSwitchRightEdgeMargin">0,0,6,0</Thickness> 
 	
 	<x:Double x:Key="ToggleSwitchEdgeOffset">6</x:Double>
  

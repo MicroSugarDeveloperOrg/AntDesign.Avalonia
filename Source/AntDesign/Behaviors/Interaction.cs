@@ -18,7 +18,7 @@ public static class Interaction
     }
 
     public static readonly AvaloniaProperty<Behavior?> BehaviorsProperty = AvaloniaProperty.RegisterAttached<AvaloniaObject, Behavior?>("Behaviors", typeof(Interaction));
-    public static void SetBehaviors(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(BehaviorsProperty, value);
+    public static void SetBehaviors(AvaloniaObject dependencyObject, Behavior? value) => dependencyObject.SetValue(BehaviorsProperty, value);
     public static Behavior? GetBehaviors(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Behavior?>(BehaviorsProperty);
 
 }
