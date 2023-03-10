@@ -172,6 +172,7 @@
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource RadioLikeButtonPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
@@ -183,16 +184,16 @@
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="RadioButton">
-				<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}" 
+				<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 									 Background="{TemplateBinding Background}"
 									 BorderBrush="{TemplateBinding BorderBrush}"
 									 BorderThickness="{TemplateBinding BorderThickness}"
-									 CornerRadius="{TemplateBinding CornerRadius}" 
+									 CornerRadius="{TemplateBinding CornerRadius}"
 									 Padding="{TemplateBinding Padding}"
 									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"  
-									  Foreground="{TemplateBinding Foreground}" 
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Foreground="{TemplateBinding Foreground}"
 								      CornerRadius="{TemplateBinding CornerRadius}"
 								      Content="{TemplateBinding Content}"
 								      ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -235,7 +236,7 @@
 
 		<!--  Disabled State  -->
 		<Style Selector="^:disabled">
-			<Setter Property="Opacity" Value="0.5" /> 
+			<Setter Property="Opacity" Value="0.5" />
 		</Style>
 
 		<!--  Checked State  -->
@@ -314,7 +315,7 @@
 
 	</ControlTheme>
 
-	<ControlTheme x:Key="AntDesignLikePrimaryButtonStyle" TargetType="RadioButton" 
+	<ControlTheme x:Key="AntDesignLikePrimaryButtonStyle" TargetType="RadioButton"
 				  BasedOn="{StaticResource AntDesignLikeButtonStyle}">
 		<Setter Property="Background" Value="{DynamicResource RadioLikePrimaryButtonBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource RadioLikePrimaryButtonForeground}" />
@@ -326,5 +327,115 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource RadioLikePrimaryButtonPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource RadioLikePrimaryButtonPressedBorderBrush }" />
 	</ControlTheme>
-	
+
+	<ControlTheme x:Key="AntDesignLikeMenuStyle" TargetType="RadioButton">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource RadioLikeMenuBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource RadioLikeMenuForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource RadioLikeMenuPointerOverBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource RadioLikeMenuPointerOverForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource RadioLikeMenuPressedBackground}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource RadioLikeMenuPressedForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RadioButton">
+				<Grid RowDefinitions="*,Auto,Auto">
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Grid.Row="0"
+									  Foreground="{TemplateBinding Foreground}"
+								      CornerRadius="{TemplateBinding CornerRadius}"
+								      Content="{TemplateBinding Content}"
+								      ContentTemplate="{TemplateBinding ContentTemplate}"
+									  Margin="{TemplateBinding Padding}"
+									  RecognizesAccessKey="True"
+								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									  RenderTransform ="none">
+						<ContentPresenter.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+							</Transitions>
+						</ContentPresenter.Transitions>
+					</ContentPresenter>
+					<Panel Grid.Row="1" Height="{DynamicResource RadioButtonSpacing}"/>
+					<Border x:Name="PART_Decorator" Grid.Row="2" Height="{DynamicResource RadioButtonDecoratorHeight}" Background="{TemplateBinding Background}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  PointerOver State  -->
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_Decorator">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}"/>
+			</Style>
+		</Style>
+
+		<!--  Pressed State  -->
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#PART_Decorator">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="RenderTransform" Value="{TemplateBinding assists:ButtonAssists.PressedRenderTransform}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}"/>
+			</Style>
+		</Style>
+
+		<!--  Checked State  -->
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Border#PART_Decorator">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}"/>
+			</Style>
+		</Style>
+
+		<!--  Disabled State  -->
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5" />
+		</Style>
+
+		<Style Selector="^.top">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="RadioButton">
+					<Grid RowDefinitions="Auto,Auto,*">
+						<Border x:Name="PART_Decorator" Grid.Row="0" Height="{DynamicResource RadioButtonDecoratorHeight}" Background="{TemplateBinding Background}"/>
+						<Panel Grid.Row="1" Height="{DynamicResource RadioButtonSpacing}"/>
+						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+										  Grid.Row="2"
+										  Foreground="{TemplateBinding Foreground}"
+										  CornerRadius="{TemplateBinding CornerRadius}"
+										  Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
+										  Margin="{TemplateBinding Padding}"
+										  RecognizesAccessKey="True"
+										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										  RenderTransform ="none">
+							<ContentPresenter.Transitions>
+								<Transitions>
+									<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+								</Transitions>
+							</ContentPresenter.Transitions>
+						</ContentPresenter>
+
+					</Grid>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+		
+	</ControlTheme>
+
 </ResourceDictionary>

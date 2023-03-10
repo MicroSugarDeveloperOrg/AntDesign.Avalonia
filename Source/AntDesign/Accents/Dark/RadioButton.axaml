@@ -44,4 +44,14 @@
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
 	<SolidColorBrush x:Key="RadioLikePrimaryButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
+	<!--LikeMenu-->
+	<SolidColorBrush x:Key="RadioLikeMenuBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="RadioLikeMenuForeground" Color="{StaticResource AntDesignForegroundColor}"/> 
+									 
+	<SolidColorBrush x:Key="RadioLikeMenuPointerOverBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikeMenuPointerOverForeground" Color="{DynamicResource AntDesignSecondlyColor}"/> 
+									 
+	<SolidColorBrush x:Key="RadioLikeMenuPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RadioLikeMenuPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/> 
+
 </ResourceDictionary>

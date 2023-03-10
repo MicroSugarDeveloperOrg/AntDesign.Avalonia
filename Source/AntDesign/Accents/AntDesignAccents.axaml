@@ -173,6 +173,9 @@
 	<x:Double x:Key="RadioButtonInnerEllipseWidth">10</x:Double>
 	<x:Double x:Key="RadioButtonInnerEllipseHeight">10</x:Double>
 
+	<x:Double x:Key="RadioButtonSpacing">3</x:Double>
+	<x:Double x:Key="RadioButtonDecoratorHeight">2</x:Double>
+
 	<!-- ScrollBar -->
 	<x:Double x:Key="ScrollBarMinWidth">16</x:Double>
 	<x:Double x:Key="ScrollBarMinHeight">16</x:Double>
@@ -322,10 +325,10 @@
 	<Thickness x:Key="SliderThumbBorderThickness">2</Thickness>
 	
 	<!--SpliteButton-->
-	
 	<x:Double x:Key="SplitButtonIconSize">12</x:Double>
 	<x:Double x:Key="SplitButtonPlugButtonMiniWidth">35</x:Double>
-	
+
+
 	<!--WindowNotificationManager-->
 	
 	
