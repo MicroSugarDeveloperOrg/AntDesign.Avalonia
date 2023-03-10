@@ -21,6 +21,8 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />

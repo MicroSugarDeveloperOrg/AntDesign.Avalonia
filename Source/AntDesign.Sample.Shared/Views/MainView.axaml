@@ -38,10 +38,11 @@
 		<Border BorderThickness="0,0,0,0" IsVisible="{Binding IsVisible}" BoxShadow="0 0 5 0 LightGray"/>
 
 		<Grid Grid.Row="2" ColumnDefinitions="Auto,5,10,*,15">
-			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,0,0" 
+			<ListBox Grid.Column="0" MinWidth="200" BorderThickness="0,0,0,0" 
 					 Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}">
 				<ListBox.Styles>
 					<Style Selector="ListBoxItem" x:DataType="routers:Router">
+						<Setter Property="Height" Value="40"/>
 						<Setter Property="extensions:Classes.group" Value="{Binding IsPlaceholder}"/>
 						<Setter Property="IsEnabled" Value="{Binding !IsPlaceholder}"/>
 					</Style>

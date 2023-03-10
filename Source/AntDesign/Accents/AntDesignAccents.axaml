@@ -102,7 +102,7 @@
 	
 	<!-- ListBoxItem --> 
 	<x:Double x:Key="ListBoxItemSpacing">10</x:Double>
-	<x:Double x:Key="ListBoxItemMinHeight">40</x:Double> 
+	<x:Double x:Key="ListBoxItemHeight">35</x:Double> 
 	<Thickness x:Key="ListBoxItemMargin">1</Thickness>
 
 	<x:Double x:Key="ListBoxItemInnerBorderWidth">3</x:Double>

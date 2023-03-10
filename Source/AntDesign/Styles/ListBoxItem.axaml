@@ -19,7 +19,6 @@
 	<ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="FontWeight" Value="Normal" />
-		<Setter Property="MinHeight" Value="{DynamicResource ListBoxItemMinHeight}" />
 		<Setter Property="Background" Value="{DynamicResource ListBoxItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ListBoxItemForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ListBoxItemBorderBrush}" />
@@ -37,43 +36,47 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="Margin" Value="{DynamicResource ListBoxItemMargin}" /> 
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />	
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ListBoxItem">
-				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}" 
+				<Panel>
+					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Margin="{TemplateBinding Margin}"
 						Padding="{TemplateBinding Padding}">
-					<Grid ColumnDefinitions="Auto,Auto,*" >
-						<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource ListBoxItemInnerBorderWidth}">
-							<Border x:Name="PART_InnerBorder"
-									Grid.Column="0" 
-									Height="{DynamicResource ListBoxItemInnerBorderHeight}"
-									Background="{TemplateBinding assists:ListBoxItemAssists.InnerBorderBackground}"
-									BorderThickness="0"
-									IsVisible="False"/>
-						</Panel>
-						
-						<!--占位  目前 GridLength使用DynamicResource有bug-->
-						<Panel Grid.Column="1" Width="{DynamicResource ListBoxItemSpacing}" />
+						<Grid ColumnDefinitions="Auto,Auto,*" >
+							<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource ListBoxItemInnerBorderWidth}">
+								<Border x:Name="PART_InnerBorder"
+										Grid.Column="0"
+										Height="{DynamicResource ListBoxItemInnerBorderHeight}"
+										Background="{TemplateBinding assists:ListBoxItemAssists.InnerBorderBackground}"
+										BorderThickness="0"
+										IsVisible="False"/>
+							</Panel>
 
-						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-										  Grid.Column="2" 
-										  Content="{TemplateBinding Content}"
-										  ContentTemplate="{TemplateBinding ContentTemplate}"
-										  FontSize="{TemplateBinding FontSize}"
-										  FontWeight="{TemplateBinding FontWeight}" 
-										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
-					</Grid>
-				</Border>
+							<!--占位  目前 GridLength使用DynamicResource有bug-->
+							<Panel Grid.Column="1" Width="{DynamicResource ListBoxItemSpacing}" />
+
+							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+											  Grid.Column="2"
+											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  FontSize="{TemplateBinding FontSize}"
+											  FontWeight="{TemplateBinding FontWeight}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+						</Grid>
+					</Border>
+					<Border x:Name="PART_Line" IsVisible="False" VerticalAlignment="Bottom" Height="1" Background="{DynamicResource AntDesignBorderBrush}"/>
+				</Panel>
+				
 			</ControlTemplate>
 		</Setter>
 
@@ -172,6 +175,12 @@
 		<Style Selector="^.remove">
 			<Style  Selector="^ /template/ Panel#PART_DecoratorContainer">
 				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.showline">
+			<Style  Selector="^ /template/ Border#PART_Line">
+				<Setter Property="IsVisible" Value="True" />
 			</Style>
 		</Style>
 		
