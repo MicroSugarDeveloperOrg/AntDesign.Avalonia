@@ -3,8 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
-			 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
-			
+			 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"		
 			 xmlns:assists="using:AntDesign.Assists"
 			 xmlns:extensions="using:AntDesign.Extensions"
              mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
@@ -76,9 +75,8 @@
 									<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
 										<TreeView.ItemContainerTheme>
 											<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
-												<Setter Property="MinHeight" Value="40"/>
-												<Setter Property="Margin" Value="2"/>
-												<Setter Property="assists:TreeViewItemAssists.PointerOverBackground" Value="#e5e8ed"/>
+												<Setter Property="MinHeight" Value="35"/>
+												<Setter Property="Margin" Value="2"/> 
 												<Setter Property="extensions:Classes.end" Value="true"/>
 											</ControlTheme>
 										</TreeView.ItemContainerTheme>

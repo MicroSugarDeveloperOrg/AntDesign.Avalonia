@@ -101,8 +101,7 @@
 	<x:Double x:Key="GridSplitterMinHeight">6</x:Double>
 	
 	<!-- ListBoxItem --> 
-	<x:Double x:Key="ListBoxItemSpacing">10</x:Double>
-	<x:Double x:Key="ListBoxItemHeight">35</x:Double> 
+	<x:Double x:Key="ListBoxItemSpacing">10</x:Double> 
 	<Thickness x:Key="ListBoxItemMargin">1</Thickness>
 
 	<x:Double x:Key="ListBoxItemInnerBorderWidth">3</x:Double>
@@ -246,8 +245,13 @@
 	<x:Double x:Key="CalendarDatePickerButtonIconWidth">12</x:Double>
 
 	<!-- TreeViewItem -->
-	<x:Double x:Key="TreeViewItemIndent">16</x:Double>
-	<x:Double x:Key="TreeViewItemMinHeight">32</x:Double>
+	<x:Double x:Key="TreeViewItemMinHeight">35</x:Double>
+	
+	<x:Double x:Key="TreeViewItemIndent">16</x:Double> 
+	<x:Double x:Key="TreeViewItemInnerBorderWidth">3</x:Double>
+	<x:Double x:Key="TreeViewItemInnerBorderHeight">15</x:Double>
+
+	<x:Double x:Key="TreeViewItemDecoratorSpacing">10</x:Double>
 
 	<x:Double x:Key="TreeViewItemExpandCollapseChevronSize">12</x:Double>
 	<Thickness x:Key="TreeViewItemExpandCollapseChevronMargin">12, 0, 12, 0</Thickness>

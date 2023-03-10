@@ -45,12 +45,12 @@
 			<ControlTemplate TargetType="ListBoxItem">
 				<Panel>
 					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Container}"
-						Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						CornerRadius="{TemplateBinding CornerRadius}"
-						Margin="{TemplateBinding Margin}"
-						Padding="{TemplateBinding Padding}">
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Margin="{TemplateBinding Margin}"
+							Padding="{TemplateBinding Padding}">
 						<Grid ColumnDefinitions="Auto,Auto,*" >
 							<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource ListBoxItemInnerBorderWidth}">
 								<Border x:Name="PART_InnerBorder"

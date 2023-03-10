@@ -43,4 +43,8 @@ public class TreeViewItemAssists
     public static readonly AvaloniaProperty<IBrush?> SelectedNoFocusForegroundProperty = AvaloniaProperty.RegisterAttached<TreeViewItem, IBrush?>("SelectedNoFocusForeground", typeof(TreeViewItemAssists));
     public static void SetSelectedNoFocusForeground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(SelectedNoFocusForegroundProperty, value);
     public static IBrush? GetSelectedNoFocusForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedNoFocusForegroundProperty);
+
+    public static readonly AvaloniaProperty<IBrush?> InnerBorderBackgroundProperty = AvaloniaProperty.RegisterAttached<TreeViewItem, IBrush?>("InnerBorderBackground", typeof(TreeViewItemAssists));
+    public static void SetInnerBorderBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(InnerBorderBackgroundProperty, value);
+    public static IBrush? GetInnerBorderBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(InnerBorderBackgroundProperty);
 }

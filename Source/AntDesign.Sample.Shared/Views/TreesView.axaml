@@ -2,7 +2,282 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:assists="using:AntDesign.Assists"
+			  xmlns:extensions="using:AntDesign.Extensions"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.TreesView">
-	
+
+	<ScrollViewer>
+		<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+			<TextBlock Grid.Row="0" Text="通用列表。"/>
+
+			<StackPanel Grid.Row="2" Spacing="10">
+				<TextBlock  Text="何时使用" Classes="h3"/>
+				<TextBlock  Text=">>  最基础的列表展示，可承载文字、列表、图片、段落，常用于后台数据展示页面。"/>
+			</StackPanel>
+
+			<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+			<Grid Grid.Row="6"
+				  ColumnDefinitions="*,20,*"
+				  RowDefinitions="*,20,*">
+
+				<Border Grid.Column="0" Grid.Row="0"
+						Height="500"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="2*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}"> 
+											<Setter Property="Margin" Value="2"/> 
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}"> 
+											<Setter Property="Margin" Value="2"/>
+											<Setter Property="extensions:Classes.end" Value="true"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="简单的 ListBox。"/>
+						</StackPanel>
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="2" Grid.Row="0"
+						Height="500"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="2*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource AntDesignTreeViewItemStyle}">
+											<Setter Property="Margin" Value="2"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource AntDesignTreeViewItemStyle}">
+											<Setter Property="Margin" Value="2"/>
+											<Setter Property="extensions:Classes.end" Value="true"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="简单的 ListBox。"/>
+						</StackPanel>
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="0" Grid.Row="2"
+						Height="500"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="2*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3" IsEnabled="False">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}"> 
+											<Setter Property="Margin" Value="2"/>
+											<Setter Property="extensions:Classes.end" Value="true"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3" IsEnabled="False">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}"> 
+											<Setter Property="Margin" Value="2"/>
+											<Setter Property="extensions:Classes.end" Value="true"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="ListBox 不可用。"/>
+							<TextBlock Text="通过修改IsEnabled属性来控制是否可用。"/>
+						</StackPanel>
+					</Grid>
+				</Border>
+
+				<Border Grid.Column="2" Grid.Row="2"
+					Height="500"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="2*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3" IsEnabled="False">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource AntDesignTreeViewItemStyle}">
+											<Setter Property="Margin" Value="2"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3" IsEnabled="False">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource AntDesignTreeViewItemStyle}">
+											<Setter Property="Margin" Value="2"/>
+											<Setter Property="extensions:Classes.end" Value="true"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
+
+								</TreeView>
+
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="简单的 ListBox。"/>
+						</StackPanel>
+					</Grid>
+
+				</Border>
+
+
+			</Grid>
+		</Grid>
+	</ScrollViewer>
+
 </UserControl>
