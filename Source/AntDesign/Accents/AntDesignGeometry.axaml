@@ -42,9 +42,6 @@
 	<!--DataValidationErrors-->
 	<StreamGeometry x:Key="TooltipDataValidationErrorIcon">M14,7 A7,7 0 0,0 0,7 M0,7 A7,7 0 1,0 14,7 M7,3l0,5 M7,9l0,2</StreamGeometry>
 
-	<!--DropDownButton-->
-	<StreamGeometry x:Key="DropDownButtonIcon">M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z</StreamGeometry>
-
 	<!--MenuItem-->
 	<StreamGeometry x:Key="MenuItemChevronPathData">M 1,0 10,10 l -9,10 -1,-1 L 8,10 -0,1 Z</StreamGeometry>
  

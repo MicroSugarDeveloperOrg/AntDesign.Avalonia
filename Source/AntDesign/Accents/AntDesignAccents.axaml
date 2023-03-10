@@ -318,6 +318,11 @@
 	<x:Double x:Key="SliderTrackSize">5</x:Double> 
 	<Thickness x:Key="SliderThumbBorderThickness">2</Thickness>
 	
+	<!--SpliteButton-->
+	<x:Double x:Key="SplitButtonHeight">35</x:Double>
+	<x:Double x:Key="SplitButtonIconSize">12</x:Double>
+	<x:Double x:Key="SplitButtonPlugButtonMiniWidth">35</x:Double>
+	
 	<!--WindowNotificationManager-->
 	
 	

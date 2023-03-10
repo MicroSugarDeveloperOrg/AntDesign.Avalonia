@@ -77,7 +77,7 @@
 		</Setter>
 
 		<Style Selector="^ /template/ PathIcon#DropDownGlyph">
-			<Setter Property="Data" Value="{DynamicResource DropDownButtonIcon}" />
+			<Setter Property="Data" Value="{StaticResource DownIconGeometry}" />
 		</Style>
 
 		<Style Selector="^:pointerover">
