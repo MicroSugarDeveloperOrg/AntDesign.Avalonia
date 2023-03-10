@@ -51,14 +51,19 @@
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Margin="{TemplateBinding Margin}"
 						Padding="{TemplateBinding Padding}">
-					<Grid ColumnDefinitions="3,10,*" >
-						<Border x:Name="PART_InnerBorder"
-								Grid.Column="0"
-								Width="{DynamicResource ListBoxItemInnerBorderWidth}"
-								Height="{DynamicResource ListBoxItemInnerBorderHeight}"
-								Background="{TemplateBinding assists:ListBoxItemAssists.InnerBorderBackground}"
-								BorderThickness="0"
-								IsVisible="False"/>
+					<Grid ColumnDefinitions="Auto,Auto,*" >
+						<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource ListBoxItemInnerBorderWidth}">
+							<Border x:Name="PART_InnerBorder"
+									Grid.Column="0" 
+									Height="{DynamicResource ListBoxItemInnerBorderHeight}"
+									Background="{TemplateBinding assists:ListBoxItemAssists.InnerBorderBackground}"
+									BorderThickness="0"
+									IsVisible="False"/>
+						</Panel>
+						
+						<!--占位  目前 GridLength使用DynamicResource有bug-->
+						<Panel Grid.Column="1" Width="{DynamicResource ListBoxItemSpacing}" />
+
 						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 										  Grid.Column="2" 
 										  Content="{TemplateBinding Content}"
@@ -165,8 +170,8 @@
 		</Style>
 
 		<Style Selector="^.remove">
-			<Style  Selector="^ /template/ Border#PART_InnerBorder">
-				<Setter Property="Background" Value="Transparent" />
+			<Style  Selector="^ /template/ Panel#PART_DecoratorContainer">
+				<Setter Property="IsVisible" Value="False" />
 			</Style>
 		</Style>
 		
