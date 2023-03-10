@@ -52,6 +52,11 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/Separator.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/Slider.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/SplitButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/SplitView.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TabControl.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TabItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TabStrip.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/TabStripItem.axaml" /> 
 		<ResourceInclude Source="avares://AntDesign/Styles/TextBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ThemeVariantScope.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/TimePicker.axaml" />

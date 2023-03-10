@@ -158,4 +158,12 @@ public static class PARTNameHelper
     //Slider
     public static string PART_Track => nameof(PART_Track);
 
+    //SplitButton
+    public static string PART_PrimaryButton => nameof(PART_PrimaryButton);
+    public static string PART_SecondaryButton => nameof(PART_SecondaryButton);
+
+    //TabControl
+    public static string PART_SelectedContentHost => nameof(PART_SelectedContentHost);
+
+    
 }

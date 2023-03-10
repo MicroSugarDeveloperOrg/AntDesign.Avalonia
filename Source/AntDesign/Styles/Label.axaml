@@ -21,5 +21,18 @@
 								  RecognizesAccessKey="True" />
 			</ControlTemplate>
 		</Setter>
+
+		<Style Selector="^.h1">
+			<Setter Property="FontSize" Value="35" />
+			<Setter Property="FontWeight" Value="Heavy" />
+		</Style>
+		<Style Selector="^.h2">
+			<Setter Property="FontSize" Value="30" />
+			<Setter Property="FontWeight" Value="Bold" />
+		</Style>
+		<Style Selector="^.h3">
+			<Setter Property="FontSize" Value="20" />
+		</Style>
+		
 	</ControlTheme>
 </ResourceDictionary>

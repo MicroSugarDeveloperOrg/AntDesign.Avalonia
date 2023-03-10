@@ -124,7 +124,7 @@
 						<ColumnDefinition Width="Auto" />
 					</Grid.ColumnDefinitions>
 
-					<Button x:Name="PART_PrimaryButton"
+					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_PrimaryButton}"
 							Grid.Column="0"  
 							Theme="{StaticResource AntDesignSplitButtonButtonStyle}"
 							FontSize="{TemplateBinding FontSize}"
@@ -159,7 +159,7 @@
 
 					<Border Grid.Column="1" Width="{TemplateBinding assists:SplitButtonAssists.Spacing}"/>
 					
-					<Button x:Name="PART_SecondaryButton"
+					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_SecondaryButton}"
 							Grid.Column="2"
 							MinWidth="{DynamicResource SplitButtonPlugButtonMiniWidth}" 
 							Theme="{StaticResource AntDesignSplitButtonButtonStyle}"

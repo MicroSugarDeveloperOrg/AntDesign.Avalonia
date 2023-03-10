@@ -334,6 +334,9 @@
 	<x:Double x:Key="SplitButtonIconSize">12</x:Double>
 	<x:Double x:Key="SplitButtonPlugButtonMiniWidth">35</x:Double>
 
+	<!--TabControl-->
+	<Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
+
 
 	<!--WindowNotificationManager-->
 	
