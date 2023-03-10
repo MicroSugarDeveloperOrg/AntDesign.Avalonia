@@ -43,7 +43,7 @@
 						HorizontalAlignment="Center"
 						VerticalAlignment="Center">
 					<Path x:Name="ChevronPath"
-						  Data="{StaticResource TreeViewItemCollapsedChevronPathData}"
+						  Data="{StaticResource RightIconGeometry}"
 						  Fill="{TemplateBinding Foreground}"
 						  Stretch="Uniform"
 						  HorizontalAlignment="Center"

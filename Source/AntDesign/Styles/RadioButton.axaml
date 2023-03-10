@@ -45,7 +45,7 @@
 					    BorderThickness="{TemplateBinding BorderThickness}"
 					    CornerRadius="{TemplateBinding CornerRadius}">
 					<Grid ColumnDefinitions="20,*">
-						<Panel Height="32" VerticalAlignment="Top">
+						<Panel VerticalAlignment="Center">
 							<Ellipse Name="OuterEllipse"
 									 Opacity="0"
 								     Fill="Transparent"
@@ -159,6 +159,8 @@
 
 	<ControlTheme x:Key="AntDesignLikeButtonStyle" TargetType="RadioButton">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Width" Value="{DynamicResource ButtonWidth}" />
+		<Setter Property="Height" Value="{DynamicResource ButtonHeight}" />
 		<Setter Property="Background" Value="{DynamicResource RadioLikeButtonBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource RadioLikeButtonForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource RadioLikeButtonBorderBrush}" />
@@ -181,84 +183,135 @@
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="RadioButton">
-				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
+				<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}" 
+									 Background="{TemplateBinding Background}"
+									 BorderBrush="{TemplateBinding BorderBrush}"
+									 BorderThickness="{TemplateBinding BorderThickness}"
+									 CornerRadius="{TemplateBinding CornerRadius}" 
+									 Padding="{TemplateBinding Padding}"
 									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
 									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-									  Background="{TemplateBinding Background}"
-								      BorderBrush="{TemplateBinding BorderBrush}"
-								      BorderThickness="{TemplateBinding BorderThickness}"
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"  
+									  Foreground="{TemplateBinding Foreground}" 
 								      CornerRadius="{TemplateBinding CornerRadius}"
 								      Content="{TemplateBinding Content}"
 								      ContentTemplate="{TemplateBinding ContentTemplate}"
-									  Foreground="{TemplateBinding Foreground}"
-								      Padding="{TemplateBinding Padding}"
 									  RecognizesAccessKey="True"
 								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									  RenderTransform ="none">
+						<ContentPresenter.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+							</Transitions>
+						</ContentPresenter.Transitions>
+					</ContentPresenter>
 				</ripple:RippleEffect>
 			</ControlTemplate>
 		</Setter>
 
 		<!--  PointerOver State  -->
-		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+			</Style>
 		</Style>
 
 		<!--  Pressed State  -->
-		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="RenderTransform" Value="{TemplateBinding assists:ButtonAssists.PressedRenderTransform}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			</Style>
 		</Style>
 
 		<!--  Disabled State  -->
-		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5" /> 
 		</Style>
 
 		<!--  Checked State  -->
 		<Style Selector="^:checked">
-			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
-				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="RenderTransform" Value="{TemplateBinding assists:ButtonAssists.PressedRenderTransform}" />
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
 			</Style>
 		</Style>
-		
-		<!--left-->
+
+		<Style Selector="^.round">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding Bounds, Converter={StaticResource Size2RoundConverter}}" />
+			</Style>
+		</Style>
+
 		<Style Selector="^.left">
-			<Setter Property="CornerRadius" Value="{DynamicResource LeftOverlayCornerRadius}" />
-		</Style>
-
-		<Style Selector="^[IsChecked=false][IsPointerOver=false]">
-			<Style Selector="^.removeLeft.center">
-				<Setter Property="BorderThickness" Value="{DynamicResource LeftOverlayBorderThickness}" />
-			</Style>
-
-			<Style Selector="^.removeRight.center">
-				<Setter Property="BorderThickness" Value="{DynamicResource RightOverlayBorderThickness}" />
-			</Style>
-
-			<Style Selector="^.removeLeftRight.center">
-				<Setter Property="BorderThickness" Value="{DynamicResource LeftRightOverlayBorderThickness}" />
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
 			</Style>
 		</Style>
 
-		<!--right-->
-		<Style Selector="^.right">
-			<Setter Property="CornerRadius" Value="{DynamicResource RightOverlayCornerRadius}" />
-		</Style>
-
-		<!--center-->
 		<Style Selector="^.center">
-			<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="0" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:checked">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
 		</Style>
-		
+
+		<Style Selector="^.right">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:checked">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+		</Style>
+
 	</ControlTheme>
 
 	<ControlTheme x:Key="AntDesignLikePrimaryButtonStyle" TargetType="RadioButton" 
@@ -273,4 +326,5 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource RadioLikePrimaryButtonPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource RadioLikePrimaryButtonPressedBorderBrush }" />
 	</ControlTheme>
+	
 </ResourceDictionary>

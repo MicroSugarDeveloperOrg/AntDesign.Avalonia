@@ -90,7 +90,7 @@
 
 	<ControlTheme x:Key="{x:Type SplitButton}" TargetType="SplitButton">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
-		<Setter Property="Height" Value="{DynamicResource SplitButtonHeight}" />
+		<Setter Property="Height" Value="{DynamicResource ButtonHeight}" />
 		<Setter Property="Background" Value="{DynamicResource SplitButtonBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource SplitButtonForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource SplitButtonBorderBrush}" />
@@ -108,8 +108,8 @@
  		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
-		<Setter Property="HorizontalAlignment" Value="Center" />
-		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="KeyboardNavigation.IsTabStop" Value="True" />
