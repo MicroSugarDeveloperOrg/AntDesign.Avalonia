@@ -126,7 +126,7 @@
 								VerticalAlignment="Center">
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<SplitButton Content="SplitButton" IsEnabled="False"/>
+							<SplitButton Content="SplitButton" IsEnabled="False"/> 
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">

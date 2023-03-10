@@ -31,7 +31,7 @@
 	<SolidColorBrush x:Key="SplitButtonPrimaryPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
 	<SolidColorBrush x:Key="SplitButtonPrimaryPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
-	<SolidColorBrush x:Key="SplitButtonPrimaryCheckedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="SplitButtonPrimaryCheckedBackground" Color="{DynamicResource AntDesignThirdlyColor}" Opacity="0.7"/>
 	<SolidColorBrush x:Key="SplitButtonPrimaryCheckedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
 	<SolidColorBrush x:Key="SplitButtonPrimaryCheckedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	

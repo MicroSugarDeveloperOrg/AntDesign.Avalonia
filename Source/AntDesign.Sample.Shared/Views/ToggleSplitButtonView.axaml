@@ -126,10 +126,12 @@
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ToggleSplitButton Content="SplitButton" IsEnabled="False"/>
+							<ToggleSplitButton Content="SplitButton" IsEnabled="False" IsChecked="True"/>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ToggleSplitButton Content="SplitButton" IsEnabled="False" Theme="{StaticResource PrimarySplitButton}"/>
+							<ToggleSplitButton Content="SplitButton" IsEnabled="False" Theme="{StaticResource PrimarySplitButton}" IsChecked="True"/>
 						</StackPanel>
 					</StackPanel>
 
