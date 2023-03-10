@@ -163,6 +163,12 @@
 
 
 		</Style>
+
+		<Style Selector="^.remove">
+			<Style  Selector="^ /template/ Border#PART_InnerBorder">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
+		</Style>
 		
 	</ControlTheme>
 

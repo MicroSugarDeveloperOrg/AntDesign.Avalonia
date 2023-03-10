@@ -9,35 +9,36 @@
 			 xmlns:routers="using:AntDesign.Sample.Routers"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MainView"
+			 x:DataType="viewModels:MainViewModel"
 			 >
 
 	<Grid RowDefinitions="Auto,40,*">
-		<Border BorderThickness="0,0,0,0" BorderBrush="{DynamicResource AntDesignAssistBrush3}"
-			BoxShadow="0 0 5 0 LightGray">
-			<Grid Height="65" ColumnDefinitions="15,Auto,*,Auto,Auto,15">
-				<StackPanel Grid.Column="1" Spacing="20" Orientation="Horizontal">
-					<Image Height="35" Width="35" Source="/Assets/antdesign@avalonia-logo.png"/>
-					<TextBlock Text="Ant Design @ Avalonia"
-							   VerticalAlignment="Center"
-							   FontSize="16"
-							   FontWeight="Black"/>
-				</StackPanel>
 
-				<StackPanel Grid.Column="3" Spacing="20" VerticalAlignment="Center">
-					
-					<Button Width="32" Height="32" Theme="{StaticResource TextButtonStyle}" Command="{Binding StartGitHubCommand}">
-						<Button.Content>
-							<PathIcon Data="{StaticResource GitHubGeometry}"/>
-						</Button.Content>
-					</Button>
-					
-				</StackPanel>
-				
-			</Grid>
-		</Border>
+		<Grid Height="65" ColumnDefinitions="15,Auto,*,Auto,Auto,15">
+			<StackPanel Grid.Column="1" Spacing="20" Orientation="Horizontal">
+				<Image Height="35" Width="35" Source="/Assets/antdesign@avalonia-logo.png"/>
+				<TextBlock Text="Ant Design @ Avalonia"
+						   VerticalAlignment="Center"
+						   FontSize="16"
+						   FontWeight="Black"/>
+			</StackPanel>
 
-		<Grid Grid.Row="2" ColumnDefinitions="Auto,15,*,15">
-			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,1,0" 
+			<StackPanel Grid.Column="3" Spacing="20" VerticalAlignment="Center">
+
+				<Button Width="32" Height="32" Theme="{StaticResource TextButtonStyle}" Command="{Binding StartGitHubCommand}">
+					<Button.Content>
+						<PathIcon Data="{StaticResource GitHubGeometry}"/>
+					</Button.Content>
+				</Button>
+
+			</StackPanel>
+
+		</Grid>
+
+		<Border BorderThickness="0,0,0,0" IsVisible="{Binding IsVisible}" BoxShadow="0 0 5 0 LightGray"/>
+
+		<Grid Grid.Row="2" ColumnDefinitions="Auto,5,10,*,15">
+			<ListBox Grid.Column="0" Width="200" BorderThickness="0,0,0,0" 
 					 Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}">
 				<ListBox.Styles>
 					<Style Selector="ListBoxItem" x:DataType="routers:Router">
@@ -52,7 +53,10 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<Grid Grid.Column="2" RowDefinitions="40,20,*">
+			
+			<Border Grid.Column="1" Width="1" IsVisible="{Binding IsVisible}" HorizontalAlignment="Center" Background="{DynamicResource AntDesignBorderBrush}" />
+			
+			<Grid Grid.Column="3" RowDefinitions="40,20,*">
 				<TextBlock Grid.Row="0" Text="{Binding SelectedItem.LocalizedString.Localized}" Classes="h2"/>
 				<rxui:RoutedViewHost Grid.Row="2"
 									 Margin="0,0,0,10"

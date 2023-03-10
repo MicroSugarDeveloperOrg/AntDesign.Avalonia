@@ -11,6 +11,7 @@ public static class Classes
         rightProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_rightClass, e.NewValue.Value));
         roundProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_roundClass, e.NewValue.Value));
         dangerProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_dangerClass, e.NewValue.Value));
+        removeProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_dangerClass, e.NewValue.Value));
     }
 
     private const string _errorClass = "error";
@@ -21,6 +22,7 @@ public static class Classes
     private const string _rightClass = "right";
     private const string _roundClass = "round";
     private const string _dangerClass = "danger";
+    private const string _removeClass = "remove";
 
     public static readonly StyledProperty<bool> errorProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_errorClass, typeof(Classes));
     public static void Seterror(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(errorProperty, value);
@@ -53,4 +55,8 @@ public static class Classes
     public static readonly StyledProperty<bool> dangerProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_dangerClass, typeof(Classes));
     public static void Setdanger(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(dangerProperty, value);
     public static bool Getdanger(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(dangerProperty);
+
+    public static readonly StyledProperty<bool> removeProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_removeClass, typeof(Classes));
+    public static void Setremove(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(removeProperty, value);
+    public static bool Getremove(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(removeProperty);
 }

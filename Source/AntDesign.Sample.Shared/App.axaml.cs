@@ -79,17 +79,21 @@ public partial class App : Application
         routingViewLocator.AddRouter<ToggleSwitchView, ToggleSwitchViewModel>(routerNameCallBack: () => "ToggleSwitch 切换开关");
         routingViewLocator.AddRouter<RadioButtonView, RadioButtonViewModel>(routerNameCallBack: () => "RadioButton 单选按钮");
 
+        //导航
+        routingViewLocator.AddGroupRouter(() => "导航");
+        routingViewLocator.AddRouter<ListBoxView, ListBoxViewModel>(routerNameCallBack: () => "List 列表");
+        routingViewLocator.AddRouter<TreesView, TreesViewModel>(routerNameCallBack: () => "Tree 树形控件");
+        routingViewLocator.AddRouter<TabsView, TabsViewModel>(routerNameCallBack: () => "Tabs 标签页");
+        routingViewLocator.AddRouter<MenuView, MenuViewModel>(routerNameCallBack: () => "Menu 菜单");
+
         //数据录入
         routingViewLocator.AddGroupRouter(() => "数据录入");
+        routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
         routingViewLocator.AddRouter<CheckBoxView, CheckBoxViewModel>(routerNameCallBack: () => "Checkbox 多选框");
-        routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");
 
         routingViewLocator.AddRouter<CalendarView, CalendarViewModel>(routerNameCallBack: () => "Calendar 日历");
         routingViewLocator.AddRouter<CollapseView, CollapseViewModel>(routerNameCallBack: () => "Collapse 折叠面板");
-        routingViewLocator.AddRouter<MenuView, MenuViewModel>(routerNameCallBack: () => "Menu 菜单");
-        routingViewLocator.AddRouter<TabsView, TabsViewModel>(routerNameCallBack: () => "Tabs 标签页");
-        routingViewLocator.AddRouter<TreesView, TreesViewModel>(routerNameCallBack: () => "Tree 树形控件");
         routingViewLocator.AddRouter<DialogsView, DialogsViewModel>(routerNameCallBack: () => "Dialogs 窗口");
 
         return true;

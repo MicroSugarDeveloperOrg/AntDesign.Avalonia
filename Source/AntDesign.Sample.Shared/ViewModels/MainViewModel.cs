@@ -12,6 +12,14 @@ public class MainViewModel : ViewModelBase, IScreen
         Router = viewLocator.Make(this);
         Routers = viewLocator.Routers();
 
+        themeService.ActualThemeVariantChanged += (s, e) =>
+        {
+            if (themeService.ActualThemeName is "Light" or "Default")
+                IsVisible = true;
+            else
+                IsVisible = false;
+        };
+
         ToolPopOpenCommand = ReactiveCommand.Create(() => 
         {
             IsPopupOpen = !IsPopupOpen;
@@ -53,6 +61,13 @@ public class MainViewModel : ViewModelBase, IScreen
     {
         get => _isPopupOpen;
         set => SetProperty(ref _isPopupOpen, value);
+    }
+
+    private bool _isVisible = true;
+    public bool IsVisible
+    {
+        get => _isVisible;
+        set => SetProperty(ref _isVisible, value);
     }
 
     public ReactiveCommand<Unit, Unit> ToolPopOpenCommand { get; }

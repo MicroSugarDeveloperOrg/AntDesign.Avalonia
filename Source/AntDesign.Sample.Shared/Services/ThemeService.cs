@@ -14,12 +14,14 @@ internal class ThemeService : IThemeService
             {
                 _application = Application.Current;
                 if (_application is not null)
-                    _application.ActualThemeVariantChanged += _application_ActualThemeVariantChanged;
+                    _application.ActualThemeVariantChanged += Application_ActualThemeVariantChanged;
             }
 
             return _application;
         }
     }
+
+    public event EventHandler? ActualThemeVariantChanged;
 
     public string ActualThemeName => Application?.ActualThemeVariant.Key.ToString() ?? "Default";
 
@@ -52,9 +54,5 @@ internal class ThemeService : IThemeService
         return true;
     }
 
-    private void _application_ActualThemeVariantChanged(object? sender, EventArgs e)
-    {
-
-    }
-
+    private void Application_ActualThemeVariantChanged(object? sender, EventArgs e) => ActualThemeVariantChanged?.Invoke(this, e);
 }
