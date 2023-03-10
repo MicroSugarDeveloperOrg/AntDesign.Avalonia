@@ -11,7 +11,7 @@ public static class Classes
         rightProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_rightClass, e.NewValue.Value));
         roundProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_roundClass, e.NewValue.Value));
         dangerProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_dangerClass, e.NewValue.Value));
-        removeProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_dangerClass, e.NewValue.Value));
+        removeProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_removeClass, e.NewValue.Value));
     }
 
     private const string _errorClass = "error";

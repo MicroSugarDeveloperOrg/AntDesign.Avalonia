@@ -60,7 +60,8 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="简单的 ListBox。"/> 
+						<TextBlock Text="简单的 ListBox。"/>
+						<TextBlock Text="简单的 ItemControl。"/> 
 					</StackPanel>
 				</Grid>
 
@@ -107,6 +108,7 @@
 								VerticalAlignment="Center">
 
 						<TextBlock Text="ListBox 样式"/>
+						<TextBlock Text="ItemControl 样式"/>
 					</StackPanel>
 				</Grid>
 			</Border>

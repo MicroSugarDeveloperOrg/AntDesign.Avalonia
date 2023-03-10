@@ -48,7 +48,6 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
-
 								</TreeView>
 
 								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
@@ -67,7 +66,25 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
+								</TreeView>
 
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+											<Setter Property="Margin" Value="2"/>
+											<Setter Property="extensions:Classes.end" Value="true"/>
+											<Setter Property="extensions:Classes.remove" Value="true"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
 								</TreeView>
 
 							</StackPanel>
@@ -79,7 +96,9 @@
 									Margin="20,0,0,0"
 									VerticalAlignment="Center">
 
-							<TextBlock Text="简单的 ListBox。"/>
+							<TextBlock Text="简单的 TreeView。"/>
+							<TextBlock Text="TreeView不同样式，通过控制 Classes = end 将展开按钮放在右边"/>
+							<TextBlock Text="TreeView不同样式，通过控制 Classes = remove 将选中后左侧装饰器去除"/>
 						</StackPanel>
 					</Grid>
 
@@ -111,7 +130,6 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
-
 								</TreeView>
 
 								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
@@ -130,19 +148,39 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
+								</TreeView>
 
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
+									<TreeView.ItemContainerTheme>
+										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource AntDesignTreeViewItemStyle}">
+											<Setter Property="Margin" Value="2"/>
+											<Setter Property="extensions:Classes.end" Value="true"/>
+											<Setter Property="extensions:Classes.remove" Value="true"/>
+										</ControlTheme>
+									</TreeView.ItemContainerTheme>
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+									<TreeViewItem Header="Development">
+
+									</TreeViewItem>
 								</TreeView>
 
 							</StackPanel>
 						</StackPanel>
 
-						<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+						<Separator Grid.Row="1" SeparatorAssists.Content="其他外观"/>
 
 						<StackPanel Grid.Row="2" Spacing="10"
 									Margin="20,0,0,0"
 									VerticalAlignment="Center">
 
-							<TextBlock Text="简单的 ListBox。"/>
+							<TextBlock Text="TreeView的一种外观"/>
+							<TextBlock Text="TreeView不同样式，通过控制 Classes = end 将展开按钮放在右边"/>
+							<TextBlock Text="TreeView不同样式，通过控制 Classes = remove 将选中后左侧装饰器去除"/>
 						</StackPanel>
 					</Grid>
 
@@ -176,8 +214,8 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
-
 								</TreeView>
+								
 								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3" IsEnabled="False">
 									<TreeView.ItemContainerTheme>
 										<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}"> 
@@ -194,9 +232,8 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
-
 								</TreeView>
-
+								
 							</StackPanel>
 						</StackPanel>
 
@@ -206,7 +243,7 @@
 									Margin="20,0,0,0"
 									VerticalAlignment="Center">
 
-							<TextBlock Text="ListBox 不可用。"/>
+							<TextBlock Text="TreeView 不可用。"/>
 							<TextBlock Text="通过修改IsEnabled属性来控制是否可用。"/>
 						</StackPanel>
 					</Grid>
@@ -238,7 +275,6 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
-
 								</TreeView>
 
 								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3" IsEnabled="False">
@@ -257,19 +293,19 @@
 									<TreeViewItem Header="Development">
 
 									</TreeViewItem>
-
 								</TreeView>
 
 							</StackPanel>
 						</StackPanel>
 
-						<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+						<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
 
 						<StackPanel Grid.Row="2" Spacing="10"
 									Margin="20,0,0,0"
 									VerticalAlignment="Center">
 
-							<TextBlock Text="简单的 ListBox。"/>
+							<TextBlock Text="TreeView 不可用。"/>
+							<TextBlock Text="通过修改IsEnabled属性来控制是否可用。"/>
 						</StackPanel>
 					</Grid>
 

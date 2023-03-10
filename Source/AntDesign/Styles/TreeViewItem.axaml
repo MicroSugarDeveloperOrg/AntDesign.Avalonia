@@ -33,16 +33,16 @@
 
 	<ControlTheme x:Key="AntDesignTreeViewToggleButtonStyle" TargetType="ToggleButton">
 		<Setter Property="Margin" Value="{StaticResource Margin}" />
-		<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
-		<Setter Property="Height" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
 				<Border Background="Transparent"
 						Width="{TemplateBinding Width}"
-						Height="{TemplateBinding Height}"
-						HorizontalAlignment="Center"
-						VerticalAlignment="Center">
+						Height="{TemplateBinding Height}">
 					<Path x:Name="ChevronPath"
+						  Width="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
+						  Height="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
 						  Data="{StaticResource RightIconGeometry}"
 						  Fill="{TemplateBinding Foreground}"
 						  Stretch="Uniform"
@@ -83,7 +83,8 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
-		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" /> 
 		<Setter Property="Template">
 			<ControlTemplate TargetType="TreeViewItem">
 				<StackPanel>
@@ -127,8 +128,10 @@
 												  Focusable="False"
 												  Content="{TemplateBinding Header}"
 												  ContentTemplate="{TemplateBinding HeaderTemplate}"
-												  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-												  VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+												  HorizontalAlignment="Stretch"
+												  VerticalAlignment="Stretch"
+												  HorizontalContentAlignment="Left"
+												  VerticalContentAlignment="Center"/>
 							</Grid>
 						</Grid>
 					
@@ -159,18 +162,18 @@
 		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
 			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBackground}" />
 			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBorderBrush}" />
-		</Style>
-		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover > ContentPresenter#PART_HeaderPresenter">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
+			</Style>
 		</Style>
 
 		<!--  Pressed state  -->
 		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed">
 			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBackground}" />
 			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBorderBrush}" />
-		</Style>
-		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed > ContentPresenter#PART_HeaderPresenter">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
+			</Style>
 		</Style>
 
 		<!--  Selected state  -->
@@ -263,8 +266,10 @@
 													  Focusable="False"
 													  Content="{TemplateBinding Header}"
 													  ContentTemplate="{TemplateBinding HeaderTemplate}"
-													  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-													  VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+													  HorizontalAlignment="Stretch"
+													  VerticalAlignment="Stretch"
+													  HorizontalContentAlignment="Left"
+													  VerticalContentAlignment="Center" />
 								</Grid>
 
 							</Grid>
