@@ -14,17 +14,25 @@
 	<SolidColorBrush x:Key="SplitButtonPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="SplitButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
+	<SolidColorBrush x:Key="SplitButtonCheckedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="SplitButtonCheckedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="SplitButtonCheckedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
+
 	<!--PrimarySplitButtonStyle-->
 	<SolidColorBrush x:Key="SplitButtonPrimaryBackground" Color="{DynamicResource AntDesignPrimaryColor}"/>
 	<SolidColorBrush x:Key="SplitButtonPrimaryForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
-	<SolidColorBrush x:Key="SplitButtonPrimaryBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="SplitButtonPrimaryBorderBrush" Color="{DynamicResource AntDesignPrimaryColor}"/>
 						 
 	<SolidColorBrush x:Key="SplitButtonPrimaryPointerOverBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="SplitButtonPrimaryPointerOverForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
-	<SolidColorBrush x:Key="SplitButtonPrimaryPointerOverBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="SplitButtonPrimaryPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 						 
 	<SolidColorBrush x:Key="SplitButtonPrimaryPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="SplitButtonPrimaryPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
-	<SolidColorBrush x:Key="SplitButtonPrimaryPressedBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="SplitButtonPrimaryPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="SplitButtonPrimaryCheckedBackground" Color="{DynamicResource AntDesignThirdlyColor}" Opacity="0.7"/>
+	<SolidColorBrush x:Key="SplitButtonPrimaryCheckedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="SplitButtonPrimaryCheckedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 </ResourceDictionary>

@@ -38,6 +38,18 @@ public class ButtonAssists
     public static void SetPressedPressedRenderTransform(AvaloniaObject dependencyObject, ITransform? value) => dependencyObject.SetValue(PressedRenderTransformProperty, value);
     public static ITransform? GetPressedPressedRenderTransform(AvaloniaObject dependencyObject) => dependencyObject.GetValue<ITransform?>(PressedRenderTransformProperty);
 
+    public static readonly AvaloniaProperty<IBrush?> CheckedBackgroundProperty = AvaloniaProperty.RegisterAttached<Button, IBrush?>("CheckedBackground", typeof(ButtonAssists));
+    public static void SetCheckedBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(CheckedBackgroundProperty, value);
+    public static IBrush? GetCheckedBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(CheckedBackgroundProperty);
+
+    public static readonly AvaloniaProperty<IBrush?> CheckedForegroundProperty = AvaloniaProperty.RegisterAttached<Button, IBrush?>("CheckedForeground", typeof(ButtonAssists));
+    public static void SetCheckedForeground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(CheckedForegroundProperty, value);
+    public static IBrush? GetCheckedForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(CheckedForegroundProperty);
+
+    public static readonly AvaloniaProperty<IBrush?> CheckedBorderBrushProperty = AvaloniaProperty.RegisterAttached<Button, IBrush?>("CheckedBorderBrush", typeof(ButtonAssists));
+    public static void SetCheckedBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(CheckedBorderBrushProperty, value);
+    public static IBrush? GetCheckedBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(CheckedBorderBrushProperty);
+
     public static readonly AvaloniaProperty<bool> IsRippleProperty = AvaloniaProperty.RegisterAttached<Button, bool>("IsRipple", typeof(ButtonAssists));
     public static void SetIsRipple(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(IsRippleProperty, value);
     public static bool GetIsRipple(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(IsRippleProperty);
