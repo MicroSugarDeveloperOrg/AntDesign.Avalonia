@@ -1,0 +1,15 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	   x:CompileBindings="True">
+	<Style Selector="TextBlock.h1">
+		<Setter Property="FontSize" Value="35" />
+		<Setter Property="FontWeight" Value="Heavy" />
+	</Style>
+	<Style Selector="TextBlock.h2">
+		<Setter Property="FontSize" Value="30" />
+		<Setter Property="FontWeight" Value="Bold" />
+	</Style>
+	<Style Selector="TextBlock.h3">
+		<Setter Property="FontSize" Value="20" />
+	</Style>
+</Styles>

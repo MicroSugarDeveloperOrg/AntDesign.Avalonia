@@ -19,6 +19,8 @@
 		</ResourceDictionary>	
 	</Styles.Resources>
 
+	<StyleInclude Source="avares://AntDesign/Styles/TexBlock.axaml" />
+
 	<Style Selector=":is(UserControl)">
 		<Setter Property="Theme" Value="{DynamicResource {x:Type UserControl}}" />
 	</Style>
