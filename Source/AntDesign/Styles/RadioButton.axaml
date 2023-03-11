@@ -126,17 +126,7 @@
 
 		<!--  Disabled State  -->
 		<Style Selector="^:disabled">
-			<Style Selector="^">
-				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}"/>
-			</Style>
-			<Style Selector="^ /template/ Ellipse#CheckOuterEllipse">
-				<Setter Property="Stroke" Value="{DynamicResource DisableBorderBrush}" />
-			</Style>
-			<Style Selector="^ /template/ Ellipse#CheckGlyph">
-				<Setter Property="Opacity" Value="1" />
-				<Setter Property="Fill" Value="{DynamicResource DisableFill}" />
-				<Setter Property="RenderTransform" Value="scale(1.0)" />
-			</Style>
+			<Setter Property="Opacity" Value="0.5"/>
 		</Style>
 
 		<!--  Checked State  -->
