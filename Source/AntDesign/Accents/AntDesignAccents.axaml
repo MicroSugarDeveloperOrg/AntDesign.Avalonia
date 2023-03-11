@@ -337,6 +337,13 @@
 	<!--TabControl-->
 	<Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
 
+	<x:Double x:Key="PipeSize">2</x:Double>
+	<x:Double x:Key="PipeHeightSize">15</x:Double>
+	<Thickness x:Key="PipeMargin">0,0,0,2</Thickness>
+	<Thickness x:Key="PipeLeftMargin">0,0,2,0</Thickness>
+	<Thickness x:Key="PipeLeftContentMargin">8,0,0,0</Thickness>
+	<Thickness x:Key="PipeRightMargin">2,0,0,0</Thickness>
+	<Thickness x:Key="PipeRightContentMargin">0,0,8,0</Thickness>
 
 	<!--WindowNotificationManager-->
 	

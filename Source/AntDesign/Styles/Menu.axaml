@@ -202,9 +202,7 @@
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}"
-						Padding="{TemplateBinding Padding}"
-						Margin="{TemplateBinding Margin}"
-						HorizontalAlignment="Stretch">
+						Padding="{TemplateBinding Padding}">
 					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
 									ItemsPanel="{TemplateBinding ItemsPanel}"
 									VerticalAlignment="Stretch"

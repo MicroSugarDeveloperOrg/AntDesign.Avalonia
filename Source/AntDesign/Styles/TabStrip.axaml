@@ -13,7 +13,7 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<ControlTheme x:Key="{x:Type TabStrip}" TargetType="TabStrip">
+	<ControlTheme x:Key="{x:Type TabStrip}" TargetType="TabStrip"> 
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Background="{TemplateBinding Background}"

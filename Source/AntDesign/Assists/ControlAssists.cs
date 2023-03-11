@@ -40,4 +40,13 @@ public class ControlAssists
     public static readonly AvaloniaProperty<IBrush?> SelectedBorderBrushProperty = AvaloniaProperty.RegisterAttached<Control, IBrush?>("SelectedBorderBrush", typeof(ControlAssists));
     public static void SetSelectedBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(SelectedBorderBrushProperty, value);
     public static IBrush? GetSelectedBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedBorderBrushProperty);
+
+    //Pipe
+    public static readonly StyledProperty<IBrush?> PointerOverPipeBackgroundProperty = AvaloniaProperty.RegisterAttached<Control, IBrush?>("PointerOverPipeBackground", typeof(ControlAssists));
+    public static void SetPointerOverPipeBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverPipeBackgroundProperty, value);
+    public static IBrush? GetPointerOverPipeBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PointerOverPipeBackgroundProperty);
+
+    public static readonly AvaloniaProperty<IBrush?> SelectedPipeBackgroundProperty = AvaloniaProperty.RegisterAttached<Control, IBrush?>("SelectedPipeBackground", typeof(ControlAssists));
+    public static void SetSelectedPipeBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(SelectedPipeBackgroundProperty, value);
+    public static IBrush? GetSelectedPipeBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedPipeBackgroundProperty);
 }

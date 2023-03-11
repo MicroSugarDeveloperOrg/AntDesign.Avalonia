@@ -164,6 +164,6 @@ public static class PARTNameHelper
 
     //TabControl
     public static string PART_SelectedContentHost => nameof(PART_SelectedContentHost);
-
+    public static string PART_SelectedPipe => nameof(PART_SelectedPipe);
     
 }
