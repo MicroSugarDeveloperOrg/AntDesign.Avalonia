@@ -298,7 +298,7 @@
 							<Grid ColumnDefinitions="40,Auto,10,*,10,Auto,10">
 								<CheckBox Grid.Column="1"
 										  IsChecked="{Binding ShowHiddenFiles}" 
-										  Content="Show hidden files"/>
+										  Content="{DynamicResource ShowHiddenDescription}"/>
 								<TextBox Grid.Column="3" 
 										 Text="{Binding FileName}" 
 										 Watermark="File name" 
@@ -314,9 +314,9 @@
 										Spacing="10" 
 										Orientation="Horizontal"
 										HorizontalAlignment="Right" >
-								<Button Theme="{StaticResource PrimaryButtonStyle}" 
-										Command="{Binding Ok}">OK</Button>
-								<Button Command="{Binding Cancel}">Cancel</Button>
+								<Button Theme="{StaticResource PrimaryButtonStyle}"
+										Command="{Binding Ok}" Content="{DynamicResource OKDescription}"/>
+								<Button Command="{Binding Cancel}" Content="{DynamicResource CancelDescription}"/>
 							</StackPanel>
 
 						</Grid> 

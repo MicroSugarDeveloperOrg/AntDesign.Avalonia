@@ -4,5 +4,102 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.MenuView">
-  Welcome to Avalonia!
+	
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="输入框自动完成功能"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  需要一个输入框而不是选择器。"/>
+			<TextBlock  Text=">>  需要一个输入框而不是选择器。"/>
+			<TextBlock  Text="和 Select 的区别是："/>
+			<TextBlock  Text=">>  AutoComplete 是一个带提示的文本输入框，用户可以自由输入，关键词是辅助输入。"/>
+			<TextBlock  Text=">>  Select 是在限定的可选项中进行选择，关键词是选择。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Menu>
+								<MenuItem Header="Child 12023" IsSelected="True">
+									<MenuItem Header="Child 1"/>
+									<MenuItem Header="Child 2"/>
+									<MenuItem Header="Child 3"/>
+								</MenuItem>
+								<MenuItem Header="123" />
+								<MenuItem Header="123"/>
+								<MenuItem Header="123"/>
+
+							</Menu>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过Items设置自动完成的数据源"/>
+						<TextBlock Text="通过ValueMemberBinding设置数据源中需要显示的数据"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:AutoCompleteBoxAssists.UseFloatingWatermark设置是否启用FloatingWatermark(这是AntDesign库提供的一个扩展依赖属性)"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过Items设置自动完成的数据源"/>
+						<TextBlock Text="通过ValueMemberBinding设置数据源中需要显示的数据"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:AutoCompleteBoxAssists.UseFloatingWatermark设置是否启用FloatingWatermark(这是AntDesign库提供的一个扩展依赖属性)"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+		</Grid>
+	</Grid>
+
 </UserControl>

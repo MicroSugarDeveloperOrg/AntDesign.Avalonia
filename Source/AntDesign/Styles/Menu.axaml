@@ -194,6 +194,8 @@
 		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="MinHeight" Value="{DynamicResource MenuBarHeight}" />
 		<Setter Property="ItemContainerTheme" Value="{StaticResource AntDesignMenuItemStyle}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Menu">
 				<Border Background="{TemplateBinding Background}"

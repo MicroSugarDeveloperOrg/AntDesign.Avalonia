@@ -1,11 +1,17 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+			 xmlns:sys="using:System"
              x:Class="AntDesign.Sample.App"
 			 RequestedThemeVariant="Light">
 	<Application.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="/Assets/Styles/AntDesignSampleGeometry.axaml"/>
+				<ResourceDictionary>
+					<sys:String x:Key="OKDescription">确定</sys:String>
+					<sys:String x:Key="CancelDescription">取消</sys:String>
+					<sys:String x:Key="ShowHiddenDescription">显示隐藏文件</sys:String>
+				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>
