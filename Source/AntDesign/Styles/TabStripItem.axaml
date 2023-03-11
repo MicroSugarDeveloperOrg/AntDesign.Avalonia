@@ -27,8 +27,8 @@
 		<Setter Property="assists:ControlAssists.SelectedPipeBackground" Value="{DynamicResource TabItemSelectedPipeBackground}" />
 		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />	
-		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
-		<Setter Property="Margin" Value="{StaticResource Margin}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="Margin" Value="{StaticResource LeftRightOverlayMargin}" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -37,8 +37,15 @@
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}"
-						Padding="{TemplateBinding Padding}">
-					<Panel>
+						Padding="{TemplateBinding Padding}"
+						Margin="{TemplateBinding Margin}">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="{StaticResource PipeSpacing}"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
 						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 										  FontSize="{TemplateBinding FontSize}"
 										  Content="{TemplateBinding Content}"
@@ -51,13 +58,16 @@
 								</Transitions>
 							</ContentPresenter.Transitions>
 						</ContentPresenter>
-						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SelectedPipe}" 
-								CornerRadius="{DynamicResource OverlayCornerRadius}"
-								Height="{DynamicResource PipeSize}"
-								IsVisible="False"
-								Margin="{DynamicResource PipeMargin}"
-								VerticalAlignment="Bottom"/>
-					</Panel>
+						
+						<Panel Grid.Row="2" 
+							   Height="{DynamicResource PipeSize}"
+							   Margin="{TemplateBinding Margin, Converter={StaticResource BorderOffsetMarginConverter}, ConverterParameter=1}">
+							<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SelectedPipe}"
+									CornerRadius="{DynamicResource OverlayCornerRadius}"
+									IsVisible="False"  />
+						</Panel>
+						
+					</Grid>
 				</Border>
 			</ControlTemplate>
 		</Setter>

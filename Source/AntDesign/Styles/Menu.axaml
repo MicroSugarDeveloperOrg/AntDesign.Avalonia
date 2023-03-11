@@ -45,7 +45,7 @@
 					<Grid >
 						<Grid.RowDefinitions>
 							<RowDefinition Height="*"/>
-							<RowDefinition Height="{DynamicResource AntMenuHeightSpacing}"/> 
+							<RowDefinition Height="{StaticResource PipeSpacing}"/> 
 							<RowDefinition Height="Auto"/>
 						</Grid.RowDefinitions>
 						
@@ -79,7 +79,7 @@
 
 						<Border x:Name="PART_BottomPresenter"
 								Grid.Row="2"
-								Height="2"
+								Height="{DynamicResource PipeSize}"
 								Background="Transparent"
 								Margin="{TemplateBinding Margin, Converter={StaticResource BorderOffsetMarginConverter}, ConverterParameter=1}"/>
 
