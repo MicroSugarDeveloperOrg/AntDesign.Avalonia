@@ -162,8 +162,14 @@ public static class PARTNameHelper
     public static string PART_PrimaryButton => nameof(PART_PrimaryButton);
     public static string PART_SecondaryButton => nameof(PART_SecondaryButton);
 
-    //TabControl
+    //SplitView
+    public static string PART_PaneRoot => nameof(PART_PaneRoot);
+    public static string PART_PanePresenter => nameof(PART_PanePresenter);
+
+    //Tabs
     public static string PART_SelectedContentHost => nameof(PART_SelectedContentHost);
     public static string PART_SelectedPipe => nameof(PART_SelectedPipe);
     
+    
+
 }

@@ -41,6 +41,7 @@
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Separator.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Slider.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/SplitButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/SplitView.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/Tabs.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/TextBox.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Accents/Light/TimePicker.axaml" />
