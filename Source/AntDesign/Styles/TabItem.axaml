@@ -78,9 +78,6 @@
 				<Setter Property="Opacity" Value="0.8" />
 			</Style>
 
-			<Style Selector="^:pressed">
-				<Setter Property="RenderTransform" Value="scale(0.98)" />
-			</Style>
 		</Style>
 
 		<!--  PointerOver state  -->
@@ -99,7 +96,7 @@
 
 		<!--  Pressed state  -->
 		<Style Selector="^:pressed">
-
+			<Setter Property="RenderTransform" Value="scale(0.98)" />
 		</Style>
 
 		<!--  Disabled state  -->
@@ -109,6 +106,7 @@
 
 		<!--  TabStripPlacement States Group  -->
 		<Style Selector="^[TabStripPlacement=Top]">
+			<Setter Property="Margin" Value="{StaticResource LeftRightOverlayMargin}" />
 			<Style Selector="^/template/ Border#PART_SelectedPipe">
 				<Setter Property="Height" Value="{DynamicResource PipeSize}" />
 				<Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -121,6 +119,7 @@
 		</Style>
 
 		<Style Selector="^[TabStripPlacement=Bottom]">
+			<Setter Property="Margin" Value="{StaticResource LeftRightOverlayMargin}" />
 			<Style Selector="^/template/ Border#PART_SelectedPipe">
 				<Setter Property="Height" Value="{DynamicResource PipeSize}" />
 				<Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -133,6 +132,7 @@
 		</Style>
 
 		<Style Selector="^[TabStripPlacement=Left]">
+			<Setter Property="Margin" Value="{StaticResource TopBottomOverlayMargin}" />
 			<Style Selector="^ /template/ Border#PART_SelectedPipe">
 				<Setter Property="Width" Value="{DynamicResource PipeSize}" />
 				<Setter Property="Height" Value="{DynamicResource PipeHeightSize}" />
@@ -146,6 +146,7 @@
 		</Style>
 
 		<Style Selector="^[TabStripPlacement=Right]">
+			<Setter Property="Margin" Value="{StaticResource TopBottomOverlayMargin}" />
 			<Setter Property="HorizontalContentAlignment" Value="Right" />
 			<Style Selector="^ /template/ Border#PART_SelectedPipe">
 				<Setter Property="Width" Value="{DynamicResource PipeSize}" />

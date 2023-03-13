@@ -16,6 +16,7 @@
 	<Thickness x:Key="Margin">0</Thickness>
 	<Thickness x:Key="OverlayMargin">5</Thickness>
 	<Thickness x:Key="LeftRightOverlayMargin">5,0,5,0</Thickness>
+	<Thickness x:Key="TopBottomOverlayMargin">0,5,0,5</Thickness>
 
 	<Thickness x:Key="BorderThickness">0</Thickness>
 	<Thickness x:Key="OverlayBorderThickness">1</Thickness>
