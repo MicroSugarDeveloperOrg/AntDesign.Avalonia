@@ -14,8 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" />
-		<PackageReference Include="Avalonia.Themes.Fluent" />
+		<PackageReference Include="Avalonia" /> 
 		<PackageReference Include="Avalonia.ReactiveUI" />
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
 		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
@@ -28,12 +27,6 @@
 	  <ProjectReference Include="..\AntDesign\AntDesign.csproj" />
 	  <ProjectReference Include="..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	  <ProjectReference Include="..\Avalonia.Toolkit\Avalonia.Toolkit.csproj" /> 
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\ToggleSplitButtonView.axaml.cs">
-	    <DependentUpon>ToggleSplitButtonView.axaml</DependentUpon>
-	  </Compile>
 	</ItemGroup>
 	 
 </Project>
