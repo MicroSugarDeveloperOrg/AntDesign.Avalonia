@@ -32,6 +32,8 @@
 	<antConverters:Thickness2MarginConverter Edges="Left" Reverse="True" x:Key="OnlyLeftReverseMargin"/>
 	<antConverters:Thickness2MarginConverter Edges="Right" Reverse="True" x:Key="OnlyRightReverseMargin"/>
 
+	<antConverters:BoundsBorderThickness2SizeConverter Edges="Left,Right" Orientation="Horizontal" Minus="True" x:Key="HorizontalBoundsBorderThickness2Size"/>
+	
 	<converters:StringFormatConverter x:Key="StringFormatConverter"/>
 	
 	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />

@@ -49,7 +49,7 @@
 	<!-- TextBoxSelectionColor -->
 	<Color x:Key="AntDesigndAssistColor9">#3390ff</Color>
 	<SolidColorBrush x:Key="AntDesignAssistBrush9" Color="{DynamicResource AntDesigndAssistColor9}"/>
-	
+
 	<!--Status-->
 	<Color x:Key="DefaultColor">#bfbfbf</Color>
 	<Color x:Key="InfoColor">#1677ff</Color>

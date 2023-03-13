@@ -83,7 +83,8 @@ public partial class App : Application
         routingViewLocator.AddGroupRouter(() => "导航");
         routingViewLocator.AddRouter<ListBoxView, ListBoxViewModel>(routerNameCallBack: () => "List 列表");
         routingViewLocator.AddRouter<TreesView, TreesViewModel>(routerNameCallBack: () => "Tree 树形控件");
-        routingViewLocator.AddRouter<TabsView, TabsViewModel>(routerNameCallBack: () => "Tabs 标签页");
+        routingViewLocator.AddRouter<TabStripView, TabStripViewModel>(routerNameCallBack: () => "TabStrip 标签页");
+        routingViewLocator.AddRouter<TabsView, TabsViewModel>(routerNameCallBack: () => "TabControl 标签页");
         routingViewLocator.AddRouter<MenuView, MenuViewModel>(routerNameCallBack: () => "Menu 菜单");
 
         //数据录入

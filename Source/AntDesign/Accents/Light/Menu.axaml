@@ -28,5 +28,24 @@
 
 	<SolidColorBrush x:Key="AntMenuItemSelectedBottomBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
+	<!--Normal-->
+	<SolidColorBrush x:Key="AntNormalMenuItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemBorderBrush" Color="Transparent"/>
 
+	<SolidColorBrush x:Key="AntNormalMenuItemPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemPointerOverBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="AntNormalMenuItemPressedBackground" Color="#f2f2f2"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemPressedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="AntNormalMenuItemSelectedBackground" Color="#f2f2f2"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemSelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="AntNormalMenuItemPopupBackground" Color="#f2f2f2"/>
+	<SolidColorBrush x:Key="AntNormalMenuItemPopupBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+	
 </ResourceDictionary>

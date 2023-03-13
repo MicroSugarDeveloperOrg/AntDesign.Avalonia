@@ -342,7 +342,7 @@
 	<sys:TimeSpan x:Key="SplitViewPaneAnimationCloseDuration">00:00:00.1</sys:TimeSpan>
 	<Easing x:Key="SplitViewPaneAnimationEasing">0.1,0.9,0.2,1.0</Easing>
 
-	<!--TabControl-->
+	<!--TabControl and TabStrip-->
 	<Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
 	<Thickness x:Key="TabBorderThickness">0,0,0,1</Thickness>
 	<Thickness x:Key="TabItemsMargin">0,0,0,-1</Thickness>
@@ -353,7 +353,6 @@
 	<Thickness x:Key="PipeLeftContentMargin">8,0,0,0</Thickness>
 	<Thickness x:Key="PipeRightMargin">2,0,0,0</Thickness>
 	<Thickness x:Key="PipeRightContentMargin">0,0,8,0</Thickness>
-
 
 	<GridLength x:Key="PipeSpacing">10</GridLength>
 

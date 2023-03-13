@@ -3,14 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AntDesign.Sample.Views.TabsView">
+             x:Class="AntDesign.Sample.Views.TabStripView">
 
 	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
 		<TextBlock Grid.Row="0" Text="选项卡切换组件。"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
 			<TextBlock  Text="何时使用" Classes="h3"/>
-			<TextBlock  Text="提供平级的区域将大块内容进行收纳和展现，保持界面整洁。"/>  
+			<TextBlock  Text="提供平级的区域将大块内容进行收纳和展现，保持界面整洁。"/>
 			<TextBlock  Text=">>  提供平级的区域将大块内容进行收纳和展现，保持界面整洁。"/>
 			<TextBlock  Text=">>  既可用于容器顶部，也可用于容器内部，是最通用的 Tabs。"/>
 		</StackPanel>
@@ -31,11 +31,11 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<TabControl>
-								<TabItem Header="Item 1">Item 1</TabItem>
-								<TabItem Header="Item 2">Item 2</TabItem>
-								<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
-							</TabControl>
+							<TabStrip>
+								<TabStripItem>Item 1</TabStripItem>
+								<TabStripItem>Item 2</TabStripItem>
+								<TabStripItem IsEnabled="False">Disabled</TabStripItem>
+							</TabStrip>
 						</StackPanel>
 					</StackPanel>
 
@@ -45,7 +45,7 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="TabControl"/>
+						<TextBlock Text="TabStrip"/>
 						<TextBlock Text="默认选中第一项。"/>
 						<TextBlock Text="可以禁用某一项。"/>
 					</StackPanel>
@@ -64,11 +64,11 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<TabControl IsEnabled="False">
-								<TabItem Header="Item 1">Item 1</TabItem>
-								<TabItem Header="Item 2">Item 2</TabItem>
-								<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
-							</TabControl>
+							<TabStrip IsEnabled="False">
+								<TabStripItem>Item 1</TabStripItem>
+								<TabStripItem>Item 2</TabStripItem>
+								<TabStripItem IsEnabled="False">Disabled</TabStripItem>
+							</TabStrip>
 						</StackPanel>
 					</StackPanel>
 
@@ -78,7 +78,7 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="TabControl"/>
+						<TextBlock Text="TabStrip"/>
 						<TextBlock Text="通过设置IsEnabled来控制是否可用"/>
 
 					</StackPanel>
@@ -89,5 +89,5 @@
 
 		</Grid>
 	</Grid>
-
+	
 </UserControl>
