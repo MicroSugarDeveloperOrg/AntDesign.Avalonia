@@ -348,9 +348,28 @@
 	<Thickness x:Key="TabItemsMargin">0,0,0,-1</Thickness>
 	<x:Double x:Key="PipeSize">2</x:Double>
 	<x:Double x:Key="PipeHeightSize">15</x:Double>
-	<Thickness x:Key="PipeMargin">0,0,0,0</Thickness>
+
+	<Thickness x:Key="TabTopItemMargin">0,0,0,-1</Thickness>
+	<Thickness x:Key="TabTopBorderThickness">0,0,0,1</Thickness>
+
+	<Thickness x:Key="TabBottomItemMargin">0,-1,0,0</Thickness>
+	<Thickness x:Key="TabBottomBorderThickness">0,1,0,0</Thickness>
+
+	<Thickness x:Key="TabLeftItemMargin">0,0,0,0</Thickness>
+	<Thickness x:Key="TabLeftBorderThickness">0,0,1,0</Thickness>
+
+	<Thickness x:Key="TabRightItemMargin">0,0,0,0</Thickness>
+	<Thickness x:Key="TabRightBorderThickness">1,0,0,0</Thickness>
+
+	<Thickness x:Key="PipeTopMargin">0,2,0,0</Thickness>
+	<Thickness x:Key="PipeTopContentMargin">0,0,0,8</Thickness>
+
+	<Thickness x:Key="PipeBottomMargin">0,0,0,2</Thickness>
+	<Thickness x:Key="PipeBottomContentMargin">0,8,0,8</Thickness>
+
 	<Thickness x:Key="PipeLeftMargin">0,0,2,0</Thickness>
 	<Thickness x:Key="PipeLeftContentMargin">8,0,0,0</Thickness>
+	
 	<Thickness x:Key="PipeRightMargin">2,0,0,0</Thickness>
 	<Thickness x:Key="PipeRightContentMargin">0,0,8,0</Thickness>
 

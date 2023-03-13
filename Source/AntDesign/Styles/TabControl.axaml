@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
 
 	<Design.PreviewWith>
@@ -24,6 +25,8 @@
 		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="assists:ControlAssists.BorderBrush" Value="{DynamicResource TabBorderBrush}" /> 
+
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border BorderBrush="{TemplateBinding BorderBrush}"
@@ -33,9 +36,13 @@
 						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
 						VerticalAlignment="{TemplateBinding VerticalAlignment}">
 					<DockPanel>
-						<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-										ItemsPanel="{TemplateBinding ItemsPanel}"
-										DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
+						<Border DockPanel.Dock="{TemplateBinding TabStripPlacement}"
+								BorderBrush="{TemplateBinding assists:ControlAssists.BorderBrush}"
+								BorderThickness="{TemplateBinding assists:ControlAssists.BorderThickness}">
+							<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+											ItemsPanel="{TemplateBinding ItemsPanel}"/>
+						</Border>
+						
 						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_SelectedContentHost}"
 										  Margin="{TemplateBinding Padding}"
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -47,15 +54,42 @@
 			</ControlTemplate>
 		</Setter>
 
-		<Style Selector="^[TabStripPlacement=Left] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
-			<Setter Property="Orientation" Value="Vertical" />
+		<Style Selector="^[TabStripPlacement=Top]">
+			<Setter Property="assists:ControlAssists.BorderThickness" Value="{DynamicResource TabTopBorderThickness}" />
+			<Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter">
+				<Setter Property="Margin" Value="{DynamicResource TabTopItemMargin}" />
+			</Style>
 		</Style>
-		<Style Selector="^[TabStripPlacement=Right] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
-			<Setter Property="Orientation" Value="Vertical" />
+
+		<Style Selector="^[TabStripPlacement=Bottom]">
+			<Setter Property="assists:ControlAssists.BorderThickness" Value="{DynamicResource TabBottomBorderThickness}" />
+			<Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter">
+				<Setter Property="Margin" Value="{DynamicResource TabBottomItemMargin}" />
+			</Style>
 		</Style>
-		<Style Selector="^[TabStripPlacement=Top] /template/ ItemsPresenter#PART_ItemsPresenter">
-			<Setter Property="Margin" Value="{DynamicResource TabControlTopPlacementItemMargin}" />
+
+		<Style Selector="^[TabStripPlacement=Left]">
+			<Setter Property="assists:ControlAssists.BorderThickness" Value="{DynamicResource TabLeftBorderThickness}" />
+			<Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter">
+				<Setter Property="Margin" Value="{DynamicResource TabLeftItemMargin}" />
+			</Style>
+			<Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
+				<Setter Property="Orientation" Value="Vertical" />
+			</Style>
 		</Style>
+
+		<Style Selector="^[TabStripPlacement=Right]">
+			<Setter Property="assists:ControlAssists.BorderThickness" Value="{DynamicResource TabRightBorderThickness}" />
+			<Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter">
+				<Setter Property="Margin" Value="{DynamicResource TabRightItemMargin}" />
+			</Style>
+			<Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
+				<Setter Property="Orientation" Value="Vertical" />
+			</Style>
+		</Style>
+	
+		
+	
 	</ControlTheme>
 
 </ResourceDictionary>

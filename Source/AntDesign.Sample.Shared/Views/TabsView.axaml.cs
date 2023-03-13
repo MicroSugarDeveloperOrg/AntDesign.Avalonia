@@ -8,5 +8,6 @@ public partial class TabsView : ReactiveUserControl<TabsViewModel>
     {
         InitializeComponent();
         //ItemsPresenter.VerticalAlignmentProperty
+        //TabControl.TabStripPlacementProperty
     }
 }

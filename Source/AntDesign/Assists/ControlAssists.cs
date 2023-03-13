@@ -49,4 +49,15 @@ public class ControlAssists
     public static readonly AvaloniaProperty<IBrush?> SelectedPipeBackgroundProperty = AvaloniaProperty.RegisterAttached<Control, IBrush?>("SelectedPipeBackground", typeof(ControlAssists));
     public static void SetSelectedPipeBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(SelectedPipeBackgroundProperty, value);
     public static IBrush? GetSelectedPipeBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(SelectedPipeBackgroundProperty);
+
+    //Extensions for TabControl
+    public static readonly AvaloniaProperty<IBrush?> BorderBrushProperty = AvaloniaProperty.RegisterAttached<Control, IBrush?>("BorderBrush", typeof(ControlAssists));
+    public static void SetBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(BorderBrushProperty, value);
+    public static IBrush? GetBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(BorderBrushProperty);
+
+    public static readonly AvaloniaProperty<Thickness> BorderThicknessProperty = AvaloniaProperty.RegisterAttached<Control, Thickness>("BorderThickness", typeof(ControlAssists));
+    public static void SetBorderThickness(AvaloniaObject dependencyObject, Thickness value) => dependencyObject.SetValue(BorderThicknessProperty, value);
+    public static Thickness GetBorderThickness(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Thickness>(BorderThicknessProperty);
+
+
 }

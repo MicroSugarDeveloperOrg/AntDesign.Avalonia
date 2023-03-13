@@ -27,7 +27,7 @@
 		<Setter Property="assists:ControlAssists.SelectedPipeBackground" Value="{DynamicResource TabItemSelectedPipeBackground}" />
 		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />
-		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="Margin" Value="{StaticResource Margin}" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
@@ -54,8 +54,7 @@
 						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SelectedPipe}"
 								CornerRadius="{DynamicResource OverlayCornerRadius}"
 								Height="{DynamicResource PipeHeight}"
-								IsVisible="False"
-								Margin="{DynamicResource PipeMargin}"
+								IsVisible="False" 
 								VerticalAlignment="Bottom"/>
 					</Panel>
 				</Border>
@@ -109,6 +108,30 @@
 		</Style>
 
 		<!--  TabStripPlacement States Group  -->
+		<Style Selector="^[TabStripPlacement=Top]">
+			<Style Selector="^/template/ Border#PART_SelectedPipe">
+				<Setter Property="Height" Value="{DynamicResource PipeSize}" />
+				<Setter Property="HorizontalAlignment" Value="Stretch" />
+				<Setter Property="VerticalAlignment" Value="Bottom" />
+				<Setter Property="Margin" Value="{DynamicResource PipeTopMargin}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Margin" Value="{DynamicResource PipeTopContentMargin}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^[TabStripPlacement=Bottom]">
+			<Style Selector="^/template/ Border#PART_SelectedPipe">
+				<Setter Property="Height" Value="{DynamicResource PipeSize}" />
+				<Setter Property="HorizontalAlignment" Value="Stretch" />
+				<Setter Property="VerticalAlignment" Value="Top" />
+				<Setter Property="Margin" Value="{DynamicResource PipeBottomMargin}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Margin" Value="{DynamicResource PipeBottomContentMargin}" />
+			</Style>
+		</Style>
+
 		<Style Selector="^[TabStripPlacement=Left]">
 			<Style Selector="^ /template/ Border#PART_SelectedPipe">
 				<Setter Property="Width" Value="{DynamicResource PipeSize}" />
@@ -120,14 +143,6 @@
 			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
 				<Setter Property="Margin" Value="{DynamicResource PipeLeftContentMargin}" />
 			</Style>
-
-		</Style>
-
-		<Style Selector="^[TabStripPlacement=Top] /template/ Border#PART_SelectedPipe, ^[TabStripPlacement=Bottom] /template/ Border#PART_SelectedPipe">
-			<Setter Property="Height" Value="{DynamicResource PipeSize}" />
-			<Setter Property="Margin" Value="{DynamicResource PipeMargin}" />
-			<Setter Property="HorizontalAlignment" Value="Stretch" />
-			<Setter Property="VerticalAlignment" Value="Bottom" />
 		</Style>
 
 		<Style Selector="^[TabStripPlacement=Right]">

@@ -5,89 +5,224 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.TabsView">
 
-	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
-		<TextBlock Grid.Row="0" Text="选项卡切换组件。"/>
+	<ScrollViewer>
+		<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+			<TextBlock Grid.Row="0" Text="选项卡切换组件。"/>
 
-		<StackPanel Grid.Row="2" Spacing="10">
-			<TextBlock  Text="何时使用" Classes="h3"/>
-			<TextBlock  Text="提供平级的区域将大块内容进行收纳和展现，保持界面整洁。"/>  
-			<TextBlock  Text=">>  提供平级的区域将大块内容进行收纳和展现，保持界面整洁。"/>
-			<TextBlock  Text=">>  既可用于容器顶部，也可用于容器内部，是最通用的 Tabs。"/>
-		</StackPanel>
+			<StackPanel Grid.Row="2" Spacing="10">
+				<TextBlock  Text="何时使用" Classes="h3"/>
+				<TextBlock  Text="提供平级的区域将大块内容进行收纳和展现，保持界面整洁。"/>
+				<TextBlock  Text=">>  提供平级的区域将大块内容进行收纳和展现，保持界面整洁。"/>
+				<TextBlock  Text=">>  既可用于容器顶部，也可用于容器内部，是最通用的 Tabs。"/>
+			</StackPanel>
 
-		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+			<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
 
-		<Grid Grid.Row="6"
-			  ColumnDefinitions="*,20,*"
-			  RowDefinitions="*,20,*">
+			<Grid Grid.Row="6"
+				  ColumnDefinitions="*,20,*"
+				  RowDefinitions="*,20,*, 20, *">
 
-			<Border Grid.Column="0" Grid.Row="0"
-					BorderThickness="{StaticResource OverlayBorderThickness}"
-					CornerRadius="{StaticResource OverlayCornerRadius}"
-					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+				<Border Grid.Column="0" Grid.Row="0" Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}" >
 
-				<Grid RowDefinitions="*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<TabControl>
-								<TabItem Header="Item 1">Item 1</TabItem>
-								<TabItem Header="Item 2">Item 2</TabItem>
-								<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
-							</TabControl>
+					<Grid RowDefinitions="*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TabControl>
+									<TabItem Header="Item 1">Item 1</TabItem>
+									<TabItem Header="Item 2">Item 2</TabItem>
+									<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
+								</TabControl>
+							</StackPanel>
 						</StackPanel>
-					</StackPanel>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+						<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
 
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
 
-						<TextBlock Text="TabControl"/>
-						<TextBlock Text="默认选中第一项。"/>
-						<TextBlock Text="可以禁用某一项。"/>
-					</StackPanel>
-
-				</Grid>
-
-			</Border>
-
-			<Border Grid.Column="0" Grid.Row="2"
-					BorderThickness="{StaticResource OverlayBorderThickness}"
-					CornerRadius="{StaticResource OverlayCornerRadius}"
-					BorderBrush="{DynamicResource AntDesignBorderBrush}">
-
-				<Grid RowDefinitions="*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-						<StackPanel Orientation="Horizontal" Spacing="10">
-							<TabControl IsEnabled="False">
-								<TabItem Header="Item 1">Item 1</TabItem>
-								<TabItem Header="Item 2">Item 2</TabItem>
-								<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
-							</TabControl>
+							<TextBlock Text="TabControl"/>
+							<TextBlock Text="默认选中第一项。"/>
+							<TextBlock Text="可以禁用某一项。"/>
 						</StackPanel>
-					</StackPanel>
 
-					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+					</Grid>
 
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
+				</Border>
 
-						<TextBlock Text="TabControl"/>
-						<TextBlock Text="通过设置IsEnabled来控制是否可用"/>
+				<Border Grid.Column="2" Grid.Row="0" Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
 
-					</StackPanel>
+					<Grid RowDefinitions="*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TabControl IsEnabled="False">
+									<TabItem Header="Item 1">Item 1</TabItem>
+									<TabItem Header="Item 2">Item 2</TabItem>
+									<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
+								</TabControl>
+							</StackPanel>
+						</StackPanel>
 
-				</Grid>
+						<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
 
-			</Border>
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
 
+							<TextBlock Text="TabControl"/>
+							<TextBlock Text="通过设置IsEnabled来控制是否可用"/>
+
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="0" Grid.Row="2" Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TabControl TabStripPlacement="Top">
+									<TabItem Header="Item 1">Item 1</TabItem>
+									<TabItem Header="Item 2">Item 2</TabItem>
+									<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
+								</TabControl>
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="在上"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="TabControl"/>
+							<TextBlock Text="默认选中第一项。"/>
+							<TextBlock Text="可以禁用某一项。"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="2" Grid.Row="2" Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}" 
+						CornerRadius="{StaticResource OverlayCornerRadius}" 
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TabControl TabStripPlacement="Bottom">
+									<TabItem Header="Item 1">Item 1</TabItem>
+									<TabItem Header="Item 2">Item 2</TabItem>
+									<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
+								</TabControl>
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="在上"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="TabControl"/>
+							<TextBlock Text="默认选中第一项。"/>
+							<TextBlock Text="可以禁用某一项。"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="0" Grid.Row="4" Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TabControl TabStripPlacement="Left">
+									<TabItem Header="Item 1">Item 1</TabItem>
+									<TabItem Header="Item 2">Item 2</TabItem>
+									<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
+								</TabControl>
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="在上"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="TabControl"/>
+							<TextBlock Text="默认选中第一项。"/>
+							<TextBlock Text="可以禁用某一项。"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="2" Grid.Row="4" Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="*,Auto,*">
+						<StackPanel Grid.Row="0" Spacing="20"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal" Spacing="10">
+								<TabControl TabStripPlacement="Right">
+									<TabItem Header="Item 1">Item 1</TabItem>
+									<TabItem Header="Item 2">Item 2</TabItem>
+									<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
+								</TabControl>
+							</StackPanel>
+						</StackPanel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="在上"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="TabControl"/>
+							<TextBlock Text="默认选中第一项。"/>
+							<TextBlock Text="可以禁用某一项。"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+			</Grid>
 		</Grid>
-	</Grid>
+
+	</ScrollViewer>
 
 </UserControl>
