@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Icons", "Source\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Controls", "Source\AntDesign.Controls\AntDesign.Controls.csproj", "{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntDesign.DataGrid", "Source\AntDesign.DataGrid\AntDesign.DataGrid.csproj", "{8AFBC6AB-C9C9-4BCC-A329-0B0B5ED7C364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntDesign.ColorPicker", "Source\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj", "{645C820A-D238-4BBE-AFBD-CE7D1CCE5C62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,14 @@ Global
 		{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FEEA5BB-77A0-4015-B005-3CEE78A3C535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AFBC6AB-C9C9-4BCC-A329-0B0B5ED7C364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AFBC6AB-C9C9-4BCC-A329-0B0B5ED7C364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AFBC6AB-C9C9-4BCC-A329-0B0B5ED7C364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AFBC6AB-C9C9-4BCC-A329-0B0B5ED7C364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645C820A-D238-4BBE-AFBD-CE7D1CCE5C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645C820A-D238-4BBE-AFBD-CE7D1CCE5C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645C820A-D238-4BBE-AFBD-CE7D1CCE5C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645C820A-D238-4BBE-AFBD-CE7D1CCE5C62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
