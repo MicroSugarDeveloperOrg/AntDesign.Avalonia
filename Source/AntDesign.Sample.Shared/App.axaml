@@ -8,6 +8,7 @@
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="/Assets/Styles/AntDesignSampleGeometry.axaml"/>
 				<ResourceDictionary>
+					<sys:String x:Key="FileNameDescription">文件名</sys:String>
 					<sys:String x:Key="OKDescription">确定</sys:String>
 					<sys:String x:Key="CancelDescription">取消</sys:String>
 					<sys:String x:Key="ShowHiddenDescription">显示隐藏文件</sys:String>

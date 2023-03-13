@@ -3,6 +3,7 @@
 					xmlns:sys="using:System"
 					x:CompileBindings="True">
 
+	<sys:String x:Key="FileNameDescription">File Name</sys:String>
 	<sys:String x:Key="OKDescription">OK</sys:String>
 	<sys:String x:Key="CancelDescription">Cancel</sys:String>
 	<sys:String x:Key="ShowHiddenDescription">Show hidden files</sys:String>

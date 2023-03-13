@@ -301,7 +301,7 @@
 										  Content="{DynamicResource ShowHiddenDescription}"/>
 								<TextBox Grid.Column="3" 
 										 Text="{Binding FileName}" 
-										 Watermark="File name" 
+										 Watermark="{DynamicResource FileNameDescription}" 
 										 IsVisible="{Binding !SelectingFolder}" />
 								<ComboBox Grid.Column="5" 
 										  IsVisible="{Binding ShowFilters}"
