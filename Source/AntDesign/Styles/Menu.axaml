@@ -252,7 +252,7 @@
 							   PlacementTarget="{TemplateBinding}"
 							   WindowManagerAddShadowHint="False"
 							   IsLightDismissEnabled="True"
-							   HorizontalOffset="-0.5"
+							   HorizontalOffset="-1"
 							   VerticalOffset="-1"
 							   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
 							<Popup.MinWidth>

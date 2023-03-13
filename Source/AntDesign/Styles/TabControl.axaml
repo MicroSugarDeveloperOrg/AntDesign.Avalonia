@@ -26,7 +26,6 @@
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="assists:ControlAssists.BorderBrush" Value="{DynamicResource TabBorderBrush}" /> 
-
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border BorderBrush="{TemplateBinding BorderBrush}"
