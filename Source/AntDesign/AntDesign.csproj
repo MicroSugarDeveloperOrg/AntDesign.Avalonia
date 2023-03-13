@@ -9,8 +9,8 @@
 		<AvaloniaResource Include="Accents\*.axaml" />
 		<AvaloniaResource Include="Accents\Dark\*.axaml" />
 		<AvaloniaResource Include="Accents\Light\*.axaml" />
-		<AvaloniaResource Include="*.axaml" />
 		<AvaloniaResource Include="Styles\*.axaml" />
+		<AvaloniaResource Include="*.axaml" />
 	</ItemGroup>
 
 	<ItemGroup>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
