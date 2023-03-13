@@ -14,8 +14,8 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type TabStrip}" TargetType="TabStrip">
-		<Setter Property="BorderBrush" Value="Gray"/>
-		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource TabBorderBrush}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource TabBorderThickness}"/>
 		<Setter Property="Padding" Value="{DynamicResource Padding}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -26,6 +26,7 @@
 						Padding="{TemplateBinding Padding}">
 					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
 									ItemsPanel="{TemplateBinding ItemsPanel}"
+									Margin="{DynamicResource TabItemsMargin}"
 									VerticalAlignment="Stretch"
 									KeyboardNavigation.TabNavigation="Continue"/>
 				</Border>

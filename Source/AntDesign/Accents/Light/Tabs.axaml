@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
+	<SolidColorBrush x:Key="TabBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
 	<SolidColorBrush x:Key="TabItemBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="TabItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="TabItemBorderBrush" Color="Transparent"/>
