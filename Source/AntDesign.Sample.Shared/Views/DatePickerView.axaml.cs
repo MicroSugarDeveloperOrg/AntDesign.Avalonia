@@ -1,13 +1,10 @@
 using AntDesign.Sample.ViewModels;
 
 namespace AntDesign.Sample.Views;
-public partial class CollapseView : ReactiveUserControl<CollapseViewModel>
+public partial class DatePickerView : ReactiveUserControl<DatePickerViewModel>
 {
-    public CollapseView()
+    public DatePickerView()
     {
         InitializeComponent();
-
-
     }
-
 }

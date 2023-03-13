@@ -1,13 +1,10 @@
 using AntDesign.Sample.ViewModels;
 
 namespace AntDesign.Sample.Views;
-public partial class CollapseView : ReactiveUserControl<CollapseViewModel>
+public partial class TextView : ReactiveUserControl<TextViewModel>
 {
-    public CollapseView()
+    public TextView()
     {
         InitializeComponent();
-
-
     }
-
 }

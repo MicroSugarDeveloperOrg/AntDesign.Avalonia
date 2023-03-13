@@ -25,7 +25,7 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<ControlTheme x:Key="{x:Type ProgressBar}" TargetType="ProgressBar">
+	<ControlTheme x:Key="AntDesignProgressBar" TargetType="ProgressBar">
 		<Setter Property="Background" Value="{DynamicResource ProgressBarBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ProgressBarForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ProgressBarBorderBrush}" />
@@ -217,6 +217,10 @@
 			<Setter Property="Height" Value="{Binding $parent[ProgressBar].TemplateProperties.Container2Width}" />
 		</Style>
 
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
+		
 		<Style Selector="^.error">
 			<Setter Property="Foreground" Value="{DynamicResource ErrorForeground}" />
 		</Style>
@@ -226,7 +230,7 @@
 		</Style>
 	</ControlTheme>
 
-	<ControlTheme x:Key="AntDesignProgressBar" TargetType="ProgressBar">
+	<ControlTheme x:Key="{x:Type ProgressBar}" TargetType="ProgressBar">
 		<Setter Property="Background" Value="{DynamicResource ProgressBarBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ProgressBarForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ProgressBarBorderBrush}" />
@@ -236,8 +240,8 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
-		<Setter Property="VerticalAlignment" Value="Center" />
-		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Center" /> 
+		<Setter Property="VerticalAlignment" Value="Center" /> 
 		<Setter Property="assists:ProgressBarAssists.Content">
 			<Setter.Value>
 				<Template>
@@ -479,6 +483,10 @@
 			</Style>
 		</Style>
 
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
+		
 		<Style Selector="^.error">
 			<Setter Property="Foreground" Value="{DynamicResource ErrorForeground}" />
 			<Setter Property="assists:ProgressBarAssists.Content">

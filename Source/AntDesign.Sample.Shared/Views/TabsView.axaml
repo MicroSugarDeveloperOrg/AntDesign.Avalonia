@@ -113,8 +113,7 @@
 									VerticalAlignment="Center">
 
 							<TextBlock Text="TabControl"/>
-							<TextBlock Text="默认选中第一项。"/>
-							<TextBlock Text="可以禁用某一项。"/>
+							<TextBlock Text="TabStripPlacement = Top。"/> 
 						</StackPanel>
 
 					</Grid>
@@ -139,15 +138,14 @@
 							</StackPanel>
 						</StackPanel>
 
-						<Separator Grid.Row="1" SeparatorAssists.Content="在上"/>
+						<Separator Grid.Row="1" SeparatorAssists.Content="在下"/>
 
 						<StackPanel Grid.Row="2" Spacing="10"
 									Margin="20,0,0,0"
 									VerticalAlignment="Center">
 
 							<TextBlock Text="TabControl"/>
-							<TextBlock Text="默认选中第一项。"/>
-							<TextBlock Text="可以禁用某一项。"/>
+							<TextBlock Text="TabStripPlacement = Bottom"/> 
 						</StackPanel>
 
 					</Grid>
@@ -172,15 +170,14 @@
 							</StackPanel>
 						</StackPanel>
 
-						<Separator Grid.Row="1" SeparatorAssists.Content="在上"/>
+						<Separator Grid.Row="1" SeparatorAssists.Content="在左"/>
 
 						<StackPanel Grid.Row="2" Spacing="10"
 									Margin="20,0,0,0"
 									VerticalAlignment="Center">
 
 							<TextBlock Text="TabControl"/>
-							<TextBlock Text="默认选中第一项。"/>
-							<TextBlock Text="可以禁用某一项。"/>
+							<TextBlock Text="TabStripPlacement = Left。"/> 
 						</StackPanel>
 
 					</Grid>
@@ -205,15 +202,14 @@
 							</StackPanel>
 						</StackPanel>
 
-						<Separator Grid.Row="1" SeparatorAssists.Content="在上"/>
+						<Separator Grid.Row="1" SeparatorAssists.Content="在右"/>
 
 						<StackPanel Grid.Row="2" Spacing="10"
 									Margin="20,0,0,0"
 									VerticalAlignment="Center">
 
 							<TextBlock Text="TabControl"/>
-							<TextBlock Text="默认选中第一项。"/>
-							<TextBlock Text="可以禁用某一项。"/>
+							<TextBlock Text="TabStripPlacement = Right。"/> 
 						</StackPanel>
 
 					</Grid>

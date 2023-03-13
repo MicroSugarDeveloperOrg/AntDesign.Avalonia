@@ -12,4 +12,8 @@
 	<Style Selector="TextBlock.h3">
 		<Setter Property="FontSize" Value="20" />
 	</Style>
+	<Style Selector="TextBlock:disabled">
+		<Setter Property="Opacity" Value="0.5" />
+	</Style>
+
 </Styles>

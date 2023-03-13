@@ -24,8 +24,8 @@
 			<Setter Property="Cursor" Value="IBeam" />
 			<Setter Property="ContextFlyout" Value="{StaticResource SelectableTextBlockContextFlyout}" />
 		</Style>
-		<Style Selector="^[IsEnabled=False]">
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}"/>
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
 		</Style>
 	</ControlTheme>
 </ResourceDictionary>

@@ -28,5 +28,14 @@
 	  <ProjectReference Include="..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	  <ProjectReference Include="..\Avalonia.Toolkit\Avalonia.Toolkit.csproj" /> 
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\DatePickerView.axaml.cs">
+	    <DependentUpon>DatePickerView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TimePickerView.axaml.cs">
+	    <DependentUpon>TimePickerView.axaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
 	 
 </Project>

@@ -66,6 +66,10 @@
 			<Setter Property="BorderThickness" Value="0" />
 			<Setter Property="Background" Value="Transparent" />
 		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
 	</ControlTheme>
 
 	<ControlTheme x:Key="{x:Type CalendarItem}" TargetType="CalendarItem">
@@ -184,6 +188,10 @@
 		</Style>
 		<Style Selector="^ /template/ Button:pressed > Path">
 			<Setter Property="Fill" Value="{DynamicResource CalendarItemButtonPressedForeground}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
 		</Style>
 	</ControlTheme>
 

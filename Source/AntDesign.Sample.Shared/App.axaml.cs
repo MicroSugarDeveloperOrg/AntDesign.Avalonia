@@ -78,6 +78,7 @@ public partial class App : Application
         routingViewLocator.AddRouter<ToggleButtonView, ToggleButtonViewModel>(routerNameCallBack: () => "ToggleButton 确认按钮");
         routingViewLocator.AddRouter<ToggleSwitchView, ToggleSwitchViewModel>(routerNameCallBack: () => "ToggleSwitch 切换开关");
         routingViewLocator.AddRouter<RadioButtonView, RadioButtonViewModel>(routerNameCallBack: () => "RadioButton 单选按钮");
+        routingViewLocator.AddRouter<CheckBoxView, CheckBoxViewModel>(routerNameCallBack: () => "Checkbox 多选框");
 
         //导航
         routingViewLocator.AddGroupRouter(() => "导航");
@@ -90,11 +91,24 @@ public partial class App : Application
         //数据录入
         routingViewLocator.AddGroupRouter(() => "数据录入");
         routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");
+        routingViewLocator.AddRouter<NumericUpDownView, NumericUpDownViewModel>(routerNameCallBack: () => "NumericUpDown 数字输入框");
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
-        routingViewLocator.AddRouter<CheckBoxView, CheckBoxViewModel>(routerNameCallBack: () => "Checkbox 多选框");
-
         routingViewLocator.AddRouter<CalendarView, CalendarViewModel>(routerNameCallBack: () => "Calendar 日历");
+        routingViewLocator.AddRouter<DatePickerView, DatePickerViewModel>(routerNameCallBack: () => "DatePicker 日期选择框");
+        routingViewLocator.AddRouter<TimePickerView, TimePickerViewModel>(routerNameCallBack: () => "TimePicker 时间选择框");
+
+        //数据显示
+        routingViewLocator.AddGroupRouter(() => "数据显示");
+        routingViewLocator.AddRouter<TextView, TextViewModel>(routerNameCallBack: () => "Text 文本框");
         routingViewLocator.AddRouter<CollapseView, CollapseViewModel>(routerNameCallBack: () => "Collapse 折叠面板");
+
+        //反馈
+        routingViewLocator.AddGroupRouter(() => "反馈");
+        routingViewLocator.AddRouter<ProgressBarView, ProgressBarViewModel>(routerNameCallBack: () => "ProgressBar 进度条");
+        routingViewLocator.AddRouter<SliderView, SliderViewModel>(routerNameCallBack: () => "Slider 滑动滚动条");
+
+        //其他
+        routingViewLocator.AddGroupRouter(() => "其他");
         routingViewLocator.AddRouter<DialogsView, DialogsViewModel>(routerNameCallBack: () => "Dialogs 窗口");
 
         return true;

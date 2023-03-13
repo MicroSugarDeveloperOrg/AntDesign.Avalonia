@@ -5,63 +5,78 @@
              xmlns:sys="using:System"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.DialogsView">
-	<StackPanel Orientation="Horizontal" Spacing="10">
-		<StackPanel Spacing="10">
-			<ProgressBar Value="5" Maximum="10" />
-			<ProgressBar Value="50" Width="150"/>
-			<ProgressBar Value="50" Minimum="25" Maximum="75" />
-			<ProgressBar IsIndeterminate="True" ShowProgressText="True" Value="50" Minimum="25" Maximum="75"/>
-			<ProgressBar ShowProgressText="True" Value="50"/>
-			<ProgressBar ShowProgressText="True" Value="5" Maximum="10" Theme="{StaticResource AntDesignProgressBar}" />
-			<ProgressBar ShowProgressText="True" Value="5" Maximum="10" Theme="{StaticResource AntDesignProgressBar}" Classes="error"/>
-			<ProgressBar ShowProgressText="True" Value="5" Maximum="10" Theme="{StaticResource AntDesignProgressBar}" Classes="success"/>
-			<ProgressBar IsIndeterminate="True" ShowProgressText="True" Value="50" Minimum="25" Maximum="75" Theme="{StaticResource AntDesignProgressBar}" />
 
-			<ProgressBar ShowProgressText="True"
-						 ProgressTextFormat="\{1\} percent"
-						 Minimum="50"
-						 Maximum="100"
-						 Value="70"/>
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="自定义窗口显示。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  在需要打开文件和文件夹时。"/>
 		</StackPanel>
-		
-		<StackPanel Spacing="10">
-			<ProgressBar IsIndeterminate="True" Orientation="Vertical" />
-			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical"/>
-			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" />
-			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" Classes="error" />
-			<ProgressBar ShowProgressText="True" Value="50" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}" Classes="success" />
-			<ProgressBar IsIndeterminate="True" Orientation="Vertical" Theme="{StaticResource AntDesignProgressBar}"/>
-		</StackPanel>
-		
-		<StackPanel Spacing="10">
-			<Slider Value="50" Width="200"  Height="20"/>
-			<Slider IsDirectionReversed="True" Value="50" />
-			<Slider Value="50" TickPlacement="TopLeft" TickFrequency="10" />
-			<Slider Value="50" TickPlacement="BottomRight" TickFrequency="10" />
-			<Slider Value="50" TickPlacement="Outside" TickFrequency="10" />
-			<Slider IsEnabled="False" Value="50" />
-			<Slider Value="50">
-				<DataValidationErrors.Error>
-					<sys:Exception>
-						<x:Arguments>
-							<x:String>Error</x:String>
-						</x:Arguments>
-					</sys:Exception>
-				</DataValidationErrors.Error>
-			</Slider>
-		</StackPanel>
-		
-		<StackPanel Spacing="10" Orientation="Horizontal">
-			<Slider Value="50" Orientation="Vertical" />
-			<Slider IsDirectionReversed="True" Value="50" Orientation="Vertical" />
-			<Slider IsEnabled="False" Orientation="Vertical" Value="50" />
-			<Slider Value="50" TickPlacement="TopLeft" TickFrequency="10" Orientation="Vertical" />
-			<Slider Value="50" TickPlacement="BottomRight" TickFrequency="10" Orientation="Vertical" />
-			<Slider Value="50" TickPlacement="Outside" TickFrequency="10" Orientation="Vertical" />
-		</StackPanel>
-		
-	</StackPanel>
-	
-	
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Button Content="点我试试我的厉害"  Height="40" Click="OpenFolderClick"/>
+						</StackPanel>
+						 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="OpenFolderPicker"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="简单的 OpenFolderPicker。"/>
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Button Content="点我试试我的厉害"  Height="40" Click="OpenFileDialog"/>
+						</StackPanel>
+						 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="OpenFileDialog"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="简单的 OpenFileDialog。"/>
+						<TextBlock Text="桌面端可以使用ManagedFileDialog"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			 
+
+		</Grid>
+	</Grid>
 	
 </UserControl>

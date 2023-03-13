@@ -8,21 +8,7 @@
 	<ScrollViewer>
 		<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,10,Auto">
 
-			<StackPanel Spacing="20">
-				<ScrollViewer Theme="{DynamicResource AntDesignMenuScrollViewer}" Width="200" Height="200">
-					<StackPanel Spacing="20">
-						<TextBlock>Item 1</TextBlock>
-						<TextBlock>Item 2</TextBlock>
-						<TextBlock>Item 3</TextBlock>
-						<TextBlock>Item 4</TextBlock>
-						<TextBlock>Item 5</TextBlock>
-						<TextBlock>Item 6</TextBlock>
-						<TextBlock>Item 7</TextBlock>
-						<TextBlock>Item 8</TextBlock>
-						<TextBlock>Item 9</TextBlock>
-					</StackPanel>
-				</ScrollViewer>
-
+			<StackPanel Spacing="20"> 
 				<Border Margin="16"
 						Padding="48"
 						Width="400"
@@ -117,35 +103,12 @@
 					</Border.ContextFlyout>
 				</Border>
 
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton"/>
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsChecked="True" IsEnabled="False"/>
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger"/>
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True"/>
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" Classes="danger" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
-
-				<ToggleButton Width="130" Height="40" Content="ToggleButton" IsThreeState="True" Theme="{StaticResource PrimaryToggleButtonStyle}"/>
-
-
+ 
 
 			</StackPanel>
 
 
-			<StackPanel Grid.Column="2" Spacing="20" >
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF"/>
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False"/>
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsChecked="True" IsEnabled="False"/>
-
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" Theme="{StaticResource AntDesignToggleSwitchStyle}" IsChecked="True" IsEnabled="True" />
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF123" IsChecked="True" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
-				<ToggleSwitch Margin="20" Content="123" OnContent="ON" OffContent="OFF" IsEnabled="False" Theme="{StaticResource AntDesignToggleSwitchStyle}"/>
-
-
-			</StackPanel>
-
+		 
 
 			<StackPanel  Grid.Column="4" Spacing="20">
 				<Border Padding="20">
@@ -166,49 +129,7 @@
 					</DataValidationErrors.Error>
 				</CalendarDatePicker>
 
-				<TreeView>
-					<TreeViewItem Header="Level 1" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-					<TreeViewItem Header="Level 2" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" >
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-				</TreeView>
-
-				<TreeView ItemContainerTheme="{StaticResource AntDesignTreeViewItemStyle}">
-					<TreeViewItem Header="Level 1" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-					<TreeViewItem Header="Level 2" IsExpanded="True">
-						<TreeViewItem Header="Level 2.1" >
-							<TreeViewItem Header="Level 3.1" />
-							<TreeViewItem Header="Level 3.2" >
-								<TreeViewItem Header="Level 4" />
-							</TreeViewItem>
-						</TreeViewItem>
-						<TreeViewItem Header="Level 2.2" IsEnabled="False" />
-					</TreeViewItem>
-				</TreeView>
 			</StackPanel>
-
 
 			<StackPanel Grid.Column="6" Spacing="20">
 				<StackPanel Spacing="20" VerticalAlignment="Center">
@@ -282,32 +203,8 @@
 					<Grid Grid.Column="0">
 						<ScrollViewer>
 							<StackPanel Spacing="10">
-								<Button Content="1232323" Margin="0,10,0,0" Height="30" Width="120" />
-								<Button Classes="danger" Content="1232323" Height="30" Width="120"/>
-								<Button Content="1232323" Height="30" Width="120" IsEnabled="False" />
-								<Button Theme="{StaticResource PrimaryButtonStyle}" Content="1232323" Height="30" Width="120" IsEnabled="False"/>
-								<Button Theme="{StaticResource PrimaryButtonStyle}" Content="232323" Height="30" Width="120" />
-								<Button Theme="{StaticResource PrimaryButtonStyle}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-								<Button Theme="{StaticResource TextButtonStyle}"  Content="1232323" Height="30" Width="120" />
-								<Button Theme="{StaticResource TextButtonStyle}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-								<Button Theme="{StaticResource LinkButtonStyle}"  Content="1232323" Height="30" Width="120" />
-								<Button Theme="{StaticResource LinkButtonStyle}" Classes="danger" Content="1232323" Height="30" Width="120"/>
-
-								<Button BorderBrush="Red"
-										Foreground="Red"
-										ButtonAssists.PointerOverBorderBrush="Red"
-										ButtonAssists.PointerOverForeground="Red"
-										ButtonAssists.PressedBorderBrush="Red"
-										ButtonAssists.PressedForeground="Red"
-										ButtonAssists.RippleColor="Red"
-										ButtonAssists.RippleColorAlpha="0.3"
-										Content="1232323" Height="30" Width="120"/>
-
-								<ScrollViewer Width="400" Height="300" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-									<Grid Height="1024" Width="500" Background="AliceBlue">
-
-									</Grid>
-								</ScrollViewer>
+ 
+			 
 
 								<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
 								<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="True"></TextBox>
@@ -331,11 +228,7 @@
 
 								<SelectableTextBlock  Text="12312312312313\r\n235454545546576576"/>
 								<SelectableTextBlock IsEnabled="False" Text="12312312312313\r\n235454545546576576"/>
-
-								<ButtonSpinner Content="12323" Width="200" Height="30" ButtonSpinnerLocation="Left"/>
-								<ButtonSpinner Content="12323" Width="200" Height="30" ButtonSpinnerLocation="Right"/>
-								<ButtonSpinner Content="12323" Width="200" Height="30" IsEnabled="False"/>
-
+ 
 							</StackPanel>
 
 						</ScrollViewer>
