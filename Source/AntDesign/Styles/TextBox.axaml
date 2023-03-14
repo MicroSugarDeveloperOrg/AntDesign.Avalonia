@@ -244,15 +244,16 @@
 
 		<!-- Disabled State -->
 		<Style Selector="^:disabled">
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
-				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
-				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-			</Style>
+			<Setter Property="Opacity" Value="0.7"/>
+			<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
+			<!--<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">-->
+				<!--<Setter Property="Background" Value="{DynamicResource DisableBackground}" />-->
+				<!--<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />-->
+			<!--</Style>-->
 
-			<Style Selector="^ /template/ TextBlock#PART_Watermark, ^ /template/ TextBlock#PART_FloatingWatermark">
-				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			</Style>
+			<!--<Style Selector="^ /template/ TextBlock#PART_Watermark, ^ /template/ TextBlock#PART_FloatingWatermark">-->
+				<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
+			<!--</Style>-->
 		</Style>
 
 		<!-- PointerOver State-->
@@ -430,15 +431,16 @@
 
 		<!-- Disabled State -->
 		<Style Selector="^:disabled">
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
-				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
-				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-			</Style>
+			<Setter Property="Opacity" Value="0.7"/>
+			<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
+			<!--<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">-->
+				<!--<Setter Property="Background" Value="{DynamicResource DisableBackground}" />-->
+				<!--<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />-->
+			<!--</Style>-->
 
-			<Style Selector="^ /template/ TextBlock#PART_Watermark, ^ /template/ TextBlock#PART_FloatingWatermark">
-				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
-			</Style>
+			<!--<Style Selector="^ /template/ TextBlock#PART_Watermark, ^ /template/ TextBlock#PART_FloatingWatermark">-->
+				<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
+			<!--</Style>-->
 		</Style>
 
 		<!-- PointerOver State-->

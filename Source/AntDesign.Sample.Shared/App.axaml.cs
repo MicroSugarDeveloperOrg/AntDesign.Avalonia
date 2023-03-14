@@ -94,6 +94,7 @@ public partial class App : Application
         routingViewLocator.AddRouter<NumericUpDownView, NumericUpDownViewModel>(routerNameCallBack: () => "NumericUpDown 数字输入框");
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
         routingViewLocator.AddRouter<CalendarView, CalendarViewModel>(routerNameCallBack: () => "Calendar 日历");
+        routingViewLocator.AddRouter<CalendarDatePickerView, CalendarDatePickerViewModel>(routerNameCallBack: () => "CalendarDatePicker 日历日期选择框");
         routingViewLocator.AddRouter<DatePickerView, DatePickerViewModel>(routerNameCallBack: () => "DatePicker 日期选择框");
         routingViewLocator.AddRouter<TimePickerView, TimePickerViewModel>(routerNameCallBack: () => "TimePicker 时间选择框");
 

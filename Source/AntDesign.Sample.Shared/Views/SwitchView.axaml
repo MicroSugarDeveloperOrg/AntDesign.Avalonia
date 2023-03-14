@@ -162,36 +162,6 @@
 					</TimePicker>
 				</StackPanel>
 
-				<Expander ExpandDirection="Up" Header="Expand Up">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
-
-				<Expander ExpandDirection="Down" Header="Expand Down">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
-
-				<Expander ExpandDirection="Left" Header="Expand Down">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
-
-				<Expander ExpandDirection="Right" Header="Expand Down">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
-
-				<Expander Classes="end" ExpandDirection="Down" Header="Expand Up">
-					<StackPanel>
-						<TextBlock>Expanded content</TextBlock>
-					</StackPanel>
-				</Expander>
-
 
 				<Grid IsVisible="False">
 					<Grid.ColumnDefinitions>
@@ -238,43 +208,13 @@
 					<Grid Grid.Column="1">
 						<ScrollViewer>
 							<StackPanel Spacing="10">
-								<DropDownButton Content="123123" ToolTip.Tip="123123"/>
-								<DropDownButton IsEnabled="False" Content="123123" />
-								<RepeatButton Content="1231233"/>
-								<RepeatButton IsEnabled="False" Content="1231233"/>
 
 								<Separator Classes="left" SeparatorAssists.Content="这是分界线"/>
 								<Separator Classes="right" SeparatorAssists.Content="这是分界线"/>
 								<Separator SeparatorAssists.Content="这是分界线"/>
 
-								<RadioButton Content="123"/>
-								<RadioButton Content="223"/>
-								<RadioButton Content="334" IsEnabled="False"/>
 
-								<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Width="120" Height="30" Content="123"/>
-								<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" IsEnabled="False" Width="120" Height="30" Content="123"/>
 
-								<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
-									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="left" Width="120" Height="30" Content="123"/>
-									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
-									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
-									<RadioButton Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="right" Width="120" Height="30" Content="123"/>
-								</StackPanel>
-
-								<StackPanel Orientation="Horizontal" Spacing="0" Margin="10">
-									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="left" Width="120" Height="30" Content="123"/>
-									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="center removeLeftRight" Width="120" Height="30" Content="123"/>
-									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="center removeRight" IsEnabled="False" Width="120" Height="30" Content="123"/>
-									<RadioButton Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="right" Width="120" Height="30" Content="123"/>
-								</StackPanel>
-
-								<ListBox Width="150">
-									<ListBoxItem Content="123"/>
-									<ListBoxItem Content="234" IsEnabled="False"/>
-									<ListBoxItem Content="432"/>
-									<ListBoxItem Content="345"/>
-									<ListBoxItem Content="567"/>
-								</ListBox>
 
 								<AutoCompleteBox x:Name="PART_AutoCompleteBox" Width="200" Watermark="12323"/>
 								<AutoCompleteBox x:Name="PART_AutoCompleteBox1" AutoCompleteBoxAssists.UseFloatingWatermark="True" Width="200" Watermark="12323"/>
@@ -337,25 +277,6 @@
 					</Grid>
 
 					<StackPanel Grid.Column="2" Spacing="20">
-						<ThemeVariantScope  RequestedThemeVariant="Dark">
-							<Grid >
-								<ScrollViewer  >
-									<StackPanel Spacing="10" ClipToBounds="False">
-										<CheckBox Content="Apple" IsEnabled="False"/>
-										<CheckBox Content="Apple" />
-										<CheckBox Content="Apple" IsChecked="True" IsEnabled="False"/>
-										<CheckBox Content="Apple" IsChecked="True"/>
-										<CheckBox Content="Apple" IsThreeState="True" IsChecked="{x:Null}"    IsEnabled="False"/>
-										<CheckBox Content="Apple" IsThreeState="True"    />
-
-
-										<Button Content="1232323" Margin="0,0,0,20" Height="30" Width="120" />
-									</StackPanel>
-
-
-								</ScrollViewer>
-							</Grid>
-						</ThemeVariantScope>
 
 						<NotificationCard Content="1231231231312313" />
 
