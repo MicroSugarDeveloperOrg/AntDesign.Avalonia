@@ -34,7 +34,7 @@
 						</StackPanel>
 						
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							 <Slider Ticks="5,20,40" TickFrequency="20" Value="50" Width="500"  TickPlacement="TopLeft"/>
+							 <Slider TickFrequency="10" Value="50" Width="500"  TickPlacement="TopLeft"/>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
@@ -68,7 +68,7 @@
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Slider Ticks="5,20,40" TickFrequency="20" Value="50" Width="500" TickPlacement="TopLeft" IsDirectionReversed="True"/>
+							<Slider TickFrequency="10" Value="50" Width="500" TickPlacement="TopLeft" IsDirectionReversed="True"/>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
@@ -89,9 +89,9 @@
 			</Border>
 
 			<Border Grid.Column="2" Grid.Row="0"
-		BorderThickness="{StaticResource OverlayBorderThickness}"
-		CornerRadius="{StaticResource OverlayCornerRadius}"
-		BorderBrush="{DynamicResource AntDesignBorderBrush}">
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
 
 				<Grid RowDefinitions="2*,Auto,*">
 					<StackPanel Grid.Row="0" Spacing="20"
@@ -102,7 +102,7 @@
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
-							<Slider Ticks="5,20,40" TickFrequency="20" Value="50" Width="500" TickPlacement="TopLeft" IsDirectionReversed="True"/>
+							<Slider TickFrequency="10" Value="50" Width="500" TickPlacement="TopLeft" IsDirectionReversed="True"/>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" Spacing="10">

@@ -7,7 +7,7 @@
 			 xmlns:extensions="using:AntDesign.Extensions"
 			 xmlns:viewModels="using:AntDesign.Sample.ViewModels"
 			 xmlns:routers="using:AntDesign.Sample.Routers"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
              x:Class="AntDesign.Sample.Views.MainView"
 			 x:DataType="viewModels:MainViewModel"
 			 >
@@ -38,7 +38,7 @@
 		<Border BorderThickness="0,0,0,0" IsVisible="{Binding IsVisible}" BoxShadow="0 0 5 0 LightGray"/>
 
 		<Grid Grid.Row="2" ColumnDefinitions="Auto,5,10,*,15">
-			<ListBox Grid.Column="0" MinWidth="200" BorderThickness="0,0,0,0" 
+			<ListBox Grid.Column="0" MinWidth="200" BorderThickness="0,0,0,0"
 					 Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}">
 				<ListBox.Styles>
 					<Style Selector="ListBoxItem" x:DataType="routers:Router">
@@ -47,6 +47,12 @@
 						<Setter Property="IsEnabled" Value="{Binding !IsPlaceholder}"/>
 					</Style>
 				</ListBox.Styles>
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<!--<VirtualizingStackPanel Orientation="Vertical" />-->
+						<StackPanel Orientation="Vertical"/>
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
 				<ListBox.ItemTemplate>
 					<DataTemplate DataType="{x:Type routers:Router}">
 						<TextBlock Text="{Binding LocalizedString.Localized}"

@@ -5,6 +5,6 @@ public partial class MenuView : ReactiveUserControl<MenuViewModel>
 {
     public MenuView()
     {
-        InitializeComponent();
+        InitializeComponent(); 
     }
 }
