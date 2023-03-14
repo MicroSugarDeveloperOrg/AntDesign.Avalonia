@@ -244,7 +244,11 @@
 
 		<!-- Disabled State -->
 		<Style Selector="^:disabled">
-			<Setter Property="Opacity" Value="0.7"/>
+			<Setter Property="Opacity" Value="0.8"/>
+			<Style Selector="^">
+				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+			</Style>
 			<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
 			<!--<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">-->
 				<!--<Setter Property="Background" Value="{DynamicResource DisableBackground}" />-->
@@ -431,9 +435,13 @@
 
 		<!-- Disabled State -->
 		<Style Selector="^:disabled">
-			<Setter Property="Opacity" Value="0.7"/>
+			<Setter Property="Opacity" Value="0.8"/>
+			<Style Selector="^">
+				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+			</Style>
 			<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
-			<!--<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">-->
+			<!--<Style Selector="^ /template/ Border#PART_BorderElement">-->
 				<!--<Setter Property="Background" Value="{DynamicResource DisableBackground}" />-->
 				<!--<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />-->
 			<!--</Style>-->
@@ -445,16 +453,15 @@
 
 		<!-- PointerOver State-->
 		<Style Selector="^:pointerover">
-			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
+			<Style Selector="^ /template/ Border#PART_BorderElement">
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.PointerOverBorderBrush}"/>
 			</Style>
 		</Style>
 
 		<!-- Focused State -->
 		<Style Selector="^:focus">
-			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
+			<Style Selector="^ /template/ Border#PART_BorderElement">
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.FocusBorderBrush}"/>
-				<Setter Property="IsRipple" Value="True"/>
 			</Style>
 		</Style>
 

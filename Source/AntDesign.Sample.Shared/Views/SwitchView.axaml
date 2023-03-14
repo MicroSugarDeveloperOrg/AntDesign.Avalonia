@@ -110,42 +110,10 @@
 
 		 
 
-			<StackPanel  Grid.Column="4" Spacing="20">
-				<Border Padding="20">
-					<Calendar />
-				</Border>
-
-				<CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-
-				<CalendarDatePicker Width="200" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-
-				<CalendarDatePicker Width="200" IsEnabled="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-					<DataValidationErrors.Error>
-						<sys:Exception>
-							<x:Arguments>
-								<x:String>Error</x:String>
-							</x:Arguments>
-						</sys:Exception>
-					</DataValidationErrors.Error>
-				</CalendarDatePicker>
-
-			</StackPanel>
+			
 
 			<StackPanel Grid.Column="6" Spacing="20">
-				<StackPanel Spacing="20" VerticalAlignment="Center">
-					<DatePicker />
-					<DatePicker DayFormat="d(ddd)" YearVisible="False"/>
-					<DatePicker IsEnabled="False" />
-					<DatePicker>
-						<DataValidationErrors.Error>
-							<sys:Exception>
-								<x:Arguments>
-									<x:String>Error</x:String>
-								</x:Arguments>
-							</sys:Exception>
-						</DataValidationErrors.Error>
-					</DatePicker>
-				</StackPanel>
+ 
 
 				<StackPanel Spacing="20" VerticalAlignment="Center">
 					<TimePicker />

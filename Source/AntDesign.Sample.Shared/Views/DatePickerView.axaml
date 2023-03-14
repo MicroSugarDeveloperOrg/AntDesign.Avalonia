@@ -2,7 +2,105 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:sys="using:System"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.DatePickerView">
-  Welcome to Avalonia!
+	
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="输入或选择日期的控件。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  当用户需要输入一个日期，可以点击标准输入框，弹出日期面板进行选择。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="0,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Vertical" Margin="5" Spacing="10">
+							 
+							<DatePicker /> 
+							
+							<DatePicker DayFormat="d(ddd)" YearVisible="False"/>
+					
+							<DatePicker>
+								<DataValidationErrors.Error>
+									<sys:Exception>
+										<x:Arguments>
+											<x:String>Error</x:String>
+										</x:Arguments>
+									</sys:Exception>
+								</DataValidationErrors.Error>
+							</DatePicker> 
+	
+						</StackPanel>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="日期选择器"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="可以选择日期。"/>
+
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Vertical" Margin="5" Spacing="10">
+							<DatePicker IsEnabled="False"/>
+
+							<DatePicker DayFormat="d(ddd)" YearVisible="False"  IsEnabled="False"/>
+
+							<DatePicker IsEnabled="False">
+								<DataValidationErrors.Error>
+									<sys:Exception>
+										<x:Arguments>
+											<x:String>Error</x:String>
+										</x:Arguments>
+									</sys:Exception>
+								</DataValidationErrors.Error>
+							</DatePicker>
+
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过修改IsEnable来控制是否可用"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+		</Grid>
+	</Grid>
+
 </UserControl>
