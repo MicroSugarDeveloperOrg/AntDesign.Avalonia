@@ -6,16 +6,16 @@
 	<SolidColorBrush x:Key="ExpanderForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ExpanderBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
-	<SolidColorBrush x:Key="ExpanderHeaderBackground" Color="{DynamicResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderBackground" Color="{DynamicResource AntDesigndAssistColor4}"  Opacity="0.05"/>
 	<SolidColorBrush x:Key="ExpanderHeaderForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 
-	<SolidColorBrush x:Key="ExpanderHeaderPointerOverBackground" Color="{DynamicResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderPointerOverBackground" Color="{DynamicResource AntDesigndAssistColor4}"  Opacity="0.05"/>
 	<SolidColorBrush x:Key="ExpanderHeaderPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 
-	<SolidColorBrush x:Key="ExpanderHeaderPressedBackground" Color="{DynamicResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderPressedBackground" Color="{DynamicResource AntDesigndAssistColor4}"  Opacity="0.05"/>
 	<SolidColorBrush x:Key="ExpanderHeaderPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 
-	<SolidColorBrush x:Key="ExpanderHeaderSelectedBackground" Color="{DynamicResource AntDesigndAssistColor8}"/>
+	<SolidColorBrush x:Key="ExpanderHeaderSelectedBackground" Color="{DynamicResource AntDesigndAssistColor4}"  Opacity="0.05"/>
 	<SolidColorBrush x:Key="ExpanderHeaderSelectedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 
 </ResourceDictionary>
