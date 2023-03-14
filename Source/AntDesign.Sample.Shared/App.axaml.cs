@@ -99,9 +99,10 @@ public partial class App : Application
         routingViewLocator.AddRouter<TimePickerView, TimePickerViewModel>(routerNameCallBack: () => "TimePicker 时间选择框");
 
         //数据显示
-        routingViewLocator.AddGroupRouter(() => "数据显示");
+        routingViewLocator.AddGroupRouter(() => "数据展示");
         routingViewLocator.AddRouter<TextView, TextViewModel>(routerNameCallBack: () => "Text 文本框");
         routingViewLocator.AddRouter<CollapseView, CollapseViewModel>(routerNameCallBack: () => "Collapse 折叠面板");
+        routingViewLocator.AddRouter<CarouselView, CarouselViewModel>(routerNameCallBack: () => "Carousel 走马灯");
 
         //反馈
         routingViewLocator.AddGroupRouter(() => "反馈");
