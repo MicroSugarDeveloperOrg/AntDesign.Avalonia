@@ -40,25 +40,24 @@
 				<Border Background="Transparent"
 						Width="{TemplateBinding Width}"
 						Height="{TemplateBinding Height}">
-					<Path x:Name="ChevronPath"
-						  Width="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
-						  Height="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
-						  Data="{StaticResource RightIconGeometry}"
-						  Fill="{TemplateBinding Foreground}"
-						  Stretch="Uniform"
-						  HorizontalAlignment="Center"
-						  VerticalAlignment="Center"
-						  RenderTransform ="none">
-						<Path.Transitions>
+					<PathIcon x:Name="ChevronPath"
+							  Width="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
+							  Height="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
+							  Data="{StaticResource RightIconGeometry}"
+							  Foreground="{TemplateBinding Foreground}" 
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  RenderTransform ="none">
+						<PathIcon.Transitions>
 							<Transitions>
 								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
 							</Transitions>
-						</Path.Transitions>	
-					</Path>
+						</PathIcon.Transitions>	
+					</PathIcon>
 				</Border>
 			</ControlTemplate>
 		</Setter>
-		<Style Selector="^:checked /template/ Path#ChevronPath">
+		<Style Selector="^:checked /template/ PathIcon#ChevronPath">
 			<Setter Property="RenderTransform" Value="rotate(90deg)" />
 		</Style>
 	</ControlTheme>
@@ -126,6 +125,7 @@
 								<ContentPresenter x:Name="PART_HeaderPresenter"
 												  Grid.Column="1"
 												  Focusable="False"
+												  Background="Transparent"
 												  Content="{TemplateBinding Header}"
 												  ContentTemplate="{TemplateBinding HeaderTemplate}"
 												  HorizontalAlignment="Stretch"
@@ -264,6 +264,7 @@
 									<ContentPresenter x:Name="PART_HeaderPresenter"
 													  Grid.Column="0"
 													  Focusable="False"
+													  Background="Transparent"
 													  Content="{TemplateBinding Header}"
 													  ContentTemplate="{TemplateBinding HeaderTemplate}"
 													  HorizontalAlignment="Stretch"

@@ -26,5 +26,9 @@
 				</Border>
 			</ControlTemplate>
 		</Setter>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
 	</ControlTheme>
 </ResourceDictionary>
