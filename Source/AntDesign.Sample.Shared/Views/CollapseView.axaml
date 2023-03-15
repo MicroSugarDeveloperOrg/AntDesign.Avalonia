@@ -31,13 +31,13 @@
 								Margin="0,0,0,0"
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Vertical" Margin="5">
-							<Expander Header="This is panel header 1" IsExpanded="True" Classes="top">
+							<Expander Header="This is panel header 1" IsExpanded="True" Classes="top self">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
-							<Expander Header="This is panel header 1" Classes="middle">
+							<Expander Header="This is panel header 1" Classes="middle self">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
-							<Expander Header="This is panel header 1" Classes="bottom">
+							<Expander Header="This is panel header 1" Classes="bottom self">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
 						</StackPanel>
@@ -51,7 +51,7 @@
 								VerticalAlignment="Center">
 
 						<TextBlock Text="可以同时展开多个面板，这个例子默认展开了第一个。"/>
-						<TextBlock Text="当多个面板拼接时对Classes 分别赋值位 top middle bottom将进行不同的处理达到无缝衔接"/>
+						<TextBlock Text="当多个面板拼接时对Classes 分别赋值位 top middle bottom将进行不同的处理达到无缝衔接(如果是多个Expander拼接请加上self属性)"/>
 						<TextBlock Text="拼接面板目前只支持up down样式"/>
 					</StackPanel>
 				</Grid>
@@ -68,13 +68,13 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Vertical" Margin="5">
-							<Expander Header="This is panel header 1" ExpandDirection="Up"  IsExpanded="True" Classes="top">
+							<Expander Header="This is panel header 1" ExpandDirection="Up"  IsExpanded="True" Classes="top self end">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
-							<Expander Header="This is panel header 1" ExpandDirection="Up"  Classes="middle">
+							<Expander Header="This is panel header 1" ExpandDirection="Up"  Classes="middle self end">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
-							<Expander Header="This is panel header 1" ExpandDirection="Up"  Classes="bottom">
+							<Expander Header="This is panel header 1" ExpandDirection="Up"  Classes="bottom self end">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
 						</StackPanel>
@@ -100,10 +100,18 @@
 
 				<Grid RowDefinitions="1.5*,Auto,*">
 					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
+								Margin="0,0,0,0"
 								VerticalAlignment="Center">
 
-						<StackPanel Orientation="Vertical" Spacing="10">
+						<StackPanel Orientation="Vertical" Spacing="5" Margin="5">	
+							<Expander Header="This is panel header 1">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+
+							<Expander Header="This is panel header 1" ExpandDirection="Up">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							
 							<Expander Header="This is panel header 1" ExpandDirection="Left">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
@@ -126,24 +134,31 @@
 			</Border>
 
 			<Border Grid.Column="2" Grid.Row="2"
-				BorderThickness="{StaticResource OverlayBorderThickness}"
-				CornerRadius="{StaticResource OverlayCornerRadius}"
-				BorderBrush="{DynamicResource AntDesignBorderBrush}">
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
 
 				<Grid RowDefinitions="1.5*,Auto,*">
 					<StackPanel Grid.Row="0" Spacing="20"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
-						<StackPanel Orientation="Vertical" Margin="5">
-							<Expander Header="This is panel header 1" ExpandDirection="Up" IsEnabled="False" IsExpanded="True" Classes="top">
+						<StackPanel Orientation="Vertical" Margin="5" Spacing="5">
+							<Expander Header="This is panel header 1" ExpandDirection="Up" IsEnabled="False" >
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
-							<Expander Header="This is panel header 1" ExpandDirection="Up" IsEnabled="False" Classes="middle">
+							<Expander Header="This is panel header 1" ExpandDirection="Up" IsEnabled="False" Classes="end">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
-							<Expander Header="This is panel header 1" ExpandDirection="Up" IsEnabled="False" Classes="bottom">
+							<Expander Header="This is panel header 1" ExpandDirection="Down" IsEnabled="False">
 								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
 							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Left" IsEnabled="False">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Right" IsEnabled="False">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							
 						</StackPanel>
 					</StackPanel>
 
