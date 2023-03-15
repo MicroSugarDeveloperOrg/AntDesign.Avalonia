@@ -168,12 +168,12 @@
 										  CornerRadius="{TemplateBinding CornerRadius}"
 										  Margin="{TemplateBinding Margin}">
 
-						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
-								ClipToBounds="True" 
+						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}" 
 								Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
-								CornerRadius="{TemplateBinding CornerRadius}">
+								CornerRadius="{TemplateBinding CornerRadius}"
+								Padding="{TemplateBinding Padding}">
 							<Panel>
 								<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_FloatingWatermark}"
 										   FontSize="{TemplateBinding FontSize}"
@@ -192,7 +192,7 @@
 									</TextBlock.Transitions>
 								</TextBlock>
 
-								<Grid ColumnDefinitions="Auto,*,Auto" >
+								<Grid ColumnDefinitions="Auto,*,Auto">
 									<ContentPresenter Grid.Column="0"
 													  Grid.ColumnSpan="1"
 													  Content="{TemplateBinding InnerLeftContent}"/>
@@ -200,13 +200,14 @@
 									<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_InnerDockPanel}"
 										   Grid.Column="1"
 										   Grid.ColumnSpan="1"
-										   Cursor="IBeam"
-										   Margin="{TemplateBinding Padding}">
+										   Cursor="IBeam" >
 
 										<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
 													  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
-													  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
+													  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+													  HorizontalAlignment="Stretch"
+													  VerticalAlignment="Stretch">
 											<Panel>
 												<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_Watermark}"
 														   Opacity="0.5"
@@ -419,6 +420,7 @@
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
 							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
 							MinWidth="{TemplateBinding MinWidth}"
 							MinHeight="{TemplateBinding MinHeight}"
 							BoxShadow="{TemplateBinding assists:TextBoxAssists.Shadows}">
@@ -444,7 +446,7 @@
 							<Grid ColumnDefinitions="Auto,*,Auto" >
 								<ContentPresenter Grid.Column="0"
 												  Grid.ColumnSpan="1"
-												  Content="{TemplateBinding InnerLeftContent}"/>
+												  Content="{TemplateBinding InnerLeftContent}" />
 
 								<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_InnerDockPanel}"
 									   Grid.Column="1"
@@ -455,7 +457,9 @@
 									<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 												  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
 												  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
-												  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
+												  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+												  HorizontalAlignment="Stretch"
+												  VerticalAlignment="Stretch">
 										<Panel>
 											<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_Watermark}"
 													   Opacity="0.5"
@@ -488,7 +492,7 @@
 
 								<ContentPresenter Grid.Column="2"
 												  Grid.ColumnSpan="1"
-												  Content="{TemplateBinding InnerRightContent}"/>
+												  Content="{TemplateBinding InnerRightContent}" />
 							</Grid>
 						</Panel>
 					</Border>

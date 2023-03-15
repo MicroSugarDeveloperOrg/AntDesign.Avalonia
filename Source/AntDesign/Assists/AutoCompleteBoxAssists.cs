@@ -45,4 +45,12 @@ public class AutoCompleteBoxAssists
     public static readonly AvaloniaProperty<CornerRadius> PopupCornerRadiusProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, CornerRadius>("PopupCornerRadius", typeof(AutoCompleteBoxAssists));
     public static void SetPopupCornerRadius(AvaloniaObject dependencyObject, CornerRadius value) => dependencyObject.SetValue(PopupCornerRadiusProperty, value);
     public static CornerRadius GetPopupCornerRadius(AvaloniaObject dependencyObject) => dependencyObject.GetValue<CornerRadius>(PopupCornerRadiusProperty);
+
+    public static readonly AvaloniaProperty<object?> InnerLeftContentProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, object?>("InnerLeftContent", typeof(AutoCompleteBoxAssists));
+    public static void SetInnerLeftContent(AvaloniaObject dependencyObject, object value) => dependencyObject.SetValue(InnerLeftContentProperty, value);
+    public static object? GetInnerLeftContent(AvaloniaObject dependencyObject) => dependencyObject.GetValue<object?>(InnerLeftContentProperty);
+
+    public static readonly AvaloniaProperty<object?> InnerRightContentProperty = AvaloniaProperty.RegisterAttached<AutoCompleteBox, object?>("InnerRightContent", typeof(AutoCompleteBoxAssists));
+    public static void SetInnerRightContent(AvaloniaObject dependencyObject, object value) => dependencyObject.SetValue(InnerRightContentProperty, value);
+    public static object? GetInnerRightContent(AvaloniaObject dependencyObject) => dependencyObject.GetValue<object?>(InnerRightContentProperty);
 }

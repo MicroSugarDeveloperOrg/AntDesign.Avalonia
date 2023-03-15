@@ -12,6 +12,7 @@ public static class Classes
         roundProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_roundClass, e.NewValue.Value));
         dangerProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_dangerClass, e.NewValue.Value));
         removeProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_removeClass, e.NewValue.Value));
+        titleProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_titleClass, e.NewValue.Value));
     }
 
     private const string _errorClass = "error";
@@ -23,7 +24,8 @@ public static class Classes
     private const string _roundClass = "round";
     private const string _dangerClass = "danger";
     private const string _removeClass = "remove";
-
+    private const string _titleClass = "title";
+    
     public static readonly StyledProperty<bool> errorProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_errorClass, typeof(Classes));
     public static void Seterror(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(errorProperty, value);
     public static bool Geterror(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(errorProperty);
@@ -59,4 +61,8 @@ public static class Classes
     public static readonly StyledProperty<bool> removeProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_removeClass, typeof(Classes));
     public static void Setremove(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(removeProperty, value);
     public static bool Getremove(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(removeProperty);
+
+    public static readonly StyledProperty<bool> titleProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_titleClass, typeof(Classes));
+    public static void Settitle(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(titleProperty, value);
+    public static bool Gettitle(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(titleProperty);
 }

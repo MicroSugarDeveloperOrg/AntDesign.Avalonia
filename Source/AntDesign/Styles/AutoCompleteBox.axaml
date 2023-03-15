@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers" 
 					xmlns:assists="using:AntDesign.Assists"
+					xmlns:extensions="using:AntDesign.Extensions"
 					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type AutoCompleteBox}" TargetType="AutoCompleteBox">
@@ -49,7 +50,9 @@
 							 assists:TextBoxAssists.FloatingForeground="{TemplateBinding assists:AutoCompleteBoxAssists.FloatingForeground}"
 							 assists:TextBoxAssists.RippleColor="{TemplateBinding assists:AutoCompleteBoxAssists.RippleColor}"
 							 assists:TextBoxAssists.RippleColorAlpha="{TemplateBinding assists:AutoCompleteBoxAssists.RippleColorAlpha}"
-							 DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}" />
+							 DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
+							 InnerLeftContent="{TemplateBinding assists:AutoCompleteBoxAssists.InnerLeftContent}"
+							 InnerRightContent="{TemplateBinding assists:AutoCompleteBoxAssists.InnerRightContent}"/>
 					<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 						   WindowManagerAddShadowHint="False" 
 						   MaxHeight="{TemplateBinding MaxDropDownHeight}" 
@@ -86,6 +89,24 @@
 				</Grid>
 			</ControlTemplate>
 		</Setter>
+
+		<Style Selector="^.left" >
+			<Style Selector="^ /template/ TextBox#PART_TextBox">
+				<Setter Property="extensions:Classes.left" Value="true" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.center" >
+			<Style Selector="^ /template/ TextBox#PART_TextBox">
+				<Setter Property="extensions:Classes.center" Value="true" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.right" >
+			<Style Selector="^ /template/ TextBox#PART_TextBox">
+				<Setter Property="extensions:Classes.right" Value="true" />
+			</Style>
+		</Style>
 	</ControlTheme>
 
 
