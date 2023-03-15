@@ -248,7 +248,7 @@
 
 						<NotificationCard Content="1231231231312313" />
 
-						<ComboBox PlaceholderText="ComboBox">
+						<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="">
 							<ComboBoxItem Content="123"/>
 							<ComboBoxItem Content="321" IsEnabled="False"/>
 							<ComboBoxItem Content="245"/>
@@ -260,7 +260,7 @@
 							<ComboBoxItem Content="245"/>
 						</ComboBox>
 
-						<ComboBox PlaceholderText="ComboBoxError">
+						<ComboBox PlaceholderText="ComboBoxError" DisplayMemberBinding="">
 							<DataValidationErrors.Error>
 								<sys:Exception>
 									<x:Arguments>

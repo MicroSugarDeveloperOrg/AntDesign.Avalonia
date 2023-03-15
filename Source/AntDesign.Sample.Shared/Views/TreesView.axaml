@@ -87,6 +87,20 @@
 									</TreeViewItem>
 								</TreeView>
 
+								<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3" 
+										  ItemContainerTheme="{StaticResource AntDesignTreeViewItemLikeVsStyle}">
+									
+									<TreeViewItem Header="Development" Classes="title" />
+									<TreeViewItem Header="Design" IsExpanded="True">
+										<TreeViewItem Header="Design Values"/>
+										<TreeViewItem Header="Global Styles"/>
+										<TreeViewItem Header="Themes" IsSelected="True"/>
+										<TreeViewItem Header="Design Patterns"/>
+									</TreeViewItem>
+								</TreeView>
+
+								
+
 							</StackPanel>
 						</StackPanel>
 
