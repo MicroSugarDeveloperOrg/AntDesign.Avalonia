@@ -6,15 +6,11 @@
              x:Class="AntDesign.Sample.Views.NumericUpDownView">
 
 	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
-		<TextBlock Grid.Row="0" Text="输入框自动完成功能"/>
+		<TextBlock Grid.Row="0" Text="数字输入框"/>
 
 		<StackPanel Grid.Row="2" Spacing="10">
 			<TextBlock  Text="何时使用" Classes="h3"/>
-			<TextBlock  Text=">>  需要一个输入框而不是选择器。"/>
-			<TextBlock  Text=">>  需要一个输入框而不是选择器。"/>
-			<TextBlock  Text="和 Select 的区别是："/>
-			<TextBlock  Text=">>  AutoComplete 是一个带提示的文本输入框，用户可以自由输入，关键词是辅助输入。"/>
-			<TextBlock  Text=">>  Select 是在限定的可选项中进行选择，关键词是选择。"/>
+			<TextBlock  Text=">>  需要一个数字输入框。"/> 
 		</StackPanel>
 
 		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
@@ -57,79 +53,17 @@
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
 
-						<TextBlock Text="通过Items设置自动完成的数据源"/>
-						<TextBlock Text="通过ValueMemberBinding设置数据源中需要显示的数据"/>
-						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:AutoCompleteBoxAssists.UseFloatingWatermark设置是否启用FloatingWatermark(这是AntDesign库提供的一个扩展依赖属性)"/>
-
+						<TextBlock Text="通过Them修改样式AntDesignPrimaryNumericUpDownStyle"/>
+						<TextBlock Text="通过Classes 以及 ButtonSpinnerLocation 修改按钮位置"/>
+ 
 					</StackPanel>
 
 				</Grid>
 
 			</Border>
 
-			<Border Grid.Column="2" Grid.Row="0"
-					BorderThickness="{StaticResource OverlayBorderThickness}"
-					CornerRadius="{StaticResource OverlayCornerRadius}"
-					BorderBrush="{DynamicResource AntDesignBorderBrush}">
-
-				<Grid RowDefinitions="*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-					</StackPanel>
-
-					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
-
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-						<TextBlock Text="通过Items设置自动完成的数据源"/>
-						<TextBlock Text="通过ValueMemberBinding设置数据源中需要显示的数据"/>
-						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:AutoCompleteBoxAssists.UseFloatingWatermark设置是否启用FloatingWatermark(这是AntDesign库提供的一个扩展依赖属性)"/>
-
-					</StackPanel>
-
-				</Grid>
-
-			</Border>
 
 			<Border Grid.Column="0" Grid.Row="2"
-				BorderThickness="{StaticResource OverlayBorderThickness}"
-				CornerRadius="{StaticResource OverlayCornerRadius}"
-				BorderBrush="{DynamicResource AntDesignBorderBrush}">
-
-				<Grid RowDefinitions="*,Auto,*">
-					<StackPanel Grid.Row="0" Spacing="20"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-						<StackPanel Spacing="0" Orientation="Horizontal">
-							
-						</StackPanel>
-
-						<StackPanel Spacing="0" Orientation="Horizontal">
-						 
-						</StackPanel>
-
-					</StackPanel>
-
-					<Separator Grid.Row="1" SeparatorAssists.Content="组合使用"/>
-
-					<StackPanel Grid.Row="2" Spacing="10"
-								Margin="20,0,0,0"
-								VerticalAlignment="Center">
-
-						<TextBlock Text="通过设置Classes属性的值来达到无缝衔接"/>
-						<TextBlock Text="可以跟同样实现了拼接属性的控件一起使用包括Button ToggleButton CommboBox等"/>
-					</StackPanel>
-
-				</Grid>
-
-			</Border>
-
-			<Border Grid.Column="2" Grid.Row="2"
 					BorderThickness="{StaticResource OverlayBorderThickness}"
 					CornerRadius="{StaticResource OverlayCornerRadius}"
 					BorderBrush="{DynamicResource AntDesignBorderBrush}">
@@ -138,6 +72,21 @@
 					<StackPanel Grid.Row="0" Spacing="20"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
+
+						<StackPanel Spacing="20" Orientation="Horizontal">
+							<NumericUpDown Width="160" Height="35" IsEnabled="False"/>
+							<NumericUpDown Width="160" Height="35" IsEnabled="False" ButtonSpinnerLocation="Left" />
+						</StackPanel>
+
+						<StackPanel Spacing="20" Orientation="Horizontal">
+							<NumericUpDown Width="160" Height="35" IsEnabled="False" Classes="center"  />
+							<NumericUpDown Width="160" Height="35" IsEnabled="False" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" Classes="center"   />
+						</StackPanel>
+
+						<StackPanel Spacing="20" Orientation="Horizontal">
+							<NumericUpDown Width="160" Height="35" IsEnabled="False" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" />
+							<NumericUpDown Width="160" Height="35" IsEnabled="False" ButtonSpinnerLocation="Left" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" />
+						</StackPanel>
 
 					</StackPanel>
 
