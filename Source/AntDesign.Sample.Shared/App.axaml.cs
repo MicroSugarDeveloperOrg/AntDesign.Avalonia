@@ -91,6 +91,7 @@ public partial class App : Application
         //数据录入
         routingViewLocator.AddGroupRouter(() => "数据录入");
         routingViewLocator.AddRouter<InputView, InputViewModel>(routerNameCallBack: () => "Input 输入框");
+        routingViewLocator.AddRouter<ComboBoxView, ComboBoxViewModel>(routerNameCallBack: () => "ComboBox 选择框");
         routingViewLocator.AddRouter<NumericUpDownView, NumericUpDownViewModel>(routerNameCallBack: () => "NumericUpDown 数字输入框");
         routingViewLocator.AddRouter<AutoCompleteView, AutoCompleteViewModel>(routerNameCallBack: () => "AutoComplete 自动完成");
         routingViewLocator.AddRouter<CalendarView, CalendarViewModel>(routerNameCallBack: () => "Calendar 日历");
