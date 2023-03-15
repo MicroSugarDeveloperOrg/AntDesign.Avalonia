@@ -2,7 +2,232 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:sys="using:System"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.InputView">
-  Welcome to Avalonia!
+
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="通过鼠标或键盘输入内容，是最基础的表单域的包装。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  需要用户输入表单域内容时。"/>
+			<TextBlock  Text=">>  提供组合型输入框，带搜索的输入框，还可以进行大小选择。"/> 
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="10"
+								Margin="5"
+								VerticalAlignment="Center">
+						<StackPanel Spacing="20" 
+									Orientation="Horizontal" 
+									VerticalAlignment="Center">
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="True"></TextBox>
+						</StackPanel>
+
+						<StackPanel Spacing="20"
+									Orientation="Horizontal"
+									VerticalAlignment="Center">
+							<TextBox Classes="clearButton" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+							<TextBox Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+						</StackPanel>
+
+						<TextBox Watermark="Error" UseFloatingWatermark="False">
+							<DataValidationErrors.Error>
+								<sys:Exception>
+									<x:Arguments>
+										<x:String>Error</x:String>
+									</x:Arguments>
+								</sys:Exception>
+							</DataValidationErrors.Error>
+						</TextBox>
+						
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="基本使用"/>
+					 
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Spacing="20"
+								Orientation="Horizontal"
+								VerticalAlignment="Center">
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False">
+								<TextBox.InnerLeftContent>
+									<TextBlock Text="123" VerticalAlignment="Center"/>
+								</TextBox.InnerLeftContent>
+							</TextBox>
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="True">
+								<TextBox.InnerLeftContent>
+									<TextBlock Text="123" VerticalAlignment="Center"/>
+								</TextBox.InnerLeftContent>
+								<TextBox.InnerRightContent>
+									<TextBlock Text="123" VerticalAlignment="Center"/>
+								</TextBox.InnerRightContent>
+							</TextBox>
+						</StackPanel>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="属性设置"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过设置InnerLeftContent或InnerRightContent属性实现扩展"/>
+ 
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="0" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="10"
+								Margin="5"
+								VerticalAlignment="Center">
+		 
+						<StackPanel Spacing="0"
+									Orientation="Horizontal"
+									VerticalAlignment="Center">
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False" Classes="left"></TextBox>
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False" Classes="center"></TextBox>
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False" Classes="right"></TextBox>
+						</StackPanel>
+
+						<StackPanel Spacing="0"
+									Orientation="Horizontal"
+									VerticalAlignment="Center">
+							<Button Width="120" Height="30" Content="123" Classes="left"></Button>
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False" Classes="center"></TextBox>
+							<Button Width="120" Height="30" Content="123" Theme="{StaticResource PrimaryButtonStyle}" Classes="right"></Button>
+						</StackPanel>
+						<StackPanel Spacing="0"
+								   Orientation="Horizontal"
+								   VerticalAlignment="Center">
+							<Button Width="120" Height="30" Content="123" Classes="left"></Button>
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False" Classes="center"></TextBox>
+							<Button Width="120" Height="30" Content="123" Classes="right"></Button>
+						</StackPanel>
+						<StackPanel Spacing="0"
+								   Orientation="Horizontal"
+								   VerticalAlignment="Center">
+							<Button Width="120" Height="30" Content="123" Theme="{StaticResource PrimaryButtonStyle}" Classes="left"></Button>
+							<TextBox Width="120" Height="30" Watermark="please" UseFloatingWatermark="False" Classes="center"></TextBox>
+							<Button Width="120" Height="30" Content="123" Theme="{StaticResource PrimaryButtonStyle}" Classes="right"></Button>
+						</StackPanel>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="组合使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="结合Button ToggleButton ComboBox 等其他控件实现组合"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="2"
+								BorderThickness="{StaticResource OverlayBorderThickness}"
+								CornerRadius="{StaticResource OverlayCornerRadius}"
+								BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="10"
+								Margin="5"
+								VerticalAlignment="Center">
+						<StackPanel Spacing="20"
+									Orientation="Horizontal"
+									VerticalAlignment="Center">
+							<TextBox IsEnabled="False" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+							<TextBox IsEnabled="False" Width="120" Height="30" Watermark="please" UseFloatingWatermark="True">
+								<TextBox.InnerLeftContent>
+									<TextBlock Text="123" VerticalAlignment="Center"/>
+								</TextBox.InnerLeftContent>
+								<TextBox.InnerRightContent>
+									<TextBlock Text="123" VerticalAlignment="Center"/>
+								</TextBox.InnerRightContent>
+							</TextBox>
+						</StackPanel>
+
+						<StackPanel Spacing="20"
+									Orientation="Horizontal"
+									VerticalAlignment="Center">
+							<TextBox IsEnabled="False" Classes="clearButton" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+							<TextBox IsEnabled="False" Classes="revealPasswordButton" PasswordChar="*" Width="120" Height="30" Watermark="please" UseFloatingWatermark="False"></TextBox>
+						</StackPanel>
+
+						<TextBox Watermark="Error" UseFloatingWatermark="False" IsEnabled="False">
+							<DataValidationErrors.Error>
+								<sys:Exception>
+									<x:Arguments>
+										<x:String>Error</x:String>
+									</x:Arguments>
+								</sys:Exception>
+							</DataValidationErrors.Error>
+						</TextBox>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过修改IsEnable来禁用或启用输入"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+		</Grid>
+
+	</Grid>
+
 </UserControl>

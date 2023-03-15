@@ -147,6 +147,7 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
 		<Setter Property="MinWidth" Value="{DynamicResource TextBoxMinWidth}" />
 		<Setter Property="MinHeight" Value="{DynamicResource TextBoxMinHeight}" />
 		<Setter Property="ClipToBounds" Value="False" />
@@ -159,84 +160,90 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="TextBox">
 				<DataValidationErrors>
-					<ripple:RippleEffectx x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
-										  Background="{TemplateBinding Background}"
-										  BorderBrush="{TemplateBinding BorderBrush}"
-										  BorderThickness="{TemplateBinding BorderThickness}"
-										  CornerRadius="{TemplateBinding CornerRadius}"
+					<ripple:RippleEffectx x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}" 
 										  RippleColor="{TemplateBinding assists:TextBoxAssists.RippleColor}"
 										  RippleColorAlpha="{TemplateBinding assists:TextBoxAssists.RippleColorAlpha}"
 										  MinWidth="{TemplateBinding MinWidth}"
-										  MinHeight="{TemplateBinding MinHeight}">
+										  MinHeight="{TemplateBinding MinHeight}"
+										  CornerRadius="{TemplateBinding CornerRadius}"
+										  Margin="{TemplateBinding Margin}">
 
-						<Panel>
-							<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_FloatingWatermark}"
-									   FontSize="{TemplateBinding FontSize}"
-									   IsVisible="False"
-									   Foreground="{TemplateBinding assists:TextBoxAssists.FloatingForeground}"
-									   Text="{TemplateBinding Watermark}"
-									   HorizontalAlignment="Left"
-									   VerticalAlignment="Top"
-									   RenderTransformOrigin="0,0"
-									   RenderTransform="scale(0.75)">
-								<TextBlock.Transitions>
-									<Transitions>
-										<ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut" />
-										<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
-									</Transitions>
-								</TextBlock.Transitions>
-							</TextBlock>
+						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
+								ClipToBounds="True" 
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{TemplateBinding CornerRadius}">
+							<Panel>
+								<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_FloatingWatermark}"
+										   FontSize="{TemplateBinding FontSize}"
+										   IsVisible="False"
+										   Foreground="{TemplateBinding assists:TextBoxAssists.FloatingForeground}"
+										   Text="{TemplateBinding Watermark}"
+										   HorizontalAlignment="Left"
+										   VerticalAlignment="Top"
+										   RenderTransformOrigin="0,0"
+										   RenderTransform="scale(0.75)">
+									<TextBlock.Transitions>
+										<Transitions>
+											<ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut" />
+											<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+										</Transitions>
+									</TextBlock.Transitions>
+								</TextBlock>
 
-							<Grid ColumnDefinitions="Auto,*,Auto" >
-								<ContentPresenter Grid.Column="0"
-												  Grid.ColumnSpan="1"
-												  Content="{TemplateBinding InnerLeftContent}"/>
+								<Grid ColumnDefinitions="Auto,*,Auto" >
+									<ContentPresenter Grid.Column="0"
+													  Grid.ColumnSpan="1"
+													  Content="{TemplateBinding InnerLeftContent}"/>
 
-								<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_InnerDockPanel}"
-									   Grid.Column="1"
-									   Grid.ColumnSpan="1"
-									   Cursor="IBeam"
-									   Margin="{TemplateBinding Padding}">
+									<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_InnerDockPanel}"
+										   Grid.Column="1"
+										   Grid.ColumnSpan="1"
+										   Cursor="IBeam"
+										   Margin="{TemplateBinding Padding}">
 
-									<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-												  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
-												  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
-												  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
-										<Panel>
-											<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_Watermark}"
-													   Opacity="0.5"
-													   Text="{TemplateBinding Watermark}"
-													   TextAlignment="{TemplateBinding TextAlignment}"
-													   TextWrapping="{TemplateBinding TextWrapping}"
-													   IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"
-													   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-													   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-
-											<TextPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_TextPresenter}"
-														   Text="{TemplateBinding Text, Mode=TwoWay}"
-														   CaretIndex="{TemplateBinding CaretIndex}"
-														   SelectionStart="{TemplateBinding SelectionStart}"
-														   SelectionEnd="{TemplateBinding SelectionEnd}"
+										<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+													  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+													  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
+											<Panel>
+												<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_Watermark}"
+														   Opacity="0.5"
+														   Text="{TemplateBinding Watermark}"
 														   TextAlignment="{TemplateBinding TextAlignment}"
 														   TextWrapping="{TemplateBinding TextWrapping}"
-														   LineHeight="{TemplateBinding LineHeight}"
-														   LetterSpacing="{TemplateBinding LetterSpacing}"
-														   PasswordChar="{TemplateBinding PasswordChar}"
-														   RevealPassword="{TemplateBinding RevealPassword}"
-														   SelectionBrush="{TemplateBinding SelectionBrush}"
-														   SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-														   CaretBrush="{TemplateBinding CaretBrush}"
+														   IsVisible="{TemplateBinding Text, Converter={x:Static StringConverters.IsNullOrEmpty}}"
 														   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
 														   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-										</Panel>
-									</ScrollViewer>
-								</Panel>
 
-								<ContentPresenter Grid.Column="2"
-												  Grid.ColumnSpan="1"
-												  Content="{TemplateBinding InnerRightContent}"/>
-							</Grid>
-						</Panel>
+												<TextPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_TextPresenter}"
+															   Text="{TemplateBinding Text, Mode=TwoWay}"
+															   CaretIndex="{TemplateBinding CaretIndex}"
+															   SelectionStart="{TemplateBinding SelectionStart}"
+															   SelectionEnd="{TemplateBinding SelectionEnd}"
+															   TextAlignment="{TemplateBinding TextAlignment}"
+															   TextWrapping="{TemplateBinding TextWrapping}"
+															   LineHeight="{TemplateBinding LineHeight}"
+															   LetterSpacing="{TemplateBinding LetterSpacing}"
+															   PasswordChar="{TemplateBinding PasswordChar}"
+															   RevealPassword="{TemplateBinding RevealPassword}"
+															   SelectionBrush="{TemplateBinding SelectionBrush}"
+															   SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+															   CaretBrush="{TemplateBinding CaretBrush}"
+															   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+															   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+											</Panel>
+										</ScrollViewer>
+									</Panel>
+
+									<ContentPresenter Grid.Column="2"
+													  Grid.ColumnSpan="1"
+													  Content="{TemplateBinding InnerRightContent}"/>
+								</Grid>
+							</Panel>
+						</Border>
+ 
 					</ripple:RippleEffectx>
 				</DataValidationErrors>
 			</ControlTemplate>
@@ -249,28 +256,21 @@
 				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 				<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 			</Style>
-			<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
-			<!--<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">-->
-				<!--<Setter Property="Background" Value="{DynamicResource DisableBackground}" />-->
-				<!--<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />-->
-			<!--</Style>-->
-
-			<!--<Style Selector="^ /template/ TextBlock#PART_Watermark, ^ /template/ TextBlock#PART_FloatingWatermark">-->
-				<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
-			<!--</Style>-->
 		</Style>
 
 		<!-- PointerOver State-->
 		<Style Selector="^:pointerover">
-			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
+			<Style Selector="^ /template/ Border#PART_BorderElement">
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.PointerOverBorderBrush}"/>
 			</Style>
 		</Style>
 
 		<!-- Focused State -->
 		<Style Selector="^:focus">
-			<Style Selector="^ /template/ ripple|RippleEffectx#PART_BorderElement">
+			<Style Selector="^ /template/ Border#PART_BorderElement">
 				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TextBoxAssists.FocusBorderBrush}"/>
+			</Style>
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
 				<Setter Property="IsRipple" Value="True"/>
 			</Style>
 		</Style>
@@ -343,7 +343,70 @@
 		</Style>
 
 		<!-- Warning -->
-		
+
+		<!-- left -->
+		<Style Selector="^.left">
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+			</Style>
+		</Style>
+		<!-- center -->
+		<Style Selector="^.center">
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="0" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="CornerRadius" Value="0" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+				</Style>
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:focus">
+				<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+				</Style>
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+		</Style>
+		<!-- right -->
+		<Style Selector="^.right">
+			<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource NoLeftBorderThickness}}" />
+			</Style>
+
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+				</Style>
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			<Style Selector="^:focus">
+				<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+				</Style>
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+		</Style>
 		
 	</ControlTheme>
 
