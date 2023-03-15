@@ -89,9 +89,10 @@
 		</Style>
 
 		<Style Selector="^:disabled">
-			<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
-			<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			<Setter Property="Opacity" Value="0.5"/>
+			<!--<Setter Property="Background" Value="{DynamicResource DisableBackground}" />-->
+			<!--<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />-->
+			<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
 		</Style>
 
 		<Style Selector="^.round">
