@@ -68,4 +68,8 @@ public class ComboBoxAssists
     public static readonly AvaloniaProperty<CornerRadius> PopupCornerRadiusProperty = AvaloniaProperty.RegisterAttached<ComboBox, CornerRadius>("PopupCornerRadius", typeof(ComboBoxAssists));
     public static void SetPopupCornerRadius(AvaloniaObject dependencyObject, CornerRadius value) => dependencyObject.SetValue(PopupCornerRadiusProperty, value);
     public static CornerRadius GetPopupCornerRadius(AvaloniaObject dependencyObject) => dependencyObject.GetValue<CornerRadius>(PopupCornerRadiusProperty);
+
+    public static readonly AvaloniaProperty<object?> InnerRightContentProperty = AvaloniaProperty.RegisterAttached<ComboBox, object?>("InnerRightContent", typeof(ComboBoxAssists));
+    public static void SetInnerRightContent(AvaloniaObject dependencyObject, object value) => dependencyObject.SetValue(InnerRightContentProperty, value);
+    public static object? GetInnerRightContent(AvaloniaObject dependencyObject) => dependencyObject.GetValue<object?>(InnerRightContentProperty);
 }

@@ -13,6 +13,9 @@ public static class Classes
         dangerProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_dangerClass, e.NewValue.Value));
         removeProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_removeClass, e.NewValue.Value));
         titleProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_titleClass, e.NewValue.Value));
+        topProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_topClass, e.NewValue.Value));
+        middleProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_middleClass, e.NewValue.Value));
+        bottomProperty.Changed.AddClassHandler<Control, bool>((s, e) => s.Classes.Set(_bottomClass, e.NewValue.Value));
     }
 
     private const string _errorClass = "error";
@@ -21,6 +24,9 @@ public static class Classes
     private const string _leftClass = "left";
     private const string _centerClass = "center";
     private const string _rightClass = "right";
+    private const string _topClass = "top";
+    private const string _middleClass = "middle";
+    private const string _bottomClass = "bottom";
     private const string _roundClass = "round";
     private const string _dangerClass = "danger";
     private const string _removeClass = "remove";
@@ -65,4 +71,16 @@ public static class Classes
     public static readonly StyledProperty<bool> titleProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_titleClass, typeof(Classes));
     public static void Settitle(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(titleProperty, value);
     public static bool Gettitle(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(titleProperty);
+
+    public static readonly StyledProperty<bool> topProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_topClass, typeof(Classes));
+    public static void Settop(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(topProperty, value);
+    public static bool Gettop(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(topProperty);
+
+    public static readonly StyledProperty<bool> middleProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_middleClass, typeof(Classes));
+    public static void Setmiddle(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(middleProperty, value);
+    public static bool Getmiddle(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(middleProperty);
+
+    public static readonly StyledProperty<bool> bottomProperty = AvaloniaProperty.RegisterAttached<Control, bool>(_bottomClass, typeof(Classes));
+    public static void Setbottom(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(bottomProperty, value);
+    public static bool Getbottom(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(bottomProperty);
 }

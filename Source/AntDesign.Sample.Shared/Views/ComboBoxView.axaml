@@ -2,7 +2,217 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:sys="using:System"
+			 xmlns:assists="using:AntDesign.Assists"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.ComboBoxView">
-  Welcome to Avalonia!
+
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="下拉选择器。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。"/>
+			<TextBlock  Text=">>  当选项少时（少于 5 项），建议直接将选项平铺，使用 Radio 是更好的选择。"/> 
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="10"
+								Margin="5"
+								VerticalAlignment="Center">
+
+						<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="">
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+						<ComboBox PlaceholderText="ComboBox" IsEnabled="False">
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+						<ComboBox PlaceholderText="ComboBoxError" DisplayMemberBinding="">
+							<DataValidationErrors.Error>
+								<sys:Exception>
+									<x:Arguments>
+										<x:String>Error</x:String>
+									</x:Arguments>
+								</sys:Exception>
+							</DataValidationErrors.Error>
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过Items设置自动完成的数据源"/>
+						<TextBlock Text="通过DisplayMemberBinding设置数据源中需要显示的数据"/>
+						<TextBlock Text="通过PlaceholderText设置水印"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="">
+							<assists:ComboBoxAssists.InnerRightContent>
+								<TextBlock Text="123" Margin="5,0,5,0" VerticalAlignment="Center"/>
+							</assists:ComboBoxAssists.InnerRightContent>
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ComboBoxAssists.InnerRightContent设置自定义右侧显示(这是AntDesign库提供的一个扩展依赖属性)"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="0" Grid.Row="2"
+				BorderThickness="{StaticResource OverlayBorderThickness}"
+				CornerRadius="{StaticResource OverlayCornerRadius}"
+				BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Spacing="0" Orientation="Horizontal">
+							<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="" Classes="left">
+
+								<ComboBoxItem Content="123"/>
+								<ComboBoxItem Content="321" IsEnabled="False"/>
+								<ComboBoxItem Content="245"/>
+							</ComboBox>
+							<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="" Classes="center">
+
+								<ComboBoxItem Content="123"/>
+								<ComboBoxItem Content="321" IsEnabled="False"/>
+								<ComboBoxItem Content="245"/>
+							</ComboBox>
+							<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="" Classes="right">
+
+								<ComboBoxItem Content="123"/>
+								<ComboBoxItem Content="321" IsEnabled="False"/>
+								<ComboBoxItem Content="245"/>
+							</ComboBox>
+						</StackPanel>
+
+						<StackPanel Spacing="0" Orientation="Horizontal">
+							<Button Content="123" Classes="left"/>
+							<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="" Classes="center">
+								 
+								<ComboBoxItem Content="123"/>
+								<ComboBoxItem Content="321" IsEnabled="False"/>
+								<ComboBoxItem Content="245"/>
+							</ComboBox>
+							<Button Content="123" Theme="{StaticResource PrimaryButtonStyle}"  Classes="right"/>
+						</StackPanel>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="组合使用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过设置Classes属性的值来达到无缝衔接"/>
+						<TextBlock Text="可以跟同样实现了拼接属性的控件一起使用包括Button TextBox AutoCompleteBox ToggleButton等"/>
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<ComboBox PlaceholderText="ComboBox" IsEnabled="False">
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+						<ComboBox PlaceholderText="ComboBoxError" IsEnabled="False" DisplayMemberBinding="">
+							<DataValidationErrors.Error>
+								<sys:Exception>
+									<x:Arguments>
+										<x:String>Error</x:String>
+									</x:Arguments>
+								</sys:Exception>
+							</DataValidationErrors.Error>
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过设置IsEnbale属性来启用和禁用输入"/>
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+		</Grid>
+
+	</Grid>
+	
 </UserControl>

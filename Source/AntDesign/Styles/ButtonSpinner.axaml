@@ -183,7 +183,9 @@
 						<Border Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
-								CornerRadius="{TemplateBinding CornerRadius}">
+								CornerRadius="{TemplateBinding CornerRadius}"
+								MinWidth="{TemplateBinding MinWidth}"
+								MinHeight="{TemplateBinding MinHeight}">
 							<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}"
 								  ColumnDefinitions="Auto,*,Auto">
 								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
