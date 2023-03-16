@@ -1,0 +1,19 @@
+﻿<linker>
+  <!-- Can be removed if CompiledBinding and no reflection are used -->
+	<assembly fullname="AvaloniaAOT" preserve="All" /> 
+	<assembly fullname="Avalonia.Toolkit" preserve="All" />
+	<assembly fullname="Avalonia.ReactiveUI" preserve="All" />
+	<assembly fullname="Avalonia.ReactiveUI.Toolkit" preserve="All" /> 
+
+	<!--<assembly fullname="Avalonia.Xaml.Interactions.Custom" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Interactions.DragAndDrop" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Interactions.Draggable" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Interactions.Events" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Interactions.Reactive" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Interactions.Responsive" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Interactions" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Interactivity" preserve="All" />
+	<assembly fullname="Avalonia.Xaml.Behaviors" preserve="All" />-->
+	
+	<assembly fullname="Microsoft.Extensions.DependencyInjection" preserve="All" />
+</linker>

@@ -14,5 +14,18 @@ public partial class ButtonSpinnerView : ReactiveUserControl<ButtonSpinnerViewMo
         //LayoutTransformControl
         //LayoutTransformControl
         //ProgressBar.HorizontalAlignmentProperty
+        switch (e.Direction)
+        {
+            case SpinDirection.Increase:
+                PART_PinMessage.Text = $"点击了左边的按钮";
+                break;
+            case SpinDirection.Decrease:
+                PART_PinMessage.Text = $"点击了右边的按钮";
+                break;
+            default:
+                break;
+        }
+        
+
     }
 }

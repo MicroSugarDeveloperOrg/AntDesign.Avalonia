@@ -10,14 +10,14 @@
 	</PropertyGroup>
 
 	<Import Project="$(BuildToolsDirectory)Directory.build.common.props" />
-	
+
 	<!--<ItemGroup>
 		<PackageReference Include="PolySharp">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>-->
-	
+
 	<Choose>
 		<When Condition="'$(SourceLinkEnabled)' != 'false'">
 			<PropertyGroup>
@@ -41,5 +41,5 @@
 			</PropertyGroup>
 		</When>
 	</Choose>
-	
+
 </Project>

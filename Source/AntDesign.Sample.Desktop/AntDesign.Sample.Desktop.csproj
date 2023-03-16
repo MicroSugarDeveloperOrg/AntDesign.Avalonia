@@ -3,6 +3,7 @@
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net7.0</TargetFramework>
 		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<TrimMode>copyused</TrimMode>
 		<RootNamespace>AntDesign.Sample</RootNamespace>
 	</PropertyGroup>
 
@@ -10,13 +11,23 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 
+	<!-- Aot -->
+	<PropertyGroup>
+		<PublishAot>true</PublishAot>
+		<StripSymbols>true</StripSymbols>
+	</PropertyGroup>
+
 	<ItemGroup>
-		<PackageReference Include="Avalonia.Desktop" />
+		<RdXmlFile Include="Properties\rd.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia.Desktop" /> 
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
 		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
+		<ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
 	</ItemGroup>
 </Project>

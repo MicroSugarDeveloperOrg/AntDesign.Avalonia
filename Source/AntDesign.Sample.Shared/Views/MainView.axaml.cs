@@ -1,6 +1,4 @@
-using AntDesign.Controls.Ripple;
 using AntDesign.Sample.ViewModels;
-using Avalonia.Controls.Primitives;
 
 namespace AntDesign.Sample.Views;
 
@@ -10,8 +8,8 @@ public partial class MainView : ReactiveUserControl<MainViewModel>
     {
         InitializeComponent();
         //Popup.WindowManagerAddShadowHintProperty
-       // ListBox.ItemContainerTheme
-       //ListBox.ItemContainerThemeProperty
+        // ListBox.ItemContainerTheme
+        //ListBox.ItemContainerThemeProperty
     }
 
 }

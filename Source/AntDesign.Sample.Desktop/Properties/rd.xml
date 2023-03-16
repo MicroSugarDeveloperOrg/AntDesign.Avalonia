@@ -1,0 +1,20 @@
+﻿<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+	<Application>
+		<Assembly Name="Avalonia.Markup.Xaml" Dynamic="Required All"/>
+		<Assembly Name="Avalonia.Toolkit" Dynamic="Required All"/>
+		<Assembly Name="Avalonia.ReactiveUI" Dynamic="Required All" />
+		<Assembly Name="Avalonia.ReactiveUI.Toolkit" Dynamic="Required All" />
+		<!--<Assembly Name="Avalonia.Xaml.Interactions.Custom" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Interactions.DragAndDrop" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Interactions.Draggable" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Interactions.Events" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Interactions.Reactive" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Interactions.Responsive" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Interactions" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Interactivity" Dynamic="Required All" />
+		<Assembly Name="Avalonia.Xaml.Behaviors" Dynamic="Required All" />-->
+		<Assembly Name="AntDesign.Sample.Shared" Dynamic="Required All" />
+		<Assembly Name="Microsoft.Extensions.DependencyInjection" Dynamic="Required All" />
+	</Application>
+</Directives>
+ 
