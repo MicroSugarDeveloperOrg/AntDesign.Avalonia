@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="CalendarDayButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDayButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonPointerOverBackground" Color="{StaticResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonSelectedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonSelectedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonSelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonTodayBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDayButtonTodayForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonTodayBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="CalendarDayButtonBlackOutBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="CalendarDayButtonBlackOutForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="CalendarDayButtonBlackOutBorderBrush" Color="Transparent"/>
+	
+</ResourceDictionary>

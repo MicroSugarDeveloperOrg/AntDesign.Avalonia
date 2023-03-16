@@ -1,0 +1,123 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:viewModels="clr-namespace:AntDesign.Sample.ViewModels"
+			 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"		
+			 xmlns:assists="using:AntDesign.Assists"
+			 xmlns:extensions="using:AntDesign.Extensions"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+             x:Class="AntDesign.Sample.Views.OverviewView"
+			 >
+
+	<Design.DataContext>
+		<viewModels:OverviewViewModel/>
+	</Design.DataContext>
+
+	<ScrollViewer>
+
+		<Grid RowDefinitions="Auto,20,*">
+			<Image Source="/Assets/Images/antdesign-painting.jpg" VerticalAlignment="Top" Stretch="Uniform"/>
+
+			<ThemeVariantScope Grid.Row="2" RequestedThemeVariant="Light">
+				<Grid Height="1040" RowDefinitions="100,*" >
+					<Border Grid.Row="1" Background="#f5f8ff">
+					</Border>
+
+					<Border Grid.Row="0" Grid.RowSpan="2"
+							HorizontalAlignment="Center" VerticalAlignment="Top"
+							Height="500" Width="500"
+							CornerRadius="500"
+							Margin="-905,0,0,0">
+						<Border.Background>
+							<LinearGradientBrush StartPoint="0,0" EndPoint="100%,100%">
+								<GradientStop Color="#90f5f9ff" Offset="0"/>
+								<GradientStop Color="#cde1ff" Offset="1"/>
+							</LinearGradientBrush>
+						</Border.Background>
+
+					</Border>
+					
+					<Border Grid.Row="1" Grid.RowSpan="2"
+							HorizontalAlignment="Center" VerticalAlignment="Bottom"
+							Height="300" Width="300"
+							CornerRadius="300"
+							Margin="900,0,0,-100" >
+						<Border.Background>
+							<LinearGradientBrush StartPoint="0,0" EndPoint="100%,100%">
+								<GradientStop Color="#cde1ff" Offset="0"/>
+								<GradientStop Color="#90f5f9ff" Offset="1"/>
+							</LinearGradientBrush>
+						</Border.Background>
+
+					</Border>
+
+					<Grid Grid.Row="1" RowDefinitions="50,Auto,20,Auto,20,*,30">
+						<TextBlock Grid.Row="1" Text="定制主题，随心所欲" Classes="h1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+						<TextBlock Grid.Row="3" Text="Ant Design 5.0 开放更多样式算法，让你定制主题更简单" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+						<Border Grid.Row="5"
+								Width="1100"
+								Height="620"
+								CornerRadius="6" Background="#40F0F2F5"
+								BoxShadow="inset 0 0 100 0 #F0F2F5, 0 2 10 2 #1A000000">
+
+							<Grid RowDefinitions="65,*">
+								<Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="#dce3ed" Padding="20,0,20,0">
+									<Grid ColumnDefinitions="Auto,20,Auto,*,Auto">
+										<Image Grid.Column="0" Source="/Assets/antdesign@avalonia-logo.png" Width="35" Height="35"/>
+										<TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ant Design 5.0 @ Avalonia" FontSize="15"/>
+									</Grid>
+								</Border>
+
+								<Grid Grid.Row="1" ColumnDefinitions="230,*,30" RowDefinitions="110,*,30">
+
+									<TreeView Grid.Row="0" Grid.RowSpan="3" Margin="3">
+										<TreeView.ItemContainerTheme>
+											<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+												<Setter Property="MinHeight" Value="35"/>
+												<Setter Property="Margin" Value="2"/> 
+												<Setter Property="extensions:Classes.end" Value="true"/>
+											</ControlTheme>
+										</TreeView.ItemContainerTheme>
+										<TreeViewItem Header="Design" IsExpanded="True">
+											<TreeViewItem Header="Design Values"/>
+											<TreeViewItem Header="Global Styles"/>
+											<TreeViewItem Header="Themes" IsSelected="True"/>
+											<TreeViewItem Header="Design Patterns"/>
+										</TreeViewItem>
+										<TreeViewItem Header="Development">
+
+										</TreeViewItem>
+
+									</TreeView>
+
+
+
+									<Border Grid.Column="1" Grid.Row="1" Background="White" CornerRadius="6">
+
+									</Border>
+
+
+								</Grid>
+
+
+
+							</Grid>
+
+						</Border>
+
+					</Grid>
+
+				</Grid>
+
+			</ThemeVariantScope>
+	
+		</Grid>
+
+
+	</ScrollViewer>
+
+
+
+</UserControl>

@@ -1,19 +1,17 @@
-﻿using Avalonia.Media;
-
-namespace AntDesign.Assists;
-public static class CheckBoxAssists
+﻿namespace AntDesign.Assists;
+public class CheckBoxAssists
 {
-    public static readonly AvaloniaProperty<IBrush?> HoverBackgroundProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("HoverBackground", typeof(CheckBoxAssists));
-    public static void SetHoverBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(HoverBackgroundProperty, value);
-    public static IBrush? GetHoverBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(HoverBackgroundProperty);
+    public static readonly AvaloniaProperty<IBrush?> PointerOverBackgroundProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("PointerOverBackground", typeof(CheckBoxAssists));
+    public static void SetPointerOverBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverBackgroundProperty, value);
+    public static IBrush? GetPointerOverBackground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PointerOverBackgroundProperty);
 
-    public static readonly AvaloniaProperty<IBrush?> HoverForegroundProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("HoverForeground", typeof(CheckBoxAssists));
-    public static void SetHoverForeground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(HoverForegroundProperty, value);
-    public static IBrush? GetHoverForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(HoverForegroundProperty);
+    public static readonly AvaloniaProperty<IBrush?> PointerOverForegroundProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("PointerOverForeground", typeof(CheckBoxAssists));
+    public static void SetPointerOverForeground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverForegroundProperty, value);
+    public static IBrush? GetPointerOverForeground(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PointerOverForegroundProperty);
 
-    public static readonly AvaloniaProperty<IBrush?> HoverBorderBrushProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("HoverBorderBrush", typeof(CheckBoxAssists));
-    public static void SetHoverBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(HoverBorderBrushProperty, value);
-    public static IBrush? GetHoverBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(HoverBorderBrushProperty);
+    public static readonly AvaloniaProperty<IBrush?> PointerOverBorderBrushProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("PointerOverBorderBrush", typeof(CheckBoxAssists));
+    public static void SetPointerOverBorderBrush(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PointerOverBorderBrushProperty, value);
+    public static IBrush? GetPointerOverBorderBrush(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(PointerOverBorderBrushProperty);
 
     public static readonly AvaloniaProperty<IBrush?> PressedBackgroundProperty = AvaloniaProperty.RegisterAttached<CheckBox, IBrush?>("PressedBackground", typeof(CheckBoxAssists));
     public static void SetPressedBackground(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(PressedBackgroundProperty, value);

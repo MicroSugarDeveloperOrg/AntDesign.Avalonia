@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:assists="using:AntDesign.Assists"
+                    x:CompileBindings="True">
+
+	<Design.PreviewWith>
+		<Border Padding="20" Width="200">
+			<StackPanel Spacing="20">
+				<ListBoxItem Theme="{DynamicResource AntDesignDateTimePickerItemStyle}">Standard Item</ListBoxItem>
+				<ListBoxItem Theme="{DynamicResource AntDesignDateTimePickerItemStyle}" Classes="MonthItem">Month Item</ListBoxItem>
+				<RepeatButton Theme="{DynamicResource AntDesignDateTimePickerButtonStyle}">Button</RepeatButton>
+				<RepeatButton Theme="{DynamicResource AntDesignDateTimePickerUpButtonStyle}" IsVisible="True"/>
+				<RepeatButton Theme="{DynamicResource AntDesignDateTimePickerDownButtonStyle}" IsVisible="True"/>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="AntDesignDateTimePickerUpButtonStyle"
+				  TargetType="RepeatButton"
+				  BasedOn="{StaticResource {x:Type RepeatButton}}">
+		<Setter Property="Height" Value="{DynamicResource DatePickerButtonHeight}" />
+		<Setter Property="IsVisible" Value="False"/>
+		<Setter Property="Focusable" Value="False" />
+		<Setter Property="Background" Value="{DynamicResource DatePickerButtonBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource DatePickerButtonPointerOverBackground}"/>
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource DatePickerButtonPressedBackground}"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Top"/>
+		<Setter Property="Content">
+			<Template>
+				<Path Stretch="Uniform"
+					  Width="{DynamicResource DatePickerButtonIconWidth}"
+					  Height="{DynamicResource DatePickerButtonIconHeight}"
+					  Fill="{Binding $parent[RepeatButton].Foreground}" 
+					  Data="{StaticResource UpIconGeometry}"
+					  HorizontalAlignment="Center"
+					  VerticalAlignment="Center"/> 
+			</Template>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignDateTimePickerDownButtonStyle" 
+				  TargetType="RepeatButton" 
+				  BasedOn="{StaticResource {x:Type RepeatButton}}">
+		<Setter Property="Height" Value="{DynamicResource DatePickerButtonHeight}" />
+		<Setter Property="IsVisible" Value="False"/>
+		<Setter Property="Focusable" Value="False" />
+		<Setter Property="Background" Value="{DynamicResource DatePickerButtonBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource DatePickerButtonPointerOverBackground}"/>
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource DatePickerButtonPressedBackground}"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Bottom"/>
+		<Setter Property="Content">
+			<Template>
+				<Path Stretch="Uniform"
+					  Width="{DynamicResource DatePickerButtonIconWidth}"
+					  Height="{DynamicResource DatePickerButtonIconHeight}"
+					  Fill="{Binding $parent[RepeatButton].Foreground}"  
+					  Data="{StaticResource DownIconGeometry}"
+					  HorizontalAlignment="Center"
+					  VerticalAlignment="Center"/>
+			</Template>
+		</Setter>
+	</ControlTheme>
+
+</ResourceDictionary>

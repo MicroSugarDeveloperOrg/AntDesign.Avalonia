@@ -1,0 +1,238 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.SwitchView">
+	<ScrollViewer>
+		<Grid ColumnDefinitions="Auto,10,Auto,10,Auto,10,Auto">
+
+			<StackPanel Spacing="20"> 
+				<Border Margin="16"
+						Padding="48"
+						Width="400"
+						Background="Red"
+						Height="200">
+					<Border.ContextMenu>
+						<ContextMenu>
+							<MenuItem Header="Standard _Menu Item" />
+							<MenuItem Header="Disabled" IsEnabled="False" />
+							<Separator />
+							<MenuItem Header="Menu with _Submenu">
+								<MenuItem Header="Submenu _1" />
+								<MenuItem Header="Submenu _2" />
+							</MenuItem>
+							<MenuItem Header="Menu Item with _Icon" />
+							<MenuItem Header="Menu Item with _Checkbox">
+								<MenuItem.Icon>
+									<CheckBox BorderThickness="0"
+											  IsHitTestVisible="False"
+											  IsChecked="True" />
+								</MenuItem.Icon>
+							</MenuItem>
+						</ContextMenu>
+					</Border.ContextMenu>
+					<TextBlock Text="Defined in XAML" />
+				</Border>
+
+
+				<Border Padding="20" Width="320">
+					<StackPanel Spacing="20" HorizontalAlignment="Left">
+						<MenuItem Header="_Standard"/>
+						<MenuItem IsSelected="True" Header="Selected"/>
+						<MenuItem Header="With Icon">
+							<MenuItem.Icon>
+								<TextBlock>😊</TextBlock>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="With CheckBox">
+							<MenuItem.Icon>
+								<CheckBox IsChecked="True"/>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="Input Gesture" InputGesture="Ctrl+G"/>
+						<MenuItem Header="Disabled" IsEnabled="False"/>
+						<MenuItem Header="-"/>
+						<MenuItem Header="Parent" IsSubMenuOpen="True">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+							<Separator/>
+							<MenuItem Header="Child 4"/>
+							<MenuItem Header="Child 5"/>
+							<MenuItem Header="Child 6"/>
+							<MenuItem Header="Child 7"/>
+							<MenuItem Header="Child 8"/>
+							<MenuItem Header="Child 9"/>
+							<MenuItem Header="Child 10"/>
+							<MenuItem Header="Child 11"/>
+							<MenuItem Header="Child 12"/>
+							<MenuItem Header="Child 13"/>
+							<MenuItem Header="Child 14"/>
+							<MenuItem Header="Child 15"/>
+							<MenuItem Header="Child 16"/>
+							<MenuItem Header="Child 17"/>
+							<MenuItem Header="Child 18"/>
+							<MenuItem Header="Child 19"/>
+						</MenuItem>
+						<MenuItem Header="Disabled Parent" IsEnabled="False">
+							<MenuItem Header="Child"/>
+						</MenuItem>
+					</StackPanel>
+				</Border>
+
+				<StackPanel>
+					<Menu>
+						<MenuItem Header="Child 12023">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+						</MenuItem>
+						<MenuItem Header="123" IsSelected="True"/>
+						<MenuItem Header="123"/>
+						<MenuItem Header="123"/>
+
+					</Menu>
+				</StackPanel>
+
+
+				<Border Width="120" Height="50" Background="Blue">
+					<Border.ContextFlyout>
+						<Flyout Content="Should never be visible" />
+					</Border.ContextFlyout>
+				</Border>
+
+ 
+
+			</StackPanel>
+
+
+		 
+
+			
+
+			<StackPanel Grid.Column="6" Spacing="20">
+ 
+
+			 
+
+				<Grid IsVisible="False">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+ 
+
+					<Grid Grid.Column="1">
+						<ScrollViewer>
+							<StackPanel Spacing="10">
+
+								<Separator Classes="left" SeparatorAssists.Content="这是分界线"/>
+								<Separator Classes="right" SeparatorAssists.Content="这是分界线"/>
+								<Separator SeparatorAssists.Content="这是分界线"/>
+
+
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<TextBlock Text="RippleEffectZx"/>
+									<RippleEffectZx/>
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<TextBlock Text="RippleEffectAx"/>
+									<RippleEffectAx RippleBackgroundAlpha="0"/>
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<RippleEffectAx RippleColor="Red"
+													Duration="200"
+													IsReverse="False"
+													CornerRadius="5"
+													RippleBackgroundAlpha="0.3"
+													RippleColorAlpha="0"
+													RippleToScal="1.3"
+													IsManualTrigger="True"
+													IsTrigger="{Binding IsTrigger1}"/>
+									<Button Height="40" Theme="{StaticResource PrimaryButtonStyle}" Content="RippleEffectAx"  Command="{Binding TriggerClickCommand1}"/>
+
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<RippleEffectAx IsManualTrigger="True"
+													IsTrigger="{Binding IsTrigger}"
+													IsForever="True"
+													IsReverse="True"
+													CornerRadius="5"
+													Duration="75"
+													RippleToScal="1.3"
+													RippleColor="Red"
+													RippleColorAlpha="0.4"
+													RippleBackgroundAlpha="0.1"/>
+									<Button Height="40" Theme="{StaticResource PrimaryButtonStyle}" Content="Manual RippleEffectAx" Command="{Binding TriggerClickCommand}"/>
+								</Panel>
+
+								<Panel HorizontalAlignment="Center" VerticalAlignment="Center" >
+									<TextBlock Text="RippleEffectx"/>
+									<RippleEffectx IsRipple="True"  RippleColor="Red" />
+								</Panel>
+
+								<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" IsReverse="True" IsForever="True" Padding="4" Duration="150">
+									<TextBlock Text="RippleEffectAuto"/>
+								</RippleEffect>
+
+								<RippleEffect HorizontalAlignment="Center" VerticalAlignment="Center" RippleToSize="10" IsReverse="False" Padding="4"  Duration="150">
+									<TextBlock Text="RippleEffect"/>
+								</RippleEffect>
+
+							</StackPanel>
+						</ScrollViewer>
+
+					</Grid>
+
+					<StackPanel Grid.Column="2" Spacing="20">
+
+						<NotificationCard Content="1231231231312313" />
+
+						<ComboBox PlaceholderText="ComboBox" DisplayMemberBinding="">
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+						<ComboBox PlaceholderText="ComboBox" IsEnabled="False">
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+						<ComboBox PlaceholderText="ComboBoxError" DisplayMemberBinding="">
+							<DataValidationErrors.Error>
+								<sys:Exception>
+									<x:Arguments>
+										<x:String>Error</x:String>
+									</x:Arguments>
+								</sys:Exception>
+							</DataValidationErrors.Error>
+							<ComboBoxItem Content="123"/>
+							<ComboBoxItem Content="321" IsEnabled="False"/>
+							<ComboBoxItem Content="245"/>
+						</ComboBox>
+
+					</StackPanel>
+
+
+
+
+				</Grid>
+
+
+			</StackPanel>
+
+
+
+		</Grid>
+	</ScrollViewer>
+</UserControl>

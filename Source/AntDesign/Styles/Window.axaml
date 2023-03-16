@@ -1,14 +1,19 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:helpers="using:AntDesign.Helpers">
+					xmlns:helpers="using:AntDesign.Helpers"
+					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type Window}" TargetType="Window">
-		<Setter Property="Background" Value="{DynamicResource Background}"/>
-		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Background}" />
-		<Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
+		<Setter Property="Width" Value="{DynamicResource WindowDefaultWidth}"/>
+		<Setter Property="Height" Value="{DynamicResource WindowDefaultHeight}"/>
+		<Setter Property="ShowInTaskbar" Value="False"/>
+		<Setter Property="WindowStartupLocation" Value="CenterScreen"/>
+		<Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource WindowBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource WindowForeground}"/>
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Window">
 				<Panel>
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" IsHitTestVisible="False" />
 					<Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />

@@ -1,27 +1,25 @@
-﻿<Style xmlns="https://github.com/avaloniaui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	   xmlns:helpers="using:AntDesign.Helpers"
-       Selector=":is(UserControl)">
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers" 
+					x:CompileBindings="True">
 
-	<Style.Resources>
-		<ControlTheme x:Key="AntDesignUserControl" TargetType="UserControl">
-			<Setter Property="Template">
-				<ControlTemplate>
-					<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-									  Padding="{TemplateBinding Padding}"
-									  Background="{TemplateBinding Background}"
-									  CornerRadius="{TemplateBinding CornerRadius}"
-									  BorderBrush="{TemplateBinding BorderBrush}"
-									  BorderThickness="{TemplateBinding BorderThickness}"
-									  Content="{TemplateBinding Content}"
-									  ContentTemplate="{TemplateBinding ContentTemplate}"
-									  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-									  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-				</ControlTemplate>
-			</Setter>
-		</ControlTheme>
-	</Style.Resources>
+	<ControlTheme x:Key="{x:Type UserControl}" TargetType="UserControl">
+		<Setter Property="Foreground" Value="{DynamicResource AntDesignForeground}"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="UserControl">
+				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+								  Padding="{TemplateBinding Padding}"
+								  Background="{TemplateBinding Background}"
+								  Foreground="{TemplateBinding Foreground}"
+								  CornerRadius="{TemplateBinding CornerRadius}"
+								  BorderBrush="{TemplateBinding BorderBrush}"
+								  BorderThickness="{TemplateBinding BorderThickness}"
+								  Content="{TemplateBinding Content}"
+								  ContentTemplate="{TemplateBinding ContentTemplate}"
+								  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
 
-	<Setter Property="Theme" Value="{StaticResource AntDesignUserControl}"/>
-
-</Style>
+</ResourceDictionary>

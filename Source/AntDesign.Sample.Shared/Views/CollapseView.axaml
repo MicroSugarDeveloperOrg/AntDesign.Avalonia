@@ -1,0 +1,179 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dialogs="using:Avalonia.Dialogs"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.CollapseView">
+
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="可以折叠/展开的内容区域。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  对复杂区域进行分组和隐藏，保持页面的整洁。"/>
+			<TextBlock  Text=">>  手风琴 是一种特殊的折叠面板，只允许单个内容区域展开。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="0,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Vertical" Margin="5">
+							<Expander Header="This is panel header 1" IsExpanded="True" Classes="top self">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" Classes="middle self">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" Classes="bottom self">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+						</StackPanel>
+						 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="向下折叠面板"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="可以同时展开多个面板，这个例子默认展开了第一个。"/>
+						<TextBlock Text="当多个面板拼接时对Classes 分别赋值位 top middle bottom将进行不同的处理达到无缝衔接(如果是多个Expander拼接请加上self属性)"/>
+						<TextBlock Text="拼接面板目前只支持up down样式"/>
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Vertical" Margin="5">
+							<Expander Header="This is panel header 1" ExpandDirection="Up"  IsExpanded="True" Classes="top self end">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Up"  Classes="middle self end">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Up"  Classes="bottom self end">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="向上折叠面板"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="可以同时展开多个面板，这个例子默认展开了第一个。"/>
+						<TextBlock Text="当多个面板拼接时对Classes 分别赋值位 top middle bottom将进行不同的处理达到无缝衔接"/>
+						<TextBlock Text="拼接面板目前只支持up down样式"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="0" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="0,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Vertical" Spacing="5" Margin="5">	
+							<Expander Header="This is panel header 1">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+
+							<Expander Header="This is panel header 1" ExpandDirection="Up">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							
+							<Expander Header="This is panel header 1" ExpandDirection="Left">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+
+							<Expander Header="This is panel header 1" ExpandDirection="Right">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="向左向右的折叠面板"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ExpandDirection 设置位Left 或者 Right改变朝向"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Vertical" Margin="5" Spacing="5">
+							<Expander Header="This is panel header 1" ExpandDirection="Up" IsEnabled="False" >
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Up" IsEnabled="False" Classes="end">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Down" IsEnabled="False">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Left" IsEnabled="False">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							<Expander Header="This is panel header 1" ExpandDirection="Right" IsEnabled="False">
+								<TextBlock TextWrapping="WrapWithOverflow" Text="A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world."/>
+							</Expander>
+							
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过修改IsEnable来控制是否可用"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+		</Grid>
+	</Grid>
+
+</UserControl>

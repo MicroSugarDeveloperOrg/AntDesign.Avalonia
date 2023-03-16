@@ -1,17 +1,8 @@
-﻿using Avalonia.Data;
-using Avalonia.Input;
-using Avalonia.Media;
-using Avalonia.Threading;
-
-namespace AntDesign.Controls.Ripple;
+﻿namespace AntDesign.Controls.Ripple;
 public class RippleEffectAx : Border
 {
-    public RippleEffectAx()
+    static RippleEffectAx()
     {
-        AddHandler(PointerPressedEvent, PointerPressedHandler);
-        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
-        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
-
         IsTriggerProperty.Changed.AddClassHandler<RippleEffectAx, bool>((s, e) =>
         {
             if (s is null)
@@ -39,6 +30,13 @@ public class RippleEffectAx : Border
 
             s._foreverTriggerSpace = e.NewValue.Value;
         });
+    }
+
+    public RippleEffectAx()
+    {
+        AddHandler(PointerPressedEvent, PointerPressedHandler);
+        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
+        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
 
         Background = Brushes.Transparent;
         BorderThickness = new Thickness(1);
@@ -176,6 +174,10 @@ public class RippleEffectAx : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        var pointer = e.GetCurrentPoint(this);
+        if (!pointer.Properties.IsLeftButtonPressed)
+            return;
+
         if (!IsManualTrigger)
             Trigger();
     }
@@ -195,7 +197,7 @@ public class RippleEffectAx : Border
         if (!IsRipple)
             return false;
 
-         if (IsManualTrigger && !IsTrigger)
+        if (IsManualTrigger && !IsTrigger)
             return false;
 
         if (Volatile.Read(ref _isRippling))
@@ -259,7 +261,7 @@ public class RippleEffectAx : Border
                 spread = RippleFromScal;
 
             RenderTransform = new ScaleTransform(spread, spread);
-        }); 
+        });
     }
 
     Task InvokeEnd()

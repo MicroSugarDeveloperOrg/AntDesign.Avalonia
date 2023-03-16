@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:helpers="using:AntDesign.Helpers">
+					xmlns:helpers="using:AntDesign.Helpers"
+					x:CompileBindings="True">
 	<Design.PreviewWith>
 		<Border Padding="20">
 			<ListBox>
@@ -13,16 +14,20 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
-		<Setter Property="Foreground" Value="{DynamicResource Foreground}" />
-		<Setter Property="Background" Value="{DynamicResource Transparent}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource ListBoxBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ListBoxForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ListBoxBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
-		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ListBox">
 				<Border Name="border"
 						ClipToBounds="{TemplateBinding ClipToBounds}"
 						Background="{TemplateBinding Background}"
@@ -30,16 +35,18 @@
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}">
 					<ScrollViewer Name="{x:Static helpers:PARTNameHelper.PART_ScrollViewer}"
+								  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+								  Background="{TemplateBinding Background}"
 								  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-								  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
 								  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
-								  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
-						<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-										Items="{TemplateBinding Items}"
-										ItemsPanel="{TemplateBinding ItemsPanel}"
-										ItemTemplate="{TemplateBinding ItemTemplate}"
-										Margin="{TemplateBinding Padding}"
-										VirtualizationMode="{TemplateBinding VirtualizationMode}" />
+								  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+								  VerticalSnapPointsType="{TemplateBinding (ScrollViewer.VerticalSnapPointsType)}"
+								  HorizontalSnapPointsType="{TemplateBinding (ScrollViewer.HorizontalSnapPointsType)}">
+						<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}" 
+										Margin="{TemplateBinding Padding}" 
+										AreVerticalSnapPointsRegular="{TemplateBinding AreVerticalSnapPointsRegular}"
+										AreHorizontalSnapPointsRegular="{TemplateBinding AreHorizontalSnapPointsRegular}"
+										ItemsPanel="{TemplateBinding ItemsPanel}"/>
 					</ScrollViewer>
 				</Border>
 			</ControlTemplate>

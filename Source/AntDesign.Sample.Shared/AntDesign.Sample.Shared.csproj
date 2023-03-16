@@ -8,21 +8,34 @@
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
+		<AvaloniaResource Include="Assets\Styles\**" />
+		<AvaloniaResource Include="Assets\Images\**" />
 		<TrimmerRootDescriptor Include="Roots.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" />
-		<PackageReference Include="Avalonia.Themes.Fluent" />
+		<PackageReference Include="Avalonia" /> 
 		<PackageReference Include="Avalonia.ReactiveUI" />
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
 		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
+		<PackageReference Include="Avalonia.Xaml.Behaviors" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
 		<PackageReference Include="XamlNameReferenceGenerator" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\AntDesign\AntDesign.csproj" />
+	  <ProjectReference Include="..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
+	  <ProjectReference Include="..\Avalonia.Toolkit\Avalonia.Toolkit.csproj" /> 
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Views\DatePickerView.axaml.cs">
+	    <DependentUpon>DatePickerView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TimePickerView.axaml.cs">
+	    <DependentUpon>TimePickerView.axaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
 	 
 </Project>

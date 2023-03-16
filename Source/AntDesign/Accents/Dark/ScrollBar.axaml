@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="ScrollBarThumbBackground" Color="#c1c1c1"/>
+	<SolidColorBrush x:Key="ScrollBarThumbPointerOverBackground" Color="#a8a8a8"/>
+	<SolidColorBrush x:Key="ScrollBarThumbPressedBackground" Color="#787878"/>
+
+	<SolidColorBrush x:Key="ScrollBarPageButtonBackground" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ScrollBarLineButtonForeground" Color="#a3a3a3"/>
+	<SolidColorBrush x:Key="ScrollBarLineButtonBackground" Color="#f1f1f1"/>
+	<SolidColorBrush x:Key="ScrollBarLineButtonBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ScrollBarLineButtonPointerOverForeground" Color="#505050"/>
+	<SolidColorBrush x:Key="ScrollBarLineButtonPointerOverBackground" Color="#d2d2d2"/>
+
+	<SolidColorBrush x:Key="ScrollBarLineButtonPressedForeground" Color="#ffffff"/>
+	<SolidColorBrush x:Key="ScrollBarLineButtonPressedBackground" Color="#787878"/>
+
+	<SolidColorBrush x:Key="ScrollBarBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ScrollBarForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ScrollBarBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ScrollBarTrackFill" Color="#f1f1f1"/>
+	<SolidColorBrush x:Key="ScrollBarTrackStroke" Color="Transparent"/>
+
+</ResourceDictionary>

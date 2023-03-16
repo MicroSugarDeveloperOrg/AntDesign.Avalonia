@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="SpliteViewPaneBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="SpliteViewPaneBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="SpliteViewBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="SpliteViewMaskBackground" Color="{DynamicResource AntDesignAssistColor1}" Opacity="0.45"/>
+
+</ResourceDictionary>

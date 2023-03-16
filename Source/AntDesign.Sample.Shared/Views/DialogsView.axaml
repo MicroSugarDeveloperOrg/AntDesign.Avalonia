@@ -1,0 +1,82 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="using:System"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.DialogsView">
+
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="自定义窗口显示。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  在需要打开文件和文件夹时。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Button Content="点我试试我的厉害"  Height="40" Click="OpenFolderClick"/>
+						</StackPanel>
+						 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="OpenFolderPicker"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="简单的 OpenFolderPicker。"/>
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Button Content="点我试试我的厉害"  Height="40" Click="OpenFileDialog"/>
+						</StackPanel>
+						 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="OpenFileDialog"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="简单的 OpenFileDialog。"/>
+						<TextBlock Text="桌面端可以使用ManagedFileDialog"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			 
+
+		</Grid>
+	</Grid>
+	
+</UserControl>

@@ -1,7 +1,7 @@
 ﻿using AntDesign.Sample;
 using Avalonia;
 using Avalonia.ReactiveUI;
-using Avalonia.Web;
+using Avalonia.Browser;
 using System.Runtime.Versioning;
 
 [assembly: SupportedOSPlatform("browser")]

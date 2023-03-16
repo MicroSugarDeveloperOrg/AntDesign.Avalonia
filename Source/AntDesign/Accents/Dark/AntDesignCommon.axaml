@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<!--黑色-->
+	<Color x:Key="AntDesignBackgroundColor">#141414</Color>
+	<SolidColorBrush x:Key="AntDesignBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+
+	<!--文字颜色-->
+	<Color x:Key="AntDesignForegroundColor">#dcdcdc</Color>
+	<SolidColorBrush x:Key="AntDesignForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+
+	<!--扩展文字颜色-->
+	<Color x:Key="AntDesignAssistForegroundColor">#ffffff</Color>
+	<SolidColorBrush x:Key="AntDesignAssistForeground" Color="{StaticResource AntDesignAssistForegroundColor}"/>
+
+	<!--边框专用色-->
+	<DynamicResource x:Key="AntDesignBorderColor" ResourceKey="AntDesignAssistColor10"/>
+	<SolidColorBrush x:Key="AntDesignBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+	
+	<!--Disable-->
+	<Color x:Key="DisableBackgroundColor">#262626</Color>
+	<SolidColorBrush x:Key="DisableBackground" Color="{StaticResource DisableBackgroundColor}"/>
+	
+	<Color x:Key="DisableForegroundColor">#555555</Color>
+	<SolidColorBrush x:Key="DisableForeground" Color="{StaticResource DisableForegroundColor}"/>
+	
+	<Color x:Key="DisableBorderColor">#424242</Color>
+	<SolidColorBrush x:Key="DisableBorderBrush" Color="{StaticResource DisableBorderColor}"/>
+	
+	<Color x:Key="DisableFillColor">#FFB8B8B8</Color>
+	<SolidColorBrush x:Key="DisableFill" Color="{StaticResource DisableFillColor}"/>
+
+
+</ResourceDictionary>

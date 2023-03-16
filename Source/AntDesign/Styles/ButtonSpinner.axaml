@@ -39,116 +39,106 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M0,9 L10,0 20,9 19,10 10,2 1,10 z</StreamGeometry>
-	<StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,1 L10,10 20,1 19,0 10,8 1,0 z</StreamGeometry>
+	<Template x:Key="IncreaseSpinnerContent">
+		<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
+				  Height="{DynamicResource ButtonSpinnerIconHeight}"
+				  Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}" />
+	</Template>
 
-	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButton" TargetType="RepeatButton">
-		<Setter Property="MinWidth" Value="34" />
-		<Setter Property="BorderThickness" Value="0" />
-		<Setter Property="CornerRadius" Value="0" />
-		<Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}"/>
-		<Setter Property="Foreground" Value="{DynamicResource ButtonDefaultForeground}"/>
-		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="0.35"/>
-		<Setter Property="ClipToBounds" Value="False" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<ripple:RippleEffect CornerRadius="{TemplateBinding CornerRadius}"
-									 RippleColor="{TemplateBinding assists:ButtonAssists.RippleColor}"
-									 RippleColorAlpha="{TemplateBinding assists:ButtonAssists.RippleColorAlpha}">
-					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-								      Foreground="{TemplateBinding Foreground}"
-								      Background="{TemplateBinding Background}"
-								      BorderBrush="{TemplateBinding BorderBrush}"
-								      BorderThickness="{TemplateBinding BorderThickness}"
-								      Content="{TemplateBinding Content}"
-								      ContentTemplate="{TemplateBinding ContentTemplate}"
-								      Padding="{TemplateBinding Padding}"
-								      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-								      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-				</ripple:RippleEffect>
-			</ControlTemplate>
-		</Setter>
-		<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Foreground" Value="{DynamicResource ButtonHoverDefaultForeground}" />
-		</Style>
+	<Template x:Key="DecreaseSpinnerContent">
+		<PathIcon Width="{DynamicResource ButtonSpinnerIconWidth}"
+				  Height="{DynamicResource ButtonSpinnerIconHeight}"
+				  Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}" />
+	</Template>
 
-		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Foreground" Value="{DynamicResource ButtonPressedDefaultForeground}" />
-		</Style>
-
-		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="Background" Value="{DynamicResource DisableBackgroundColor}" />
-			<Setter Property="Foreground" Value="{DynamicResource DisableForegroundColor}" />
-		</Style>
+	<ControlTheme x:Key="AntDesignButtonSpinnerRepeatButtonStyle" TargetType="RepeatButton" BasedOn="{StaticResource {x:Type RepeatButton}}">
+		<Setter Property="MinWidth" Value="{DynamicResource ButtonSpinnerRepeatButtonMinWidth}" />
+		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
 	</ControlTheme>
 
 	<ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-		<Setter Property="Padding" Value="10, 0" />
-		<Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
-		<Setter Property="MinHeight" Value="{DynamicResource TextBoxMinHeight}" />
-		<Setter Property="MinWidth" Value="{DynamicResource TextBoxMinWidth}" />
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonSpinnerForeground}" />
+		<Setter Property="Background" Value="{DynamicResource ButtonSpinnerBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ButtonSpinnerBorderBrush}" />
+		<Setter Property="assists:ButtonSpinnerAssists.Background" Value="{DynamicResource ButtonSpinnerButtonBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.Foreground" Value="{DynamicResource ButtonSpinnerButtonForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.BorderBrush" Value="{DynamicResource ButtonSpinnerButtonBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBackground" Value="{DynamicResource ButtonSpinnerButtonPointerOverBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverForeground" Value="{DynamicResource ButtonSpinnerButtonPointerOverForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPointerOverBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerButtonPressedBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerButtonPressedForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerButtonPressedBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.LeftSpinnerContent" Value="{StaticResource IncreaseSpinnerContent}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.RightSpinnerContent" Value="{StaticResource DecreaseSpinnerContent}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="MinWidth" Value="{DynamicResource TextBoxMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource TextBoxMinHeight}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
-		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Focusable" Value="True"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="ButtonSpinner">
 				<DataValidationErrors>
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
 							CornerRadius="{TemplateBinding CornerRadius}"
+							MinWidth="{TemplateBinding MinWidth}"
 							MinHeight="{TemplateBinding MinHeight}">
 						<DockPanel>
-							<StackPanel Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}"
+							<StackPanel x:Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}"
 										DockPanel.Dock="Right"
 										Orientation="Horizontal"
 										IsVisible="{TemplateBinding ShowButtonSpinner}">
-								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
-											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButton}"
-											  Background="{TemplateBinding Background}"
-											  BorderBrush="{TemplateBinding BorderBrush}"
-											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource LeftThicknessFilterConverter}}"
-											  VerticalAlignment="Stretch"
-											  VerticalContentAlignment="Center"
-											  Foreground="{TemplateBinding Foreground}"
-											  FontSize="{TemplateBinding FontSize}"
-											  MinWidth="34">
-									<PathIcon Width="16"
-											  Height="8"
-											  Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}" />
-								</RepeatButton>
+								<RepeatButton x:Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
+											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
+											  Content="{TemplateBinding assists:ButtonSpinnerAssists.LeftSpinnerContent}"
+											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
+											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}"
+											  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"
+											  assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBackground}"
+											  assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverForeground}"
+											  assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBorderBrush}"
+											  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
+											  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
+											  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
+											  />
 
-								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
-											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButton}"
-											  Background="{TemplateBinding Background}"
-											  BorderBrush="{TemplateBinding BorderBrush}"
-											  VerticalAlignment="Stretch"
+								<RepeatButton x:Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
+											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
+											  Content="{TemplateBinding assists:ButtonSpinnerAssists.RightSpinnerContent}"
+											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
+											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}"
+											  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"
+											  assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBackground}"
+											  assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverForeground}"
+											  assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBorderBrush}"
+											  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
+											  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
+											  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
 											  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
-											  VerticalContentAlignment="Center"
-											  Foreground="{TemplateBinding Foreground}"
-											  FontSize="{TemplateBinding FontSize}"
-											  MinWidth="34">
-									<PathIcon Width="16"
-											  Height="8"
-											  Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
-								</RepeatButton>
+											  />
 							</StackPanel>
 
-							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-											  Grid.Column="1"
-											  ContentTemplate="{TemplateBinding ContentTemplate}"
+							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
+											  Foreground="{TemplateBinding Foreground}"
+											  BorderBrush="{TemplateBinding BorderBrush}"
+											  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource OnlyRightBorderThickness}}"
 											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Padding="{TemplateBinding Padding}"
 											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-											  Padding="{TemplateBinding Padding}" />
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
 						</DockPanel>
 					</Border>
 				</DataValidationErrors>
@@ -159,23 +149,116 @@
 				<Setter Property="DockPanel.Dock" Value="Left"/>
 			</Style>
 			<Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
-				<Setter Property="BorderThickness" Value="0"/>
 				<Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"/>
 			</Style>
 			<Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
-				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource RightThicknessFilterConverter}}"/>
 				<Setter Property="CornerRadius" Value="0"/>
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftBorderThickness}}"/>
+			</Style>
+		</Style>
+
+		<Style Selector="^[ShowButtonSpinner=False]">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderThickness" Value="0"/>
 			</Style>
 		</Style>
 
 		<Style Selector="^:disabled">
-			<Setter Property="Background" Value="{DynamicResource DisableBackgroundColor}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
+			<!--<Setter Property="Background" Value="{DynamicResource DisableBackground}" />-->
+			<!--<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />-->
+			<!--<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />-->
+			<Setter Property="Opacity" Value="0.5"/>
 		</Style>
 
 		<Style Selector="^:error">
 			<Setter Property="BorderBrush" Value="{DynamicResource ErrorBorderBrush}" />
 		</Style>
+
+		<Style Selector="^.center">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="ButtonSpinner">
+					<DataValidationErrors>
+						<Border Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								MinWidth="{TemplateBinding MinWidth}"
+								MinHeight="{TemplateBinding MinHeight}">
+							<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_SpinnerPanel}"
+								  ColumnDefinitions="Auto,*,Auto">
+								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_IncreaseButton}"
+											  Grid.Column="0"
+											  IsVisible="{TemplateBinding ShowButtonSpinner}"
+											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
+											  Content="{TemplateBinding assists:ButtonSpinnerAssists.LeftSpinnerContent}"
+											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
+											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}"
+											  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"
+											  assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBackground}"
+											  assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverForeground}"
+											  assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBorderBrush}"
+											  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
+											  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
+											  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
+											  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
+											  VerticalAlignment="Stretch"
+											  VerticalContentAlignment="Center"/>
+
+								<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+												  Grid.Column="1"
+												  Foreground="{TemplateBinding Foreground}"
+												  BorderBrush="{TemplateBinding BorderBrush}"
+												  BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource LeftRightBorderThickness}}"
+												  Content="{TemplateBinding Content}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Padding="{TemplateBinding Padding}"
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+								<RepeatButton Name="{x:Static helpers:PARTNameHelper.PART_DecreaseButton}"
+											  Grid.Column="2"
+											  IsVisible="{TemplateBinding ShowButtonSpinner}"
+											  Theme="{StaticResource AntDesignButtonSpinnerRepeatButtonStyle}"
+											  Content="{TemplateBinding assists:ButtonSpinnerAssists.RightSpinnerContent}"
+											  Background="{TemplateBinding assists:ButtonSpinnerAssists.Background}"
+											  Foreground="{TemplateBinding assists:ButtonSpinnerAssists.Foreground}"
+											  BorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.BorderBrush}"
+											  assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBackground}"
+											  assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverForeground}"
+											  assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PointerOverBorderBrush}"
+											  assists:ButtonAssists.PressedBackground="{TemplateBinding assists:ButtonSpinnerAssists.PressedBackground}"
+											  assists:ButtonAssists.PressedForeground="{TemplateBinding assists:ButtonSpinnerAssists.PressedForeground}"
+											  assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:ButtonSpinnerAssists.PressedBorderBrush}"
+											  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
+											  VerticalAlignment="Stretch"
+											  VerticalContentAlignment="Center"/>
+							</Grid>
+						</Border>
+					</DataValidationErrors>
+				</ControlTemplate>
+			</Setter>
+
+			<Style Selector="^:left">
+
+			</Style>
+		</Style>
+		
+	</ControlTheme>
+
+	<ControlTheme x:Key="PrimaryButtonSpinnerStyle" TargetType="ButtonSpinner" BasedOn="{StaticResource {x:Type ButtonSpinner}}">
+		<Setter Property="assists:ButtonSpinnerAssists.Background" Value="{DynamicResource ButtonSpinnerPrimaryBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.Foreground" Value="{DynamicResource ButtonSpinnerPrimaryForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.BorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBackground" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverForeground" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PointerOverBorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryPointerOverBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBackground" Value="{DynamicResource ButtonSpinnerPrimaryPressedBackground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedForeground" Value="{DynamicResource ButtonSpinnerPrimaryPressedForeground}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.PressedBorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryPressedBorderBrush}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.LeftSpinnerContent" Value="{StaticResource IncreaseSpinnerContent}"/>
+		<Setter Property="assists:ButtonSpinnerAssists.RightSpinnerContent" Value="{StaticResource DecreaseSpinnerContent}"/>
 	</ControlTheme>
 
 </ResourceDictionary>

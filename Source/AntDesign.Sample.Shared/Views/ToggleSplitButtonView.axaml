@@ -1,0 +1,153 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:assists="using:AntDesign.Assists"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.ToggleSplitButtonView">
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="一种具有选中状态的分离按钮。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  在需要使用的按钮具有下拉图标时使用。"/>
+			<TextBlock  Text=">>  可以获取控制按钮的事件，根据不同事件进行相应的值的变化。"/>
+			<TextBlock  Text=">>  这是SplitButton按钮的一种扩展，在SplitButton基础上增加了IsChecked状态。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.3*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<ToggleSplitButton Content="SplitButton">
+								<SplitButton.Flyout>
+									<MenuFlyout Placement="Bottom">
+										<MenuItem Header="Item 1">
+											<MenuItem Header="Subitem 1" />
+											<MenuItem Header="Subitem 2" />
+											<MenuItem Header="Subitem 3" />
+										</MenuItem>
+										<MenuItem Header="Item 2"
+												  InputGesture="Ctrl+A" />
+										<MenuItem Header="Item 3" />
+									</MenuFlyout>
+								</SplitButton.Flyout>
+							</ToggleSplitButton>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+
+						 
+							<ToggleSplitButton Content="SplitButton" Theme="{StaticResource PrimarySplitButton}">
+								<SplitButton.Flyout>
+									<MenuFlyout Placement="Bottom">
+										<MenuItem Header="Item 1">
+											<MenuItem Header="Subitem 1" />
+											<MenuItem Header="Subitem 2" />
+											<MenuItem Header="Subitem 3" />
+										</MenuItem>
+										<MenuItem Header="Item 2"
+												  InputGesture="Ctrl+A" />
+										<MenuItem Header="Item 3" />
+									</MenuFlyout>
+								</SplitButton.Flyout>
+							</ToggleSplitButton>
+
+						</StackPanel>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="简单的 ToggleSplitButtonView。"/>
+						<TextBlock Text="ToggleSplitButtonView的Content属性可以放入任何有效的控件元素，包括文字，图像等等"/>
+						<TextBlock Text="ToggleSplitButtonView的Flyout属性可以放入Flyout元素"/>
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.3*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<ToggleSplitButton Content="SplitButton" assists:SplitButtonAssists.PlugContent="123123" />
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<ToggleSplitButton Content="SplitButton" Theme="{StaticResource PrimarySplitButton}" assists:SplitButtonAssists.PlugContent="123123"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="自定义扩展显示"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ToggleSplitButton 自定义扩展显示。"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过修改 assists:SplitButtonAssists.PlugContent属性来自定义右侧按钮内容显示，支持任意元素包括文字 图片等。"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="0" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.3*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<ToggleSplitButton Content="SplitButton" IsEnabled="False"/>
+							<ToggleSplitButton Content="SplitButton" IsEnabled="False" IsChecked="True"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<ToggleSplitButton Content="SplitButton" IsEnabled="False" Theme="{StaticResource PrimarySplitButton}"/>
+							<ToggleSplitButton Content="SplitButton" IsEnabled="False" Theme="{StaticResource PrimarySplitButton}" IsChecked="True"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ToggleSplitButtonView 不可用。"/>
+						<TextBlock Text="通过修改IsEnabled属性来控制是否可用。"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+		</Grid>
+	</Grid>
+
+</UserControl>

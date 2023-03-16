@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AvaloniaResource Include="Assets\*" />
+		<EmbeddedResource Include="Assets\Fonts\*.ttf" />
+		<EmbeddedResource Include="Assets\Fonts\AliBaba\*.ttf" />
+		<EmbeddedResource Include="Assets\Fonts\HanSans\*.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" />
+        <PackageReference Include="Avalonia.Skia" />
+        <PackageReference Include="PolySharp">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>build; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    
+  
+</Project>

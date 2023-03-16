@@ -1,12 +1,13 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:helpers="using:AntDesign.Helpers">
+					xmlns:helpers="using:AntDesign.Helpers"
+					x:CompileBindings="True">
 	
 	<ControlTheme x:Key="{x:Type EmbeddableControlRoot}" TargetType="EmbeddableControlRoot">
 		<Setter Property="Background" Value="{DynamicResource EmbeddableControlRootBackground}"/>
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="EmbeddableControlRoot">
 				<Panel>
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" IsHitTestVisible="False" />
 					<Border Background="{TemplateBinding Background}">

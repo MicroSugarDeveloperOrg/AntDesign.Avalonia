@@ -1,0 +1,170 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.RadioButtonView">
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="单选控件。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  在一组可选项中进行单项选择时。"/>
+			<TextBlock  Text=">>  单独使用可以表示四种状态之间的切换"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton"/>
+							<RadioButton Content="RadioButton" IsChecked="True"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}" IsChecked="True"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" IsChecked="True"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}" Classes="top"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}" Classes="top" IsChecked="True"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="简单的 RadioButton。"/>
+						<TextBlock Text="RadioButton提供四种样式，默认样式，按钮样式，主按钮样式，菜单样式"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过修改RadioButton的Theme属性来更改显示样式，值如下：AntDesignLikeButtonStyle，AntDesignLikePrimaryButtonStyle，AntDesignLikeMenuStyle  "/>
+						<TextBlock Text="当RadioButton的Theme属性值为AntDesignLikeMenuStyle时，可以通过设置Classes=top实现Menu装饰在上方的效果"/>
+
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="left"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="center"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="right"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" >
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="left"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="center"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="right"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="组合用法"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过修改RadioButton Classes属性值实现按钮无缝拼接"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="0" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton" IsEnabled="False"/>
+							<RadioButton Content="RadioButton" IsChecked="True" IsEnabled="False"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}" IsEnabled="False"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}" IsChecked="True" IsEnabled="False"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" IsEnabled="False"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" IsChecked="True" IsEnabled="False"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}" IsEnabled="False"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}" IsEnabled="False"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}" IsEnabled="False" Classes="top"/>
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeMenuStyle}" IsEnabled="False" Classes="top" IsChecked="True"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="RadioButton 不可用。"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="2"
+				BorderThickness="{StaticResource OverlayBorderThickness}"
+				CornerRadius="{StaticResource OverlayCornerRadius}"
+				BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.5*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal">
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikeButtonStyle}" Classes="round"/> 
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" >
+							<RadioButton Content="RadioButton" Theme="{StaticResource AntDesignLikePrimaryButtonStyle}" Classes="round"/> 
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="圆形按钮"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过修改RadioButton Classes属性值实现按钮圆形按钮"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+		
+		</Grid>
+	</Grid>
+</UserControl>

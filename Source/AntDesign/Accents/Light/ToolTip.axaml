@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="ToolTipBackground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource AntDesignAssistColor1}"/>
+	<SolidColorBrush x:Key="ToolTipBorderBrush" Color="Transparent"/>
+
+</ResourceDictionary>

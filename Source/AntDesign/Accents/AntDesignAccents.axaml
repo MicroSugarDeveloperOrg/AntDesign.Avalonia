@@ -1,0 +1,382 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:converters="using:Avalonia.Controls.Converters"
+					xmlns:antConverters="using:AntDesign.Converters"			
+					xmlns:sys="using:System" 
+					x:CompileBindings="True">
+
+	<!--Global-->
+	<x:Double x:Key="TitleFontSize">18</x:Double>
+	<x:Double x:Key="FontSize">14</x:Double>
+	<x:Double x:Key="SmallFontSize">12</x:Double>
+
+	<Thickness x:Key="Padding">0</Thickness>
+	<Thickness x:Key="OverlayPadding">3</Thickness>
+
+	<Thickness x:Key="Margin">0</Thickness>
+	<Thickness x:Key="OverlayMargin">5</Thickness>
+	<Thickness x:Key="LeftRightOverlayMargin">5,0,5,0</Thickness>
+	<Thickness x:Key="TopBottomOverlayMargin">0,5,0,5</Thickness>
+
+	<Thickness x:Key="BorderThickness">0</Thickness>
+	<Thickness x:Key="OverlayBorderThickness">1</Thickness>
+	<Thickness x:Key="LeftOverlayBorderThickness">0,1,1,1</Thickness>
+	<Thickness x:Key="RightOverlayBorderThickness">1,1,0,1</Thickness>
+	<Thickness x:Key="LeftRightOverlayBorderThickness">0,1,0,1</Thickness>
+
+	<CornerRadius x:Key="CornerRadius">0</CornerRadius>
+	<CornerRadius x:Key="OverlayCornerRadius">5</CornerRadius>
+	<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
+	<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
+
+	<Thickness x:Key="PopupShadowPadding">10</Thickness>
+	<Thickness x:Key="PopupBorderThickness">0</Thickness>
+	<CornerRadius x:Key="PopupCornerRadius">10</CornerRadius>
+	<Thickness x:Key="PopupPadding">3</Thickness>
+	<Thickness x:Key="PopupMargin">5</Thickness>
+
+	<x:Double x:Key="ButtonHeight">35</x:Double>
+	<x:Double x:Key="ButtonWidth">130</x:Double>
+
+	<!-- Windows -->
+	<x:Double x:Key="WindowDefaultWidth">1000</x:Double>
+	<x:Double x:Key="WindowDefaultHeight">600</x:Double>
+	
+	<!-- AutoCompleteBox -->
+	<x:Double x:Key="AutoCompleteBoxPopupMaxHeight">504</x:Double>
+
+	<!-- ButtonSpinner -->
+	<x:Double x:Key="ButtonSpinnerIconWidth">16</x:Double>
+	<x:Double x:Key="ButtonSpinnerIconHeight">8</x:Double>
+	<x:Double x:Key="ButtonSpinnerRepeatButtonMinWidth">34</x:Double>
+
+	<!-- CaptionButtons -->
+	<x:Double x:Key="CaptionButtonWidth">45</x:Double>
+	<x:Double x:Key="CaptionButtonHeight">30</x:Double>
+	
+	<!-- CheckBox -->
+	<x:Double x:Key="CheckBoxHeight">23</x:Double>
+
+	<x:Double x:Key="CheckBoxRippleDuration">100</x:Double>
+	<x:Double x:Key="CheckBoxRippleFromScal">1</x:Double>
+	<x:Double x:Key="CheckBoxRippleToScal">1.7</x:Double>
+
+	<Thickness x:Key="CheckBoxIndeterminatePadding">5</Thickness>
+
+	<!-- ComboBox -->
+	<x:Double x:Key="InnerPlaceholderOpacity">0.5</x:Double>
+	<x:Double x:Key="InnerIconOpacity">0.5</x:Double>
+
+	<x:Double x:Key="DropDownGlyphBorderWidth">32</x:Double>
+	
+	<x:Double x:Key="DropDownGlyphIconWidth">12</x:Double>
+	<x:Double x:Key="DropDownGlyphIconHeight">12</x:Double>
+	
+	<x:Double x:Key="ComboBoxMaxDropDownHeight">504</x:Double>
+	
+	<!-- ContextMenu -->
+	<x:Double x:Key="ContextMenuMaxWidth">300</x:Double>
+	<x:Double x:Key="ContextMenuMinHeight">50</x:Double>
+
+	<!--DataValidationErrors-->
+	<x:Double x:Key="DataValidationErrorsIconHeight">14</x:Double>
+	<x:Double x:Key="DataValidationErrorsIconWidth">14</x:Double>
+	<x:Double x:Key="DataValidationErrorsIconStrokeThickness">2</x:Double>
+
+	<!-- DropDownButton -->	
+	<x:Double x:Key="DropDownButtonIconHeight">12</x:Double>
+	<x:Double x:Key="DropDownButtonIconWidth">12</x:Double>
+	<Thickness x:Key="DropDownButtonIconMargin">6,0,6,0</Thickness>
+
+	<!-- FlyoutPresenter -->
+	<x:Double x:Key="FlyoutPresenterMinWidth">96</x:Double>
+	<x:Double x:Key="FlyoutPresenterMaxWidth">456</x:Double>
+	<x:Double x:Key="FlyoutPresenterMinHeight">40</x:Double>
+	<x:Double x:Key="FlyoutPresenterMaxHeight">758</x:Double>
+ 
+	<!-- FocusAdorner -->
+	<Thickness x:Key="FocusAdornerFocusVisualPrimaryThickness">1</Thickness>
+	<Thickness x:Key="FocusAdornerFocusVisualMargin">3</Thickness>
+	<Thickness x:Key="FocusAdornerFocusVisualSecondaryThickness">1</Thickness>
+
+	<!-- GridSplitter -->
+	<x:Double x:Key="GridSplitterMinWidth">6</x:Double>
+	<x:Double x:Key="GridSplitterMinHeight">6</x:Double>
+	
+	<!-- ListBoxItem -->
+	<x:Double x:Key="ListBoxItemMinHeight">35</x:Double>
+	<x:Double x:Key="ListBoxItemSpacing">10</x:Double> 
+	<Thickness x:Key="ListBoxItemMargin">1</Thickness>
+
+	<x:Double x:Key="ListBoxItemInnerBorderWidth">3</x:Double>
+	<x:Double x:Key="ListBoxItemInnerBorderHeight">15</x:Double>
+	
+	<!--Menu-->
+	<x:Double x:Key="MenuBarHeight">32</x:Double>
+	<Thickness x:Key="MenuBorderThickness">0,0,0,1</Thickness>
+	
+	<Thickness x:Key="AntMenuItemPopupShadowBorderPadding">10,5,10,10</Thickness>
+
+	<Thickness x:Key="AntMargin">10,0,10,0</Thickness>
+
+	<Thickness x:Key="AntMenuIconPresenterMargin">3</Thickness> 
+	<x:Double x:Key="AntMenuIconWidth">16</x:Double>
+	<x:Double x:Key="AntMenuIconHeight">16</x:Double>
+	
+	<!-- MenuItem -->
+	<Thickness x:Key="MenuItemPadding" >5</Thickness> 
+
+	<Thickness x:Key="MenuIconPresenterMargin">3</Thickness>
+	<Thickness x:Key="MenuInputGestureTextMargin">6,0,0,0</Thickness>
+	<x:Double x:Key="MenuIconWidth">16</x:Double>
+	<x:Double x:Key="MenuIconHeight">16</x:Double>
+
+	<x:Double x:Key="MenuInputGestureTextOpacity">0.5</x:Double>
+	<Thickness x:Key="MenuItemChevronMargin">3</Thickness>
+	<x:Double x:Key="MenuSubItemPopupHorizontalOffset">1</x:Double> 
+	
+	<Thickness x:Key="MenuItemPopupScrollerMargin">3</Thickness>
+
+	<x:Double x:Key="MenuItemPopupMaxWidth">500</x:Double>
+	<x:Double x:Key="MenuItemPopupMinHeight">40</x:Double>
+
+	<x:Double x:Key="MenuItemIconHeight">12</x:Double>
+	<x:Double x:Key="MenuItemIconWidth">8</x:Double>
+
+	<!-- MenuFlyoutPresenter -->
+	<x:Double x:Key="MenuFlyoutPresenterMaxWidth">500</x:Double>
+	<x:Double x:Key="MenuFlyoutPresenterMinHeight">40</x:Double>
+
+	<Thickness x:Key="MenuFlyoutPresenterItemMargin">3</Thickness>
+
+	<!-- MenuScrollViewer -->
+	<x:Double x:Key="MenuScrollViewerIconViewBoxWidth">8</x:Double>
+	<x:Double x:Key="MenuScrollViewerIconViewBoxHeight">8</x:Double>
+	<x:Double x:Key="MenuScrollViewerIconWidth">20</x:Double>
+	<x:Double x:Key="MenuScrollViewerIconHeight">20</x:Double>
+	
+	<!-- NotificationCard -->
+	<x:Double x:Key="NotificationCardWidth">200</x:Double>
+	<x:Double x:Key="NotificationCardPanelSize">4</x:Double>
+	<x:Double x:Key="NotificationCardContentMinHeight">60</x:Double>
+	<Thickness x:Key="NotificationCardMargin">5,5,5,10</Thickness>
+
+	<x:Double x:Key="NotificationCardIconWidth">25</x:Double>
+	<x:Double x:Key="NotificationCardIconHeight">25</x:Double>
+
+	<!-- PathIcon -->
+	<x:Double x:Key="IconHeight">20</x:Double>
+	<x:Double x:Key="IconWidth">20</x:Double>
+
+	<!-- RadioButton -->
+	<x:Double x:Key="RadioButtonStrokeThickness">1</x:Double>
+	<x:Double x:Key="RadioButtonOuterEllipseWidth">20</x:Double>
+	<x:Double x:Key="RadioButtonOuterEllipseHeight">20</x:Double>
+
+	<x:Double x:Key="RadioButtonInnerEllipseWidth">10</x:Double>
+	<x:Double x:Key="RadioButtonInnerEllipseHeight">10</x:Double>
+
+	<x:Double x:Key="RadioButtonSpacing">3</x:Double>
+	<x:Double x:Key="RadioButtonDecoratorHeight">2</x:Double>
+
+	<!-- ScrollBar -->
+	<x:Double x:Key="ScrollBarMinWidth">16</x:Double>
+	<x:Double x:Key="ScrollBarMinHeight">16</x:Double>
+
+	<x:Double x:Key="ScrollBarTrackStrokeThickness">0</x:Double>
+	
+	<x:Double x:Key="ScrollBarButtonArrowIconWidth">8</x:Double>
+	<x:Double x:Key="ScrollBarButtonArrowIconHeight">8</x:Double>
+	
+	<!-- ScrollBar animation -->
+	<TransformOperations x:Key="VerticalSmallScrollThumbScaleTransform">scaleX(0.125) translateX(-2px)</TransformOperations>
+	<TransformOperations x:Key="HorizontalSmallScrollThumbScaleTransform">scaleY(0.125) translateY(-2px)</TransformOperations>
+
+	<!-- Separator -->
+	<x:Double x:Key="SeparatorHeight">1</x:Double> 
+	<Thickness x:Key="SeparatorContentPadding">10,0,10,0</Thickness>
+	<Thickness x:Key="SeparatorContentMargin">20,0,20,0</Thickness>
+	
+	<!-- Tooltip -->
+	<x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
+
+	<!-- TextBox -->
+	<x:Double x:Key="TextBoxMinWidth">100</x:Double>
+	<x:Double x:Key="TextBoxMinHeight">30</x:Double>
+
+	<x:Double x:Key="TextBoxButtonIconWidth">8</x:Double>
+	<x:Double x:Key="TextBoxButtonIconHeight">8</x:Double>
+	<Thickness x:Key="TextBoxButtonIconMargin">0,0,3,0</Thickness>
+	
+	<Thickness x:Key="TextBoxFloatingMargin">0,-23,0,0</Thickness>
+
+	<!-- RefreshVisualizer -->
+	<x:Double x:Key="RefreshVisualizerMinHeight">80</x:Double>
+	<x:Double x:Key="RefreshVisualizerHeight">100</x:Double>
+
+	<!-- ToggleSwitch -->
+	<GridLength x:Key="ToggleSwitchRowSpacing">5</GridLength>
+	<GridLength x:Key="ToggleSwitchColumnSpacing">5</GridLength>
+	<x:Double x:Key="ToggleSwitchWidth">50</x:Double>
+	<x:Double x:Key="ToggleSwitchHeight">25</x:Double>
+	<x:Double x:Key="ToggleSwitchSize">25</x:Double>
+	<Thickness x:Key="ToggleSwitchTopHeaderMargin">0</Thickness>
+
+	<Thickness x:Key="ToggleSwitchKnobPadding">2</Thickness>
+	<Thickness x:Key="ToggleSwitchLeftEdgeMargin">6,0,0,0</Thickness>
+	<Thickness x:Key="ToggleSwitchRightEdgeMargin">0,0,6,0</Thickness> 
+	
+	<x:Double x:Key="ToggleSwitchEdgeOffset">6</x:Double>
+ 
+	<!-- CalendarItem -->
+	<x:Double x:Key="CalendarItemMinHeight">294</x:Double>
+	<x:Double x:Key="CalendarItemHeaderHeight">40</x:Double>
+	<x:Double x:Key="CalendarItemContentMinHeight">290</x:Double>
+
+	<Thickness x:Key="CalendarItemHeaderBorderThickness">0,0,0,1</Thickness>
+
+	<x:Double x:Key="CalendarItemButtonIconHeight">15</x:Double>
+
+	<!-- CalendarDayButton -->
+	<x:Double x:Key="CalendarDayButtonMinWidth">25</x:Double>
+	<x:Double x:Key="CalendarDayButtonMinHeight">25</x:Double>
+
+	<!-- CalendarDatePicker -->
+	<x:Double x:Key="CalendarDatePickerButtonWidth">35</x:Double> 
+	<CornerRadius x:Key="CalendarDatePickerButtonCornerRadius">0,5,5,0</CornerRadius>
+
+	<x:Double x:Key="CalendarDatePickerButtonIconWidth">12</x:Double>
+
+	<!-- TreeViewItem -->
+	<x:Double x:Key="TreeViewItemMinHeight">35</x:Double>
+	
+	<x:Double x:Key="TreeViewItemIndent">10</x:Double> 
+	<x:Double x:Key="TreeViewItemInnerBorderWidth">3</x:Double>
+	<x:Double x:Key="TreeViewItemInnerBorderHeight">15</x:Double>
+
+	<x:Double x:Key="TreeViewItemDecoratorSpacing">10</x:Double>
+
+	<x:Double x:Key="TreeViewItemExpandCollapseChevronSize">12</x:Double>
+	<Thickness x:Key="TreeViewItemExpandCollapseChevronMargin">5, 0, 5, 0</Thickness>
+
+	<!-- TimePicker -->
+	<x:Double x:Key="TimePickerMinWidth">242</x:Double>
+	<x:Double x:Key="TimePickerMaxWidth">456</x:Double>
+	
+	<Thickness x:Key="TimePickerHostPadding">0,3,0,6</Thickness>
+	<x:Double x:Key="TimePickerSpacerWidth">1</x:Double>
+
+	<x:Double x:Key="TimePickerPresenterMinWidth">242</x:Double>
+	<x:Double x:Key="TimePickerPresenterMaxHeight">398</x:Double> 
+
+	<x:Double x:Key="TimePickerPresenterItemHeight">40</x:Double>
+	<x:Double x:Key="TimePickerPresenterHighlightHeight">40</x:Double>
+	<x:Double x:Key="TimePickerPresenterAcceptDismissHostGridHeight">41</x:Double>
+	<x:Double x:Key="TimePickerPresenterAcceptDismissHostIconHeight">14</x:Double>
+
+	<x:Double x:Key="TimePickerPresenterRightIconWidth">14</x:Double> 
+	
+	<!-- DataPicker -->
+	<x:Double x:Key="DatePickerMinWidth">296</x:Double>
+	<x:Double x:Key="DatePickerMaxWidth">456</x:Double>
+
+	<Thickness x:Key="DatePickerHostPadding">0,3,0,6</Thickness>
+	<Thickness x:Key="DatePickerHostMonthPadding">9,3,0,6</Thickness>
+	<x:Double x:Key="DatePickerSpacerWidth">1</x:Double>
+
+	<x:Double x:Key="DatePickerPresenterMinWidth">296</x:Double>
+	<x:Double x:Key="DatePickerPresenterMaxHeight">398</x:Double>
+	
+	<x:Double x:Key="DatePickerPresenterItemHeight">40</x:Double>
+	<x:Double x:Key="DatePickerPresenterAcceptDismissHostGridHeight">41</x:Double>
+	<x:Double x:Key="DatePickerPresenterAcceptDismissHostIconHeight">14</x:Double>
+	<Thickness x:Key="DatePickerPresenterItemPadding">0,3,0,6</Thickness>
+	<Thickness x:Key="DatePickerPresenterMonthPadding">9,3,0,6</Thickness>
+
+	<x:Double x:Key="DatePickerPresenterRightIconWidth">12</x:Double>
+
+	<x:Double x:Key="DatePickerButtonHeight">22</x:Double>
+	
+	<x:Double x:Key="DatePickerButtonIconWidth">10</x:Double>
+	<x:Double x:Key="DatePickerButtonIconHeight">10</x:Double>
+
+	<!-- Expander -->
+	<x:Double x:Key="ExpanderMinHeight">40</x:Double>
+
+	<x:Double x:Key="ExpanderIconSize">12</x:Double>
+
+	<!--ManagedFileChooser-->
+	<x:Double x:Key="NavBarHeight">50</x:Double>
+	<x:Double x:Key="NavBarButtonHeight">30</x:Double>
+	<x:Double x:Key="NavBarButtonWidth">40</x:Double> 
+	
+	<x:Double x:Key="BottomHeight">90</x:Double>
+	<Thickness x:Key="BottomBorderThickness">0,1,0,0</Thickness>
+
+	<x:Double x:Key="QuickLinksWidth">160</x:Double>
+	<Thickness x:Key="QuickLinksBorderThickness">0,0,1,0</Thickness>
+
+	<x:Double x:Key="QuickLinksIconSize">16</x:Double>
+
+	<x:Double x:Key="BottomButtonWidth">120</x:Double>
+	<x:Double x:Key="BottomButtonHeight">40</x:Double>
+	<x:Double x:Key="FilesHeaderHeight">30</x:Double>
+
+	<!--ProgressBar-->
+	<x:Double x:Key="ProgressBarSize1">250</x:Double>
+	<x:Double x:Key="ProgressBarSize2">8</x:Double>
+
+	<!--Slider-->
+	<x:Double x:Key="SliderTickBarSize">8</x:Double>
+	<x:Double x:Key="SliderThumbSize">10</x:Double> 
+	<x:Double x:Key="SliderTrackSize">5</x:Double> 
+	<Thickness x:Key="SliderThumbBorderThickness">2</Thickness>
+	
+	<!--SpliteButton-->
+	<x:Double x:Key="SplitButtonIconSize">12</x:Double>
+	<x:Double x:Key="SplitButtonPlugButtonMiniWidth">35</x:Double>
+
+	<!--SpliteView-->
+	<x:Double x:Key="SplitViewOpenPaneLength">320</x:Double>
+	<x:Double x:Key="SplitViewCompactPaneLength">48</x:Double>
+	<sys:TimeSpan x:Key="SplitViewPaneAnimationOpenDuration">00:00:00.2</sys:TimeSpan>
+	<sys:TimeSpan x:Key="SplitViewPaneAnimationCloseDuration">00:00:00.1</sys:TimeSpan>
+	<Easing x:Key="SplitViewPaneAnimationEasing">0.1,0.9,0.2,1.0</Easing>
+
+	<!--TabControl and TabStrip-->
+	<Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
+	<Thickness x:Key="TabBorderThickness">0,0,0,1</Thickness>
+	<Thickness x:Key="TabItemsMargin">0,0,0,-1</Thickness>
+	<x:Double x:Key="PipeSize">2</x:Double>
+	<x:Double x:Key="PipeHeightSize">15</x:Double>
+
+	<Thickness x:Key="TabTopItemMargin">0,0,0,-1</Thickness>
+	<Thickness x:Key="TabTopBorderThickness">0,0,0,1</Thickness>
+
+	<Thickness x:Key="TabBottomItemMargin">0,-1,0,0</Thickness>
+	<Thickness x:Key="TabBottomBorderThickness">0,1,0,0</Thickness>
+
+	<Thickness x:Key="TabLeftItemMargin">0,0,0,0</Thickness>
+	<Thickness x:Key="TabLeftBorderThickness">0,0,1,0</Thickness>
+
+	<Thickness x:Key="TabRightItemMargin">0,0,0,0</Thickness>
+	<Thickness x:Key="TabRightBorderThickness">1,0,0,0</Thickness>
+
+	<Thickness x:Key="PipeTopMargin">0,2,0,0</Thickness>
+	<Thickness x:Key="PipeTopContentMargin">0,0,0,8</Thickness>
+
+	<Thickness x:Key="PipeBottomMargin">0,0,0,2</Thickness>
+	<Thickness x:Key="PipeBottomContentMargin">0,8,0,8</Thickness>
+
+	<Thickness x:Key="PipeLeftMargin">0,0,2,0</Thickness>
+	<Thickness x:Key="PipeLeftContentMargin">8,0,0,0</Thickness>
+	
+	<Thickness x:Key="PipeRightMargin">2,0,0,0</Thickness>
+	<Thickness x:Key="PipeRightContentMargin">0,0,8,0</Thickness>
+
+	<GridLength x:Key="PipeSpacing">10</GridLength>
+
+	<!--WindowNotificationManager-->
+	
+	
+</ResourceDictionary>

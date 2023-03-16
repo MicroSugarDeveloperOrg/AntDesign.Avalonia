@@ -1,0 +1,121 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+					xmlns:helpers="using:AntDesign.Helpers"
+                    xmlns:assists="using:AntDesign.Assists"
+					x:CompileBindings="True">
+
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="20">
+				<TabStripItem>Leaf</TabStripItem>
+				<TabStripItem IsSelected="True">Arch</TabStripItem>
+				<TabStripItem Background="Yellow">Background</TabStripItem>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type TabStripItem}" TargetType="TabStripItem">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource TabItemBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource TabItemForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TabItemBorderBrush}" />
+		<Setter Property="assists:ControlAssists.PointerOverBackground" Value="{DynamicResource TabItemPointerOverBackground}" />
+		<Setter Property="assists:ControlAssists.PointerOverForeground" Value="{DynamicResource TabItemPointerOverForeground}" />
+		<Setter Property="assists:ControlAssists.PointerOverPipeBackground" Value="{DynamicResource TabItemPointerOverPipeBackground}" />
+		<Setter Property="assists:ControlAssists.SelectedBackground" Value="{DynamicResource TabItemSelectedBackground}" />
+		<Setter Property="assists:ControlAssists.SelectedForeground" Value="{DynamicResource TabItemSelectedForeground}" />
+		<Setter Property="assists:ControlAssists.SelectedPipeBackground" Value="{DynamicResource TabItemSelectedPipeBackground}" />
+		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />	
+		<Setter Property="Padding" Value="{StaticResource Padding}" />
+		<Setter Property="Margin" Value="{StaticResource LeftRightOverlayMargin}"/>
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Padding="{TemplateBinding Padding}"
+						Margin="{TemplateBinding Margin}">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="{StaticResource PipeSpacing}"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
+						<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+										  FontSize="{TemplateBinding FontSize}"
+										  Content="{TemplateBinding Content}"
+										  ContentTemplate="{TemplateBinding ContentTemplate}" 
+										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+							<ContentPresenter.Transitions>
+								<Transitions>
+									<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+								</Transitions>
+							</ContentPresenter.Transitions>
+						</ContentPresenter>
+						
+						<Panel Grid.Row="2" 
+							   Height="{DynamicResource PipeSize}">
+							<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SelectedPipe}"
+									CornerRadius="{DynamicResource OverlayCornerRadius}"
+									IsVisible="False"  />
+						</Panel>
+						
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  Selected state  -->
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.SelectedBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.SelectedForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_SelectedPipe">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.SelectedPipeBackground}" />
+			</Style>
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Opacity" Value="0.8" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="RenderTransform" Value="scale(0.98)" />
+			</Style>
+		</Style>
+		
+		<!--  PointerOver state  -->
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PointerOverBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ControlAssists.PointerOverForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_SelectedPipe">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Background" Value="{TemplateBinding assists:ControlAssists.PointerOverPipeBackground}" />
+			</Style> 
+		</Style>
+
+		<!--  Pressed state  -->
+		<Style Selector="^:pressed">
+			 
+		</Style>
+
+		<!--  Disabled state  -->
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5" />
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

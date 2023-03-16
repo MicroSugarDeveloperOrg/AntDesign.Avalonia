@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/AntDesignCommon.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/AutoCompleteBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Button.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ButtonSpinner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Calendar.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarDatePicker.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarDayButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/CalendarItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/CaptionButtons.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/CheckBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ComboBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ComboBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ContextMenu.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/DatePicker.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/DropDownButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/EmbeddableControlRoot.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Expander.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/FlyoutPresenter.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/FocusAdorner.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/GridSplitter.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ListBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ListBoxItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ManagedFileChooser.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Menu.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/MenuFlyoutPresenter.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/MenuItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/MenuScrollViewer.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/NotificationCard.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ProgressBar.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/RadioButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/RefreshVisualizer.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/RepeatButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ScrollBar.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ScrollViewer.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/SelectableTextBlock.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Separator.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Slider.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/SplitButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/SplitView.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Tabs.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/TextBox.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/TimePicker.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToggleButton.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToggleSwitch.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/ToolTip.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/TreeViewItem.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Accents/Light/Window.axaml" />
+	</ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

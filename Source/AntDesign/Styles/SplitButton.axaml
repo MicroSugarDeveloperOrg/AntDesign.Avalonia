@@ -1,0 +1,232 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:helpers="using:AntDesign.Helpers"
+                    xmlns:assists="using:AntDesign.Assists" 
+                    xmlns:extensions="using:AntDesign.Extensions" 
+                    x:CompileBindings="True">
+
+	<Design.PreviewWith>
+		<Border Padding="60">
+			<StackPanel Spacing="20">
+				<SplitButton Content="SplitButton">
+					<SplitButton.Flyout>
+						<Flyout>Hello</Flyout>
+					</SplitButton.Flyout>
+				</SplitButton>
+				<SplitButton CornerRadius="16" Content="Rounded">
+					<SplitButton.Flyout>
+						<Flyout>Hello</Flyout>
+					</SplitButton.Flyout>
+				</SplitButton>
+				<SplitButton IsEnabled="False">Disabled</SplitButton>
+				<ToggleSplitButton Content="ToggleSplitButton">
+					<ToggleSplitButton.Flyout>
+						<Flyout>Hello</Flyout>
+					</ToggleSplitButton.Flyout>
+				</ToggleSplitButton>
+				<ToggleSplitButton Content="Checked" IsChecked="True">
+					<ToggleSplitButton.Flyout>
+						<Flyout>Hello</Flyout>
+					</ToggleSplitButton.Flyout>
+				</ToggleSplitButton>
+				<ToggleSplitButton Content="Checked Disabled" IsChecked="True" IsEnabled="False"/>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="AntDesignSplitButtonButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">	
+		<Style Selector="^[Tag=flyout-open]">
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
+			</Style>
+
+			<Style Selector="^.right">
+				<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}}" />
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^[Tag=checked]"> 
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.CheckedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.CheckedBorderBrush}" /> 
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.CheckedForeground}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Setter Property="Opacity" Value="0.7" />
+			</Style>
+			
+			<Style Selector="^:disabled">
+				<Setter Property="Opacity" Value="0.5" /> 
+			</Style>
+			
+		</Style>
+
+		<Style Selector="^[Tag=checked-flyout-open]">
+			<Setter Property="Opacity" Value="0.5" />
+			<Style Selector="^ /template/ RippleEffect#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.CheckedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.CheckedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.CheckedForeground}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+
+	<Template x:Key="SplitButtonPlugContent">
+		<PathIcon Height="{DynamicResource SplitButtonIconSize}" Width="{DynamicResource SplitButtonIconSize}"
+				  Data="{StaticResource DownIconGeometry}" />
+	</Template>
+
+	<ControlTheme x:Key="{x:Type SplitButton}" TargetType="SplitButton">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
+		<Setter Property="Height" Value="{DynamicResource ButtonHeight}" />
+		<Setter Property="Background" Value="{DynamicResource SplitButtonBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource SplitButtonForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource SplitButtonBorderBrush}" />
+		<Setter Property="assists:SplitButtonAssists.PointerOverBackground" Value="{DynamicResource SplitButtonPointerOverBackground}"/>
+		<Setter Property="assists:SplitButtonAssists.PointerOverForeground" Value="{DynamicResource SplitButtonPointerOverForeground}"/>
+		<Setter Property="assists:SplitButtonAssists.PointerOverBorderBrush" Value="{DynamicResource SplitButtonPointerOverBorderBrush}"/>
+		<Setter Property="assists:SplitButtonAssists.PressedBackground" Value="{DynamicResource SplitButtonPressedBackground}"/>
+		<Setter Property="assists:SplitButtonAssists.PressedForeground" Value="{DynamicResource SplitButtonPressedForeground}"/>
+		<Setter Property="assists:SplitButtonAssists.PressedBorderBrush" Value="{DynamicResource SplitButtonPressedBorderBrush}"/>
+		<Setter Property="assists:SplitButtonAssists.CheckedBackground" Value="{DynamicResource SplitButtonCheckedBackground}"/>
+		<Setter Property="assists:SplitButtonAssists.CheckedForeground" Value="{DynamicResource SplitButtonCheckedForeground}"/>
+		<Setter Property="assists:SplitButtonAssists.CheckedBorderBrush" Value="{DynamicResource SplitButtonCheckedBorderBrush}"/>
+		<Setter Property="assists:SplitButtonAssists.PlugContent" Value="{StaticResource SplitButtonPlugContent}"/>
+		<Setter Property="assists:SplitButtonAssists.Spacing" Value="0"/>
+ 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="KeyboardNavigation.IsTabStop" Value="True" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Focusable" Value="True" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+
+					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_PrimaryButton}"
+							Grid.Column="0"  
+							Theme="{StaticResource AntDesignSplitButtonButtonStyle}"
+							FontSize="{TemplateBinding FontSize}"
+							FontFamily="{TemplateBinding FontFamily}"
+							FontWeight="{TemplateBinding FontWeight}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Command="{TemplateBinding Command}"
+							CommandParameter="{TemplateBinding CommandParameter}"
+							Background="{TemplateBinding Background}"
+							Foreground="{TemplateBinding Foreground}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:SplitButtonAssists.PointerOverBackground}"
+							assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:SplitButtonAssists.PointerOverForeground}"
+							assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:SplitButtonAssists.PointerOverBorderBrush}"
+							assists:ButtonAssists.PressedBackground="{TemplateBinding assists:SplitButtonAssists.PressedBackground}"
+							assists:ButtonAssists.PressedForeground="{TemplateBinding assists:SplitButtonAssists.PressedForeground}"
+							assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:SplitButtonAssists.PressedBorderBrush}"
+							assists:ButtonAssists.CheckedBackground="{TemplateBinding assists:SplitButtonAssists.CheckedBackground}"
+							assists:ButtonAssists.CheckedForeground="{TemplateBinding assists:SplitButtonAssists.CheckedForeground}"
+							assists:ButtonAssists.CheckedBorderBrush="{TemplateBinding assists:SplitButtonAssists.CheckedBorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Stretch"
+							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							Focusable="False"
+							extensions:Classes.left="True"
+							KeyboardNavigation.IsTabStop="False" />
+
+					<Border Grid.Column="1" Width="{TemplateBinding assists:SplitButtonAssists.Spacing}"/>
+					
+					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_SecondaryButton}"
+							Grid.Column="2"
+							MinWidth="{DynamicResource SplitButtonPlugButtonMiniWidth}" 
+							Theme="{StaticResource AntDesignSplitButtonButtonStyle}"
+							Content="{TemplateBinding assists:SplitButtonAssists.PlugContent}"
+							ContentTemplate="{TemplateBinding assists:SplitButtonAssists.PlugContentTemplate}"
+							Background="{TemplateBinding Background}"
+							Foreground="{TemplateBinding Foreground}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							assists:ButtonAssists.PointerOverBackground="{TemplateBinding assists:SplitButtonAssists.PointerOverBackground}"
+							assists:ButtonAssists.PointerOverForeground="{TemplateBinding assists:SplitButtonAssists.PointerOverForeground}"
+							assists:ButtonAssists.PointerOverBorderBrush="{TemplateBinding assists:SplitButtonAssists.PointerOverBorderBrush}"
+							assists:ButtonAssists.PressedBackground="{TemplateBinding assists:SplitButtonAssists.PressedBackground}"
+							assists:ButtonAssists.PressedForeground="{TemplateBinding assists:SplitButtonAssists.PressedForeground}"
+							assists:ButtonAssists.PressedBorderBrush="{TemplateBinding assists:SplitButtonAssists.PressedBorderBrush}"
+							assists:ButtonAssists.CheckedBackground="{TemplateBinding assists:SplitButtonAssists.CheckedBackground}"
+							assists:ButtonAssists.CheckedForeground="{TemplateBinding assists:SplitButtonAssists.CheckedForeground}"
+							assists:ButtonAssists.CheckedBorderBrush="{TemplateBinding assists:SplitButtonAssists.CheckedBorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Stretch"
+							Focusable="False"
+							extensions:Classes.right="True"
+							KeyboardNavigation.IsTabStop="False">
+					
+					</Button>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:flyout-open /template/ Button#PART_SecondaryButton">
+			<Setter Property="Tag" Value="flyout-open" />
+		</Style>
+
+		<Style Selector="^:checked /template/ Button#PART_PrimaryButton">
+			<Setter Property="Tag" Value="checked" />
+		</Style>
+
+		<Style Selector="^:checked:flyout-open">
+			<!--<Setter Property="Tag" Value="checked-flyout-open" />-->
+			<Style Selector="^ /template/ Button#PART_SecondaryButton">
+				<Setter Property="Tag" Value="flyout-open" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_PrimaryButton">
+				<Setter Property="Tag" Value="checked-flyout-open" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="PrimarySplitButton" TargetType="SplitButton" BasedOn="{StaticResource {x:Type SplitButton}}">
+		<Setter Property="Background" Value="{DynamicResource SplitButtonPrimaryBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource SplitButtonPrimaryForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource SplitButtonPrimaryBorderBrush}" />
+		<Setter Property="assists:SplitButtonAssists.PointerOverBackground" Value="{DynamicResource SplitButtonPrimaryPointerOverBackground}"/>
+		<Setter Property="assists:SplitButtonAssists.PointerOverForeground" Value="{DynamicResource SplitButtonPrimaryPointerOverForeground}"/>
+		<Setter Property="assists:SplitButtonAssists.PointerOverBorderBrush" Value="{DynamicResource SplitButtonPrimaryPointerOverBorderBrush}"/>
+		<Setter Property="assists:SplitButtonAssists.PressedBackground" Value="{DynamicResource SplitButtonPrimaryPressedBackground}"/>
+		<Setter Property="assists:SplitButtonAssists.PressedForeground" Value="{DynamicResource SplitButtonPrimaryPressedForeground}"/>
+		<Setter Property="assists:SplitButtonAssists.PressedBorderBrush" Value="{DynamicResource SplitButtonPrimaryPressedBorderBrush}"/>
+		<Setter Property="assists:SplitButtonAssists.CheckedBackground" Value="{DynamicResource SplitButtonPrimaryCheckedBackground}"/>
+		<Setter Property="assists:SplitButtonAssists.CheckedForeground" Value="{DynamicResource SplitButtonPrimaryCheckedForeground}"/>
+		<Setter Property="assists:SplitButtonAssists.CheckedBorderBrush" Value="{DynamicResource SplitButtonPrimaryCheckedBorderBrush}"/>
+		<Setter Property="assists:SplitButtonAssists.Spacing" Value="1"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>	
+	</ControlTheme>
+
+</ResourceDictionary>

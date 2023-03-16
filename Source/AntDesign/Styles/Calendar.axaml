@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+					xmlns:helpers="using:AntDesign.Helpers"  
+                    x:CompileBindings="True">
+
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<Calendar />
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type Calendar}" TargetType="Calendar">
+		<Setter Property="Background" Value="{DynamicResource CalendarBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource CalendarForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CalendarBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="True" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Calendar">
+				<StackPanel x:Name="{x:Static helpers:PARTNameHelper.PART_Root}"
+							HorizontalAlignment="Center"
+							ClipToBounds="True">
+					<CalendarItem x:Name="{x:Static helpers:PARTNameHelper.PART_CalendarItem}"
+								  Background="{TemplateBinding Background}"
+								  BorderBrush="{TemplateBinding BorderBrush}"
+								  BorderThickness="{TemplateBinding BorderThickness}"
+								  CornerRadius="{TemplateBinding CornerRadius}"
+								  HeaderBackground="{TemplateBinding HeaderBackground}" />
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+</ResourceDictionary>

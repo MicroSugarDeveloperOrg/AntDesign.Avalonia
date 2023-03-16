@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:converters="using:Avalonia.Controls.Converters"
+					xmlns:antConverters="using:AntDesign.Converters"
+					x:CompileBindings="True">
+
+	<!--Converters-->
+	<converters:EnumToBoolConverter x:Key="EnumToBoolConverter"/>
+	<antConverters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
+	<antConverters:AutoSizeConverter Default="23" x:Key="AutoSizeConverter"/>
+	<antConverters:PopupSizeConverter x:Key="PopupSizeConverter"/>
+	<antConverters:PopupHorizontalOffsetConverter x:Key="PopupHorizontalOffsetConverter"/>
+	<antConverters:BorderOffsetMarginConverter x:Key="BorderOffsetMarginConverter"/>
+	<antConverters:IBitmapToImageConverter x:Key="IBitmapToImageConverter"/>
+	<antConverters:Height2CornerRadiusConverter x:Key="Height2CornerRadiusConverter"/>
+	<antConverters:Size2SizeConverters x:Key="Size2SizeConverters"/>
+	<antConverters:Size2RoundConverter x:Key="Size2RoundConverter"/>
+	<antConverters:Double2MarginConverters Direction="Left" x:Key="LeftDouble2MarginConverters"/>
+	<antConverters:Double2MarginConverters Direction="Right" x:Key="RightDouble2MarginConverters"/>
+
+	<antConverters:BorderThicknessFilterConverter Edges="Top,Right,Bottom" x:Key="NoLeftBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left,Right,Bottom" x:Key="NoTopBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Bottom" x:Key="NoRightBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left,Top,Right" x:Key="NoBottomBorderThickness"/>
+
+	<antConverters:BorderThicknessFilterConverter Edges="Left" x:Key="OnlyLeftBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Right" x:Key="OnlyRightBorderThickness"/>
+	<antConverters:BorderThicknessFilterConverter Edges="Left, Right" x:Key="LeftRightBorderThickness"/>
+
+	<antConverters:Bounds2SizeConverter x:Key="Bounds2SizeConverter"/>
+
+	<antConverters:Thickness2MarginConverter Edges="Left" Reverse="True" x:Key="OnlyLeftReverseMargin"/>
+	<antConverters:Thickness2MarginConverter Edges="Right" Reverse="True" x:Key="OnlyRightReverseMargin"/>
+
+	<antConverters:BoundsBorderThickness2SizeConverter Edges="Left,Right" Orientation="Horizontal" Minus="True" x:Key="HorizontalBoundsBorderThickness2Size"/>
+	
+	<converters:StringFormatConverter x:Key="StringFormatConverter"/>
+	
+	<converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
+
+	<converters:MarginMultiplierConverter x:Key="LeftThicknessFilterConverter" Indent="1" Left="True" />
+	<converters:MarginMultiplierConverter x:Key="RightThicknessFilterConverter" Indent="1" Right="True" />
+
+	<converters:MarginMultiplierConverter x:Key="PrimaryButtonBorderMultiplier" Left="True" Top="True" Bottom="True" Indent="1" />
+	<converters:MarginMultiplierConverter x:Key="SecondaryButtonBorderMultiplier" Right="True" Top="True" Bottom="True" Indent="1" />
+	<converters:MarginMultiplierConverter x:Key="SeparatorBorderMultiplier" Top="True" Bottom="True" Indent="1" />
+
+	<converters:CornerRadiusFilterConverter x:Key="LeftCornerRadiusFilterConverter" Filter="TopLeft, BottomLeft"/>
+	<converters:CornerRadiusFilterConverter x:Key="RightCornerRadiusFilterConverter" Filter="TopRight, BottomRight"/>
+	<converters:CornerRadiusFilterConverter x:Key="TopCornerRadiusFilterConverter" Filter="TopLeft, TopRight"/>
+	<converters:CornerRadiusFilterConverter x:Key="BottomCornerRadiusFilterConverter" Filter="BottomLeft, BottomRight"/>
+	<converters:CornerRadiusToDoubleConverter x:Key="TopLeftCornerRadiusConverter" Corner="TopLeft" />
+	<converters:CornerRadiusToDoubleConverter x:Key="BottomRightCornerRadiusConverter" Corner="BottomRight" />
+	
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<BoxShadows x:Key="MenuFlyoutPresenterShadow">0 0 10 1 #4F000000</BoxShadows>
+
+	<SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="MenuFlyoutPresenterForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush" Color="Transparent"/>
+
+</ResourceDictionary>

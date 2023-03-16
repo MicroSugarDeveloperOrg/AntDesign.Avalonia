@@ -1,0 +1,33 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="AntDesign.AntDesign"
+		x:CompileBindings="True">
+
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.ThemeDictionaries>
+				<ResourceInclude x:Key="Light" Source="avares://AntDesign/Accents/Light/_AntDesignLight.axaml"/>
+				<ResourceInclude x:Key="Dark" Source="avares://AntDesign/Accents/Dark/_AntDesignDark.axaml"/>
+			</ResourceDictionary.ThemeDictionaries>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignAccents.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignColorMatching.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignConverters.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignDescriptions.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignGeometry.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Styles/AntDesignControls.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>	
+	</Styles.Resources>
+
+	<StyleInclude Source="avares://AntDesign/Styles/TexBlock.axaml" />
+
+	<Style Selector=":is(UserControl)">
+		<Setter Property="Theme" Value="{DynamicResource {x:Type UserControl}}" />
+	</Style>
+
+	<Style Selector=":is(Control)">
+		<Setter Property="FocusAdorner" Value="{DynamicResource {x:Type FocusAdornerTemplate}}"/>
+	</Style>
+
+</Styles>

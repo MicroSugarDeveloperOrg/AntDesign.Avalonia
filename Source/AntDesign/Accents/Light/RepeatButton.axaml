@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">  
+	
+	<SolidColorBrush x:Key="RepeatButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="RepeatButtonForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="RepeatButtonPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="RepeatButtonPointerOverForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="RepeatButtonPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="RepeatButtonPressedForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
+
+	<!-- Primary -->
+	<SolidColorBrush x:Key="RepeatButtonPrimaryBackground" Color="{DynamicResource AntDesignPrimaryColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPrimaryForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="RepeatButtonPrimaryBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="RepeatButtonPrimaryPointerOverBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPrimaryPointerOverForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="RepeatButtonPrimaryPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="RepeatButtonPrimaryPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="RepeatButtonPrimaryPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="RepeatButtonPrimaryPressedBorderBrush" Color="Transparent"/>
+
+</ResourceDictionary>

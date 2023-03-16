@@ -1,0 +1,489 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					xmlns:behaviors="using:AntDesign.Behaviors"
+					xmlns:assists="using:AntDesign.Assists"
+                    x:CompileBindings="True">
+
+	<Design.PreviewWith>
+		<StackPanel Margin="20" Width="250" Spacing="24">
+			<StackPanel Spacing="12" >
+				<ToggleSwitch/>
+				<ToggleSwitch IsChecked="True" />
+				<ToggleSwitch HorizontalContentAlignment="Left"
+							  Content="Header"
+							  OffContent="Off"
+							  OnContent="On"/>
+				<ToggleSwitch Background="Yellow"/>
+			</StackPanel>
+		</StackPanel>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type ToggleSwitch}" TargetType="ToggleSwitch">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource ToggleSwitchBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ToggleSwitchForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitchBorderBrush}" />
+		<Setter Property="assists:ToggleSwitchAssists.ToggleSwitchWidth" Value="{DynamicResource ToggleSwitchWidth}" />
+		<Setter Property="assists:ToggleSwitchAssists.ToggleSwitchHeight" Value="{DynamicResource ToggleSwitchHeight}" />
+		<Setter Property="assists:ToggleSwitchAssists.PointerOverBackground" Value="{DynamicResource ToggleSwitchPointerOverBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.PointerOverForeground" Value="{DynamicResource ToggleSwitchPointerOverForeground}" />
+		<Setter Property="assists:ToggleSwitchAssists.PointerOverBorderBrush" Value="{DynamicResource ToggleSwitchPointerOverBorderBrush}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedBackground" Value="{DynamicResource ToggleSwitchCheckedBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedForeground" Value="{DynamicResource ToggleSwitchCheckedForeground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedBorderBrush" Value="{DynamicResource ToggleSwitchCheckedBorderBrush}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverBackground" Value="{DynamicResource ToggleSwitchCheckedPointerOverBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverForeground" Value="{DynamicResource ToggleSwitchCheckedPointerOverForeground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverBorderBrush" Value="{DynamicResource ToggleSwitchCheckedPointerOverBorderBrush}" />
+		<Setter Property="assists:ToggleSwitchAssists.KnobOnBackground" Value="{DynamicResource ToggleSwitchKnobOnBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.KnobOffBackground" Value="{DynamicResource ToggleSwitchKnobOffBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.IsRipple"  Value="true"/>
+		<Setter Property="assists:ToggleSwitchAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:ToggleSwitchAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleSwitch">
+				<Grid TemplatedControl.IsTemplateFocusTarget="True">
+					<Grid.ColumnDefinitions >
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="{StaticResource ToggleSwitchColumnSpacing}"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Grid.Column="0"
+									  Foreground="{TemplateBinding Foreground}" 
+									  Content="{TemplateBinding Content}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}"
+									  Margin="{DynamicResource ToggleSwitchTopHeaderMargin}"
+									  VerticalAlignment="Center"
+									  HorizontalAlignment="Left"
+									  RecognizesAccessKey="True" />
+
+					<Grid Grid.Column="2">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="{StaticResource ToggleSwitchColumnSpacing}"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<ripple:RippleEffect Grid.Column="0"
+											 IsRipple="{TemplateBinding assists:ToggleSwitchAssists.IsRipple}"
+											 RippleColor="{TemplateBinding assists:ToggleSwitchAssists.RippleColor}"
+											 RippleColorAlpha="{TemplateBinding assists:ToggleSwitchAssists.RippleColorAlpha}"
+											 Width="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchWidth}"
+											 Height="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight}"
+											 TextElement.Foreground="{TemplateBinding Foreground}" 
+											 CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}">
+
+							<Panel>
+								<Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
+										Background="{TemplateBinding Background}"
+										BorderBrush="{TemplateBinding BorderBrush}"
+										CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}"/>
+								
+								<Panel x:Name="PART_Container" 
+									   Margin="{DynamicResource ToggleSwitchKnobPadding}">
+									<Canvas x:Name="{x:Static helpers:PARTNameHelper.PART_SwitchKnob}" 
+											VerticalAlignment="Center"
+											HorizontalAlignment="Left">
+										<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_MovingKnobs}">
+											<behaviors:Interaction.Behaviors>
+												<behaviors:ToggleSwitchBehaviors ToggleSwitchChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked }"/>
+											</behaviors:Interaction.Behaviors>
+											<Ellipse x:Name="SwitchKnobs"
+													 Fill="{TemplateBinding assists:ToggleSwitchAssists.KnobOffBackground}" >
+												<Ellipse.Transitions>
+													<Transitions>
+														<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+													</Transitions>
+												</Ellipse.Transitions>
+											</Ellipse>
+
+											<ContentPresenter x:Name="PART_KnbosContentPresenter" 
+															  Foreground="{DynamicResource ToggleSwitchKnobForeground}"
+															  Content="{TemplateBinding assists:ToggleSwitchAssists.KnobContent}"
+															  ContentTemplate="{TemplateBinding assists:ToggleSwitchAssists.KnobContentTemplate}"
+															  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+															  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+											
+										</Panel>
+									</Canvas>
+								</Panel>
+							</Panel>
+						</ripple:RippleEffect>
+
+						<ContentPresenter x:Name="PART_OffContentPresenter"
+										  Grid.Column="2"
+										  Opacity="1" 
+										  Foreground="{TemplateBinding Foreground}"
+										  Content="{TemplateBinding OffContent}"
+										  ContentTemplate="{TemplateBinding OffContentTemplate}"
+									      HorizontalContentAlignment="Left"
+									      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+						<ContentPresenter x:Name="PART_OnContentPresenter"
+										  Grid.Column="2"
+										  Opacity="0"
+										  Foreground="{TemplateBinding Foreground}"
+										  Content="{TemplateBinding OnContent}"
+										  ContentTemplate="{TemplateBinding OnContentTemplate}"
+										  HorizontalContentAlignment="Left"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+					</Grid>
+
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter:empty">
+			<Setter Property="Margin" Value="0" />
+		</Style>
+
+		<!--  NormalState  -->
+		<Style Selector="^:not(:dragging) /template/ Panel#PART_MovingKnobs">
+			<Setter Property="Transitions">
+				<Transitions>
+					<DoubleTransition Easing="CubicEaseOut"
+									  Property="Canvas.Left"
+									  Duration="0:0:0.2" />
+				</Transitions>
+			</Setter>
+		</Style>
+
+		<!--  PointerOverState  -->
+		<Style Selector="^:pointerover">
+		</Style>
+
+		<!--  PressedState  -->
+		<Style Selector="^:pressed">
+		</Style>
+
+		<!--  UncheckedState  -->
+		<Style Selector="^:unchecked">
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssists.PointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleSwitchAssists.PointerOverBorderBrush}" />
+				</Style>
+
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleSwitchAssists.PointerOverForeground}" />
+				</Style>
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Ellipse#SwitchKnobs">
+					<Setter Property="RenderTransformOrigin" Value="1,0.5" />
+					<Setter Property="RenderTransform" Value="scalex(1.2)" />
+				</Style>
+			</Style>
+		</Style>
+
+		<!--  CheckedState  -->
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Ellipse#SwitchKnobs">
+				<Setter Property="Fill" Value="{TemplateBinding assists:ToggleSwitchAssists.KnobOnBackground}" />
+			</Style>
+			
+			<Style Selector="^ /template/ ContentPresenter#PART_OnContentPresenter">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_OffContentPresenter">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedBorderBrush}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedForeground}" />
+			</Style>
+			
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedPointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedPointerOverBorderBrush}" />
+				</Style>
+
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedPointerOverForeground}" />
+				</Style>
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Ellipse#SwitchKnobs">
+					<Setter Property="RenderTransformOrigin" Value="100%,100%" />
+					<Setter Property="RenderTransform" Value="scalex(1.2)" />
+				</Style>
+			</Style>
+		</Style>
+
+		<!--  DisabledState  -->
+		<Style Selector="^:disabled">
+			<Setter Property="Cursor" Value="No" />
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Opacity" Value="0.5"/>
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_OnContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_OffContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>		
+		</Style>
+		
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignToggleSwitchStyle" TargetType="ToggleSwitch">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource ToggleSwitchBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ToggleSwitchForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitchBorderBrush}" />
+		
+		<Setter Property="assists:ToggleSwitchAssists.ToggleSwitchWidth" Value="{DynamicResource ToggleSwitchWidth}" />
+		<Setter Property="assists:ToggleSwitchAssists.ToggleSwitchHeight" Value="{DynamicResource ToggleSwitchHeight}" />
+		<Setter Property="assists:ToggleSwitchAssists.PointerOverBackground" Value="{DynamicResource ToggleSwitchPointerOverBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.PointerOverForeground" Value="{DynamicResource ToggleSwitchPointerOverForeground}" />
+		<Setter Property="assists:ToggleSwitchAssists.PointerOverBorderBrush" Value="{DynamicResource ToggleSwitchPointerOverBorderBrush}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedBackground" Value="{DynamicResource ToggleSwitchCheckedBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedForeground" Value="{DynamicResource ToggleSwitchCheckedForeground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedBorderBrush" Value="{DynamicResource ToggleSwitchCheckedBorderBrush}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverBackground" Value="{DynamicResource ToggleSwitchCheckedPointerOverBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverForeground" Value="{DynamicResource ToggleSwitchCheckedPointerOverForeground}" />
+		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverBorderBrush" Value="{DynamicResource ToggleSwitchCheckedPointerOverBorderBrush}" />
+		<Setter Property="assists:ToggleSwitchAssists.KnobOnBackground" Value="{DynamicResource ToggleSwitchKnobOnBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.KnobOffBackground" Value="{DynamicResource ToggleSwitchKnobOffBackground}" />
+		<Setter Property="assists:ToggleSwitchAssists.IsRipple"  Value="true"/>
+		<Setter Property="assists:ToggleSwitchAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:ToggleSwitchAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleSwitch">
+				<Grid TemplatedControl.IsTemplateFocusTarget="True">
+					<Grid.ColumnDefinitions >
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="{StaticResource ToggleSwitchColumnSpacing}"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+
+					<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+									  Grid.Column="0"
+									  VerticalAlignment="Center"
+									  HorizontalAlignment="Left"
+									  Content="{TemplateBinding Content}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}"
+									  Margin="{DynamicResource ToggleSwitchTopHeaderMargin}"
+									  Foreground="{TemplateBinding Foreground}"
+									  RecognizesAccessKey="True" />
+
+					<Grid x:Name="PART_LayoutRoot" Grid.Column="2">
+						<ripple:RippleEffect IsRipple="{TemplateBinding assists:ToggleSwitchAssists.IsRipple}"
+											 RippleColor="{TemplateBinding assists:ToggleSwitchAssists.RippleColor}"
+											 RippleColorAlpha="{TemplateBinding assists:ToggleSwitchAssists.RippleColorAlpha}"
+											 MinWidth="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchWidth}"
+											 Height="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight}"
+											 TextElement.Foreground="{TemplateBinding Foreground}" 
+											 CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}">
+							<Panel>
+								<Border x:Name="{x:Static helpers:PARTNameHelper.PART_BorderElement}"
+										Background="{TemplateBinding Background}"
+										BorderBrush="{TemplateBinding BorderBrush}"
+										CornerRadius="{TemplateBinding assists:ToggleSwitchAssists.ToggleSwitchHeight, Converter={StaticResource Height2CornerRadiusConverter}}">
+									<Panel HorizontalAlignment="Stretch">
+										<Panel.Width>
+											<MultiBinding Converter="{StaticResource Bounds2SizeConverter}">
+												<Binding ElementName="PART_OffContentPresenter" Path="Bounds"/>
+												<Binding ElementName="PART_OnContentPresenter" Path="Bounds"/>
+												<TemplateBinding Property="assists:ToggleSwitchAssists.ToggleSwitchHeight"/>
+												<Binding ElementName="PART_OnContentPresenter" Path="Padding"/>
+											</MultiBinding>
+										</Panel.Width>
+										<ContentPresenter x:Name="PART_OffContentPresenter"
+														  Opacity="1"
+														  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
+														  Content="{TemplateBinding OffContent}"
+														  ContentTemplate="{TemplateBinding OffContentTemplate}"
+														  HorizontalAlignment="Right"
+														  Padding="{DynamicResource ToggleSwitchRightEdgeMargin}"
+														  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+														  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+										<ContentPresenter x:Name="PART_OnContentPresenter"
+														  Opacity="0"
+														  Foreground="{DynamicResource ToggleSwitchInnerForeground}"
+														  Content="{TemplateBinding OnContent}"
+														  ContentTemplate="{TemplateBinding OnContentTemplate}"
+														  Padding="{DynamicResource ToggleSwitchLeftEdgeMargin}"
+														  HorizontalAlignment="Left"
+														  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+														  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+									</Panel>
+								</Border>
+
+								<Panel x:Name="PART_Container"
+									   Margin="{DynamicResource ToggleSwitchKnobPadding}">
+									<Canvas x:Name="{x:Static helpers:PARTNameHelper.PART_SwitchKnob}" 
+											VerticalAlignment="Center"
+											HorizontalAlignment="Left">
+										<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_MovingKnobs}">
+											<behaviors:Interaction.Behaviors>
+												<behaviors:ToggleSwitchBehaviors ToggleSwitchChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked}"/>
+											</behaviors:Interaction.Behaviors>
+											<Ellipse x:Name="SwitchKnobs"
+													 Fill="{TemplateBinding assists:ToggleSwitchAssists.KnobOffBackground}" >
+												<Ellipse.Transitions>
+													<Transitions>
+														<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+													</Transitions>
+												</Ellipse.Transitions>
+											</Ellipse>
+
+											<ContentPresenter x:Name="PART_KnbosContentPresenter"
+															  Foreground="{DynamicResource ToggleSwitchKnobForeground}"
+															  Content="{TemplateBinding assists:ToggleSwitchAssists.KnobContent}"
+															  ContentTemplate="{TemplateBinding assists:ToggleSwitchAssists.KnobContentTemplate}"
+															  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+															  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+										</Panel>
+									</Canvas>
+								</Panel>
+
+							</Panel>				
+						</ripple:RippleEffect>
+
+					</Grid>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter:empty">
+			<Setter Property="Margin" Value="0" />
+		</Style>
+
+		<!--  NormalState  -->
+		<Style Selector="^:not(:dragging) /template/ Panel#PART_MovingKnobs">
+			<Setter Property="Transitions">
+				<Transitions>
+					<DoubleTransition Easing="CubicEaseOut"
+									  Property="Canvas.Left"
+									  Duration="0:0:0.2" />
+				</Transitions>
+			</Setter>
+		</Style>
+
+		<!--  PointerOverState  -->
+		<Style Selector="^:pointerover">
+		</Style>
+
+		<!--  PressedState  -->
+		<Style Selector="^:pressed">
+		</Style>
+
+		<!--  UncheckedState  -->
+		<Style Selector="^:unchecked">
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssists.PointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleSwitchAssists.PointerOverBorderBrush}" />
+				</Style>
+
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleSwitchAssists.PointerOverForeground}" />
+				</Style>
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Ellipse#SwitchKnobs">
+					<Setter Property="RenderTransformOrigin" Value="1,0.5" />
+					<Setter Property="RenderTransform" Value="scalex(1.2)" />
+				</Style>
+			</Style>
+		</Style>
+
+		<!--  CheckedState  -->
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Ellipse#SwitchKnobs">
+				<Setter Property="Fill" Value="{TemplateBinding assists:ToggleSwitchAssists.KnobOnBackground}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_OnContentPresenter">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_OffContentPresenter">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedBorderBrush}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedForeground}" />
+			</Style>
+
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedPointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedPointerOverBorderBrush}" />
+				</Style>
+
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{TemplateBinding assists:ToggleSwitchAssists.CheckedPointerOverForeground}" />
+				</Style>
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Ellipse#SwitchKnobs">
+					<Setter Property="RenderTransformOrigin" Value="0,0.5" />
+					<Setter Property="RenderTransform" Value="translateX(-3px) scalex(1.2)" />
+				</Style>
+			</Style>
+		</Style>
+
+		<!--  DisabledState  -->
+		<Style Selector="^:disabled">
+			<Style Selector="^">
+				<Setter Property="Cursor" Value="No" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Opacity" Value="0.5"/>
+			</Style>
+
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
+		</Style>
+
+	</ControlTheme>
+
+</ResourceDictionary>

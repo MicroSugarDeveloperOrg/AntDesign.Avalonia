@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<BoxShadows x:Key="AutoCompleteBoxShadow">0 0 10 1 #4F000000</BoxShadows>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	
+	<SolidColorBrush x:Key="AutoCompleteBoxFocusBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxFloatingForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="AutoCompleteBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="AutoCompleteBoxPopupBorderBrush" Color="{StaticResource AntDesignBorderColor}"/> 
+	
+</ResourceDictionary>

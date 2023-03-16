@@ -1,14 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 		<RootNamespace>AntDesign</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <AvaloniaResource Include="Accents\*.axaml" />
-	  <AvaloniaResource Include="*.axaml" />
-	  <AvaloniaResource Include="Styles\*.axaml" />  
+		<AvaloniaResource Include="Accents\*.axaml" />
+		<AvaloniaResource Include="Accents\Dark\*.axaml" />
+		<AvaloniaResource Include="Accents\Light\*.axaml" />
+		<AvaloniaResource Include="Styles\*.axaml" />
+		<AvaloniaResource Include="*.axaml" />
+	</ItemGroup>
+
+	<ItemGroup>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+		<AvaloniaXaml Remove="AntDesign.axaml" />                                                                
 	</ItemGroup>
 
 	<ItemGroup>
@@ -18,5 +24,5 @@
 			<IncludeAssets>build; analyzers</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	
+
 </Project>

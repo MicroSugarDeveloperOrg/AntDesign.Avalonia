@@ -1,19 +1,9 @@
-﻿using Avalonia.Animation;
-using Avalonia.Animation.Easings;
-using Avalonia.Collections;
-using Avalonia.Data;
-using Avalonia.Input;
-using Avalonia.Media;
+﻿namespace AntDesign.Controls.Ripple;
 
-namespace AntDesign.Controls.Ripple;
 public class RippleEffectZx : Border
 {
-    public RippleEffectZx()
+    static RippleEffectZx()
     {
-        AddHandler(PointerPressedEvent, PointerPressedHandler);
-        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
-        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
-
         RenderTransformProperty.Changed.AddClassHandler<RippleEffectZx, ITransform?>((s, e) =>
         {
             if (!e.NewValue.HasValue)
@@ -34,6 +24,13 @@ public class RippleEffectZx : Border
 
             }
         });
+    }
+
+    public RippleEffectZx()
+    {
+        AddHandler(PointerPressedEvent, PointerPressedHandler);
+        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
+        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
 
         Background = Brushes.Transparent;
         BorderThickness = new Thickness(1);
@@ -77,6 +74,10 @@ public class RippleEffectZx : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        var pointer = e.GetCurrentPoint(this);
+        if (!pointer.Properties.IsLeftButtonPressed)
+            return;
+
         BorderBrush = new SolidColorBrush(RippleColor, RippleColorAlpha);
         //Background = new SolidColorBrush(RippleColor, RippleColorAlpha);
         RenderTransform = new ScaleTransform(2d, 2d);

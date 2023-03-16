@@ -1,21 +1,14 @@
-﻿using Avalonia.Data;
-using Avalonia.Input;
-using Avalonia.Media;
-using Avalonia.Threading;
+﻿using Avalonia.Interactivity;
 
 namespace AntDesign.Controls.Ripple;
 
 public class RippleEffect : Border
 {
-    public RippleEffect()
+    static RippleEffect()
     {
-        AddHandler(PointerPressedEvent, PointerPressedHandler);
-        AddHandler(PointerReleasedEvent, PointerReleasedHandler);
-        AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
-
         IsRippleProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
         {
-            
+
         });
 
         IsTriggerProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
@@ -38,7 +31,7 @@ public class RippleEffect : Border
             s._isForever = e.NewValue.Value;
         });
 
-        ForeverTriggerSpaceProperty.Changed.AddClassHandler<RippleEffect, int>((s,e) =>
+        ForeverTriggerSpaceProperty.Changed.AddClassHandler<RippleEffect, int>((s, e) =>
         {
             if (s is null)
                 return;
@@ -50,6 +43,11 @@ public class RippleEffect : Border
         {
 
         });
+    }
+
+    public RippleEffect()
+    {
+        AddHandler(PointerPressedEvent, PointerPressedHandler, RoutingStrategies.Tunnel);
     }
 
     double _realSpeedRate = 30d;
@@ -186,18 +184,12 @@ public class RippleEffect : Border
 
     void PointerPressedHandler(object sender, PointerPressedEventArgs e)
     {
+        var pointer = e.GetCurrentPoint(this);
+        if (!pointer.Properties.IsLeftButtonPressed)
+            return;
+
         if (!IsManualTrigger)
             Trigger();
-    }
-
-    void PointerReleasedHandler(object sender, PointerReleasedEventArgs e)
-    {
-
-    }
-
-    void PointerCaptureLostHandler(object sender, PointerCaptureLostEventArgs e)
-    {
-
     }
 
     bool Trigger()

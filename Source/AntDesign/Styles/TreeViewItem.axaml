@@ -1,0 +1,373 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:converters="using:Avalonia.Controls.Converters"
+					xmlns:antConverters="using:AntDesign.Converters"
+					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:assists="using:AntDesign.Assists"
+					x:CompileBindings="True">
+
+	<Design.PreviewWith>
+		<Border Padding="20"
+				MinWidth="300">
+			<TreeView>
+				<TreeViewItem Header="Level 1" IsExpanded="True">
+					<TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+						<TreeViewItem Header="Level 3.1" />
+						<TreeViewItem Header="Level 3.2" IsSelected="True">
+							<TreeViewItem Header="Level 4" />
+						</TreeViewItem>
+					</TreeViewItem>
+					<TreeViewItem Header="Level 2.2" IsEnabled="False" />
+				</TreeViewItem>
+			</TreeView>
+		</Border>
+	</Design.PreviewWith>
+
+	<converters:MarginMultiplierConverter Indent="{StaticResource TreeViewItemIndent}"
+										  Left="True"
+										  x:Key="TreeViewItemLeftMarginConverter" />
+
+	<antConverters:MarginMultipliersConverter Indent="{StaticResource TreeViewItemIndent}"
+											  Left="True"
+											  x:Key="TreeViewItemxLeftMarginConverter"/>
+
+	<ControlTheme x:Key="AntDesignTreeViewToggleButtonStyle" TargetType="ToggleButton">
+		<Setter Property="Margin" Value="{StaticResource Margin}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<Border Background="Transparent"
+						Width="{TemplateBinding Width}"
+						Height="{TemplateBinding Height}">
+					<PathIcon x:Name="ChevronPath"
+							  Width="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
+							  Height="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
+							  Data="{StaticResource RightIconGeometry}"
+							  Foreground="{TemplateBinding Foreground}" 
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  RenderTransform ="none">
+						<PathIcon.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+							</Transitions>
+						</PathIcon.Transitions>	
+					</PathIcon>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:checked /template/ PathIcon#ChevronPath">
+			<Setter Property="RenderTransform" Value="rotate(90deg)" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignTreeViewLikeVsToggleButtonStyle" TargetType="ToggleButton">
+		<Setter Property="Margin" Value="{StaticResource Margin}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<Border Background="Transparent">   
+					<Border x:Name="PART_Container"
+							Width="12" Height="12"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+						<Border.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+							</Transitions>
+						</Border.Transitions>
+						<Viewbox >
+							<Path x:Name="ChevronPath"
+								  Data="{StaticResource RightGeometry}"
+								  Stretch="Uniform"
+								  Stroke="{TemplateBinding Foreground}"
+								  StrokeThickness="40"/>
+						</Viewbox> 
+					</Border>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="RenderTransform" Value="rotate(45deg)" />
+			</Style>
+			<Style Selector="^ /template/ Path#ChevronPath">
+				<Setter Property="StrokeThickness" Value="0" />
+				<Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}" />
+			</Style>
+		</Style>
+		
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type TreeViewItem}" TargetType="TreeViewItem">
+		<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}"/>
+		<Setter Property="Background" Value="{DynamicResource TreeViewItemBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBackground" Value="{DynamicResource TreeViewItemPointerOverBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverForeground" Value="{DynamicResource TreeViewItemPointerOverForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBorderBrush" Value="{DynamicResource TreeViewItemPointerOverBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBackground" Value="{DynamicResource TreeViewItemPressedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedForeground" Value="{DynamicResource TreeViewItemPressedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBorderBrush" Value="{DynamicResource TreeViewItemPressedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBackground" Value="{DynamicResource TreeViewItemSelectedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedForeground" Value="{DynamicResource TreeViewItemSelectedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBorderBrush" Value="{DynamicResource TreeViewItemSelectedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedNoFocusForeground" Value="{DynamicResource TreeViewItemSelectedNoFocusForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.InnerBorderBackground" Value="{DynamicResource TreeViewItemInnerBorderBackground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" /> 
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TreeViewItem">
+				<StackPanel>
+					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}" 
+							Focusable="True"
+							MinHeight="{TemplateBinding MinHeight}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}" 
+							Padding="{TemplateBinding Padding}"
+							TemplatedControl.IsTemplateFocusTarget="True">
+
+						<Grid ColumnDefinitions="Auto,Auto, *">
+							<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource TreeViewItemInnerBorderWidth}">
+								<Border x:Name="PART_InnerBorder" 
+										Height="{DynamicResource TreeViewItemInnerBorderHeight}"
+										Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
+										BorderThickness="0"
+										IsVisible="False"/>
+							</Panel>
+
+							<Panel Grid.Column="1" IsVisible="False" Width="{DynamicResource TreeViewItemDecoratorSpacing}"/>
+
+							<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_Header}"
+								  Grid.Column="2"
+								  ColumnDefinitions="Auto, *"
+								  Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+	
+								<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_ExpandCollapseChevronContainer}"
+									   Grid.Column="0"
+									   Margin="{StaticResource TreeViewItemExpandCollapseChevronMargin}">
+									<ToggleButton x:Name="{x:Static helpers:PARTNameHelper.PART_ExpandCollapseChevron}"
+												  Focusable="False"
+												  Foreground="{Binding #PART_HeaderPresenter.Foreground}" 
+												  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+								</Panel>
+								<ContentPresenter x:Name="PART_HeaderPresenter"
+												  Grid.Column="1"
+												  Focusable="False"
+												  Background="Transparent"
+												  Content="{TemplateBinding Header}"
+												  ContentTemplate="{TemplateBinding HeaderTemplate}"
+												  HorizontalAlignment="Stretch"
+												  VerticalAlignment="Stretch"
+												  HorizontalContentAlignment="Left"
+												  VerticalContentAlignment="Center"/>
+							</Grid>
+						</Grid>
+					
+					</Border>
+
+					<ItemsPresenter x:Name="PART_ItemsPresenter"
+									IsVisible="{TemplateBinding IsExpanded}"
+									ItemsPanel="{TemplateBinding ItemsPanel}" />
+
+					<!-- <Grid> -->
+						<!-- <ItemsPresenter x:Name="PART_ItemsPresenter" -->
+								<!-- IsVisible="{TemplateBinding IsExpanded}" -->
+								<!-- ItemsPanel="{TemplateBinding ItemsPanel}" /> -->
+
+						<!-- <Border  BorderBrush="Red" -->
+								<!--  BorderThickness="1,0,0,0" -->
+								<!--  HorizontalAlignment="Left" -->
+								<!--  Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemxLeftMarginConverter}, ConverterParameter={StaticResource TreeViewItemExpandCollapseChevronMargin}}">  -->
+						<!-- </Border> -->
+						
+					<!-- </Grid> -->
+
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+			<Setter Property="Theme" Value="{StaticResource AntDesignTreeViewToggleButtonStyle}" />
+		</Style>
+		<!--  PointerOver state  -->
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
+			</Style>
+		</Style>
+
+		<!--  Pressed state  -->
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
+			</Style>
+		</Style>
+
+		<!--  Selected state  -->
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
+			</Style>
+
+			<Style  Selector="^ /template/ Border#PART_InnerBorder">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+
+			<!--  Selected PointerOver state  -->
+			<Style Selector="^:pointerover">
+				 
+			</Style>
+			 
+			<!--  Selected Pressed state  -->
+			<Style Selector="^:pressed">
+				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^:not(:focus) /template/ ContentPresenter#PART_HeaderPresenter">
+				<!--<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedNoFocusForeground}" />-->
+			</Style>
+
+			<!--  Disabled Selected state  -->
+			<Style Selector="^:disabled">
+				<Setter Property="Opacity" Value="0.5"/>
+			</Style>
+
+		</Style>
+		<!--  Disabled state  -->
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
+
+		<Style Selector="^:empty">
+			<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.end">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="TreeViewItem">
+					<StackPanel>
+						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+								Focusable="True"
+								MinHeight="{TemplateBinding MinHeight}"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{TemplateBinding CornerRadius}" 
+								Padding="{TemplateBinding Padding}"
+								TemplatedControl.IsTemplateFocusTarget="True">
+
+							<Grid  ColumnDefinitions="Auto, Auto, *">
+								<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource TreeViewItemInnerBorderWidth}">
+									<Border x:Name="PART_InnerBorder" 
+											Height="{DynamicResource TreeViewItemInnerBorderHeight}"
+											Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
+											BorderThickness="0"
+											IsVisible="False"/>
+								</Panel>
+
+								<Panel Grid.Column="1" Width="{DynamicResource TreeViewItemDecoratorSpacing}"/>
+
+								<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_Header}"
+									  Grid.Column="2"
+									  ColumnDefinitions="*, Auto"
+									  Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+
+									<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_ExpandCollapseChevronContainer}"
+										   Grid.Column="1"
+										   Margin="{StaticResource TreeViewItemExpandCollapseChevronMargin}">
+										<ToggleButton x:Name="{x:Static helpers:PARTNameHelper.PART_ExpandCollapseChevron}"
+													  Focusable="False"
+													  Foreground="{Binding #PART_HeaderPresenter.Foreground}"
+													  Theme="{StaticResource AntDesignTreeViewToggleButtonStyle}"
+													  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+									</Panel>
+									<ContentPresenter x:Name="PART_HeaderPresenter"
+													  Grid.Column="0"
+													  Focusable="False"
+													  Background="Transparent"
+													  Content="{TemplateBinding Header}"
+													  ContentTemplate="{TemplateBinding HeaderTemplate}"
+													  HorizontalAlignment="Stretch"
+													  VerticalAlignment="Stretch"
+													  HorizontalContentAlignment="Left"
+													  VerticalContentAlignment="Center" />
+								</Grid>
+
+							</Grid>
+							
+							
+						</Border>
+
+						<ItemsPresenter x:Name="PART_ItemsPresenter"
+										IsVisible="{TemplateBinding IsExpanded}"
+										ItemsPanel="{TemplateBinding ItemsPanel}" /> 
+					</StackPanel>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="^.remove">
+			<Style  Selector="^ /template/ Panel#PART_DecoratorContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.title">
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+		</Style>
+		
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignTreeViewItemStyle" TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBackground" Value="{DynamicResource TreeViewItemPointerOverBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverForeground" Value="{DynamicResource TreeViewItemPointerOverForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBorderBrush" Value="{DynamicResource TreeViewItemPointerOverBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBackground" Value="{DynamicResource TreeViewItemPrimaryPressedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedForeground" Value="{DynamicResource TreeViewItemPrimaryPressedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBorderBrush" Value="{DynamicResource TreeViewItemPrimaryPressedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBackground" Value="{DynamicResource TreeViewItemPrimarySelectedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedForeground" Value="{DynamicResource TreeViewItemPrimarySelectedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBorderBrush" Value="{DynamicResource TreeViewItemPrimarySelectedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedNoFocusForeground" Value="{DynamicResource TreeViewItemPrimarySelectedNoFocusForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.InnerBorderBackground" Value="{DynamicResource TreeViewItemPrimaryInnerBorderBackground}" />
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignTreeViewItemLikeVsStyle" TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+		<Setter Property="MinHeight" Value="25"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+
+		<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+			<Setter Property="Theme" Value="{StaticResource AntDesignTreeViewLikeVsToggleButtonStyle}" />
+		</Style>
+	 
+	</ControlTheme>
+
+</ResourceDictionary>

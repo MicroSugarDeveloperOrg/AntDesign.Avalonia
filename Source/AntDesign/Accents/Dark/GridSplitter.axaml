@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="GridSplitterAltMediumLowBrush" Color="#5F0f0f0f"/>
+	<SolidColorBrush x:Key="GridSplitterAccentBrush" Color="#0f0f0f"/>
+
+</ResourceDictionary>

@@ -1,12 +1,13 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:helpers="using:AntDesign.Helpers">
+					xmlns:helpers="using:AntDesign.Helpers"
+					x:CompileBindings="True">
 	<ControlTheme x:Key="{x:Type Label}" TargetType="Label">
-		<Setter Property="Padding" Value="3" />
-		<Setter Property="HorizontalAlignment" Value="Center" />
-		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Label">
 				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								  Padding="{TemplateBinding Padding}"
 								  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -20,5 +21,22 @@
 								  RecognizesAccessKey="True" />
 			</ControlTemplate>
 		</Setter>
+
+		<Style Selector="^.h1">
+			<Setter Property="FontSize" Value="35" />
+			<Setter Property="FontWeight" Value="Heavy" />
+		</Style>
+		<Style Selector="^.h2">
+			<Setter Property="FontSize" Value="30" />
+			<Setter Property="FontWeight" Value="Bold" />
+		</Style>
+		<Style Selector="^.h3">
+			<Setter Property="FontSize" Value="20" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5" />
+		</Style>
+		
 	</ControlTheme>
 </ResourceDictionary>

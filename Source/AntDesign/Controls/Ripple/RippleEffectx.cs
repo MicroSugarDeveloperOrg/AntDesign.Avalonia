@@ -1,17 +1,19 @@
-﻿using Avalonia.Data;
-using Avalonia.Media; 
-
-namespace AntDesign.Controls.Ripple;
+﻿namespace AntDesign.Controls.Ripple;
 
 public class RippleEffectx : Border
 {
+    static RippleEffectx()
+    {
+        IsRippleProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
+        RippleColorProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
+        RippleColorAlphaProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
+        RippleBlurProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
+        RippleSpreadProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
+    }
+
     public RippleEffectx()
     {
-        IsRippleProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
-        RippleColorProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
-        RippleColorAlphaProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
-        RippleBlurProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
-        RippleSpreadProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => ResetRipple(s));
+    
     }
 
     public static readonly StyledProperty<bool> IsRippleProperty =

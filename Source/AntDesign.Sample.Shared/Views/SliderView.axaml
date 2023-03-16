@@ -1,0 +1,186 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.SliderView">
+
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="滑动型输入器，展示当前值和可选范围。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text="当用户需要在数值区间/自定义区间内进行选择时，可为连续或离散值。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider  Value="50" Width="500" />
+						</StackPanel>
+						
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							 <Slider TickFrequency="10" Value="50" Width="500"  TickPlacement="TopLeft"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider Ticks="5,20,40" TickFrequency="20" Value="50" Width="500"  TickPlacement="BottomRight"/>
+						</StackPanel>
+						 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<TextBlock Text="使用TickPlacement来控制是否显示tick标记 "/> 
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider  Value="50" Width="500" IsDirectionReversed="True"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider TickFrequency="10" Value="50" Width="500" TickPlacement="TopLeft" IsDirectionReversed="True"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider Ticks="5,20,40" TickFrequency="20" Value="50" Width="500"  TickPlacement="BottomRight" IsDirectionReversed="True"/>
+						</StackPanel>
+					 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="反向显示"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过IsDirectionReversed控制反向显示"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider  Value="50" Width="500" IsDirectionReversed="True"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider TickFrequency="10" Value="50" Width="500" TickPlacement="TopLeft" IsDirectionReversed="True"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider Ticks="5,20,40" TickFrequency="20" Value="50" Width="500"  TickPlacement="BottomRight" IsDirectionReversed="True"/>
+						</StackPanel>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="反向显示"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过IsDirectionReversed控制反向显示"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+
+			<Border Grid.Column="0" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider Value="50" Height="250" IsDirectionReversed="True" Orientation="Vertical"/>
+							<Slider Value="50" Height="250" IsDirectionReversed="True" Orientation="Vertical" TickFrequency="10" TickPlacement="TopLeft"/>
+							<Slider Value="50" Height="250" IsDirectionReversed="True" Orientation="Vertical" Ticks="10,20,60" TickPlacement="BottomRight"/>
+						</StackPanel> 
+						 
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="ProgressTextFormat"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ProgressTextFormat修改显示文字"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="2"
+				BorderThickness="{StaticResource OverlayBorderThickness}"
+				CornerRadius="{StaticResource OverlayCornerRadius}"
+				BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="2*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider  Value="50" Width="500" IsEnabled="False"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<Slider Ticks="5,20,40" TickFrequency="20" Value="50" Width="500" TickPlacement="TopLeft" IsEnabled="False" IsDirectionReversed="True"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过修改IsEnable来控制是否可用"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+		</Grid>
+	</Grid>
+</UserControl>

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<RootNamespace>AntDesign.DataGrid</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AvaloniaResource Include="Accents\*.axaml" /> 
+		<AvaloniaResource Include="Styles\*.axaml" />
+		<AvaloniaResource Include="*.axaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AvaloniaXaml Remove="AntDesignDataGrid.axaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" />
+		<PackageReference Include="PolySharp">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>build; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>

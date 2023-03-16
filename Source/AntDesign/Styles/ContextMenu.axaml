@@ -1,0 +1,74 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers"
+					x:CompileBindings="True">
+	<Design.PreviewWith>
+		<Border Background="Red"
+				Margin="16"
+				Padding="48"
+				Width="400"
+				Height="200">
+			<Border.ContextMenu>
+				<ContextMenu>
+					<MenuItem Header="Standard _Menu Item" />
+					<MenuItem Header="Disabled" IsEnabled="False" />
+					<Separator />
+					<MenuItem Header="Menu with _Submenu">
+						<MenuItem Header="Submenu _1" />
+						<MenuItem Header="Submenu _2" />
+					</MenuItem>
+					<MenuItem Header="Menu Item with _Icon" />
+					<MenuItem Header="Menu Item with _Checkbox">
+						<MenuItem.Icon>
+							<CheckBox BorderThickness="0"
+									  IsHitTestVisible="False"
+									  IsChecked="True" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</ContextMenu>
+			</Border.ContextMenu>
+			<TextBlock Text="Defined in XAML" />
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu">
+		<Setter Property="TextBlock.FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource ContextMenuBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource ContextMenuBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ContextMenuBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
+		<Setter Property="MaxWidth" Value="{DynamicResource ContextMenuMaxWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource ContextMenuMinHeight}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="WindowManagerAddShadowHint" Value="False" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ContextMenu">
+				<Border Background="Transparent" 
+						Padding="{DynamicResource PopupShadowPadding}">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Padding="{TemplateBinding Padding}"
+							MaxWidth="{TemplateBinding MaxWidth}"
+							MinHeight="{TemplateBinding MinHeight}"
+							HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							BoxShadow="{DynamicResource ContextMenuShadow}">
+						<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
+							<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+											ItemsPanel="{TemplateBinding ItemsPanel}"
+											Margin="{DynamicResource Margin}"
+											KeyboardNavigation.TabNavigation="Continue"
+											Grid.IsSharedSizeScope="True" />
+						</ScrollViewer>
+					</Border>
+				</Border>
+			
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	
+</ResourceDictionary>

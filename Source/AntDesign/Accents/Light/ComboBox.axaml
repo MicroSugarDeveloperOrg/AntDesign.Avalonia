@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<BoxShadows x:Key="ComboBoxShadow">0 0 10 1 #4F000000</BoxShadows>
+
+	<SolidColorBrush x:Key="ComboBoxBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="ComboBoxPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="ComboBoxPressedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ComboBoxPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxPressedBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="ComboBoxPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxPopupBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="ComboBoxPlaceholderTextForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+
+</ResourceDictionary>

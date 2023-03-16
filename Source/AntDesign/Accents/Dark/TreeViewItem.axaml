@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+
+	<SolidColorBrush x:Key="TreeViewItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TreeViewItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TreeViewItemPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="TreeViewItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TreeViewItemPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="TreeViewItemPressedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TreeViewItemSelectedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="TreeViewItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemSelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="TreeViewItemSelectedNoFocusForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemInnerBorderBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	
+	<!--Primary-->
+	<SolidColorBrush x:Key="TreeViewItemPrimaryPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemPrimaryPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TreeViewItemPrimaryPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TreeViewItemPrimarySelectedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemPrimarySelectedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TreeViewItemPrimarySelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="TreeViewItemPrimarySelectedNoFocusForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TreeViewItemPrimaryInnerBorderBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+</ResourceDictionary>

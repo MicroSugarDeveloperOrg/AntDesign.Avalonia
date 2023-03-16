@@ -1,16 +1,13 @@
-using Avalonia.Controls;
-using Avalonia.Controls.Shapes;
+using AntDesign.Sample.ViewModels;
 
-namespace AntDesign.Sample.Views
+namespace AntDesign.Sample.Views;
+
+public partial class MainWindow : ReactiveWindow<MainViewModel>
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            //Rectangle rectangle = new Rectangle();
-            //rectangle.StrokeThickness
-        }
+        InitializeComponent();
+        //ShowInTaskbar
+        //WindowStartupLocation=
     }
 }

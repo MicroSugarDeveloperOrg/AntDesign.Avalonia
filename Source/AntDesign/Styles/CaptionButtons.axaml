@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
-					xmlns:assists="using:AntDesign.Assists">
+					xmlns:assists="using:AntDesign.Assists"
+					x:CompileBindings="True">
 	<Design.PreviewWith>
 		<Border Padding="20">
 			<StackPanel Spacing="20">
@@ -10,20 +11,22 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<ControlTheme x:Key="AntDesignCaptionButton" TargetType="Button">
-		<Setter Property="Background" Value="Transparent" />
-		<!-- Reusing BorderBrush to define pressed background color, as it's not used otherwise -->
-		<Setter Property="BorderBrush" Value="Transparent" />
-		<Setter Property="Foreground" Value="Black"/>
-		<Setter Property="assists:ButtonAssists.HoverForeground" Value="Black" />
-		<Setter Property="assists:ButtonAssists.HoverBackground" Value="#e6eaef" />
-		<Setter Property="assists:ButtonAssists.PressedForeground" Value="Black" />
-		<Setter Property="assists:ButtonAssists.PressedBackground" Value="#e8eef3" />
-		<Setter Property="Width" Value="45"/>
-		<Setter Property="Height" Value="30"/>
+	<ControlTheme x:Key="AntDesignCaptionButtonStyle" TargetType="Button">
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
+		<Setter Property="Background" Value="{DynamicResource CaptionButtonBackground}" /> 
+		<Setter Property="Foreground" Value="{DynamicResource CaptionButtonForeground}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource  CaptionButtonBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBackground" Value="{DynamicResource CaptionButtonPointerOverBackground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverForeground" Value="{DynamicResource CaptionButtonPointerOverForeground}" />
+		<Setter Property="assists:ButtonAssists.PointerOverBorderBrush" Value="{DynamicResource CaptionButtonPointerOverBorderBrush}" />
+		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource CaptionButtonPressedBackground}" />
+		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource CaptionButtonPressedForeground}" />
+		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource CaptionButtonPressedBorderBrush}" />
+		<Setter Property="Width" Value="{DynamicResource CaptionButtonWidth}"/>
+		<Setter Property="Height" Value="{DynamicResource CaptionButtonHeight}"/>
 		<Setter Property="VerticalAlignment" Value="Stretch"/>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="Button">
 				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 								  Background="Transparent"
 								  Content="{TemplateBinding Content}"/>
@@ -31,41 +34,43 @@
 		</Setter>
 
 		<Style Selector="^:pointerover /template/ ContentPresenter">
-			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.HoverForeground}" />
-			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.HoverBackground}" />
+			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PointerOverForeground}" />
+			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PointerOverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PointerOverBorderBrush}" />
 		</Style>
 
 		<Style Selector="^:pressed /template/ ContentPresenter">
 			<Setter Property="Foreground" Value="{TemplateBinding assists:ButtonAssists.PressedForeground}" />
 			<Setter Property="Background" Value="{TemplateBinding assists:ButtonAssists.PressedBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:ButtonAssists.PressedBorderBrush}" />
 		</Style>
 	</ControlTheme>
 
 	<ControlTheme x:Key="{x:Type CaptionButtons}" TargetType="CaptionButtons">
 		<Setter Property="MaxHeight" Value="40" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="CaptionButtons">
 				<StackPanel Spacing="2" VerticalAlignment="Stretch" TextElement.FontSize="10" Orientation="Horizontal">
 					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_FullScreenButton}"
-							Theme="{StaticResource AntDesignCaptionButton}"
+							Theme="{StaticResource AntDesignCaptionButtonStyle}"
 							IsVisible="False">
 						<Viewbox Width="11" Margin="2">
 							<Path Name="FullScreenButtonPath"
 								  Stretch="UniformToFill"
 								  Fill="{TemplateBinding Foreground}"
-								  Data="M2048 2048v-819h-205v469l-1493 -1493h469v-205h-819v819h205v-469l1493 1493h-469v205h819z" />
+								  Data="{DynamicResource CaptionButtonsFullScreenIcon}" />
 						</Viewbox>
 					</Button>
 					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_MinimiseButton}"
-							Theme="{StaticResource AntDesignCaptionButton}">
+							Theme="{StaticResource AntDesignCaptionButtonStyle}">
 						<Viewbox Width="11" Margin="2">
 							<Path Stretch="UniformToFill"
 								  Fill="{TemplateBinding Foreground}"
-								  Data="M2048 1229v-205h-2048v205h2048z" />
+								  Data="{DynamicResource CaptionButtonsMinimiseIcon}" />
 						</Viewbox>
 					</Button>
 					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_RestoreButton}"
-							Theme="{StaticResource AntDesignCaptionButton}">
+							Theme="{StaticResource AntDesignCaptionButtonStyle}">
 						<Viewbox Width="11" Margin="2">
 							<Viewbox.RenderTransform>
 								<RotateTransform Angle="-90" />
@@ -73,32 +78,33 @@
 							<Path Name="RestoreButtonPath"
 								  Stretch="UniformToFill"
 								  Fill="{TemplateBinding Foreground}"
-								  Data="M2048 2048v-2048h-2048v2048h2048zM1843 1843h-1638v-1638h1638v1638z"/>
+								  Data="{DynamicResource CaptionButtonsRestoreIcon}"/>
 						</Viewbox>
 					</Button>
+					<!--{x:Static helpers:PARTNameHelper.PART_CloseButton}-->
 					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_CloseButton}"
-							assists:ButtonAssists.HoverForeground="White"
-							assists:ButtonAssists.HoverBackground="#c42b1c"
-							assists:ButtonAssists.PressedForeground="White"
-							assists:ButtonAssists.PressedBackground="#c74031"
-							Theme="{StaticResource AntDesignCaptionButton}">
+							assists:ButtonAssists.PointerOverForeground="{DynamicResource CaptionCloseButtonPointerOverForeground}"
+							assists:ButtonAssists.PointerOverBackground="{DynamicResource CaptionCloseButtonPointerOverBackground}"
+							assists:ButtonAssists.PressedForeground="{DynamicResource CaptionCloseButtonPressedForeground}"
+							assists:ButtonAssists.PressedBackground="{DynamicResource CaptionCloseButtonPressedBackground}"
+							Theme="{StaticResource AntDesignCaptionButtonStyle}">
 						<Viewbox Width="11" Margin="2">
 							<Path Stretch="UniformToFill"
-								  Fill="{Binding #PART_CloseButton.Foreground}"
-								  Data="M1169 1024l879 -879l-145 -145l-879 879l-879 -879l-145 145l879 879l-879 879l145 145l879 -879l879 879l145 -145z" />
+								  Fill="{Binding $parent[Button].Foreground}"
+								  Data="{DynamicResource CaptionButtonsCloseIcon}" />
 						</Viewbox>
 					</Button>
 				</StackPanel>
 			</ControlTemplate>
 		</Setter>
 		<Style Selector="^:maximized /template/ Path#RestoreButtonPath">
-			<Setter Property="Data" Value="M2048 410h-410v-410h-1638v1638h410v410h1638v-1638zM1434 1434h-1229v-1229h1229v1229zM1843 1843h-1229v-205h1024v-1024h205v1229z" />
+			<Setter Property="Data" Value="{DynamicResource CaptionButtonsRestoreIcon2}" />
 		</Style>
 
 		<Style Selector="^:fullscreen">
 			<Style Selector="^ /template/ Path#FullScreenButtonPath">
 				<Setter Property="IsVisible" Value="True" />
-				<Setter Property="Data" Value="M205 1024h819v-819h-205v469l-674 -674l-145 145l674 674h-469v205zM1374 1229h469v-205h-819v819h205v-469l674 674l145 -145z" />
+				<Setter Property="Data" Value="{DynamicResource CaptionButtonsFullScreenIcon2}" />
 			</Style>
 			<Style Selector="^ /template/ Button#PART_RestoreButton">
 				<Setter Property="IsVisible" Value="False" />

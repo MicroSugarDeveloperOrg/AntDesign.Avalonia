@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<BoxShadows x:Key="TimePickerShadow">0 0 10 1 #4F000000</BoxShadows>
+
+	<SolidColorBrush x:Key="TimePickerBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TimePickerForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TimePickerBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="TimePickerSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="TimePickerPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="TimePickerPopupBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TimePickerPresenterBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TimePickerPresenterForeground" Color="{StaticResource AntDesignBorderColor}"/>
+	<SolidColorBrush x:Key="TimePickerPresenterBorderBrush" Color="Transparent"/>
+	
+	<SolidColorBrush x:Key="TimePickerPresenterSpacerFill" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="TimePickerButtonBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="TimePickerButtonPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="TimePickerButtonPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+
+	<SolidColorBrush x:Key="TimePickerPanelListBoxItemSelectedNoFocusForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+
+</ResourceDictionary>

@@ -15,7 +15,7 @@
 				<TextBox Text="Sample">
 					<TextBox.Styles>
 						<Style Selector="DataValidationErrors">
-							<Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+							<Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrorsStyle}" />
 						</Style>
 					</TextBox.Styles>
 					<DataValidationErrors.Error>
@@ -63,7 +63,7 @@
 		</Setter>
 	</ControlTheme>
 
-	<ControlTheme x:Key="TooltipDataValidationErrors" TargetType="DataValidationErrors">
+	<ControlTheme x:Key="TooltipDataValidationErrorsStyle" TargetType="DataValidationErrors">
 		<Setter Property="Template">
 			<ControlTemplate TargetType="DataValidationErrors">
 				<DockPanel LastChildFill="True">
@@ -101,11 +101,11 @@
 					<ToolTip.Tip>
 						<ItemsControl Items="{ReflectionBinding}" />
 					</ToolTip.Tip>
-					<Path Width="14"
-						  Height="14"
-						  Data="M14,7 A7,7 0 0,0 0,7 M0,7 A7,7 0 1,0 14,7 M7,3l0,5 M7,9l0,2"
-						  Stroke="{DynamicResource ErrorBackground}"
-						  StrokeThickness="2" />
+					<Path Width="{DynamicResource DataValidationErrorsIconWidth}"
+						  Height="{DynamicResource DataValidationErrorsIconHeight}"
+						  Data="{DynamicResource TooltipDataValidationErrorIcon}"
+						  Stroke="{DynamicResource ErrorBorderBrush}"
+						  StrokeThickness="{DynamicResource DataValidationErrorsIconStrokeThickness}" />
 				</Panel>
 			</DataTemplate>
 		</Setter>

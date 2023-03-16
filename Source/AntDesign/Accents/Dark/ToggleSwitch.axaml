@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="ToggleSwitchBackground" Color="{DynamicResource AntDesigndAssistColor7}"/>
+	<SolidColorBrush x:Key="ToggleSwitchForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ToggleSwitchBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ToggleSwitchPointerOverBackground" Color="{DynamicResource AntDesigndAssistColor6}"/>
+	<SolidColorBrush x:Key="ToggleSwitchPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ToggleSwitchPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ToggleSwitchCheckedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ToggleSwitchCheckedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ToggleSwitchCheckedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ToggleSwitchCheckedPointerOverBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ToggleSwitchCheckedPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ToggleSwitchCheckedPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ToggleSwitchKnobOnBackground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ToggleSwitchKnobOffBackground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+
+	<SolidColorBrush x:Key="ToggleSwitchInnerForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ToggleSwitchKnobForeground" Color="{DynamicResource AntDesignAssistColor1}"/>
+
+</ResourceDictionary>

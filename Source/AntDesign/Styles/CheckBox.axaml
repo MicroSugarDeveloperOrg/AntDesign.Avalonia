@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:assists="using:AntDesign.Assists"
-					xmlns:ripple="using:AntDesign.Controls.Ripple">
+					xmlns:ripple="using:AntDesign.Controls.Ripple"
+					x:CompileBindings="True">
 	<Design.PreviewWith>
 		<Border Padding="20">
 			<StackPanel Spacing="20">
@@ -14,67 +15,57 @@
 		</Border>
 	</Design.PreviewWith>
 
-	<StreamGeometry x:Key="CheckBoxGlyphIcon"> M389.7 604.3L198.2 447.4c-3.7-3-9.1-3-12.8 0.1l-73.3 61.4c-4.4 3.7-4.8 10.3-0.9 14.5l324.1 344.3c5 5.3 13.8 3.6 16.6-3.1 64.4-160.1 244.3-452.8 463.2-664.7 3-2.9 3.9-7.2 2.3-11l-13.7-33c-2.4-5.8-9.5-8-14.7-4.5-243.2 157.7-419.4 353.5-499.3 452.9z</StreamGeometry>
-
-
 	<ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
-		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Height" Value="{DynamicResource CheckBoxHeight}"/>
+		<Setter Property="Background" Value="{DynamicResource CheckBoxBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource CheckBoxForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBoxBorderBrush}" />
+		<Setter Property="assists:CheckBoxAssists.PointerOverBackground" Value="{DynamicResource CheckBoxPointerOverBackground}" />
+		<Setter Property="assists:CheckBoxAssists.PointerOverForeground" Value="{DynamicResource CheckBoxPointerOverForeground}" />
+		<Setter Property="assists:CheckBoxAssists.PointerOverBorderBrush" Value="{DynamicResource CheckBoxPointerOverBorderBrush}" />
+		<Setter Property="assists:CheckBoxAssists.PressedBackground" Value="{DynamicResource CheckBoxPressedBackground}" />
+		<Setter Property="assists:CheckBoxAssists.PressedForeground" Value="{DynamicResource CheckBoxPressedForeground}" />
+		<Setter Property="assists:CheckBoxAssists.PressedBorderBrush" Value="{DynamicResource CheckBoxPressedBorderBrush}" />
+		<Setter Property="assists:CheckBoxAssists.GlyphFill" Value="{DynamicResource CheckBoxGlyphFill}" />
+		<Setter Property="assists:CheckBoxAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
+		<Setter Property="assists:CheckBoxAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource OverlayPadding}" />
 		<Setter Property="HorizontalAlignment" Value="Center" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
-		<Setter Property="Foreground" Value="{DynamicResource CheckBoxForeground}" />
-		<Setter Property="Background" Value="{DynamicResource CheckBoxBackground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource CheckBoxBorderBrush}" />
-		<Setter Property="BorderThickness" Value="1"/>
-		<Setter Property="assists:CheckBoxAssists.HoverBackground" Value="{DynamicResource CheckBoxHoverBackground}" />
-		<Setter Property="assists:CheckBoxAssists.HoverForeground" Value="{DynamicResource CheckBoxHoverForeground}" />
-		<Setter Property="assists:CheckBoxAssists.HoverBorderBrush" Value="{DynamicResource CheckBoxHoverBorderBrush}" />
-		<Setter Property="assists:CheckBoxAssists.PressedBackground" Value="{DynamicResource CheckBoxPressedBackground}" />
-		<Setter Property="assists:CheckBoxAssists.PressedForeground" Value="{DynamicResource CheckBoxPressedForeground}" />
-		<Setter Property="assists:CheckBoxAssists.PressedBorderBrush" Value="{DynamicResource CheckBoxPressedBorderBrush}" />
-		<Setter Property="assists:CheckBoxAssists.GlyphFill" Value="White" />
-		<Setter Property="assists:CheckBoxAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
-		<Setter Property="assists:CheckBoxAssists.RippleColorAlpha"  Value="0.4"/>
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="CheckBox">
 				<Grid x:Name="RootGrid" ColumnDefinitions="Auto,*">
 					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_Border}"
 							Grid.Column="0"
+							Padding="0"
+							BorderThickness="0"
 							VerticalAlignment="Center"
 							HorizontalAlignment="Center"
-							CornerRadius="{TemplateBinding CornerRadius}"
 							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}">
-						<Border.Width>
-							<MultiBinding Converter="{StaticResource AutoSizeConverter}">
-								<TemplateBinding Property="Width"/>
-								<TemplateBinding Property="Height"/>
-							</MultiBinding>
-						</Border.Width>
-						<Border.Height>
-							<MultiBinding Converter="{StaticResource AutoSizeConverter}">
-								<TemplateBinding Property="Width"/>
-								<TemplateBinding Property="Height"/>
-							</MultiBinding>
-						</Border.Height>
-
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Width="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}, ConverterParameter=23.0}"
+							Height="{TemplateBinding Bounds, Converter={StaticResource AutoSizeConverter}, ConverterParameter=23.0}">
 						<Panel>
 							<Border x:Name="NormalRectangle"
 									Background="{TemplateBinding Background}"
 									CornerRadius="{TemplateBinding CornerRadius}"
+									BorderBrush="{TemplateBinding BorderBrush}"
+									BorderThickness="{TemplateBinding BorderThickness}"
 									UseLayoutRounding="False">
-								<Viewbox UseLayoutRounding="False" Margin="{StaticResource OverlayPadding}">
+								<Viewbox UseLayoutRounding="False" Margin="{DynamicResource OverlayPadding}">
 									<Path x:Name="CheckGlyph" 
 								          IsVisible="false"
 								          Stretch="Uniform" 
 								          RenderTransform="scale(0.5)"
 										  HorizontalAlignment="Center"
 										  VerticalAlignment="Bottom" 
-								          Data="{StaticResource CheckBoxGlyphIcon}"
+								          Data="{DynamicResource CheckBoxGlyphIcon}"
 								          Fill="{TemplateBinding assists:CheckBoxAssists.GlyphFill}">
 										<Path.Transitions>
 											<Transitions>
@@ -85,9 +76,9 @@
 								</Viewbox>
 							</Border>
 							<ripple:RippleEffectAx CornerRadius="{TemplateBinding CornerRadius}"
-							                       Duration="100"
-												   RippleFromScal="1"
-												   RippleToScal="1.7"
+							                       Duration="{DynamicResource CheckBoxRippleDuration}"
+												   RippleFromScal="{DynamicResource CheckBoxRippleFromScal}"
+												   RippleToScal="{DynamicResource CheckBoxRippleToScal}"
 												   RippleColor="{TemplateBinding assists:CheckBoxAssists.RippleColor}"
 												   RippleColorAlpha="{TemplateBinding assists:CheckBoxAssists.RippleColorAlpha}"/>
 						</Panel>
@@ -108,17 +99,16 @@
 		</Setter>
 
 		<!-- Unchecked PointerOver State -->
-
 		<Style Selector="^:not(:checked)">
 			<Style Selector="^:pointerover">
-				<Style Selector="^ /template/ Border#PART_Border">
-					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.HoverBorderBrush}" />
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.PointerOverBorderBrush}" />
 				</Style>
 			</Style>
 
 			<!-- Unchecked Pressed State -->
 			<Style Selector="^:pressed">
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.PressedBorderBrush}" />
 				</Style>
 			</Style>
@@ -129,13 +119,13 @@
 					<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
 				</Style>
 
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 					<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 				</Style>
 
 				<Style Selector="^ /template/ Path#CheckGlyph">
-					<Setter Property="Fill" Value="{DynamicResource DisableFillBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource DisableFill}" />
 				</Style>
 			</Style>
 		</Style>
@@ -144,16 +134,18 @@
 			<!-- Checked Normal State -->			
 			<Style Selector="^ /template/ Border#NormalRectangle">
 				<Setter Property="Background" Value="{TemplateBinding assists:CheckBoxAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.PressedBorderBrush}" />
 			</Style>
 
 			<Style Selector="^ /template/ Path#CheckGlyph">
 				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Fill" Value="{TemplateBinding assists:CheckBoxAssists.GlyphFill}" />
 				<Setter Property="RenderTransform" Value="scale(1)" />
 			</Style>
 
 			<!-- Checked PointerOver State -->
 			<Style Selector="^:pointerover">
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="Opacity" Value="0.8" />
 				</Style>
 			</Style>
@@ -166,17 +158,17 @@
 			<!-- Checked Disabled State -->
 			<Style Selector="^:disabled">
 
-				<Style Selector="^ /template/ Border#PART_Border">
+				<Style Selector="^ /template/ Border#NormalRectangle">
 					<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
 					<Setter Property="BorderBrush" Value="{DynamicResource DisableBorderBrush}" />
 				</Style>
 
 				<Style Selector="^ /template/ Border#NormalRectangle">
-					<Setter Property="Background" Value="{DynamicResource Transparent}" />
+					<Setter Property="Background" Value="Transparent" />
 				</Style>
 				
 				<Style Selector="^ /template/ Path#CheckGlyph">
-					<Setter Property="Fill" Value="{DynamicResource DisableFillBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource DisableFill}" />
 				</Style>
 				
 				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
@@ -189,15 +181,20 @@
 		<Style Selector="^:indeterminate">
 			<!-- Indeterminate Normal State -->
 			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderThickness" Value="0"/>
 				<Setter Property="Margin" Value="{DynamicResource CheckBoxIndeterminatePadding}" />
 				<Setter Property="CornerRadius" Value="0" />
-				<Setter Property="Background" Value="{TemplateBinding assists:CheckBoxAssists.PressedBackground}" />
+				<Setter Property="Background" Value="{TemplateBinding assists:CheckBoxAssists.PressedForeground}" />
 			</Style>
 
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}"/>
+			</Style>
+			
 			<!-- Indeterminate PointerOver State -->
 			<Style Selector="^:pointerover">
 				<Style Selector="^ /template/ Border#PART_Border">
-					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.HoverBorderBrush}" />
+					<Setter Property="BorderBrush" Value="{TemplateBinding assists:CheckBoxAssists.PointerOverBorderBrush}" />
 				</Style>
 			</Style>
 
@@ -218,7 +215,7 @@
 				</Style>
 
 				<Style Selector="^ /template/ Border#NormalRectangle">
-					<Setter Property="Background" Value="{DynamicResource DisableFillBrush}" />
+					<Setter Property="Background" Value="{DynamicResource DisableFill}" />
 				</Style>
 			</Style>
 		</Style>

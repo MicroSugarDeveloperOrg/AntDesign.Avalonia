@@ -1,0 +1,167 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:assists="using:AntDesign.Assists"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.RepeatButtonView">
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+		<TextBlock Grid.Row="0" Text="一种可连续响应的按钮。"/>
+
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  在需要进行点击按钮不释放却能够不断响应点击事件的场景中使用。"/>
+			<TextBlock  Text=">>  可以获取控制按钮的事件，根据不同事件进行相应的值的变化。"/>
+			<TextBlock  Text=">>  和 Button 类似。区别在于Button一次点击只能获取到一次点击事件。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<Border Grid.Column="0" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.3*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" />
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" 
+										  Theme="{StaticResource PrimaryRepeatButtonStyle}"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35"
+										  Theme="{StaticResource ShadowRepeatButtonStyle}"
+										  assists:ButtonAssists.Shadows="0 0 10 1 Green"/>
+						</StackPanel>
+
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本用法"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="简单的 RepeatButton。"/>  
+						<TextBlock Text="RepeatButton的Content属性可以放入任何有效的控件元素，包括文字，图像等等"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Text="通过assists:ButtonAssists.Shadows设置ShadowRepeatButtonStyle按钮Shadow(这是AntDesign库提供的一个扩展依赖属性)"/>
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.3*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" Spacing="0">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Classes="left"/>
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Classes="center" />
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Classes="right"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" Spacing="0">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="left"/>
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="center" />
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="right"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="组合用法"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="RepeatButton的组合用法。"/>
+						<TextBlock Text="通过给Classes属性赋予对应的值即可实现RepeatButton无缝拼接效果"/>
+					</StackPanel>
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="0" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.3*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" IsEnabled="False" />
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Theme="{StaticResource PrimaryRepeatButtonStyle}" IsEnabled="False" />
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="不可用"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="RepeatButton 不可用。"/>
+						<TextBlock Text="通过修改IsEnabled属性来控制是否可用。"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border Grid.Column="2" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="1.3*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="20"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton Content="RepeatButton" Width="120" Height="35" Classes="round"/>
+							<RepeatButton Content="RepeatButton" Width="120" Height="35"
+										  Theme="{StaticResource PrimaryRepeatButtonStyle}" Classes="round"/>
+
+							<RepeatButton Content="RepeatButton" Width="120" Height="35"
+										  Theme="{StaticResource ShadowRepeatButtonStyle}"
+										  assists:ButtonAssists.Shadows="0 0 10 1 Green" Classes="round"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" Spacing="10">
+							<RepeatButton x:Name="PART_RepeatButton" Content="RepeatButton" Width="120" Height="35" />
+							<TextBlock x:Name="PART_TextBlock" />
+						</StackPanel>
+						
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="圆形按钮以及连续事件触发"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过修改Classes 值为round来开启圆形按钮的效果"/>
+						<TextBlock Text="注册RepeatButton Click事件，当鼠标点击不释放将会按照一定频率连续触发点击事件。"/>
+						<TextBlock TextWrapping="WrapWithOverflow" Foreground="Red" Text="注意目前不可以通过绑定RepeatButton的Command在viewmodel中获取连续点击效果（这可能是个bug），您可以通过将Event转发到后台的方式使用。"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+		</Grid>
+	</Grid>
+</UserControl>

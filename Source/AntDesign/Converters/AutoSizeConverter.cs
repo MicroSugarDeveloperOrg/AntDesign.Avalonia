@@ -1,20 +1,26 @@
-﻿using Avalonia.Data.Converters;
-using System.Globalization;
+﻿namespace AntDesign.Converters;
 
-namespace AntDesign.Converters;
-public class AutoSizeConverter : IMultiValueConverter
+public class AutoSizeConverter : IValueConverter
 {
-    public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
+    public double Default { get; set; }
+
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (values is null || values.Count < 2)
-            return AvaloniaProperty.UnsetValue;
+        double newValue = Default;
+        if (!double.TryParse(parameter?.ToString(), out var paraValue))
+            newValue = paraValue;
 
-        double.TryParse(values[0]?.ToString(), out var value1);
-        double.TryParse(values[1]?.ToString(), out var value2);
+        if (value is not Rect rect)
+            return newValue;
 
-        if (double.IsNaN(value1) || double.IsNaN(value2))
-            return 20d;
+        if (rect.Width == 0 && rect.Height == 0)
+            return newValue;
 
-        return Math.Min(value1, value2);
+        return Math.Min(rect.Width, rect.Height);
+    }
+
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
     }
 }

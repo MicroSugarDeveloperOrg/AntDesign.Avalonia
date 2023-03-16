@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="ListBoxItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ListBoxItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ListBoxItemPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="ListBoxItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ListBoxItemPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="ListBoxItemPressedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="ListBoxItemSelectedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemSelectedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemSelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="ListBoxItemSelectedNoFocusForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	
+	<SolidColorBrush x:Key="ListBoxItemInnerBorderBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="ListBoxItemPrimaryPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimaryPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimaryPressedBorderBrush" Color="Transparent"/>
+						 
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+						 
+	<SolidColorBrush x:Key="ListBoxItemPrimarySelectedNoFocusForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+
+	<SolidColorBrush x:Key="ListBoxItemPrimaryInnerBorderBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+</ResourceDictionary>

@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<SolidColorBrush x:Key="TabBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+	<SolidColorBrush x:Key="TabItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TabItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TabItemBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TabItemPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TabItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="TabItemPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="TabItemPointerOverPipeBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+
+	<SolidColorBrush x:Key="TabItemSelectedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="TabItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="TabItemSelectedBorderBrush" Color="Transparent"/>
+	
+	<SolidColorBrush x:Key="TabItemSelectedPipeBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	
+</ResourceDictionary>

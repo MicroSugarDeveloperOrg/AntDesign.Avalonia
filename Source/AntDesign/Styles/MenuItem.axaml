@@ -1,0 +1,267 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:helpers="using:AntDesign.Helpers"
+					xmlns:assists="using:AntDesign.Assists"
+					x:CompileBindings="True">
+	<Design.PreviewWith>
+		<Border Padding="20" Width="320">
+			<StackPanel Spacing="20" HorizontalAlignment="Left">
+				<MenuItem Header="_Standard"/>
+				<MenuItem IsSelected="True" Header="Selected"/>
+				<MenuItem Header="With Icon">
+					<MenuItem.Icon>
+						<TextBlock>😊</TextBlock>
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="With CheckBox">
+					<MenuItem.Icon>
+						<CheckBox IsChecked="True"/>
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="Input Gesture" InputGesture="Ctrl+G"/>
+				<MenuItem Header="Disabled" IsEnabled="False"/>
+				<MenuItem Header="-"/>
+				<MenuItem Header="Parent" IsSubMenuOpen="True">
+					<MenuItem Header="Child 1"/>
+					<MenuItem Header="Child 2"/>
+					<MenuItem Header="Child 3"/>
+					<Separator/>
+					<MenuItem Header="Child 4"/>
+					<MenuItem Header="Child 5"/>
+					<MenuItem Header="Child 6"/>
+					<MenuItem Header="Child 7"/>
+					<MenuItem Header="Child 8"/>
+					<MenuItem Header="Child 9"/>
+					<MenuItem Header="Child 10"/>
+					<MenuItem Header="Child 11"/>
+					<MenuItem Header="Child 12"/>
+					<MenuItem Header="Child 13"/>
+					<MenuItem Header="Child 14"/>
+					<MenuItem Header="Child 15"/>
+					<MenuItem Header="Child 16"/>
+					<MenuItem Header="Child 17"/>
+					<MenuItem Header="Child 18"/>
+					<MenuItem Header="Child 19"/>
+				</MenuItem>
+				<MenuItem Header="Disabled Parent" IsEnabled="False">
+					<MenuItem Header="Child"/>
+				</MenuItem>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type MenuItem}" TargetType="MenuItem">
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="Background" Value="{DynamicResource MenuItemBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource MenuItemForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource MenuItemBorderBrush}" />
+		<Setter Property="assists:MenuItemAssists.PointerOverBackground" Value="{DynamicResource MenuItemPointerOverBackground}" />
+		<Setter Property="assists:MenuItemAssists.PointerOverForeground" Value="{DynamicResource MenuItemPointerOverForeground}" />
+		<Setter Property="assists:MenuItemAssists.PointerOverBorderBrush" Value="{DynamicResource MenuItemPointerOverBorderBrush}" />
+		<Setter Property="assists:MenuItemAssists.PressedBackground" Value="{DynamicResource MenuItemPressedBackground}" />
+		<Setter Property="assists:MenuItemAssists.PressedForeground" Value="{DynamicResource MenuItemPressedForeground}" />
+		<Setter Property="assists:MenuItemAssists.PressedBorderBrush" Value="{DynamicResource MenuItemPressedBorderBrush}" />
+		<Setter Property="assists:MenuItemAssists.SelectedBackground" Value="{DynamicResource MenuItemSelectedBackground}" />
+		<Setter Property="assists:MenuItemAssists.SelectedForeground" Value="{DynamicResource MenuItemSelectedForeground}" />
+		<Setter Property="assists:MenuItemAssists.SelectedBorderBrush" Value="{DynamicResource MenuItemSelectedBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{StaticResource OverlayCornerRadius}" />
+		<!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
+		<Setter Property="Padding" Value="{DynamicResource MenuItemPadding}" />
+		<Setter Property="Margin" Value="{StaticResource Margin}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="MenuItem">
+				<Panel>
+					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							Margin="{TemplateBinding Margin}">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"
+												  SharedSizeGroup="MenuItemIcon" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto"
+												  SharedSizeGroup="MenuItemIGT" />
+								<ColumnDefinition Width="Auto"
+												  SharedSizeGroup="MenuItemChevron" />
+							</Grid.ColumnDefinitions>
+
+							<Viewbox Name="{x:Static helpers:PARTNameHelper.PART_IconPresenter}"
+									 Margin="{DynamicResource MenuIconPresenterMargin}"
+									 StretchDirection="DownOnly"
+									 HorizontalAlignment="Center"
+									 VerticalAlignment="Center"
+									 IsVisible="False"
+									 Width="{DynamicResource MenuIconWidth}" 
+									 Height="{DynamicResource MenuIconHeight}">
+								<ContentPresenter Content="{TemplateBinding Icon}"/>
+							</Viewbox>
+
+							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_HeaderPresenter}"
+											  Content="{TemplateBinding Header}"
+											  ContentTemplate="{TemplateBinding ItemTemplate}"
+											  VerticalAlignment="Center"
+											  HorizontalAlignment="Stretch"
+											  RecognizesAccessKey="True"
+											  Grid.Column="1"/>
+							
+							<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_InputGestureText}"
+									   Grid.Column="2"
+									   Classes="CaptionTextBlockStyle"
+									   Margin="{DynamicResource MenuInputGestureTextMargin}"
+									   Text="{TemplateBinding InputGesture, Converter={StaticResource KeyGestureConverter}}"
+									   HorizontalAlignment="Right"
+									   VerticalAlignment="Center"
+									   Opacity="{DynamicResource MenuInputGestureTextOpacity}"
+									   Foreground="{TemplateBinding Foreground}"/>
+							
+							<Path Name="{x:Static helpers:PARTNameHelper.PART_ChevronPath}"
+								  Stretch="Uniform"
+								  Width="{DynamicResource MenuItemIconWidth}"
+								  Height="{DynamicResource MenuItemIconHeight}"
+								  Data="{StaticResource MenuItemChevronPathData}"
+								  Fill="{TemplateBinding Foreground}"
+								  Margin="{DynamicResource MenuItemChevronMargin}"
+								  VerticalAlignment="Center"
+								  Grid.Column="3" />
+						</Grid>
+					</Border>
+					
+					<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
+						   WindowManagerAddShadowHint="False"
+						   PlacementMode="Right"
+						   HorizontalOffset="{DynamicResource MenuSubItemPopupHorizontalOffset}"
+						   IsLightDismissEnabled="False"
+						   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
+						<Border Background="Transparent"
+							    Padding="{DynamicResource PopupShadowPadding}">
+							<Border Background="{DynamicResource MenuItemPopupBackground}"
+									TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
+									BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
+									BorderThickness="{DynamicResource BorderThickness}"
+									CornerRadius="{DynamicResource OverlayCornerRadius}"
+									Padding="{DynamicResource PopupPadding}"
+									MaxWidth="{DynamicResource MenuItemPopupMaxWidth}"
+									MinHeight="{DynamicResource MenuItemPopupMinHeight}"
+									HorizontalAlignment="Stretch"
+									BoxShadow="{DynamicResource MenuItemPopupShadow}">
+								<ScrollViewer Theme="{StaticResource AntDesignMenuScrollViewer}">
+									<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+													ItemsPanel="{TemplateBinding ItemsPanel}"
+													Margin="{DynamicResource MenuItemPopupScrollerMargin}"
+													Grid.IsSharedSizeScope="True" />
+								</ScrollViewer>
+							</Border>
+						</Border>
+					
+					</Popup>
+				
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:icon /template/ Viewbox#PART_IconPresenter">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
+
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Path#PART_ChevronPath">
+				<Setter Property="Fill" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.SelectedBorderBrush}" />			
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.SelectedForeground}" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.SelectedForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Path#PART_ChevronPath">
+				<Setter Property="Fill" Value="{TemplateBinding assists:MenuItemAssists.SelectedForeground}" />
+			</Style>
+		</Style>
+
+		<!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
+		<Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBorderBrush}" />
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Path#PART_ChevronPath">
+				<Setter Property="Fill" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
+			</Style>
+		</Style>
+
+
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PressedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.PressedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PressedForeground}" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:MenuItemAssists.PressedForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Path#PART_ChevronPath">
+				<Setter Property="Fill" Value="{TemplateBinding assists:MenuItemAssists.PressedForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{DynamicResource DisableBackground}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+				<Setter Property="Foreground" Value="{DynamicResource DisableForeground}" />
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+			<Style Selector="^ /template/ Path#PART_ChevronPath">
+				<Setter Property="Fill" Value="{DynamicResource DisableForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:open /template/ Path#PART_ChevronPath">
+		</Style>
+
+		<Style Selector="^:empty /template/ Path#PART_ChevronPath">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+		<Style Selector="^:separator">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="MenuItem">
+					<Separator/>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

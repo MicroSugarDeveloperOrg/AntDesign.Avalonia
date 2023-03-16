@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					x:CompileBindings="True">
+
+	<BoxShadows x:Key="MenuItemPopupShadow">0 0 10 1 #4FFFFFFF</BoxShadows>
+
+	<SolidColorBrush x:Key="MenuItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="MenuItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="MenuItemBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="MenuItemPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
+	<SolidColorBrush x:Key="MenuItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="MenuItemPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="MenuItemPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="MenuItemPressedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="MenuItemPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="MenuItemSelectedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="MenuItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="MenuItemSelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
+
+
+	<SolidColorBrush x:Key="MenuItemPopupBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="MenuItemPopupForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="MenuItemPopupBorderBrush" Color="Transparent"/>
+
+
+</ResourceDictionary>
