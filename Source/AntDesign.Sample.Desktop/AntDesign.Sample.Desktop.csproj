@@ -12,7 +12,7 @@
 	</PropertyGroup>
 
 	<!-- Aot -->
-	<PropertyGroup>
+	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows')) OR  $([MSBuild]::IsOSPlatform('Linux'))">
 		<PublishAot>true</PublishAot>
 		<StripSymbols>true</StripSymbols>
 	</PropertyGroup>
