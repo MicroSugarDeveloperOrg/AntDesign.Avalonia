@@ -43,8 +43,6 @@
 							   BorderBrush="{TemplateBinding BorderBrush}"
 							   CornerRadius="{TemplateBinding CornerRadius}"
 							   Padding="0" 
-							   HorizontalContentAlignment="Stretch"
-							   VerticalContentAlignment="Stretch"
 							   AllowSpin="{TemplateBinding AllowSpin}"
 							   ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
 							   DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
@@ -90,8 +88,7 @@
 
 	<ControlTheme x:Key="AntDesignPrimaryNumericUpDownStyle" TargetType="NumericUpDown">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="Foreground" Value="{DynamicResource ButtonSpinnerForeground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource ButtonSpinnerPrimaryBorderBrush}" />
+		<Setter Property="Foreground" Value="{DynamicResource ButtonSpinnerForeground}" /> 
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
@@ -103,12 +100,10 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="NumericUpDown">
 				<ButtonSpinner x:Name="{x:Static helpers:PARTNameHelper.PART_Spinner}"
-							   Theme="{StaticResource PrimaryButtonSpinnerStyle}"
+							   Theme="{StaticResource PrimaryButtonSpinnerStyle}" 
 							   BorderThickness="{TemplateBinding BorderThickness}"
 							   CornerRadius="{TemplateBinding CornerRadius}"
 							   Padding="0"
-							   HorizontalContentAlignment="Stretch"
-							   VerticalContentAlignment="Stretch"
 							   AllowSpin="{TemplateBinding AllowSpin}"
 							   ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
 							   DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}">

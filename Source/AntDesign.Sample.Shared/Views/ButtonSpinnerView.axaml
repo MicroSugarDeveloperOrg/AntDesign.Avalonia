@@ -5,6 +5,7 @@
 			 xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
 			 xmlns:behaviors="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
 			 xmlns:assists="using:AntDesign.Assists"
+			 xmlns:sys="using:System"
 			 xmlns:viewmodels="using:AntDesign.Sample.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 x:DataType="viewmodels:ButtonSpinnerViewModel"
@@ -38,6 +39,7 @@
 							<ButtonSpinner Width="120" Height="35" />
 							<ButtonSpinner Width="120" Height="35" ButtonSpinnerLocation="Left" />
 							<ButtonSpinner Width="120" Height="35" Classes="center" />
+							<ButtonSpinner Width="120" Height="35" ShowButtonSpinner="False" />
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ButtonSpinner Width="120" Height="35" Theme="{StaticResource PrimaryButtonSpinnerStyle}" />
@@ -189,10 +191,23 @@
 									</behaviors:EventTriggerBehavior>
 								</i:Interaction.Behaviors>
 							</ButtonSpinner>
+							
+
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<TextBlock Text="{Binding Message}"/>
 						</StackPanel>
+
+						<ButtonSpinner >
+							<DataValidationErrors.Error>
+								<sys:Exception>
+									<x:Arguments>
+										<x:String>Error</x:String>
+									</x:Arguments>
+								</sys:Exception>
+							</DataValidationErrors.Error>
+						</ButtonSpinner>
+						
 					</StackPanel>
 
 					<Separator Grid.Row="1" SeparatorAssists.Content="Spin事件"/>

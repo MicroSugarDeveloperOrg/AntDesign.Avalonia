@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:sys="using:System"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.NumericUpDownView">
 
@@ -32,16 +33,13 @@
 						<StackPanel Spacing="20" Orientation="Horizontal">
 							<NumericUpDown Width="160" Height="35"/>
 							<NumericUpDown Width="160" Height="35" ButtonSpinnerLocation="Left" />
-						</StackPanel>
-
-						<StackPanel Spacing="20" Orientation="Horizontal">
 							<NumericUpDown Width="160" Height="35" Classes="center"  />
-							<NumericUpDown Width="160" Height="35" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" Classes="center"   />
 						</StackPanel>
-
+ 
 						<StackPanel Spacing="20" Orientation="Horizontal">
 							<NumericUpDown Width="160" Height="35" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" />
 							<NumericUpDown Width="160" Height="35" ButtonSpinnerLocation="Left" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" />
+							<NumericUpDown Width="160" Height="35" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" Classes="center"   />
 						</StackPanel>
 
 
@@ -62,8 +60,93 @@
 
 			</Border>
 
+			<Border Grid.Column="2" Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="10"
+								Margin="5"
+								VerticalAlignment="Center">
+
+						<StackPanel Spacing="20" Orientation="Horizontal">
+							<NumericUpDown Width="160" Height="35" Watermark="Input new"  AllowSpin="False"/> 
+							<NumericUpDown Width="160" Height="35" ButtonSpinnerLocation="Left" IsReadOnly="True"/>
+							<NumericUpDown Width="160" Height="35" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}"  ShowButtonSpinner="False"/>
+							<NumericUpDown Width="160" Height="35" ButtonSpinnerLocation="Left" Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}"  IsReadOnly="True"/>
+						</StackPanel>
+
+						<StackPanel Spacing="5"> 
+							<NumericUpDown >
+								<DataValidationErrors.Error>
+									<sys:Exception />
+								</DataValidationErrors.Error>
+							</NumericUpDown>
+							<NumericUpDown Theme="{StaticResource AntDesignPrimaryNumericUpDownStyle}" >
+								<DataValidationErrors.Error>
+									<sys:Exception />
+								</DataValidationErrors.Error>
+							</NumericUpDown>
+						</StackPanel>
+						
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="属性设置"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过Watermark 设置水印"/>
+						<TextBlock Text="通过AllowSpin 可以启用和禁用上下调节按钮"/>
+						<TextBlock Text="通过ShowButtonSpinner 设置是否显示上下调节按钮"/>
+						<TextBlock Text="通过IsReadOnly 可以设置为只读"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
 
 			<Border Grid.Column="0" Grid.Row="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,*">
+					<StackPanel Grid.Row="0" Spacing="10"
+								Margin="5"
+								VerticalAlignment="Center">
+
+						<StackPanel Spacing="20" Orientation="Horizontal">
+							<NumericUpDown Width="160" Height="35" Minimum="0" Maximum="10" Increment="0.5" />
+							<NumericUpDown Width="160" Height="35" ButtonSpinnerLocation="Left" Minimum="0" Maximum="10" Increment="0.5" FormatString="{Binding Formater}"/>
+						</StackPanel>
+
+						<StackPanel Spacing="20" Orientation="Horizontal"> 
+							<TextBox Text="{Binding Formater, Mode=TwoWay}"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="属性设置"/>
+
+					<StackPanel Grid.Row="2" Spacing="10"
+								Margin="20,0,0,0"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="通过Minimum  Maximum Increment设置数值上下限以及每次增加减少的数值"/>
+						<TextBlock Text="通过FormatString 设置显示数值的格式"/>
+						<TextBlock Text="通过TextConverter 设置格式转换（在多语言下不同国家数值的小数点显示方式不同）"/>
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+
+			<Border Grid.Column="2" Grid.Row="2"
 					BorderThickness="{StaticResource OverlayBorderThickness}"
 					CornerRadius="{StaticResource OverlayCornerRadius}"
 					BorderBrush="{DynamicResource AntDesignBorderBrush}">
