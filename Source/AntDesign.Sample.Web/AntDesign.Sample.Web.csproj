@@ -6,9 +6,16 @@
 		<OutputType>Exe</OutputType>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
-		<WasmBuildNative>true</WasmBuildNative>
-		<EmccFlags>-sVERBOSE -sERROR_ON_UNDEFINED_SYMBOLS=0</EmccFlags>
 		<RootNamespace>AntDesign.Sample</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<EmccInitialHeapSize>16384000</EmccInitialHeapSize>
+		<WasmShellILLinkerEnabled>false</WasmShellILLinkerEnabled>
+		<UseAvaloniaWasmDefaultOptimizations Condition="'$(UseAvaloniaWasmDefaultOptimizations)'==''">True</UseAvaloniaWasmDefaultOptimizations>
+		<EmccExtraLDFlags>$(EmccExtraLDFlags)</EmccExtraLDFlags>
+		<EmccFlags>$(EmccExtraLDFlags) -sERROR_ON_UNDEFINED_SYMBOLS=0</EmccFlags>
+		<WasmBuildNative>true</WasmBuildNative>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">

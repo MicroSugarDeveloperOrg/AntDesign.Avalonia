@@ -18,6 +18,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Include="..\AntDesign.Sample.Browser.Blazor\LayoutView.razor" Link="LayoutView.razor" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Avalonia" />
 	</ItemGroup>
 
