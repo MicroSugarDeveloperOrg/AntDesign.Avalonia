@@ -39,7 +39,7 @@
 
 		<Grid Grid.Row="2" ColumnDefinitions="Auto,5,10,*,15">
 			<ListBox Grid.Column="0" MinWidth="200" BorderThickness="0,0,0,0"
-					 Items="{Binding Routers}" SelectedItem="{Binding SelectedItem}">
+					 ItemsSource="{Binding Routers}" SelectedItem="{Binding SelectedItem}">
 				<ListBox.Styles>
 					<Style Selector="ListBoxItem" x:DataType="routers:Router">
 						<Setter Property="Height" Value="40"/>
@@ -95,21 +95,21 @@
 
 				<Border Padding="5">
 					<StackPanel Spacing="20">
-						<Border Width="40" Height="40" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+						<Border Width="40" Height="40" CornerRadius="40" Background="Transparent" BoxShadow="0 0 6 1 LightGray">
 							<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding ToolPopOpenCommand}">
 								<Button.Content>
 									<PathIcon Data="{StaticResource ThemeEditorGeometry}"/>
 								</Button.Content>
 							</Button>
 						</Border>
-						<Border Width="40" Height="40" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+						<Border Width="40" Height="40" CornerRadius="40" Background="Transparent" BoxShadow="0 0 6 1 LightGray">
 							<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding SwitchThemeCommand}">
 								<Button.Content>
 									<PathIcon Data="{StaticResource ThemeSwitchGeometry}"/>
 								</Button.Content>
 							</Button>
 						</Border>
-						<Border Width="40" Height="40" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+						<Border Width="40" Height="40" CornerRadius="40" Background="Transparent" BoxShadow="0 0 6 1 LightGray">
 							<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding ToolPopOpenCommand}">
 								<Button.Content>
 									<PathIcon Data="{StaticResource ThemeChangeGeometry}"/>
@@ -121,7 +121,7 @@
 			</Popup>
 
 			<Grid x:Name="PART_ToolPopButtonContainer" Width="50" >
-				<Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
+				<Border Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="40" BoxShadow="0 0 6 1 LightGray">
 					<Button Width="40" Height="40" CornerRadius="40"  Theme="{StaticResource TextButtonStyle}" Command="{Binding ToolPopOpenCommand}">
 						<Button.Content>
 							<PathIcon Data="{StaticResource ToolPopButtonGeometry}"/>

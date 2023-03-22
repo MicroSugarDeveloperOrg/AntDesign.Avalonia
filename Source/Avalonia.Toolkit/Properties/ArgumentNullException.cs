@@ -2,7 +2,9 @@
 using System.Runtime.CompilerServices;
 
 namespace Avalonia.Toolkit;
-internal sealed class ArgumentNullException
+
+[Serializable]
+internal sealed class ArgumentNullException : ArgumentException
 {
     /// <summary>
     /// Throws an <see cref="System.ArgumentNullException"/> if <paramref name="argument"/> is <see langword="null"/>.
@@ -10,12 +12,11 @@ internal sealed class ArgumentNullException
     /// <param name="argument">The reference type argument to validate as non-<see langword="null"/>.</param>
     /// <param name="paramName">The name of the parameter with which <paramref name="argument"/> corresponds.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    //[CLSCompliant(false)]
     public static void ThrowIfNull([NotNull] object? argument, [CallerArgumentExpression(nameof(argument))] string? paramName = null)
     {
         if (argument is null)
-        {
             Throw(paramName);
-        }
     }
 
     /// <summary>

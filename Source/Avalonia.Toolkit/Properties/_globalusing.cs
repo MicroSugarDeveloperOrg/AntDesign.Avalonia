@@ -1,8 +1,13 @@
 global using Avalonia.Media;
 global using Avalonia.Media.Fonts;
+global using Avalonia.Media.TextFormatting;
+global using Avalonia.Media.TextFormatting.Unicode;
 global using Avalonia.Platform;
 global using Avalonia.Skia;
+global using HarfBuzzSharp;
 global using SkiaSharp;
-global using System.Collections.Concurrent;  
-global using System.Globalization;
+global using System.Buffers;
+global using System.Collections.Concurrent;
 global using System.Diagnostics.CodeAnalysis;
+global using System.Globalization;
+global using System.Runtime.InteropServices;

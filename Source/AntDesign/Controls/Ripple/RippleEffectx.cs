@@ -4,6 +4,7 @@ public class RippleEffectx : Border
 {
     static RippleEffectx()
     {
+        BackgroundProperty.OverrideDefaultValue<RippleEffectx>(Brushes.Transparent);
         IsRippleProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
         RippleColorProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
         RippleColorAlphaProperty.Changed.AddClassHandler<RippleEffectx>((s, e) => s.ResetRipple(s));
@@ -13,7 +14,7 @@ public class RippleEffectx : Border
 
     public RippleEffectx()
     {
-    
+ 
     }
 
     public static readonly StyledProperty<bool> IsRippleProperty =

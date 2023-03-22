@@ -172,8 +172,7 @@
 								Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
-								CornerRadius="{TemplateBinding CornerRadius}"
-								Padding="{TemplateBinding Padding}">
+								CornerRadius="{TemplateBinding CornerRadius}">
 							<Panel>
 								<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_FloatingWatermark}"
 										   FontSize="{TemplateBinding FontSize}"
@@ -199,7 +198,8 @@
 
 									<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_InnerDockPanel}"
 										   Grid.Column="1"
-										   Grid.ColumnSpan="1"
+										   Grid.ColumnSpan="1" 
+										   Margin="{TemplateBinding Padding}"
 										   Cursor="IBeam" >
 
 										<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
@@ -419,8 +419,7 @@
 							Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
-							CornerRadius="{TemplateBinding CornerRadius}"
-							Padding="{TemplateBinding Padding}"
+							CornerRadius="{TemplateBinding CornerRadius}" 
 							MinWidth="{TemplateBinding MinWidth}"
 							MinHeight="{TemplateBinding MinHeight}"
 							BoxShadow="{TemplateBinding assists:TextBoxAssists.Shadows}">

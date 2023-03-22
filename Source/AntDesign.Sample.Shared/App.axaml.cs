@@ -52,9 +52,8 @@ public partial class App : Application
 
     bool RegisterInternalServices()
     {
-        AvaloniaLocator.CurrentMutable.UseToolkitFontManager();
+        //AvaloniaLocator.CurrentMutable.UseToolkitFontManager();
         _container.AddSingleton<IServiceCollection>(_container);
-        _container.AddSingleton<IGlobalThemeVariantProvider>(provider => AvaloniaLocator.Current.GetRequiredService<IGlobalThemeVariantProvider>());
         _container.AddSingleton<IThemeService, ThemeService>();
 
         return true;

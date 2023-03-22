@@ -6,6 +6,8 @@ public class RippleEffect : Border
 {
     static RippleEffect()
     {
+        BackgroundProperty.OverrideDefaultValue<RippleEffect>(Brushes.Transparent);
+
         IsRippleProperty.Changed.AddClassHandler<RippleEffect, bool>((s, e) =>
         {
 
@@ -43,6 +45,7 @@ public class RippleEffect : Border
         {
 
         });
+
     }
 
     public RippleEffect()

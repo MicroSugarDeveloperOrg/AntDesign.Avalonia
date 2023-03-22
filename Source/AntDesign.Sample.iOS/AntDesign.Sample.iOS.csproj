@@ -8,7 +8,7 @@
 		<RootNamespace>AntDesign.Sample</RootNamespace>
 
 		<!-- These properties need to be set in order to run on a real iDevice -->
-		<!--<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>-->
+		<!--<RuntimeIdentifiers>iossimulator-x64;ios-arm64</RuntimeIdentifiers>-->
 		<!--<CodesignKey></CodesignKey>-->
 	</PropertyGroup>
 

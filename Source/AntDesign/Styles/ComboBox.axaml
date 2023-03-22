@@ -85,7 +85,7 @@
 			<ControlTemplate TargetType="ComboBox">
 				<DataValidationErrors x:Name="PART_ErrorContainer"
 									  Margin="{TemplateBinding Margin}">
-					<ripple:RippleEffectx x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+					<ripple:RippleEffectx x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"  
 										  IsRipple="{TemplateBinding assists:ComboBoxAssists.IsRipple}"
 										  RippleColor="{TemplateBinding assists:ComboBoxAssists.RippleColor}"
 										  RippleColorAlpha="{TemplateBinding assists:ComboBoxAssists.RippleColorAlpha}"
@@ -230,8 +230,8 @@
 				<Setter Property="Opacity" Value="{DynamicResource InnerElementOpacity} " />
 			</Style>
 		</Style>
-
-		<Style Selector="^[IsDropDownOpen=true]:not(:focused)">
+ 
+		<Style Selector="^:dropdownopen:not(:focused)">
 			<Style Selector="^ /template/ ripple|RippleEffectx#PART_LayoutRoot">
 				<Setter Property="IsRipple" Value="True" />
 			</Style>
@@ -299,6 +299,15 @@
 					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
 				</Style>
 			</Style>
+			
+			<Style Selector="^:dropdownopen:not(:focused)">
+				<Style Selector="^ /template/ DataValidationErrors#PART_ErrorContainer">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+				</Style>
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
 		</Style>
 
 		<Style Selector="^.right">
@@ -335,6 +344,16 @@
 					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
 				</Style>
 			</Style>
+			
+			<Style Selector="^:dropdownopen:not(:focused)">
+				<Style Selector="^ /template/ DataValidationErrors#PART_ErrorContainer">
+					<Setter Property="Margin" Value="{TemplateBinding BorderThickness, Converter={StaticResource OnlyLeftReverseMargin}}"/>
+				</Style>
+				<Style Selector="^ /template/ Border#PART_BorderElement">
+					<Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness}" />
+				</Style>
+			</Style>
+			
 		</Style>
 
 	</ControlTheme>

@@ -3,6 +3,10 @@ public class RippleEffectAx : Border
 {
     static RippleEffectAx()
     {
+        BackgroundProperty.OverrideDefaultValue<RippleEffectAx>(Brushes.Transparent);
+        BorderBrushProperty.OverrideDefaultValue<RippleEffectAx>(null);
+        BorderThicknessProperty.OverrideDefaultValue<RippleEffectAx>(new Thickness(1));
+ 
         IsTriggerProperty.Changed.AddClassHandler<RippleEffectAx, bool>((s, e) =>
         {
             if (s is null)
@@ -37,10 +41,6 @@ public class RippleEffectAx : Border
         AddHandler(PointerPressedEvent, PointerPressedHandler);
         AddHandler(PointerReleasedEvent, PointerReleasedHandler);
         AddHandler(PointerCaptureLostEvent, PointerCaptureLostHandler);
-
-        Background = Brushes.Transparent;
-        BorderThickness = new Thickness(1);
-        BorderBrush = null;
         RenderTransform = new ScaleTransform(RippleFromScal, RippleFromScal);
     }
 

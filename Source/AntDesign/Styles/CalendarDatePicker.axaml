@@ -63,6 +63,7 @@
 						<TextBox.InnerRightContent>
 							<Button x:Name="{x:Static helpers:PARTNameHelper.PART_Button}"
 									Focusable="False"
+									Margin="0"
 									HorizontalAlignment="Right"
 									Width="{DynamicResource CalendarDatePickerButtonWidth}"
 									BorderBrush="{Binding $parent.BorderBrush}"

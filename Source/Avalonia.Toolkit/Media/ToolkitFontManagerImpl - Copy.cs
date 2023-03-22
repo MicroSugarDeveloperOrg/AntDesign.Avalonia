@@ -60,9 +60,10 @@ public class ToolkitFontManagerImpl : FontManagerBase, IFontManagerImpl
         return _toolkitFamilyName;
     }
 
-    IEnumerable<string> IFontManagerImpl.GetInstalledFontFamilyNames(bool checkForUpdates)
+    string[] IFontManagerImpl.GetInstalledFontFamilyNames(bool checkForUpdates)
     {
-        return _toolkitTypefaces.Select(x => x.FontFamily.Name);
+        var list = _toolkitTypefaces.Select(x => x.FontFamily.Name);
+        return list.ToArray();
     }
 
     bool IFontManagerImpl.TryMatchCharacter(int codepoint, FontStyle fontStyle, FontWeight fontWeight, FontStretch fontStretch,
@@ -83,11 +84,13 @@ public class ToolkitFontManagerImpl : FontManagerBase, IFontManagerImpl
         return true;
     }
 
-    IGlyphTypeface IFontManagerImpl.CreateGlyphTypeface(Typeface typeface)
+    bool IFontManagerImpl.TryCreateGlyphTypeface(string familyName, FontStyle style, FontWeight weight,
+            FontStretch stretch, [NotNullWhen(returnValue: true)] out IGlyphTypeface? glyphTypefac)
     {
+        glyphTypefac = default;
         Typeface? needTypeface = default;
-        var fontWeight = typeface.Weight;
-        switch (typeface.FontFamily.Name)
+        var fontWeight = weight;
+        switch (familyName)
         {
             case FontFamily.DefaultFontFamilyName:
                 {
@@ -129,16 +132,19 @@ public class ToolkitFontManagerImpl : FontManagerBase, IFontManagerImpl
                 }
                 break;
             case _fontFamilyName:
-                needTypeface = typeface;
+                needTypeface = _defaultTypeface;
                 break; 
         }
 
         SKTypeface skTypeface;
         if (needTypeface is null)
-            skTypeface = SKTypeface.FromFamilyName(typeface.FontFamily.Name, (SKFontStyleWeight)typeface.Weight, SKFontStyleWidth.Normal, (SKFontStyleSlant)typeface.Style);
+            skTypeface = SKTypeface.FromFamilyName(familyName, (SKFontStyleWeight)weight, SKFontStyleWidth.Normal, (SKFontStyleSlant)style);
         else
             skTypeface = GetRealTypeface(needTypeface.Value);
-        return new GlyphTypefaceImpl(skTypeface,FontSimulations.None);
+
+        glyphTypefac =  new GlyphTypefaceImpl(skTypeface,FontSimulations.None);
+
+        return true;
     }
 
    

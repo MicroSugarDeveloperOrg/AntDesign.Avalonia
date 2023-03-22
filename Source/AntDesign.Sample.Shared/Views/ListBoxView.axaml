@@ -42,7 +42,7 @@
 								<ListBoxItem Content="123123123"/> 
 							</ListBox>
 
-							<ItemsControl BorderThickness="1" BorderBrush="{StaticResource AntDesignBorderBrush}" CornerRadius="10">
+							<ItemsControl BorderThickness="1" BorderBrush="{DynamicResource AntDesignBorderBrush}" CornerRadius="10">
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123" IsEnabled="False"/>
 								<ListBoxItem Content="123123123"/>
@@ -89,7 +89,8 @@
 								<ListBoxItem Content="123123123"/>
 							</ListBox>
 
-							<ItemsControl BorderThickness="1" BorderBrush="{StaticResource AntDesignBorderBrush}" CornerRadius="10" ItemContainerTheme="{StaticResource AntDesignListBoxItemStyle}">
+							<ItemsControl BorderThickness="1" BorderBrush="{DynamicResource AntDesignBorderBrush}" CornerRadius="10" 
+										  ItemContainerTheme="{StaticResource AntDesignListBoxItemStyle}">
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123" IsEnabled="False"/>
 								<ListBoxItem Content="123123123"/>
@@ -134,7 +135,7 @@
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123"/>
 							</ListBox>
-							<ItemsControl IsEnabled="False" BorderThickness="1" BorderBrush="{StaticResource AntDesignBorderBrush}" CornerRadius="10">
+							<ItemsControl IsEnabled="False" BorderThickness="1" BorderBrush="{DynamicResource AntDesignBorderBrush}" CornerRadius="10">
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123"/>

@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Toolkit;
 using Avalonia.ReactiveUI;
 
 namespace AntDesign.Sample;
@@ -17,6 +18,7 @@ internal class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
                      .UsePlatformDetect()
+                     .UseAvaloniaToolkit()
                      .LogToTrace()
                      .UseReactiveUI();
 }

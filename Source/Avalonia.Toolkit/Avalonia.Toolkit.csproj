@@ -13,6 +13,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Remove="Media\ToolkitFontManagerImpl - Copy.cs" />
+    </ItemGroup>
+
+	<ItemGroup>
+		<None Include="Media\ToolkitFontManagerImpl - Copy.cs" />
+	</ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Avalonia" />
         <PackageReference Include="Avalonia.Skia" />
         <PackageReference Include="PolySharp">
