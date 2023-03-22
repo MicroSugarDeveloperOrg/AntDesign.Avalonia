@@ -1,0 +1,6 @@
+﻿<linker>
+	<assembly fullname="AntDesign" preserve="All" />
+	<assembly fullname="AntDesign.Sample.Shared" preserve="All" />
+	<assembly fullname="Avalonia.ReactiveUI.Toolkit" preserve="All" />
+	<assembly fullname="Avalonia.Toolkit" preserve="All" />
+</linker>

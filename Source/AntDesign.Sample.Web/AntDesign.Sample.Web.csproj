@@ -7,6 +7,7 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
 		<WasmBuildNative>true</WasmBuildNative>
+		<EmccFlags>-sVERBOSE -sERROR_ON_UNDEFINED_SYMBOLS=0</EmccFlags>
 		<RootNamespace>AntDesign.Sample</RootNamespace>
 	</PropertyGroup>
 
@@ -19,6 +20,10 @@
 		<EmccCompileOptimizationFlag>-O2</EmccCompileOptimizationFlag>
 		<EmccLinkOptimizationFlag>-O2</EmccLinkOptimizationFlag>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<TrimmerRootDescriptor Include="Properties\rd.xml" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<WasmExtraFilesToDeploy Include="AppBundle\**" />
