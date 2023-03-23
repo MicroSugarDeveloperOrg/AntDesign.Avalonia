@@ -42,7 +42,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.DataGrid", "Sourc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.ColorPicker", "Source\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj", "{645C820A-D238-4BBE-AFBD-CE7D1CCE5C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntDesign.Sample.Browser.Blazor", "Source\AntDesign.Sample.Browser.Blazor\AntDesign.Sample.Browser.Blazor.csproj", "{59995A84-7594-4143-8D98-AA2ED2498D95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Sample.Browser.Blazor", "Source\AntDesign.Sample.Browser.Blazor\AntDesign.Sample.Browser.Blazor.csproj", "{59995A84-7594-4143-8D98-AA2ED2498D95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{DCC2662D-23F2-4146-B9A7-09A92D99A6C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +115,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3EA6BAF-855B-4E05-9F64-A203D3134F29} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
+		{DAFDCFB5-09C1-49C7-B84D-3F5BB549005E} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
+		{DE60FD72-637A-4B0D-9578-85C288264E76} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
+		{9ACCF9DB-3232-41EE-953F-E0031A78BD4F} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
+		{FC88A6CA-E875-4DE2-98F8-69A8728BB55C} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
+		{59995A84-7594-4143-8D98-AA2ED2498D95} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83CB65B8-011F-4ED7-BCD3-A6CFA935EF7E}
