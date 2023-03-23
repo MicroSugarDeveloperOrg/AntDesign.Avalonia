@@ -12,6 +12,7 @@
 		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource WindowBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource WindowForeground}"/>
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
+		<Setter Property="FontFamily" Value="{DynamicResource AntDesignFontFamily}"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Window">
 				<Panel>

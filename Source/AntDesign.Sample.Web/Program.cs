@@ -2,6 +2,7 @@
 using Avalonia;
 using Avalonia.Browser;
 using Avalonia.ReactiveUI;
+using Avalonia.Toolkit;
 using System.Runtime.Versioning;
 
 [assembly: SupportedOSPlatform("browser")]
@@ -12,6 +13,7 @@ internal partial class Program
     {
        await BuildAvaloniaApp()
             .UseReactiveUI()
+            .UseAvaloniaToolkit()
             .StartBrowserAppAsync("out");
     }
 

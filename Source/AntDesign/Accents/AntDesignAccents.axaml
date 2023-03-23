@@ -5,6 +5,8 @@
 					xmlns:sys="using:System" 
 					x:CompileBindings="True">
 
+	<FontFamily x:Key="AntDesignFontFamily">fonts:AntDesignFontFamilies#Alibaba PuHuiTi 2.0, $Default</FontFamily>
+
 	<!--Global-->
 	<x:Double x:Key="TitleFontSize">18</x:Double>
 	<x:Double x:Key="FontSize">14</x:Double>

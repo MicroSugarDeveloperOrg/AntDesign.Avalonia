@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Browser.Blazor;
 using Avalonia.ReactiveUI;
+using Avalonia.Toolkit;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using System.Runtime.Versioning;
 using antdesignApp = AntDesign.Sample.App;
@@ -20,6 +21,7 @@ public class Program
     {
         await AppBuilder.Configure<antdesignApp>()
                         .UseReactiveUI()
+                        .UseAvaloniaToolkit()
                         .StartBlazorAppAsync();
     }
 

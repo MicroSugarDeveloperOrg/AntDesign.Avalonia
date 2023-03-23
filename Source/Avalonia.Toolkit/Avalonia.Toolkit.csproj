@@ -7,9 +7,9 @@
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\*" />
-		<EmbeddedResource Include="Assets\Fonts\*.ttf" />
-		<EmbeddedResource Include="Assets\Fonts\AliBaba\*.ttf" />
-		<EmbeddedResource Include="Assets\Fonts\HanSans\*.ttf" />
+		<AvaloniaResource Include="Assets\Fonts\*.ttf" />
+		<AvaloniaResource Include="Assets\Fonts\AliBaba\*.ttf" />
+		<AvaloniaResource Include="Assets\Fonts\HanSans\*.ttf" />
     </ItemGroup>
 
     <ItemGroup>

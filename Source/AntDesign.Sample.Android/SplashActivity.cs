@@ -2,6 +2,7 @@
 using Avalonia;
 using Avalonia.Android;
 using Avalonia.ReactiveUI;
+using Avalonia.Toolkit;
 using Application = Android.App.Application;
 
 namespace AntDesign.Sample;
@@ -12,7 +13,8 @@ public class SplashActivity : AvaloniaSplashActivity<App>
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
-            .UseReactiveUI();
+                   .UseReactiveUI()
+                   .UseAvaloniaToolkit();
     }
 
     protected override void OnCreate(Bundle? savedInstanceState)
