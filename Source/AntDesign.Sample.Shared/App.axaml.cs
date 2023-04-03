@@ -3,7 +3,6 @@ using AntDesign.Sample.Services;
 using AntDesign.Sample.ViewModels;
 using AntDesign.Sample.Views;
 using Avalonia.Toolkit.Extensions;
-using Avalonia.Toolkit;
 
 namespace AntDesign.Sample;
 
@@ -111,6 +110,8 @@ public partial class App : Application
 
         //其他
         routingViewLocator.AddGroupRouter(() => "其他");
+        routingViewLocator.AddRouter<DataGridView, DataGridViewModel>(routerNameCallBack: () => "DataGrid 数据列表");
+        routingViewLocator.AddRouter<ColorPickerView, ColorPickerViewModel>(routerNameCallBack: () => "ColorPicker 颜色拾取");
         routingViewLocator.AddRouter<DialogsView, DialogsViewModel>(routerNameCallBack: () => "Dialogs 窗口");
 
         return true;

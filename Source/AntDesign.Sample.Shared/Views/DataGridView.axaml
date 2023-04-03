@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:models="using:AntDesign.Sample.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.DataGridView">
+	
+	<DataGrid Margin="12"  
+			  x:DataType="models:Person"
+			  Items="{Binding Persons}"
+			  CanUserResizeColumns="True" 
+			  CanUserReorderColumns="True" 
+			  CanUserSortColumns="True" 
+			  HeadersVisibility="All"
+		      AutoGenerateColumns="False" 
+			  RowBackground="#1000">
+		<DataGrid.Columns> 
+			<DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="6*"/>
+			<DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="4*"/>
+			<DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="3*"/>
+			<DataGridTextColumn Header="Tags" Binding="{Binding Tags}" Width="3*"/>
+			<DataGridTextColumn Header="Actions" Binding="{Binding Actions}" Width="3*" MinWidth="200" />
+		</DataGrid.Columns> 
+	</DataGrid>
+	
+</UserControl>
