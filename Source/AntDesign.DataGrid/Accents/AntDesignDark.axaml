@@ -2,7 +2,17 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	 
-	
-	
+	<SolidColorBrush x:Key="AntDesignDataGridBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignDataGridForeground" Color="White" Opacity="0.9"/>
+	<SolidColorBrush x:Key="AntDesignDataGridBorderBrush" Color="#313131"/>
+
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderBackground" Color="#1d1d1d"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderPointerOverBackground" Color="#303030"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderForeground" Color="White"/>
+
+	<SolidColorBrush x:Key="AntDesignDataGridRowBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignDataGridRowPointerOverBackground" Color="#1d1d1d"/>
+	<SolidColorBrush x:Key="AntDesignDataGridRowSelectedBackground" Color="#111a2c"/>
+	<SolidColorBrush x:Key="AntDesignDataGridRowSelectedPointerOverBackground" Color="#112545"/>
+
 </ResourceDictionary>

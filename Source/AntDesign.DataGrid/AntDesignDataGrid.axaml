@@ -10,7 +10,7 @@
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="avares://AntDesign.DataGrid/Styles/AntDesignControls.axaml" />
-				<ResourceInclude Source="avares://AntDesign.DataGrid/Accents/AntDesignColorMatching.axaml" />
+				<ResourceInclude Source="avares://AntDesign.DataGrid/Accents/AntDesignAccents.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>

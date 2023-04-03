@@ -10,9 +10,12 @@
 			  x:DataType="models:Person"
 			  Items="{Binding Persons}"
 			  CanUserResizeColumns="True" 
-			  CanUserReorderColumns="True" 
+			  CanUserReorderColumns="True"  
 			  CanUserSortColumns="True" 
-			  HeadersVisibility="All"
+			  HeadersVisibility="All"  
+			  GridLinesVisibility="Horizontal"
+			  HorizontalScrollBarVisibility="Visible"
+			  VerticalScrollBarVisibility="Visible"
 		      AutoGenerateColumns="False" 
 			  RowBackground="#1000">
 		<DataGrid.Columns> 
