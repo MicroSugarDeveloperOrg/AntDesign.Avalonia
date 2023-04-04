@@ -7,7 +7,7 @@
 
 	<antConverters:Items2ObjectsConverter x:Key="Items2ObjectsConverter"/>
 
-	<ControlTheme x:Key="HorizontalListBoxItemStyle" TargetType="ListBoxItem">
+	<ControlTheme x:Key="CarouselHorizontalListBoxItemStyle" TargetType="ListBoxItem">
 		<Setter Property="Background" Value="{DynamicResource CarouselListBoxItemBackground}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
@@ -43,7 +43,7 @@
 
 	</ControlTheme>
 
-	<ControlTheme x:Key="VerticalListBoxItemStyle" TargetType="ListBoxItem">
+	<ControlTheme x:Key="CarouselVerticalListBoxItemStyle" TargetType="ListBoxItem">
 		<Setter Property="Background" Value="{DynamicResource CarouselListBoxItemBackground}" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
@@ -79,8 +79,66 @@
 
 	</ControlTheme>
 
+	<ControlTheme x:Key="CarouselButtonStyle" TargetType="Button">
+		<Setter Property="Foreground" Value="{DynamicResource CarouselListBoxItemBackground}"/>
+		<Setter Property="Opacity" Value="0.5"/>
+		<Style Selector="^:pointerover">
+			<Setter Property="Opacity" Value="0.7"/>
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Opacity" Value="1"/>
+		</Style>
+		<!--<Style Selector="^:pointerover">
+			<Style Selector="^ > PathIcon">
+				<Setter Property="Foreground" Value="Red" />
+			</Style>
+		</Style>--> 
+	</ControlTheme>
 
-	<ControlTheme x:Key="{x:Type Carousel}" TargetType="Carousel"> 
+	<ControlTheme x:Key="CarouselLeftButtonStyle" TargetType="Button" 
+				  BasedOn="{StaticResource CarouselButtonStyle}">
+		<Setter Property="HorizontalAlignment" Value="Center"/> 
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button">
+				<PathIcon Data="{StaticResource LeftIconGeometry}"/>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="CarouselRightButtonStyle" TargetType="Button"
+				  BasedOn="{StaticResource CarouselButtonStyle}">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button">
+				<PathIcon Data="{StaticResource RightIconGeometry}"/>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="CarouselUpButtonStyle" TargetType="Button"
+				  BasedOn="{StaticResource CarouselButtonStyle}">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button">
+				<PathIcon Data="{StaticResource UpIconGeometry}"/>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="CarouselDownButtonStyle" TargetType="Button"
+				  BasedOn="{StaticResource CarouselButtonStyle}">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button">
+				<PathIcon Data="{StaticResource DownIconGeometry}"/>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	
+	<ControlTheme x:Key="{x:Type Carousel}" TargetType="Carousel">
+		<Setter Property="assists:CarouselAssists.ShowDots" Value="True"/>
+		<Setter Property="assists:CarouselAssists.ShowButtons" Value="True"/>
+		
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Carousel">
 				<Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,*,Auto" >
@@ -98,9 +156,19 @@
 					</ScrollViewer>
 
 					<ListBox x:Name="PART_ListBox"
+							 IsVisible="{TemplateBinding assists:CarouselAssists.ShowDots}"
 							 Cursor="Hand"
 							 ItemsSource="{TemplateBinding Items, Converter={StaticResource Items2ObjectsConverter}}"
 							 SelectedIndex="{TemplateBinding SelectedIndex, Mode=TwoWay}"/>
+
+					<Button x:Name="PART_Preview" 
+							IsVisible="{TemplateBinding assists:CarouselAssists.ShowButtons}"
+							Command="{Binding $parent[Carousel].Previous}"/>
+					
+					<Button x:Name="PART_Next" 
+							IsVisible="{TemplateBinding assists:CarouselAssists.ShowButtons}"
+							Command="{Binding $parent[Carousel].Next}" />
+				
 				</Grid>
 			</ControlTemplate>
 		</Setter>
@@ -113,7 +181,7 @@
 				<Setter Property="Grid.RowSpan" Value="1"/>
 				<Setter Property="Margin" Value="0,0,0,15"/>
 				<Setter Property="HorizontalAlignment" Value="Center"/>
-				<Setter Property="ItemContainerTheme" Value="{StaticResource HorizontalListBoxItemStyle}"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource CarouselHorizontalListBoxItemStyle}"/>
 				<Setter Property="ItemsPanel">
 					<Setter.Value>
 						<ItemsPanelTemplate>
@@ -121,6 +189,20 @@
 						</ItemsPanelTemplate>
 					</Setter.Value>
 				</Setter>
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Preview">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="1"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="3"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselLeftButtonStyle}"/>
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Next">
+				<Setter Property="Grid.Column" Value="2"/>
+				<Setter Property="Grid.ColumnSpan" Value="1"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="3"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselRightButtonStyle}"/>
 			</Style>
 		</Style>
 		
@@ -132,7 +214,7 @@
 				<Setter Property="Grid.RowSpan" Value="1"/>
 				<Setter Property="Margin" Value="0,15,0,0"/>
 				<Setter Property="HorizontalAlignment" Value="Center"/>
-				<Setter Property="ItemContainerTheme" Value="{StaticResource HorizontalListBoxItemStyle}"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource CarouselHorizontalListBoxItemStyle}"/>
 				<Setter Property="ItemsPanel">
 					<Setter.Value>
 						<ItemsPanelTemplate>
@@ -140,6 +222,20 @@
 						</ItemsPanelTemplate>
 					</Setter.Value>
 				</Setter>
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Preview">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="1"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="3"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselLeftButtonStyle}"/>
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Next">
+				<Setter Property="Grid.Column" Value="2"/>
+				<Setter Property="Grid.ColumnSpan" Value="1"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="3"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselRightButtonStyle}"/>
 			</Style>
 		</Style>
 
@@ -151,7 +247,7 @@
 				<Setter Property="Grid.RowSpan" Value="3"/>
 				<Setter Property="Margin" Value="15,0,0,0"/>
 				<Setter Property="VerticalAlignment" Value="Center"/>
-				<Setter Property="ItemContainerTheme" Value="{StaticResource VerticalListBoxItemStyle}"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource CarouselVerticalListBoxItemStyle}"/>
 				<Setter Property="ItemsPanel">
 					<Setter.Value>
 						<ItemsPanelTemplate>
@@ -159,6 +255,20 @@
 						</ItemsPanelTemplate>
 					</Setter.Value>
 				</Setter> 
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Preview">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="3"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="1"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselUpButtonStyle}"/>
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Next">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="3"/>
+				<Setter Property="Grid.Row" Value="2"/>
+				<Setter Property="Grid.RowSpan" Value="1"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselDownButtonStyle}"/>
 			</Style>
 		</Style>
 
@@ -170,7 +280,7 @@
 				<Setter Property="Grid.RowSpan" Value="3"/>
 				<Setter Property="Margin" Value="0,0,15,0"/>
 				<Setter Property="VerticalAlignment" Value="Center"/>
-				<Setter Property="ItemContainerTheme" Value="{StaticResource VerticalListBoxItemStyle}"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource CarouselVerticalListBoxItemStyle}"/>
 				<Setter Property="ItemsPanel">
 					<Setter.Value>
 						<ItemsPanelTemplate>
@@ -178,6 +288,20 @@
 						</ItemsPanelTemplate>
 					</Setter.Value>
 				</Setter>
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Preview">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="3"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="1"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselUpButtonStyle}"/>
+			</Style>
+			<Style Selector="^ /template/ Button#PART_Next">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="3"/>
+				<Setter Property="Grid.Row" Value="2"/>
+				<Setter Property="Grid.RowSpan" Value="1"/>
+				<Setter Property="Theme" Value="{StaticResource CarouselDownButtonStyle}"/>
 			</Style>
 		</Style>
 

@@ -9,6 +9,8 @@ public partial class CarouselView : ReactiveUserControl<CarouselViewModel>
         InitializeComponent();   
         //carousel.AutoScrollToSelectedItem = true; 
         //Carousel carousel = new Carousel();
+        //carousel.Previous();
+        //carousel.Next();
         //carousel.PageTransition
     }
 }
