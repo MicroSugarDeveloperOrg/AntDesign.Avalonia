@@ -9,10 +9,13 @@
 		<Setter Property="FontSize" Value="{DynamicResource DataGridHeaderFontSize}" />
 		<Setter Property="FontWeight" Value="{DynamicResource DataGridHeaderFontWeight}"/>
 		<Setter Property="Height" Value="{DynamicResource DataGridHeaderHeight}" />
-		<Setter Property="Background" Value="{DynamicResource AntDesignDataGridHeaderBackground}" />
+		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource AntDesignDataGridHeaderForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource AntDesignDataGridHeaderBorderBrush}" />
 		<Setter Property="SeparatorBrush" Value="{DynamicResource AntDesignDataGridHeaderSeparatorBrush}" />
+		<Setter Property="AreSeparatorsVisible" Value="true" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Margin" Value="0" />
 		<Setter Property="Padding" Value="{DynamicResource DataGridHeaderPadding}" />
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
@@ -24,20 +27,22 @@
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}">
-					<Grid Name="PART_ColumnHeaderRoot" ColumnDefinitions="*,Auto">
-
-						<Grid Margin="{TemplateBinding Padding}"
-							  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-							  VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+					<Grid Name="PART_ColumnHeaderRoot" ColumnDefinitions="2,*,Auto">
+						<Grid x:Name="PART_Container" 
+							  Grid.Column="1">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*" />
 								<ColumnDefinition Width="Auto"/>
 								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="5"/>
 							</Grid.ColumnDefinitions>
 
 							<ContentPresenter x:Name="PART_ContentPresenter"
+											   Margin="{TemplateBinding Padding}"
 											  Content="{TemplateBinding Content}"
 											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+												VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
 											  RenderTransform ="none">
 								<ContentPresenter.Transitions>
 									<Transitions>
@@ -46,21 +51,32 @@
 								</ContentPresenter.Transitions>
 							</ContentPresenter>
 
-							<StackPanel x:Name="PART_SortPanel"
-										Grid.Column="1"
-										IsVisible="False"
-										VerticalAlignment="Center"
-										Spacing="3">
-								<PathIcon Height="12" Foreground="{TemplateBinding Foreground}" Data="{StaticResource DataGridHeaderUpGeometry}"/>
-								<PathIcon Height="12" Foreground="{TemplateBinding Foreground}" Data="{StaticResource DataGridHeaderDownGeometry}"/>
-							</StackPanel>
+							<Grid x:Name="PART_SortPanel"
+								  Grid.Column="2"
+								  RowDefinitions="Auto,0,Auto"
+								  IsVisible="False" 
+								  VerticalAlignment="Center" >
+								
+								<PathIcon Grid.Row="0"
+										  Opacity="0.5"
+										  Width="{DynamicResource DataGridHeaderSortIconSize}" 
+										  Height="{DynamicResource DataGridHeaderSortIconSize}" 
+										  Foreground="{TemplateBinding Foreground}" 
+										  Data="{StaticResource DataGridHeaderUpGeometry}"/>
+								<PathIcon Grid.Row="2"  
+										  Opacity="0.5"
+										  Width="{DynamicResource DataGridHeaderSortIconSize}" 
+										  Height="{DynamicResource DataGridHeaderSortIconSize}" 
+										  Foreground="{TemplateBinding Foreground}" 
+										  Data="{StaticResource DataGridHeaderDownGeometry}"/>
+							</Grid>
 						</Grid>
 
 						<Rectangle x:Name="VerticalSeparator"
-								   Grid.Column="1"
+								   Grid.Column="2"
 								   Width="1"
-								   IsVisible="{TemplateBinding AreSeparatorsVisible}"
 								   Fill="{TemplateBinding SeparatorBrush}"
+								   IsVisible="{TemplateBinding AreSeparatorsVisible}"
 								   Margin="{DynamicResource DataGridSeparatorMargin}"
 								   VerticalAlignment="Stretch"/>
 
@@ -74,6 +90,7 @@
 									   IsHitTestVisible="False"
 									   Stroke="Red"
 									   StrokeThickness="2" />
+							
 							<Rectangle x:Name="FocusVisualSecondary"
 									   Margin="2"
 									   HorizontalAlignment="Stretch"
@@ -83,22 +100,33 @@
 									   Stroke="Red"
 									   StrokeThickness="1" />
 						</Grid>
-
 					</Grid>
 				</Border>
 			</ControlTemplate>
 		</Setter>
 
+		<!--<ControlTheme.Children>-->
+		<!--	<Style Selector="^:nth-child(1)">-->
+		<!--		<Setter Property="CornerRadius" Value="10" />-->
+		<!--	</Style>-->
+		<!--</ControlTheme.Children>-->
+
 		<Style Selector="^:focus-visible /template/ Grid#FocusVisual">
 			<Setter Property="IsVisible" Value="True" />
 		</Style>
+		
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Grid#PART_Container">
+				<Setter Property="Background" Value="{DynamicResource AntDesignDataGridHeaderPointerOverBackground}" />
+			</Style>
 
-		<Style Selector="^:pointerover /template/ Border#HeaderBorder">
-			<Setter Property="Background" Value="{DynamicResource AntDesignDataGridHeaderPointerOverBackground}" />
+			<Style Selector="^ /template/ Grid#PART_SortPanel > PathIcon">
+				<Setter Property="Opacity" Value="0.7" />
+			</Style>
 		</Style>
-
+		
 		<Style Selector="^:pressed">
-			<Style Selector="^ /template/ Border#HeaderBorder">
+			<Style Selector="^ /template/ Grid#PART_Container">
 				<Setter Property="Background" Value="{DynamicResource AntDesignDataGridHeaderPressedBackground}" />
 			</Style>
 			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
@@ -111,20 +139,22 @@
 		</Style>
 
 		<Style Selector="^:sortascending">
-			<Style Selector="^ StackPanel#PART_SortPanel">
+			<Style Selector="^ /template/ Grid#PART_SortPanel">
 				<Setter Property="IsVisible" Value="True" />
 			</Style>
-			<Style Selector="^ StackPanel#PART_SortPanel > PathIcon:nth-child(1)">
-				<Setter Property="Foreground" Value="Red" />
+			<Style Selector="^ /template/ Grid#PART_SortPanel > PathIcon:nth-child(1)">
+				<Setter Property="Opacity" Value="1" />
+				<Setter Property="Foreground" Value="{DynamicResource AntDesignDataGridHeaderIconPrimaryBackground}" />
 			</Style>
 		</Style>
 
 		<Style Selector="^:sortdescending">
-			<Style Selector="^ StackPanel#PART_SortPanel">
+			<Style Selector="^ /template/ Grid#PART_SortPanel">
 				<Setter Property="IsVisible" Value="True" />
 			</Style>
-			<Style Selector="^ StackPanel#PART_SortPanel > PathIcon:nth-child(2)">
-				<Setter Property="Foreground" Value="Red" />
+			<Style Selector="^ /template/ Grid#PART_SortPanel > PathIcon:nth-child(2)">
+				<Setter Property="Opacity" Value="1" />
+				<Setter Property="Foreground" Value="{DynamicResource AntDesignDataGridHeaderIconPrimaryBackground}" />
 			</Style>
 		</Style>
 	</ControlTheme>
@@ -132,19 +162,18 @@
 	<ControlTheme x:Key="DataGridTopLeftColumnHeader"
 				  TargetType="DataGridColumnHeader"
 				  BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+		<Setter Property="Background" Value="{DynamicResource AntDesignDataGridHeaderBackground}" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="DataGridColumnHeader">
-				<Grid x:Name="TopLeftHeaderRoot" RowDefinitions="*,*,Auto">
-					<Border Grid.RowSpan="2"
-							BorderThickness="0,0,1,0"
-							BorderBrush="{DynamicResource DataGridGridLinesBrush}" />
-					<Rectangle Grid.Row="0"
-							   Grid.RowSpan="2"
-							   VerticalAlignment="Bottom"
-							   StrokeThickness="1"
-							   Height="1"
-							   Margin="{DynamicResource DataGridSeparatorMargin}"
-							   Fill="{TemplateBinding SeparatorBrush}" />
+				<Grid x:Name="TopLeftHeaderRoot" ColumnDefinitions="*,Auto">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{DynamicResource SeparatorBrush}"/> 
+					<Rectangle x:Name="VerticalSeparator"
+							   Grid.Column="1"
+							   Width="1"
+							   IsVisible="{TemplateBinding AreSeparatorsVisible}"
+							   Fill="{TemplateBinding SeparatorBrush}" 
+							   VerticalAlignment="Stretch"/>
 				</Grid>
 			</ControlTemplate>
 		</Setter>

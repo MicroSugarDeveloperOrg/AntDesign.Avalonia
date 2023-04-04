@@ -13,11 +13,11 @@
 			  CanUserReorderColumns="True"  
 			  CanUserSortColumns="True" 
 			  HeadersVisibility="All"   
-			  GridLinesVisibility="Horizontal"
+			  GridLinesVisibility="All"
 			  HorizontalScrollBarVisibility="Visible"
 			  VerticalScrollBarVisibility="Visible"
-		      AutoGenerateColumns="False" 
-			  RowBackground="#1000">
+		      AutoGenerateColumns="False"
+			  RowHeaderWidth="40">
 		<DataGrid.Columns> 
 			<DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="6*"/>
 			<DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="4*"/>

@@ -1,57 +1,31 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
+		<Setter Property="Height" Value="{DynamicResource DataGridRowHeight}"/>
 		<Setter Property="Background" Value="{DynamicResource AntDesignDataGridCellBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource AntDesignDataGridCellBorderBrush}" />
+		<Setter Property="Padding" Value="{DynamicResource DataGridRowPadding}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
-		<Setter Property="VerticalContentAlignment" Value="Stretch" />
-		<Setter Property="FontSize" Value="15" />
-		<Setter Property="MinHeight" Value="32" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Focusable" Value="False" />
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="DataGridCell">
 				<Border x:Name="CellBorder"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
-						CornerRadius="{TemplateBinding CornerRadius}">
+						CornerRadius="{TemplateBinding CornerRadius}"
+						ClipToBounds="False">
 					<Grid x:Name="PART_CellRoot" ColumnDefinitions="*,Auto">
 
-						<Rectangle x:Name="CurrencyVisual"
-								   IsVisible="False"
-								   HorizontalAlignment="Stretch"
-								   VerticalAlignment="Stretch"
-								   Fill="Transparent"
-								   IsHitTestVisible="False"
-								   Stroke="Red"
-								   StrokeThickness="1" />
-						
-						<Grid x:Name="FocusVisual"  
-							  Grid.Column="0" 
-							  IsHitTestVisible="False" 
-							  IsVisible="False">
-							<Rectangle HorizontalAlignment="Stretch"
-									   VerticalAlignment="Stretch"
-									   Fill="Transparent"
-									   IsHitTestVisible="False"
-									   Stroke="Red"
-									   StrokeThickness="2" />
-							
-							<Rectangle Margin="2"
-									   HorizontalAlignment="Stretch"
-									   VerticalAlignment="Stretch"
-									   Fill="Transparent"
-									   IsHitTestVisible="False"
-									   Stroke="Red"
-									   StrokeThickness="1" />
-						</Grid>
-
-						<ContentPresenter Grid.Column="0" Margin="{TemplateBinding Padding}"
+						<ContentPresenter Grid.Column="0"
 										  Foreground="{TemplateBinding Foreground}"
 										  Content="{TemplateBinding Content}"
-										  ContentTemplate="{TemplateBinding ContentTemplate}" 
+										  ContentTemplate="{TemplateBinding ContentTemplate}"
+										  Margin="{TemplateBinding Padding}"
 										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
@@ -61,14 +35,40 @@
 								   HorizontalAlignment="Stretch"
 								   VerticalAlignment="Stretch"
 								   IsHitTestVisible="False"
-								   Stroke="Red"
+								   Margin="{DynamicResource DataGridRowVisualMargin}"
+								   Stroke="{DynamicResource AntDesignDataGridRowInvalidVisualBorderBrush}"
 								   StrokeThickness="1" />
+
+						<Rectangle x:Name="CurrencyVisual"
+								   IsVisible="False"
+								   HorizontalAlignment="Stretch"
+								   VerticalAlignment="Stretch"
+								   Fill="Transparent"
+								   IsHitTestVisible="False"
+								   Margin="{DynamicResource DataGridRowVisualMargin}"
+								   Stroke="{DynamicResource AntDesignDataGridRowCurrencyVisualBorderBrush}"
+								   StrokeThickness="1" />
+
+						<Grid x:Name="FocusVisual"
+							  Grid.Column="0"
+							  IsHitTestVisible="False"
+							  IsVisible="False">
+
+							<Rectangle HorizontalAlignment="Stretch"
+									   VerticalAlignment="Stretch"
+									   IsHitTestVisible="False"
+									   Fill="Transparent"
+									   Margin="{DynamicResource DataGridRowVisualMargin}"
+									   Stroke="{DynamicResource AntDesignDataGridRowFocusVisualBorderBrush}"
+									   StrokeThickness="1" />
+						</Grid>
 
 						<Rectangle x:Name="PART_RightGridLine"
 								   Grid.Column="1"
 								   Width="1"
 								   VerticalAlignment="Stretch"
 								   Fill="{DynamicResource AntDesignDataGridBorderBrush}" />
+
 					</Grid>
 				</Border>
 			</ControlTemplate>
@@ -83,6 +83,5 @@
 			<Setter Property="IsVisible" Value="True" />
 		</Style>
 	</ControlTheme>
-
 
 </ResourceDictionary>

@@ -1,4 +1,5 @@
 using AntDesign.Sample.ViewModels;
+using DataGridView = Avalonia.Controls.DataGrid;
 
 namespace AntDesign.Sample.Views;
 public partial class DataGridView : ReactiveUserControl<DataGridViewModel>
@@ -11,5 +12,10 @@ public partial class DataGridView : ReactiveUserControl<DataGridViewModel>
         //dataGridTextColumn.SortMemberPath
 
         //DataGridColumnHeader dataGridColumnHeader = new DataGridColumnHeader(); 
+        //DataGridView dataGridView = new DataGridView();
+        //dataGridView.RowHeaderWidth
+        //Avalonia.Controls.DataGrid.RowHeaderWidthProperty
+
+
     }
 }

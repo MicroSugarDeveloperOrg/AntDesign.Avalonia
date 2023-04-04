@@ -8,7 +8,10 @@
 
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderBackground" Color="#1d1d1d"/>
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderPointerOverBackground" Color="#303030"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderPressedBackground" Color="#303030"/>
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderForeground" Color="White"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderSeparatorBrush" Color="#313131"/>
 
 	<SolidColorBrush x:Key="AntDesignDataGridCellBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AntDesignDataGridCellBorderBrush" Color="Transparent"/>
@@ -17,5 +20,14 @@
 	<SolidColorBrush x:Key="AntDesignDataGridRowPointerOverBackground" Color="#1d1d1d"/>
 	<SolidColorBrush x:Key="AntDesignDataGridRowSelectedBackground" Color="#111a2c"/>
 	<SolidColorBrush x:Key="AntDesignDataGridRowSelectedPointerOverBackground" Color="#112545"/>
+
+	<SolidColorBrush x:Key="AntDesignDataGridRowDetailBackground" Color="#1d1d1d"/>
+	<SolidColorBrush x:Key="AntDesignDataGridRowFocusVisualBorderBrush" Color="#217346" Opacity="0.8"/>
+	<SolidColorBrush x:Key="AntDesignDataGridRowCurrencyVisualBorderBrush" Color="#217346" Opacity="0.8"/>
+	<SolidColorBrush x:Key="AntDesignDataGridRowInvalidVisualBorderBrush" Color="#217346" Opacity="0.8"/>
+
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderIconPrimaryBackground" Color="#FF1668DC"/>
+	<SolidColorBrush x:Key="AntDesignDataGridIndicatorTemplateBackground" Color="#FF1668DC"/>
+
 
 </ResourceDictionary>
