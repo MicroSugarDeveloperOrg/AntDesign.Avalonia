@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
 	<StreamGeometry x:Key="DataGridHeaderUpGeometry">M1459.2 963.4816H179.2A102.4 102.4 0 0 1 102.0928 793.6l562.9952-643.2768a204.8 204.8 0 0 1 308.224 0l562.9952 643.2768a102.4 102.4 0 0 1-77.1072 169.8816z</StreamGeometry>
@@ -45,11 +45,11 @@
 									</Transitions>
 								</ContentPresenter.Transitions>
 							</ContentPresenter>
-							
-							<StackPanel x:Name="PART_SortPanel"  
-										Grid.Column="1" 
-										IsVisible="False" 
-										VerticalAlignment="Center" 
+
+							<StackPanel x:Name="PART_SortPanel"
+										Grid.Column="1"
+										IsVisible="False"
+										VerticalAlignment="Center"
 										Spacing="3">
 								<PathIcon Height="12" Foreground="{TemplateBinding Foreground}" Data="{StaticResource DataGridHeaderUpGeometry}"/>
 								<PathIcon Height="12" Foreground="{TemplateBinding Foreground}" Data="{StaticResource DataGridHeaderDownGeometry}"/>
@@ -64,7 +64,7 @@
 								   Margin="{DynamicResource DataGridSeparatorMargin}"
 								   VerticalAlignment="Stretch"/>
 
-						<Grid x:Name="FocusVisual" 
+						<Grid x:Name="FocusVisual"
 							  IsHitTestVisible="False"
 							  IsVisible="False">
 							<Rectangle x:Name="FocusVisualPrimary"
@@ -83,7 +83,7 @@
 									   Stroke="Red"
 									   StrokeThickness="1" />
 						</Grid>
-						
+
 					</Grid>
 				</Border>
 			</ControlTemplate>
@@ -129,8 +129,8 @@
 		</Style>
 	</ControlTheme>
 
-	<ControlTheme x:Key="DataGridTopLeftColumnHeader" 
-				  TargetType="DataGridColumnHeader" 
+	<ControlTheme x:Key="DataGridTopLeftColumnHeader"
+				  TargetType="DataGridColumnHeader"
 				  BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
 		<Setter Property="Template">
 			<ControlTemplate TargetType="DataGridColumnHeader">
@@ -138,7 +138,7 @@
 					<Border Grid.RowSpan="2"
 							BorderThickness="0,0,1,0"
 							BorderBrush="{DynamicResource DataGridGridLinesBrush}" />
-					<Rectangle Grid.Row="0" 
+					<Rectangle Grid.Row="0"
 							   Grid.RowSpan="2"
 							   VerticalAlignment="Bottom"
 							   StrokeThickness="1"
@@ -149,6 +149,5 @@
 			</ControlTemplate>
 		</Setter>
 	</ControlTheme>
-
 
 </ResourceDictionary>

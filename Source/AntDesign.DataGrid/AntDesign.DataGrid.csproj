@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" />
+		<PackageReference Include="Avalonia.Controls.DataGrid"/>
 		<PackageReference Include="PolySharp">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>

@@ -7,7 +7,7 @@
 		<Setter Property="Foreground" Value="{DynamicResource AntDesignDataGridForeground}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource AntDesignDataGridBorderBrush}"/>
 		<Setter Property="RowBackground" Value="{DynamicResource AntDesignDataGridRowBackground}" />
-		<Setter Property="BorderThinckness" Value="{DynamicResource DataGridBorderThickness}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource DataGridBorderThickness}"/>
 		<Setter Property="CornerRadius" Value="{DynamicResource DataGridCornerRadius}"/>
 		<Setter Property="SelectionMode" Value="Extended" />
 		<Setter Property="HeadersVisibility" Value="All" />
@@ -28,7 +28,7 @@
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}">
-					
+
 					<Grid ColumnDefinitions="Auto,*,Auto"
 						  RowDefinitions="Auto,*,Auto,Auto"
 						  ClipToBounds="True">
@@ -41,12 +41,12 @@
 
 						<Rectangle x:Name="PART_ColumnHeadersAndRowsSeparator"
 								   Grid.Row="0"
-								   Grid.Column="0" Grid.ColumnSpan="3" 
+								   Grid.Column="0" Grid.ColumnSpan="3"
 								   Height="1"
 								   VerticalAlignment="Bottom"
 								   Fill="{TemplateBinding HorizontalGridLinesBrush}" />
 
-						<DataGridRowsPresenter x:Name="PART_RowsPresenter" 
+						<DataGridRowsPresenter x:Name="PART_RowsPresenter"
 											   Grid.Row="1" Grid.RowSpan="2"
 											   Grid.Column="0" Grid.ColumnSpan="3">
 							<DataGridRowsPresenter.GestureRecognizers>
@@ -75,7 +75,7 @@
 									   Height="{DynamicResource DataGridScrollBarSize}" />
 						</Grid>
 					</Grid>
-					
+
 				</Border>
 			</ControlTemplate>
 		</Setter>

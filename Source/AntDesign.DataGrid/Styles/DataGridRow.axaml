@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:collections="using:Avalonia.Collections"
 					x:CompileBindings="True">
 
@@ -152,7 +152,7 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="DataGridRowGroupHeader"
 							 x:DataType="collections:DataGridCollectionViewGroup">
-				
+
 				<DataGridFrozenGrid Name="PART_Root"
 									Background="{TemplateBinding Background}"
 									MinHeight="{TemplateBinding MinHeight}"
@@ -161,7 +161,7 @@
 
 					<Rectangle Name="PART_IndentSpacer"
 							   Grid.Column="1" />
-					
+
 					<ToggleButton Name="PART_ExpanderButton"
 								  Grid.Column="2"
 								  Width="12"
@@ -179,7 +179,7 @@
 								Orientation="Horizontal"
 								VerticalAlignment="Center"
 								Margin="12,0,0,0">
-						
+
 						<TextBlock Name="PART_PropertyNameElement"
 								   Margin="4,0,0,0"
 								   IsVisible="{TemplateBinding IsPropertyNameVisible}"
@@ -191,7 +191,7 @@
 								   Margin="4,0,0,0"
 								   IsVisible="{TemplateBinding IsItemCountVisible}"
 								   Foreground="{TemplateBinding Foreground}" />
-						
+
 					</StackPanel>
 
 					<Rectangle x:Name="CurrencyVisual"
@@ -203,7 +203,7 @@
 							   IsHitTestVisible="False"
 							   Stroke="{DynamicResource DataGridCurrencyVisualPrimaryBrush}"
 							   StrokeThickness="1" />
-					
+
 					<Grid x:Name="FocusVisual"
 						  Grid.ColumnSpan="5"
 						  IsVisible="False"

@@ -3,9 +3,10 @@
 					x:CompileBindings="True">
 
 	<ResourceDictionary.MergedDictionaries>
-		<ResourceInclude Source="avares://AntDesign.DataGrid/Styles/DataGridCell.axaml" />
-		<ResourceInclude Source="avares://AntDesign.DataGrid/Styles/DataGridRow.axaml" />
 		<ResourceInclude Source="avares://AntDesign.DataGrid/Styles/DataGrid.axaml" />
+		<ResourceInclude Source="avares://AntDesign.DataGrid/Styles/DataGridCell.axaml" />
+		<ResourceInclude Source="avares://AntDesign.DataGrid/Styles/DataGridColumn.axaml" />
+		<ResourceInclude Source="avares://AntDesign.DataGrid/Styles/DataGridRow.axaml" />
 	</ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
