@@ -16,15 +16,15 @@
 
 	<!--PrimaryButtonStyle-->
 	<SolidColorBrush x:Key="ButtonPrimaryBackground" Color="{DynamicResource AntDesignPrimaryColor}"/>
-	<SolidColorBrush x:Key="ButtonPrimaryForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryForeground" Color="{DynamicResource AntDesignAssistColor4}"/>
 	<SolidColorBrush x:Key="ButtonPrimaryBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="ButtonPrimaryPointerOverBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="ButtonPrimaryPointerOverForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryPointerOverForeground" Color="{DynamicResource AntDesignAssistColor4}"/>
 	<SolidColorBrush x:Key="ButtonPrimaryPointerOverBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="ButtonPrimaryPressedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="ButtonPrimaryPressedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="ButtonPrimaryPressedForeground" Color="{DynamicResource AntDesignAssistColor4}"/>
 	<SolidColorBrush x:Key="ButtonPrimaryPressedBorderBrush" Color="Transparent"/>
 
 	<!--TextButtonStyle-->

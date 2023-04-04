@@ -29,8 +29,8 @@
 	<SolidColorBrush x:Key="AntDesignAssistBrush10" Color="{DynamicResource AntDesignAssistColor10}"/>
 	
 	<!--白色-->
-	<Color x:Key="AntDesigndAssistColor4">#FFFFFF</Color>
-	<SolidColorBrush x:Key="AntDesignAssistBrush4" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<Color x:Key="AntDesignAssistColor4">#FFFFFF</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush4" Color="{DynamicResource AntDesignAssistColor4}"/>
 
 	<!--ListBox等选中背景色-->
 	<Color x:Key="AntDesigndAssistColor5">#4F9ad2ff</Color>

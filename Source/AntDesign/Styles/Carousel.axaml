@@ -2,23 +2,209 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:assists="using:AntDesign.Assists"
+					xmlns:antConverters="using:AntDesign.Converters"
 					x:CompileBindings="True">
 
-	<ControlTheme x:Key="{x:Type Carousel}" TargetType="Carousel">
+	<antConverters:Items2ObjectsConverter x:Key="Items2ObjectsConverter"/>
+
+	<ControlTheme x:Key="HorizontalListBoxItemStyle" TargetType="ListBoxItem">
+		<Setter Property="Background" Value="{DynamicResource CarouselListBoxItemBackground}" />
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Template">
-			<ControlTemplate TargetType="Carousel">
-				<ScrollViewer Name="{x:Static helpers:PARTNameHelper.PART_ScrollViewer}"
-							  Background="{TemplateBinding Background}"
-							  BorderBrush="{TemplateBinding BorderBrush}"
-							  BorderThickness="{TemplateBinding BorderThickness}"
-							  HorizontalScrollBarVisibility="Hidden"
-							  VerticalScrollBarVisibility="Hidden">
-					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-									ItemsPanel="{TemplateBinding ItemsPanel}"
-									Margin="{TemplateBinding Padding}"/>
-				</ScrollViewer>
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border x:Name="PART_Border"
+						Opacity="0.5"
+						Height="{DynamicResource CarouselSize}"
+						Width="{DynamicResource CarouselSize1}"
+						Background="{TemplateBinding Background}">
+					<Border.Transitions>
+						<Transitions>
+							<DoubleTransition Property="Width" Duration="0:0:.15" Easing="SineEaseInOut"/>
+						</Transitions>
+					</Border.Transitions>
+				</Border>
 			</ControlTemplate>
 		</Setter>
+
+		<!--  PointerOver State  -->
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="Opacity" Value="0.7" />
+			</Style>
+		</Style>
+
+		<!--  Selected State  -->
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="Opacity" Value="1" />
+				<Setter Property="Width" Value="{DynamicResource CarouselScalSize}" />
+			</Style>
+		</Style>
+
+	</ControlTheme>
+
+	<ControlTheme x:Key="VerticalListBoxItemStyle" TargetType="ListBoxItem">
+		<Setter Property="Background" Value="{DynamicResource CarouselListBoxItemBackground}" />
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border x:Name="PART_Border"
+						Opacity="0.5"
+						Height="{DynamicResource CarouselSize1}"
+						Width="{DynamicResource CarouselSize}"
+						Background="{TemplateBinding Background}">
+					<Border.Transitions>
+						<Transitions>
+							<DoubleTransition Property="Height" Duration="0:0:.15" Easing="SineEaseInOut"/>
+						</Transitions>
+					</Border.Transitions>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<!--  PointerOver State  -->
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="Opacity" Value="0.7" />
+			</Style>
+		</Style>
+
+		<!--  Selected State  -->
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="Opacity" Value="1" />
+				<Setter Property="Height" Value="{DynamicResource CarouselScalSize}" />
+			</Style>
+		</Style>
+
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="{x:Type Carousel}" TargetType="Carousel"> 
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Carousel">
+				<Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,*,Auto" >
+					<ScrollViewer x:Name="{x:Static helpers:PARTNameHelper.PART_ScrollViewer}"
+								  Grid.Column="0" Grid.ColumnSpan="3"
+								  Grid.Row="0" Grid.RowSpan="3"
+							      Background="{TemplateBinding Background}"
+							      BorderBrush="{TemplateBinding BorderBrush}"
+							      BorderThickness="{TemplateBinding BorderThickness}"
+							      HorizontalScrollBarVisibility="Hidden"
+							      VerticalScrollBarVisibility="Hidden">
+						<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+										ItemsPanel="{TemplateBinding ItemsPanel}"
+										Margin="{TemplateBinding Padding}"/>
+					</ScrollViewer>
+
+					<ListBox x:Name="PART_ListBox"
+							 Cursor="Hand"
+							 ItemsSource="{TemplateBinding Items, Converter={StaticResource Items2ObjectsConverter}}"
+							 SelectedIndex="{TemplateBinding SelectedIndex, Mode=TwoWay}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^">
+			<Style Selector="^ /template/ ListBox#PART_ListBox">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="3"/>
+				<Setter Property="Grid.Row" Value="2"/>
+				<Setter Property="Grid.RowSpan" Value="1"/>
+				<Setter Property="Margin" Value="0,0,0,15"/>
+				<Setter Property="HorizontalAlignment" Value="Center"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource HorizontalListBoxItemStyle}"/>
+				<Setter Property="ItemsPanel">
+					<Setter.Value>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal" Spacing="{DynamicResource CarouselItemsSpacing}"/>
+						</ItemsPanelTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Style>
+		
+		<Style Selector="^.top">
+			<Style Selector="^ /template/ ListBox#PART_ListBox">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="3"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="1"/>
+				<Setter Property="Margin" Value="0,15,0,0"/>
+				<Setter Property="HorizontalAlignment" Value="Center"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource HorizontalListBoxItemStyle}"/>
+				<Setter Property="ItemsPanel">
+					<Setter.Value>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal" Spacing="{DynamicResource CarouselItemsSpacing}"/>
+						</ItemsPanelTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Style>
+
+		<Style Selector="^.left">
+			<Style Selector="^ /template/ ListBox#PART_ListBox">
+				<Setter Property="Grid.Column" Value="0"/>
+				<Setter Property="Grid.ColumnSpan" Value="1"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="3"/>
+				<Setter Property="Margin" Value="15,0,0,0"/>
+				<Setter Property="VerticalAlignment" Value="Center"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource VerticalListBoxItemStyle}"/>
+				<Setter Property="ItemsPanel">
+					<Setter.Value>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Vertical" Spacing="{DynamicResource CarouselItemsSpacing}"/>
+						</ItemsPanelTemplate>
+					</Setter.Value>
+				</Setter> 
+			</Style>
+		</Style>
+
+		<Style Selector="^.right">
+			<Style Selector="^ /template/ ListBox#PART_ListBox">
+				<Setter Property="Grid.Column" Value="2"/>
+				<Setter Property="Grid.ColumnSpan" Value="1"/>
+				<Setter Property="Grid.Row" Value="0"/>
+				<Setter Property="Grid.RowSpan" Value="3"/>
+				<Setter Property="Margin" Value="0,0,15,0"/>
+				<Setter Property="VerticalAlignment" Value="Center"/>
+				<Setter Property="ItemContainerTheme" Value="{StaticResource VerticalListBoxItemStyle}"/>
+				<Setter Property="ItemsPanel">
+					<Setter.Value>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Vertical" Spacing="{DynamicResource CarouselItemsSpacing}"/>
+						</ItemsPanelTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Style>
+
+		<Style Selector="^.crossFade">
+			<Setter Property="PageTransition">
+				<Setter.Value>
+					<CrossFade Duration="00:00:00.25" />
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style Selector="^.slideHorizontal">
+			<Setter Property="PageTransition">
+				<Setter.Value>
+					<PageSlide Duration="0.25" Orientation="Horizontal" />
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style Selector="^.slideVertical">
+			<Setter Property="PageTransition">
+				<Setter.Value>
+					<PageSlide Duration="0.25" Orientation="Vertical" />
+				</Setter.Value>
+			</Setter>
+		</Style>
+		
 	</ControlTheme>
 
 </ResourceDictionary>

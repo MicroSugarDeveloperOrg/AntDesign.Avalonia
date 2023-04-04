@@ -2,7 +2,218 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
              x:Class="AntDesign.Sample.Views.CarouselView">
-  Welcome to Avalonia!
+
+	<ScrollViewer>
+		<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+			<TextBlock Grid.Row="0" Text="旋转木马，一组轮播的区域。"/>
+
+			<StackPanel Grid.Row="2" Spacing="10">
+				<TextBlock  Text="何时使用" Classes="h3"/> 
+				<TextBlock  Text=">>  当有一组平级的内容。"/>
+				<TextBlock  Text=">>  当内容空间不足时，可以用走马灯的形式进行收纳，进行轮播展现。"/>
+				<TextBlock  Text=">>  常用于一组图片或卡片轮播。"/>
+			</StackPanel>
+
+			<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+			<Grid Grid.Row="6"
+				  ColumnDefinitions="*,20,*"
+				  RowDefinitions="*,20,*">
+
+				<Border Grid.Column="0" Grid.Row="0"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="1.3*,Auto,*">
+
+						<Carousel Margin="2" Classes="slideHorizontal">
+							<Carousel.Styles>
+								<Style Selector="TextBlock">
+									<Setter Property="FontSize" Value="18"/>
+									<Setter Property="FontWeight" Value="Bold"/>
+									<Setter Property="Foreground" Value="White"/>
+									<Setter Property="HorizontalAlignment" Value="Center"/>
+									<Setter Property="VerticalAlignment" Value="Center"/>
+								</Style>
+							</Carousel.Styles>
+
+							<Border Background="#364d79">
+								<TextBlock Text="123131231"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="44454565677"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="8986554554"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="3439217838974837489"/>
+							</Border>
+						</Carousel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="基本"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="最简单的用法。"/>
+							<TextBlock Text="通过赋予Classes slideHorizontal值来开启翻页动画。"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="2" Grid.Row="0"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="1.3*,Auto,*">
+
+						<Carousel Margin="2" Classes="top">
+							<Carousel.Styles>
+								<Style Selector="TextBlock">
+									<Setter Property="FontSize" Value="18"/>
+									<Setter Property="FontWeight" Value="Bold"/>
+									<Setter Property="Foreground" Value="White"/>
+									<Setter Property="HorizontalAlignment" Value="Center"/>
+									<Setter Property="VerticalAlignment" Value="Center"/>
+								</Style>
+							</Carousel.Styles>
+
+							<Border Background="#364d79">
+								<TextBlock Text="123131231"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="44454565677"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="8986554554"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="3439217838974837489"/>
+							</Border>
+						</Carousel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="位置"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="位置有 4 个方向。"/>
+							<TextBlock Text="通过修改Classes进行方向切换"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="0" Grid.Row="2"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="1.3*,Auto,*">
+						
+						<Carousel Margin="2" Classes="left slideVertical">
+							<Carousel.Styles>
+								<Style Selector="TextBlock">
+									<Setter Property="FontSize" Value="18"/>
+									<Setter Property="FontWeight" Value="Bold"/>
+									<Setter Property="Foreground" Value="White"/>
+									<Setter Property="HorizontalAlignment" Value="Center"/>
+									<Setter Property="VerticalAlignment" Value="Center"/>
+								</Style>
+							</Carousel.Styles>
+
+							<Border Background="#364d79">
+								<TextBlock Text="123131231"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="44454565677"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="8986554554"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="3439217838974837489"/>
+							</Border>
+						</Carousel>
+						
+						<Separator Grid.Row="1" SeparatorAssists.Content="Left"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="通过赋予Classes left值来开启"/>
+							<TextBlock Text="通过赋予Classes slideVertical值来开启翻页动画。"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+				<Border Grid.Column="2" Grid.Row="2"
+						Height="330"
+						BorderThickness="{StaticResource OverlayBorderThickness}"
+						CornerRadius="{StaticResource OverlayCornerRadius}"
+						BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+					<Grid RowDefinitions="1.3*,Auto,*">
+
+						<Carousel Margin="2" Classes="right crossFade">
+							<Carousel.Styles>
+								<Style Selector="TextBlock">
+									<Setter Property="FontSize" Value="18"/>
+									<Setter Property="FontWeight" Value="Bold"/>
+									<Setter Property="Foreground" Value="White"/>
+									<Setter Property="HorizontalAlignment" Value="Center"/>
+									<Setter Property="VerticalAlignment" Value="Center"/>
+								</Style>
+							</Carousel.Styles>
+
+							<Border Background="#364d79">
+								<TextBlock Text="123131231"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="44454565677"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="8986554554"/>
+							</Border>
+							<Border Background="#364d79">
+								<TextBlock Text="3439217838974837489"/>
+							</Border>
+						</Carousel>
+
+						<Separator Grid.Row="1" SeparatorAssists.Content="Right|渐显"/>
+
+						<StackPanel Grid.Row="2" Spacing="10"
+									Margin="20,0,0,0"
+									VerticalAlignment="Center">
+
+							<TextBlock Text="通过赋予Classes right值来开启"/>
+							<TextBlock Text="通过赋予Classes crossFade值来开启翻页动画"/>
+						</StackPanel>
+
+					</Grid>
+
+				</Border>
+
+			</Grid>
+
+		</Grid>
+	</ScrollViewer>
+	
+	
 </UserControl>

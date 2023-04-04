@@ -23,6 +23,6 @@
 	<SolidColorBrush x:Key="TimePickerButtonPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="TimePickerButtonPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
 
-	<SolidColorBrush x:Key="TimePickerPanelListBoxItemSelectedNoFocusForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TimePickerPanelListBoxItemSelectedNoFocusForeground" Color="{DynamicResource AntDesignAssistColor4}"/>
 
 </ResourceDictionary>

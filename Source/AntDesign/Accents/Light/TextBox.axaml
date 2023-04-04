@@ -6,7 +6,7 @@
 	<SolidColorBrush x:Key="TextBoxCaretBrush" Color="{DynamicResource AntDesignAssistColor1}"/>
 	<SolidColorBrush x:Key="TextBoxBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 	<SolidColorBrush x:Key="TextBoxSelectionBackground" Color="{DynamicResource AntDesigndAssistColor9}"/>
-	<SolidColorBrush x:Key="TextBoxSelectionForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TextBoxSelectionForeground" Color="{DynamicResource AntDesignAssistColor4}"/>
 
 	<SolidColorBrush x:Key="TextBoxPointerOverBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="TextBoxPointerFocusBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
@@ -15,7 +15,7 @@
 
 	<SolidColorBrush x:Key="TextBoxButtonBackground" Color="{DynamicResource AntDesigndAssistColor8}"/>
 	<SolidColorBrush x:Key="TextBoxButtonForeground" Color="{DynamicResource AntDesignAssistColor1}"/>
-	<SolidColorBrush x:Key="TextBoxButtonForeground1" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="TextBoxButtonForeground1" Color="{DynamicResource AntDesignAssistColor4}"/>
 	<SolidColorBrush x:Key="TextBoxButtonBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="TextBoxButtonPointerOverBackground" Color="{DynamicResource AntDesigndAssistColor6}"/>

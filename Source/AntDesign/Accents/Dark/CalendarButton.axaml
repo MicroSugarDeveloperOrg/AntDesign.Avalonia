@@ -15,7 +15,7 @@
 	<SolidColorBrush x:Key="CalendarButtonPressedBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="CalendarButtonSelectedBackground" Color="{DynamicResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="CalendarButtonSelectedForeground" Color="{DynamicResource AntDesigndAssistColor4}"/>
+	<SolidColorBrush x:Key="CalendarButtonSelectedForeground" Color="{DynamicResource AntDesignAssistColor4}"/>
 	<SolidColorBrush x:Key="CalendarButtonSelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 
 	<SolidColorBrush x:Key="CalendarButtonTodayBackground" Color="Transparent"/>

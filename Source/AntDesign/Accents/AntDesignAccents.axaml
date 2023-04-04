@@ -166,6 +166,12 @@
 	<x:Double x:Key="NotificationCardIconWidth">25</x:Double>
 	<x:Double x:Key="NotificationCardIconHeight">25</x:Double>
 
+	<!-- Carousel -->
+	<x:Double x:Key="CarouselSize">3</x:Double>
+	<x:Double x:Key="CarouselSize1">18</x:Double>
+	<x:Double x:Key="CarouselScalSize">25</x:Double>
+	<x:Double x:Key="CarouselItemsSpacing">8</x:Double>
+
 	<!-- PathIcon -->
 	<x:Double x:Key="IconHeight">20</x:Double>
 	<x:Double x:Key="IconWidth">20</x:Double>
