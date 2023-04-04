@@ -8,8 +8,14 @@
 
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderBackground" Color="#fafafa"/>
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderPointerOverBackground" Color="#f0f0f0"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderPressedBackground" Color="#f0f0f0"/>
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderForeground" Color="Black"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderBorderBrush" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignDataGridHeaderSeparatorBrush" Color="#d9d9d9"/>
 
+	<SolidColorBrush x:Key="AntDesignDataGridCellBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignDataGridCellBorderBrush" Color="Transparent"/>
+	
 	<SolidColorBrush x:Key="AntDesignDataGridRowBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AntDesignDataGridRowPointerOverBackground" Color="#fafafa"/>
 	<SolidColorBrush x:Key="AntDesignDataGridRowSelectedBackground" Color="#e6f4ff"/>

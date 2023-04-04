@@ -12,5 +12,6 @@ public partial class CarouselView : ReactiveUserControl<CarouselViewModel>
         //carousel.Previous();
         //carousel.Next();
         //carousel.PageTransition
+        //FontWeight
     }
 }

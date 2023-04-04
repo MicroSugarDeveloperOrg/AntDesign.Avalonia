@@ -10,6 +10,9 @@
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderPointerOverBackground" Color="#303030"/>
 	<SolidColorBrush x:Key="AntDesignDataGridHeaderForeground" Color="White"/>
 
+	<SolidColorBrush x:Key="AntDesignDataGridCellBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignDataGridCellBorderBrush" Color="Transparent"/>
+	
 	<SolidColorBrush x:Key="AntDesignDataGridRowBackground" Color="Transparent"/>
 	<SolidColorBrush x:Key="AntDesignDataGridRowPointerOverBackground" Color="#1d1d1d"/>
 	<SolidColorBrush x:Key="AntDesignDataGridRowSelectedBackground" Color="#111a2c"/>

@@ -12,7 +12,7 @@
 			  CanUserResizeColumns="True" 
 			  CanUserReorderColumns="True"  
 			  CanUserSortColumns="True" 
-			  HeadersVisibility="All"  
+			  HeadersVisibility="All"   
 			  GridLinesVisibility="Horizontal"
 			  HorizontalScrollBarVisibility="Visible"
 			  VerticalScrollBarVisibility="Visible"

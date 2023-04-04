@@ -22,7 +22,7 @@
 			</Template>
 		</Setter>
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="DataGrid">
 				<Border x:Name="DataGridBorder"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
