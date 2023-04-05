@@ -10,6 +10,7 @@
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="avares://AntDesign.ColorPicker/Accents/AntDesignAccents.axaml" />
+				<ResourceInclude Source="avares://AntDesign.ColorPicker/Accents/AntDesignCGeometry.axaml" />
 				<ResourceInclude Source="avares://AntDesign.ColorPicker/Styles/AntDesignControls.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>

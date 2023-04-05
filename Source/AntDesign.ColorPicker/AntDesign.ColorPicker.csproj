@@ -13,11 +13,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<AvaloniaXaml Remove="AntDesignColorPicker.axaml" />
+		<AvaloniaXaml Remove="AntDesignColorPicker.axaml" /> 
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" />
+		<PackageReference Include="Avalonia.Controls.ColorPicker" />
 		<PackageReference Include="PolySharp">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>
