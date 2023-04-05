@@ -124,7 +124,6 @@
 									   WindowManagerAddShadowHint="False"
 									   IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
 									   MaxHeight="{TemplateBinding MaxDropDownHeight}"
-									   HorizontalOffset="{TemplateBinding assists:ComboBoxAssists.PopupMargin, Converter={StaticResource PopupHorizontalOffsetConverter}}"
 									   PlacementTarget="{TemplateBinding}"
 									   IsLightDismissEnabled="True"
 									   InheritsTransform="True">

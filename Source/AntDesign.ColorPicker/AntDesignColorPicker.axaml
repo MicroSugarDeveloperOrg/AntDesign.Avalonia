@@ -9,8 +9,8 @@
 				<ResourceInclude x:Key="Dark" Source="avares://AntDesign.ColorPicker/Accents/AntDesignDark.axaml"/>
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="avares://AntDesign.ColorPicker/Accents/AntDesignAccents.axaml" />
 				<ResourceInclude Source="avares://AntDesign.ColorPicker/Styles/AntDesignControls.axaml" />
-				<ResourceInclude Source="avares://AntDesign.ColorPicker/Accents/AntDesignColorMatching.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>

@@ -56,8 +56,7 @@
 					<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 						   WindowManagerAddShadowHint="False" 
 						   MaxHeight="{TemplateBinding MaxDropDownHeight}" 
-						   IsLightDismissEnabled="True"
-						   HorizontalOffset="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin, Converter={StaticResource PopupHorizontalOffsetConverter}}"
+						   IsLightDismissEnabled="True" 
 						   PlacementTarget="{TemplateBinding}">
 						<!--MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"-->
 						<Popup.MinWidth>

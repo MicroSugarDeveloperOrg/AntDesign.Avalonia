@@ -17,11 +17,9 @@
 		</ResourceDictionary>
 	</Application.Resources>
     <Application.Styles>
-		<!--<FluentTheme/>-->
 		<AntDesign/>
 		<AntDesignDataGrid/>
-		<!--<StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />-->
-		
+
 		<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
 	</Application.Styles>
 </Application>

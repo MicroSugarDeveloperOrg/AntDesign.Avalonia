@@ -50,7 +50,7 @@
 						</Grid.RowDefinitions>
 						
 						<Border Padding="{TemplateBinding Padding}">
-							<Grid>
+							<Grid x:Name="PART_InnerContent">
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition Width="Auto"
 													  SharedSizeGroup="AntMenuItemIcon" />
@@ -92,9 +92,8 @@
 						<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 							   WindowManagerAddShadowHint="False"
 							   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
-							   PlacementTarget="{TemplateBinding}"
+							   PlacementTarget="{TemplateBinding}" 
 							   IsLightDismissEnabled="True"
-							   HorizontalOffset="{TemplateBinding assists:MenuItemAssists.PopupPadding, Converter={StaticResource PopupHorizontalOffsetConverter}}"
 							   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
 							<Popup.MinWidth>
 								<MultiBinding Converter="{StaticResource PopupSizeConverter}">
@@ -249,7 +248,8 @@
 
 						<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 							   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
-							   PlacementTarget="{TemplateBinding}"
+							   Placement="BottomEdgeAlignedLeft"
+							   PlacementTarget="{TemplateBinding}" 
 							   WindowManagerAddShadowHint="False"
 							   IsLightDismissEnabled="True"
 							   HorizontalOffset="-1"

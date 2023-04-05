@@ -89,8 +89,7 @@
 					
 					<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 						   IsLightDismissEnabled="True"
-						   PlacementTarget="{TemplateBinding}"
-						   HorizontalOffset="{TemplateBinding assists:CalendarDatePickerAssists.PopupMargin, Converter={StaticResource PopupHorizontalOffsetConverter}}">
+						   PlacementTarget="{TemplateBinding}">
 						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
 								ClipToBounds="False"
 								Padding="{DynamicResource OverlayPadding}"
