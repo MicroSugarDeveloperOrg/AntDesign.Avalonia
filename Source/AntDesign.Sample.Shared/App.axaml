@@ -19,12 +19,6 @@
     <Application.Styles>
 		<AntDesign/>
 		<AntDesignDataGrid/>
-
-		<Style Selector="DataGrid DataGridRow DataGridCell:nth-last-child(1)">
-			<Setter Property="DataGridCellAssists.ForceRightGridLine" Value="True"/> 
-			
-		</Style>
-
 		<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
 	</Application.Styles>
 </Application>

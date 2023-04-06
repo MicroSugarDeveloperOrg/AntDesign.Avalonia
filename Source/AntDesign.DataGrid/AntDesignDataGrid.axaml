@@ -14,4 +14,7 @@
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>
+
+	<!--<StyleInclude Source="avares://AntDesign.DataGrid/Styles/DataGridStyles.axaml" />-->
+
 </Styles>

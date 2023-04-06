@@ -1,0 +1,10 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+		xmlns:assists="using:AntDesign.Assists"
+		x:CompileBindings="True">
+
+	<Style Selector="DataGrid DataGridRow DataGridCell:nth-last-child(1)">
+		<Setter Property="assists:DataGridCellAssists.ForceRightGridLine" Value="True"/>
+	</Style>
+ 
+</Styles>
