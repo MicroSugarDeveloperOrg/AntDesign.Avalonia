@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
-		<RootNamespace>AntDesign.ColorPicker</RootNamespace>
+		<RootNamespace>AntDesign</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -13,7 +13,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<AvaloniaXaml Remove="AntDesignColorPicker.axaml" /> 
+		<AvaloniaXaml Remove="AntDesignColorPicker.axaml" />
+		<AvaloniaXaml Remove="Styles\ColorPickerShared.axaml" /> 
 	</ItemGroup>
 
 	<ItemGroup>

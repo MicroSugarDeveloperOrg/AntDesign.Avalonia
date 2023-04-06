@@ -2,5 +2,15 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	 
+	<SolidColorBrush x:Key="ColorSliderThumbBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ColorSliderThumbBorderBrush" Color="Black"/>
+	<SolidColorBrush x:Key="ColorSliderThumbLightBorderBrush" Color="Black"/>
+	<SolidColorBrush x:Key="ColorSliderThumbDarkBorderBrush" Color="White"/>
+
+	<SolidColorBrush x:Key="ColorSliderBorderBrush" Color="Transparent"/>
+
+	<BoxShadows x:Key="ColorSliderBoxShadow">0 0 10 1 #4F000000</BoxShadows>
+
+
+
 </ResourceDictionary>

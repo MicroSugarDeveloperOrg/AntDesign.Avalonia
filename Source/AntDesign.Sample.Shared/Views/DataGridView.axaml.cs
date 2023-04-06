@@ -25,5 +25,8 @@ public partial class DataGridView : ReactiveUserControl<DataGridViewModel>
         //DataGridColumnHeadersPresenter
 
         //File.Copy()
+
+       //DataGrid.SelectedItems
+       //Border.BoxShadowProperty
     }
 }

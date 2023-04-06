@@ -1,14 +1,13 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
 				    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
 
-	<ControlTheme x:Key="ColorSliderThumbTheme"
-				 TargetType="Thumb">
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="BorderBrush" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
-		<!--TODO: <Setter Property="BorderBrush" Value="{DynamicResource ColorControlDefaultSelectorBrush}" />-->
-		<Setter Property="BorderThickness" Value="3" />
-		<Setter Property="CornerRadius" Value="10" />
+	<ControlTheme x:Key="ColorSliderThumbStyle" TargetType="Thumb">
+		<Setter Property="Background" Value="{StaticResource ColorSliderThumbBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ColorSliderThumbBorderBrush}" /> 
+		<Setter Property="BorderThickness" Value="{StaticResource ColorSliderThumbBorderThinkness}" />
+		<Setter Property="CornerRadius" Value="{StaticResource ColorSliderThumbCornerRadius}" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>
@@ -21,37 +20,42 @@
 		</Setter>
 	</ControlTheme>
 
-	<ControlTheme x:Key="{x:Type ColorSlider}"
-				  TargetType="ColorSlider">
-
+	<ControlTheme x:Key="{x:Type ColorSlider}" TargetType="ColorSlider">
+		<Setter Property="BorderBrush" Value="{DynamicResource ColorSliderBorderBrush}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource ColorSliderBorderThinkness}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource ColorSliderCornerRadius}"/>
+		<Setter Property="assists:ColorSliderAssists.BoxShadow" Value="{DynamicResource ColorSliderBoxShadow}"/>
+		
 		<Style Selector="^:horizontal">
-			<Setter Property="BorderThickness" Value="0" />
-			<Setter Property="CornerRadius" Value="10" />
-			<Setter Property="Height" Value="20" />
+			<Setter Property="Height" Value="{DynamicResource ColorSliderSize}"/>
 			<Setter Property="Template">
 				<ControlTemplate TargetType="{x:Type ColorSlider}">
-					<Border BorderThickness="{TemplateBinding BorderThickness}"
-							BorderBrush="{TemplateBinding BorderBrush}"
-							CornerRadius="{TemplateBinding CornerRadius}">
-						<Grid Margin="{TemplateBinding Padding}">
-							<Rectangle HorizontalAlignment="Stretch"
+					<Border BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							BoxShadow="{TemplateBinding assists:ColorSliderAssists.BoxShadow}">
+						<Grid>
+							<Rectangle Fill="{StaticResource ColorPickerCheckeredBackground}"
+									   HorizontalAlignment="Stretch"
 									   VerticalAlignment="Stretch"
-									   Fill="{StaticResource ColorControlCheckeredBackgroundBrush}"
 									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource TopLeftCornerRadiusConverter}}"
 									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource BottomRightCornerRadiusConverter}}" />
-							<Rectangle HorizontalAlignment="Stretch"
+							
+							<Rectangle Fill="{TemplateBinding Background}"
+									   HorizontalAlignment="Stretch"
 									   VerticalAlignment="Stretch"
-									   Fill="{TemplateBinding Background}"
 									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource TopLeftCornerRadiusConverter}}"
 									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource BottomRightCornerRadiusConverter}}" />
+							
 							<Track Name="PART_Track"
-								   HorizontalAlignment="Stretch"
-								   VerticalAlignment="Stretch"
 								   Minimum="{TemplateBinding Minimum}"
 								   Maximum="{TemplateBinding Maximum}"
 								   Value="{TemplateBinding Value, Mode=TwoWay}"
 								   IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
-								   Orientation="Horizontal">
+								   Orientation="Horizontal"
+								   HorizontalAlignment="Stretch"
+								   VerticalAlignment="Stretch">
 								<Track.DecreaseButton>
 									<RepeatButton Name="PART_DecreaseButton"
 												  Background="Transparent"
@@ -62,7 +66,7 @@
 											<ControlTemplate>
 												<Border Name="FocusTarget"
 														Background="Transparent"
-														Margin="0,-10" />
+														Margin="{StaticResource ColorSliderTrackRepeatButtonMargin}" />
 											</ControlTemplate>
 										</RepeatButton.Template>
 									</RepeatButton>
@@ -77,18 +81,18 @@
 											<ControlTemplate>
 												<Border Name="FocusTarget"
 														Background="Transparent"
-														Margin="0,-10" />
+														Margin="{StaticResource ColorSliderTrackRepeatButtonMargin}" />
 											</ControlTemplate>
 										</RepeatButton.Template>
 									</RepeatButton>
 								</Track.IncreaseButton>
 								<Thumb Name="ColorSliderThumb"
-									   Theme="{StaticResource ColorSliderThumbTheme}"
-									   Margin="0"
-									   Padding="0"
-									   DataContext="{TemplateBinding Value}"
 									   Height="{TemplateBinding Height}"
-									   Width="{TemplateBinding Height}" />
+									   Width="{TemplateBinding Height}"
+									   DataContext="{TemplateBinding Value}" 
+									   Theme="{StaticResource ColorSliderThumbStyle}"
+									   Margin="0"
+									   Padding="0"/>
 							</Track>
 						</Grid>
 					</Border>
@@ -97,33 +101,35 @@
 		</Style>
 
 		<Style Selector="^:vertical">
-			<Setter Property="BorderThickness" Value="0" />
-			<Setter Property="CornerRadius" Value="10" />
-			<Setter Property="Width" Value="20" />
+			<Setter Property="Width" Value="{DynamicResource ColorSliderSize}"/>
 			<Setter Property="Template">
 				<ControlTemplate TargetType="{x:Type ColorSlider}">
-					<Border BorderThickness="{TemplateBinding BorderThickness}"
-							BorderBrush="{TemplateBinding BorderBrush}"
-							CornerRadius="{TemplateBinding CornerRadius}">
-						<Grid Margin="{TemplateBinding Padding}">
-							<Rectangle HorizontalAlignment="Stretch"
+					<Border BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}" 
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							BoxShadow="{TemplateBinding assists:ColorSliderAssists.BoxShadow}">
+						<Grid>
+							<Rectangle Fill="{StaticResource ColorPickerCheckeredBackground}"
+									   HorizontalAlignment="Stretch"
 									   VerticalAlignment="Stretch"
-									   Fill="{StaticResource ColorControlCheckeredBackgroundBrush}"
 									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource TopLeftCornerRadiusConverter}}"
 									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource BottomRightCornerRadiusConverter}}" />
-							<Rectangle HorizontalAlignment="Stretch"
+							
+							<Rectangle Fill="{TemplateBinding Background}"
+									   HorizontalAlignment="Stretch"
 									   VerticalAlignment="Stretch"
-									   Fill="{TemplateBinding Background}"
 									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource TopLeftCornerRadiusConverter}}"
 									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource BottomRightCornerRadiusConverter}}" />
+							
 							<Track Name="PART_Track"
-								   HorizontalAlignment="Stretch"
-								   VerticalAlignment="Stretch"
 								   Minimum="{TemplateBinding Minimum}"
 								   Maximum="{TemplateBinding Maximum}"
 								   Value="{TemplateBinding Value, Mode=TwoWay}"
 								   IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
-								   Orientation="Vertical">
+								   Orientation="Vertical"
+								   HorizontalAlignment="Stretch"
+								   VerticalAlignment="Stretch">
 								<Track.DecreaseButton>
 									<RepeatButton Name="PART_DecreaseButton"
 												  Background="Transparent"
@@ -134,7 +140,7 @@
 											<ControlTemplate>
 												<Border Name="FocusTarget"
 														Background="Transparent"
-														Margin="0,-10" />
+														Margin="{StaticResource ColorSliderTrackRepeatButtonMargin}" />
 											</ControlTemplate>
 										</RepeatButton.Template>
 									</RepeatButton>
@@ -149,18 +155,18 @@
 											<ControlTemplate>
 												<Border Name="FocusTarget"
 														Background="Transparent"
-														Margin="0,-10" />
+														Margin="{StaticResource ColorSliderTrackRepeatButtonMargin}" />
 											</ControlTemplate>
 										</RepeatButton.Template>
 									</RepeatButton>
 								</Track.IncreaseButton>
 								<Thumb Name="ColorSliderThumb"
-									   Theme="{StaticResource ColorSliderThumbTheme}"
-									   Margin="0"
-									   Padding="0"
-									   DataContext="{TemplateBinding Value}"
 									   Height="{TemplateBinding Width}"
-									   Width="{TemplateBinding Width}" />
+									   Width="{TemplateBinding Width}"
+									   DataContext="{TemplateBinding Value}"
+									   Theme="{StaticResource ColorSliderThumbStyle}"
+									   Margin="0"
+									   Padding="0"/>
 							</Track>
 						</Grid>
 					</Border>
@@ -172,18 +178,21 @@
 		<Style Selector="^:pointerover /template/ Thumb#ColorSliderThumb">
 			<Setter Property="Opacity" Value="0.75" />
 		</Style>
+		
 		<Style Selector="^:pointerover:dark-selector /template/ Thumb#ColorSliderThumb">
 			<Setter Property="Opacity" Value="0.7" />
 		</Style>
+		
 		<Style Selector="^:pointerover:light-selector /template/ Thumb#ColorSliderThumb">
 			<Setter Property="Opacity" Value="0.8" />
 		</Style>
 
 		<Style Selector="^:dark-selector /template/ Thumb#ColorSliderThumb">
-			<Setter Property="BorderBrush" Value="{DynamicResource ColorControlDarkSelectorBrush}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource ColorSliderThumbDarkBorderBrush}" />
 		</Style>
+		
 		<Style Selector="^:light-selector /template/ Thumb#ColorSliderThumb">
-			<Setter Property="BorderBrush" Value="{DynamicResource ColorControlLightSelectorBrush}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource ColorSliderThumbLightBorderBrush}" />
 		</Style>
 
 	</ControlTheme>

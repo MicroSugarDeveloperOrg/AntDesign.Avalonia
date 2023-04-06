@@ -27,7 +27,7 @@
 					</DropDownButton.Styles>
 					<DropDownButton.Content> 
 						<Panel>
-							<Border Background="{StaticResource ColorControlCheckeredBackgroundBrush}"
+							<Border Background="{StaticResource ColorPickerCheckeredBackground}"
 									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
 									HorizontalAlignment="Stretch"
 									VerticalAlignment="Stretch"

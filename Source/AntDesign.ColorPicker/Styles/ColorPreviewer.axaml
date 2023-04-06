@@ -21,7 +21,7 @@
 									Grid.ColumnSpan="2"
 									HorizontalAlignment="Stretch"
 									VerticalAlignment="Stretch"
-									Background="{StaticResource ColorControlCheckeredBackgroundBrush}" />
+									Background="{StaticResource ColorPickerCheckeredBackground}" />
 							<Border x:Name="PART_AccentDecrement2Border"
 									Grid.Column="0"
 									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
@@ -43,7 +43,7 @@
 									Grid.ColumnSpan="2"
 									HorizontalAlignment="Stretch"
 									VerticalAlignment="Stretch"
-									Background="{StaticResource ColorControlCheckeredBackgroundBrush}" />
+									Background="{StaticResource ColorPickerCheckeredBackground}" />
 							<Border x:Name="PART_AccentIncrement1Border"
 									Grid.Column="0"
 									Tag="1"
@@ -62,7 +62,7 @@
 								CornerRadius="{TemplateBinding CornerRadius}"
 								Margin="10">
 							<Panel>
-								<Border Background="{StaticResource ColorControlCheckeredBackgroundBrush}"
+								<Border Background="{StaticResource ColorPickerCheckeredBackground}"
 										CornerRadius="{TemplateBinding CornerRadius}" />
 								<Border CornerRadius="{TemplateBinding CornerRadius}"
 										Background="{TemplateBinding HsvColor, Converter={StaticResource ToBrushConverter}}"
@@ -79,7 +79,7 @@
 							VerticalAlignment="Stretch"
 							Margin="0,10,0,10">
 						<Panel>
-							<Border Background="{StaticResource ColorControlCheckeredBackgroundBrush}"
+							<Border Background="{StaticResource ColorPickerCheckeredBackground}"
 									CornerRadius="{TemplateBinding CornerRadius}" />
 							<Border CornerRadius="{TemplateBinding CornerRadius}"
 									Background="{TemplateBinding HsvColor, Converter={StaticResource ToBrushConverter}}"

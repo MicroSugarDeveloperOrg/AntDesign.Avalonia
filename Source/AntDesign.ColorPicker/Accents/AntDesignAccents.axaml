@@ -5,14 +5,59 @@
 					xmlns:globalization="using:System.Globalization"
 					x:CompileBindings="True">
 
+	<VisualBrush x:Key="ColorPickerCheckeredBackground"
+				 TileMode="Tile"
+				 Stretch="Uniform"
+				 DestinationRect="0,0,8,8">
+		<VisualBrush.Visual>
+			<Image Width="8" Height="8">
+				<Image.Source>
+					<DrawingImage>
+						<DrawingImage.Drawing>
+							<DrawingGroup>
+								<GeometryDrawing Geometry="M0,0 L2,0 2,2, 0,2Z" Brush="Transparent" />
+								<GeometryDrawing Geometry="M0,1 L2,1 2,2, 1,2 1,0 0,0Z" Brush="#19808080" />
+							</DrawingGroup>
+						</DrawingImage.Drawing>
+					</DrawingImage>
+				</Image.Source>
+			</Image>
+		</VisualBrush.Visual>
+	</VisualBrush>
+
+	<converters:EnumToBoolConverter x:Key="EnumToBoolConverter" />
+	<converters:ToBrushConverter x:Key="ToBrushConverter" />
+	<converters:CornerRadiusFilterConverter x:Key="LeftCornerRadiusFilterConverter" Filter="TopLeft, BottomLeft"/>
+	<converters:CornerRadiusFilterConverter x:Key="RightCornerRadiusFilterConverter" Filter="TopRight, BottomRight"/>
+	<converters:CornerRadiusFilterConverter x:Key="TopCornerRadiusFilterConverter" Filter="TopLeft, TopRight"/>
+	<converters:CornerRadiusFilterConverter x:Key="BottomCornerRadiusFilterConverter" Filter="BottomLeft, BottomRight"/>
+	<converters:CornerRadiusToDoubleConverter x:Key="TopLeftCornerRadiusConverter" Corner="TopLeft" />
+	<converters:CornerRadiusToDoubleConverter x:Key="BottomRightCornerRadiusConverter" Corner="BottomRight" />
+
 	<primitivesconverters:ContrastBrushConverter x:Key="ContrastBrushConverter" />
 	<converters:ColorToDisplayNameConverter x:Key="ColorToDisplayNameConverter" />
 	<converters:ColorToHexConverter x:Key="ColorToHexConverter" />
 	<converters:DoNothingForNullConverter x:Key="DoNothingForNullConverter" />
 	<globalization:NumberFormatInfo x:Key="ColorViewComponentNumberFormat" NumberDecimalDigits="0" />
+
+	
+	
+	<Thickness x:Key="ColorSliderThumbBorderThinkness">3</Thickness>
+	<CornerRadius x:Key="ColorSliderThumbCornerRadius">10</CornerRadius>
+
+	<Thickness x:Key="ColorSliderBorderThinkness">1</Thickness>
+	<CornerRadius x:Key="ColorSliderCornerRadius">10</CornerRadius>
+
+	<x:Double x:Key="ColorSliderSize">20</x:Double>
+	
+	<Thickness x:Key="ColorSliderTrackRepeatButtonMargin">0,-10</Thickness>
+
+
+
 	<x:Double x:Key="ColorViewTabStripHeight">48</x:Double>
 	<x:Double x:Key="ColorViewComponentLabelWidth">30</x:Double>
 	<x:Double x:Key="ColorViewComponentTextInputWidth">80</x:Double>
 	<CornerRadius x:Key="ColorViewTabBackgroundCornerRadius">3</CornerRadius>
 	
+
 </ResourceDictionary>

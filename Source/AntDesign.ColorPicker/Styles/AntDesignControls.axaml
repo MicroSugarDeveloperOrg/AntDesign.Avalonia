@@ -4,6 +4,7 @@
 
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceInclude Source="avares://AntDesign.ColorPicker/Styles/ColorPicker.axaml" />
+		<ResourceInclude Source="avares://AntDesign.ColorPicker/Styles/ColorPickerShared.axaml" />
 		<ResourceInclude Source="avares://AntDesign.ColorPicker/Styles/ColorPreviewer.axaml" />
 		<ResourceInclude Source="avares://AntDesign.ColorPicker/Styles/ColorSlider.axaml" />
 		<ResourceInclude Source="avares://AntDesign.ColorPicker/Styles/ColorSpectrum.axaml" />
