@@ -17,6 +17,8 @@
 
 	<x:Double x:Key="DataGridHeaderSortIconSize">8</x:Double>
 
+	<x:Double x:Key="DataGridColumnSortOpacity">0.4</x:Double>
+
 	<Thickness x:Key="DataGridRowPadding">4</Thickness>
 	<Thickness x:Key="DataGridRowVisualMargin">0</Thickness>
 

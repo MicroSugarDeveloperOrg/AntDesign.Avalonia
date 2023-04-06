@@ -16,6 +16,14 @@ public partial class DataGridView : ReactiveUserControl<DataGridViewModel>
         //dataGridView.RowHeaderWidth
         //Avalonia.Controls.DataGrid.RowHeaderWidthProperty
 
+        //ControlTheme.
+        //DataGridRow
+        //DataGridCell
 
+        //DataGridCellsPresenter
+
+        //DataGridColumnHeadersPresenter
+
+        //File.Copy()
     }
 }

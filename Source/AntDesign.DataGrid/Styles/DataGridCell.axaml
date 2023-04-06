@@ -1,12 +1,17 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:assitsts="using:AntDesign.Assists"
+					xmlns:antconverters="using:AntDesign.Converters"
 					x:CompileBindings="True">
 
+	<antconverters:Margin2MarginConverter x:Key="Margin2MarginConverter"/>
+	
 	<ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
 		<Setter Property="Height" Value="{DynamicResource DataGridRowHeight}"/>
 		<Setter Property="Background" Value="{DynamicResource AntDesignDataGridCellBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource AntDesignDataGridCellBorderBrush}" />
 		<Setter Property="Padding" Value="{DynamicResource DataGridRowPadding}"/>
+		<Setter Property="assitsts:DataGridCellAssists.ShowRightGridLine" Value="False"/>
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Focusable" Value="False" />
@@ -67,6 +72,7 @@
 								   Grid.Column="1"
 								   Width="1"
 								   VerticalAlignment="Stretch"
+								   IsVisible="{TemplateBinding assitsts:DataGridCellAssists.ShowRightGridLine}"
 								   Fill="{DynamicResource AntDesignDataGridBorderBrush}" />
 
 					</Grid>
@@ -75,6 +81,8 @@
 		</Setter>
 		<Style Selector="^:current /template/ Rectangle#CurrencyVisual">
 			<Setter Property="IsVisible" Value="True" />
+			<Setter Property="ZIndex" Value="1" />
+			<Setter Property="Margin" Value="{TemplateBinding Margin, Converter={StaticResource Margin2MarginConverter}}"/>
 		</Style>
 		<Style Selector="^:focus /template/ Grid#FocusVisual">
 			<Setter Property="IsVisible" Value="True" />

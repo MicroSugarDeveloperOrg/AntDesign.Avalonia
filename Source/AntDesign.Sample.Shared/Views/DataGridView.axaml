@@ -16,10 +16,10 @@
 			  GridLinesVisibility="All"
 			  HorizontalScrollBarVisibility="Visible"
 			  VerticalScrollBarVisibility="Visible"
-		      AutoGenerateColumns="False"
+		      AutoGenerateColumns="False" 
 			  RowHeaderWidth="40">
 		<DataGrid.Columns> 
-			<DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="6*"/>
+			<DataGridTextColumn Header="Name" Binding="{Binding Name}" CanUserSort="False"  Width="6*"/>
 			<DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="4*"/>
 			<DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="3*"/>
 			<DataGridTextColumn Header="Tags" Binding="{Binding Tags}" Width="3*"/>

@@ -1,4 +1,4 @@
-﻿namespace AntDesign.DataGrid;
+﻿namespace AntDesign;
 public partial class AntDesignDataGrid : Styles
 {
     public AntDesignDataGrid(IServiceProvider? serviceProvider = default)

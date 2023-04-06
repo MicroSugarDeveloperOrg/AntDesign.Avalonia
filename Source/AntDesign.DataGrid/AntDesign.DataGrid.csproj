@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
-		<RootNamespace>AntDesign.DataGrid</RootNamespace>
+		<RootNamespace>AntDesign</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

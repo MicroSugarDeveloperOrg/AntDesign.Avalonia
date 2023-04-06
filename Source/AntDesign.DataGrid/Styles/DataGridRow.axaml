@@ -101,7 +101,7 @@
 				</Border>
 			</ControlTemplate>
 		</Setter>
-
+		
 		<Style Selector="^:invalid">
 			<Style Selector="^ /template/ Rectangle#InvalidVisualElement">
 				<Setter Property="Opacity" Value="0.4" />

@@ -58,13 +58,13 @@
 								  VerticalAlignment="Center" >
 								
 								<PathIcon Grid.Row="0"
-										  Opacity="0.5"
+										  Opacity="{DynamicResource DataGridColumnSortOpacity}"
 										  Width="{DynamicResource DataGridHeaderSortIconSize}" 
 										  Height="{DynamicResource DataGridHeaderSortIconSize}" 
 										  Foreground="{TemplateBinding Foreground}" 
 										  Data="{StaticResource DataGridHeaderUpGeometry}"/>
 								<PathIcon Grid.Row="2"  
-										  Opacity="0.5"
+										  Opacity="{DynamicResource DataGridColumnSortOpacity}"
 										  Width="{DynamicResource DataGridHeaderSortIconSize}" 
 										  Height="{DynamicResource DataGridHeaderSortIconSize}" 
 										  Foreground="{TemplateBinding Foreground}" 

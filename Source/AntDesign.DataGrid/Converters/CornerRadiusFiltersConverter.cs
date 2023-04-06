@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls.Converters;
 
-namespace AntDesign.DataGrid.Converters;
+namespace AntDesign.Converters;
 
 public class CornerRadiusFiltersConverter : IMultiValueConverter
 {
