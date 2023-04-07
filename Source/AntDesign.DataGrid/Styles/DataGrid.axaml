@@ -24,6 +24,7 @@
 				<Rectangle Fill="{DynamicResource AntDesignDataGridIndicatorTemplateBackground}" Width="2" />
 			</Template>
 		</Setter>
+		
 		<Setter Property="Template">
 			<ControlTemplate TargetType="DataGrid">
 				<Border x:Name="DataGridBorder"

@@ -3,8 +3,7 @@
 					xmlns:controls="using:Avalonia.Controls"
 					x:CompileBindings="True">
 
-	<ControlTheme x:Key="{x:Type ColorSpectrum}"
-				 TargetType="ColorSpectrum">
+	<ControlTheme x:Key="{x:Type ColorSpectrum}" TargetType="ColorSpectrum">
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type ColorSpectrum}">

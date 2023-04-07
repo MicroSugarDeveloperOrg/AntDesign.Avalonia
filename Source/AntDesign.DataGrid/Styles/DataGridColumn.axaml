@@ -75,10 +75,12 @@
 						<Rectangle x:Name="VerticalSeparator"
 								   Grid.Column="2"
 								   Width="1"
+								   Height="{Binding $parent[DataGrid].GridLinesVisibility, Converter={StaticResource GridLine2HeightConverter}}"
 								   Fill="{TemplateBinding SeparatorBrush}"
 								   IsVisible="{TemplateBinding AreSeparatorsVisible}"
 								   Margin="{DynamicResource DataGridSeparatorMargin}"
-								   VerticalAlignment="Stretch"/>
+								   VerticalAlignment="Stretch"> 
+						</Rectangle>
 
 						<Grid x:Name="FocusVisual"
 							  IsHitTestVisible="False"
@@ -157,10 +159,10 @@
 				<Setter Property="Foreground" Value="{DynamicResource AntDesignDataGridHeaderIconPrimaryBackground}" />
 			</Style>
 		</Style>
+		
 	</ControlTheme>
 
-	<ControlTheme x:Key="DataGridTopLeftColumnHeader"
-				  TargetType="DataGridColumnHeader"
+	<ControlTheme x:Key="DataGridTopLeftColumnHeader" TargetType="DataGridColumnHeader"
 				  BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
 		<Setter Property="Background" Value="{DynamicResource AntDesignDataGridHeaderBackground}" />
 		<Setter Property="Template">
