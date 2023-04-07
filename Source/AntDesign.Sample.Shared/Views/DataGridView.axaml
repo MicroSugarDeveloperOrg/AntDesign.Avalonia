@@ -2,29 +2,130 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:converters="using:AntDesign.Sample.Converters"
 			 xmlns:models="using:AntDesign.Sample.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.DataGridView">
-	
-	<DataGrid Margin="12"  
-			  x:DataType="models:Person"
-			  Items="{Binding Persons}"
-			  CanUserResizeColumns="True" 
-			  CanUserReorderColumns="True"  
-			  CanUserSortColumns="True" 
-			  HeadersVisibility="All"   
-			  GridLinesVisibility="Horizontal"
-			  HorizontalScrollBarVisibility="Visible"
-			  VerticalScrollBarVisibility="Visible"
-		      AutoGenerateColumns="False" 
-			  RowHeaderWidth="40">
-		<DataGrid.Columns> 
-			<DataGridTextColumn Header="Name" Binding="{Binding Name}" CanUserSort="False"  Width="6*"/>
-			<DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="4*"/>
-			<DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="3*"/>
-			<DataGridTextColumn Header="Tags" Binding="{Binding Tags}" Width="3*"/>
-			<DataGridTextColumn Header="Actions" Binding="{Binding Actions}" Width="3*" MinWidth="200" />
-		</DataGrid.Columns> 
-	</DataGrid>
-	
+
+	<UserControl.Resources>
+		<converters:DataGridRowIndexConverter x:Key="DataGridRowIndexConverter"/>
+		<converters:DataGridRowAlternatingRowColorConverter x:Key="DataGridRowAlternatingRowColorConverter"/>
+	</UserControl.Resources>
+
+	<ScrollViewer>
+		<Grid RowDefinitions="Auto,20,Auto,20,30,10, 600, 10 ,600">
+			<TextBlock Grid.Row="0" Text="展示行列数据。"/>
+
+			<StackPanel Grid.Row="2" Spacing="10">
+				<TextBlock  Text="何时使用" Classes="h3"/>
+				<TextBlock  Text=">>  当有大量结构化的数据需要展现时；"/>
+				<TextBlock  Text=">>  当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。"/>
+			</StackPanel>
+
+			<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+
+			<Border Grid.Row="6"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,Auto">
+
+					<DataGrid Margin="20"
+							  x:DataType="models:Person"
+							  Items="{Binding Persons}"
+							  CanUserResizeColumns="True"
+							  CanUserReorderColumns="True"
+							  CanUserSortColumns="True"
+							  HeadersVisibility="All"
+							  GridLinesVisibility="All"
+							  HorizontalScrollBarVisibility="Visible"
+							  VerticalScrollBarVisibility="Visible"
+							  AutoGenerateColumns="False"
+							  RowHeaderWidth="40">
+						<DataGrid.Styles>
+							<Style Selector="DataGridRow">
+								<!--这是头部显示Index-->
+								<Setter Property="Header" Value="{Binding RelativeSource={RelativeSource Self}, Converter={StaticResource DataGridRowIndexConverter}}"/>
+								<!--这是隔行变色-->
+								<Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Converter={StaticResource DataGridRowAlternatingRowColorConverter} }"/>
+							</Style>
+						</DataGrid.Styles>
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Name" Binding="{Binding Name}" CanUserSort="False"  Width="6*"/>
+							<DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="4*"/>
+							<DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="3*"/>
+							<DataGridTextColumn Header="Tags" Binding="{Binding Tags}" Width="3*"/>
+							<DataGridTextColumn Header="Actions" Binding="{Binding Actions}" Width="3*" MinWidth="200" />
+						</DataGrid.Columns>
+					</DataGrid>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2"
+								Margin="20,5,0,5"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="DataGrid"/>
+						<TextBlock Text="通过Styles修改DataGridRow的显示效果"/>
+						<TextBlock Text="实现显示行Index"/>
+						<TextBlock Text="实现行隔行变色"/>
+					</StackPanel>
+
+				</Grid>
+				
+			</Border>
+
+			<Border Grid.Row="8"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,Auto">
+
+					<DataGrid Margin="20"
+							  x:DataType="models:Person"
+							  Items="{Binding Persons}"
+							  CanUserResizeColumns="True"
+							  CanUserReorderColumns="True"
+							  CanUserSortColumns="True"
+							  HeadersVisibility="Column"
+							  GridLinesVisibility="Horizontal"
+							  HorizontalScrollBarVisibility="Visible"
+							  VerticalScrollBarVisibility="Visible"
+							  AutoGenerateColumns="False" >
+						 
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Name" Binding="{Binding Name}" CanUserSort="False"  Width="6*"/>
+							<DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="4*"/>
+							<DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="3*"/>
+							<DataGridTextColumn Header="Tags" Binding="{Binding Tags}" Width="3*"/>
+							<DataGridTextColumn Header="Actions" Binding="{Binding Actions}" Width="3*" MinWidth="200" />
+						</DataGrid.Columns>
+					</DataGrid>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="属性设置"/>
+
+					<StackPanel Grid.Row="2"
+								Margin="20,5,0,5"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="DataGrid"/>
+						<TextBlock Text="通过修改HeadersVisibility属性，实现是否显示列头或者行头"/>
+						<TextBlock Text="通过修改GridLinesVisibility属性，实现是否显示分割线"/> 
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+
+
+		</Grid>
+
+
+
+	</ScrollViewer>
+
+
 </UserControl>

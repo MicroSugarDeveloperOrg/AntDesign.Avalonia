@@ -6,14 +6,13 @@
              x:Class="AntDesign.Sample.Views.ColorPickerView">
 
 	<Grid ColumnDefinitions="Auto,*">
-		<ColorPicker
-					 HsvColor="hsv(120, 1, 1)"
+		<ColorPicker HsvColor="hsv(120, 1, 1)"
 					 Margin="0,50,0,0">
 
 		</ColorPicker>
 
 
-		<ColorPreviewer Grid.Column="1" IsAccentColorsVisible="False">
+		<ColorPreviewer Grid.Column="1" IsAccentColorsVisible="False" HsvColor="hsv(120, 1, 1)">
 
 		</ColorPreviewer>
 	</Grid>

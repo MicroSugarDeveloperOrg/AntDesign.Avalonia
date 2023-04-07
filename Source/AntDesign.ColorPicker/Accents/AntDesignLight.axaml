@@ -8,8 +8,11 @@
 	<SolidColorBrush x:Key="ColorSliderThumbDarkBorderBrush" Color="White"/>
 
 	<SolidColorBrush x:Key="ColorSliderBorderBrush" Color="Transparent"/>
-
 	<BoxShadows x:Key="ColorSliderBoxShadow">0 0 10 1 #4F000000</BoxShadows>
+
+	<SolidColorBrush x:Key="ColorSpectrumBordertStroke" Color="Black"/>
+	<SolidColorBrush x:Key="ColorSpectrumSelectorLightStroke" Color="Black"/>
+	<SolidColorBrush x:Key="ColorSpectrumSelectorDarkStroke" Color="White"/>
 
 
 

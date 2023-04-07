@@ -3,8 +3,9 @@
 					x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type ColorPreviewer}" TargetType="ColorPreviewer">
-		<Setter Property="Height" Value="70" />
-		<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+		<Setter Property="Height" Value="{DynamicResource ColorPreviewerHeight}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ColorPreviewerCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource ColorPreviewerPadding}" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="{x:Type ColorPreviewer}">
 				<Panel> 
@@ -12,21 +13,23 @@
 						  IsVisible="{TemplateBinding IsAccentColorsVisible}">
  
 						<Grid Grid.Column="0"
+							  ColumnDefinitions="*,*"
 							  Height="{StaticResource ColorPreviewerAccentSectionHeight}"
 							  Width="{StaticResource ColorPreviewerAccentSectionWidth}"
-							  ColumnDefinitions="*,*"
-							  Margin="0,0,-10,0"
+							  Margin="{StaticResource ColorPreviewerLeftMargin}"
 							  VerticalAlignment="Center">
 							<Border Grid.Column="0"
 									Grid.ColumnSpan="2"
+									Background="{StaticResource ColorPickerCheckeredBackground}"
 									HorizontalAlignment="Stretch"
-									VerticalAlignment="Stretch"
-									Background="{StaticResource ColorPickerCheckeredBackground}" />
+									VerticalAlignment="Stretch"/>
+							
 							<Border x:Name="PART_AccentDecrement2Border"
 									Grid.Column="0"
-									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}"
 									Tag="-2"
-									Background="{TemplateBinding HsvColor, Converter={StaticResource AccentColorConverter}, ConverterParameter='-2'}" />
+									Background="{TemplateBinding HsvColor, Converter={StaticResource AccentColorConverter}, ConverterParameter='-2'}" 
+									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+							
 							<Border x:Name="PART_AccentDecrement1Border"
 									Grid.Column="1"
 									Tag="-1"
@@ -34,36 +37,40 @@
 						</Grid>
 		 
 						<Grid Grid.Column="2"
+							  ColumnDefinitions="*,*"
 							  Height="{StaticResource ColorPreviewerAccentSectionHeight}"
 							  Width="{StaticResource ColorPreviewerAccentSectionWidth}"
-							  ColumnDefinitions="*,*"
-							  Margin="-10,0,0,0"
+							  Margin="{StaticResource ColorPreviewerAccentRightMargin}"
 							  VerticalAlignment="Center">
+							
 							<Border Grid.Column="0"
 									Grid.ColumnSpan="2"
+									Background="{StaticResource ColorPickerCheckeredBackground}"
 									HorizontalAlignment="Stretch"
-									VerticalAlignment="Stretch"
-									Background="{StaticResource ColorPickerCheckeredBackground}" />
+									VerticalAlignment="Stretch" />
+							
 							<Border x:Name="PART_AccentIncrement1Border"
 									Grid.Column="0"
 									Tag="1"
 									Background="{TemplateBinding HsvColor, Converter={StaticResource AccentColorConverter}, ConverterParameter='1'}" />
+							
 							<Border x:Name="PART_AccentIncrement2Border"
 									Grid.Column="1"
-									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}"
 									Tag="2"
-									Background="{TemplateBinding HsvColor, Converter={StaticResource AccentColorConverter}, ConverterParameter='2'}" />
+									Background="{TemplateBinding HsvColor, Converter={StaticResource AccentColorConverter}, ConverterParameter='2'}" 
+									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
 						</Grid>
 						
 						<Border Grid.Column="1"
-								HorizontalAlignment="Stretch"
-								VerticalAlignment="Stretch"
 								BoxShadow="0 0 10 2 #BF000000"
 								CornerRadius="{TemplateBinding CornerRadius}"
-								Margin="10">
+								Margin="{StaticResource ColorPreviewerAccentCenterMargin}"
+								HorizontalAlignment="Stretch"
+								VerticalAlignment="Stretch">
 							<Panel>
 								<Border Background="{StaticResource ColorPickerCheckeredBackground}"
 										CornerRadius="{TemplateBinding CornerRadius}" />
+								
 								<Border CornerRadius="{TemplateBinding CornerRadius}"
 										Background="{TemplateBinding HsvColor, Converter={StaticResource ToBrushConverter}}"
 										HorizontalAlignment="Stretch"
@@ -73,16 +80,17 @@
 					
 					</Grid>
 					
-					<Border CornerRadius="{TemplateBinding CornerRadius}"
-							IsVisible="{TemplateBinding IsAccentColorsVisible, Converter={x:Static BoolConverters.Not}}"
+					<Border IsVisible="{TemplateBinding IsAccentColorsVisible, Converter={x:Static BoolConverters.Not}}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Margin="{TemplateBinding Padding}"
 							HorizontalAlignment="Stretch"
-							VerticalAlignment="Stretch"
-							Margin="0,10,0,10">
+							VerticalAlignment="Stretch" >
 						<Panel>
 							<Border Background="{StaticResource ColorPickerCheckeredBackground}"
 									CornerRadius="{TemplateBinding CornerRadius}" />
-							<Border CornerRadius="{TemplateBinding CornerRadius}"
-									Background="{TemplateBinding HsvColor, Converter={StaticResource ToBrushConverter}}"
+							
+							<Border Background="{TemplateBinding HsvColor, Converter={StaticResource ToBrushConverter}}" 
+									CornerRadius="{TemplateBinding CornerRadius}"
 									HorizontalAlignment="Stretch"
 									VerticalAlignment="Stretch" />
 						</Panel>

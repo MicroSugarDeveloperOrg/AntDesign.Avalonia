@@ -26,7 +26,12 @@ public partial class DataGridView : ReactiveUserControl<DataGridViewModel>
 
         //File.Copy()
 
-       //DataGrid.SelectedItems
-       //Border.BoxShadowProperty
+        //DataGrid dataGrid = new DataGrid();
+        //DataGridRow row = new DataGridRow();
+        
+        //dataGrid.DataTemplates
+
+        //DataGrid.SelectedItems
+        //Border.BoxShadowProperty
     }
 }

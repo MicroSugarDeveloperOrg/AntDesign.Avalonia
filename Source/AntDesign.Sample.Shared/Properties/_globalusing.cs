@@ -11,3 +11,5 @@ global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reactive;
+global using Avalonia.Data.Converters;
+global using System.Globalization;

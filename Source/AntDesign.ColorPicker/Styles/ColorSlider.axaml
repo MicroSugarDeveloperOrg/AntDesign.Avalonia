@@ -25,6 +25,7 @@
 		<Setter Property="BorderThickness" Value="{DynamicResource ColorSliderBorderThinkness}"/>
 		<Setter Property="CornerRadius" Value="{DynamicResource ColorSliderCornerRadius}"/>
 		<Setter Property="assists:ColorSliderAssists.BoxShadow" Value="{DynamicResource ColorSliderBoxShadow}"/>
+		<Setter Property="ClipToBounds" Value="false" />
 
 		<Style Selector="^:horizontal">
 			<Setter Property="Height" Value="{DynamicResource ColorSliderSize}"/>
