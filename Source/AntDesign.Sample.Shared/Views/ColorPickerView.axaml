@@ -2,22 +2,140 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"  Design.Height="1000"
              x:Class="AntDesign.Sample.Views.ColorPickerView">
 
-	<Grid ColumnDefinitions="Auto,*">
-		<ColorPicker HsvColor="hsv(120, 1, 1)"
-					 Margin="0,50,0,0">
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,Auto,10,Auto">
+		<TextBlock Grid.Row="0" Text="获取颜色值信息。"/>
 
-		</ColorPicker>
+		<StackPanel Grid.Row="2" Spacing="10">
+			<TextBlock  Text="何时使用" Classes="h3"/>
+			<TextBlock  Text=">>  当需要进行颜色调整时"/>
+			<TextBlock  Text=">>  当需要获取颜色值时。"/>
+		</StackPanel>
+
+		<TextBlock Grid.Row="4" Text="代码演示" Classes="h3"/>
+		
+		<Grid  Grid.Row="6" 
+			   ColumnDefinitions="*,10,*"
+			   RowDefinitions="Auto,20,Auto">
+
+			<Border Grid.Column="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+				
+				<Grid RowDefinitions="*,Auto,Auto">
+
+					<ColorView ColorSpectrumShape="Ring" />
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2"
+								Margin="20,5,0,5"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ColorView"/> 
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Column="2"
+					Grid.Row="0"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,Auto">
+					<Grid ColumnDefinitions="*,10,*">
+						
+						<ColorSpectrum x:Name="ColorSpectrum1"
+									   Grid.Column="0"
+									   Color="Red"
+									   Height="300"
+									   Width="300"
+									   CornerRadius="10" />
+
+						<StackPanel Grid.Column="2" Spacing="10" VerticalAlignment="Center">
+							<!-- HSV Sliders -->
+							<ColorSlider ColorComponent="Component1"
+										 ColorModel="Hsva"
+										 HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+
+							<ColorSlider ColorComponent="Component2"
+										 ColorModel="Hsva"
+										 HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+
+							<ColorSlider ColorComponent="Component3"
+										 ColorModel="Hsva"
+										 HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+
+							<ColorSlider ColorComponent="Alpha"
+										 ColorModel="Hsva"
+										 HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+							<!-- RGB Sliders -->
+							<ColorSlider ColorComponent="Component1"
+										 ColorModel="Rgba"
+										 HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+
+							<ColorSlider ColorComponent="Component2"
+										 ColorModel="Rgba"
+										 HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+
+							<ColorSlider ColorComponent="Component3"
+										 ColorModel="Rgba"
+										 HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+
+							<ColorPreviewer IsAccentColorsVisible="False"
+											HsvColor="{Binding HsvColor, ElementName=ColorSpectrum1}" />
+						</StackPanel>
+
+					</Grid>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2"
+								Margin="20,5,0,5"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ColorSpectrum"/>
+						<TextBlock Text="ColorSlider"/>
+					</StackPanel>
+				</Grid>
 
 
-		<ColorPreviewer Grid.Column="1" IsAccentColorsVisible="False" HsvColor="hsv(120, 1, 1)">
+			</Border>
 
-		</ColorPreviewer>
+		</Grid>
+
+		<Grid Grid.Row="8">
+			<Border BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,Auto">
+					<ColorPicker Width="120" HsvColor="hsv(120, 1, 1)" Margin="0,20,0,0">
+						<ColorPicker.Palette>
+							<FlatHalfColorPalette/>
+						</ColorPicker.Palette>
+					</ColorPicker>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2"
+								Margin="20,5,0,5"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ColorView"/>
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+		</Grid>
+		
 	</Grid>
-
-
-
 
 </UserControl>
