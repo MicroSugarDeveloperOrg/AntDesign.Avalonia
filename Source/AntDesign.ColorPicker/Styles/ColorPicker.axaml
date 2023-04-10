@@ -43,7 +43,33 @@
 					</DropDownButton.Content>
 					<DropDownButton.Flyout>
 						<Flyout FlyoutPresenterClasses="nopadding">
-							<ColorView />
+							<ColorView Color="{TemplateBinding Color}" 
+									   ColorModel="{TemplateBinding ColorModel}"
+									   ColorSpectrumComponents="{TemplateBinding ColorSpectrumComponents}"
+									   ColorSpectrumShape="{TemplateBinding ColorSpectrumShape}"
+									   HsvColor="{TemplateBinding HsvColor, Mode=TwoWay}"
+									   IsAccentColorsVisible="{TemplateBinding IsAccentColorsVisible}"
+									   IsAlphaEnabled="{TemplateBinding IsAlphaEnabled}"
+									   IsAlphaVisible="{TemplateBinding IsAlphaVisible}"
+									   IsColorComponentsVisible="{TemplateBinding IsColorComponentsVisible}"
+									   IsColorModelVisible="{TemplateBinding IsColorModelVisible}"
+									   IsColorPaletteVisible="{TemplateBinding IsColorPaletteVisible}"
+									   IsColorPreviewVisible="{TemplateBinding IsColorPreviewVisible}"
+									   IsColorSpectrumVisible="{TemplateBinding IsColorSpectrumVisible}"
+									   IsColorSpectrumSliderVisible="{TemplateBinding IsColorSpectrumSliderVisible}"
+									   IsComponentSliderVisible="{TemplateBinding IsComponentSliderVisible}"
+									   IsComponentTextInputVisible="{TemplateBinding IsComponentTextInputVisible}"
+									   IsHexInputVisible="{TemplateBinding IsHexInputVisible}"
+									   MaxHue="{TemplateBinding MaxHue}"
+									   MaxSaturation="{TemplateBinding MaxSaturation}"
+									   MaxValue="{TemplateBinding MaxValue}"
+									   MinHue="{TemplateBinding MinHue}"
+									   MinSaturation="{TemplateBinding MinSaturation}"
+									   MinValue="{TemplateBinding MinValue}"
+									   PaletteColors="{TemplateBinding PaletteColors}"
+									   PaletteColumnCount="{TemplateBinding PaletteColumnCount}"
+									   Palette="{TemplateBinding Palette}"
+									   SelectedIndex="{TemplateBinding SelectedIndex}"/>
 						</Flyout>
 					</DropDownButton.Flyout>
 				</DropDownButton>
