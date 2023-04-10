@@ -6,8 +6,9 @@
 
 	<ControlTheme x:Key="{x:Type ColorPicker}" TargetType="ColorPicker">
 		<Setter Property="Height" Value="32" />
-		<Setter Property="Width" Value="64" /> 
-		<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+		<Setter Property="Width" Value="64" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ColorPickerCornerRadius}" />
+		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Palette">
 			<controls:FluentColorPalette />
 		</Setter>
@@ -15,10 +16,11 @@
 			<ControlTemplate TargetType="{x:Type ColorPicker}">
 				<DropDownButton Height="{TemplateBinding Height}"
 								Width="{TemplateBinding Width}"
-								HorizontalContentAlignment="Stretch"
-								VerticalContentAlignment="Stretch"
-								Padding="0,0,10,0"
-								UseLayoutRounding="False">
+								UseLayoutRounding="False"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								Padding="{StaticResource ColorPickerDropDownButtonPadding}"
+								HorizontalContentAlignment="Stretch" 
+								VerticalContentAlignment="Stretch">
 					<DropDownButton.Styles>
 						<Style Selector="FlyoutPresenter.nopadding">
 							<Setter Property="Padding" Value="0" />
@@ -28,15 +30,15 @@
 						<Panel>
 							<Border Background="{StaticResource ColorPickerCheckeredBackground}"
 									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerLeftCornerRadiusFilterConverter}}"
+									Margin="{StaticResource ColorViewLeftBorderThickness}"
 									HorizontalAlignment="Stretch"
-									VerticalAlignment="Stretch"
-									Margin="1,1,0,1" />
+									VerticalAlignment="Stretch"/>
 							
 							<Border Background="{TemplateBinding HsvColor, Converter={StaticResource ToBrushConverter}}"
 									CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerLeftCornerRadiusFilterConverter}}"
+									Margin="{StaticResource ColorViewLeftBorderThickness}"
 									HorizontalAlignment="Stretch"
-									VerticalAlignment="Stretch"
-									Margin="1,1,0,1" />
+									VerticalAlignment="Stretch" />
 						</Panel>
 					</DropDownButton.Content>
 					<DropDownButton.Flyout>

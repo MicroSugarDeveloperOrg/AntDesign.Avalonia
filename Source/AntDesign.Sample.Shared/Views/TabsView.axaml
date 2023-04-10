@@ -66,7 +66,11 @@
 									VerticalAlignment="Center">
 							<StackPanel Orientation="Horizontal" Spacing="10">
 								<TabControl IsEnabled="False">
-									<TabItem Header="Item 1">Item 1</TabItem>
+									<TabItem Header="Item 1">
+										<Border Background="Red">
+											<TextBlock Text="123123" Foreground="White"/>
+										</Border>
+									</TabItem>
 									<TabItem Header="Item 2">Item 2</TabItem>
 									<TabItem Header="Item 3" IsEnabled="False">Disabled</TabItem>
 								</TabControl>

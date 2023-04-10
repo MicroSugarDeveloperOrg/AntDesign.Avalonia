@@ -70,19 +70,23 @@
 	<x:Double x:Key="ColorPreviewerAccentSectionWidth">80</x:Double>
 	<x:Double x:Key="ColorPreviewerAccentSectionHeight">40</x:Double>
 	
-	<x:Double x:Key="ColorViewComponentLabelWidth">30</x:Double>
+	<x:Double x:Key="ColorViewComponentLabelWidth">35</x:Double>
 	<x:Double x:Key="ColorViewComponentTextInputWidth">80</x:Double>
 	
 	<Thickness x:Key="ColorViewBorderThicknesss">1</Thickness>
 	<CornerRadius x:Key="ColorViewCornerRadius">5</CornerRadius>
 	<Thickness x:Key="ColorViewPadding">3</Thickness>
 
+	<x:Double x:Key="ColorViewHeight">410</x:Double>
+	<x:Double x:Key="ColorViewWidth">360</x:Double>
+
 	<x:Double x:Key="ColorViewTabStripHeight">48</x:Double>
 	<x:Double x:Key="ColorViewTabHeight">338</x:Double>
 	<x:Double x:Key="ColorViewTabWidth">350</x:Double>
 	<x:Double x:Key="ColorViewTabIconSize">20</x:Double>
+	<Thickness x:Key="ColorViewTabItemMargin">0,12,0,0</Thickness>
 
-	<GridLength x:Key="ColorViewSpectrumTabComponentMinWidth">32</GridLength>
+	<x:Double x:Key="ColorViewSpectrumTabComponentMinWidth">32</x:Double>
 	<GridLength x:Key="ColorViewSpectrumTabComponentSpacing">10</GridLength>
 
 	<x:Double x:Key="ColorViewPaletteListBoxItemStrokeThickness">3</x:Double>
@@ -93,5 +97,15 @@
 
 	<GridLength x:Key="ColorViewComponentsGridWidth">30</GridLength>
 	<x:Double x:Key="ColorViewComponentsBorderHeight">32</x:Double>
-	
+
+	<CornerRadius x:Key="ColorViewLeftCornerRadius">4,0,0,4</CornerRadius>
+	<CornerRadius x:Key="ColorViewRightCornerRadius">0,4,4,0</CornerRadius>
+	<Thickness x:Key="ColorViewLeftBorderThickness">1,1,0,1</Thickness>
+	<Thickness x:Key="ColorViewRightBorderThickness">0,1,1,1</Thickness>
+
+	<Thickness x:Key="ColorViewSpacingMargin">0,0,15,0</Thickness>
+	<Thickness x:Key="ColorPickerDropDownButtonPadding">0,0,5,0</Thickness>
+
+	<CornerRadius x:Key="ColorPickerCornerRadius">5</CornerRadius>
+
 </ResourceDictionary>

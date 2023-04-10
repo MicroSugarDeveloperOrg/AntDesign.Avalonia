@@ -23,17 +23,14 @@
 	<SolidColorBrush x:Key="ColorViewRadioButtonForeground" Color="#1d1d1d"/>
 	<SolidColorBrush x:Key="ColorViewRadioButtonBorderBrush" Color="#d9d9d9"/>
 
-	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverForeground" Color="#FF4096FF"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverBackground" Color="#FF4096FF"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverForeground" Color="White"/>
 	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverBorderBrush" Color="#FF4096FF"/>
 
-	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedForeground" Color="#FF1668DC"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedBackground" Color="#FF1668DC"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedForeground" Color="White"/>
 	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedBorderBrush" Color="#FF1668DC"/>
 
-
 	<SolidColorBrush x:Key="ColorViewComponentsBorderBackground" Color="Transparent"/>
-
-
 
 </ResourceDictionary>
