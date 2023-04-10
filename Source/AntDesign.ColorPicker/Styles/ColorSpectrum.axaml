@@ -17,16 +17,16 @@
 							<Rectangle x:Name="PART_SpectrumRectangle"
 									   IsHitTestVisible="False"
 									   IsVisible="{TemplateBinding Shape, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static controls:ColorSpectrumShape.Box}}"
-									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource TopLeftCornerRadiusConverter}}"
-									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource BottomRightCornerRadiusConverter}}" 
+									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerTopLeftCornerRadiusConverter}}"
+									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerBottomRightCornerRadiusConverter}}" 
 									   HorizontalAlignment="Stretch"
 									   VerticalAlignment="Stretch"/>
 							
 							<Rectangle x:Name="PART_SpectrumOverlayRectangle"
 									   IsHitTestVisible="False"
 									   IsVisible="{TemplateBinding Shape, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static controls:ColorSpectrumShape.Box}}"
-									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource TopLeftCornerRadiusConverter}}"
-									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource BottomRightCornerRadiusConverter}}"
+									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerTopLeftCornerRadiusConverter}}"
+									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerBottomRightCornerRadiusConverter}}"
 									   HorizontalAlignment="Stretch"
 									   VerticalAlignment="Stretch"/>
 							
@@ -73,8 +73,8 @@
 							<Rectangle x:Name="BorderRectangle"
 									   IsHitTestVisible="False"  
 									   IsVisible="{TemplateBinding Shape, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static controls:ColorSpectrumShape.Box}}"
-									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource TopLeftCornerRadiusConverter}}"
-									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource BottomRightCornerRadiusConverter}}"
+									   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerTopLeftCornerRadiusConverter}}"
+									   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerBottomRightCornerRadiusConverter}}"
 									   HorizontalAlignment="Stretch"
 									   VerticalAlignment="Stretch" />
 							
@@ -83,6 +83,7 @@
 									 IsVisible="{TemplateBinding Shape, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static controls:ColorSpectrumShape.Ring}}" 
 									 HorizontalAlignment="Stretch"
 									 VerticalAlignment="Stretch"/>
+							
 						</Panel>
 					</Panel>
 				</ControlTemplate>
@@ -131,13 +132,13 @@
 
 		<!-- Selector Size -->
 		<Style Selector="^ /template/ Panel#PART_SelectionEllipsePanel">
-			<Setter Property="Width" Value="16" />
-			<Setter Property="Height" Value="16" />
+			<Setter Property="Width" Value="{DynamicResource ColorSpectrumSelectorSize}" />
+			<Setter Property="Height" Value="{DynamicResource ColorSpectrumSelectorSize}" />
 		</Style>
 		
 		<Style Selector="^:large-selector /template/ Panel#PART_SelectionEllipsePanel">
-			<Setter Property="Width" Value="48" />
-			<Setter Property="Height" Value="48" />
+			<Setter Property="Width" Value="{DynamicResource ColorSpectrumSelectorLargeSize}" />
+			<Setter Property="Height" Value="{DynamicResource ColorSpectrumSelectorLargeSize}" />
 		</Style>
 
 	</ControlTheme>

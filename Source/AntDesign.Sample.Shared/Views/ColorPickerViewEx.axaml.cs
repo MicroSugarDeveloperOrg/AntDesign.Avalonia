@@ -1,16 +1,16 @@
 using AntDesign.Sample.ViewModels;
-using Avalonia.Controls.Primitives;
 
 namespace AntDesign.Sample.Views;
-public partial class ColorPickerView : ReactiveUserControl<ColorPickerViewModel>
+public partial class ColorPickerViewEx : ReactiveUserControl<ColorPickerViewModel>
 {
-    public ColorPickerView()
+    public ColorPickerViewEx()
     {
         InitializeComponent();
         //ColorPreviewer.PaddingProperty
         //ColorSlider
 
         //TabControl.CornerRadiusProperty
- 
+
+
     }
 }

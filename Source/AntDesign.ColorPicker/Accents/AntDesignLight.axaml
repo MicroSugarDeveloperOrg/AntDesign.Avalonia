@@ -2,17 +2,37 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<SolidColorBrush x:Key="ColorSliderThumbBackground" Color="Transparent"/>
-	<SolidColorBrush x:Key="ColorSliderThumbBorderBrush" Color="Black"/>
+	<SolidColorBrush x:Key="ColorSliderThumbBackground" Color="White"/>
+	<SolidColorBrush x:Key="ColorSliderThumbBorderBrush" Color="White"/>
 	<SolidColorBrush x:Key="ColorSliderThumbLightBorderBrush" Color="Black"/>
 	<SolidColorBrush x:Key="ColorSliderThumbDarkBorderBrush" Color="White"/>
 
 	<SolidColorBrush x:Key="ColorSliderBorderBrush" Color="Transparent"/>
-	<BoxShadows x:Key="ColorSliderBoxShadow">0 0 10 1 #4F000000</BoxShadows>
+	<BoxShadows x:Key="ColorSliderBoxShadow">0 0 5 2 #4F000000</BoxShadows>
 
-	<SolidColorBrush x:Key="ColorSpectrumBordertStroke" Color="Black"/>
-	<SolidColorBrush x:Key="ColorSpectrumSelectorLightStroke" Color="Black"/>
-	<SolidColorBrush x:Key="ColorSpectrumSelectorDarkStroke" Color="White"/>
+	<SolidColorBrush x:Key="ColorSpectrumBordertStroke" Color="#d9d9d9"/>
+	<SolidColorBrush x:Key="ColorSpectrumSelectorLightStroke" Color="White"/>
+	<SolidColorBrush x:Key="ColorSpectrumSelectorDarkStroke" Color="Black"/>
+
+	<SolidColorBrush x:Key="ColorViewBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ColorViewBorderBrush" Color="#d9d9d9"/>
+
+	<SolidColorBrush x:Key="ColorViewPaletteListBoxItemStroke" Color="White"/>
+
+	<SolidColorBrush x:Key="ColorViewRadioButtonBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonForeground" Color="#1d1d1d"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonBorderBrush" Color="#d9d9d9"/>
+
+	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverForeground" Color="#FF4096FF"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonPointerOverBorderBrush" Color="#FF4096FF"/>
+
+	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedForeground" Color="#FF1668DC"/>
+	<SolidColorBrush x:Key="ColorViewRadioButtonCheckedBorderBrush" Color="#FF1668DC"/>
+
+
+	<SolidColorBrush x:Key="ColorViewComponentsBorderBackground" Color="Transparent"/>
 
 
 

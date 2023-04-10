@@ -19,6 +19,8 @@
     <Application.Styles>
 		<AntDesign/>
 		<AntDesignDataGrid/>
-		<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
+		<AntDesignColorPicker/>
+		<!-- <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" /> -->
+		
 	</Application.Styles>
 </Application>
