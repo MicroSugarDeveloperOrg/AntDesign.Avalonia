@@ -3,6 +3,7 @@
 					x:CompileBindings="True">
 	<ControlTheme x:Key="{x:Type ThemeVariantScope}" TargetType="ThemeVariantScope">
 		<Setter Property="TextElement.FontSize" Value="{DynamicResource FontSize}"/>
+		<Setter Property="TextElement.FontFamily" Value="{DynamicResource AntDesignFontFamily}"/>
 		<Setter Property="TextElement.Foreground" Value="{DynamicResource AntDesignForeground}"/>
 		<Setter Property="Padding" Value="{DynamicResource ThemeVariantScopePadding}"/>
 	</ControlTheme>

@@ -5,6 +5,8 @@
 
 	<ControlTheme x:Key="{x:Type UserControl}" TargetType="UserControl">
 		<Setter Property="Foreground" Value="{DynamicResource AntDesignForeground}"/>
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
+		<Setter Property="FontFamily" Value="{DynamicResource AntDesignFontFamily}"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="UserControl">
 				<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"

@@ -69,7 +69,8 @@
 									   PaletteColors="{TemplateBinding PaletteColors}"
 									   PaletteColumnCount="{TemplateBinding PaletteColumnCount}"
 									   Palette="{TemplateBinding Palette}"
-									   SelectedIndex="{TemplateBinding SelectedIndex}"/>
+									   SelectedIndex="{TemplateBinding SelectedIndex}"
+									   BorderThickness="0"/>
 						</Flyout>
 					</DropDownButton.Flyout>
 				</DropDownButton>

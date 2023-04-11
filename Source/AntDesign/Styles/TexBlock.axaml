@@ -1,6 +1,11 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
 	   x:CompileBindings="True">
+
+	<Style Selector=":is(TextBlock)">
+		<Setter Property="FontFamily" Value="{DynamicResource AntDesignFontFamily}"/>
+	</Style>
+	
 	<Style Selector="TextBlock.h1">
 		<Setter Property="FontSize" Value="35" />
 		<Setter Property="FontWeight" Value="Heavy" />
