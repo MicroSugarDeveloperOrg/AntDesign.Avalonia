@@ -10,15 +10,15 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type TitleBar}" TargetType="TitleBar">
-		<Setter Property="Foreground" Value="#000000" />
 		<Setter Property="VerticalAlignment" Value="Top" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
-		<Setter Property="Background" Value="#eef4f9" />
+		<!--<Setter Property="Background" Value="#eef4f9" />-->
+		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="TitleBar">
 				<Panel HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
 					   VerticalAlignment="Stretch">
-					<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_MouseTracker}"
+					<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_MouseTracker}" 
 						   Height="1"
 						   VerticalAlignment="Top" />
 					<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_Container}">
@@ -35,9 +35,9 @@
 		</Setter>
 
 		<Style Selector="^:fullscreen">
-			<Style Selector="^">
-				<Setter Property="Background" Value="#eef4f9" />
-			</Style>
+			<!--<Style Selector="^">							    -->
+			<!--	<Setter Property="Background" Value="#eef4f9" />-->
+			<!--</Style>											-->
 			<Style Selector="^ /template/ Border#PART_Background">
 				<Setter Property="IsHitTestVisible" Value="True" />
 			</Style>

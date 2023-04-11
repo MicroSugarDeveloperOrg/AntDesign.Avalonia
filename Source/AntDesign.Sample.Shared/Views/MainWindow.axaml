@@ -7,6 +7,10 @@
         x:Class="AntDesign.Sample.Views.MainWindow"
         Icon="/Assets/antdesign@avalonia-logo.png"  
 		ShowInTaskbar="True"
+		SystemDecorations="BorderOnly"
+		TransparencyLevelHint="None"
+		ExtendClientAreaToDecorationsHint="True"
+		ExtendClientAreaTitleBarHeightHint="40"
 		Width="1920" Height="1080"
         Title="AntDesign.Sample">
 	<views:MainView/>
