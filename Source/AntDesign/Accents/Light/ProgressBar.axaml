@@ -3,7 +3,7 @@
 					x:CompileBindings="True">  
 	
 	<SolidColorBrush x:Key="ProgressBarBackground" Color="{StaticResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="ProgressBarForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="ProgressBarForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	<SolidColorBrush x:Key="ProgressBarBorderBrush" Color="Transparent"/>
 
 </ResourceDictionary>

@@ -3,15 +3,15 @@
 					x:CompileBindings="True">
 
 	<SolidColorBrush x:Key="SliderBackground" Color="{StaticResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="SliderForeground" Color="{StaticResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="SliderForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="SliderBorderBrush" Color="Transparent"/>
-	<SolidColorBrush x:Key="SliderPointerOverForeground" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="SliderPointerOverForeground" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	
 	<SolidColorBrush x:Key="SliderTickBarFill" Color="{StaticResource AntDesignAssistColor2}"/>
 
 	<SolidColorBrush x:Key="SliderThumbBackground" Color="{StaticResource AntDesignAssistColor4}"/>
-	<SolidColorBrush x:Key="SliderThumbBorderBrush" Color="{StaticResource AntDesignSecondlyColor}"/>
-	<SolidColorBrush x:Key="SliderThumbPointerOverBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
-	<SolidColorBrush x:Key="SliderThumbPressedBorderBrush" Color="{StaticResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="SliderThumbBorderBrush" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="SliderThumbPointerOverBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
+	<SolidColorBrush x:Key="SliderThumbPressedBorderBrush" Color="{DynamicResource AntDesignThirdlyColor}"/>
 	
 </ResourceDictionary>

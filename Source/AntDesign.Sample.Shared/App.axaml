@@ -12,6 +12,13 @@
 					<sys:String x:Key="OKDescription">确定</sys:String>
 					<sys:String x:Key="CancelDescription">取消</sys:String>
 					<sys:String x:Key="ShowHiddenDescription">显示隐藏文件</sys:String>
+
+					<!--<Color x:Key="AntDesignPrimaryColor">#e84749</Color> 	   -->
+					<!--<Color x:Key="AntDesignSecondlyColor">#f37370</Color>	   -->
+					<!--<Color x:Key="AntDesignThirdlyColor">#f89f9a</Color>	   -->
+					<!--<Color x:Key="AntDesigndAssistColor5">#fff1f0</Color>	   -->
+					<!--<Color x:Key="RippleColor">#ff4d4f</Color>				   -->
+					
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
@@ -20,7 +27,5 @@
 		<AntDesign/>
 		<AntDesignDataGrid/>
 		<AntDesignColorPicker/>
-		<!-- <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" /> -->
-		
 	</Application.Styles>
 </Application>
