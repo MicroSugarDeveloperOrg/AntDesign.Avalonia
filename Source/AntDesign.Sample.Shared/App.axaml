@@ -13,11 +13,17 @@
 					<sys:String x:Key="CancelDescription">取消</sys:String>
 					<sys:String x:Key="ShowHiddenDescription">显示隐藏文件</sys:String>
 
-					<!--<Color x:Key="AntDesignPrimaryColor">#e84749</Color> 	   -->
-					<!--<Color x:Key="AntDesignSecondlyColor">#f37370</Color>	   -->
-					<!--<Color x:Key="AntDesignThirdlyColor">#f89f9a</Color>	   -->
-					<!--<Color x:Key="AntDesigndAssistColor5">#fff1f0</Color>	   -->
-					<!--<Color x:Key="RippleColor">#ff4d4f</Color>				   -->
+					<!--修改全局配色方案												  -->
+					<!--<Color x:Key="AntDesignPrimaryColor">#e84749</Color> 	  	  -->
+					<!--<Color x:Key="AntDesignSecondlyColor">#f37370</Color>		  -->
+					<!--<Color x:Key="AntDesignThirdlyColor">#f89f9a</Color>		  -->
+					
+					<!--这是ListBox TreeView等选中行底色								  -->
+					<!--<Color x:Key="AntDesigndAssistColor5">#fff1f0</Color>		  -->
+					<!--<Color x:Key="RippleColor">#ff4d4f</Color>					  -->
+					
+					<!--去掉全局圆角													  -->
+					<!--<CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>	  -->
 					
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>

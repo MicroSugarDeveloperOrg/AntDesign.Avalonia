@@ -15,6 +15,7 @@
 	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows')) OR  $([MSBuild]::IsOSPlatform('Linux'))">
 		<PublishAot>true</PublishAot>
 		<StripSymbols>true</StripSymbols>
+		<IncludeNativeLibrariesForSelfExtract>trues</IncludeNativeLibrariesForSelfExtract>
 	</PropertyGroup>
 
 	<ItemGroup>
