@@ -42,6 +42,12 @@
 			</ControlTemplate>
 		</Setter>
 
+		<Style Selector="^.round">
+		    <Setter Property="SystemDecorations" Value="None" />
+			<Setter Property="TransparencyLevelHint" Value="None" />
+			<Setter Property="ExtendClientAreaChromeHints" Value="NoChrome" />
+		</Style>
+ 
 	</ControlTheme>
 
 </ResourceDictionary>
