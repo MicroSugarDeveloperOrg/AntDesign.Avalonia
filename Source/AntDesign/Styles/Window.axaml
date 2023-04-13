@@ -15,24 +15,33 @@
 		<Setter Property="FontFamily" Value="{DynamicResource AntDesignFontFamily}"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Window">
-				<Panel>
-					<Border Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" IsHitTestVisible="False" />
-					<Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />
-					<Panel Background="Transparent" Margin="{TemplateBinding WindowDecorationMargin}" />
-					<VisualLayerManager>
-						<VisualLayerManager.ChromeOverlayLayer>
-							<TitleBar />
-						</VisualLayerManager.ChromeOverlayLayer>
-						<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-										  Margin="{TemplateBinding Padding}"
-										  Content="{TemplateBinding Content}"
-										  ContentTemplate="{TemplateBinding ContentTemplate}"
-										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-					</VisualLayerManager>
-				</Panel>
+				<Border CornerRadius="{TemplateBinding CornerRadius}"
+						ClipToBounds="{TemplateBinding ClipToBounds}">
+					<Panel>
+						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_TransparencyFallback}" 
+								IsHitTestVisible="False" />
+						<Border Background="{TemplateBinding Background}" 
+								IsHitTestVisible="False" />
+						<Panel Background="Transparent"
+							   Margin="{TemplateBinding WindowDecorationMargin}" />
+						<VisualLayerManager>
+							<VisualLayerManager.ChromeOverlayLayer>
+								<TitleBar />
+							</VisualLayerManager.ChromeOverlayLayer>
+							<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
+											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Margin="{TemplateBinding Padding}"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</VisualLayerManager>
+
+					</Panel>
+				</Border>
+
 			</ControlTemplate>
 		</Setter>
+
 	</ControlTheme>
 
 </ResourceDictionary>
