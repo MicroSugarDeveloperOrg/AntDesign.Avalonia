@@ -14,8 +14,8 @@
 	<!-- Aot -->
 	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows')) OR  $([MSBuild]::IsOSPlatform('Linux'))">
 		<PublishAot>true</PublishAot>
+		<!--build debug file *.dbg only effect for Linux-->
 		<StripSymbols>true</StripSymbols>
-		<IncludeNativeLibrariesForSelfExtract>trues</IncludeNativeLibrariesForSelfExtract>
 	</PropertyGroup>
 
 	<ItemGroup>

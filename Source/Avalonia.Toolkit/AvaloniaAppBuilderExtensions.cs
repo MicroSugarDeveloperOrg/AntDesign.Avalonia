@@ -9,17 +9,21 @@ public static class AvaloniaAppBuilderExtensions
     {
         var setting = new FontSettings();
         configDelegate?.Invoke(setting);
-        return builder.With(new FontManagerOptions
-        {
-            DefaultFamilyName = setting.DefaultFontFamily.ToString(),
-            FontFallbacks = new[]
-            {
-                new FontFallback
-                {
-                    FontFamily = new FontFamily(setting.DefaultFontFamily.ToString())
-                }
-            }
 
-        }).ConfigureFonts(manager => manager.AddFontCollection(new AntDesignFontCollection(setting.Key, setting.Source)));   
+        //this setting can make app crash when publish for NativeAOT
+        //return builder.With(new FontManagerOptions
+        //{
+        //    DefaultFamilyName = setting.DefaultFontFamily,
+        //    FontFallbacks = new[]
+        //    {
+        //        new FontFallback
+        //        {
+        //            FontFamily = new FontFamily(setting.DefaultFontFamily)
+        //        }
+        //    }
+
+        //}).ConfigureFonts(manager => manager.AddFontCollection(new AntDesignFontCollection(setting.Key, setting.Source)));
+
+        return builder.ConfigureFonts(manager => manager.AddFontCollection(new AntDesignFontCollection(setting.Key, setting.Source)));
     }
 }
