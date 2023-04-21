@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:assists="using:AntDesign.Assists"
+			 xmlns:behaviors="using:AntDesign.Behaviors"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.ListBoxView">
 
@@ -33,6 +34,9 @@
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ListBox BorderThickness="1" CornerRadius="10">
+								<Multiplexer.Multiplexer>
+									<Multiplexer SelectedItems="{Binding SelectedItems}"/>
+								</Multiplexer.Multiplexer>
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123" IsEnabled="False"/>
 								<ListBoxItem Content="123123123"/>
@@ -40,7 +44,8 @@
 								<ListBoxItem Content="123123123" Classes="remove"/>
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123"/> 
-							</ListBox>
+							
+						</ListBox>
 
 							<ItemsControl BorderThickness="1" BorderBrush="{DynamicResource AntDesignBorderBrush}" CornerRadius="10">
 								<ListBoxItem Content="123123123"/>
@@ -127,6 +132,7 @@
 
 						<StackPanel Orientation="Horizontal" Spacing="10">
 							<ListBox IsEnabled="False" BorderThickness="1" CornerRadius="10">
+								
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123"/>
 								<ListBoxItem Content="123123123"/>
