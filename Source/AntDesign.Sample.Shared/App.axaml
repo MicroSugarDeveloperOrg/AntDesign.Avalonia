@@ -19,7 +19,7 @@
 					<!--<Color x:Key="AntDesignThirdlyColor">#f89f9a</Color>		  -->
 					
 					<!--这是ListBox TreeView等选中行底色								  -->
-					<!--<Color x:Key="AntDesigndAssistColor5">#fff1f0</Color>		  -->
+					<!--<Color x:Key="AntDesignAssistColor5">#fff1f0</Color>		  -->
 					<!--<Color x:Key="RippleColor">#ff4d4f</Color>					  -->
 					
 					<!--去掉全局圆角													  -->
@@ -30,7 +30,7 @@
 		</ResourceDictionary>
 	</Application.Resources>
     <Application.Styles>
-		<AntDesign/>
+		<AntDesign Coloring="Red" IsRounded="True"/>
 		<AntDesignDataGrid/>
 		<AntDesignColorPicker/>
 	</Application.Styles>

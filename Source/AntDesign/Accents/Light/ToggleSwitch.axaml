@@ -2,11 +2,11 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					x:CompileBindings="True">
 
-	<SolidColorBrush x:Key="ToggleSwitchBackground" Color="{DynamicResource AntDesigndAssistColor7}"/>
+	<SolidColorBrush x:Key="ToggleSwitchBackground" Color="{DynamicResource AntDesignAssistColor7}"/>
 	<SolidColorBrush x:Key="ToggleSwitchForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ToggleSwitchBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="ToggleSwitchPointerOverBackground" Color="{DynamicResource AntDesigndAssistColor6}"/>
+	<SolidColorBrush x:Key="ToggleSwitchPointerOverBackground" Color="{DynamicResource AntDesignAssistColor6}"/>
 	<SolidColorBrush x:Key="ToggleSwitchPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ToggleSwitchPointerOverBorderBrush" Color="Transparent"/>
 

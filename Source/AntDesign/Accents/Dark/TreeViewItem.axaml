@@ -11,11 +11,11 @@
 	<SolidColorBrush x:Key="TreeViewItemPointerOverForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="TreeViewItemPointerOverBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="TreeViewItemPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="TreeViewItemPressedBackground" Color="{DynamicResource AntDesignAssistColor5}"/>
 	<SolidColorBrush x:Key="TreeViewItemPressedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="TreeViewItemPressedBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="TreeViewItemSelectedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="TreeViewItemSelectedBackground" Color="{DynamicResource AntDesignAssistColor5}"/>
 	<SolidColorBrush x:Key="TreeViewItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="TreeViewItemSelectedBorderBrush" Color="{StaticResource AntDesignBorderColor}"/>
 

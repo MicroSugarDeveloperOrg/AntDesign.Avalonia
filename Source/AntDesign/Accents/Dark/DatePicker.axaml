@@ -20,7 +20,7 @@
 
 	<SolidColorBrush x:Key="DatePickerButtonBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
 	<SolidColorBrush x:Key="DatePickerButtonPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="DatePickerButtonPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<SolidColorBrush x:Key="DatePickerButtonPressedBackground" Color="{DynamicResource AntDesignAssistColor5}"/>
 
 	<SolidColorBrush x:Key="DatePickerPanelListBoxItemSelectedNoFocusForeground" Color="{DynamicResource AntDesignAssistColor4}"/>
 

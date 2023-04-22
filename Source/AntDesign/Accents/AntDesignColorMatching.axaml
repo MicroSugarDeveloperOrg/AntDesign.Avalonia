@@ -33,25 +33,25 @@
 	<SolidColorBrush x:Key="AntDesignAssistBrush4" Color="{DynamicResource AntDesignAssistColor4}"/>
 
 	<!--ListBox等选中背景色-->
-	<Color x:Key="AntDesigndAssistColor5">#4F9ad2ff</Color>
-	<SolidColorBrush x:Key="AntDesignAssistBrush5" Color="{DynamicResource AntDesigndAssistColor5}"/>
+	<Color x:Key="AntDesignAssistColor5">#4F9ad2ff</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush5" Color="{DynamicResource AntDesignAssistColor5}"/>
 
 	<!-- ToogleSwitch等切换颜色 -->
-	<Color x:Key="AntDesigndAssistColor6">#8C8C8C</Color>
-	<SolidColorBrush x:Key="AntDesignAssistBrush6" Color="{DynamicResource AntDesigndAssistColor6}"/>
+	<Color x:Key="AntDesignAssistColor6">#8C8C8C</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush6" Color="{DynamicResource AntDesignAssistColor6}"/>
 
-	<Color x:Key="AntDesigndAssistColor7">#AFA3A3A3</Color>
-	<SolidColorBrush x:Key="AntDesignAssistBrush7" Color="{DynamicResource AntDesigndAssistColor7}"/>
+	<Color x:Key="AntDesignAssistColor7">#AFA3A3A3</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush7" Color="{DynamicResource AntDesignAssistColor7}"/>
 
-	<Color x:Key="AntDesigndAssistColor8">#5FA3A3A3</Color>
-	<SolidColorBrush x:Key="AntDesignAssistBrush8" Color="{DynamicResource AntDesigndAssistColor8}"/>
+	<Color x:Key="AntDesignAssistColor8">#5FA3A3A3</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush8" Color="{DynamicResource AntDesignAssistColor8}"/>
 
 	<!-- TextBoxSelectionColor -->
-	<Color x:Key="AntDesigndAssistColor9">#3390ff</Color>
-	<SolidColorBrush x:Key="AntDesignAssistBrush9" Color="{DynamicResource AntDesigndAssistColor9}"/>
+	<Color x:Key="AntDesignAssistColor9">#3390ff</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush9" Color="{DynamicResource AntDesignAssistColor9}"/>
  
-	<Color x:Key="AntDesigndAssistColor12">#1d1d1d</Color>
-	<SolidColorBrush x:Key="AntDesignAssistBrush12" Color="{DynamicResource AntDesigndAssistColor12}"/>
+	<Color x:Key="AntDesignAssistColor12">#1d1d1d</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBrush12" Color="{DynamicResource AntDesignAssistColor12}"/>
 
 	<!--Status-->
 	<Color x:Key="DefaultColor">#bfbfbf</Color>

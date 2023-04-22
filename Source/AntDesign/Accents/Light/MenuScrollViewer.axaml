@@ -7,6 +7,6 @@
 	<SolidColorBrush x:Key="MenuScrollViewerIconPressedFill" Color="{DynamicResource AntDesignThirdlyColor}"/>
 
 	<SolidColorBrush x:Key="MenuScrollViewerIconPointerOverBackground" Color="{DynamicResource AntDesignAssistColor2}"/>
-	<SolidColorBrush x:Key="MenuScrollViewerIconPressedBackground" Color="{DynamicResource AntDesigndAssistColor5}"/> 
+	<SolidColorBrush x:Key="MenuScrollViewerIconPressedBackground" Color="{DynamicResource AntDesignAssistColor5}"/> 
 
 </ResourceDictionary>
