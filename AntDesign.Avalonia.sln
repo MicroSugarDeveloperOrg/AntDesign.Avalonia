@@ -46,6 +46,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Sample.Browser.Bl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{DCC2662D-23F2-4146-B9A7-09A92D99A6C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Packages", ".Packages", "{3C61C340-656F-4BF8-8C2C-E5DB51BB0866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntDesign.Avalonia", "Packages\AntDesign.Avalonia\AntDesign.Avalonia.csproj", "{084349FA-3FCE-43CE-90C2-AF382348929C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,6 +116,10 @@ Global
 		{59995A84-7594-4143-8D98-AA2ED2498D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59995A84-7594-4143-8D98-AA2ED2498D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59995A84-7594-4143-8D98-AA2ED2498D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{084349FA-3FCE-43CE-90C2-AF382348929C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084349FA-3FCE-43CE-90C2-AF382348929C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084349FA-3FCE-43CE-90C2-AF382348929C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084349FA-3FCE-43CE-90C2-AF382348929C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +131,7 @@ Global
 		{9ACCF9DB-3232-41EE-953F-E0031A78BD4F} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
 		{FC88A6CA-E875-4DE2-98F8-69A8728BB55C} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
 		{59995A84-7594-4143-8D98-AA2ED2498D95} = {DCC2662D-23F2-4146-B9A7-09A92D99A6C1}
+		{084349FA-3FCE-43CE-90C2-AF382348929C} = {3C61C340-656F-4BF8-8C2C-E5DB51BB0866}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83CB65B8-011F-4ED7-BCD3-A6CFA935EF7E}
