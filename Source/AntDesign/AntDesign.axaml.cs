@@ -1,6 +1,4 @@
-﻿using AntDesign.Controls.Ripple;
-
-namespace AntDesign;
+﻿namespace AntDesign;
 
 public partial class AntDesign : Styles
 {
@@ -85,5 +83,5 @@ public partial class AntDesign : Styles
         get => GetValue(IsRoundedProperty);
         set => SetValue(IsRoundedProperty, value);
     }
-     
+
 }

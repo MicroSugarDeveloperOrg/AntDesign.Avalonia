@@ -16,3 +16,37 @@
 ![image](https://user-images.githubusercontent.com/28770378/230072518-2974c5b7-4d6d-43c1-8b9a-638cfec50242.png)
 ![image](https://user-images.githubusercontent.com/28770378/230072606-02410c97-1e17-4331-85e9-80384248b913.png)
 
+## Use AntDesign.Avalonia
+1. Add [AntDesign.Avalonia][nuget] nuget package to your project:
+
+       dotnet add package AntDesign.Avalonia
+
+2. Edit `App.xaml` file:
+   > If you install 1.0.0-* version or higher, use this:
+   ```xaml
+   <Application ...
+     xmlns:themes="clr-namespace:AntDesign;assembly=AntDesign"
+     ...>
+     <Application.Styles>
+       <AntDesign:AntDesign Coloring="None" IsRounded="True"/>
+       <AntDesign:AntDesignDataGrid/>
+       <AntDesign:AntDesignColorPicker/>
+     </Application.Styles>
+   </Application>
+   ```
+   ```CS
+    
+   ```
+   > you can change ui global colour with Coloring Property:
+  ```xaml
+     <AntDesign:AntDesign Coloring="None" />
+  ```
+   > you can change global CornerRadius with IsRounded Property:
+  ```xaml
+     <AntDesign:AntDesign IsRounded="True" />
+  ```
+
+3. If you want to using AntDesign only , you can only add [AntDesign]
+4. If you want to using AntDesign DataGrid only , you can only add [AntDesign.DataGrid]
+5. If you want to using AntDesign ColorPicker only , you can only add [AntDesign.ColorPicker]
+6. If you want to using Custom Fonts-Alibaba PuHuiTi(∞¢¿Ô∞Õ∞Õ∆’ª›ÃÂ) only , you can only add [Avalonia.Toolkit]

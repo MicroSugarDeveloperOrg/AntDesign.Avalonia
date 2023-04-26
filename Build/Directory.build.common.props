@@ -19,6 +19,9 @@
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 		<EnableLiveReload>true</EnableLiveReload>
 
+		<!--default language-->
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+
 		<!-- Required for C# Hot Reload -->
 		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 

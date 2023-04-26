@@ -2,7 +2,6 @@
 using AntDesign.Sample.Services;
 using AntDesign.Sample.ViewModels;
 using AntDesign.Sample.Views;
-using Avalonia.Toolkit.Extensions;
 
 namespace AntDesign.Sample;
 
