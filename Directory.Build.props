@@ -7,6 +7,9 @@
 		<!--<IntermediateOutputPath>$(SolutionDir).vs\$(SolutionName)\Intermediate\$(MSBuildProjectName)\</IntermediateOutputPath>-->
 		<!--<IntermediateOutputPath>$(MSBuildThisFileDirectory).vs\$(SolutionName)\Intermediate\$(MSBuildProjectName)\</IntermediateOutputPath>-->
 		<OutputPath>$(RepositoryDirectory)Binary\</OutputPath>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedFiles</CompilerGeneratedFilesOutputPath>
+
 	</PropertyGroup>
 
 	<Import Project="$(BuildToolsDirectory)Directory.build.common.props" />

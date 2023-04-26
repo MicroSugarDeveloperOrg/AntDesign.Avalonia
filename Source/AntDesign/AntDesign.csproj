@@ -5,6 +5,9 @@
 		<RootNamespace>AntDesign</RootNamespace>
 	</PropertyGroup>
 
+	
+	
+
 	<ItemGroup>
 		<AvaloniaResource Include="Accents\*.axaml" />
 		<AvaloniaResource Include="Accents\Dark\*.axaml" />
@@ -15,6 +18,13 @@
 
 	<ItemGroup>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 		<AvaloniaXaml Remove="AntDesign.axaml" />                                                                
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\AntDesign.Sample.Shared\Assets\avalonia-logo.ico">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
