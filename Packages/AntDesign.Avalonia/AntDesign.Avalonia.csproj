@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0;net6.0;net5.0;netstandard2.0</TargetFrameworks>
+		<OutputPath>$(RepositoryDirectory)antdesign\</OutputPath>
+
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<PackageId>AntDesign.Avalonia</PackageId>
+		<Title>AntDesign.Avalonia</Title>
+	</PropertyGroup>
+
+	<Import Project="$(BuildToolsDirectory)Directory.Packages.targets" />
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\Logo\antdesign@avalonia-logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Source\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj" />
+	  <ProjectReference Include="..\..\Source\AntDesign.DataGrid\AntDesign.DataGrid.csproj" />
+	  <ProjectReference Include="..\..\Source\AntDesign\AntDesign.csproj" />
+	  <ProjectReference Include="..\..\Source\Avalonia.Toolkit\Avalonia.Toolkit.csproj" />
+	</ItemGroup>
+ 
+</Project>

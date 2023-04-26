@@ -1,0 +1,31 @@
+{
+    "Packages":
+    [
+      {
+        "Id": "AntDesign.Avalonia",
+        "MergeAll": true,
+        "Merge": [
+          {
+            "Id": "AntDesign.Style",
+            "IgnoreMissingFrameworkBinaries": true,
+            "IgnoreMissingFrameworkDependencies": true
+          },
+          {
+            "Id": "AntDesign.ColorPicker",
+            "IgnoreMissingFrameworkBinaries": true,
+            "IgnoreMissingFrameworkDependencies": true
+          },
+          {
+            "Id": "AntDesign.DataGrid",
+            "IgnoreMissingFrameworkBinaries": true,
+            "IgnoreMissingFrameworkDependencies": true
+          },
+          {
+            "Id": "Avalonia.Toolkit",
+            "IgnoreMissingFrameworkBinaries": true,
+            "IgnoreMissingFrameworkDependencies": true
+          } 
+        ]
+      }
+    ]
+  }
