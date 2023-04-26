@@ -9,23 +9,10 @@
 	<PropertyGroup>
 		<PackageId>AntDesign.ColorPicker</PackageId>
 		<Title>AntDesign.ColorPicker</Title>
-		<VersionPrefix>1.0.0-avalonia11p6-preview1</VersionPrefix>
-		<Authors>AvaloniaDeveloper</Authors>
-		<Company>AvaloniaDeveloperOrg</Company>
-		<Description>This repository is a set of styles that will help you customize your application in an appropriate ant-design.</Description>
-		<PackageIcon>antdesign@avalonia-logo.png</PackageIcon>
-		<PackageTags>avalonia xaml ant design theme colour color ui ux ant-design alibaba-ant-design</PackageTags>
-		<RepositoryUrl>https://github.com/AvaloniaDeveloperOrg/AntDesign.Avalonia</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/AvaloniaDeveloperOrg/AntDesign.Avalonia</PackageProjectUrl>
-		<RepositoryType>git</RepositoryType>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Version>$(AntDesignVersion)</Version>
-		<PackageOutputPath>$(AntDesignPackageOutputPath)</PackageOutputPath>
 	</PropertyGroup>
-	
+
+	<Import Project="$(BuildToolsDirectory)Directory.Packages.targets" />
+
 	<ItemGroup>
 		<AvaloniaResource Include="Accents\*.axaml" />
 		<AvaloniaResource Include="Styles\*.axaml" />

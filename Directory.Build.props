@@ -10,9 +10,6 @@
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedFiles</CompilerGeneratedFilesOutputPath>
 
-		<!--Package-->
-		<AntDesignVersion>1.0.0-preview2</AntDesignVersion>
-		<AntDesignPackageOutputPath>$(RepositoryDirectory)nuget\</AntDesignPackageOutputPath>
 	</PropertyGroup>
 
 	<Import Project="$(BuildToolsDirectory)Directory.build.common.props" />
