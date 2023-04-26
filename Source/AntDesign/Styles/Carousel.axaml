@@ -158,7 +158,7 @@
 					<ListBox x:Name="PART_ListBox"
 							 IsVisible="{TemplateBinding assists:CarouselAssists.ShowDots}"
 							 Cursor="Hand"
-							 ItemsSource="{TemplateBinding Items, Converter={StaticResource Items2ObjectsConverter}}"
+							 ItemsSource="{TemplateBinding ItemsSource, Converter={StaticResource Items2ObjectsConverter}}"
 							 SelectedIndex="{TemplateBinding SelectedIndex, Mode=TwoWay}"/>
 
 					<Button x:Name="PART_Preview" 

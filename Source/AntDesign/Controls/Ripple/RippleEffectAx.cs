@@ -6,7 +6,7 @@ public class RippleEffectAx : Border
         BackgroundProperty.OverrideDefaultValue<RippleEffectAx>(Brushes.Transparent);
         BorderBrushProperty.OverrideDefaultValue<RippleEffectAx>(null);
         BorderThicknessProperty.OverrideDefaultValue<RippleEffectAx>(new Thickness(1));
- 
+
         IsTriggerProperty.Changed.AddClassHandler<RippleEffectAx, bool>((s, e) =>
         {
             if (s is null)
@@ -261,21 +261,21 @@ public class RippleEffectAx : Border
                 spread = RippleFromScal;
 
             RenderTransform = new ScaleTransform(spread, spread);
-        });
+        }).GetTask();
     }
 
     Task InvokeEnd()
     {
         return Dispatcher.UIThread.InvokeAsync(() =>
-        {
-            RenderTransform = new ScaleTransform(RippleFromScal, RippleFromScal);
-            BorderBrush = null;
-            Background = Brushes.Transparent;
-            RenderTransform = null;
+          {
+              RenderTransform = new ScaleTransform(RippleFromScal, RippleFromScal);
+              BorderBrush = null;
+              Background = Brushes.Transparent;
+              RenderTransform = null;
 
-            if (!IsForever)
-                IsTrigger = false;
-        });
+              if (!IsForever)
+                  IsTrigger = false;
+          }).GetTask();
     }
 
     Task LoopTrigger()
@@ -286,7 +286,7 @@ public class RippleEffectAx : Border
                 return;
 
             Trigger();
-        });
+        }).GetTask();
     }
 
 }
