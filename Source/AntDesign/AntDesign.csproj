@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<PackageId>AntDesign</PackageId>
+		<PackageId>AntDesign.Style</PackageId>
 		<Title>AntDesign</Title>
 		<VersionPrefix>1.0.0-avalonia11p6-preview1</VersionPrefix>
 		<Authors>AvaloniaDeveloper</Authors>
