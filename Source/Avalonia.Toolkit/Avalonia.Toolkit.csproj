@@ -16,7 +16,6 @@
         <AvaloniaResource Include="Assets\*" />
 		<AvaloniaResource Include="Assets\Fonts\*.ttf" />
 		<AvaloniaResource Include="Assets\Fonts\AliBaba\*.ttf" />
-		<AvaloniaResource Include="Assets\Fonts\HanSans\*.ttf" />
     </ItemGroup>
 
 	<ItemGroup>
