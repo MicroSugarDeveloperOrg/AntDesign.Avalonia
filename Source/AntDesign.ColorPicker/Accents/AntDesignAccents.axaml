@@ -52,7 +52,7 @@
 	<Thickness x:Key="ColorSliderBorderThinkness">1</Thickness>
 	<CornerRadius x:Key="ColorSliderCornerRadius">10</CornerRadius>
 
-	<x:Double x:Key="ColorSliderSize">20</x:Double>
+	<x:Double x:Key="ColorSliderSize">18</x:Double>
 	<Thickness x:Key="ColorSliderHorizontalTrackMargin">0,-1</Thickness>
 	<Thickness x:Key="ColorSliderVerticalTrackMargin">-1,0</Thickness>
 	<Thickness x:Key="ColorSliderTrackRepeatButtonMargin">0,-10</Thickness>
