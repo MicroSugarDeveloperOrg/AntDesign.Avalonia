@@ -66,4 +66,49 @@
 			<Setter Property="Opacity" Value="1" />
 		</Style>
 	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignScrollViewerStyle" TargetType="ScrollViewer">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ScrollViewer">
+				<Grid>
+					<ScrollContentPresenter x:Name="PART_ContentPresenter"
+											Background="{TemplateBinding Background}"
+											HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
+											VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}"
+											HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
+											VerticalSnapPointsAlignment="{TemplateBinding VerticalSnapPointsAlignment}"
+											Padding="{TemplateBinding Padding}">
+						<ScrollContentPresenter.GestureRecognizers>
+							<ScrollGestureRecognizer CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+													 CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
+													 IsScrollInertiaEnabled="{Binding IsScrollInertiaEnabled, RelativeSource={RelativeSource TemplatedParent}}" />
+						</ScrollContentPresenter.GestureRecognizers>
+					</ScrollContentPresenter>
+					<ScrollBar Name="{x:Static helpers:PARTNameHelper.PART_HorizontalScrollBar}"
+							   Orientation="Horizontal"
+							   HorizontalAlignment="Right"/>
+					<ScrollBar Name="{x:Static helpers:PARTNameHelper.PART_VerticalScrollBar}"
+							   Orientation="Vertical"
+							   VerticalAlignment="Bottom"/>
+					<Panel x:Name="{x:Static helpers:PARTNameHelper.PART_ScrollBarsSeparator}"
+						   Grid.Row="1"
+						   Grid.Column="1"
+						   Background="{DynamicResource ScrollViewerScrollBarsSeparatorBackground}"
+						   Opacity="0">
+						<Panel.Transitions>
+							<Transitions>
+								<DoubleTransition Property="Opacity" Duration="0:0:0.1" />
+							</Transitions>
+						</Panel.Transitions>
+					</Panel>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^[IsExpanded=true] /template/ Panel#PART_ScrollBarsSeparator">
+			<Setter Property="Opacity" Value="1" />
+		</Style>
+	</ControlTheme>
+
+
 </ResourceDictionary>
