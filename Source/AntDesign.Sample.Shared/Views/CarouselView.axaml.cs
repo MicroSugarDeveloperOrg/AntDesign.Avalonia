@@ -16,5 +16,8 @@ public partial class CarouselView : ReactiveUserControl<CarouselViewModel>
 
         //CornerRadiusFilterConverter 
 
+        //Carousel carousel = new Carousel();
+        //carousel.Items
+
     }
 }
