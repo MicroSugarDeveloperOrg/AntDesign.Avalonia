@@ -1,4 +1,6 @@
-﻿namespace AntDesign;
+﻿using Avalonia.Platform;
+
+namespace AntDesign;
 
 public partial class AntDesign : Styles
 {
@@ -51,7 +53,10 @@ public partial class AntDesign : Styles
     public AntDesign(IServiceProvider? serviceProvider = default)
     {
         AvaloniaXamlLoader.Load(serviceProvider, this);
+        AntDesignPalettes = Resources.MergedDictionaries.OfType<AntDesignColorPaletteCollection>().FirstOrDefault();
     }
+
+    public IDictionary<ThemeVariant, AntDesignColorPalette> AntDesignPalettes { get; }
 
     const string g_AntDesignPrimaryColor = "AntDesignPrimaryColor";
     const string g_AntDesignSecondlyColor = "AntDesignSecondlyColor";
