@@ -148,9 +148,7 @@
 	</ControlTheme>
 
 	<ControlTheme x:Key="AntDesignLikeButtonStyle" TargetType="RadioButton">
-		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-		<Setter Property="Width" Value="{DynamicResource ButtonWidth}" />
-		<Setter Property="Height" Value="{DynamicResource ButtonHeight}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSize}" /> 
 		<Setter Property="Background" Value="{DynamicResource RadioLikeButtonBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource RadioLikeButtonForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource RadioLikeButtonBorderBrush}" />
