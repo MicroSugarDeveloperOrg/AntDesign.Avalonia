@@ -11,9 +11,9 @@
 				<ResourceInclude x:Key="Dark" Source="avares://AntDesign/Accents/Dark/_AntDesignDark.axaml"/>
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
-				<antdesign:AntDesignColorPaletteCollection/>
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignAccents.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignColorMatching.axaml" />
+				<antdesign:AntDesignColorPaletteCollection/>
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignConverters.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignDescriptions.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignGeometry.axaml" />

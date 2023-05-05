@@ -48,10 +48,7 @@ public partial class AntDesignColorPalette : AvaloniaObject, IResourceNode
         else if (strKey.Equals(g_RippleColor, StringComparison.InvariantCulture))
             value = _defaultRippleColor;
         else
-        {
-            if (_mapColors.TryGetValue(strKey, out var color))
-                value = color;
-        }
+            return false;
  
         return true;
     }
