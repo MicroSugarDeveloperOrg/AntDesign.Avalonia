@@ -18,25 +18,4 @@ internal class RadioButtonStyleConverter : IValueConverter
     {
         throw new NotImplementedException();
     }
-
-    internal static ThemeVariant? GetDictionaryVariant(IAvaloniaXamlIlParentStackProvider service)
-    {
-        IEnumerable<object>? enumerable = service?.Parents;
-        if (enumerable == null)
-            return null;
-
-        foreach (var item in enumerable)
-        {
-            var themeVariantProvider = item as IThemeVariantProvider;
-            if (themeVariantProvider != null)
-            {
-                var key = themeVariantProvider.Key;
-                if (key != null)
-                    return key;
-            }
-        }
-
-        return null;
-    }
-
 }
