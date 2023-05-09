@@ -1,7 +1,7 @@
 ﻿<Project>
 	<PropertyGroup>
 		<!--Package-->
-		<AntDesignVersion>0.1.0-preview-nigtly1.1</AntDesignVersion>
+		<AntDesignVersion>0.1.0-preview7</AntDesignVersion>
 		<AntDesignPackageOutputPath>$(RepositoryDirectory)nuget\</AntDesignPackageOutputPath>
 		<VersionPrefix>1.0.0-avalonia11p6-preview1</VersionPrefix>
 		<Authors>AvaloniaDeveloper</Authors>
