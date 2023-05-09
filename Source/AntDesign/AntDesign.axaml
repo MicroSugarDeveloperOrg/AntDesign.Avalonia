@@ -12,6 +12,7 @@
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignAccents.axaml" />
+				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignAccents1.axaml" />
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignColorMatching.axaml" />
 				<antdesign:AntDesignColorPaletteCollection/>
 				<ResourceInclude Source="avares://AntDesign/Accents/AntDesignConverters.axaml" />

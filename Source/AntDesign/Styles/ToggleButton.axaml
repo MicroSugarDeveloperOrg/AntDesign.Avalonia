@@ -32,7 +32,7 @@
 		<Setter Property="assists:ToggleButtonAssists.IndeterminateBackground" Value="{DynamicResource ToggleButtonIndeterminateBackground}" />
 		<Setter Property="assists:ToggleButtonAssists.IndeterminateForeground" Value="{DynamicResource ToggleButtonIndeterminateForeground}" />
 		<Setter Property="assists:ToggleButtonAssists.IndeterminateBorderBrush" Value="{DynamicResource ToggleButtonIndeterminateBorderBrush}" />	
-		<Setter Property="assists:ToggleButtonAssists.IsRipple"  Value="true"/>
+		<Setter Property="assists:ToggleButtonAssists.IsRipple"  Value="{DynamicResource IsAnimable}"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ToggleButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="assists:ToggleButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>

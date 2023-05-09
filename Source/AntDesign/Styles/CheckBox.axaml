@@ -28,6 +28,7 @@
 		<Setter Property="assists:CheckBoxAssists.PressedForeground" Value="{DynamicResource CheckBoxPressedForeground}" />
 		<Setter Property="assists:CheckBoxAssists.PressedBorderBrush" Value="{DynamicResource CheckBoxPressedBorderBrush}" />
 		<Setter Property="assists:CheckBoxAssists.GlyphFill" Value="{DynamicResource CheckBoxGlyphFill}" />
+		<Setter Property="assists:CheckBoxAssists.IsRipple"  Value="{DynamicResource IsAnimable}"/>
 		<Setter Property="assists:CheckBoxAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:CheckBoxAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}"/>
@@ -77,6 +78,7 @@
 							</Border>
 							<ripple:RippleEffectAx CornerRadius="{TemplateBinding CornerRadius}"
 							                       Duration="{DynamicResource CheckBoxRippleDuration}"
+												   IsRipple="{TemplateBinding assists:CheckBoxAssists.IsRipple}"
 												   RippleFromScal="{DynamicResource CheckBoxRippleFromScal}"
 												   RippleToScal="{DynamicResource CheckBoxRippleToScal}"
 												   RippleColor="{TemplateBinding assists:CheckBoxAssists.RippleColor}"

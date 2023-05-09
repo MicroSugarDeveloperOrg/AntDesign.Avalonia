@@ -25,7 +25,7 @@
 		<Setter Property="assists:ButtonAssists.PressedBackground" Value="{DynamicResource ButtonPressedBackground}"/>
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource ButtonPressedForeground}"/>
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource ButtonPressedBorderBrush}"/>
-		<Setter Property="assists:ButtonAssists.IsRipple"  Value="true"/>
+		<Setter Property="assists:ButtonAssists.IsRipple"  Value="{DynamicResource IsAnimable}"/>
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>

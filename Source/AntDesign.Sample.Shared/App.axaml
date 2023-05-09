@@ -30,7 +30,7 @@
 		</ResourceDictionary>
 	</Application.Resources>
     <Application.Styles>
-		<AntDesign Coloring="Red" IsRounded="True"/>
+		<AntDesign Coloring="Red" IsRounded="True" IsAnimable="False"/>
 		<AntDesignDataGrid/>
 		<AntDesignColorPicker/>
 	</Application.Styles>

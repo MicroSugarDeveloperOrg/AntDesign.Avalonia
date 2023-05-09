@@ -29,6 +29,11 @@ public class CheckBoxAssists
     public static void SetGlyphFill(AvaloniaObject dependencyObject, IBrush value) => dependencyObject.SetValue(GlyphFillProperty, value);
     public static IBrush? GetGlyphFill(AvaloniaObject dependencyObject) => dependencyObject.GetValue<IBrush?>(GlyphFillProperty);
 
+    public static readonly AvaloniaProperty<bool> IsRippleProperty = AvaloniaProperty.RegisterAttached<CheckBox, bool>("IsRipple", typeof(CheckBoxAssists));
+    public static void SetIsRipple(AvaloniaObject dependencyObject, bool value) => dependencyObject.SetValue(IsRippleProperty, value);
+    public static bool GetIsRipple(AvaloniaObject dependencyObject) => dependencyObject.GetValue<bool>(IsRippleProperty);
+
+
     public static readonly AvaloniaProperty<Color> RippleColorProperty = AvaloniaProperty.RegisterAttached<CheckBox, Color>("RippleColor", typeof(CheckBoxAssists));
     public static void SetRippleColor(AvaloniaObject dependencyObject, Color value) => dependencyObject.SetValue(RippleColorProperty, value);
     public static Color GetRippleColor(AvaloniaObject dependencyObject) => dependencyObject.GetValue<Color>(RippleColorProperty);
