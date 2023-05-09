@@ -274,7 +274,7 @@ public class RippleEffect : Border
             };
 
             BoxShadow = new BoxShadows(boxShadow);
-        });
+        }).GetTask();
          
     }
 
@@ -293,7 +293,7 @@ public class RippleEffect : Border
 
            if (!IsForever)
                IsTrigger = false;
-       }); 
+       }).GetTask(); 
     }
 
     Task LoopTrigger()
@@ -304,6 +304,6 @@ public class RippleEffect : Border
                return;
 
            Trigger();
-       }); 
+       }).GetTask(); 
     }
 }

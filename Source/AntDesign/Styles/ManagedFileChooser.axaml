@@ -179,7 +179,7 @@
 						<ListBox x:Name="PART_QuickLinks"
 								 Grid.Column="0"
 								 Width="{DynamicResource QuickLinksWidth}"
-								 Items="{Binding QuickLinks}"
+								 ItemsSource="{Binding QuickLinks}"
 								 SelectedIndex="{Binding QuickLinksSelectedIndex}"
 								 Focusable="False"
 								 Background="{DynamicResource QuickLinksBackground}"
@@ -240,7 +240,7 @@
 							</Grid>
 
 							<ListBox x:Name="PART_Files"
-									 Items="{Binding Items}" 
+									 ItemsSource="{Binding Items}" 
 									 Margin="0"
 									 Padding="0"
 									 Background="Transparent"
@@ -305,7 +305,7 @@
 										 IsVisible="{Binding !SelectingFolder}" />
 								<ComboBox Grid.Column="5" 
 										  IsVisible="{Binding ShowFilters}"
-										  Items="{Binding Filters}"
+										  ItemsSource="{Binding Filters}"
 										  SelectedItem="{Binding SelectedFilter}" />
 							</Grid>
 

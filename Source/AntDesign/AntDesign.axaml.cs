@@ -46,12 +46,24 @@ public partial class AntDesign : Styles
             else
                 app.Resources[g_OverlayCornerRadius] = new CornerRadius(0);
         });
+
+        IsAnimableProperty.Changed.AddClassHandler<AntDesign, bool>((s, e) =>
+        {
+            var app = Application.Current;
+            if (app is null)
+                return;
+
+            app.Resources[g_IsAnimable] = e.NewValue.Value;
+        });
     }
 
     public AntDesign(IServiceProvider? serviceProvider = default)
     {
         AvaloniaXamlLoader.Load(serviceProvider, this);
+        AntDesignPalettes = Resources.MergedDictionaries.OfType<AntDesignColorPaletteCollection>().FirstOrDefault();
     }
+
+    public IDictionary<ThemeVariant, AntDesignColorPalette> AntDesignPalettes { get; }
 
     const string g_AntDesignPrimaryColor = "AntDesignPrimaryColor";
     const string g_AntDesignSecondlyColor = "AntDesignSecondlyColor";
@@ -59,6 +71,8 @@ public partial class AntDesign : Styles
     const string g_AntDesignAssistColor5 = "AntDesignAssistColor5";
     const string g_RippleColor = "RippleColor";
     const string g_OverlayCornerRadius = "OverlayCornerRadius";
+
+    const string g_IsAnimable = "IsAnimable";
 
     Color _defaultAntDesignPrimaryColor = Color.Parse("#FF1677FF");
     Color _defaultAntDesignSecondlyColor = Color.Parse("#FF4096FF");
@@ -84,4 +98,12 @@ public partial class AntDesign : Styles
         set => SetValue(IsRoundedProperty, value);
     }
 
+    public static readonly StyledProperty<bool> IsAnimableProperty =
+                   AvaloniaProperty.Register<AntDesign, bool>(nameof(IsAnimable), defaultBindingMode: BindingMode.TwoWay, defaultValue: true);
+
+    public bool IsAnimable
+    {
+        get => GetValue(IsAnimableProperty);
+        set => SetValue(IsAnimableProperty, value);
+    }
 }

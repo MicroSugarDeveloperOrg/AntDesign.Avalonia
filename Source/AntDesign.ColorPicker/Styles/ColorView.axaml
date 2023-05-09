@@ -1,12 +1,18 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
 				    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:controls="using:Avalonia.Controls"
+					xmlns:assists="using:AntDesign.Assists"
+					xmlns:converters="using:AntDesign.Converters"
 					xmlns:primitives="using:Avalonia.Controls.Primitives"
 					x:CompileBindings="True">
+
+	<converters:RadioButtonStyleConverter x:Key="RGBRadioButtonStyleConverter"/>
+	
 
 	<ControlTheme x:Key="{x:Type ColorView}" TargetType="ColorView">
 		<Setter Property="Width" Value="{DynamicResource ColorViewWidth}"/>
 		<Setter Property="Height" Value="{DynamicResource ColorViewHeight}"/>
+		<Setter Property="assists:ColorViewAssists.RadioButtonStyle" Value="{StaticResource AntDesignLikePrimaryButtonStyle}"/>
 		<Setter Property="Background" Value="{DynamicResource ColorViewBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ColorViewBorderBrush}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource ColorViewBorderThicknesss}" />
@@ -161,15 +167,15 @@
 
 											<RadioButton x:Name="RgbRadioButton"
 														 Grid.Column="0"
-														 Theme="{StaticResource ColorViewRadioButtonLikeButtonStyle}"
+														 Theme="{TemplateBinding assists:ColorViewAssists.RadioButtonStyle, Converter={StaticResource RGBRadioButtonStyleConverter}, ConverterParameter={StaticResource ColorViewRadioButtonLikeButtonStyle}}"
 														 Content="RGB"
 														 IsChecked="{TemplateBinding ColorModel, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static controls:ColorModel.Rgba}, Mode=TwoWay}" 
 														 BorderThickness="{StaticResource ColorViewLeftBorderThickness}"
 														 CornerRadius="{StaticResource ColorViewLeftCornerRadius}" />
 
 											<RadioButton x:Name="HsvRadioButton"
-														 Grid.Column="1"
-														 Theme="{StaticResource ColorViewRadioButtonLikeButtonStyle}"
+														 Grid.Column="1" 
+														 Theme="{TemplateBinding assists:ColorViewAssists.RadioButtonStyle, Converter={StaticResource RGBRadioButtonStyleConverter}, ConverterParameter={StaticResource ColorViewRadioButtonLikeButtonStyle}}"
 														 Content="HSV"
 														 IsChecked="{TemplateBinding ColorModel, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static controls:ColorModel.Hsva}, Mode=TwoWay}" 
 														 BorderThickness="{StaticResource ColorViewRightBorderThickness}"

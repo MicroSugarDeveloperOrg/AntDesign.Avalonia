@@ -52,7 +52,7 @@
 			<DataTemplate>
 				<ItemsControl x:DataType="DataValidationErrors"
 							  Foreground="{DynamicResource ErrorForeground}"
-							  Items="{Binding}">
+							  ItemsSource="{Binding}">
 					<ItemsControl.Styles>
 						<Style Selector="TextBlock">
 							<Setter Property="TextWrapping" Value="Wrap" />
@@ -99,7 +99,7 @@
 						</Style>
 					</Panel.Styles>
 					<ToolTip.Tip>
-						<ItemsControl Items="{ReflectionBinding}" />
+						<ItemsControl ItemsSource="{ReflectionBinding}" />
 					</ToolTip.Tip>
 					<Path Width="{DynamicResource DataValidationErrorsIconWidth}"
 						  Height="{DynamicResource DataValidationErrorsIconHeight}"

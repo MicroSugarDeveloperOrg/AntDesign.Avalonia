@@ -35,26 +35,26 @@
 					<StackPanel Grid.Row="0" Spacing="20"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
-						<AutoCompleteBox  Items="{Binding AutoCompletes}"
+						<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 										  x:DataType="models:AutoCompletionModel"
 										  Watermark="input here"
 										  Width="200" Height="35"
 										  HorizontalAlignment="Left"
 										  ValueMemberBinding="{Binding Name}" />
 
-						<AutoCompleteBox  Items="{Binding AutoCompletes}"
+						<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 										  Watermark="floating mode"
 										  AutoCompleteBoxAssists.UseFloatingWatermark="true"
 										  Width="200" Height="35"
 										  HorizontalAlignment="Left"
 										  ValueMemberBinding="{Binding Name, x:DataType=models:AutoCompletionModel}" />
 
-						<AutoCompleteBox  Items="{Binding AutoCompletes}"
-									  Watermark="floating mode"
-									  AutoCompleteBoxAssists.UseFloatingWatermark="true"
-									  Width="200" Height="35"
-									  HorizontalAlignment="Left"
-									  ValueMemberBinding="{Binding Name, x:DataType=models:AutoCompletionModel}" >
+						<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
+										  Watermark="floating mode"
+										  AutoCompleteBoxAssists.UseFloatingWatermark="true"
+										  Width="200" Height="35"
+										  HorizontalAlignment="Left"
+										  ValueMemberBinding="{Binding Name, x:DataType=models:AutoCompletionModel}" >
 							<DataValidationErrors.Error>
 								<sys:Exception>
 									<x:Arguments>
@@ -90,7 +90,7 @@
 					<StackPanel Grid.Row="0" Spacing="20"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
-						<AutoCompleteBox  Items="{Binding AutoCompletes}"
+						<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 										  Watermark="input here"
 										  Width="200" Height="35"
 										  HorizontalAlignment="Left"
@@ -103,7 +103,7 @@
 							</assists:AutoCompleteBoxAssists.InnerRightContent>
 						</AutoCompleteBox>
 
-						<AutoCompleteBox  Items="{Binding AutoCompletes}"
+						<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 										  Watermark="floating mode"
 										  AutoCompleteBoxAssists.UseFloatingWatermark="true"
 										  Width="200" Height="35"
@@ -145,14 +145,14 @@
 								VerticalAlignment="Center">
 
 						<StackPanel Spacing="0" Orientation="Horizontal">
-							<AutoCompleteBox  Items="{Binding AutoCompletes}"
-										  Watermark="input here"
-										  Width="200" Height="35"
-										  HorizontalAlignment="Left"
-										  ValueMemberBinding="{Binding Name, x:DataType=models:AutoCompletionModel}"
-										  Classes="left"/>
+							<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
+										      Watermark="input here"
+										      Width="200" Height="35"
+										      HorizontalAlignment="Left"
+										      ValueMemberBinding="{Binding Name, x:DataType=models:AutoCompletionModel}"
+										      Classes="left"/>
 
-							<AutoCompleteBox  Items="{Binding AutoCompletes}"
+							<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 											  Watermark="floating mode"
 											  AutoCompleteBoxAssists.UseFloatingWatermark="true"
 											  Width="200" Height="35"
@@ -161,7 +161,7 @@
 											  Classes="center"> 
 							</AutoCompleteBox>
 
-							<AutoCompleteBox  Items="{Binding AutoCompletes}"
+							<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 											  Watermark="floating mode"
 											  AutoCompleteBoxAssists.UseFloatingWatermark="true"
 											  Width="200" Height="35"
@@ -173,7 +173,7 @@
 						<StackPanel Spacing="0" Orientation="Horizontal">
 							<Button Content="123" Classes="left"/>
 
-							<AutoCompleteBox  Items="{Binding AutoCompletes}"
+							<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 											  Watermark="floating mode"
 											  AutoCompleteBoxAssists.UseFloatingWatermark="true"
 											  Width="200" Height="35"
@@ -209,14 +209,14 @@
 					<StackPanel Grid.Row="0" Spacing="20"
 								Margin="20,0,0,0"
 								VerticalAlignment="Center">
-						<AutoCompleteBox  Items="{Binding AutoCompletes}"
+						<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 										  IsEnabled="False"
 										  Watermark="input here"
 										  Width="200" Height="35"
 										  HorizontalAlignment="Left"
 										  ValueMemberBinding="{Binding Name, x:DataType=models:AutoCompletionModel}" />
 
-						<AutoCompleteBox  Items="{Binding AutoCompletes}"
+						<AutoCompleteBox  ItemsSource="{Binding AutoCompletes}"
 										  IsEnabled="False"
 										  Watermark="floating mode"
 										  AutoCompleteBoxAssists.UseFloatingWatermark="true"

@@ -27,7 +27,7 @@
 		<Setter Property="assists:ButtonAssists.PressedForeground" Value="{DynamicResource RepeatButtonPressedForeground}" />
 		<Setter Property="assists:ButtonAssists.PressedBorderBrush" Value="{DynamicResource RepeatButtonPressedBorderBrush}" />
 		<Setter Property="assists:ButtonAssists.PressedRenderTransform"  Value="scale(0.98)"/>
-		<Setter Property="assists:ButtonAssists.IsRipple"  Value="True"/>
+		<Setter Property="assists:ButtonAssists.IsRipple"  Value="{DynamicResource IsAnimable}"/>
 		<Setter Property="assists:ButtonAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ButtonAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
