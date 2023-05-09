@@ -33,7 +33,7 @@
 
 					<DataGrid Margin="20"
 							  x:DataType="models:Person"
-							  Items="{Binding Persons}"
+							  ItemsSource="{Binding Persons}"
 							  CanUserResizeColumns="True"
 							  CanUserReorderColumns="True"
 							  CanUserSortColumns="True"
@@ -85,7 +85,7 @@
 
 					<DataGrid Margin="20"
 							  x:DataType="models:Person"
-							  Items="{Binding Persons}"
+							  ItemsSource="{Binding Persons}"
 							  CanUserResizeColumns="True"
 							  CanUserReorderColumns="True"
 							  CanUserSortColumns="True"

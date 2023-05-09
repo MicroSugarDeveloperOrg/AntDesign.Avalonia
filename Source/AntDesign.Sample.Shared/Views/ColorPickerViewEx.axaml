@@ -159,6 +159,29 @@
 
 			</Border>
 
+			<Border Grid.Row="2"
+					Grid.Column="2"
+					BorderThickness="{StaticResource OverlayBorderThickness}"
+					CornerRadius="{StaticResource OverlayCornerRadius}"
+					BorderBrush="{DynamicResource AntDesignBorderBrush}">
+
+				<Grid RowDefinitions="*,Auto,Auto">
+
+					<Rectangle Width="100" Height="30" RadiusX="10" RadiusY="10" Fill="Red"/>
+
+					<Separator Grid.Row="1" SeparatorAssists.Content="基本使用"/>
+
+					<StackPanel Grid.Row="2"
+								Margin="20,5,0,5"
+								VerticalAlignment="Center">
+
+						<TextBlock Text="ColorPicker"/>
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
 		</Grid>
 
 

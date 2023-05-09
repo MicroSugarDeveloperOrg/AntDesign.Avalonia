@@ -39,7 +39,6 @@
 			<Setter Property="Template">
 				<ControlTemplate TargetType="{x:Type ColorSlider}">
 					<Grid>
-
 						<Rectangle Fill="{StaticResource ColorPickerCheckeredBackground}"
 								   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerTopLeftCornerRadiusConverter}}"
 								   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerBottomRightCornerRadiusConverter}}"
@@ -47,6 +46,8 @@
 								   VerticalAlignment="Stretch"/>
 
 						<Rectangle Fill="{TemplateBinding Background}"
+								   Width="{Binding #PART_Track.Bounds.Width}"
+                                   Height="{Binding #PART_Track.Bounds.Height}"
 								   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerTopLeftCornerRadiusConverter}}"
 								   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerBottomRightCornerRadiusConverter}}"
 								   HorizontalAlignment="Stretch"
@@ -117,6 +118,8 @@
 								   VerticalAlignment="Stretch"/>
 
 						<Rectangle Fill="{TemplateBinding Background}"
+								   Width="{Binding #PART_Track.Bounds.Width}"
+                                   Height="{Binding #PART_Track.Bounds.Height}"
 								   RadiusX="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerTopLeftCornerRadiusConverter}}"
 								   RadiusY="{TemplateBinding CornerRadius, Converter={StaticResource ColorPickerBottomRightCornerRadiusConverter}}"
 								   HorizontalAlignment="Stretch"

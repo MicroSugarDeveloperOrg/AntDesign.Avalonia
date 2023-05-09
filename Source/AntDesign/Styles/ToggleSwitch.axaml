@@ -38,7 +38,7 @@
 		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverBorderBrush" Value="{DynamicResource ToggleSwitchCheckedPointerOverBorderBrush}" />
 		<Setter Property="assists:ToggleSwitchAssists.KnobOnBackground" Value="{DynamicResource ToggleSwitchKnobOnBackground}" />
 		<Setter Property="assists:ToggleSwitchAssists.KnobOffBackground" Value="{DynamicResource ToggleSwitchKnobOffBackground}" />
-		<Setter Property="assists:ToggleSwitchAssists.IsRipple"  Value="true"/>
+		<Setter Property="assists:ToggleSwitchAssists.IsRipple"  Value="{DynamicResource IsAnimable}"/>
 		<Setter Property="assists:ToggleSwitchAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ToggleSwitchAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>
@@ -273,7 +273,7 @@
 		<Setter Property="assists:ToggleSwitchAssists.CheckedPointerOverBorderBrush" Value="{DynamicResource ToggleSwitchCheckedPointerOverBorderBrush}" />
 		<Setter Property="assists:ToggleSwitchAssists.KnobOnBackground" Value="{DynamicResource ToggleSwitchKnobOnBackground}" />
 		<Setter Property="assists:ToggleSwitchAssists.KnobOffBackground" Value="{DynamicResource ToggleSwitchKnobOffBackground}" />
-		<Setter Property="assists:ToggleSwitchAssists.IsRipple"  Value="true"/>
+		<Setter Property="assists:ToggleSwitchAssists.IsRipple"  Value="{DynamicResource IsAnimable}"/>
 		<Setter Property="assists:ToggleSwitchAssists.RippleColor"  Value="{DynamicResource RippleColor}"/>
 		<Setter Property="assists:ToggleSwitchAssists.RippleColorAlpha"  Value="{DynamicResource RippleOpacity}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}"/>

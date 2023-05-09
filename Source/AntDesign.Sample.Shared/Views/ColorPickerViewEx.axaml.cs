@@ -1,5 +1,5 @@
 using AntDesign.Sample.ViewModels;
-using Avalonia.Media;
+using Avalonia.Controls.Primitives;
 
 namespace AntDesign.Sample.Views;
 public partial class ColorPickerViewEx : ReactiveUserControl<ColorPickerViewModel>
@@ -13,6 +13,6 @@ public partial class ColorPickerViewEx : ReactiveUserControl<ColorPickerViewMode
         //TabControl.CornerRadiusProperty
 
         //VisualBrush
-         
+        //Track.BoundsProperty
     }
 }
