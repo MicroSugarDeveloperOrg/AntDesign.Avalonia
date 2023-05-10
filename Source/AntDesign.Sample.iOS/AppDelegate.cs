@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.iOS;
 using Avalonia.ReactiveUI;
-using Avalonia.Toolkit;
+using AntDesign.Toolkit;
 
 namespace AntDesign.Sample;
 
@@ -13,6 +13,6 @@ public partial class AppDelegate : AvaloniaAppDelegate<App>
 {
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
-        return builder.UseReactiveUI().UseAvaloniaToolkit();
+        return builder.UseReactiveUI().UseAntDesignToolkit();
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Avalonia.Toolkit.Helpers;
+namespace AntDesign.Toolkit.Helpers;
 public sealed class OperatingSystemEx
 {
 #if NET6_0_OR_GREATER

@@ -12,8 +12,4 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\Avalonia.Toolkit\Avalonia.Toolkit.csproj" />
-	</ItemGroup>
-
 </Project>
