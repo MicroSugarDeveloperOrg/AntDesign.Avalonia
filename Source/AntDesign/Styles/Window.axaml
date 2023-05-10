@@ -6,7 +6,7 @@
 	<ControlTheme x:Key="{x:Type Window}" TargetType="Window">
 		<Setter Property="Width" Value="{DynamicResource WindowDefaultWidth}"/>
 		<Setter Property="Height" Value="{DynamicResource WindowDefaultHeight}"/>
-		<Setter Property="ShowInTaskbar" Value="False"/>
+		<Setter Property="ShowInTaskbar" Value="True"/>
 		<Setter Property="WindowStartupLocation" Value="CenterScreen"/>
 		<Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
 		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource WindowBackground}" />
