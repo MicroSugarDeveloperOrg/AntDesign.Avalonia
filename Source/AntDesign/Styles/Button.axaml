@@ -40,11 +40,11 @@
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Button">
+				<!--BorderDashArray="{TemplateBinding assists:ButtonAssists.BorderDashArray}"-->
 				<ripple:RippleEffect x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 									 Background="{TemplateBinding Background}"
 									 BorderBrush="{TemplateBinding BorderBrush}"
-									 BorderThickness="{TemplateBinding BorderThickness}"
-								     BorderDashArray="{TemplateBinding assists:ButtonAssists.BorderDashArray}"
+									 BorderThickness="{TemplateBinding BorderThickness}" 
 									 CornerRadius="{TemplateBinding CornerRadius}"
 									 Padding="{TemplateBinding Padding}"
 									 IsRipple="{TemplateBinding assists:ButtonAssists.IsRipple}"
@@ -235,11 +235,11 @@
 		<Setter Property="assists:ButtonAssists.Shadows" Value="{DynamicResource ButtonShadow}" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Button">
+				<!--BorderDashArray="{TemplateBinding assists:ButtonAssists.BorderDashArray}"-->
 				<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						BorderDashArray="{TemplateBinding assists:ButtonAssists.BorderDashArray}"
+						BorderThickness="{TemplateBinding BorderThickness}" 
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Padding="{TemplateBinding Padding}"
 						BoxShadow="{TemplateBinding assists:ButtonAssists.Shadows}">

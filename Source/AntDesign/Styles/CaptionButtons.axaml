@@ -61,7 +61,7 @@
 						</Viewbox>
 					</Button>
 					
-					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_MinimiseButton}"
+					<Button x:Name="{x:Static helpers:PARTNameHelper.PART_MinimizeButton}"
 							Theme="{StaticResource AntDesignCaptionButtonStyle}">
 						<Viewbox Width="11" Margin="2">
 							<Path Stretch="UniformToFill"

@@ -23,7 +23,7 @@ public static class PARTNameHelper
 
     //CaptionButtons
     public static string PART_FullScreenButton => nameof(PART_FullScreenButton);
-    public static string PART_MinimiseButton => nameof(PART_MinimiseButton);
+    public static string PART_MinimizeButton => nameof(PART_MinimizeButton);
     public static string PART_RestoreButton => nameof(PART_RestoreButton);
     public static string PART_CloseButton => nameof(PART_CloseButton);
 

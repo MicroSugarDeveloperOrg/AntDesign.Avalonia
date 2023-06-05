@@ -65,12 +65,12 @@
 															AutomationProperties.Name="Third Component"
 															Grid.Column="0"
 															Orientation="Vertical"
-															IsAlphaMaxForced="True"
-															IsSaturationValueMaxForced="False"
-															IsVisible="{TemplateBinding IsColorSpectrumSliderVisible}"
+															IsAlphaVisible="False"
+															IsPerceptive="True"
 															ColorModel="Hsva"
 															ColorComponent="{Binding ThirdComponent, ElementName=ColorSpectrum}"
 															HsvColor="{Binding HsvColor, ElementName=ColorSpectrum}"
+															IsVisible="{TemplateBinding IsColorSpectrumSliderVisible}"
 															HorizontalAlignment="Center"
 															VerticalAlignment="Stretch"/>
 

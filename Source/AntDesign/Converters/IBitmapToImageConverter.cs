@@ -4,7 +4,7 @@ public class IBitmapToImageConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value != null && value is IBitmap bm)
+        if (value != null && value is Bitmap bm)
             return new Image { Source = bm };
 
         return null;
