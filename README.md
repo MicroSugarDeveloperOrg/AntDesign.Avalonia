@@ -1,4 +1,5 @@
 # AntDesign.Avalonia
+
 ## Develop
 * please use visaulstudio 2022 or greater or rider
 * use .net7 runtime (version 7.0.100 or greater)(if you want to use others, please modify the version in the global.json)
@@ -16,7 +17,7 @@
 ![image](https://user-images.githubusercontent.com/28770378/230072518-2974c5b7-4d6d-43c1-8b9a-638cfec50242.png)
 ![image](https://user-images.githubusercontent.com/28770378/230072606-02410c97-1e17-4331-85e9-80384248b913.png)
 
-## Use AntDesign.Avalonia
+## How to use
 1. Add [AntDesign.Avalonia][nuget] nuget package to your project:
 
        dotnet add package AntDesign.Avalonia
@@ -50,3 +51,24 @@
 4. If you want to using AntDesign DataGrid only , you can only add [AntDesign.DataGrid]
 5. If you want to using AntDesign ColorPicker only , you can only add [AntDesign.ColorPicker]
 6. If you want to using Custom Fonts-Alibaba PuHuiTi(°¢Àï°Í°ÍÆÕ»ÝÌå) only , you can only add [Avalonia.Toolkit]
+
+## Demo
+You can always download demo executable to play around with LocalizationManager
+  > https://github.com/MicroSugarDeveloperOrg/AntDesign.Avalonia
+
+## Version compatibility
+
+| LocalizationManager.Avalonia Version | Avalonia Version |
+|:-------------------------------------|:-----------------|
+| 0.1.0-preview6.x                     | 11.0-preview6    |
+| 0.1.0-preview7.x                     | 11.0-preview7    |
+| 0.1.0-preview8.x                     | 11.0-preview8    |
+
+
+**NOTE**
+
+AntDesign.Avalonia is moving forward together with Avalonia preview versions now. So new feature/fixes are not backported to previous preview versions. If you need a feature/fix for outdated avalonia preview version, please raise an issue so we can do that for you. 
+
+## Credits
+
+[Avalonia](https://github.com/AvaloniaUI/Avalonia)

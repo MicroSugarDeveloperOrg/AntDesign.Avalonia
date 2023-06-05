@@ -25,7 +25,7 @@
 		<Setter Property="assists:CalendarDatePickerAssists.PopupBackground" Value="{DynamicResource CalendarDatePickerPopupBackground}"/>
 		<Setter Property="assists:CalendarDatePickerAssists.PopupBorderBrush" Value="{DynamicResource CalendarDatePickerPopupBorderBrush}"/>
 		<Setter Property="assists:CalendarDatePickerAssists.PopupMargin" Value="{DynamicResource OverlayMargin}"/>
-		<Setter Property="assists:CalendarDatePickerAssists.PopupCornerRadius" Value="{DynamicResource PopupCornerRadius}"/>
+		<Setter Property="assists:CalendarDatePickerAssists.PopupCornerRadius" Value="{DynamicResource OverlayCornerRadius}"/>
 		<Setter Property="assists:CalendarDatePickerAssists.PopupBorderThickness" Value="{DynamicResource BorderThickness}"/>
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
 		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />

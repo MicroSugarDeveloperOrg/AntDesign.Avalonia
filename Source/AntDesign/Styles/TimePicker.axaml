@@ -251,7 +251,7 @@
 							   PlacementTarget="{TemplateBinding}">
 							<Border Margin="{DynamicResource OverlayMargin}"
 									Padding="{DynamicResource OverlayPadding}"
-									CornerRadius="{DynamicResource PopupCornerRadius}"
+									CornerRadius="{DynamicResource OverlayCornerRadius}"
 									BorderThickness="{DynamicResource PopupBorderThickness}"
 									Background="{DynamicResource TimePickerPopupBackground}"
 									BorderBrush="{DynamicResource TimePickerPopupBorderBrush}"
