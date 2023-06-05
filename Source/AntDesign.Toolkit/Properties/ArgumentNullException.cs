@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace Avalonia.Toolkit;
+namespace AntDesign.Toolkit;
 
 [Serializable]
 internal sealed class ArgumentNullException : ArgumentException

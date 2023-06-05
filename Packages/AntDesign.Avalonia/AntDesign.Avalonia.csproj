@@ -28,7 +28,6 @@
 	  <ProjectReference Include="..\..\Source\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj" />
 	  <ProjectReference Include="..\..\Source\AntDesign.DataGrid\AntDesign.DataGrid.csproj" />
 	  <ProjectReference Include="..\..\Source\AntDesign\AntDesign.csproj" />
-	  <ProjectReference Include="..\..\Source\Avalonia.Toolkit\Avalonia.Toolkit.csproj" />
 	</ItemGroup>
  
 </Project>

@@ -19,7 +19,7 @@
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBackground" Value="{DynamicResource AutoCompleteBoxPopupBackground}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderBrush" Value="{DynamicResource AutoCompleteBoxPopupBorderBrush}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupMargin" Value="{DynamicResource PopupShadowPadding}"/>
-		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource PopupCornerRadius}"/>
+		<Setter Property="assists:AutoCompleteBoxAssists.PopupCornerRadius" Value="{DynamicResource OverlayCornerRadius}"/>
 		<Setter Property="assists:AutoCompleteBoxAssists.PopupBorderThickness" Value="{DynamicResource PopupBorderThickness}"/>
 		<Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteBoxPopupMaxHeight}" />
 		<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />

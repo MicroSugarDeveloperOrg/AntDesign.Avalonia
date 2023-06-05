@@ -64,7 +64,7 @@
 		<Setter Property="assists:ComboBoxAssists.PopupBackground" Value="{DynamicResource ComboBoxPopupBackground}"/>
 		<Setter Property="assists:ComboBoxAssists.PopupBorderBrush" Value="{DynamicResource ComboBoxPopupBorderBrush}"/>
 		<Setter Property="assists:ComboBoxAssists.PopupBorderThickness" Value="{DynamicResource PopupBorderThickness}"/>
-		<Setter Property="assists:ComboBoxAssists.PopupCornerRadius" Value="{DynamicResource PopupCornerRadius}"/>
+		<Setter Property="assists:ComboBoxAssists.PopupCornerRadius" Value="{DynamicResource OverlayCornerRadius}"/>
 		<Setter Property="assists:ComboBoxAssists.PopupMargin" Value="{DynamicResource OverlayMargin}"/>
 		<Setter Property="assists:ComboBoxAssists.InnerRightContent" Value="{StaticResource DropDownGlyphStyle}"/>
 		<Setter Property="MaxDropDownHeight" Value="{DynamicResource ComboBoxMaxDropDownHeight}" />
