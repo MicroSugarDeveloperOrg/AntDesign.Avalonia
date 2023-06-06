@@ -63,6 +63,7 @@ You can always download demo executable to play around with LocalizationManager
 | 0.1.0-preview6.x                     | 11.0-preview6    |
 | 0.1.0-preview7.x                     | 11.0-preview7    |
 | 0.1.0-preview8.x                     | 11.0-preview8    |
+| 0.1.0-rc1.x                          | 11.0-rc1.x    |
 
 
 **NOTE**
@@ -72,3 +73,4 @@ AntDesign.Avalonia is moving forward together with Avalonia preview versions now
 ## Credits
 
 [Avalonia](https://github.com/AvaloniaUI/Avalonia)
+[AntDesign](https://ant.design/)
