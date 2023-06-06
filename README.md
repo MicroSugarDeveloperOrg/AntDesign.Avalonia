@@ -73,3 +73,4 @@ AntDesign.Avalonia is moving forward together with Avalonia preview versions now
 ## Credits
 
 [Avalonia](https://github.com/AvaloniaUI/Avalonia)
+[AntDesign](https://ant.design/)
