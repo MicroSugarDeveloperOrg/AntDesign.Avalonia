@@ -66,21 +66,19 @@
 							</MultiBinding>
 						</Popup.MinWidth>
 
-						<Border CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}" 
-								Padding="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin}">
-							<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
-									Padding="{DynamicResource PopupPadding}"
-									Background="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBackground}"
-									BorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderBrush}"
-									BorderThickness="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderThickness}"
-									CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}"
-									ClipToBounds="False"
-									BoxShadow="{DynamicResource AutoCompleteBoxShadow}">
-								<ListBox x:Name="{x:Static helpers:PARTNameHelper.PART_SelectingItemsControl}"
-										 BorderThickness="0"
-										 Background="Transparent"
-										 ItemTemplate="{TemplateBinding ItemTemplate}"/>
-							</Border>
+						<Border x:Name="{x:Static helpers:PARTNameHelper.PART_SuggestionsContainer}"
+								Padding="{DynamicResource PopupPadding}"
+								Margin="{TemplateBinding assists:AutoCompleteBoxAssists.PopupMargin}"
+								Background="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBackground}"
+								BorderBrush="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderBrush}"
+								BorderThickness="{TemplateBinding assists:AutoCompleteBoxAssists.PopupBorderThickness}"
+								CornerRadius="{TemplateBinding assists:AutoCompleteBoxAssists.PopupCornerRadius}"
+								ClipToBounds="False"
+								BoxShadow="{DynamicResource AutoCompleteBoxShadow}">
+							<ListBox x:Name="{x:Static helpers:PARTNameHelper.PART_SelectingItemsControl}"
+									 BorderThickness="0"
+									 Background="Transparent"
+									 ItemTemplate="{TemplateBinding ItemTemplate}"/>
 						</Border>
 
 
@@ -107,6 +105,5 @@
 			</Style>
 		</Style>
 	</ControlTheme>
-
 
 </ResourceDictionary>
