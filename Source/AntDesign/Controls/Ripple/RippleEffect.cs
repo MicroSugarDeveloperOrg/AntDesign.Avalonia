@@ -166,7 +166,7 @@ public class RippleEffect : Border
     }
 
     public static readonly StyledProperty<double> RippleToSizeProperty =
-                           AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleToSize), defaultBindingMode: BindingMode.TwoWay, defaultValue: 3d);
+                           AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleToSize), defaultBindingMode: BindingMode.TwoWay, defaultValue: 2d);
 
     public double RippleToSize
     {

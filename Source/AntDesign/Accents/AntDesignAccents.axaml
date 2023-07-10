@@ -32,7 +32,7 @@
 	<CornerRadius x:Key="LeftOverlayCornerRadius">5,0,0,5</CornerRadius>
 	<CornerRadius x:Key="RightOverlayCornerRadius">0,5,5,0</CornerRadius>
 
-	<Thickness x:Key="PopupShadowPadding">3</Thickness>
+	<Thickness x:Key="PopupShadowPadding">5</Thickness>
 	<Thickness x:Key="PopupBorderThickness">0</Thickness> 
 	<Thickness x:Key="PopupPadding">3</Thickness>
 	<Thickness x:Key="PopupMargin">5</Thickness>
