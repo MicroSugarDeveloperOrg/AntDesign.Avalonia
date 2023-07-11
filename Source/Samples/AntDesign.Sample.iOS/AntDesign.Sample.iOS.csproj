@@ -17,6 +17,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
+		<ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
 	</ItemGroup>
 </Project>

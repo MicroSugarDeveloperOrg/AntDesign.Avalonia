@@ -39,4 +39,8 @@
 	<ItemGroup>
 		<PackageReference Include="Avalonia.Browser" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
+	</ItemGroup>
 </Project>

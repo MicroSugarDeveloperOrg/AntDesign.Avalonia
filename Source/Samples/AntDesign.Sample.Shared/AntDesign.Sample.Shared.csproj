@@ -28,11 +28,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj" />
-	  <ProjectReference Include="..\AntDesign.DataGrid\AntDesign.DataGrid.csproj" />
-	  <ProjectReference Include="..\AntDesign.Toolkit\AntDesign.Toolkit.csproj" />
-	  <ProjectReference Include="..\AntDesign\AntDesign.csproj" />
-	  <ProjectReference Include="..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" /> 
+	  <ProjectReference Include="..\..\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj" />
+	  <ProjectReference Include="..\..\AntDesign.DataGrid\AntDesign.DataGrid.csproj" />
+	  <ProjectReference Include="..\..\AntDesign.Toolkit\AntDesign.Toolkit.csproj" />
+	  <ProjectReference Include="..\..\AntDesign\AntDesign.csproj" />
+	  <ProjectReference Include="..\..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	</ItemGroup>
 
 </Project>

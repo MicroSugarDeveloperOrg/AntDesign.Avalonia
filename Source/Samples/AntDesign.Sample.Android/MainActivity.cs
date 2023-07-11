@@ -1,13 +1,16 @@
-﻿using Android.App;
-using Android.Content.PM;
+﻿using Android.Content.PM;
+using AntDesign.Toolkit;
 using Avalonia;
 using Avalonia.Android;
 using Avalonia.ReactiveUI;
-using AntDesign.Toolkit;
 
 namespace AntDesign.Sample;
 
-[Activity(Label = "AntDesign.Avalonia.Android", Theme = "@style/MyTheme.NoActionBar", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
+[Activity(Label = "AntDesign.Avalonia.Android",
+          Theme = "@style/MyTheme.NoActionBar",
+          Icon = "@drawable/icon",
+          MainLauncher = true,
+          ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
 public class MainActivity : AvaloniaMainActivity<App>
 {
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)

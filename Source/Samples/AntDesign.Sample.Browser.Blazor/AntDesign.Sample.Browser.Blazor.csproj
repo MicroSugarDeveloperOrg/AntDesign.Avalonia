@@ -48,13 +48,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Avalonia.Browser.Blazor" />
-	  <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
-	  <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all" />
+		<PackageReference Include="Avalonia.Browser.Blazor" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
+		<ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
 	</ItemGroup>
 
 </Project>

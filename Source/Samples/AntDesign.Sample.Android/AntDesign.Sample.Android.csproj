@@ -20,9 +20,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia.Android" />
+		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
+		<ProjectReference Include="..\AntDesign.Sample.Shared\AntDesign.Sample.Shared.csproj" />
 	</ItemGroup>
 </Project>
