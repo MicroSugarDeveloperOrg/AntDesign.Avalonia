@@ -1,12 +1,12 @@
 {
   "profiles": {
-    "WSL": {
-      "commandName": "WSL2",
-      "distributionName": ""
-    },
     "Desktop": {
       "commandName": "Project",
       "distributionName": ""
-    }
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    } 
   }
 }

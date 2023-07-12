@@ -1,0 +1,15 @@
+{
+    "dotnet.defaultSolution": "AntDesign.Avalonia.sln",
+    "window.zoomLevel": 1,// 左侧菜单栏的字体大小
+    "editor.mouseWheelZoom": true,// 按住ctrl可以设置代码的字体大小
+    "git.autofetch": true,
+    "files.autoSave": "onFocusChange",
+    "json.schemas": [
+        
+    
+    ],
+    "editor.fontSize": 14,
+    "editor.fontWeight": "normal",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace，‘Cascadia Code’",
+    "cmake.configureOnOpen": false
+}
