@@ -1,4 +1,3 @@
-using AntDesign.Toolkit.Media;
 using AntDesign.Toolkit.Settings;
 
 namespace AntDesign.Toolkit;
@@ -22,8 +21,8 @@ public static class AvaloniaAppBuilderExtensions
                 }
             }
 
-        }).ConfigureFonts(manager => manager.AddFontCollection(new AntDesignFontCollection(setting.Key, setting.Source)));
+        }).ConfigureFonts(manager => manager.AddFontCollection(new EmbeddedFontCollection(setting.Key, setting.Source)));
 
-        //return builder.ConfigureFonts(manager => manager.AddFontCollection(new AntDesignFontCollection(setting.Key, setting.Source)));
+        //return builder.ConfigureFonts(manager => manager.AddFontCollection(new EmbeddedFontCollection(setting.Key, setting.Source)));
     }
 }
