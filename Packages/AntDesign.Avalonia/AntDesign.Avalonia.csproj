@@ -11,7 +11,7 @@
 		<Title>AntDesign.Avalonia</Title>
 	</PropertyGroup>
 
-	<Import Project="$(BuildToolsDirectory)Directory.Packages.targets" />
+	<Import Project="$(BuildToolsDirectory)Directory.Packages.targets"/>
 
 	<ItemGroup>
 		<None Include="..\..\README.md">
@@ -25,9 +25,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Source\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj" />
-	  <ProjectReference Include="..\..\Source\AntDesign.DataGrid\AntDesign.DataGrid.csproj" />
-	  <ProjectReference Include="..\..\Source\AntDesign\AntDesign.csproj" />
+	  <ProjectReference Include="..\..\Source\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj"/>
+	  <ProjectReference Include="..\..\Source\AntDesign.DataGrid\AntDesign.DataGrid.csproj"/>
+	  <ProjectReference Include="..\..\Source\AntDesign\AntDesign.csproj"/>
 	</ItemGroup>
  
-</Project>
+<Import Project=".avalonia\AvaloniaPreviewer.target" Condition="'$(Configuration)' == 'Debug'"/></Project>
