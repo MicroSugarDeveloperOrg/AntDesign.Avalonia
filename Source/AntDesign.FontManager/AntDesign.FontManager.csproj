@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>AntDesign.FontManager</PackageId>
+		<Title>AntDesign.FontManager</Title>
+	</PropertyGroup>
+
+	<Import Project="$(BuildToolsDirectory)Directory.Packages.targets" />
+
+	<ItemGroup>
+		<AvaloniaResource Include="Assets\*" />
+		<AvaloniaResource Include="Assets\Fonts\*.ttf" />
+		<AvaloniaResource Include="Assets\Fonts\AliBaba\*.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\Packages\Logo\antdesign@avalonia-logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" />
+		<PackageReference Include="PolySharp">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>build; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>

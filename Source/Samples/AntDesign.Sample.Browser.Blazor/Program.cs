@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Browser.Blazor;
 using Avalonia.ReactiveUI;
-using AntDesign.Toolkit;
+using AntDesign.FontManager;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using System.Runtime.Versioning;
 using antdesignApp = AntDesign.Sample.App;
@@ -21,7 +21,7 @@ public class Program
     {
         await AppBuilder.Configure<antdesignApp>()
                         .UseReactiveUI()
-                        .UseAntDesignToolkit()
+                        .UseAntDesignFontManager()
                         .StartBlazorAppAsync();
     }
 

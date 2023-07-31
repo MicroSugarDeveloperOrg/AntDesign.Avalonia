@@ -1,5 +1,5 @@
 ﻿using Android.Content.PM;
-using AntDesign.Toolkit;
+using AntDesign.FontManager;
 using Avalonia;
 using Avalonia.Android;
 using Avalonia.ReactiveUI;
@@ -17,7 +17,7 @@ public class MainActivity : AvaloniaMainActivity<App>
     {
         return base.CustomizeAppBuilder(builder)
                    .UseReactiveUI()
-                   .UseAntDesignToolkit();
+                   .UseAntDesignFontManager();
     }
 
 }

@@ -2,7 +2,7 @@
 using Avalonia;
 using Avalonia.Browser;
 using Avalonia.ReactiveUI;
-using AntDesign.Toolkit;
+using AntDesign.FontManager;
 using System.Runtime.Versioning;
 
 [assembly: SupportedOSPlatform("browser")]
@@ -13,7 +13,7 @@ internal partial class Program
     {
        await BuildAvaloniaApp()
             .UseReactiveUI()
-            .UseAntDesignToolkit()
+            .UseAntDesignFontManager()
             .StartBrowserAppAsync("out");
     }
 

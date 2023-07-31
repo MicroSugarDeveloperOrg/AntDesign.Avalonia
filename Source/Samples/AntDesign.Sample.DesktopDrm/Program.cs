@@ -1,6 +1,5 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using AntDesign.Toolkit;
+﻿using AntDesign.FontManager;
+using Avalonia;
 using Avalonia.ReactiveUI;
 
 namespace AntDesign.Sample.DesktopDrm;
@@ -27,7 +26,7 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
        => AppBuilder.Configure<App>()
                     .UsePlatformDetect()
-                    .UseAntDesignToolkit()
+                    .UseAntDesignFontManager()
                     .LogToTrace()
                     .UseReactiveUI();
 

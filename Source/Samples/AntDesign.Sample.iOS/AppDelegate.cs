@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.iOS;
 using Avalonia.ReactiveUI;
-using AntDesign.Toolkit;
+using AntDesign.FontManager;
 
 namespace AntDesign.Sample;
 
@@ -13,6 +13,6 @@ public partial class AppDelegate : AvaloniaAppDelegate<App>
 {
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
-        return builder.UseReactiveUI().UseAntDesignToolkit();
+        return builder.UseReactiveUI().UseAntDesignFontManager();
     }
 }
