@@ -19,6 +19,7 @@
 	</Design.PreviewWith>
 
 	<ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
+		<Setter Property="Height" Value="{DynamicResource ComboBoxItemHeight}" />
 		<Setter Property="Background" Value="{DynamicResource ComboBoxItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource ComboBoxItemBorderBrush}" />

@@ -1,8 +1,11 @@
-﻿using Avalonia.Styling;
-
-namespace AntDesign.Controls;
-public class ProgressBarButton : Button, IStyleable
+﻿namespace AntDesign.Controls;
+public class ProgressBarButton : Button
 {
-    Type IStyleable.StyleKey => typeof(Button);
+    public ProgressBarButton()
+    {
+
+    }
+
+    protected override Type StyleKeyOverride => base.StyleKeyOverride;
 
 }

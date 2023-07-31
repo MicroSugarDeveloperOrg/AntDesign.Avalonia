@@ -132,12 +132,11 @@
 										<MultiBinding Converter="{StaticResource PopupSizeConverter}">
 											<TemplateBinding Property="Bounds"/>
 											<TemplateBinding Property="(assists:ComboBoxAssists.PopupMargin)"/>
-
 										</MultiBinding>
 									</Popup.MinWidth>
 
 									<Border x:Name="PopupBorder"
-											Padding="{DynamicResource PopupShadowPadding}"
+											Padding="{DynamicResource PopupPadding}"
 											Margin="{TemplateBinding assists:ComboBoxAssists.PopupMargin}"
 											Background="{TemplateBinding assists:ComboBoxAssists.PopupBackground}"
 											BorderBrush="{TemplateBinding assists:ComboBoxAssists.PopupBorderBrush}"

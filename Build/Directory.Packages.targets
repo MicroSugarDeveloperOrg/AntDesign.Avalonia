@@ -1,9 +1,9 @@
 ﻿<Project>
 	<PropertyGroup>
 		<!--Package-->
-		<AntDesignVersion>0.1.0-rc1.1</AntDesignVersion>
+		<AntDesignVersion>11.0.0</AntDesignVersion>
 		<AntDesignPackageOutputPath>$(RepositoryDirectory)nuget\</AntDesignPackageOutputPath>
-		<VersionPrefix>1.0.0-avalonia11p6-preview1</VersionPrefix>
+		<VersionPrefix>avalonia11.0.0</VersionPrefix>
 		<Authors>AvaloniaDeveloper</Authors>
 		<Company>AvaloniaDeveloperOrg</Company>
 		<Description>This repository is a set of styles that will help you customize your application in an appropriate ant-design.</Description>
