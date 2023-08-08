@@ -2,6 +2,7 @@ using AntDesign.Sample.ViewModels;
 using Avalonia.Dialogs;
 using Avalonia.Platform.Storage;
 using AntDesign.Toolkit.Helpers;
+using System.Text;
 
 namespace AntDesign.Sample.Views;
 public partial class DialogsView : ReactiveUserControl<DialogsViewModel>
@@ -38,5 +39,16 @@ public partial class DialogsView : ReactiveUserControl<DialogsViewModel>
                 AllowDirectorySelection = true
             });
         }
+    }
+
+    async void SaveFileDialog(object sender, RoutedEventArgs args)
+    {
+        var storageFile = await GetWindow().StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions () { Title = "±£¥ÊŒª÷√"});
+        if (storageFile is null)
+            return;
+
+        var stream = await storageFile!.OpenWriteAsync();
+        var buffer = Encoding.UTF8.GetBytes("1231231231313");
+        stream.Write(buffer);
     }
 }
