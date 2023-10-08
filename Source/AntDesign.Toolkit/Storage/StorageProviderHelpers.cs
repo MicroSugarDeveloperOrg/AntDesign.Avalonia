@@ -1,5 +1,8 @@
-﻿namespace AntDesign.Controls.Storage;
-internal static class StorageProviderHelpers
+﻿using Avalonia.Platform.Storage;
+using System.Text;
+
+namespace AntDesign.Toolkit.Storage;
+public static class StorageProviderHelpers
 {
     public static Uri FilePathToUri(string path)
     {
@@ -34,9 +37,7 @@ internal static class StorageProviderHelpers
             }
 
             if (defaultExtension != null)
-            {
                 return Path.ChangeExtension(path, defaultExtension);
-            }
         }
 
         return path;

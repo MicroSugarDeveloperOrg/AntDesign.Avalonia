@@ -21,7 +21,6 @@
 
 	<ItemGroup>
 		<AvaloniaXaml Remove="AntDesignDataGrid.axaml" />
-		<AvaloniaXaml Remove="Styles\DataGridStyles.axaml" /> 
 	</ItemGroup>
 
 	<ItemGroup>

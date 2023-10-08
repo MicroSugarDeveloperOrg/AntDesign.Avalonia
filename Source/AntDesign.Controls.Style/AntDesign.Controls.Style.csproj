@@ -2,6 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<RootNamespace>AntDesign</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -10,6 +12,10 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>
 		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AntDesign.Controls\AntDesign.Controls.csproj" />
 	</ItemGroup>
 
 </Project>

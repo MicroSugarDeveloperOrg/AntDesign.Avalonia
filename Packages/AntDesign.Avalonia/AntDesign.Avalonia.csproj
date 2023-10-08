@@ -30,4 +30,4 @@
 	  <ProjectReference Include="..\..\Source\AntDesign\AntDesign.csproj"/>
 	</ItemGroup>
  
-<Import Project=".avalonia\AvaloniaPreviewer.target" Condition="'$(Configuration)' == 'Debug'"/></Project>
+</Project>
