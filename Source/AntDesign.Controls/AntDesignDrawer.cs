@@ -19,7 +19,7 @@ public class AntDesignDrawer : ContentControl
 
     public AntDesignDrawer()
     {
-         
+
     }
 
     const string pcDrawerOpened = ":drawer-opened";
@@ -29,7 +29,7 @@ public class AntDesignDrawer : ContentControl
 
     const string PART_DrawerButton = nameof(PART_DrawerButton);
     Button _drawerButton = default!;
-     
+
 
     #region DependencyProperty
 
@@ -118,7 +118,7 @@ public class AntDesignDrawer : ContentControl
     {
         base.OnApplyTemplate(e);
         var drawerButton = e.NameScope.Find<Button>(PART_DrawerButton);
-        if (drawerButton is null) 
+        if (drawerButton is null)
             throw new NullReferenceException(nameof(drawerButton));
 
         _drawerButton = drawerButton;
@@ -135,7 +135,7 @@ public class AntDesignDrawer : ContentControl
             _drawerContentPresent = presenter;
             result &= true;
         }
-        
+
         return result;
     }
 
@@ -147,7 +147,6 @@ public class AntDesignDrawer : ContentControl
         if (e.NewValue is ILogical newChild)
             LogicalChildren.Add(newChild);
     }
-
 
     void UpdatePseudoClasses()
     {
