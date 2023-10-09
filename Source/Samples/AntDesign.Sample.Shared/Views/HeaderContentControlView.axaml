@@ -7,8 +7,6 @@
              x:Class="AntDesign.Sample.HeaderContentControlView">
 
 	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
-
-
 		<Grid Grid.Row="6"
 			  ColumnDefinitions="*,20,*"
 			  RowDefinitions="*,20,*">
@@ -69,11 +67,5 @@
 			</HeaderedContentControl>
 			
 		</Grid>
-		
-		
 	</Grid>
-
-
-	
-	
 </UserControl>
