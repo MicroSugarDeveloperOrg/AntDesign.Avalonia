@@ -10,6 +10,7 @@ namespace AntDesign.Controls;
 [PseudoClasses(pcDrawerOpened)]
 [TemplatePart(PART_DrawerContentPresent, typeof(ContentPresenter))]
 [TemplatePart(PART_DrawerButton, typeof(Button))]
+[TemplatePart(PART_DrawerMask, typeof(Border))]
 public class AntDesignDrawer : ContentControl
 {
     static AntDesignDrawer()
@@ -29,6 +30,9 @@ public class AntDesignDrawer : ContentControl
 
     const string PART_DrawerButton = nameof(PART_DrawerButton);
     Button _drawerButton = default!;
+
+    const string PART_DrawerMask = nameof(PART_DrawerMask);
+    Border _drawerMask = default!;
      
 
     #region DependencyProperty
@@ -121,7 +125,12 @@ public class AntDesignDrawer : ContentControl
         if (drawerButton is null) 
             throw new NullReferenceException(nameof(drawerButton));
 
+        var drawerMask = e.NameScope.Find<Border>(PART_DrawerMask);
+        if (drawerMask is null)
+            throw new NullReferenceException(nameof(drawerMask));
+
         _drawerButton = drawerButton;
+        _drawerMask = drawerMask;
 
         UpdatePseudoClasses();
     }
@@ -135,7 +144,10 @@ public class AntDesignDrawer : ContentControl
             _drawerContentPresent = presenter;
             result &= true;
         }
-        
+
+        if (_drawerContentPresent is null)
+            throw new NullReferenceException(nameof(_drawerContentPresent));
+
         return result;
     }
 
