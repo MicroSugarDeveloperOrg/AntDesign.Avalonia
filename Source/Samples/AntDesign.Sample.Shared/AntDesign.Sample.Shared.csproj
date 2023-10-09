@@ -29,6 +29,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\AntDesign.ColorPicker\AntDesign.ColorPicker.csproj" />
+	  <ProjectReference Include="..\..\AntDesign.Controls.Style\AntDesign.Controls.Style.csproj" />
 	  <ProjectReference Include="..\..\AntDesign.DataGrid\AntDesign.DataGrid.csproj" />
 	  <ProjectReference Include="..\..\AntDesign.FontManager\AntDesign.FontManager.csproj" />
 	  <ProjectReference Include="..\..\AntDesign.Toolkit\AntDesign.Toolkit.csproj" />

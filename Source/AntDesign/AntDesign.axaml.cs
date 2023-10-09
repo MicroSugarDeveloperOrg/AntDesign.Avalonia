@@ -11,8 +11,63 @@ public partial class AntDesign : Styles
                 return;
 
             switch (e.NewValue.Value)
-            {
-                case Colours.None:
+            { 
+                case Colours.DustRed:
+                    {
+                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#f5222d");
+                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#ff4d4f");
+                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#a8071a");
+                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#fff1f0");
+                        app.Resources[g_RippleColor] = Color.Parse("#ff4d4f");
+                    }
+                    break;
+                case Colours.Volcano:
+                    {
+                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#fa541c");
+                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#ff7a45");
+                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#ad2102");
+                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#fff2e8");
+                        app.Resources[g_RippleColor] = Color.Parse("#ff7a45");
+                    }
+                    break;
+                case Colours.SunsetOrange:
+                    {
+                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#fa8c16");
+                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#ffa940");
+                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#ad4e00");
+                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#fff7e6");
+                        app.Resources[g_RippleColor] = Color.Parse("#ffa940");
+                    }
+                    break;
+                case Colours.Cyan:
+                    {
+                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#13c2c2");//6
+                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#36cfc9");//5
+                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#006d75");//8
+                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#e6fffb"); //1
+                        app.Resources[g_RippleColor] = Color.Parse("#36cfc9");//5
+                    }
+                    break;
+                case Colours.PolarGreen:
+                    {
+                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#52c41a");//6
+                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#73d13d");//5
+                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#237804");//8
+                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#f6ffed"); //1
+                        app.Resources[g_RippleColor] = Color.Parse("#73d13d");//5
+                    }
+                    break;
+                case Colours.GeekBlue:
+                    {
+
+                    }
+                    break;
+                case Colours.GoldenPurple:
+                    {
+
+                    }
+                    break;
+                default:
                     {
                         app.Resources[g_AntDesignPrimaryColor] = s._defaultAntDesignPrimaryColor;
                         app.Resources[g_AntDesignSecondlyColor] = s._defaultAntDesignSecondlyColor;
@@ -20,17 +75,6 @@ public partial class AntDesign : Styles
                         app.Resources[g_AntDesignAssistColor5] = s._defaultAntDesignAssistColor5;
                         app.Resources[g_RippleColor] = s._defaultRippleColor;
                     }
-                    break;
-                case Colours.Red:
-                    {
-                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#e84749");
-                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#f37370");
-                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#f89f9a");
-                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#fff1f0");
-                        app.Resources[g_RippleColor] = Color.Parse("#ff4d4f");
-                    }
-                    break;
-                default:
                     break;
             }
         });

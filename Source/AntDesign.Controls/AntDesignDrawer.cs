@@ -59,6 +59,9 @@ public class AntDesignDrawer : ContentControl
     public static readonly StyledProperty<IDataTemplate?> DrawerContentTemplateProperty =
            AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerContentTemplate));
 
+
+
+
     #endregion
 
     #region

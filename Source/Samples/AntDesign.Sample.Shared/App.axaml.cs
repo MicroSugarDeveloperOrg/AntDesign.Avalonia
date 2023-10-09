@@ -115,6 +115,9 @@ public partial class App : Application
         routingViewLocator.AddRouter<DialogsView, DialogsViewModel>(routerNameCallBack: () => "Dialogs 窗口");
         routingViewLocator.AddRouter<HeaderContentControlView, HeaderContentControlViewModel>(routerNameCallBack: () => "HeaderContent 标题栏");
 
+        //自定义控件
+        routingViewLocator.AddGroupRouter(() => "自定义控件");
+
         return true;
     }
 
