@@ -59,12 +59,20 @@ public partial class AntDesign : Styles
                     break;
                 case Colours.GeekBlue:
                     {
-
+                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#2f54eb");//6
+                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#597ef7");//5
+                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#10239e");//8
+                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#f0f5ff"); //1
+                        app.Resources[g_RippleColor] = Color.Parse("#597ef7");//5
                     }
                     break;
                 case Colours.GoldenPurple:
                     {
-
+                        app.Resources[g_AntDesignPrimaryColor] = Color.Parse("#722ed1");//6
+                        app.Resources[g_AntDesignSecondlyColor] = Color.Parse("#9254de");//5
+                        app.Resources[g_AntDesignThirdlyColor] = Color.Parse("#391085");//8
+                        app.Resources[g_AntDesignAssistColor5] = Color.Parse("#f9f0ff"); //1
+                        app.Resources[g_RippleColor] = Color.Parse("#9254de");//5
                     }
                     break;
                 default:
@@ -118,11 +126,18 @@ public partial class AntDesign : Styles
 
     const string g_IsAnimable = "IsAnimable";
 
-    Color _defaultAntDesignPrimaryColor = Color.Parse("#FF1677FF");
-    Color _defaultAntDesignSecondlyColor = Color.Parse("#FF4096FF");
-    Color _defaultAntDesignThirdlyColor = Color.Parse("#FF1668DC");
-    Color _defaultAntDesignAssistColor5 = Color.Parse("#4F9ad2ff");
-    Color _defaultRippleColor = Color.Parse("#9B40a9ff");
+    Color _defaultAntDesignPrimaryColor = Color.Parse("#FF1677FF"); //6
+    Color _defaultAntDesignSecondlyColor = Color.Parse("#FF4096FF");//5
+    Color _defaultAntDesignThirdlyColor = Color.Parse("#FF1668DC");//8
+    Color _defaultAntDesignAssistColor5 = Color.Parse("#4F9ad2ff");//1
+    Color _defaultRippleColor = Color.Parse("#9B40a9ff");//5
+
+
+    //Color _defaultAntDesignPrimaryColor = Color.Parse("#FF1677FF"); //6
+    //Color _defaultAntDesignSecondlyColor = Color.Parse("#FF4096FF");//5
+    //Color _defaultAntDesignThirdlyColor = Color.Parse("#ff003eb3");//8
+    //Color _defaultAntDesignAssistColor5 = Color.Parse("#4F9ad2ff");//1
+    //Color _defaultRippleColor = Color.Parse("#FF4096FF");//5
 
     public static readonly StyledProperty<Colours> ColoringProperty =
                        AvaloniaProperty.Register<AntDesign, Colours>(nameof(Coloring), defaultBindingMode: BindingMode.TwoWay, defaultValue: Colours.None);
