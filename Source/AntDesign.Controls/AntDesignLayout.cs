@@ -10,6 +10,7 @@ using Avalonia.Metadata;
 
 namespace AntDesign.Controls;
 
+//[PseudoClasses(pcLayoutModeChanged)]
 [TemplatePart(PART_MenuPresent, typeof(ContentPresenter))]
 [TemplatePart("PART_HeaderPresenter", typeof(ContentPresenter))]
 public class AntDesignLayout : HeaderedContentControl
@@ -25,10 +26,11 @@ public class AntDesignLayout : HeaderedContentControl
 
     public AntDesignLayout()
     {
-         
+
     }
 
-    private const string PART_MenuPresent = nameof(PART_MenuPresent); 
+    //const string pcLayoutModeChanged = ":layoutmode-changed";
+    private const string PART_MenuPresent = nameof(PART_MenuPresent);
     private ContentPresenter _menuPresent = default!;
 
     #region DependencyProperty
@@ -38,7 +40,7 @@ public class AntDesignLayout : HeaderedContentControl
 
     public static readonly StyledProperty<bool> IsHeaderProperty =
            AvaloniaProperty.Register<AntDesignLayout, bool>(nameof(IsHeader));
-     
+
     public static readonly StyledProperty<bool> IsMenuProperty =
           AvaloniaProperty.Register<AntDesignLayout, bool>(nameof(IsMenu));
 
@@ -59,7 +61,7 @@ public class AntDesignLayout : HeaderedContentControl
     #region Event
 
     public static readonly RoutedEvent<LayoutModeEventArgs> LayoutModeChangedEvent =
-           RoutedEvent.Register<AntDesignLayout, LayoutModeEventArgs>( nameof(LayoutModeChanged), RoutingStrategies.Direct);
+           RoutedEvent.Register<AntDesignLayout, LayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
 
     #endregion
 
@@ -136,7 +138,7 @@ public class AntDesignLayout : HeaderedContentControl
         if (_menuPresent is null)
             throw new NullReferenceException(nameof(_menuPresent));
 
-        return result;  
+        return result;
     }
 
     void MenuChanged(AvaloniaPropertyChangedEventArgs e)
@@ -163,6 +165,11 @@ public class AntDesignLayout : HeaderedContentControl
         }
 
         RaiseEvent(new LayoutModeEventArgs(e.NewValue.Value));
+    }
+
+    void UpdatePseudoClasses()
+    {
+        //PseudoClasses.Set(pcLayoutModeChanged, this.LayOutMode);
     }
 
     #endregion

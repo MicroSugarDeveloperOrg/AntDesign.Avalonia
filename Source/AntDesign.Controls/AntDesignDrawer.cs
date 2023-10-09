@@ -20,7 +20,7 @@ public class AntDesignDrawer : ContentControl
 
     public AntDesignDrawer()
     {
-         
+
     }
 
     const string pcDrawerOpened = ":drawer-opened";
@@ -122,7 +122,7 @@ public class AntDesignDrawer : ContentControl
     {
         base.OnApplyTemplate(e);
         var drawerButton = e.NameScope.Find<Button>(PART_DrawerButton);
-        if (drawerButton is null) 
+        if (drawerButton is null)
             throw new NullReferenceException(nameof(drawerButton));
 
         var drawerMask = e.NameScope.Find<Border>(PART_DrawerMask);
@@ -159,7 +159,6 @@ public class AntDesignDrawer : ContentControl
         if (e.NewValue is ILogical newChild)
             LogicalChildren.Add(newChild);
     }
-
 
     void UpdatePseudoClasses()
     {
