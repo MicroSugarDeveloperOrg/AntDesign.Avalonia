@@ -306,6 +306,9 @@
 	
 	<x:Double x:Key="DatePickerButtonIconWidth">10</x:Double>
 	<x:Double x:Key="DatePickerButtonIconHeight">10</x:Double>
+	
+	<!-- HeaderContentControl -->
+	<Thickness x:Key="HeaderedContentControlBorderThickness">1</Thickness> 
 
 	<!-- Expander -->
 	<x:Double x:Key="ExpanderMinHeight">40</x:Double>

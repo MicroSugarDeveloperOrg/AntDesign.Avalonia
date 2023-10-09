@@ -27,6 +27,7 @@
 		<ResourceInclude Source="avares://AntDesign/Styles/FlyoutPresenter.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/FocusAdorner.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/GridSplitter.axaml" />
+		<ResourceInclude Source="avares://AntDesign/Styles/HeaderContentControl.axaml" />	
 		<ResourceInclude Source="avares://AntDesign/Styles/ItemsControl.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/Label.axaml" />
 		<ResourceInclude Source="avares://AntDesign/Styles/ListBox.axaml" />

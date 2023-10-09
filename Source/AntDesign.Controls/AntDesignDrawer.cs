@@ -1,9 +1,4 @@
-﻿using Avalonia.Controls.Metadata;
-using Avalonia.Controls.Presenters;
-using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Templates;
-using Avalonia.LogicalTree;
-using Avalonia.Metadata;
+﻿using AntDesign.Controls.Interactivity;
 
 namespace AntDesign.Controls;
 
@@ -16,11 +11,12 @@ public class AntDesignDrawer : ContentControl
     static AntDesignDrawer()
     {
         DrawerContentProperty.Changed.AddClassHandler<AntDesignDrawer>((s, e) => s.DrawerContentChanged(e));
+        IsDrawerOpenedProperty.Changed.AddClassHandler<AntDesignDrawer, bool>((s, e) => s.DrawerOpenedChanged(e));
     }
 
     public AntDesignDrawer()
     {
-
+        //Border.BoxShadowProperty
     }
 
     const string pcDrawerOpened = ":drawer-opened";
@@ -33,7 +29,7 @@ public class AntDesignDrawer : ContentControl
 
     const string PART_DrawerMask = nameof(PART_DrawerMask);
     Border _drawerMask = default!;
-     
+
 
     #region DependencyProperty
 
@@ -45,23 +41,30 @@ public class AntDesignDrawer : ContentControl
            AvaloniaProperty.Register<AntDesignDrawer, bool>(nameof(IsDrawerButton));
 
     public static readonly StyledProperty<object?> DrawerButtonContentProperty =
-           AvaloniaProperty.Register<AntDesignLayout, object?>(nameof(DrawerButtonContent));
+           AvaloniaProperty.Register<AntDesignDrawer, object?>(nameof(DrawerButtonContent));
 
     public static readonly StyledProperty<IDataTemplate?> DrawerButtonContentTemplateProperty =
-           AvaloniaProperty.Register<AntDesignLayout, IDataTemplate?>(nameof(DrawerButtonContentTemplate));
+           AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerButtonContentTemplate));
 
     public static readonly StyledProperty<object?> DrawerButtonReverContentProperty =
-           AvaloniaProperty.Register<AntDesignLayout, object?>(nameof(DrawerButtonReverContent));
+           AvaloniaProperty.Register<AntDesignDrawer, object?>(nameof(DrawerButtonReverContent));
 
     public static readonly StyledProperty<IDataTemplate?> DrawerButtonReverContentTemplateProperty =
-           AvaloniaProperty.Register<AntDesignLayout, IDataTemplate?>(nameof(DrawerButtonReverContentTemplate));
+           AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerButtonReverContentTemplate));
 
 
     public static readonly StyledProperty<object?> DrawerContentProperty =
-           AvaloniaProperty.Register<AntDesignLayout, object?>(nameof(DrawerContent));
+           AvaloniaProperty.Register<AntDesignDrawer, object?>(nameof(DrawerContent));
 
     public static readonly StyledProperty<IDataTemplate?> DrawerContentTemplateProperty =
-           AvaloniaProperty.Register<AntDesignLayout, IDataTemplate?>(nameof(DrawerContentTemplate));
+           AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerContentTemplate));
+
+    #endregion
+
+    #region
+    public static readonly RoutedEvent<DrawerOpenedEventArgs> DrawerOpenedEvent =
+          RoutedEvent.Register<AntDesignDrawer, DrawerOpenedEventArgs>(nameof(DrawerOpened), RoutingStrategies.Direct);
+
 
     #endregion
 
@@ -118,6 +121,18 @@ public class AntDesignDrawer : ContentControl
         set { SetValue(DrawerContentTemplateProperty, value); }
     }
 
+    #endregion
+
+    #region Event
+
+    public event EventHandler<DrawerOpenedEventArgs>? DrawerOpened
+    {
+        add { AddHandler(DrawerOpenedEvent, value); }
+        remove { RemoveHandler(DrawerOpenedEvent, value); }
+    }
+
+    #endregion
+
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
@@ -130,10 +145,12 @@ public class AntDesignDrawer : ContentControl
             throw new NullReferenceException(nameof(drawerMask));
 
         _drawerButton = drawerButton;
+        _drawerButton.Click += DrawerButton_Click;
         _drawerMask = drawerMask;
 
         UpdatePseudoClasses();
     }
+
 
     protected override bool RegisterContentPresenter(ContentPresenter presenter)
     {
@@ -160,12 +177,24 @@ public class AntDesignDrawer : ContentControl
             LogicalChildren.Add(newChild);
     }
 
+    void DrawerOpenedChanged(AvaloniaPropertyChangedEventArgs<bool> e)
+    {
+        UpdatePseudoClasses();
+        RaiseEvent(new DrawerOpenedEventArgs(e.NewValue.Value));
+    }
+
     void UpdatePseudoClasses()
     {
         PseudoClasses.Set(pcDrawerOpened, IsDrawerOpened);
     }
 
-    #endregion
+    void DrawerButton_Click(object sender, RoutedEventArgs e)
+    {
+         IsDrawerOpened = !IsDrawerOpened;
+    }
+
+
+ 
 
 
 }

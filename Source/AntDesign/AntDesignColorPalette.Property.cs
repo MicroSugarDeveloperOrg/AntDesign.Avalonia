@@ -29,9 +29,4 @@ partial class AntDesignColorPalette
         get => GetColor(g_AntDesignPrimaryColor);
         set => SetColor(g_AntDesignPrimaryColor, value);
     }
-
-
-
-
-
 }

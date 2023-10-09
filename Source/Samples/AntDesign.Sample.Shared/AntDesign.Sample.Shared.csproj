@@ -36,4 +36,8 @@
 	  <ProjectReference Include="..\..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <UpToDateCheckInput Remove="Views\HeaderContentControlView.axaml" />
+	</ItemGroup>
+
 </Project>

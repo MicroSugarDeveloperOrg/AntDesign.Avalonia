@@ -1,32 +1,26 @@
 ﻿using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
-using Avalonia.Controls.Metadata;
-using Avalonia.Controls.Presenters;
-using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Templates;
-using Avalonia.Interactivity;
-using Avalonia.LogicalTree;
-using Avalonia.Metadata;
 
 namespace AntDesign.Controls;
 
 //[PseudoClasses(pcLayoutModeChanged)]
 [TemplatePart(PART_MenuPresent, typeof(ContentPresenter))]
 [TemplatePart("PART_HeaderPresenter", typeof(ContentPresenter))]
-public class AntDesignLayout : HeaderedContentControl
+public class AntDesignPanel : HeaderedContentControl
 {
-    static AntDesignLayout()
+    static AntDesignPanel()
     {
-        MenuProperty.Changed.AddClassHandler<AntDesignLayout>((x, e) => x.MenuChanged(e));
-        LayOutModeProperty.Changed.AddClassHandler<AntDesignLayout, LayoutMode>((s, e) =>
+        MenuProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.MenuChanged(e));
+        LayOutModeProperty.Changed.AddClassHandler<AntDesignPanel, LayoutMode>((s, e) =>
         {
             s.LayoutMode_Changed(e);
         });
     }
 
-    public AntDesignLayout()
+    public AntDesignPanel()
     {
-
+        //HeaderedContentControl.PaddingProperty
+         //var border = new Border(); 
     }
 
     //const string pcLayoutModeChanged = ":layoutmode-changed";
@@ -36,32 +30,32 @@ public class AntDesignLayout : HeaderedContentControl
     #region DependencyProperty
 
     public static readonly StyledProperty<LayoutMode> LayOutModeProperty =
-           AvaloniaProperty.Register<AntDesignLayout, LayoutMode>(nameof(LayOutMode));
+           AvaloniaProperty.Register<AntDesignPanel, LayoutMode>(nameof(LayOutMode));
 
     public static readonly StyledProperty<bool> IsHeaderProperty =
-           AvaloniaProperty.Register<AntDesignLayout, bool>(nameof(IsHeader));
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsHeader));
 
     public static readonly StyledProperty<bool> IsMenuProperty =
-          AvaloniaProperty.Register<AntDesignLayout, bool>(nameof(IsMenu));
+          AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu));
 
     public static readonly StyledProperty<object?> MenuProperty =
-           AvaloniaProperty.Register<AntDesignLayout, object?>(nameof(Menu));
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(Menu));
 
     public static readonly StyledProperty<IDataTemplate?> MenuTemplateProperty =
-           AvaloniaProperty.Register<AntDesignLayout, IDataTemplate?>(nameof(MenuTemplate));
+           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(MenuTemplate));
 
     public static readonly StyledProperty<object?> MenuHeaderProperty =
-           AvaloniaProperty.Register<AntDesignLayout, object?>(nameof(MenuHeader));
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(MenuHeader));
 
     public static readonly StyledProperty<IDataTemplate?> MenuHeaderTemplateProperty =
-           AvaloniaProperty.Register<AntDesignLayout, IDataTemplate?>(nameof(MenuHeaderTemplate));
+           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(MenuHeaderTemplate));
 
     #endregion
 
     #region Event
 
     public static readonly RoutedEvent<LayoutModeEventArgs> LayoutModeChangedEvent =
-           RoutedEvent.Register<AntDesignLayout, LayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
+           RoutedEvent.Register<AntDesignPanel, LayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
 
     #endregion
 

@@ -31,5 +31,4 @@
 	<Color x:Key="DisableFillColor">#FFB8B8B8</Color>
 	<SolidColorBrush x:Key="DisableFill" Color="{StaticResource DisableFillColor}"/>
 
-
 </ResourceDictionary>

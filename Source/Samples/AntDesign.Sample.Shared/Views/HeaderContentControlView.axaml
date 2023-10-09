@@ -1,0 +1,79 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:assists="using:AntDesign.Assists"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.HeaderContentControlView">
+
+	<Grid RowDefinitions="Auto,20,Auto,20,30,10,*">
+
+
+		<Grid Grid.Row="6"
+			  ColumnDefinitions="*,20,*"
+			  RowDefinitions="*,20,*">
+
+			<HeaderedContentControl Grid.Column="0" Grid.Row="0" 
+									Margin="30">
+				<HeaderedContentControl.Header>
+					<Border>
+						<TextBlock Text="12323" />
+					</Border>
+				</HeaderedContentControl.Header>
+				<Border>
+					<TextBlock Text="3232354545"/>
+				</Border>
+			</HeaderedContentControl>
+
+			<HeaderedContentControl Grid.Column="2" 
+									Grid.Row="0"
+									Margin="30"
+									Classes="groupbox">
+				<HeaderedContentControl.Header>
+					<Border>
+						<TextBlock Text="12323" />
+					</Border>
+				</HeaderedContentControl.Header>
+				<Border>
+					<TextBlock Text="3232354545"/>
+				</Border>
+			</HeaderedContentControl>
+
+			<HeaderedContentControl Grid.Column="0" 
+									Grid.Row="2"
+									Margin="30"
+									assists:HeaderedContentControlAssists.BorderBrush="Red" >
+				<HeaderedContentControl.Header>
+					<Border>
+						<TextBlock Text="12323" />
+					</Border>
+				</HeaderedContentControl.Header>
+				<Border>
+					<TextBlock Text="3232354545"/>
+				</Border>
+			</HeaderedContentControl>
+
+			<HeaderedContentControl Grid.Column="2"
+									Grid.Row="2"
+									Margin="30"
+									Classes="groupbox"
+									assists:HeaderedContentControlAssists.BorderBrush="Red">
+				<HeaderedContentControl.Header>
+					<Border>
+						<TextBlock Text="12323" />
+					</Border>
+				</HeaderedContentControl.Header>
+				<Border>
+					<TextBlock Text="3232354545"/>
+				</Border>
+			</HeaderedContentControl>
+			
+		</Grid>
+		
+		
+	</Grid>
+
+
+	
+	
+</UserControl>

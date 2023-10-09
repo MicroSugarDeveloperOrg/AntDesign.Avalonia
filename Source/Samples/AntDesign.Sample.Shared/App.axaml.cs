@@ -113,6 +113,7 @@ public partial class App : Application
         routingViewLocator.AddRouter<ColorPickerViewEx, ColorPickerViewModel>(routerNameCallBack: () => "ColorPicker 颜色拾取");
         //routingViewLocator.AddRouter<ColorPickerView, ColorPickerViewModel>(routerNameCallBack: () => "ColorPicker 颜色拾取");
         routingViewLocator.AddRouter<DialogsView, DialogsViewModel>(routerNameCallBack: () => "Dialogs 窗口");
+        routingViewLocator.AddRouter<HeaderContentControlView, HeaderContentControlViewModel>(routerNameCallBack: () => "HeaderContent 标题栏");
 
         return true;
     }
