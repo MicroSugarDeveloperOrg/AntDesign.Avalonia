@@ -33,5 +33,6 @@
 		<AntDesign Coloring="None" IsRounded="True" IsAnimable="True"/>
 		<AntDesignDataGrid/>
 		<AntDesignColorPicker/>
+		<AntDesignControlsStyle/>
 	</Application.Styles>
 </Application>

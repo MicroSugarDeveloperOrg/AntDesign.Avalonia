@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport> 
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -11,10 +11,6 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>
 		</PackageReference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\AntDesign.Animations\AntDesign.Animations.csproj" />
 	</ItemGroup>
 
 </Project>

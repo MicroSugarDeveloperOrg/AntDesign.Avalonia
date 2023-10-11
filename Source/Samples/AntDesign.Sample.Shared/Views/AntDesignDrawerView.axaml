@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.AntDesignDrawerView">
+	<AntDesignDrawer BorderThickness="1" BorderBrush="Gray" CornerRadius="20" DrawerButtonVerticalAlignment="Top">
+		<AntDesignDrawer.DrawerButtonContent>
+			<Border Width="20" Height="20" Background="Blue"/>
+		</AntDesignDrawer.DrawerButtonContent>
+		<AntDesignDrawer.DrawerContent>
+			<Border Background="White" Width="300" BoxShadow="0 0 6 1 Gray">
+				 
+				
+			</Border>
+		</AntDesignDrawer.DrawerContent>
+		<Grid>
+			<TextBlock Text="我是内容"/>
+		</Grid>
+	</AntDesignDrawer>
+</UserControl>

@@ -117,6 +117,7 @@ public partial class App : Application
 
         //自定义控件
         routingViewLocator.AddGroupRouter(() => "自定义控件");
+        routingViewLocator.AddRouter<AntDesignDrawerView, AntDesignDrawerViewModel>(routerNameCallBack: () => "Drawer 抽屉");
 
         return true;
     }

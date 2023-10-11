@@ -9,7 +9,7 @@
 				<ResourceInclude x:Key="Dark"  Source="avares://AntDesign.Controls.Style/Accents/AntDesignDark.axaml"/>
 			</ResourceDictionary.ThemeDictionaries>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignControls.axaml" />
+				<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/_AntDesignControls.axaml" />
 				<ResourceInclude Source="avares://AntDesign.Controls.Style/Accents/AntDesignAccents.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>

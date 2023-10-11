@@ -1,5 +1,6 @@
 ﻿using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
+using Avalonia.Media;
 
 namespace AntDesign.Controls;
 
@@ -19,8 +20,9 @@ public class AntDesignPanel : HeaderedContentControl
 
     public AntDesignPanel()
     {
-        //HeaderedContentControl.PaddingProperty
-         //var border = new Border(); 
+        //ContentPresenter.BoundsProperty
+        //LayoutTransformControl
+        //TranslateTransform  
     }
 
     //const string pcLayoutModeChanged = ":layoutmode-changed";

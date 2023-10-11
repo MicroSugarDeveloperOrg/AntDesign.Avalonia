@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:antdesign="using:AntDesign.Controls" 
+					xmlns:helpers="using:AntDesign.Controls.Helpers"
+					x:CompileBindings="True">
+
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignDrawer}" TargetType="antdesign:AntDesignDrawer"> 
+		<Setter Property="Template">
+			<ControlTemplate TargetType="antdesign:AntDesignDrawer">
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+					<Border CornerRadius="{TemplateBinding CornerRadius}" 
+							Padding="{TemplateBinding Padding}"
+							ClipToBounds="true">
+						<Panel>
+							<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
+										      Content="{TemplateBinding Content}" 
+										      ContentTemplate="{TemplateBinding ContentTemplate}"
+										      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+
+							<Panel x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerMask}" 
+								   IsVisible="{TemplateBinding IsDrawerOpened}" 
+								   Background="{TemplateBinding DrawerMaskBackground}" 
+								   Opacity="{TemplateBinding DrawerMaskOpacity}"/>
+
+							<StackPanel Orientation="Horizontal"
+										FlowDirection="RightToLeft"
+										HorizontalAlignment="Right"
+									    VerticalAlignment="Stretch" >
+
+								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
+												  Content="{TemplateBinding DrawerContent}"
+												  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
+												  IsVisible="{TemplateBinding IsDrawerOpened}" />
+
+								<Button x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerButton}"
+										BorderThickness="0"
+										Padding="0"
+										CornerRadius="0"
+										Width="50"
+										Height="50"
+										IsVisible ="{TemplateBinding IsDrawerButton}"
+										Content="{TemplateBinding DrawerButtonContent}"
+										ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
+										VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
+										HorizontalAlignment="Center"/>
+
+							</StackPanel>
+							
+						</Panel>
+					</Border>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:drawer-opened" >
+			<Style Selector="^ /template/ ContentPresenter#PART_DrawerContentPresenter">
+				<Setter Property="Transitions">
+					<Transitions>
+						<DoubleTransition Property="Width" Duration="00:00:00.2"  />
+					</Transitions>
+				</Setter>
+				<Setter Property="Width" Value="200"/>
+			</Style>
+		</Style>
+
+		<Style Selector="^:drawer-closed" >
+			<Style Selector="^ /template/ ContentPresenter#PART_DrawerContentPresenter">
+				<Setter Property="Transitions">
+					<Transitions>
+						<DoubleTransition Property="Width" Duration="00:00:00.1"   />
+					</Transitions>
+				</Setter>
+				<Setter Property="Width" Value="0"/>
+			</Style>
+		</Style>
+
+	</ControlTheme>
+	
+</ResourceDictionary>
