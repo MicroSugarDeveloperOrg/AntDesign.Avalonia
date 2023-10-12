@@ -30,9 +30,10 @@
 		</ResourceDictionary>
 	</Application.Resources>
     <Application.Styles>
-		<AntDesign Coloring="None" IsRounded="True" IsAnimable="True"/>
+		<!--当使用了AntDesignControlsStyle库后就不再需要添加该项内容，独立使用antdesign库时需要添加-->
+		<!--<AntDesign Coloring="None" IsRounded="True" IsAnimable="True"/>--> 
 		<AntDesignDataGrid/>
 		<AntDesignColorPicker/>
-		<AntDesignControlsStyle/>
+		<AntDesignControlsStyle IsRounded="False" Coloring="DustRed"/>
 	</Application.Styles>
 </Application>
