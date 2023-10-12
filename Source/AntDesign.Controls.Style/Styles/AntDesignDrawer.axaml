@@ -4,77 +4,265 @@
 					xmlns:helpers="using:AntDesign.Controls.Helpers"
 					x:CompileBindings="True">
 
-	<ControlTheme x:Key="{x:Type antdesign:AntDesignDrawer}" TargetType="antdesign:AntDesignDrawer"> 
-		<Setter Property="Template">
-			<ControlTemplate TargetType="antdesign:AntDesignDrawer">
-				<Border Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						CornerRadius="{TemplateBinding CornerRadius}">
-					<Border CornerRadius="{TemplateBinding CornerRadius}" 
-							Padding="{TemplateBinding Padding}"
-							ClipToBounds="true">
-						<Panel>
-							<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
-										      Content="{TemplateBinding Content}" 
-										      ContentTemplate="{TemplateBinding ContentTemplate}"
-										      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-										      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignDrawer}" TargetType="antdesign:AntDesignDrawer">
+		<Setter Property="DrawerPanelBoxShadow" Value="0 0 6 1 Gray"/>
+		<Style Selector="^:right">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="antdesign:AntDesignDrawer">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<Border CornerRadius="{TemplateBinding CornerRadius}"
+								ClipToBounds="true">
+							<Grid x:Name="PART_RootContainer" 
+								  ColumnDefinitions="*,Auto">
 
-							<Panel x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerMask}" 
-								   IsVisible="{TemplateBinding IsDrawerOpened}" 
-								   Background="{TemplateBinding DrawerMaskBackground}" 
-								   Opacity="{TemplateBinding DrawerMaskOpacity}"/>
+								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
+												  Content="{TemplateBinding Content}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Padding="{TemplateBinding Padding}"
+												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
 
-							<StackPanel Orientation="Horizontal"
-										FlowDirection="RightToLeft"
-										HorizontalAlignment="Right"
-									    VerticalAlignment="Stretch" >
+								<Panel x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerMask}"
+									   Grid.Column="0"
+									   Grid.ColumnSpan="2"
+									   IsVisible="{TemplateBinding IsDrawerOpened}"
+									   Background="{TemplateBinding DrawerMaskBackground}"
+									   Opacity="{TemplateBinding DrawerMaskOpacity}"/>
 
-								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
-												  Content="{TemplateBinding DrawerContent}"
-												  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
-												  IsVisible="{TemplateBinding IsDrawerOpened}" />
+								<StackPanel x:Name="PART_DrawerContainer"
+											Orientation="Horizontal"
+											HorizontalAlignment="Right"
+											VerticalAlignment="Stretch">
 
-								<Button x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerButton}"
-										BorderThickness="0"
-										Padding="0"
-										CornerRadius="0"
-										Width="50"
-										Height="50"
-										IsVisible ="{TemplateBinding IsDrawerButton}"
-										Content="{TemplateBinding DrawerButtonContent}"
-										ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
-										VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
-										HorizontalAlignment="Center"/>
+									<Button x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerButton}" 
+											BorderThickness="0"
+											Padding="0"
+											CornerRadius="0"
+											IsVisible ="{TemplateBinding IsDrawerButton}"
+											Content="{TemplateBinding DrawerButtonContent}"
+											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
+											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
+											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
 
-							</StackPanel>
-							
-						</Panel>
+									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
+																				 IsWidthTransition="true" >
+										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
+														  Content="{TemplateBinding DrawerContent}"
+														  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
+														  ClipToBounds="true"/>
+									</antdesign:AntDesignExpanderTranslateControl>
+								</StackPanel>
+							</Grid>
+						</Border>
 					</Border>
-				</Border>
-			</ControlTemplate>
-		</Setter>
+				</ControlTemplate>
+			</Setter>
 
-		<Style Selector="^:drawer-opened" >
-			<Style Selector="^ /template/ ContentPresenter#PART_DrawerContentPresenter">
-				<Setter Property="Transitions">
-					<Transitions>
-						<DoubleTransition Property="Width" Duration="00:00:00.2"  />
-					</Transitions>
-				</Setter>
-				<Setter Property="Width" Value="200"/>
+			<Style Selector="^:inline">
+				<Style Selector="^ /template/ StackPanel#PART_DrawerContainer">
+					<Setter Property="Grid.Column" Value="1"/> 
+				</Style>
 			</Style>
 		</Style>
 
-		<Style Selector="^:drawer-closed" >
-			<Style Selector="^ /template/ ContentPresenter#PART_DrawerContentPresenter">
-				<Setter Property="Transitions">
-					<Transitions>
-						<DoubleTransition Property="Width" Duration="00:00:00.1"   />
-					</Transitions>
-				</Setter>
-				<Setter Property="Width" Value="0"/>
+		<Style Selector="^:left">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="antdesign:AntDesignDrawer">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<Border CornerRadius="{TemplateBinding CornerRadius}"
+								ClipToBounds="true">
+							<Grid x:Name="PART_RootContainer"
+								  ColumnDefinitions="Auto,*">
+
+								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
+												  Grid.Column="1"
+												  Content="{TemplateBinding Content}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Padding="{TemplateBinding Padding}"
+												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+
+								<Panel x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerMask}"
+									   Grid.Column="0"
+									   Grid.ColumnSpan="2"
+									   IsVisible="{TemplateBinding IsDrawerOpened}"
+									   Background="{TemplateBinding DrawerMaskBackground}"
+									   Opacity="{TemplateBinding DrawerMaskOpacity}"/>
+
+								<StackPanel x:Name="PART_DrawerContainer"
+											Grid.Column="0"
+											Grid.ColumnSpan="2"
+											Orientation="Horizontal"
+											HorizontalAlignment="Left"
+											VerticalAlignment="Stretch" >
+
+									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
+																				 IsWidthTransition="true" >
+										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
+														  Content="{TemplateBinding DrawerContent}"
+														  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
+														  ClipToBounds="true"/>
+									</antdesign:AntDesignExpanderTranslateControl>
+
+									<Button x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerButton}" 
+											BorderThickness="0"
+											Padding="0"
+											CornerRadius="0"
+											IsVisible ="{TemplateBinding IsDrawerButton}"
+											Content="{TemplateBinding DrawerButtonContent}"
+											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
+											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
+											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
+
+								</StackPanel>
+							</Grid>
+						</Border>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+
+			<Style Selector="^:inline">
+				<Style Selector="^ /template/ StackPanel#PART_DrawerContainer"> 
+					<Setter Property="Grid.ColumnSpan" Value="1"/>
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:top">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="antdesign:AntDesignDrawer">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<Border CornerRadius="{TemplateBinding CornerRadius}"
+								ClipToBounds="true">
+							<Grid x:Name="PART_RootContainer"
+								  RowDefinitions="Auto,*">
+
+								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
+												  Grid.Row="1"
+												  Content="{TemplateBinding Content}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Padding="{TemplateBinding Padding}"
+												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+
+								<Panel x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerMask}"
+									   Grid.Row="0"
+									   Grid.RowSpan="2"
+									   IsVisible="{TemplateBinding IsDrawerOpened}"
+									   Background="{TemplateBinding DrawerMaskBackground}"
+									   Opacity="{TemplateBinding DrawerMaskOpacity}"/>
+
+								<StackPanel x:Name="PART_DrawerContainer"
+											Grid.Row="0"
+											Grid.RowSpan="2"
+											Orientation="Vertical"
+											HorizontalAlignment="Stretch"
+											VerticalAlignment="Top">
+
+									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
+																				 IsHeightTransition="true" >
+										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
+														  Content="{TemplateBinding DrawerContent}"
+														  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
+														  ClipToBounds="true"/>
+									</antdesign:AntDesignExpanderTranslateControl>
+
+									<Button x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerButton}"
+											BorderThickness="0"
+											Padding="0"
+											CornerRadius="0"
+											IsVisible ="{TemplateBinding IsDrawerButton}"
+											Content="{TemplateBinding DrawerButtonContent}"
+											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
+											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
+											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
+								</StackPanel>
+							</Grid>
+						</Border>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+
+			<Style Selector="^:inline">
+				<Style Selector="^ /template/ StackPanel#PART_DrawerContainer">
+					<Setter Property="Grid.RowSpan" Value="1"/>
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:bottom">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="antdesign:AntDesignDrawer">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<Border CornerRadius="{TemplateBinding CornerRadius}"
+								ClipToBounds="true">
+							<Grid x:Name="PART_RootContainer"
+								  RowDefinitions="*,Auto">
+
+								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}" 
+												  Content="{TemplateBinding Content}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Padding="{TemplateBinding Padding}"
+												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+
+								<Panel x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerMask}"
+									   Grid.Row="0"
+									   Grid.RowSpan="2"
+									   IsVisible="{TemplateBinding IsDrawerOpened}"
+									   Background="{TemplateBinding DrawerMaskBackground}"
+									   Opacity="{TemplateBinding DrawerMaskOpacity}"/>
+
+								<StackPanel x:Name="PART_DrawerContainer"
+											Orientation="Vertical"
+											HorizontalAlignment="Stretch"
+											VerticalAlignment="Bottom">
+
+									<Button x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerButton}"
+											BorderThickness="0"
+											Padding="0"
+											CornerRadius="0"
+											IsVisible ="{TemplateBinding IsDrawerButton}"
+											Content="{TemplateBinding DrawerButtonContent}"
+											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
+											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
+											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
+
+									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
+																				 IsHeightTransition="true" >
+										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
+														  Content="{TemplateBinding DrawerContent}"
+														  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
+														  ClipToBounds="true"/>
+									</antdesign:AntDesignExpanderTranslateControl>
+
+								</StackPanel>
+							</Grid>
+						</Border>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+
+			<Style Selector="^:inline">
+				<Style Selector="^ /template/ StackPanel#PART_DrawerContainer">
+					<Setter Property="Grid.Row" Value="1"/>
+				</Style>
 			</Style>
 		</Style>
 

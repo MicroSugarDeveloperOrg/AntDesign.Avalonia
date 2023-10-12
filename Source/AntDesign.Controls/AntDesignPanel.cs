@@ -1,6 +1,5 @@
 ﻿using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
-using Avalonia.Media;
 
 namespace AntDesign.Controls;
 
@@ -22,7 +21,8 @@ public class AntDesignPanel : HeaderedContentControl
     {
         //ContentPresenter.BoundsProperty
         //LayoutTransformControl
-        //TranslateTransform  
+        //TranslateTransform   
+        //SplitView
     }
 
     //const string pcLayoutModeChanged = ":layoutmode-changed";

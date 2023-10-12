@@ -4,18 +4,94 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.AntDesignDrawerView">
-	<AntDesignDrawer BorderThickness="1" BorderBrush="Gray" CornerRadius="20" DrawerButtonVerticalAlignment="Top">
-		<AntDesignDrawer.DrawerButtonContent>
-			<Border Width="20" Height="20" Background="Blue"/>
-		</AntDesignDrawer.DrawerButtonContent>
-		<AntDesignDrawer.DrawerContent>
-			<Border Background="White" Width="300" BoxShadow="0 0 6 1 Gray">
-				 
-				
-			</Border>
-		</AntDesignDrawer.DrawerContent>
-		<Grid>
-			<TextBlock Text="我是内容"/>
-		</Grid>
-	</AntDesignDrawer>
+
+	<Grid ColumnDefinitions="*,5,*" RowDefinitions="*,5,*">
+
+		<AntDesignDrawer Grid.Column="0" Grid.Row="0" 
+						 BorderThickness="1"
+						 BorderBrush="Gray" 
+						 CornerRadius="20"
+						 DrawerButtonVerticalAlignment="Top"
+						 DrawerDisplayMode="Overlay"
+						 DrawerPanePlacement="Left">
+			<AntDesignDrawer.DrawerButtonContent>
+				<Border Width="20" Height="20" Background="Blue"/>
+			</AntDesignDrawer.DrawerButtonContent>
+			<AntDesignDrawer.DrawerContent>
+				<Border Background="White" Width="300">
+					<Label Content="123123" />
+				</Border>
+			</AntDesignDrawer.DrawerContent>
+			<Grid>
+				<TextBlock Text="我是内容"/>
+				<TextBlock Text="我是内容" HorizontalAlignment="Right"/>
+			</Grid>
+		</AntDesignDrawer>
+
+		<AntDesignDrawer Grid.Column="2" Grid.Row="0"
+						 BorderThickness="1"
+						 BorderBrush="Gray" 
+						 CornerRadius="20"
+						 DrawerButtonVerticalAlignment="Top"
+						 DrawerDisplayMode="Inline"
+						 DrawerPanePlacement="Right">
+			<AntDesignDrawer.DrawerButtonContent>
+				<Border Width="20" Height="20" Background="Blue"/>
+			</AntDesignDrawer.DrawerButtonContent>
+			<AntDesignDrawer.DrawerContent>
+				<Border Background="White" Width="300">
+					<Label Content="123123" />
+				</Border>
+			</AntDesignDrawer.DrawerContent>
+			<Grid>
+				<TextBlock Text="我是内容"/>
+				<TextBlock Text="我是内容" HorizontalAlignment="Right"/>
+			</Grid>
+		</AntDesignDrawer>
+
+		<AntDesignDrawer Grid.Column="0" Grid.Row="2"
+						 BorderThickness="1"
+						 BorderBrush="Gray" 
+						 CornerRadius="20"
+						 DrawerButtonVerticalAlignment="Top"
+						 DrawerDisplayMode="Overlay"
+						 DrawerPanePlacement="Bottom">
+			<AntDesignDrawer.DrawerButtonContent>
+				<Border Width="20" Height="20" Background="Blue"/>
+			</AntDesignDrawer.DrawerButtonContent>
+			<AntDesignDrawer.DrawerContent>
+				<Border Background="White" Height="200">
+					<Label Content="123123" />
+				</Border>
+			</AntDesignDrawer.DrawerContent>
+			<Grid>
+				<TextBlock Text="我是内容" VerticalAlignment="Bottom"/>
+				<TextBlock Text="我是内容" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+			</Grid>
+		</AntDesignDrawer>
+
+		<AntDesignDrawer Grid.Column="2" Grid.Row="2"
+						 BorderThickness="1"
+						 BorderBrush="Gray" 
+						 CornerRadius="20"
+						 DrawerButtonVerticalAlignment="Top"
+						 DrawerDisplayMode="Inline"
+						 DrawerPanePlacement="Bottom">
+			<AntDesignDrawer.DrawerButtonContent>
+				<Border Width="20" Height="20" Background="Blue"/>
+			</AntDesignDrawer.DrawerButtonContent>
+			<AntDesignDrawer.DrawerContent>
+				<Border Background="White" Height="200">
+					<Label Content="123123" />
+				</Border>
+			</AntDesignDrawer.DrawerContent>
+			<Grid>
+				<TextBlock Text="我是内容" VerticalAlignment="Bottom"/>
+				<TextBlock Text="我是内容" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+			</Grid>
+		</AntDesignDrawer>
+
+	</Grid>
+	
+	
 </UserControl>

@@ -1,55 +1,46 @@
 ﻿using AntDesign.Controls.Helpers;
 using AntDesign.Controls.Interactivity;
-using Avalonia.Input;
-using Avalonia.Layout;
-using Avalonia.Media;
-using Avalonia.Media.Transformation;
-using Avalonia.Styling;
+using AntDesign.Controls.Metadata;
 
 namespace AntDesign.Controls;
 
-[PseudoClasses(PC_DrawerClosed)]
-[PseudoClasses(PC_DrawerOpened)]
-[TemplatePart(PART_DrawerContentPresenter, typeof(ContentPresenter))]
-[TemplatePart(PART_DrawerButton, typeof(Button))]
-[TemplatePart(PART_DrawerMask, typeof(Panel))]
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_DrawerClosed, AntDesignPseudoNameHelpers.PC_DrawerOpened)]
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_Left, AntDesignPseudoNameHelpers.PC_Right, AntDesignPseudoNameHelpers.PC_Top, AntDesignPseudoNameHelpers.PC_Bottom)]
+[TemplatePart(AntDesignPARTNameHelpers._PART_DrawerContentPresenter, typeof(ContentPresenter))]
+[TemplatePart(AntDesignPARTNameHelpers._PART_DrawerButton, typeof(Button))]
+[TemplatePart(AntDesignPARTNameHelpers._PART_DrawerMask, typeof(Panel))]
 public class AntDesignDrawer : ContentControl
 {
     static AntDesignDrawer()
     {
         DrawerContentProperty.Changed.AddClassHandler<AntDesignDrawer>((s, e) => s.DrawerContentChanged(e));
         IsDrawerOpenedProperty.Changed.AddClassHandler<AntDesignDrawer, bool>((s, e) => s.DrawerOpenedChanged(e));
+        DrawerDisplayModeProperty.Changed.AddClassHandler<AntDesignDrawer, DrawerDisplayMode>((s, e) => s.DrawerDisplayModeChanged(e));
+        DrawerPanePlacementProperty.Changed.AddClassHandler<AntDesignDrawer, DrawerPanePlacement>((s, e) => s.DrawerPanePlacementChanged(e));
     }
 
     public AntDesignDrawer()
     {
-        //Border.RenderTransformProperty
-        //TranslateTransform
-        //LayoutTransformControl.LayoutTransformProperty
-        //LayoutTransformControl.LatiytRea
-        //RenderTransform = TranslateTransform
-        //TransformOperations.Parse()
-
-        //Setter
+        //StackPanel.OrientationProperty
     }
 
-    const string PC_DrawerClosed = AntDesignPseudoNameHelpers._PC_DrawerClosed;
-    const string PC_DrawerOpened = AntDesignPseudoNameHelpers._PC_DrawerOpened;
-
-    const string PART_DrawerContentPresenter = AntDesignPARTNameHelpers._PART_DrawerContentPresenter;
     ContentPresenter _drawerContentPresenter = default!;
-
-    const string PART_DrawerButton = AntDesignPARTNameHelpers._PART_DrawerButton;
     Button _drawerButton = default!;
-
-    const string PART_DrawerMask = AntDesignPARTNameHelpers._PART_DrawerMask;
     Panel _drawerMask = default!;
-
 
     #region DependencyProperty
 
     public static readonly StyledProperty<bool> IsDrawerOpenedProperty =
-          AvaloniaProperty.Register<AntDesignDrawer, bool>(nameof(IsDrawerOpened), defaultValue: false);
+           AvaloniaProperty.Register<AntDesignDrawer, bool>(nameof(IsDrawerOpened), defaultValue: false);
+
+    public static readonly StyledProperty<DrawerPanePlacement> DrawerPanePlacementProperty =
+           AvaloniaProperty.Register<AntDesignDrawer, DrawerPanePlacement>(nameof(DrawerPanePlacement), defaultValue: DrawerPanePlacement.Right);
+
+    public static readonly StyledProperty<DrawerDisplayMode> DrawerDisplayModeProperty =
+           AvaloniaProperty.Register<AntDesignDrawer, DrawerDisplayMode>(nameof(DrawerDisplayMode), defaultValue: DrawerDisplayMode.Overlay);
+
+    public static readonly StyledProperty<BoxShadows> DrawerPanelBoxShadowProperty =
+           Border.BoxShadowProperty.AddOwner<AntDesignExpanderTranslateControl>();
 
 
     public static readonly StyledProperty<bool> IsDrawerButtonProperty =
@@ -117,6 +108,24 @@ public class AntDesignDrawer : ContentControl
     {
         get => GetValue(IsDrawerOpenedProperty);
         set => SetValue(IsDrawerOpenedProperty, value);
+    }
+
+    public DrawerPanePlacement DrawerPanePlacement
+    {
+        get => GetValue(DrawerPanePlacementProperty);
+        set => SetValue(DrawerPanePlacementProperty, value);
+    }
+
+    public DrawerDisplayMode DrawerDisplayMode
+    {
+        get => GetValue(DrawerDisplayModeProperty);
+        set => SetValue(DrawerDisplayModeProperty, value);
+    }
+
+    public BoxShadows DrawerPanelBoxShadow 
+    {
+        get => GetValue(DrawerPanelBoxShadowProperty);
+        set => SetValue(DrawerPanelBoxShadowProperty, value);
     }
 
     public bool IsDrawerButton
@@ -224,17 +233,38 @@ public class AntDesignDrawer : ContentControl
 
     #endregion
 
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        UpdateOpenedPseudoClasses();
+        UpdateDisplayModePseudoClasses();
+        UpdatePanePlacementPseudoClasses();
+    }
+
+    protected override bool RegisterContentPresenter(ContentPresenter presenter)
+    {
+        var result = base.RegisterContentPresenter(presenter);
+
+        if (presenter.Name == AntDesignPARTNameHelpers.PART_DrawerContentPresenter)
+        {
+            _drawerContentPresenter = presenter;
+            result &= true;
+        }
+
+        return result;
+    }
+
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
         if (_drawerContentPresenter is null)
             throw new NullReferenceException(nameof(_drawerContentPresenter));
 
-        var drawerButton = e.NameScope.Find<Button>(PART_DrawerButton);
+        var drawerButton = e.NameScope.Find<Button>(AntDesignPARTNameHelpers.PART_DrawerButton);
         if (drawerButton is null)
             throw new NullReferenceException(nameof(drawerButton));
 
-        var drawerMask = e.NameScope.Find<Panel>(PART_DrawerMask);
+        var drawerMask = e.NameScope.Find<Panel>(AntDesignPARTNameHelpers.PART_DrawerMask);
         if (drawerMask is null)
             throw new NullReferenceException(nameof(drawerMask));
 
@@ -242,21 +272,6 @@ public class AntDesignDrawer : ContentControl
         _drawerButton.Click += DrawerButton_Click;
         _drawerMask = drawerMask;
         _drawerMask.PointerPressed += DrawerMask_PointerPressed;
-
-        UpdatePseudoClasses();
-    }
-
-    protected override bool RegisterContentPresenter(ContentPresenter presenter)
-    {
-        var result = base.RegisterContentPresenter(presenter);
-
-        if (presenter.Name == PART_DrawerContentPresenter)
-        {
-            _drawerContentPresenter = presenter;
-            result &= true;
-        }
-
-        return result;
     }
 
     void DrawerContentChanged(AvaloniaPropertyChangedEventArgs e)
@@ -270,14 +285,96 @@ public class AntDesignDrawer : ContentControl
 
     void DrawerOpenedChanged(AvaloniaPropertyChangedEventArgs<bool> e)
     {
-        UpdatePseudoClasses();
+        UpdateOpenedPseudoClasses();
         RaiseEvent(new DrawerOpenedEventArgs(e.NewValue.Value));
     }
 
-    void UpdatePseudoClasses()
+    void DrawerDisplayModeChanged(AvaloniaPropertyChangedEventArgs<DrawerDisplayMode> e)
     {
-        PseudoClasses.Set(PC_DrawerOpened, IsDrawerOpened);
-        PseudoClasses.Set(PC_DrawerClosed, !IsDrawerOpened);
+        UpdateDisplayModePseudoClasses();
+    }
+
+    void DrawerPanePlacementChanged(AvaloniaPropertyChangedEventArgs<DrawerPanePlacement> e)
+    {
+        UpdatePanePlacementPseudoClasses();
+    }
+
+    void UpdateOpenedPseudoClasses()
+    {
+        PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_DrawerOpened, IsDrawerOpened);
+        PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_DrawerClosed, !IsDrawerOpened);
+    }
+
+    void UpdateDisplayModePseudoClasses()
+    {
+        switch (DrawerDisplayMode)
+        {
+            case DrawerDisplayMode.Inline:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Inline, true);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Overlay, false);
+                }
+                break;
+            case DrawerDisplayMode.Overlay:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Inline, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Overlay, true);
+                }
+                break;
+            default:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Inline, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Overlay, true);
+                }
+                break;
+        }
+    }
+
+    void UpdatePanePlacementPseudoClasses()
+    {
+        switch (DrawerPanePlacement)
+        {
+            case DrawerPanePlacement.Left:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Left, true);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Top, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Right, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Bottom, false);
+                }
+                break;
+            case DrawerPanePlacement.Top:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Left, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Top, true);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Right, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Bottom, false);
+                }
+                break;
+            case DrawerPanePlacement.Right:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Left, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Top, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Right, true);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Bottom, false);
+                }
+                break;
+            case DrawerPanePlacement.Bottom:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Left, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Top, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Right, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Bottom, true);
+                }
+                break;
+            default:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Left, true);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Top, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Right, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Bottom, false);
+                }
+                break;
+        }
     }
 
     void DrawerButton_Click(object sender, RoutedEventArgs e)
