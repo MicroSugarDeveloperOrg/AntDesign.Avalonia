@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 										xmlns:antdesign="using:AntDesign.Controls" 
 										xmlns:helpers="using:AntDesign.Controls.Helpers"
+										xmlns:assists="using:AntDesign.Assists"
 										x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type antdesign:AntDesignDrawer}" TargetType="antdesign:AntDesignDrawer">
@@ -44,6 +45,7 @@
 											BorderThickness="0"
 											Padding="0"
 											CornerRadius="0"
+											assists:ButtonAssists.IsRipple="false"
 											IsVisible ="{TemplateBinding IsDrawerButton}"
 											Content="{TemplateBinding DrawerButtonContent}"
 											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
@@ -121,6 +123,7 @@
 											BorderThickness="0"
 											Padding="0"
 											CornerRadius="0"
+											assists:ButtonAssists.IsRipple="false"
 											IsVisible ="{TemplateBinding IsDrawerButton}"
 											Content="{TemplateBinding DrawerButtonContent}"
 											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
@@ -189,6 +192,7 @@
 											BorderThickness="0"
 											Padding="0"
 											CornerRadius="0"
+											assists:ButtonAssists.IsRipple="false"
 											IsVisible ="{TemplateBinding IsDrawerButton}"
 											Content="{TemplateBinding DrawerButtonContent}"
 											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
@@ -243,6 +247,7 @@
 											BorderThickness="0"
 											Padding="0"
 											CornerRadius="0"
+											assists:ButtonAssists.IsRipple="false"
 											IsVisible ="{TemplateBinding IsDrawerButton}"
 											Content="{TemplateBinding DrawerButtonContent}"
 											ContentTemplate="{TemplateBinding DrawerButtonContentTemplate}"
@@ -271,7 +276,17 @@
 					<Setter Property="Grid.Row" Value="1"/>
 				</Style>
 			</Style>
+
+			<Style Selector="^:drawer-closed">
+				<Style Selector="^ /template/ Button#PART_DrawerButton">
+						<Setter Property="Content" Value="{TemplateBinding DrawerButtonReverContent}"/>
+						<Setter Property="ContentTemplate" Value="{TemplateBinding DrawerButtonReverContentTemplate}"/>
+				</Style>
+			</Style>
+
 		</Style>
+
+	
 
 	</ControlTheme>
 	
