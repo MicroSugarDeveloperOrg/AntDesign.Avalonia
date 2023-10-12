@@ -42,6 +42,8 @@ public class AntDesignDrawer : ContentControl
     public static readonly StyledProperty<BoxShadows> DrawerPanelBoxShadowProperty =
            Border.BoxShadowProperty.AddOwner<AntDesignExpanderTranslateControl>();
 
+    public static readonly StyledProperty<IBrush?> DrawerPanelBackgroundProperty =
+           AvaloniaProperty.Register<AntDesignDrawer, IBrush?>(nameof(DrawerPanelBackground), defaultValue: Brushes.Transparent);
 
     public static readonly StyledProperty<bool> IsDrawerButtonProperty =
            AvaloniaProperty.Register<AntDesignDrawer, bool>(nameof(IsDrawerButton), defaultValue: true);
@@ -75,10 +77,10 @@ public class AntDesignDrawer : ContentControl
            AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerContentTemplate));
 
     public static readonly StyledProperty<HorizontalAlignment> DrawerContentHorizontalAlignmentProperty =
-           AvaloniaProperty.Register<AntDesignDrawer, HorizontalAlignment>(nameof(DrawerContentHorizontalAlignment));
+           AvaloniaProperty.Register<AntDesignDrawer, HorizontalAlignment>(nameof(DrawerContentHorizontalAlignment), defaultValue: HorizontalAlignment.Center);
 
     public static readonly StyledProperty<VerticalAlignment> DrawerContentVerticalAlignmentProperty =
-           AvaloniaProperty.Register<AntDesignDrawer, VerticalAlignment>(nameof(DrawerContentVerticalAlignment));
+           AvaloniaProperty.Register<AntDesignDrawer, VerticalAlignment>(nameof(DrawerContentVerticalAlignment), defaultValue: VerticalAlignment.Center);
 
 
     public static readonly StyledProperty<double> DrawerMaskOpacityProperty =
@@ -122,10 +124,16 @@ public class AntDesignDrawer : ContentControl
         set => SetValue(DrawerDisplayModeProperty, value);
     }
 
-    public BoxShadows DrawerPanelBoxShadow 
+    public BoxShadows DrawerPanelBoxShadow
     {
         get => GetValue(DrawerPanelBoxShadowProperty);
         set => SetValue(DrawerPanelBoxShadowProperty, value);
+    }
+
+    public IBrush? DrawerPanelBackground
+    {
+        get => GetValue(DrawerPanelBackgroundProperty);
+        set => SetValue(DrawerPanelBackgroundProperty, value);
     }
 
     public bool IsDrawerButton

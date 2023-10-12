@@ -6,6 +6,9 @@
 	<Color x:Key="AntDesignBackgroundColor">#FFFFFF</Color>
 	<SolidColorBrush x:Key="AntDesignBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	
+	<Color x:Key="AntDesignAssistBackgroundColor">#F0F2F5</Color>
+	<SolidColorBrush x:Key="AntDesignAssistBackground" Color="{StaticResource AntDesignAssistBackgroundColor}"/>
+
 	<!--黑色-->
 	<Color x:Key="AntDesignForegroundColor">#1d1d1d</Color>
 	<SolidColorBrush x:Key="AntDesignForeground" Color="{StaticResource AntDesignForegroundColor}"/>

@@ -1,11 +1,14 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:antdesign="using:AntDesign.Controls" 
-					xmlns:helpers="using:AntDesign.Controls.Helpers"
-					x:CompileBindings="True">
+										xmlns:antdesign="using:AntDesign.Controls" 
+										xmlns:helpers="using:AntDesign.Controls.Helpers"
+										x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type antdesign:AntDesignDrawer}" TargetType="antdesign:AntDesignDrawer">
-		<Setter Property="DrawerPanelBoxShadow" Value="0 0 6 1 Gray"/>
+		<Setter Property="DrawerPanelBoxShadow" Value="{DynamicResource DrawerPanelBoxShadow}"/>
+		<Setter Property="DrawerPanelBackground" Value="{DynamicResource DrawerPanelBackground}"/>
+		<Setter Property="DrawerMaskBackground" Value="{DynamicResource DrawerMaskBackground}"/>
+		<Setter Property="DrawerMaskOpacity" Value="{StaticResource DrawerMaskOpacity}"/>
 		<Style Selector="^:right">
 			<Setter Property="Template">
 				<ControlTemplate TargetType="antdesign:AntDesignDrawer">
@@ -49,6 +52,7 @@
 
 									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
+																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 IsWidthTransition="true" >
 										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
 														  Content="{TemplateBinding DrawerContent}"
@@ -104,6 +108,7 @@
 											VerticalAlignment="Stretch" >
 
 									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 IsWidthTransition="true" >
 										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
@@ -171,6 +176,7 @@
 											VerticalAlignment="Top">
 
 									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 IsHeightTransition="true" >
 										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
@@ -245,6 +251,7 @@
 
 									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
+																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 IsHeightTransition="true" >
 										<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerContentPresenter}"
 														  Content="{TemplateBinding DrawerContent}"

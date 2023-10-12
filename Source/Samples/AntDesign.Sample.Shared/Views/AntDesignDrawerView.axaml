@@ -18,7 +18,7 @@
 				<Border Width="20" Height="20" Background="Blue"/>
 			</AntDesignDrawer.DrawerButtonContent>
 			<AntDesignDrawer.DrawerContent>
-				<Border Background="White" Width="300">
+				<Border Width="300">
 					<Label Content="123123" />
 				</Border>
 			</AntDesignDrawer.DrawerContent>
@@ -39,7 +39,7 @@
 				<Border Width="20" Height="20" Background="Blue"/>
 			</AntDesignDrawer.DrawerButtonContent>
 			<AntDesignDrawer.DrawerContent>
-				<Border Background="White" Width="300">
+				<Border Width="300">
 					<Label Content="123123" />
 				</Border>
 			</AntDesignDrawer.DrawerContent>
@@ -60,7 +60,7 @@
 				<Border Width="20" Height="20" Background="Blue"/>
 			</AntDesignDrawer.DrawerButtonContent>
 			<AntDesignDrawer.DrawerContent>
-				<Border Background="White" Height="200">
+				<Border Height="200">
 					<Label Content="123123" />
 				</Border>
 			</AntDesignDrawer.DrawerContent>
@@ -81,7 +81,7 @@
 				<Border Width="20" Height="20" Background="Blue"/>
 			</AntDesignDrawer.DrawerButtonContent>
 			<AntDesignDrawer.DrawerContent>
-				<Border Background="White" Height="200">
+				<Border Height="200">
 					<Label Content="123123" />
 				</Border>
 			</AntDesignDrawer.DrawerContent>

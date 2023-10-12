@@ -1,4 +1,14 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Add Resources Here -->
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:CompileBindings="True">
+    <!-- Drawer -->
+    	<!-- ShadowButtonStyle -->
+	<BoxShadows x:Key="DrawerPanelBoxShadow">0 0 6 1 #141414</BoxShadows>
+
+	<SolidColorBrush x:Key="DrawerPanelBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+    <SolidColorBrush x:Key="DrawerMaskBackground" Color="#0d0d0d" Opacity="0.45" />
+
+
+
+
 </ResourceDictionary>
