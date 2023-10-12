@@ -54,11 +54,11 @@ public class AntDesignDrawer : ContentControl
     public static readonly StyledProperty<IDataTemplate?> DrawerButtonContentTemplateProperty =
            AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerButtonContentTemplate));
 
-    public static readonly StyledProperty<object?> DrawerButtonReverContentProperty =
-           AvaloniaProperty.Register<AntDesignDrawer, object?>(nameof(DrawerButtonReverContent));
+    public static readonly StyledProperty<object?> DrawerButtonClosedContentProperty =
+           AvaloniaProperty.Register<AntDesignDrawer, object?>(nameof(DrawerButtonClosedContent));
 
-    public static readonly StyledProperty<IDataTemplate?> DrawerButtonReverContentTemplateProperty =
-           AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerButtonReverContentTemplate));
+    public static readonly StyledProperty<IDataTemplate?> DrawerButtonClosedContentTemplateProperty =
+           AvaloniaProperty.Register<AntDesignDrawer, IDataTemplate?>(nameof(DrawerButtonClosedContentTemplate));
 
     public static readonly StyledProperty<HorizontalAlignment> DrawerButtonHorizontalAlignmentProperty =
            AvaloniaProperty.Register<AntDesignDrawer, HorizontalAlignment>(nameof(DrawerButtonHorizontalAlignment), defaultValue: HorizontalAlignment.Center);
@@ -173,17 +173,17 @@ public class AntDesignDrawer : ContentControl
         set => SetValue(DrawerButtonContentTemplateProperty, value);
     }
 
-    [DependsOn(nameof(DrawerButtonReverContentTemplate))]
-    public object? DrawerButtonReverContent
+    [DependsOn(nameof(DrawerButtonClosedContentTemplate))]
+    public object? DrawerButtonClosedContent
     {
-        get => GetValue(DrawerButtonReverContentProperty);
-        set => SetValue(DrawerButtonReverContentProperty, value);
+        get => GetValue(DrawerButtonClosedContentProperty);
+        set => SetValue(DrawerButtonClosedContentProperty, value);
     }
 
-    public IDataTemplate? DrawerButtonReverContentTemplate
+    public IDataTemplate? DrawerButtonClosedContentTemplate
     {
-        get => GetValue(DrawerButtonReverContentTemplateProperty);
-        set => SetValue(DrawerButtonReverContentTemplateProperty, value);
+        get => GetValue(DrawerButtonClosedContentTemplateProperty);
+        set => SetValue(DrawerButtonClosedContentTemplateProperty, value);
     }
 
     [DependsOn(nameof(DrawerContentTemplate))]

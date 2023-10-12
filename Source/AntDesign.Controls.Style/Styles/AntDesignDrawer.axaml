@@ -277,16 +277,14 @@
 				</Style>
 			</Style>
 
-			<Style Selector="^:drawer-closed">
-				<Style Selector="^ /template/ Button#PART_DrawerButton">
-						<Setter Property="Content" Value="{TemplateBinding DrawerButtonReverContent}"/>
-						<Setter Property="ContentTemplate" Value="{TemplateBinding DrawerButtonReverContentTemplate}"/>
-				</Style>
-			</Style>
-
 		</Style>
 
-	
+		<Style Selector="^:drawer-closed">
+			<Style Selector="^ /template/ Button#PART_DrawerButton">
+				<Setter Property="Content" Value="{Binding DrawerButtonClosedContent, RelativeSource={RelativeSource TemplatedParent}}"/>
+				<Setter Property="ContentTemplate" Value="{Binding DrawerButtonClosedContentTemplate,RelativeSource={RelativeSource TemplatedParent} }"/>
+			</Style>
+		</Style>
 
 	</ControlTheme>
 	

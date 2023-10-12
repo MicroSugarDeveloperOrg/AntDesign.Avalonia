@@ -1,7 +1,4 @@
-﻿using Avalonia;
-using Avalonia.Data;
-
-namespace AntDesign;
+﻿namespace AntDesign;
 
 public partial class AntDesignControlsStyle : Styles, IResourceNode
 {
