@@ -1,47 +1,138 @@
-﻿namespace AntDesign;
+﻿using System.Collections.Specialized;
 
-public partial class AntDesignControlsStyle : Styles, IResourceNode
+namespace AntDesign;
+
+public partial class AntDesignControlsStyle : AntDesign, IResourceNode
 {
     static AntDesignControlsStyle()
     {
-        ColoringProperty.Changed.AddClassHandler<AntDesignControlsStyle, Colours>((s, e) => s._antdesign.Coloring = e.NewValue.Value);
-        IsRoundedProperty.Changed.AddClassHandler<AntDesignControlsStyle, bool>((s, e) => s._antdesign.IsRounded = e.NewValue.Value);
-        IsAnimableProperty.Changed.AddClassHandler<AntDesignControlsStyle, bool>((s, e) => s._antdesign.IsAnimable = e.NewValue.Value);
+        ColoringProperty.Changed.AddClassHandler<AntDesignControlsStyle, Colours>((s, e) =>
+        {
+            s.VerifyAntDesign();
+            s._antdesign.Coloring = e.NewValue.Value;
+        });
+
+        IsRoundedProperty.Changed.AddClassHandler<AntDesignControlsStyle, bool>((s, e) =>
+        {
+            s.VerifyAntDesign();
+            s._antdesign.IsRounded = e.NewValue.Value;
+        });
+
+        IsAnimableProperty.Changed.AddClassHandler<AntDesignControlsStyle, bool>((s, e) =>
+        {
+            s.VerifyAntDesign();
+            s._antdesign.IsAnimable = e.NewValue.Value;
+        });
     }
 
-    public AntDesignControlsStyle(IServiceProvider? serviceProvider = default)
+    public AntDesignControlsStyle(IServiceProvider? serviceProvider = default) : base(serviceProvider)
     {
         AvaloniaXamlLoader.Load(serviceProvider, this);
-        _antdesign = new AntDesign();
-        Add(_antdesign);
+        if (Application.Current is null)
+            throw new NullReferenceException(nameof(Application));
+
+        _application = Application.Current;
+        var antdesign = _application.Styles.OfType<AntDesign>().FirstOrDefault();
+        if (antdesign is not null)
+            _antdesign = antdesign;
+
+        VerifyAntDesign();
+        _application.Styles.CollectionChanged += Styles_CollectionChanged;
+    }
+     
+    Application _application;
+    AntDesign _antdesign = default!;
+
+    void Styles_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+    {
+        switch (e.Action)
+        {
+            case NotifyCollectionChangedAction.Add:
+                {
+                    foreach (var item in e.NewItems)
+                    {
+                        if (item is null)
+                            continue;
+
+                        if (item is AntDesign antdesign)
+                        {
+                            if (antdesign == this)
+                                continue;
+
+                            if (_antdesign is not null)
+                            {
+                                Remove(_antdesign);
+                                _antdesign = antdesign;
+                                //Coloring = antdesign.Coloring;
+                                //IsRounded = antdesign.IsRounded;
+                                //IsAnimable = antdesign.IsAnimable;
+                                //_antdesign.Coloring = Coloring;
+                                //_antdesign.IsRounded = IsRounded;
+                                //_antdesign.IsAnimable = IsAnimable;
+                            }
+                        }
+                    }
+                }
+                break;
+            case NotifyCollectionChangedAction.Move:
+                break;
+            case NotifyCollectionChangedAction.Remove:
+                {
+                    foreach (var item in e.OldItems)
+                    {
+                        if (item is null)
+                            continue;
+
+                        if (item is AntDesign antdesign)
+                        {
+                            if (antdesign == this)
+                                continue;
+
+                            if (_antdesign == antdesign)
+                            {
+                                Remove(_antdesign);
+                                _antdesign = default!;
+                            }
+                        }
+                    }
+
+                    foreach (var item in e.NewItems)
+                    {
+                        if (item is null)
+                            continue;
+
+                        if (item is AntDesign antdesign)
+                        {
+                            if (antdesign == this)
+                                continue;
+
+                            if (_antdesign is not null)
+                            {
+                                Remove(_antdesign);
+                                _antdesign = antdesign;
+                                //_antdesign.Coloring = Coloring;
+                                //_antdesign.IsRounded = IsRounded;
+                                //_antdesign.IsAnimable = IsAnimable;
+                            }
+                        }
+                    }
+                }
+                break;
+            case NotifyCollectionChangedAction.Replace:
+                break;
+            case NotifyCollectionChangedAction.Reset:
+                break;
+            default:
+                break;
+        }
     }
 
-    AntDesign _antdesign;
-
-    public static readonly StyledProperty<Colours> ColoringProperty =
-           AntDesign.ColoringProperty.AddOwner<AntDesignControlsStyle>();
-
-    public Colours Coloring
+    void VerifyAntDesign()
     {
-        get => GetValue(ColoringProperty);
-        set => SetValue(ColoringProperty, value);
-    }
-
-    public static readonly StyledProperty<bool> IsRoundedProperty =
-           AntDesign.IsRoundedProperty.AddOwner<AntDesignControlsStyle>();
-
-    public bool IsRounded
-    {
-        get => GetValue(IsRoundedProperty);
-        set => SetValue(IsRoundedProperty, value);
-    }
-
-    public static readonly StyledProperty<bool> IsAnimableProperty =
-           AntDesign.IsAnimableProperty.AddOwner<AntDesignControlsStyle>();
-
-    public bool IsAnimable
-    {
-        get => GetValue(IsAnimableProperty);
-        set => SetValue(IsAnimableProperty, value);
+        if (_antdesign is null)
+        {
+            _antdesign = new AntDesign();
+            Add(_antdesign);
+        }
     }
 }
