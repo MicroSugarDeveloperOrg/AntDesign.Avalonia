@@ -1,17 +1,20 @@
-﻿using AntDesign.Controls.Interactivity;
+﻿using AntDesign.Controls.Helpers;
+using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
 
 namespace AntDesign.Controls;
 
 //[PseudoClasses(pcLayoutModeChanged)]
-[TemplatePart(PART_MenuPresent, typeof(ContentPresenter))]
-[TemplatePart("PART_HeaderPresenter", typeof(ContentPresenter))]
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelSideMenuOpened, AntDesignPseudoNameHelpers.PC_PanelTopMenuOpened)]
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelTopMenu, AntDesignPseudoNameHelpers.PC_PanelSideMenu, AntDesignPseudoNameHelpers.PC_PanelMixMenu)]
+[TemplatePart(AntDesignPARTNameHelpers._PART_MenuPresent, typeof(ContentPresenter))]
+[TemplatePart(AntDesignPARTNameHelpers._PART_HeaderPresenter, typeof(ContentPresenter))]
 public class AntDesignPanel : HeaderedContentControl
 {
     static AntDesignPanel()
     {
-        MenuProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.MenuChanged(e));
-        LayOutModeProperty.Changed.AddClassHandler<AntDesignPanel, LayoutMode>((s, e) =>
+        //MenuProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.MenuChanged(e));
+        LayOutModeProperty.Changed.AddClassHandler<AntDesignPanel, PanelLayoutMode>((s, e) =>
         {
             s.LayoutMode_Changed(e);
         });
@@ -31,33 +34,65 @@ public class AntDesignPanel : HeaderedContentControl
 
     #region DependencyProperty
 
-    public static readonly StyledProperty<LayoutMode> LayOutModeProperty =
-           AvaloniaProperty.Register<AntDesignPanel, LayoutMode>(nameof(LayOutMode));
+    /// <summary>
+    /// 布局模式
+    /// </summary>
+    public static readonly StyledProperty<PanelLayoutMode> LayOutModeProperty =
+           AvaloniaProperty.Register<AntDesignPanel, PanelLayoutMode>(nameof(LayOutMode));
 
+    /// <summary>
+    /// 是否启用标头
+    /// </summary>
     public static readonly StyledProperty<bool> IsHeaderProperty =
            AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsHeader));
+    //包含header and headerTemplate
 
+    /// <summary>
+    /// 是否启用菜单
+    /// </summary>
     public static readonly StyledProperty<bool> IsMenuProperty =
-          AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu));
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu));
 
-    public static readonly StyledProperty<object?> MenuProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(Menu));
+    //Side Menu
+    public static readonly StyledProperty<object?> SideMenuContentProperty =
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuContent));
 
-    public static readonly StyledProperty<IDataTemplate?> MenuTemplateProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(MenuTemplate));
+    public static readonly StyledProperty<IDataTemplate?> SideMenuContentTemplateProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuContentTemplate));
 
-    public static readonly StyledProperty<object?> MenuHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(MenuHeader));
+    //Top Menu
+    public static readonly StyledProperty<object?> TopMenuContentProperty =
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(TopMenuContent));
 
-    public static readonly StyledProperty<IDataTemplate?> MenuHeaderTemplateProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(MenuHeaderTemplate));
+    public static readonly StyledProperty<IDataTemplate?> TopMenuContentTemplateProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(TopMenuContentTemplate));
+
+    /// <summary>
+    /// 是否启用菜单头 Logo
+    /// </summary>
+    public static readonly StyledProperty<bool> IsMenuHeaderProperty =
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuHeader));
+
+    //Side MenuHeader
+    public static readonly StyledProperty<object?> SideMenuHeaderProperty =
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuHeader));
+
+    public static readonly StyledProperty<IDataTemplate?> SideMenuHeaderTemplateProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuHeaderTemplate));
+
+    //Top MenuHeader
+    public static readonly StyledProperty<object?> TopMenuHeaderProperty =
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(TopMenuHeader));
+
+    public static readonly StyledProperty<IDataTemplate?> TopMenuHeaderTemplateProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(TopMenuHeaderTemplate));
 
     #endregion
 
     #region Event
 
-    public static readonly RoutedEvent<LayoutModeEventArgs> LayoutModeChangedEvent =
-           RoutedEvent.Register<AntDesignPanel, LayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
+    public static readonly RoutedEvent<PanelLayoutModeEventArgs> LayoutModeChangedEvent =
+           RoutedEvent.Register<AntDesignPanel, PanelLayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
 
     #endregion
 
@@ -65,54 +100,83 @@ public class AntDesignPanel : HeaderedContentControl
 
     public ContentPresenter MenuPresent => _menuPresent;
 
-    public LayoutMode LayOutMode
+    public PanelLayoutMode LayOutMode
     {
-        get { return GetValue(LayOutModeProperty); }
-        set { SetValue(LayOutModeProperty, value); }
+        get => GetValue(LayOutModeProperty);
+        set => SetValue(LayOutModeProperty, value);
     }
 
     public bool IsHeader
     {
-        get { return GetValue(IsHeaderProperty); }
-        set { SetValue(IsHeaderProperty, value); }
+        get => GetValue(IsHeaderProperty);
+        set => SetValue(IsHeaderProperty, value);
     }
 
     public bool IsMenu
     {
-        get { return GetValue(IsMenuProperty); }
-        set { SetValue(IsMenuProperty, value); }
+        get => GetValue(IsMenuProperty);
+        set => SetValue(IsMenuProperty, value);
     }
 
-    [DependsOn(nameof(MenuTemplate))]
-    public object? Menu
+    public object? SideMenuContent
     {
-        get { return GetValue(MenuProperty); }
-        set { SetValue(MenuProperty, value); }
+        get => GetValue(SideMenuContentProperty);
+        set => SetValue(SideMenuContentProperty, value);
     }
 
-    public IDataTemplate? MenuTemplate
+    public IDataTemplate? SideMenuContentTemplate
     {
-        get { return GetValue(MenuTemplateProperty); }
-        set { SetValue(MenuTemplateProperty, value); }
+        get => GetValue(SideMenuContentTemplateProperty);
+        set => SetValue(SideMenuContentTemplateProperty, value);
     }
 
-    public object? MenuHeader
+    public object? TopMenuContent
     {
-        get { return GetValue(MenuHeaderProperty); }
-        set { SetValue(MenuHeaderProperty, value); }
+        get => GetValue(TopMenuContentProperty);
+        set => SetValue(TopMenuContentProperty, value);
     }
 
-    public IDataTemplate? MenuHeaderTemplate
+    public IDataTemplate? TopMenuContentTemplate
     {
-        get { return GetValue(MenuHeaderTemplateProperty); }
-        set { SetValue(MenuHeaderTemplateProperty, value); }
+        get => GetValue(TopMenuContentTemplateProperty);
+        set => SetValue(TopMenuContentTemplateProperty, value);
+    }
+
+    public bool IsMenuHeader
+    {
+        get => GetValue(IsMenuHeaderProperty);
+        set => SetValue(IsMenuHeaderProperty, value);
+    }
+
+    public object? SideMenuHeader
+    {
+        get => GetValue(SideMenuHeaderProperty);
+        set => SetValue(SideMenuHeaderProperty, value);
+    }
+
+    public IDataTemplate? SideMenuHeaderTemplate
+    {
+        get => GetValue(SideMenuHeaderTemplateProperty);
+        set => SetValue(SideMenuHeaderTemplateProperty, value);
+    }
+
+    public object? TopMenuHeader
+    {
+        get => GetValue(TopMenuHeaderProperty);
+        set => SetValue(TopMenuHeaderProperty, value);
+    }
+
+    public IDataTemplate? TopMenuHeaderTemplate
+    {
+        get => GetValue(TopMenuHeaderTemplateProperty);
+        set => SetValue(TopMenuHeaderTemplateProperty, value);
     }
 
     #endregion
 
     #region Event
 
-    public event EventHandler<LayoutModeEventArgs>? LayoutModeChanged
+    public event EventHandler<PanelLayoutModeEventArgs>? LayoutModeChanged
     {
         add { AddHandler(LayoutModeChangedEvent, value); }
         remove { RemoveHandler(LayoutModeChangedEvent, value); }
@@ -146,21 +210,21 @@ public class AntDesignPanel : HeaderedContentControl
             LogicalChildren.Add(newChild);
     }
 
-    void LayoutMode_Changed(AvaloniaPropertyChangedEventArgs<LayoutMode> e)
+    void LayoutMode_Changed(AvaloniaPropertyChangedEventArgs<PanelLayoutMode> e)
     {
         switch (e.NewValue.Value)
         {
-            case LayoutMode.Top:
+            case PanelLayoutMode.TopMenu:
                 break;
-            case LayoutMode.BroadSide:
+            case PanelLayoutMode.SideMenu:
                 break;
-            case LayoutMode.Mix:
+            case PanelLayoutMode.MixMenu:
                 break;
             default:
                 break;
         }
 
-        RaiseEvent(new LayoutModeEventArgs(e.NewValue.Value));
+        RaiseEvent(new PanelLayoutModeEventArgs(e.NewValue.Value));
     }
 
     void UpdatePseudoClasses()

@@ -40,7 +40,7 @@ public class AntDesignDrawer : ContentControl
            AvaloniaProperty.Register<AntDesignDrawer, DrawerDisplayMode>(nameof(DrawerDisplayMode), defaultValue: DrawerDisplayMode.Overlay);
 
     public static readonly StyledProperty<BoxShadows> DrawerPanelBoxShadowProperty =
-           Border.BoxShadowProperty.AddOwner<AntDesignExpanderTranslateControl>();
+           AvaloniaProperty.Register<AntDesignDrawer, BoxShadows>(nameof(DrawerPanelBoxShadow));
 
     public static readonly StyledProperty<IBrush?> DrawerPanelBackgroundProperty =
            AvaloniaProperty.Register<AntDesignDrawer, IBrush?>(nameof(DrawerPanelBackground), defaultValue: Brushes.Transparent);

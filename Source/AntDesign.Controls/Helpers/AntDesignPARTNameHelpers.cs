@@ -17,4 +17,9 @@ public static class AntDesignPARTNameHelpers
 
     public const string _PART_DrawerMask = nameof(PART_DrawerMask);
     public static string PART_DrawerMask => _PART_DrawerMask;
+
+    //Panel
+    public const string _PART_MenuPresent = nameof(PART_MenuPresent);
+    public static string PART_MenuPresent => _PART_MenuPresent;
+
 }
