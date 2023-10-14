@@ -145,7 +145,7 @@
 								<ContentPresenter x:Name="PART_TopMenuPresenter"
 												  Grid.Column="1"
 												  Grid.Row="0"
-												  IsVisible="{TemplateBinding IsHeader}"
+												  IsVisible="false"
 												  Content="{TemplateBinding TopMenuContent}"
 												  ContentTemplate="{TemplateBinding TopMenuContentTemplate}"/>
 
