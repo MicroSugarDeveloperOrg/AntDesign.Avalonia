@@ -50,6 +50,9 @@ public class AntDesignPanel : HeaderedContentControl
     public static readonly StyledProperty<IBrush?> TopHeaderBackgroundProperty =
            AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(TopHeaderBackground));
 
+    public static readonly StyledProperty<IBrush?> TopHeaderForegroundProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(TopHeaderForeground));
+
     public static readonly StyledProperty<BoxShadows> TopHeaderBoxShadowProperty =
            AvaloniaProperty.Register<AntDesignPanel, BoxShadows>(nameof(TopHeaderBoxShadow));
 
@@ -61,7 +64,10 @@ public class AntDesignPanel : HeaderedContentControl
 
     //Side Menu
     public static readonly StyledProperty<IBrush?> SideMenuBackgroundProperty =
-          AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(SideMenuBackground));
+           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(SideMenuBackground));
+
+    public static readonly StyledProperty<IBrush?> SideMenuForegroundProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(SideMenuForeground));
 
     public static readonly StyledProperty<BoxShadows> SideMenuBoxShadowProperty =
            AvaloniaProperty.Register<AntDesignPanel, BoxShadows>(nameof(SideMenuBoxShadow));
@@ -136,6 +142,12 @@ public class AntDesignPanel : HeaderedContentControl
         set => SetValue(TopHeaderBackgroundProperty, value);
     }
 
+    public IBrush? TopHeaderForeground
+    {
+        get => GetValue(TopHeaderForegroundProperty);
+        set => SetValue(TopHeaderForegroundProperty, value);
+    }
+
     public BoxShadows TopHeaderBoxShadow
     {
         get => GetValue(TopHeaderBoxShadowProperty);
@@ -152,6 +164,12 @@ public class AntDesignPanel : HeaderedContentControl
     {
         get => GetValue(SideMenuBackgroundProperty);
         set => SetValue(SideMenuBackgroundProperty, value);
+    }
+
+    public IBrush? SideMenuForeground
+    {
+        get => GetValue(SideMenuForegroundProperty);
+        set => SetValue(SideMenuForegroundProperty, value);
     }
 
     public BoxShadows SideMenuBoxShadow

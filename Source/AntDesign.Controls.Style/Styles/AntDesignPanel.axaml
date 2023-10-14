@@ -9,6 +9,7 @@
 		<Setter Property="TopHeaderBoxShadow" Value="{DynamicResource TopHeaderBoxShadow}"/>
 		<Setter Property="SideMenuBackground" Value="{DynamicResource SideMenuBackground}"/>
 		<Setter Property="TopHeaderBackground" Value="{DynamicResource TopHeaderMixBackground}"/>
+		<Setter Property="TopHeaderForeground" Value="{DynamicResource TopHeaderMixForeground}"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="antdesign:AntDesignPanel">
 				<Border Background="{TemplateBinding Background}"
@@ -43,7 +44,7 @@
 							<ContentPresenter x:Name="PART_TopHeaderPresenter"
 											  Grid.Column="0"
 											  Grid.Row="0"
-											  Foreground="White"
+											  Foreground="{TemplateBinding TopHeaderForeground}"
 											  IsVisible="{TemplateBinding IsMenuHeader}"
 											  Content="{TemplateBinding TopMenuHeader}"
 											  ContentTemplate="{TemplateBinding TopMenuHeaderTemplate}"/>
@@ -51,7 +52,7 @@
 							<ContentPresenter x:Name="PART_TopMenuPresenter"
 											  Grid.Column="1"
 											  Grid.Row="0"
-											  Foreground="White"
+											  Foreground="{TemplateBinding TopHeaderForeground}"
 											  IsVisible="false"
 											  Content="{TemplateBinding TopMenuContent}"
 											  ContentTemplate="{TemplateBinding TopMenuContentTemplate}"/>
@@ -59,7 +60,7 @@
 							<ContentPresenter x:Name="PART_HeaderPresenter"
 											  Grid.Column="2"
 											  Grid.Row="0"
-											  Foreground="White"
+											  Foreground="{TemplateBinding TopHeaderForeground}"
 											  IsVisible="{TemplateBinding IsHeader}"
 											  Content="{TemplateBinding Header}"
 											  ContentTemplate="{TemplateBinding HeaderTemplate}"/>

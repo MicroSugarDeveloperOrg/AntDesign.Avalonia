@@ -12,6 +12,7 @@
 	<SolidColorBrush x:Key="TopHeaderBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 
 	<SolidColorBrush x:Key="TopHeaderMixBackground" Color="RGB(0,21,41)"/>
+	<SolidColorBrush x:Key="TopHeaderMixForeground" Color="White"/>
 	<SolidColorBrush x:Key="SideMenuMixBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 
 	<SolidColorBrush x:Key="TopHeaderTopBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
