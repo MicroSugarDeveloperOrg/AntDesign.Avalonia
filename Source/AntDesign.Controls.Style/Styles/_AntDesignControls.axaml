@@ -3,5 +3,6 @@
 					x:CompileBindings="True">
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignDrawer.axaml" />
+		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignPanel.axaml" />
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

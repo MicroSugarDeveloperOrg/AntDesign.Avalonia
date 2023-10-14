@@ -14,12 +14,12 @@ public static class AntDesignPseudoNameHelpers
     public const string PC_DrawerOpened = ":drawer-opened";
 
     //Panel
-    public const string PC_PanelTopMenu = ":panel-topmenu";
-    public const string PC_PanelSideMenu = ":panel-sidemenu";
-    public const string PC_PanelMixMenu = ":panel-mixmenu";
+    public const string PC_PanelTopMenu = ":panel-top-menu";
+    public const string PC_PanelSideMenu = ":panel-side-menu";
+    public const string PC_PanelMixMenu = ":panel-mix-menu";
 
-    public const string PC_PanelSideMenuOpened = ":panel-sidemenuopened";
-    public const string PC_PanelTopMenuOpened = ":panel-topmenuopened";
+    //public const string PC_PanelSideMenuOpened = ":panel-side-menu-opened";
+    //public const string PC_PanelTopMenuOpened = ":panel-top-menu-opened";
 
 
 }

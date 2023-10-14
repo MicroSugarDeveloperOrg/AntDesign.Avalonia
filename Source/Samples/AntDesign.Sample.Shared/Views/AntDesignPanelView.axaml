@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AntDesign.Sample.Views.AntDesignPanelView">
+	<Grid ColumnDefinitions="*,Auto">
+		<AntDesignPanel BorderThickness="1" BorderBrush="LightGray" 
+						LayoutMode="{Binding LayoutMode}">
+			<AntDesignPanel.Header>
+				<Border Background="Red" Width="50" Height="50" CornerRadius="25"/>
+			</AntDesignPanel.Header>
+			<AntDesignPanel.SideMenuHeader>
+				<Border Height="40">
+					<TextBlock Text="1231"/>
+				</Border>
+			</AntDesignPanel.SideMenuHeader>
+			<AntDesignPanel.SideMenuContent>
+				<Border Width="100">
+					<TextBlock Text="5454657656757"/>
+				</Border>
+			</AntDesignPanel.SideMenuContent>
+			<AntDesignPanel.TopMenuHeader>
+				<Border Width="100">
+					<TextBlock Text="2311"/>
+				</Border>
+			</AntDesignPanel.TopMenuHeader>
+			<AntDesignPanel.TopMenuContent>
+				<Border>
+					<TextBlock Text="5454657656757"/>
+				</Border>
+			</AntDesignPanel.TopMenuContent>
+			
+			<Border Background="Yellow"/>
+			
+		</AntDesignPanel>
+
+		<Border Grid.Column="1" Padding="10">
+			<Grid >
+				<ComboBox Width="150" Height="35" SelectedIndex="{Binding SelectedIndex}">
+					<ComboBoxItem Content="SideMenu"/>
+					<ComboBoxItem Content="TopMemu"/>
+					<ComboBoxItem Content="MixMenu"/>
+				</ComboBox>
+
+
+			</Grid>
+
+		</Border>
+	
+	</Grid>
+	
+</UserControl>

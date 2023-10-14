@@ -47,7 +47,7 @@ public partial class DialogsView : ReactiveUserControl<DialogsViewModel>
         if (storageFile is null)
             return;
 
-        var stream = await storageFile!.OpenWriteAsync();
+        using var stream = await storageFile!.OpenWriteAsync();
         var buffer = Encoding.UTF8.GetBytes("1231231231313");
         stream.Write(buffer);
     }

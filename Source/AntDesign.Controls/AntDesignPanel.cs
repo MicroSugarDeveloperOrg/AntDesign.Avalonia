@@ -5,7 +5,7 @@ using AntDesign.Controls.Metadata;
 namespace AntDesign.Controls;
 
 //[PseudoClasses(pcLayoutModeChanged)]
-[PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelSideMenuOpened, AntDesignPseudoNameHelpers.PC_PanelTopMenuOpened)]
+//[PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelSideMenuOpened, AntDesignPseudoNameHelpers.PC_PanelTopMenuOpened)]
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelTopMenu, AntDesignPseudoNameHelpers.PC_PanelSideMenu, AntDesignPseudoNameHelpers.PC_PanelMixMenu)]
 [TemplatePart(AntDesignPARTNameHelpers._PART_MenuPresent, typeof(ContentPresenter))]
 [TemplatePart(AntDesignPARTNameHelpers._PART_HeaderPresenter, typeof(ContentPresenter))]
@@ -14,7 +14,7 @@ public class AntDesignPanel : HeaderedContentControl
     static AntDesignPanel()
     {
         //MenuProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.MenuChanged(e));
-        LayOutModeProperty.Changed.AddClassHandler<AntDesignPanel, PanelLayoutMode>((s, e) =>
+        LayoutModeProperty.Changed.AddClassHandler<AntDesignPanel, PanelLayoutMode>((s, e) =>
         {
             s.LayoutMode_Changed(e);
         });
@@ -37,28 +37,46 @@ public class AntDesignPanel : HeaderedContentControl
     /// <summary>
     /// 布局模式
     /// </summary>
-    public static readonly StyledProperty<PanelLayoutMode> LayOutModeProperty =
-           AvaloniaProperty.Register<AntDesignPanel, PanelLayoutMode>(nameof(LayOutMode));
+    public static readonly StyledProperty<PanelLayoutMode> LayoutModeProperty =
+           AvaloniaProperty.Register<AntDesignPanel, PanelLayoutMode>(nameof(LayoutMode), defaultValue:PanelLayoutMode.MixMenu);
 
     /// <summary>
     /// 是否启用标头
     /// </summary>
     public static readonly StyledProperty<bool> IsHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsHeader));
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsHeader), defaultValue: true);
+
     //包含header and headerTemplate
+    public static readonly StyledProperty<IBrush?> TopHeaderBackgroundProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(TopHeaderBackground));
+
+    public static readonly StyledProperty<BoxShadows> TopHeaderBoxShadowProperty =
+           AvaloniaProperty.Register<AntDesignPanel, BoxShadows>(nameof(TopHeaderBoxShadow));
 
     /// <summary>
     /// 是否启用菜单
     /// </summary>
     public static readonly StyledProperty<bool> IsMenuProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu));
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu), defaultValue: true);
 
     //Side Menu
+    public static readonly StyledProperty<IBrush?> SideMenuBackgroundProperty =
+          AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(SideMenuBackground));
+
+    public static readonly StyledProperty<BoxShadows> SideMenuBoxShadowProperty =
+           AvaloniaProperty.Register<AntDesignPanel, BoxShadows>(nameof(SideMenuBoxShadow));
+
     public static readonly StyledProperty<object?> SideMenuContentProperty =
            AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuContent));
 
     public static readonly StyledProperty<IDataTemplate?> SideMenuContentTemplateProperty =
            AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuContentTemplate));
+
+    public static readonly StyledProperty<object?> SideMenuBottomProperty =
+       AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuBottom));
+
+    public static readonly StyledProperty<IDataTemplate?> SideMenuBottomTemplateProperty =
+           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuBottomTemplate));
 
     //Top Menu
     public static readonly StyledProperty<object?> TopMenuContentProperty =
@@ -71,7 +89,7 @@ public class AntDesignPanel : HeaderedContentControl
     /// 是否启用菜单头 Logo
     /// </summary>
     public static readonly StyledProperty<bool> IsMenuHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuHeader));
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuHeader), defaultValue: true);
 
     //Side MenuHeader
     public static readonly StyledProperty<object?> SideMenuHeaderProperty =
@@ -100,10 +118,10 @@ public class AntDesignPanel : HeaderedContentControl
 
     public ContentPresenter MenuPresent => _menuPresent;
 
-    public PanelLayoutMode LayOutMode
+    public PanelLayoutMode LayoutMode
     {
-        get => GetValue(LayOutModeProperty);
-        set => SetValue(LayOutModeProperty, value);
+        get => GetValue(LayoutModeProperty);
+        set => SetValue(LayoutModeProperty, value);
     }
 
     public bool IsHeader
@@ -112,10 +130,34 @@ public class AntDesignPanel : HeaderedContentControl
         set => SetValue(IsHeaderProperty, value);
     }
 
+    public IBrush? TopHeaderBackground
+    {
+        get => GetValue(TopHeaderBackgroundProperty);
+        set => SetValue(TopHeaderBackgroundProperty, value);
+    }
+
+    public BoxShadows TopHeaderBoxShadow
+    {
+        get => GetValue(TopHeaderBoxShadowProperty);
+        set => SetValue(TopHeaderBoxShadowProperty, value);
+    }
+
     public bool IsMenu
     {
         get => GetValue(IsMenuProperty);
         set => SetValue(IsMenuProperty, value);
+    }
+
+    public IBrush? SideMenuBackground
+    {
+        get => GetValue(SideMenuBackgroundProperty);
+        set => SetValue(SideMenuBackgroundProperty, value);
+    }
+
+    public BoxShadows SideMenuBoxShadow
+    {
+        get => GetValue(SideMenuBoxShadowProperty);
+        set => SetValue(SideMenuBoxShadowProperty, value);
     }
 
     public object? SideMenuContent
@@ -128,6 +170,18 @@ public class AntDesignPanel : HeaderedContentControl
     {
         get => GetValue(SideMenuContentTemplateProperty);
         set => SetValue(SideMenuContentTemplateProperty, value);
+    }
+
+    public object? SideMenuBottom
+    {
+        get => GetValue(SideMenuBottomProperty);
+        set => SetValue(SideMenuBottomProperty, value);
+    }
+
+    public IDataTemplate? SideMenuBottomTemplate
+    {
+        get => GetValue(SideMenuBottomTemplateProperty);
+        set => SetValue(SideMenuBottomTemplateProperty, value);
     }
 
     public object? TopMenuContent
@@ -185,6 +239,13 @@ public class AntDesignPanel : HeaderedContentControl
     #endregion
 
     #region Method
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        UpdatePanelLayoutModePseudoClasses(LayoutMode);
+    }
+
     protected override bool RegisterContentPresenter(ContentPresenter presenter)
     {
         var result = base.RegisterContentPresenter(presenter);
@@ -195,8 +256,8 @@ public class AntDesignPanel : HeaderedContentControl
             result &= true;
         }
 
-        if (_menuPresent is null)
-            throw new NullReferenceException(nameof(_menuPresent));
+        //if (_menuPresent is null)
+            //throw new NullReferenceException(nameof(_menuPresent));
 
         return result;
     }
@@ -212,24 +273,37 @@ public class AntDesignPanel : HeaderedContentControl
 
     void LayoutMode_Changed(AvaloniaPropertyChangedEventArgs<PanelLayoutMode> e)
     {
-        switch (e.NewValue.Value)
-        {
-            case PanelLayoutMode.TopMenu:
-                break;
-            case PanelLayoutMode.SideMenu:
-                break;
-            case PanelLayoutMode.MixMenu:
-                break;
-            default:
-                break;
-        }
-
+        UpdatePanelLayoutModePseudoClasses(e.NewValue.Value);
         RaiseEvent(new PanelLayoutModeEventArgs(e.NewValue.Value));
     }
 
-    void UpdatePseudoClasses()
+    void UpdatePanelLayoutModePseudoClasses(PanelLayoutMode mode)
     {
-        //PseudoClasses.Set(pcLayoutModeChanged, this.LayOutMode);
+        switch (mode)
+        {
+            case PanelLayoutMode.TopMenu:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelTopMenu, true);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelSideMenu, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelMixMenu, false);
+                }
+                break;
+            case PanelLayoutMode.SideMenu:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelTopMenu, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelSideMenu, true);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelMixMenu, false);
+                }
+                break;
+            case PanelLayoutMode.MixMenu:
+            default:
+                {
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelTopMenu, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelSideMenu, false);
+                    PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_PanelMixMenu, true);
+                }
+                break;
+        }
     }
 
     #endregion

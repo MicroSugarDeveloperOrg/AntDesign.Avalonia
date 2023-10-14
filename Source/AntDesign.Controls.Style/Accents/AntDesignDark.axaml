@@ -7,6 +7,20 @@
 	<SolidColorBrush x:Key="DrawerPanelBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
 	<SolidColorBrush x:Key="DrawerMaskBackground" Color="#0d0d0d" Opacity="0.45" />
 
+	<!-- Panel -->
+	<SolidColorBrush x:Key="SideMenuBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	<SolidColorBrush x:Key="TopHeaderBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+
+	<SolidColorBrush x:Key="TopHeaderMixBackground" Color="RGB(0,21,41)"/>
+	<SolidColorBrush x:Key="SideMenuMixBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+
+	<SolidColorBrush x:Key="TopHeaderTopBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+	
+	<SolidColorBrush x:Key="SideMenuSideBackground" Color="{StaticResource AntDesignBackgroundColor}"/>
+
+
+	<BoxShadows x:Key="TopHeaderBoxShadow">0 0 6 1 #141414</BoxShadows>
+	<BoxShadows x:Key="SideMenuBoxShadow">0 3 6 1 #141414</BoxShadows>
 
 
 
