@@ -113,9 +113,20 @@ public partial class AntDesign : Styles
     {
         AvaloniaXamlLoader.Load(serviceProvider, this);
         AntDesignPalettes = Resources.MergedDictionaries.OfType<AntDesignColorPaletteCollection>().FirstOrDefault();
+        _mapAntDesignColorful = new Dictionary<Colours, Color>();
+        _mapAntDesignColorful[Colours.DaybreakBlue] = Color.Parse("#FF1677FF");
+        _mapAntDesignColorful[Colours.DustRed] = Color.Parse("#f5222d");
+        _mapAntDesignColorful[Colours.Volcano] = Color.Parse("#fa541c");
+        _mapAntDesignColorful[Colours.SunsetOrange] = Color.Parse("#fa8c16");
+        _mapAntDesignColorful[Colours.Cyan] = Color.Parse("#13c2c2");
+        _mapAntDesignColorful[Colours.PolarGreen] = Color.Parse("#52c41a");
+        _mapAntDesignColorful[Colours.GeekBlue] = Color.Parse("#2f54eb");
+        _mapAntDesignColorful[Colours.GoldenPurple] = Color.Parse("#722ed1");
     }
+    readonly Dictionary<Colours, Color> _mapAntDesignColorful;
 
     public IDictionary<ThemeVariant, AntDesignColorPalette> AntDesignPalettes { get; }
+    public IDictionary<Colours, Color> AntDesignColorful => _mapAntDesignColorful;
 
     const string g_AntDesignPrimaryColor = "AntDesignPrimaryColor";
     const string g_AntDesignSecondlyColor = "AntDesignSecondlyColor";
@@ -166,6 +177,10 @@ public partial class AntDesign : Styles
         set => SetValue(IsAnimableProperty, value);
     }
 
-
+    public Color GetThemeColor(Colours colorful)
+    {
+        _mapAntDesignColorful.TryGetValue(colorful, out var color);
+        return color;
+    }
 
 }
