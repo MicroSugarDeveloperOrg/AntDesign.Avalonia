@@ -32,4 +32,24 @@ public class AntDesignPanelViewModel : ViewModelRoutableBase<AntDesignPanelViewM
         });
     }
 
+    bool _isTop;
+    public bool IsTop
+    {
+        get => _isTop;
+        set => SetProperty(ref _isTop, value);
+    }
+
+    bool _isMenu;
+    public bool IsMenu
+    {
+        get => _isMenu;
+        set => SetProperty(ref _isMenu, value);
+    }
+
+    bool _isMenuHeader;
+    public bool IsMenuHeader
+    {
+        get => _isMenuHeader;
+        set => SetProperty(ref _isMenuHeader, value);  
+    }
 }

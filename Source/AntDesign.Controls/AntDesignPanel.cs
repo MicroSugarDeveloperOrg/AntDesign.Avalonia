@@ -1,19 +1,16 @@
 ﻿using AntDesign.Controls.Helpers;
 using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
+using Avalonia.Data;
 
 namespace AntDesign.Controls;
 
-//[PseudoClasses(pcLayoutModeChanged)]
-//[PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelSideMenuOpened, AntDesignPseudoNameHelpers.PC_PanelTopMenuOpened)]
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelTopMenu, AntDesignPseudoNameHelpers.PC_PanelSideMenu, AntDesignPseudoNameHelpers.PC_PanelMixMenu)]
-[TemplatePart(AntDesignPARTNameHelpers._PART_MenuPresent, typeof(ContentPresenter))]
 [TemplatePart(AntDesignPARTNameHelpers._PART_HeaderPresenter, typeof(ContentPresenter))]
 public class AntDesignPanel : HeaderedContentControl
 {
     static AntDesignPanel()
     {
-        //MenuProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.MenuChanged(e));
         LayoutModeProperty.Changed.AddClassHandler<AntDesignPanel, PanelLayoutMode>((s, e) =>
         {
             s.LayoutMode_Changed(e);
@@ -21,16 +18,12 @@ public class AntDesignPanel : HeaderedContentControl
     }
 
     public AntDesignPanel()
-    {
+    {     
         //ContentPresenter.BoundsProperty
         //LayoutTransformControl
         //TranslateTransform   
         //SplitView
     }
-
-    //const string pcLayoutModeChanged = ":layoutmode-changed";
-    private const string PART_MenuPresent = nameof(PART_MenuPresent);
-    private ContentPresenter _menuPresent = default!;
 
     #region DependencyProperty
 
@@ -79,7 +72,7 @@ public class AntDesignPanel : HeaderedContentControl
            AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuContentTemplate));
 
     public static readonly StyledProperty<object?> SideMenuBottomProperty =
-       AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuBottom));
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuBottom));
 
     public static readonly StyledProperty<IDataTemplate?> SideMenuBottomTemplateProperty =
            AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuBottomTemplate));
@@ -121,8 +114,6 @@ public class AntDesignPanel : HeaderedContentControl
     #endregion
 
     #region Property
-
-    public ContentPresenter MenuPresent => _menuPresent;
 
     public PanelLayoutMode LayoutMode
     {
@@ -267,26 +258,7 @@ public class AntDesignPanel : HeaderedContentControl
     protected override bool RegisterContentPresenter(ContentPresenter presenter)
     {
         var result = base.RegisterContentPresenter(presenter);
-
-        if (presenter.Name == PART_MenuPresent)
-        {
-            _menuPresent = presenter;
-            result &= true;
-        }
-
-        //if (_menuPresent is null)
-            //throw new NullReferenceException(nameof(_menuPresent));
-
         return result;
-    }
-
-    void MenuChanged(AvaloniaPropertyChangedEventArgs e)
-    {
-        if (e.OldValue is ILogical oldChild)
-            LogicalChildren.Remove(oldChild);
-
-        if (e.NewValue is ILogical newChild)
-            LogicalChildren.Add(newChild);
     }
 
     void LayoutMode_Changed(AvaloniaPropertyChangedEventArgs<PanelLayoutMode> e)

@@ -5,8 +5,12 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.AntDesignPanelView">
 	<Grid ColumnDefinitions="*,Auto">
-		<AntDesignPanel BorderThickness="1" BorderBrush="LightGray" 
-						LayoutMode="{Binding LayoutMode}">
+		<AntDesignPanel BorderThickness="1" 
+						BorderBrush="LightGray" 
+						LayoutMode="{Binding LayoutMode}"
+						IsHeader="{Binding IsTop}"
+						IsMenu="{Binding IsMenu}"
+						IsMenuHeader="{Binding IsMenuHeader}">
 			<AntDesignPanel.Header>
 				<Border Background="Red" Width="50" Height="50" CornerRadius="25"/>
 			</AntDesignPanel.Header>
@@ -36,15 +40,20 @@
 		</AntDesignPanel>
 
 		<Border Grid.Column="1" Padding="10">
-			<Grid >
+			<StackPanel Spacing="5">
 				<ComboBox Width="150" Height="35" SelectedIndex="{Binding SelectedIndex}">
 					<ComboBoxItem Content="SideMenu"/>
 					<ComboBoxItem Content="TopMemu"/>
 					<ComboBoxItem Content="MixMenu"/>
 				</ComboBox>
 
+				<ToggleSwitch Content="顶栏" IsChecked="{Binding IsTop}"/>
+				<ToggleSwitch Content="菜单" IsChecked="{Binding IsMenu}"/>
+				<ToggleSwitch Content="菜单头" IsChecked="{Binding IsMenuHeader}"/>
+				
 
-			</Grid>
+
+			</StackPanel>
 
 		</Border>
 	

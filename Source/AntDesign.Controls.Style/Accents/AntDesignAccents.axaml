@@ -1,6 +1,11 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    x:CompileBindings="True">
+                    xmlns:antdesign="using:AntDesign.Controls"
+					xmlns:antdesignconverters="using:AntDesign.Controls.Converters"
+					x:CompileBindings="True">
+	
+	<antdesignconverters:BooleansAndConverter x:Key="BooleansAndConverter"/>
+	
 	<!-- Drawer -->
 	<x:Double x:Key="DrawerMaskOpacity">1</x:Double>
 </ResourceDictionary>
