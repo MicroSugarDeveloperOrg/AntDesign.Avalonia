@@ -34,8 +34,10 @@
 					<TextBlock Text="5454657656757"/>
 				</Border>
 			</AntDesignPanel.TopMenuContent>
-			
-			<Border Background="Yellow"/>
+
+			<Border Background="Yellow">
+				<TextBlock Text="12312325454"/>
+			</Border>
 			
 		</AntDesignPanel>
 

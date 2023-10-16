@@ -1,16 +1,23 @@
 ﻿using AntDesign.Controls.Helpers;
 using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
-using Avalonia.Data;
+using System.Windows.Input;
 
 namespace AntDesign.Controls;
 
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_MobileMode)]
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelTopMenu, AntDesignPseudoNameHelpers.PC_PanelSideMenu, AntDesignPseudoNameHelpers.PC_PanelMixMenu)]
 [TemplatePart(AntDesignPARTNameHelpers._PART_HeaderPresenter, typeof(ContentPresenter))]
 public class AntDesignPanel : HeaderedContentControl
 {
     static AntDesignPanel()
     {
+        IsMobileProperty = AvaloniaProperty.RegisterDirect<AntDesignPanel, bool>(nameof(IsMobile), s => s.IsMobile);
+        IsMobileProperty.Changed.AddClassHandler<AntDesignPanel, bool>((s, e) =>
+        {
+            s.SizeMode_Changed(e);
+        });
+
         LayoutModeProperty.Changed.AddClassHandler<AntDesignPanel, PanelLayoutMode>((s, e) =>
         {
             s.LayoutMode_Changed(e);
@@ -18,12 +25,16 @@ public class AntDesignPanel : HeaderedContentControl
     }
 
     public AntDesignPanel()
-    {     
+    {
         //ContentPresenter.BoundsProperty
         //LayoutTransformControl
         //TranslateTransform   
         //SplitView
+
+        //Button.CommandProperty
     }
+
+    bool _isMoble;
 
     #region DependencyProperty
 
@@ -31,7 +42,7 @@ public class AntDesignPanel : HeaderedContentControl
     /// 布局模式
     /// </summary>
     public static readonly StyledProperty<PanelLayoutMode> LayoutModeProperty =
-           AvaloniaProperty.Register<AntDesignPanel, PanelLayoutMode>(nameof(LayoutMode), defaultValue:PanelLayoutMode.MixMenu);
+           AvaloniaProperty.Register<AntDesignPanel, PanelLayoutMode>(nameof(LayoutMode), defaultValue: PanelLayoutMode.MixMenu);
 
     /// <summary>
     /// 是否启用标头
@@ -104,6 +115,25 @@ public class AntDesignPanel : HeaderedContentControl
     public static readonly StyledProperty<IDataTemplate?> TopMenuHeaderTemplateProperty =
            AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(TopMenuHeaderTemplate));
 
+    public static readonly DirectProperty<AntDesignPanel, bool> IsMobileProperty;
+
+    #endregion
+
+    #region Command
+    public static readonly StyledProperty<ICommand?> LayoutModeChangedCommandProperty =
+           AvaloniaProperty.Register<AntDesignPanel, ICommand?>(nameof(LayoutModeChangedCommand), enableDataValidation: true);
+
+    public static readonly StyledProperty<object?> LayoutModeChangedCommandParameterProperty =
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(LayoutModeChangedCommandParameter));
+
+
+    public static readonly StyledProperty<ICommand?> SizeModeChangedCommandProperty =
+           AvaloniaProperty.Register<AntDesignPanel, ICommand?>(nameof(SizeModeChangedCommand), enableDataValidation: true);
+
+    public static readonly StyledProperty<object?> SizeModeChangedCommandParameterProperty =
+           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SizeModeChangedCommandParameter));
+
+
     #endregion
 
     #region Event
@@ -111,9 +141,18 @@ public class AntDesignPanel : HeaderedContentControl
     public static readonly RoutedEvent<PanelLayoutModeEventArgs> LayoutModeChangedEvent =
            RoutedEvent.Register<AntDesignPanel, PanelLayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
 
+    public static readonly RoutedEvent<PanelSizeModeChangedEventArgs> SizeModeChangedEvent =
+           RoutedEvent.Register<AntDesignPanel, PanelSizeModeChangedEventArgs>(nameof(SizeModeChanged), RoutingStrategies.Direct);
+
     #endregion
 
     #region Property
+
+    public bool IsMobile
+    {
+        get => _isMoble;
+        protected set => SetAndRaise(IsMobileProperty, ref _isMoble, value);
+    }
 
     public PanelLayoutMode LayoutMode
     {
@@ -237,12 +276,47 @@ public class AntDesignPanel : HeaderedContentControl
 
     #endregion
 
+    #region Command
+
+    public ICommand? LayoutModeChangedCommand
+    {
+        get => GetValue(LayoutModeChangedCommandProperty);
+        set => SetValue(LayoutModeChangedCommandProperty, value);
+    }
+
+    public object? LayoutModeChangedCommandParameter
+    {
+        get => GetValue(LayoutModeChangedCommandParameterProperty);
+        set => SetValue(LayoutModeChangedCommandParameterProperty, value);
+    }
+
+    public ICommand? SizeModeChangedCommand
+    {
+        get => GetValue(SizeModeChangedCommandProperty);
+        set => SetValue(SizeModeChangedCommandProperty, value);
+    }
+
+    public object? SizeModeChangedCommandParameter
+    {
+        get => GetValue(SizeModeChangedCommandParameterProperty);
+        set => SetValue(SizeModeChangedCommandParameterProperty, value);
+    }
+
+    #endregion
+
+
     #region Event
 
     public event EventHandler<PanelLayoutModeEventArgs>? LayoutModeChanged
     {
         add { AddHandler(LayoutModeChangedEvent, value); }
         remove { RemoveHandler(LayoutModeChangedEvent, value); }
+    }
+
+    public event EventHandler<PanelSizeModeChangedEventArgs>? SizeModeChanged
+    {
+        add { AddHandler(SizeModeChangedEvent, value); }
+        remove { RemoveHandler(SizeModeChangedEvent, value); }
     }
 
     #endregion
@@ -252,7 +326,18 @@ public class AntDesignPanel : HeaderedContentControl
     protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
     {
         base.OnAttachedToVisualTree(e);
+        UpdatePanelSizeModePseudoClasses(IsMobile);
         UpdatePanelLayoutModePseudoClasses(LayoutMode);
+    }
+
+    protected override void OnSizeChanged(SizeChangedEventArgs e)
+    {
+        base.OnSizeChanged(e);
+
+        if (e.NewSize.Width <= AntDesignCommonHelpers.MaxWidthForMobile)
+            IsMobile = true;
+        else
+            IsMobile = false;
     }
 
     protected override bool RegisterContentPresenter(ContentPresenter presenter)
@@ -264,7 +349,17 @@ public class AntDesignPanel : HeaderedContentControl
     void LayoutMode_Changed(AvaloniaPropertyChangedEventArgs<PanelLayoutMode> e)
     {
         UpdatePanelLayoutModePseudoClasses(e.NewValue.Value);
-        RaiseEvent(new PanelLayoutModeEventArgs(e.NewValue.Value));
+        var args = new PanelLayoutModeEventArgs(e.NewValue.Value);
+        RaiseEvent(args);
+        LayoutModeChangedCommand?.Execute(LayoutModeChangedCommandParameter ?? args);
+    }
+
+    void SizeMode_Changed(AvaloniaPropertyChangedEventArgs<bool> e)
+    {
+        UpdatePanelSizeModePseudoClasses(e.NewValue.Value);
+        var args = new PanelSizeModeChangedEventArgs(e.NewValue.Value);
+        RaiseEvent(args);
+        SizeModeChangedCommand?.Execute(SizeModeChangedCommandParameter ?? args);
     }
 
     void UpdatePanelLayoutModePseudoClasses(PanelLayoutMode mode)
@@ -295,6 +390,12 @@ public class AntDesignPanel : HeaderedContentControl
                 break;
         }
     }
+
+    void UpdatePanelSizeModePseudoClasses(bool isMobile)
+    {
+        PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_MobileMode, isMobile);
+    }
+
 
     #endregion
 }
