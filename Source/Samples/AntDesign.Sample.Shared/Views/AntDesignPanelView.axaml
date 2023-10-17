@@ -10,7 +10,8 @@
 						LayoutMode="{Binding LayoutMode}"
 						IsHeader="{Binding IsTop}"
 						IsMenu="{Binding IsMenu}"
-						IsMenuHeader="{Binding IsMenuHeader}">
+						IsMenuHeader="{Binding IsMenuHeader}"
+						IsMenuOpened="{Binding IsMenuOpened}">
 			<AntDesignPanel.Header>
 				<Border Background="Red" Width="50" Height="50" CornerRadius="25"/>
 			</AntDesignPanel.Header>
@@ -52,6 +53,7 @@
 				<ToggleSwitch Content="顶栏" IsChecked="{Binding IsTop}"/>
 				<ToggleSwitch Content="菜单" IsChecked="{Binding IsMenu}"/>
 				<ToggleSwitch Content="菜单头" IsChecked="{Binding IsMenuHeader}"/>
+				<ToggleSwitch Content="展开" IsChecked="{Binding IsMenuOpened}"/>
 				
 
 

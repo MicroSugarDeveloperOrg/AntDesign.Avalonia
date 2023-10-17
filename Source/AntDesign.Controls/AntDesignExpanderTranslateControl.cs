@@ -45,7 +45,8 @@ public class AntDesignExpanderTranslateControl : ContentControl
             if (s is null)
                 return;
 
-            s.Expander(e.NewValue.Value);
+            if (s.IsExpander)
+                s.Expander(e.NewValue.Value);
         });
 
         IsExpanderProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, bool>((s, e) =>
@@ -64,6 +65,40 @@ public class AntDesignExpanderTranslateControl : ContentControl
         PanelHeightProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, double>((s, e) =>
         {
 
+        });
+
+        HorizontalAlignmentProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, HorizontalAlignment>((s, e) =>
+        {
+            switch (e.NewValue.Value)
+            {
+                case HorizontalAlignment.Stretch:
+                    break;
+                case HorizontalAlignment.Left:
+                    break;
+                case HorizontalAlignment.Center:
+                    break;
+                case HorizontalAlignment.Right:
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        VerticalAlignmentProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, VerticalAlignment>((s, e) =>
+        {
+            switch (e.NewValue.Value)
+            {
+                case VerticalAlignment.Stretch:
+                    break;
+                case VerticalAlignment.Top:
+                    break;
+                case VerticalAlignment.Center:
+                    break;
+                case VerticalAlignment.Bottom:
+                    break;
+                default:
+                    break;
+            }
         });
     }
 
@@ -181,26 +216,15 @@ public class AntDesignExpanderTranslateControl : ContentControl
             return;
 
         Size size;
-        if (!IsVisible)
+        if (Content is Control control)
         {
-            if (Content is Control control)
-            {
-                control.Arrange(new Rect(0, 0, toplevel.Width, toplevel.Height));
-                size = control.DesiredSize;
-            }
-            else
-            {
-                Arrange(new Rect(0, 0, toplevel.Width, toplevel.Height));
-                size = DesiredSize;
-            }
+            control.Arrange(new Rect(0, 0, toplevel.Width, toplevel.Height));
+            size = control.DesiredSize;
         }
         else
         {
-            if (Content is Control control)
-                size = control.Bounds.Size;
-            else
-                size = Bounds.Size;
-
+            Arrange(new Rect(0, 0, toplevel.Width, toplevel.Height));
+            size = DesiredSize;
         }
 
         if (PanelWidth <= 0)

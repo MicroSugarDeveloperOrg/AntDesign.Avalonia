@@ -52,4 +52,11 @@ public class AntDesignPanelViewModel : ViewModelRoutableBase<AntDesignPanelViewM
         get => _isMenuHeader;
         set => SetProperty(ref _isMenuHeader, value);  
     }
+
+    bool _isMenuOpened;
+    public bool IsMenuOpened
+    {
+        get => _isMenuOpened;
+        set => SetProperty(ref _isMenuOpened, value);
+    }
 }

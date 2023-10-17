@@ -1,6 +1,8 @@
 ﻿using AntDesign.Controls.Helpers;
 using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
+using Avalonia.Controls;
+using Avalonia.Data;
 using System.Windows.Input;
 
 namespace AntDesign.Controls;
@@ -22,19 +24,22 @@ public class AntDesignPanel : HeaderedContentControl
         {
             s.LayoutMode_Changed(e);
         });
+
+        SideMenuContentProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
+        SideMenuBottomProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
+        SideMenuHeaderProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
+
+        TopMenuContentProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
+        TopMenuHeaderProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
     }
 
     public AntDesignPanel()
     {
-        //ContentPresenter.BoundsProperty
-        //LayoutTransformControl
-        //TranslateTransform   
-        //SplitView
-
-        //Button.CommandProperty
+        //TemplateBinding
     }
 
     bool _isMoble;
+    Panel? _maskPanel;
 
     #region DependencyProperty
 
@@ -48,7 +53,7 @@ public class AntDesignPanel : HeaderedContentControl
     /// 是否启用标头
     /// </summary>
     public static readonly StyledProperty<bool> IsHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsHeader), defaultValue: true);
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsHeader), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
 
     //包含header and headerTemplate
     public static readonly StyledProperty<IBrush?> TopHeaderBackgroundProperty =
@@ -64,7 +69,10 @@ public class AntDesignPanel : HeaderedContentControl
     /// 是否启用菜单
     /// </summary>
     public static readonly StyledProperty<bool> IsMenuProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu), defaultValue: true);
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
+
+    public static readonly StyledProperty<bool> IsMenuOpenedProperty =
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuOpened), defaultValue: false, defaultBindingMode:BindingMode.TwoWay);
 
     //Side Menu
     public static readonly StyledProperty<IBrush?> SideMenuBackgroundProperty =
@@ -99,7 +107,7 @@ public class AntDesignPanel : HeaderedContentControl
     /// 是否启用菜单头 Logo
     /// </summary>
     public static readonly StyledProperty<bool> IsMenuHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuHeader), defaultValue: true);
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuHeader), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
 
     //Side MenuHeader
     public static readonly StyledProperty<object?> SideMenuHeaderProperty =
@@ -188,6 +196,12 @@ public class AntDesignPanel : HeaderedContentControl
     {
         get => GetValue(IsMenuProperty);
         set => SetValue(IsMenuProperty, value);
+    }
+
+    public bool IsMenuOpened
+    {
+        get => GetValue(IsMenuOpenedProperty);
+        set => SetValue(IsMenuOpenedProperty, value);
     }
 
     public IBrush? SideMenuBackground
@@ -338,12 +352,42 @@ public class AntDesignPanel : HeaderedContentControl
             IsMobile = true;
         else
             IsMobile = false;
+
     }
 
     protected override bool RegisterContentPresenter(ContentPresenter presenter)
     {
         var result = base.RegisterContentPresenter(presenter);
         return result;
+    }
+
+    protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+    {
+        base.OnApplyTemplate(e);
+
+        if (_maskPanel is not null)
+        {
+            _maskPanel.PointerPressed -= Panel_PointerPressed;
+            _maskPanel = null;
+        }
+
+        var panel = e.NameScope.Find<Panel>("PART_PanelMask");
+        if (panel != null) 
+        {
+            _maskPanel = panel;
+            panel.PointerPressed += Panel_PointerPressed;
+        }
+    }
+
+    protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnDetachedFromVisualTree(e);
+
+        if (_maskPanel is not null)
+        {
+            _maskPanel.PointerPressed -= Panel_PointerPressed;
+            _maskPanel = null;
+        }
     }
 
     void LayoutMode_Changed(AvaloniaPropertyChangedEventArgs<PanelLayoutMode> e)
@@ -356,6 +400,9 @@ public class AntDesignPanel : HeaderedContentControl
 
     void SizeMode_Changed(AvaloniaPropertyChangedEventArgs<bool> e)
     {
+        if (e.NewValue.Value)
+            IsMenuOpened = false;
+
         UpdatePanelSizeModePseudoClasses(e.NewValue.Value);
         var args = new PanelSizeModeChangedEventArgs(e.NewValue.Value);
         RaiseEvent(args);
@@ -396,6 +443,19 @@ public class AntDesignPanel : HeaderedContentControl
         PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_MobileMode, isMobile);
     }
 
+    void ContentPresentChanged(AvaloniaPropertyChangedEventArgs e)
+    {
+        if (e.OldValue is ILogical oldChild)
+            LogicalChildren.Remove(oldChild);
+
+        if (e.NewValue is ILogical newChild)
+            LogicalChildren.Add(newChild);
+    }
+
+    void Panel_PointerPressed(object sender, PointerPressedEventArgs e)
+    {
+        IsMenuOpened = false;
+    }
 
     #endregion
 }

@@ -269,9 +269,9 @@
 
 		</Style>
 		
-
 		<Style Selector="^:mobile">
 
+			<Setter Property="SideMenuBackground" Value="{DynamicResource SideMenuBackground}"/>
 			<Setter Property="Template">
 				<ControlTemplate TargetType="antdesign:AntDesignPanel">
 					<Border Background="{TemplateBinding Background}"
@@ -281,11 +281,9 @@
 						<Border CornerRadius="{TemplateBinding CornerRadius}"
 								ClipToBounds="true">
 							<Grid x:Name="PART_RootContainer"
-								  ColumnDefinitions="Auto,*"
 								  RowDefinitions="Auto,*">
 
-								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
-												  Grid.Column="1"
+								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}" 
 												  Grid.Row="1"
 												  Content="{TemplateBinding Content}"
 												  ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -293,38 +291,10 @@
 												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
 
-								<Border x:Name="PART_SideContainer"
-										Grid.Column="0"
-										Grid.Row="0"
-										Grid.RowSpan="2"
-										IsVisible="false"
-										Background="{TemplateBinding SideMenuBackground}"
-										BoxShadow="{TemplateBinding SideMenuBoxShadow}">
-									<Grid RowDefinitions="Auto,*,Auto">
-										<ContentPresenter x:Name="PART_SideHeaderPresenter"
-														  Grid.Row="0"
-														  Opacity="0"
-														  Height="{Binding #PART_TopHeaderContainer.Bounds.Height}"
-														  Content="{TemplateBinding SideMenuHeader}"
-														  ContentTemplate="{TemplateBinding SideMenuHeaderTemplate}"/>
-
-										<ContentPresenter x:Name="PART_SideMenuPresenter"
-														  Grid.Row="1"
-														  Content="{TemplateBinding SideMenuContent}"
-														  ContentTemplate="{TemplateBinding SideMenuContentTemplate}"/>
-
-										<ContentPresenter x:Name="PART_SideBottomPresenter"
-														  Grid.Row="2"
-														  Content="{TemplateBinding SideMenuBottom}"
-														  ContentTemplate="{TemplateBinding SideMenuBottomTemplate}"/>
-									</Grid>
-								</Border>
-
-								<Border x:Name="PART_TopHeaderContainer"
-										Grid.Column="0"
-										Grid.ColumnSpan="2"
+								<Border x:Name="PART_TopHeaderContainer" 
 										Grid.Row="0"
 										IsVisible="{TemplateBinding IsHeader}"
+										TextElement.Foreground="{TemplateBinding TopHeaderForeground}"
 										Background="{TemplateBinding TopHeaderBackground}"
 										BoxShadow="{TemplateBinding TopHeaderBoxShadow}">
 									<Grid ColumnDefinitions="Auto,*,Auto" >
@@ -334,11 +304,6 @@
 														  Content="{TemplateBinding TopMenuHeader}"
 														  ContentTemplate="{TemplateBinding TopMenuHeaderTemplate}"/>
 
-										<ContentPresenter x:Name="PART_TopMenuPresenter"
-														  Grid.Column="1"
-														  Content="{TemplateBinding TopMenuContent}"
-														  ContentTemplate="{TemplateBinding TopMenuContentTemplate}"/>
-
 										<ContentPresenter x:Name="PART_HeaderPresenter"
 														  Grid.Column="2"
 														  Content="{TemplateBinding Header}"
@@ -346,13 +311,58 @@
 									</Grid>
 								</Border>
 
+
+								<Panel x:Name="PART_PanelMask"
+									   Grid.Row="0" Grid.RowSpan="2"
+									   Background="Gray" Opacity="0.4"
+									   IsVisible="{TemplateBinding IsMenuOpened}">
+									<Panel.IsVisible>
+										<MultiBinding Converter="{x:Static BoolConverters.And}">
+											<TemplateBinding Property="IsMenu"/>
+											<TemplateBinding Property="IsMenuOpened"/>
+										</MultiBinding>
+									</Panel.IsVisible>
+								</Panel>
+
+								<antdesign:AntDesignExpanderTranslateControl x:Name="PART_SideContainer" 
+																		     Grid.Row="0"
+																		     Grid.RowSpan="2"
+																		     HorizontalAlignment="Left"
+																		     Background="{TemplateBinding SideMenuBackground}"
+																		     BoxShadow="{TemplateBinding SideMenuBoxShadow}"
+																		     IsVisible="{TemplateBinding IsMenu}"
+																			 IsExpander="{TemplateBinding IsMenuOpened}"
+																			 IsWidthTransition="true" >
+
+									<Grid RowDefinitions="Auto,*" ClipToBounds="true">
+										<ContentPresenter x:Name="PART_SideHeaderPresenter"
+														  Grid.Row="0"
+														  IsVisible="{TemplateBinding IsMenuHeader}"
+														  Height="{Binding #PART_TopHeaderContainer.Bounds.Height}"
+														  Content="{TemplateBinding SideMenuHeader}"
+														  ContentTemplate="{TemplateBinding SideMenuHeaderTemplate}"/>
+
+										<ContentPresenter x:Name="PART_SideMenuPresenter"
+														  Grid.Row="1"
+														  Content="{TemplateBinding SideMenuContent}"
+														  ContentTemplate="{TemplateBinding SideMenuContentTemplate}"/> 
+									</Grid>
+									
+									 
+								</antdesign:AntDesignExpanderTranslateControl>
+								
 							</Grid>
 						</Border>
 					</Border>
 				</ControlTemplate>
 			</Setter>
-			
-		</Style>
+
+			<Style Selector="^:panel-mix-menu">
+				<Setter Property="TopHeaderBackground" Value="{DynamicResource TopHeaderMixBackground}"/>
+				<Setter Property="TopHeaderForeground" Value="{DynamicResource TopHeaderMixForeground}"/>
+			</Style>
+
+	   </Style>
 		
 	</ControlTheme>
 
