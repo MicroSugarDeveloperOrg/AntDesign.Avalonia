@@ -14,7 +14,7 @@
 	<SolidColorBrush x:Key="ComboBoxItemPressedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ComboBoxItemPressedBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="ComboBoxItemSelectedBackground" Color="{DynamicResource AntDesignAssistColor5}"/>
+	<SolidColorBrush x:Key="ComboBoxItemSelectedBackground" Color="{DynamicResource AntDesignPrimaryColor}"/>
 	<SolidColorBrush x:Key="ComboBoxItemSelectedForeground" Color="{StaticResource AntDesignForegroundColor}"/>
 	<SolidColorBrush x:Key="ComboBoxItemSelectedBorderBrush" Color="Transparent"/>
 

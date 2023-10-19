@@ -52,7 +52,7 @@
 											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
 											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
 
-									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+									<antdesign:AntDesignExpanderTranslateControl IsExpanded="{TemplateBinding IsDrawerOpened}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 IsWidthTransition="true" >
@@ -109,7 +109,7 @@
 											HorizontalAlignment="Left"
 											VerticalAlignment="Stretch" >
 
-									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+									<antdesign:AntDesignExpanderTranslateControl IsExpanded="{TemplateBinding IsDrawerOpened}"
 																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 IsWidthTransition="true" >
@@ -178,7 +178,7 @@
 											HorizontalAlignment="Stretch"
 											VerticalAlignment="Top">
 
-									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+									<antdesign:AntDesignExpanderTranslateControl IsExpanded="{TemplateBinding IsDrawerOpened}"
 																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 IsHeightTransition="true" >
@@ -254,7 +254,7 @@
 											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
 											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
 
-									<antdesign:AntDesignExpanderTranslateControl IsExpander="{TemplateBinding IsDrawerOpened}"
+									<antdesign:AntDesignExpanderTranslateControl IsExpanded="{TemplateBinding IsDrawerOpened}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 IsHeightTransition="true" >

@@ -38,7 +38,7 @@ public class AntDesignPanel : HeaderedContentControl
         //TemplateBinding
     }
 
-    bool _isMoble;
+    bool _isMobile;
     Panel? _maskPanel;
 
     #region DependencyProperty
@@ -158,8 +158,8 @@ public class AntDesignPanel : HeaderedContentControl
 
     public bool IsMobile
     {
-        get => _isMoble;
-        protected set => SetAndRaise(IsMobileProperty, ref _isMoble, value);
+        get => _isMobile;
+        protected set => SetAndRaise(IsMobileProperty, ref _isMobile, value);
     }
 
     public PanelLayoutMode LayoutMode

@@ -31,12 +31,16 @@ public class AntDesignExpanderTranslateControl : ContentControl
                 size = control.DesiredSize;
             }
 
-            if (s.PanelHeight <= 0)
-                s.PanelWidth = size.Width;
+            if (double.IsNaN(s.Width))
+                s._panelWidth = size.Width;
+            else
+                s._panelWidth = s.Width;
 
-            if (s.PanelHeight <= 0)
-                s.PanelHeight = size.Height;
-
+            if (double.IsNaN(s.Height))
+                s._panelHeight = size.Height;
+            else
+                s._panelHeight = s.Height;
+             
             s._isContentSize = true;
         });
 
@@ -45,11 +49,11 @@ public class AntDesignExpanderTranslateControl : ContentControl
             if (s is null)
                 return;
 
-            if (s.IsExpander)
+            if (s.IsExpanded)
                 s.Expander(e.NewValue.Value);
         });
 
-        IsExpanderProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, bool>((s, e) =>
+        IsExpandedProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, bool>((s, e) =>
         {
             if (s is null)
                 return;
@@ -57,12 +61,12 @@ public class AntDesignExpanderTranslateControl : ContentControl
             s.Expander(e.NewValue.Value);
         });
 
-        PanelWidthProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, double>((s, e) =>
+        WidthProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, double>((s, e) =>
         {
 
         });
 
-        PanelHeightProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, double>((s, e) =>
+        HeightProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, double>((s, e) =>
         {
 
         });
@@ -109,6 +113,9 @@ public class AntDesignExpanderTranslateControl : ContentControl
 
     bool _isContentSize;
 
+    double _panelWidth;
+    double _panelHeight;
+
     protected override Type StyleKeyOverride => typeof(ContentControl);
 
     #region DependencyProperty
@@ -122,20 +129,14 @@ public class AntDesignExpanderTranslateControl : ContentControl
     public static readonly StyledProperty<bool> IsHeightTransitionProperty =
            AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsHeightTransition));
 
-    public static readonly StyledProperty<double> CloseWidthPercentageProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(CloseWidthPercentage), defaultValue: 0d);
+    public static readonly StyledProperty<double> WidthAfterClosingProperty =
+           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(WidthAfterClosing), defaultValue: 0d);
 
-    public static readonly StyledProperty<double> CloseHeightPercentageProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(CloseHeightPercentage), defaultValue: 0d);
+    public static readonly StyledProperty<double> HeightAfterClosingProperty =
+           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(HeightAfterClosing), defaultValue: 0d);
 
-    public static readonly StyledProperty<double> PanelWidthProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(PanelWidth), defaultValue: 0d);
-
-    public static readonly StyledProperty<double> PanelHeightProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(PanelHeight), defaultValue: 0d);
-
-    public static readonly StyledProperty<bool> IsExpanderProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsExpander));
+    public static readonly StyledProperty<bool> IsExpandedProperty =
+           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsExpanded));
 
     public static readonly StyledProperty<BoxShadows> BoxShadowProperty =
            Border.BoxShadowProperty.AddOwner<AntDesignExpanderTranslateControl>();
@@ -162,34 +163,22 @@ public class AntDesignExpanderTranslateControl : ContentControl
         set => SetValue(IsHeightTransitionProperty, value);
     }
 
-    public double CloseWidthPercentage
+    public double WidthAfterClosing
     {
-        get => GetValue(CloseWidthPercentageProperty);
-        set => SetValue(CloseWidthPercentageProperty, value);
+        get => GetValue(WidthAfterClosingProperty);
+        set => SetValue(WidthAfterClosingProperty, value);
     }
 
-    public double CloseHeightPercentage
+    public double HeightAfterClosing
     {
-        get => GetValue(CloseHeightPercentageProperty);
-        set => SetValue(CloseHeightPercentageProperty, value);
+        get => GetValue(HeightAfterClosingProperty);
+        set => SetValue(HeightAfterClosingProperty, value);
     }
 
-    public double PanelWidth
+    public bool IsExpanded
     {
-        get => GetValue(PanelWidthProperty);
-        set => SetValue(PanelWidthProperty, value);
-    }
-
-    public double PanelHeight
-    {
-        get => GetValue(PanelHeightProperty);
-        set => SetValue(PanelHeightProperty, value);
-    }
-
-    public bool IsExpander
-    {
-        get => GetValue(IsExpanderProperty);
-        set => SetValue(IsExpanderProperty, value);
+        get => GetValue(IsExpandedProperty);
+        set => SetValue(IsExpandedProperty, value);
     }
 
     public BoxShadows BoxShadow
@@ -211,37 +200,41 @@ public class AntDesignExpanderTranslateControl : ContentControl
     protected override void OnLoaded(RoutedEventArgs e)
     {
         base.OnLoaded(e);
-        var toplevel = TopLevel.GetTopLevel(this);
-        if (toplevel is null)
+        var topLevel = TopLevel.GetTopLevel(this);
+        if (topLevel is null)
             return;
 
         Size size;
         if (Content is Control control)
         {
-            control.Arrange(new Rect(0, 0, toplevel.Width, toplevel.Height));
+            control.Arrange(new Rect(0, 0, topLevel.Width, topLevel.Height));
             size = control.DesiredSize;
         }
         else
         {
-            Arrange(new Rect(0, 0, toplevel.Width, toplevel.Height));
+            Arrange(new Rect(0, 0, topLevel.Width, topLevel.Height));
             size = DesiredSize;
         }
 
-        if (PanelWidth <= 0)
-            PanelWidth = size.Width;
+        if (double.IsNaN(Width))
+            _panelWidth = size.Width;
+        else
+            _panelWidth = Width;
 
-        if (PanelHeight <= 0)
-            PanelHeight = size.Height;
+        if (double.IsNaN(Height))
+            _panelHeight = size.Height;
+        else
+            _panelHeight = Height;
 
         _isContentSize = true;
 
-        if (!IsExpander)
+        if (!IsExpanded)
         {
             if (IsWidthTransition)
-                Width = PanelWidth * CloseWidthPercentage;
+                Width = WidthAfterClosing;
 
             if (IsHeightTransition)
-                Height = PanelHeight * CloseHeightPercentage;
+                Height = HeightAfterClosing;
         }
     }
 
@@ -256,19 +249,19 @@ public class AntDesignExpanderTranslateControl : ContentControl
         if (!_isContentSize)
             return;
 
-        if (PanelWidth <= 0 && PanelHeight <= 0)
+        if (_panelWidth <= 0 && _panelHeight <= 0)
             return;
 
-        if (double.IsNaN(PanelWidth) && double.IsNaN(PanelHeight))
+        if (double.IsNaN(_panelWidth) && double.IsNaN(_panelHeight))
             return;
 
-        if (double.IsInfinity(PanelWidth) && double.IsInfinity(PanelHeight))
+        if (double.IsInfinity(_panelWidth) && double.IsInfinity(_panelHeight))
             return;
 
-        if (double.IsNegativeInfinity(PanelWidth) && double.IsNegativeInfinity(PanelHeight))
+        if (double.IsNegativeInfinity(_panelWidth) && double.IsNegativeInfinity(_panelHeight))
             return;
 
-        if (double.IsPositiveInfinity(PanelWidth) && double.IsPositiveInfinity(PanelHeight))
+        if (double.IsPositiveInfinity(_panelWidth) && double.IsPositiveInfinity(_panelHeight))
             return;
 
         Transitions?.Clear();
@@ -299,10 +292,10 @@ public class AntDesignExpanderTranslateControl : ContentControl
         Transitions = transitions;
 
         if (IsWidthTransition)
-            Width = isExpander ? PanelWidth : PanelWidth * CloseWidthPercentage;
+            Width = isExpander ? _panelWidth : WidthAfterClosing;
 
         if (IsHeightTransition)
-            Height = isExpander ? PanelHeight : PanelHeight * CloseHeightPercentage;
+            Height = isExpander ? _panelHeight : HeightAfterClosing;
     }
 
 }

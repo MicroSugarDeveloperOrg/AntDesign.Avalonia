@@ -272,6 +272,7 @@
 		<Style Selector="^:mobile">
 
 			<Setter Property="SideMenuBackground" Value="{DynamicResource SideMenuBackground}"/>
+			<Setter Property="TopHeaderForeground" Value="{DynamicResource AntDesignForeground}"/>
 			<Setter Property="Template">
 				<ControlTemplate TargetType="antdesign:AntDesignPanel">
 					<Border Background="{TemplateBinding Background}"
@@ -331,7 +332,7 @@
 																		     Background="{TemplateBinding SideMenuBackground}"
 																		     BoxShadow="{TemplateBinding SideMenuBoxShadow}"
 																		     IsVisible="{TemplateBinding IsMenu}"
-																			 IsExpander="{TemplateBinding IsMenuOpened}"
+																			 IsExpanded="{TemplateBinding IsMenuOpened}"
 																			 IsWidthTransition="true" >
 
 									<Grid RowDefinitions="Auto,*" ClipToBounds="true">
