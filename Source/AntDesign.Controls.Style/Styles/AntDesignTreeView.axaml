@@ -1,4 +1,45 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Add Resources Here -->
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:antdesign="using:AntDesign.Controls"
+					xmlns:helpers="using:AntDesign.Controls.Helpers"
+					x:CompileBindings="True">
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignTreeView}" TargetType="antdesign:AntDesignTreeView">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}"/>
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="antdesign:AntDesignTreeView">
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+					<Border CornerRadius="{TemplateBinding CornerRadius}"
+							ClipToBounds="true">
+
+						<antdesign:AntDesignExpanderTranslateControl x:Name="PART_ViewContainer" 
+																	 WidthAfterClosing="{TemplateBinding WidthAfterClosing}"
+																	 IsExpanded="{TemplateBinding IsPanelExpanded}"
+																	 IsWidthTransition="true">
+							<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+										  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+										  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+										  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}">
+								<ItemsPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+												ItemsPanel="{TemplateBinding ItemsPanel}"
+												Margin="{TemplateBinding Padding}" />
+							</ScrollViewer>
+							
+						</antdesign:AntDesignExpanderTranslateControl>
+					</Border>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
 </ResourceDictionary>

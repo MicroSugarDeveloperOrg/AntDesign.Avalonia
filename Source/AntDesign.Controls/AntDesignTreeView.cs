@@ -25,4 +25,9 @@ public class AntDesignTreeView : TreeView
     {
         base.OnSizeChanged(e);
     }
+
+    protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
+    {
+        return new AntDesignTreeViewItem();
+    }
 }
