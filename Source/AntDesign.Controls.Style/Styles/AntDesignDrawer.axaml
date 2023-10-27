@@ -1,7 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:antdesign="using:AntDesign.Controls" 
-					xmlns:helpers="using:AntDesign.Controls.Helpers"
+					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
 
@@ -22,7 +22,7 @@
 							<Grid x:Name="PART_RootContainer" 
 								  ColumnDefinitions="*,Auto">
 
-								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
+								<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 												  Content="{TemplateBinding Content}"
 												  ContentTemplate="{TemplateBinding ContentTemplate}"
 												  Padding="{TemplateBinding Padding}"
@@ -87,7 +87,7 @@
 							<Grid x:Name="PART_RootContainer"
 								  ColumnDefinitions="Auto,*">
 
-								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
+								<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 												  Grid.Column="1"
 												  Content="{TemplateBinding Content}"
 												  ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -156,7 +156,7 @@
 							<Grid x:Name="PART_RootContainer"
 								  RowDefinitions="Auto,*">
 
-								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}"
+								<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 												  Grid.Row="1"
 												  Content="{TemplateBinding Content}"
 												  ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -224,7 +224,7 @@
 							<Grid x:Name="PART_RootContainer"
 								  RowDefinitions="*,Auto">
 
-								<ContentPresenter x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_ContentPresenter}" 
+								<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}" 
 												  Content="{TemplateBinding Content}"
 												  ContentTemplate="{TemplateBinding ContentTemplate}"
 												  Padding="{TemplateBinding Padding}"

@@ -2,8 +2,15 @@
 public static class PARTNameHelper
 {
     //Global
-    public static string PART_HeaderPresenter => nameof(PART_HeaderPresenter);
-    public static string PART_ContentPresenter => nameof(PART_ContentPresenter);
+    public const string _PART_HeaderPresenter = nameof(PART_HeaderPresenter);
+    public static string PART_HeaderPresenter => _PART_HeaderPresenter;
+
+    public const string _PART_ContentPresenter = nameof(PART_ContentPresenter);
+    public static string PART_ContentPresenter => _PART_ContentPresenter;
+
+    public const string _PART_ItemsPresenter = nameof(PART_ItemsPresenter);
+    public static string PART_ItemsPresenter => _PART_ItemsPresenter;
+
     public static string PART_Root => nameof(PART_Root);
 
     //Windows
@@ -64,9 +71,6 @@ public static class PARTNameHelper
     public static string PART_Popup => nameof(PART_Popup);
     public static string PART_SuggestionsContainer => nameof(PART_SuggestionsContainer);
     public static string PART_SelectingItemsControl => nameof(PART_SelectingItemsControl);
-
-    //ItemControl
-    public static string PART_ItemsPresenter => nameof(PART_ItemsPresenter);
 
     //ListBox
     public static string PART_ScrollViewer => nameof(PART_ScrollViewer);

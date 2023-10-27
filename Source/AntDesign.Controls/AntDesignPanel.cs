@@ -1,7 +1,7 @@
 ﻿using AntDesign.Controls.Helpers;
 using AntDesign.Controls.Interactivity;
 using AntDesign.Controls.Metadata;
-using Avalonia.Controls;
+using AntDesign.Helpers;
 using Avalonia.Data;
 using System.Windows.Input;
 
@@ -9,7 +9,7 @@ namespace AntDesign.Controls;
 
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_MobileMode)]
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelTopMenu, AntDesignPseudoNameHelpers.PC_PanelSideMenu, AntDesignPseudoNameHelpers.PC_PanelMixMenu)]
-[TemplatePart(AntDesignPARTNameHelpers._PART_HeaderPresenter, typeof(ContentPresenter))]
+[TemplatePart(PARTNameHelper._PART_HeaderPresenter, typeof(ContentPresenter))]
 public class AntDesignPanel : HeaderedContentControl
 {
     static AntDesignPanel()
@@ -72,7 +72,7 @@ public class AntDesignPanel : HeaderedContentControl
            AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
 
     public static readonly StyledProperty<bool> IsMenuOpenedProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuOpened), defaultValue: false, defaultBindingMode:BindingMode.TwoWay);
+           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuOpened), defaultValue: false, defaultBindingMode: BindingMode.TwoWay);
 
     //Side Menu
     public static readonly StyledProperty<IBrush?> SideMenuBackgroundProperty =
@@ -372,7 +372,7 @@ public class AntDesignPanel : HeaderedContentControl
         }
 
         var panel = e.NameScope.Find<Panel>("PART_PanelMask");
-        if (panel != null) 
+        if (panel != null)
         {
             _maskPanel = panel;
             panel.PointerPressed += Panel_PointerPressed;

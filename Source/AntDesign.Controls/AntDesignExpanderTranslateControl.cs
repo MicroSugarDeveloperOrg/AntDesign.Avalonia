@@ -1,4 +1,4 @@
-﻿using AntDesign.Controls.Helpers;
+﻿using AntDesign.Helpers;
 
 namespace AntDesign.Controls;
 
@@ -40,7 +40,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
                 s._panelHeight = size.Height;
             else
                 s._panelHeight = s.Height;
-             
+
             s._isContentSize = true;
         });
 
@@ -108,7 +108,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
 
     public AntDesignExpanderTranslateControl()
     {
-         //ColumnDefinitions
+        //ColumnDefinitions
     }
 
     bool _isContentSize;
@@ -191,7 +191,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
     protected override bool RegisterContentPresenter(ContentPresenter presenter)
     {
         var result = base.RegisterContentPresenter(presenter);
-        if (presenter.Name == AntDesignPARTNameHelpers.PART_ContentPresenter)
+        if (presenter.Name == PARTNameHelper.PART_ContentPresenter)
             presenter[!BoxShadowProperty] = this[!BoxShadowProperty];
 
         return result;
