@@ -2,6 +2,20 @@
 
 public class AntDesignTreeView : TreeView
 {
+    static AntDesignTreeView()
+    {
+        AntDesignTreeViewItem.IsExpandedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) =>
+        {
+           
+        });
+    }
+
+    public AntDesignTreeView()
+    {
+       
+    }
+
+
     public static readonly StyledProperty<bool> IsPanelExpandedProperty =
            AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsPanelExpanded));
 
