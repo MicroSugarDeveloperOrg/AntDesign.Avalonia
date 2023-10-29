@@ -4,15 +4,12 @@ public class AntDesignTreeView : TreeView
 {
     static AntDesignTreeView()
     {
-        AntDesignTreeViewItem.IsExpandedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) =>
-        {
-           
-        });
+      
     }
 
     public AntDesignTreeView()
     {
-       
+        AntDesignTreeViewItem.IsExpandedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => AntDesignTreeViewItemExpanded(s,e.NewValue.Value));
     }
 
 
@@ -43,5 +40,13 @@ public class AntDesignTreeView : TreeView
     protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
     {
         return new AntDesignTreeViewItem();
+    }
+
+    void AntDesignTreeViewItemExpanded(AntDesignTreeViewItem item, bool isExpanded)
+    {
+        if (!Items.Contains(item))
+            return;
+
+
     }
 }
