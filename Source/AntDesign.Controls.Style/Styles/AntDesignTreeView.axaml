@@ -23,7 +23,8 @@
 					<Border CornerRadius="{TemplateBinding CornerRadius}"
 							ClipToBounds="true">
 
-						<antdesign:AntDesignExpanderTranslateControl x:Name="PART_ViewContainer" 
+						<antdesign:AntDesignExpanderTranslateControl x:Name="PART_ViewContainer"
+																	 Width="{TemplateBinding WidthBeforeClosing}"
 																	 WidthAfterClosing="{TemplateBinding WidthAfterClosing}"
 																	 IsExpanded="{TemplateBinding IsPanelExpanded}"
 																	 IsWidthTransition="true">
