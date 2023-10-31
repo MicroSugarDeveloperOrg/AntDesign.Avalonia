@@ -9,21 +9,34 @@ public class AntDesignTreeView : TreeView
 
     public AntDesignTreeView()
     {
+        ScrollViewer.SetVerticalScrollBarVisibility(this, ScrollBarVisibility.Disabled);
+        ScrollViewer.SetHorizontalScrollBarVisibility(this, ScrollBarVisibility.Disabled);
         //AntDesignTreeViewItem.IsSelectedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => AntDesignTreeViewItemSelected(s, e.NewValue.Value));
         //AntDesignTreeViewItem.IsExpandedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => AntDesignTreeViewItemExpanded(s,e.NewValue.Value));
     }
 
     List<AntDesignTreeViewItem> _isExpandedViewItems = new();
 
+    public static readonly StyledProperty<bool> IsMenuModeProperty =
+       AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsMenuMode), defaultValue: false);
+
+
+
     public static readonly StyledProperty<bool> IsPanelExpandedProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsPanelExpanded), defaultValue: true);
+           AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsPanelExpanded), defaultValue: true);
 
     public static readonly StyledProperty<double> WidthBeforeClosingProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(WidthBeforeClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthBeforeClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<double> WidthAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(WidthAfterClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthAfterClosing), defaultValue: 0d);
 
+
+    public bool IsMenuMode
+    {
+        get => GetValue(IsMenuModeProperty);
+        set => SetValue(IsMenuModeProperty, value);
+    }
 
     public bool IsPanelExpanded
     {
@@ -101,23 +114,35 @@ public class AntDesignTreeView : TreeView
             if (!bool.TryParse(change.NewValue?.ToString(), out var bRet))
                 return;
 
-            if (bRet)
-            {
-                foreach (var item in _isExpandedViewItems)
-                {
-                    item.IsExpanded = true;
-                }
-            }
-            else
-            {
-                foreach (var item in _isExpandedViewItems)
-                {
-                    item.IsExpanded = false;
-                }
-            }
-
-
+            foreach (var item in Items)
+                ExpanderOrCloseItems(item, bRet);
         }
-
     } 
+
+    void ExpanderOrCloseItems(object? item, bool isExpanded)
+    {
+        if (item is null)
+            return;
+
+        if (item is not TreeViewItem treeViewItem)
+            return;
+
+        if (isExpanded) 
+        {
+            if (treeViewItem.IsSelected)
+            {
+                if (treeViewItem.Parent is TreeViewItem parentTreeViewItem)
+                    parentTreeViewItem.IsExpanded = true;
+            }    
+        }
+        else
+            treeViewItem.IsExpanded = false;
+
+        if (treeViewItem.ItemCount <= 0)
+            return;
+
+        foreach (var subItem in treeViewItem.Items)
+            ExpanderOrCloseItems(subItem, isExpanded);
+    }
+
 }

@@ -6,9 +6,9 @@
              x:Class="AntDesign.Sample.Views.AntDesignListView">
 
 	<Grid RowDefinitions="Auto,5,50">
-		<AntDesignTreeView HorizontalAlignment="Left"
-					   WidthBeforeClosing="200" WidthAfterClosing="20"
-					   IsPanelExpanded="{Binding IsTreeViewExpanded}">
+		<AntDesignTreeView HorizontalAlignment="Left" IsMenuMode="True"
+						   WidthBeforeClosing="200" WidthAfterClosing="20"
+						   IsPanelExpanded="{Binding IsTreeViewExpanded}">
 			<AntDesignTreeViewItem Header="123">
 				<AntDesignTreeViewItem Header="2323"/>
 				<AntDesignTreeViewItem Header="4455"/>
