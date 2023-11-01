@@ -51,8 +51,8 @@ public class AntDesignTreeViewItem : TreeViewItem
 
     private void Header_PointerPressed(object sender, PointerPressedEventArgs e)
     {
-         //if(ItemCount > 0)
-            //IsExpanded = !IsExpanded;
+         if(ItemCount > 0)
+            IsExpanded = !IsExpanded;
     }
 
     protected override void OnSizeChanged(SizeChangedEventArgs e)

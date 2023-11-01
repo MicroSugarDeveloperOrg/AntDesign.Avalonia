@@ -2,7 +2,7 @@
 public class PanelSizeModeChangedEventArgs : RoutedEventArgs
 {
     public PanelSizeModeChangedEventArgs(bool isMobile)
-      : base(AntDesignPanel.SizeModeChangedEvent)
+      : base(AntDesignContainer.SizeModeChangedEvent)
     {
         IsMobile = isMobile;
     }

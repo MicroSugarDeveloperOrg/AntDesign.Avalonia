@@ -22,12 +22,11 @@
 						CornerRadius="{TemplateBinding CornerRadius}">
 					<Border CornerRadius="{TemplateBinding CornerRadius}"
 							ClipToBounds="true">
-
-						<antdesign:AntDesignExpanderTranslateControl x:Name="PART_ViewContainer"
-																	 Width="{TemplateBinding WidthBeforeClosing}"
-																	 WidthAfterClosing="{TemplateBinding WidthAfterClosing}"
-																	 IsExpanded="{TemplateBinding IsPanelExpanded}"
-																	 IsWidthTransition="true">
+						<antdesign:AntDesignBorder x:Name="PART_ViewContainer"
+												   Width="{TemplateBinding WidthBeforeClosing}"
+												   WidthAfterClosing="{TemplateBinding WidthAfterClosing}"
+												   IsExpanded="{TemplateBinding IsPanelExpanded}"
+												   IsWidthTransition="true">
 							<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 										  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
 										  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
@@ -37,7 +36,7 @@
 												Margin="{TemplateBinding Padding}" />
 							</ScrollViewer>
 							
-						</antdesign:AntDesignExpanderTranslateControl>
+						</antdesign:AntDesignBorder>
 					</Border>
 				</Border>
 			</ControlTemplate>

@@ -269,8 +269,10 @@
 	<!-- TimePicker -->
 	<x:Double x:Key="TimePickerMinWidth">242</x:Double>
 	<x:Double x:Key="TimePickerMaxWidth">456</x:Double>
+
+	<x:Double x:Key="TimePickerMinHeight">38</x:Double>
 	
-	<Thickness x:Key="TimePickerHostPadding">0,3,0,6</Thickness>
+	<Thickness x:Key="TimePickerHostPadding">0</Thickness>
 	<x:Double x:Key="TimePickerSpacerWidth">1</x:Double>
 
 	<x:Double x:Key="TimePickerPresenterMinWidth">242</x:Double>
@@ -287,8 +289,10 @@
 	<x:Double x:Key="DatePickerMinWidth">296</x:Double>
 	<x:Double x:Key="DatePickerMaxWidth">456</x:Double>
 
-	<Thickness x:Key="DatePickerHostPadding">0,3,0,6</Thickness>
-	<Thickness x:Key="DatePickerHostMonthPadding">9,3,0,6</Thickness>
+	<x:Double x:Key="DatePickerMinHeight">38</x:Double>
+
+	<Thickness x:Key="DatePickerHostPadding">0</Thickness>
+	<Thickness x:Key="DatePickerHostMonthPadding">0</Thickness>
 	<x:Double x:Key="DatePickerSpacerWidth">1</x:Double>
 
 	<x:Double x:Key="DatePickerPresenterMinWidth">296</x:Double>
@@ -297,8 +301,8 @@
 	<x:Double x:Key="DatePickerPresenterItemHeight">40</x:Double>
 	<x:Double x:Key="DatePickerPresenterAcceptDismissHostGridHeight">41</x:Double>
 	<x:Double x:Key="DatePickerPresenterAcceptDismissHostIconHeight">14</x:Double>
-	<Thickness x:Key="DatePickerPresenterItemPadding">0,3,0,6</Thickness>
-	<Thickness x:Key="DatePickerPresenterMonthPadding">9,3,0,6</Thickness>
+	<Thickness x:Key="DatePickerPresenterItemPadding">0</Thickness>
+	<Thickness x:Key="DatePickerPresenterMonthPadding">0</Thickness>
 
 	<x:Double x:Key="DatePickerPresenterRightIconWidth">12</x:Double>
 

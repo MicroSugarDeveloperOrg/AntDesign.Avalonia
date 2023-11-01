@@ -52,7 +52,7 @@
 											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
 											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
 
-									<antdesign:AntDesignExpanderTranslateControl IsExpanded="{TemplateBinding IsDrawerOpened}"
+									<antdesign:AntDesignBorder IsExpanded="{TemplateBinding IsDrawerOpened}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 IsWidthTransition="true" >
@@ -60,7 +60,7 @@
 														  Content="{TemplateBinding DrawerContent}"
 														  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
 														  ClipToBounds="true"/>
-									</antdesign:AntDesignExpanderTranslateControl>
+									</antdesign:AntDesignBorder>
 								</StackPanel>
 							</Grid>
 						</Border>

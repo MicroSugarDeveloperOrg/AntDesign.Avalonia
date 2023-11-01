@@ -9,8 +9,8 @@ public class AntDesignTreeView : TreeView
 
     public AntDesignTreeView()
     {
-        ScrollViewer.SetVerticalScrollBarVisibility(this, ScrollBarVisibility.Disabled);
-        ScrollViewer.SetHorizontalScrollBarVisibility(this, ScrollBarVisibility.Disabled);
+        ScrollViewer.SetVerticalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
+        ScrollViewer.SetHorizontalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
         //AntDesignTreeViewItem.IsSelectedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => AntDesignTreeViewItemSelected(s, e.NewValue.Value));
         //AntDesignTreeViewItem.IsExpandedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => AntDesignTreeViewItemExpanded(s,e.NewValue.Value));
     }

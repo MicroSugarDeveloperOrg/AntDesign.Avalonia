@@ -1,15 +1,15 @@
 ﻿using AntDesign.Controls.Helpers;
-using AntDesign.Helpers;
+using System;
 
 namespace AntDesign.Controls;
 
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_Pressed)]
-public class AntDesignExpanderTranslateControl : ContentControl
+public class AntDesignBorder : Border
 {
-    static AntDesignExpanderTranslateControl()
+    static AntDesignBorder()
     {
-        ClipToBoundsProperty.OverrideDefaultValue<AntDesignExpanderTranslateControl>(false);
-        ContentProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, object?>((s, e) =>
+        ClipToBoundsProperty.OverrideDefaultValue<AntDesignBorder>(false);
+        ChildProperty.Changed.AddClassHandler<AntDesignBorder, Control?>((s, e) =>
         {
             if (s is null)
                 return;
@@ -46,7 +46,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
             s._isLoadedInStarting = true;
         });
 
-        IsVisibleProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, bool>((s, e) =>
+        IsVisibleProperty.Changed.AddClassHandler<AntDesignBorder, bool>((s, e) =>
         {
             if (s is null)
                 return;
@@ -55,7 +55,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
                 s.Expander(e.NewValue.Value);
         });
 
-        IsExpandedProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, bool>((s, e) =>
+        IsExpandedProperty.Changed.AddClassHandler<AntDesignBorder, bool>((s, e) =>
         {
             if (s is null)
                 return;
@@ -63,17 +63,17 @@ public class AntDesignExpanderTranslateControl : ContentControl
             s.Expander(e.NewValue.Value);
         });
 
-        WidthProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, double>((s, e) =>
+        WidthProperty.Changed.AddClassHandler<AntDesignBorder, double>((s, e) =>
         {
 
         });
 
-        HeightProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, double>((s, e) =>
+        HeightProperty.Changed.AddClassHandler<AntDesignBorder, double>((s, e) =>
         {
 
         });
 
-        HorizontalAlignmentProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, HorizontalAlignment>((s, e) =>
+        HorizontalAlignmentProperty.Changed.AddClassHandler<AntDesignBorder, HorizontalAlignment>((s, e) =>
         {
             switch (e.NewValue.Value)
             {
@@ -90,7 +90,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
             }
         });
 
-        VerticalAlignmentProperty.Changed.AddClassHandler<AntDesignExpanderTranslateControl, VerticalAlignment>((s, e) =>
+        VerticalAlignmentProperty.Changed.AddClassHandler<AntDesignBorder, VerticalAlignment>((s, e) =>
         {
             switch (e.NewValue.Value)
             {
@@ -108,9 +108,9 @@ public class AntDesignExpanderTranslateControl : ContentControl
         });
     }
 
-    public AntDesignExpanderTranslateControl()
+    public AntDesignBorder()
     {
-        //ColumnDefinitions
+
     }
 
     bool _isLoadedInStarting;
@@ -119,33 +119,28 @@ public class AntDesignExpanderTranslateControl : ContentControl
     double _panelWidth;
     double _panelHeight;
 
-    protected override Type StyleKeyOverride => typeof(ContentControl);
-
     #region DependencyProperty
 
-    public static readonly DirectProperty<AntDesignExpanderTranslateControl, bool> IsPressedProperty =
-           AvaloniaProperty.RegisterDirect<AntDesignExpanderTranslateControl, bool>(nameof(IsPressed), b => b.IsPressed);
+    public static readonly DirectProperty<AntDesignBorder, bool> IsPressedProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignBorder, bool>(nameof(IsPressed), b => b.IsPressed);
 
     public static readonly StyledProperty<TimeSpan> DurationProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, TimeSpan>(nameof(Duration), defaultValue: TimeSpan.FromMilliseconds(200));
+           AvaloniaProperty.Register<AntDesignBorder, TimeSpan>(nameof(Duration), defaultValue: TimeSpan.FromMilliseconds(200));
 
     public static readonly StyledProperty<bool> IsWidthTransitionProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsWidthTransition));
+           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsWidthTransition));
 
     public static readonly StyledProperty<bool> IsHeightTransitionProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsHeightTransition));
+           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsHeightTransition));
 
     public static readonly StyledProperty<double> WidthAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(WidthAfterClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(WidthAfterClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<double> HeightAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, double>(nameof(HeightAfterClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(HeightAfterClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<bool> IsExpandedProperty =
-           AvaloniaProperty.Register<AntDesignExpanderTranslateControl, bool>(nameof(IsExpanded));
-
-    public static readonly StyledProperty<BoxShadows> BoxShadowProperty =
-           Border.BoxShadowProperty.AddOwner<AntDesignExpanderTranslateControl>();
+           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsExpanded));
 
     #endregion
 
@@ -193,31 +188,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
         set => SetValue(IsExpandedProperty, value);
     }
 
-    public BoxShadows BoxShadow
-    {
-        get => GetValue(BoxShadowProperty);
-        set => SetValue(BoxShadowProperty, value);
-    }
     #endregion
-
-    protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
-    {
-        base.OnAttachedToLogicalTree(e);
-    }
-
-    protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
-    {
-        base.OnApplyTemplate(e);
-    }
-
-    protected override bool RegisterContentPresenter(ContentPresenter presenter)
-    {
-        var result = base.RegisterContentPresenter(presenter);
-        if (presenter.Name == PARTNameHelper.PART_ContentPresenter)
-            presenter[!BoxShadowProperty] = this[!BoxShadowProperty];
-
-        return result;
-    }
 
     protected override void OnLoaded(RoutedEventArgs e)
     {
@@ -230,7 +201,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
                 return;
 
             Size size;
-            if (Content is Control control)
+            if (Child is Control control)
             {
                 control.Arrange(new Rect(0, 0, topLevel.Width, topLevel.Height));
                 size = control.DesiredSize;
@@ -263,6 +234,7 @@ public class AntDesignExpanderTranslateControl : ContentControl
                 Height = HeightAfterClosing;
         }
     }
+
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {

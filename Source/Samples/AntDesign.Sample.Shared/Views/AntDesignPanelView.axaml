@@ -5,42 +5,42 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.AntDesignPanelView">
 	<Grid ColumnDefinitions="*,Auto">
-		<AntDesignPanel BorderThickness="1" 
+		<AntDesignContainer BorderThickness="1" 
 						BorderBrush="LightGray" 
 						LayoutMode="{Binding LayoutMode}"
 						IsHeader="{Binding IsTop}"
 						IsMenu="{Binding IsMenu}"
 						IsMenuHeader="{Binding IsMenuHeader}"
 						IsMenuOpened="{Binding IsMenuOpened}">
-			<AntDesignPanel.Header>
+			<AntDesignContainer.Header>
 				<Border Background="Red" Width="50" Height="50" CornerRadius="25"/>
-			</AntDesignPanel.Header>
-			<AntDesignPanel.SideMenuHeader>
+			</AntDesignContainer.Header>
+			<AntDesignContainer.SideMenuHeader>
 				<Border Height="40">
 					<TextBlock Text="1231"/>
 				</Border>
-			</AntDesignPanel.SideMenuHeader>
-			<AntDesignPanel.SideMenuContent>
+			</AntDesignContainer.SideMenuHeader>
+			<AntDesignContainer.SideMenuContent>
 				<Border Width="100">
 					<TextBlock Text="5454657656757"/>
 				</Border>
-			</AntDesignPanel.SideMenuContent>
-			<AntDesignPanel.TopMenuHeader>
+			</AntDesignContainer.SideMenuContent>
+			<AntDesignContainer.TopMenuHeader>
 				<Border Width="100">
 					<TextBlock Text="2311"/>
 				</Border>
-			</AntDesignPanel.TopMenuHeader>
-			<AntDesignPanel.TopMenuContent>
+			</AntDesignContainer.TopMenuHeader>
+			<AntDesignContainer.TopMenuContent>
 				<Border>
 					<TextBlock Text="5454657656757"/>
 				</Border>
-			</AntDesignPanel.TopMenuContent>
+			</AntDesignContainer.TopMenuContent>
 
 			<Border Background="Yellow">
 				<TextBlock Text="12312325454"/>
 			</Border>
 			
-		</AntDesignPanel>
+		</AntDesignContainer>
 
 		<Border Grid.Column="1" Padding="10">
 			<StackPanel Spacing="5">

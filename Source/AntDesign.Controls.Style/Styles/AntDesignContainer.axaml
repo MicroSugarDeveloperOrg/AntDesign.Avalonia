@@ -4,7 +4,7 @@
 					xmlns:helpers="using:AntDesign.Helpers"
 					x:CompileBindings="True">
 
-	<ControlTheme x:Key="{x:Type antdesign:AntDesignPanel}" TargetType="antdesign:AntDesignPanel">
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignContainer}" TargetType="antdesign:AntDesignContainer">
 		<Setter Property="SideMenuBoxShadow" Value="{DynamicResource SideMenuBoxShadow}"/>
 		<Setter Property="TopHeaderBoxShadow" Value="{DynamicResource TopHeaderBoxShadow}"/>
 
@@ -15,7 +15,7 @@
 				<Setter Property="TopHeaderBackground" Value="{DynamicResource TopHeaderMixBackground}"/>
 				<Setter Property="TopHeaderForeground" Value="{DynamicResource TopHeaderMixForeground}"/>
 				<Setter Property="Template">
-					<ControlTemplate TargetType="antdesign:AntDesignPanel">
+					<ControlTemplate TargetType="antdesign:AntDesignContainer">
 						<Border Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
@@ -102,7 +102,7 @@
 				<Setter Property="SideMenuBackground" Value="{DynamicResource SideMenuSideBackground}"/>
 				<Setter Property="TopHeaderBackground" Value="{DynamicResource TopHeaderTopBackground}"/>
 				<Setter Property="Template">
-					<ControlTemplate TargetType="antdesign:AntDesignPanel">
+					<ControlTemplate TargetType="antdesign:AntDesignContainer">
 						<Border Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
@@ -187,7 +187,7 @@
 			<Style Selector="^:panel-top-menu">
 				<Setter Property="TopHeaderBackground" Value="{DynamicResource TopHeaderTopBackground}"/>
 				<Setter Property="Template">
-					<ControlTemplate TargetType="antdesign:AntDesignPanel">
+					<ControlTemplate TargetType="antdesign:AntDesignContainer">
 						<Border Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
@@ -274,7 +274,7 @@
 			<Setter Property="SideMenuBackground" Value="{DynamicResource SideMenuBackground}"/>
 			<Setter Property="TopHeaderForeground" Value="{DynamicResource AntDesignForeground}"/>
 			<Setter Property="Template">
-				<ControlTemplate TargetType="antdesign:AntDesignPanel">
+				<ControlTemplate TargetType="antdesign:AntDesignContainer">
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
@@ -325,15 +325,15 @@
 									</Panel.IsVisible>
 								</Panel>
 
-								<antdesign:AntDesignExpanderTranslateControl x:Name="PART_SideContainer" 
-																		     Grid.Row="0"
-																		     Grid.RowSpan="2"
-																		     HorizontalAlignment="Left"
-																		     Background="{TemplateBinding SideMenuBackground}"
-																		     BoxShadow="{TemplateBinding SideMenuBoxShadow}"
-																		     IsVisible="{TemplateBinding IsMenu}"
-																			 IsExpanded="{TemplateBinding IsMenuOpened}"
-																			 IsWidthTransition="true" >
+								<antdesign:AntDesignBorder x:Name="PART_SideContainer" 
+														   Grid.Row="0"
+														   Grid.RowSpan="2"
+														   HorizontalAlignment="Left"
+														   Background="{TemplateBinding SideMenuBackground}"
+														   BoxShadow="{TemplateBinding SideMenuBoxShadow}"
+														   IsVisible="{TemplateBinding IsMenu}"
+														   IsExpanded="{TemplateBinding IsMenuOpened}"
+														   IsWidthTransition="true" >
 
 									<Grid RowDefinitions="Auto,*" ClipToBounds="true">
 										<ContentPresenter x:Name="PART_SideHeaderPresenter"
@@ -348,9 +348,8 @@
 														  Content="{TemplateBinding SideMenuContent}"
 														  ContentTemplate="{TemplateBinding SideMenuContentTemplate}"/> 
 									</Grid>
-									
-									 
-								</antdesign:AntDesignExpanderTranslateControl>
+								
+								</antdesign:AntDesignBorder>
 								
 							</Grid>
 						</Border>

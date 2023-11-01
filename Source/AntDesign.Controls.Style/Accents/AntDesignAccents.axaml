@@ -8,4 +8,8 @@
 	
 	<!-- Drawer -->
 	<x:Double x:Key="DrawerMaskOpacity">1</x:Double>
+	
+	<!-- AntDesignTreeView -->
+	<GridLength x:Key="AntDesignTreeViewInnerWidth">3</GridLength>
+	
 </ResourceDictionary>

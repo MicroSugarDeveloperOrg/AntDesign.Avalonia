@@ -1,6 +1,8 @@
 ﻿namespace AntDesign.Controls.Helpers;
 public static class AntDesignPseudoNameHelpers
 {
+    public const string PC_Pressed = ":pressed";
+
     public const string PC_MobileMode = ":mobile";
 
     public const string PC_Left = ":left";

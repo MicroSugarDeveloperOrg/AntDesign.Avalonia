@@ -10,30 +10,30 @@ namespace AntDesign.Controls;
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_MobileMode)]
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_PanelTopMenu, AntDesignPseudoNameHelpers.PC_PanelSideMenu, AntDesignPseudoNameHelpers.PC_PanelMixMenu)]
 [TemplatePart(PARTNameHelper._PART_HeaderPresenter, typeof(ContentPresenter))]
-public class AntDesignPanel : HeaderedContentControl
+public class AntDesignContainer : HeaderedContentControl
 {
-    static AntDesignPanel()
+    static AntDesignContainer()
     {
-        IsMobileProperty = AvaloniaProperty.RegisterDirect<AntDesignPanel, bool>(nameof(IsMobile), s => s.IsMobile);
-        IsMobileProperty.Changed.AddClassHandler<AntDesignPanel, bool>((s, e) =>
+        IsMobileProperty = AvaloniaProperty.RegisterDirect<AntDesignContainer, bool>(nameof(IsMobile), s => s.IsMobile);
+        IsMobileProperty.Changed.AddClassHandler<AntDesignContainer, bool>((s, e) =>
         {
             s.SizeMode_Changed(e);
         });
 
-        LayoutModeProperty.Changed.AddClassHandler<AntDesignPanel, PanelLayoutMode>((s, e) =>
+        LayoutModeProperty.Changed.AddClassHandler<AntDesignContainer, PanelLayoutMode>((s, e) =>
         {
             s.LayoutMode_Changed(e);
         });
 
-        SideMenuContentProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
-        SideMenuBottomProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
-        SideMenuHeaderProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
+        SideMenuContentProperty.Changed.AddClassHandler<AntDesignContainer>((x, e) => x.ContentPresentChanged(e));
+        SideMenuBottomProperty.Changed.AddClassHandler<AntDesignContainer>((x, e) => x.ContentPresentChanged(e));
+        SideMenuHeaderProperty.Changed.AddClassHandler<AntDesignContainer>((x, e) => x.ContentPresentChanged(e));
 
-        TopMenuContentProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
-        TopMenuHeaderProperty.Changed.AddClassHandler<AntDesignPanel>((x, e) => x.ContentPresentChanged(e));
+        TopMenuContentProperty.Changed.AddClassHandler<AntDesignContainer>((x, e) => x.ContentPresentChanged(e));
+        TopMenuHeaderProperty.Changed.AddClassHandler<AntDesignContainer>((x, e) => x.ContentPresentChanged(e));
     }
 
-    public AntDesignPanel()
+    public AntDesignContainer()
     {
         //TemplateBinding
     }
@@ -47,99 +47,99 @@ public class AntDesignPanel : HeaderedContentControl
     /// 布局模式
     /// </summary>
     public static readonly StyledProperty<PanelLayoutMode> LayoutModeProperty =
-           AvaloniaProperty.Register<AntDesignPanel, PanelLayoutMode>(nameof(LayoutMode), defaultValue: PanelLayoutMode.MixMenu);
+           AvaloniaProperty.Register<AntDesignContainer, PanelLayoutMode>(nameof(LayoutMode), defaultValue: PanelLayoutMode.MixMenu);
 
     /// <summary>
     /// 是否启用标头
     /// </summary>
     public static readonly StyledProperty<bool> IsHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsHeader), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
+           AvaloniaProperty.Register<AntDesignContainer, bool>(nameof(IsHeader), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
 
     //包含header and headerTemplate
     public static readonly StyledProperty<IBrush?> TopHeaderBackgroundProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(TopHeaderBackground));
+           AvaloniaProperty.Register<AntDesignContainer, IBrush?>(nameof(TopHeaderBackground));
 
     public static readonly StyledProperty<IBrush?> TopHeaderForegroundProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(TopHeaderForeground));
+           AvaloniaProperty.Register<AntDesignContainer, IBrush?>(nameof(TopHeaderForeground));
 
     public static readonly StyledProperty<BoxShadows> TopHeaderBoxShadowProperty =
-           AvaloniaProperty.Register<AntDesignPanel, BoxShadows>(nameof(TopHeaderBoxShadow));
+           AvaloniaProperty.Register<AntDesignContainer, BoxShadows>(nameof(TopHeaderBoxShadow));
 
     /// <summary>
     /// 是否启用菜单
     /// </summary>
     public static readonly StyledProperty<bool> IsMenuProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenu), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
+           AvaloniaProperty.Register<AntDesignContainer, bool>(nameof(IsMenu), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
 
     public static readonly StyledProperty<bool> IsMenuOpenedProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuOpened), defaultValue: false, defaultBindingMode: BindingMode.TwoWay);
+           AvaloniaProperty.Register<AntDesignContainer, bool>(nameof(IsMenuOpened), defaultValue: false, defaultBindingMode: BindingMode.TwoWay);
 
     //Side Menu
     public static readonly StyledProperty<IBrush?> SideMenuBackgroundProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(SideMenuBackground));
+           AvaloniaProperty.Register<AntDesignContainer, IBrush?>(nameof(SideMenuBackground));
 
     public static readonly StyledProperty<IBrush?> SideMenuForegroundProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IBrush?>(nameof(SideMenuForeground));
+           AvaloniaProperty.Register<AntDesignContainer, IBrush?>(nameof(SideMenuForeground));
 
     public static readonly StyledProperty<BoxShadows> SideMenuBoxShadowProperty =
-           AvaloniaProperty.Register<AntDesignPanel, BoxShadows>(nameof(SideMenuBoxShadow));
+           AvaloniaProperty.Register<AntDesignContainer, BoxShadows>(nameof(SideMenuBoxShadow));
 
     public static readonly StyledProperty<object?> SideMenuContentProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuContent));
+           AvaloniaProperty.Register<AntDesignContainer, object?>(nameof(SideMenuContent));
 
     public static readonly StyledProperty<IDataTemplate?> SideMenuContentTemplateProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuContentTemplate));
+           AvaloniaProperty.Register<AntDesignContainer, IDataTemplate?>(nameof(SideMenuContentTemplate));
 
     public static readonly StyledProperty<object?> SideMenuBottomProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuBottom));
+           AvaloniaProperty.Register<AntDesignContainer, object?>(nameof(SideMenuBottom));
 
     public static readonly StyledProperty<IDataTemplate?> SideMenuBottomTemplateProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuBottomTemplate));
+           AvaloniaProperty.Register<AntDesignContainer, IDataTemplate?>(nameof(SideMenuBottomTemplate));
 
     //Top Menu
     public static readonly StyledProperty<object?> TopMenuContentProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(TopMenuContent));
+           AvaloniaProperty.Register<AntDesignContainer, object?>(nameof(TopMenuContent));
 
     public static readonly StyledProperty<IDataTemplate?> TopMenuContentTemplateProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(TopMenuContentTemplate));
+           AvaloniaProperty.Register<AntDesignContainer, IDataTemplate?>(nameof(TopMenuContentTemplate));
 
     /// <summary>
     /// 是否启用菜单头 Logo
     /// </summary>
     public static readonly StyledProperty<bool> IsMenuHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, bool>(nameof(IsMenuHeader), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
+           AvaloniaProperty.Register<AntDesignContainer, bool>(nameof(IsMenuHeader), defaultValue: true, defaultBindingMode: BindingMode.TwoWay);
 
     //Side MenuHeader
     public static readonly StyledProperty<object?> SideMenuHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SideMenuHeader));
+           AvaloniaProperty.Register<AntDesignContainer, object?>(nameof(SideMenuHeader));
 
     public static readonly StyledProperty<IDataTemplate?> SideMenuHeaderTemplateProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(SideMenuHeaderTemplate));
+           AvaloniaProperty.Register<AntDesignContainer, IDataTemplate?>(nameof(SideMenuHeaderTemplate));
 
     //Top MenuHeader
     public static readonly StyledProperty<object?> TopMenuHeaderProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(TopMenuHeader));
+           AvaloniaProperty.Register<AntDesignContainer, object?>(nameof(TopMenuHeader));
 
     public static readonly StyledProperty<IDataTemplate?> TopMenuHeaderTemplateProperty =
-           AvaloniaProperty.Register<AntDesignPanel, IDataTemplate?>(nameof(TopMenuHeaderTemplate));
+           AvaloniaProperty.Register<AntDesignContainer, IDataTemplate?>(nameof(TopMenuHeaderTemplate));
 
-    public static readonly DirectProperty<AntDesignPanel, bool> IsMobileProperty;
+    public static readonly DirectProperty<AntDesignContainer, bool> IsMobileProperty;
 
     #endregion
 
     #region Command
     public static readonly StyledProperty<ICommand?> LayoutModeChangedCommandProperty =
-           AvaloniaProperty.Register<AntDesignPanel, ICommand?>(nameof(LayoutModeChangedCommand), enableDataValidation: true);
+           AvaloniaProperty.Register<AntDesignContainer, ICommand?>(nameof(LayoutModeChangedCommand), enableDataValidation: true);
 
     public static readonly StyledProperty<object?> LayoutModeChangedCommandParameterProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(LayoutModeChangedCommandParameter));
+           AvaloniaProperty.Register<AntDesignContainer, object?>(nameof(LayoutModeChangedCommandParameter));
 
 
     public static readonly StyledProperty<ICommand?> SizeModeChangedCommandProperty =
-           AvaloniaProperty.Register<AntDesignPanel, ICommand?>(nameof(SizeModeChangedCommand), enableDataValidation: true);
+           AvaloniaProperty.Register<AntDesignContainer, ICommand?>(nameof(SizeModeChangedCommand), enableDataValidation: true);
 
     public static readonly StyledProperty<object?> SizeModeChangedCommandParameterProperty =
-           AvaloniaProperty.Register<AntDesignPanel, object?>(nameof(SizeModeChangedCommandParameter));
+           AvaloniaProperty.Register<AntDesignContainer, object?>(nameof(SizeModeChangedCommandParameter));
 
 
     #endregion
@@ -147,10 +147,10 @@ public class AntDesignPanel : HeaderedContentControl
     #region Event
 
     public static readonly RoutedEvent<PanelLayoutModeEventArgs> LayoutModeChangedEvent =
-           RoutedEvent.Register<AntDesignPanel, PanelLayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
+           RoutedEvent.Register<AntDesignContainer, PanelLayoutModeEventArgs>(nameof(LayoutModeChanged), RoutingStrategies.Direct);
 
     public static readonly RoutedEvent<PanelSizeModeChangedEventArgs> SizeModeChangedEvent =
-           RoutedEvent.Register<AntDesignPanel, PanelSizeModeChangedEventArgs>(nameof(SizeModeChanged), RoutingStrategies.Direct);
+           RoutedEvent.Register<AntDesignContainer, PanelSizeModeChangedEventArgs>(nameof(SizeModeChanged), RoutingStrategies.Direct);
 
     #endregion
 

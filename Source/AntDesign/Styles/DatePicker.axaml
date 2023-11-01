@@ -150,9 +150,17 @@
 		</Style>
 	</ControlTheme>
 
-
+	<!--MinWidth="{DynamicResource DatePickerMinWidth}"-->
+	<!--MaxWidth="{DynamicResource DatePickerMaxWidth}"-->
 	<ControlTheme x:Key="{x:Type DatePicker}" TargetType="DatePicker">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+		<Setter Property="MinWidth" Value="{DynamicResource DatePickerMinWidth}"/>
+		<Setter Property="MaxWidth" Value="{DynamicResource DatePickerMaxWidth}"/> 
+
+		<Setter Property="assists:PopupAssists.PopupMinWidth" Value="{DynamicResource DatePickerPresenterMinWidth}"/>
+		<Setter Property="assists:PopupAssists.PopupWidth" Value="{DynamicResource DatePickerPresenterMinWidth}"/>
+		<Setter Property="assists:PopupAssists.PopupMaxHeight" Value="{DynamicResource DatePickerPresenterMaxHeight}"/>
+		
 		<Setter Property="Background" Value="{DynamicResource DatePickerBackground}"/>
 		<Setter Property="Foreground" Value="{DynamicResource DatePickerForeground}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource DatePickerBorderBrush}"/>
@@ -168,16 +176,15 @@
 					<Grid Name="LayoutRoot" Margin="{TemplateBinding Padding}">
 						<Button x:Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButton}"
 								IsEnabled="{TemplateBinding IsEnabled}" 
+								MinHeight="{DynamicResource DatePickerMinHeight}"
 								Foreground="{TemplateBinding Foreground}"
 								Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
 								CornerRadius="{TemplateBinding CornerRadius}"
 								Padding="{TemplateBinding Padding}"
-								MinWidth="{DynamicResource DatePickerMinWidth}"
-								MaxWidth="{DynamicResource DatePickerMaxWidth}"
 								HorizontalAlignment="Stretch"
-								VerticalAlignment="Center"
+								VerticalAlignment="Stretch"
 								HorizontalContentAlignment="Stretch" 
 								TemplatedControl.IsTemplateFocusTarget="True">
 
@@ -189,7 +196,8 @@
 											   FontFamily="{TemplateBinding FontFamily}"
 											   FontWeight="{TemplateBinding FontWeight}"
 											   Padding="{DynamicResource DatePickerHostPadding}"
-											   HorizontalAlignment="Center"/>
+											   HorizontalAlignment="Center"
+											   VerticalAlignment="Center"/>
 
 									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_MonthTextBlock}"
 											   Text="month"
@@ -197,7 +205,9 @@
 											   FontSize="{TemplateBinding FontSize}"
 											   FontFamily="{TemplateBinding FontFamily}"
 											   FontWeight="{TemplateBinding FontWeight}"
-											   Padding="{DynamicResource DatePickerHostMonthPadding}"/>
+											   Padding="{DynamicResource DatePickerHostMonthPadding}"
+											   HorizontalAlignment="Center"
+											   VerticalAlignment="Center"/>
 
 									<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_DayTextBlock}"
 											   Text="day"
@@ -205,7 +215,8 @@
 											   FontFamily="{TemplateBinding FontFamily}"
 											   FontWeight="{TemplateBinding FontWeight}"
 											   Padding="{DynamicResource DatePickerHostPadding}"
-											   HorizontalAlignment="Center"/>
+											   HorizontalAlignment="Center"
+											   VerticalAlignment="Center"/>
 
 									<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_FirstSpacer}"
 											   Width="{DynamicResource DatePickerSpacerWidth}"
@@ -243,7 +254,10 @@
 									BorderBrush="{DynamicResource DatePickerPopupBorderBrush}"
 									ClipToBounds="False"
 									BoxShadow="{DynamicResource DatePickerShadow}">
-								<DatePickerPresenter Name="{x:Static helpers:PARTNameHelper.PART_PickerPresenter}" />
+								<DatePickerPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_PickerPresenter}" 
+													 MinWidth="{TemplateBinding assists:PopupAssists.PopupMinWidth}"
+													 Width="{TemplateBinding assists:PopupAssists.PopupWidth}"
+													 MaxHeight="{TemplateBinding assists:PopupAssists.PopupMaxHeight}"/>
 							</Border>
 							
 						</Popup>

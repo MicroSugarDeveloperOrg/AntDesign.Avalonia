@@ -4,7 +4,7 @@ namespace AntDesign.Controls.Interactivity;
 public class PanelLayoutModeEventArgs : RoutedEventArgs
 {
     public PanelLayoutModeEventArgs(PanelLayoutMode layoutMode)
-        : base(AntDesignPanel.LayoutModeChangedEvent)
+        : base(AntDesignContainer.LayoutModeChangedEvent)
     {
         LayoutMode = layoutMode;
     }

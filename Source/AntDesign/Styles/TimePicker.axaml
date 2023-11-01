@@ -150,8 +150,18 @@
 		</Style>
 	</ControlTheme>
 
+	<!--MinWidth="{DynamicResource TimePickerMinWidth}"-->
+	<!--MaxWidth="{DynamicResource TimePickerMaxWidth}"-->
+
 	<ControlTheme x:Key="{x:Type TimePicker}" TargetType="TimePicker">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}"/>
+		<Setter Property="MinWidth" Value="{DynamicResource TimePickerMinWidth}"/>
+		<Setter Property="MaxWidth" Value="{DynamicResource TimePickerMaxWidth}"/> 
+
+		<Setter Property="assists:PopupAssists.PopupMinWidth" Value="{DynamicResource TimePickerPresenterMinWidth}"/>
+		<Setter Property="assists:PopupAssists.PopupWidth" Value="{DynamicResource TimePickerPresenterMinWidth}"/>
+		<Setter Property="assists:PopupAssists.PopupMaxHeight" Value="{DynamicResource TimePickerPresenterMaxHeight}"/>
+		
 		<Setter Property="Background" Value="{DynamicResource TimePickerBackground}"/>
 		<Setter Property="Foreground" Value="{DynamicResource TimePickerForeground}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource TimePickerBorderBrush}"/>
@@ -167,14 +177,13 @@
 					<Grid Name="LayoutRoot" Margin="{TemplateBinding Padding}">
 						<Button x:Name="{x:Static helpers:PARTNameHelper.PART_FlyoutButton}"
 								IsEnabled="{TemplateBinding IsEnabled}" 
+								MinHeight="{DynamicResource TimePickerMinHeight}"
 								Foreground="{TemplateBinding Foreground}"
 								Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"
 								CornerRadius="{TemplateBinding CornerRadius}"
 								Padding="{TemplateBinding Padding}" 
-								MinWidth="{DynamicResource TimePickerMinWidth}"
-								MaxWidth="{DynamicResource TimePickerMaxWidth}"
 								HorizontalAlignment="Stretch"
 								VerticalAlignment="Center" 
 								HorizontalContentAlignment="Stretch" 
@@ -192,7 +201,8 @@
 												   FontFamily="{TemplateBinding FontFamily}"
 												   FontWeight="{TemplateBinding FontWeight}"
 												   Padding="{DynamicResource TimePickerHostPadding}"
-												   HorizontalAlignment="Center"/>
+												   HorizontalAlignment="Center"
+												   VerticalAlignment="Center"/>
 									</Border>
 
 									<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_FirstColumnDivider}"
@@ -210,7 +220,8 @@
 												   FontFamily="{TemplateBinding FontFamily}"
 												   FontWeight="{TemplateBinding FontWeight}"
 												   Padding="{DynamicResource TimePickerHostPadding}"
-												   HorizontalAlignment="Center"/>
+												   HorizontalAlignment="Center"
+												   VerticalAlignment="Center"/>
 									</Border>
 
 									<Rectangle x:Name="{x:Static helpers:PARTNameHelper.PART_SecondColumnDivider}"
@@ -228,7 +239,8 @@
 												   FontFamily="{TemplateBinding FontFamily}"
 												   FontWeight="{TemplateBinding FontWeight}"
 												   Padding="{DynamicResource TimePickerHostPadding}"
-												   HorizontalAlignment="Center"/>
+												   HorizontalAlignment="Center"
+												   VerticalAlignment="Center"/>
 									</Border>
 								</Grid>
 
@@ -257,7 +269,10 @@
 									BorderBrush="{DynamicResource TimePickerPopupBorderBrush}"
 									ClipToBounds="False"
 									BoxShadow="{DynamicResource TimePickerShadow}">
-								<TimePickerPresenter Name="{x:Static helpers:PARTNameHelper.PART_PickerPresenter}"/>
+								<TimePickerPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_PickerPresenter}"
+													 MinWidth="{TemplateBinding assists:PopupAssists.PopupMinWidth}"
+													 Width="{TemplateBinding assists:PopupAssists.PopupWidth}"
+													 MaxHeight="{TemplateBinding assists:PopupAssists.PopupMaxHeight}"/>
 							</Border>
 						</Popup>
 					</Grid>

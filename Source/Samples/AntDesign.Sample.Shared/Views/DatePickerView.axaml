@@ -31,7 +31,7 @@
 								VerticalAlignment="Center">
 						<StackPanel Orientation="Vertical" Margin="5" Spacing="10">
 							 
-							<DatePicker /> 
+							<DatePicker MinWidth="200"/> 
 							
 							<DatePicker DayFormat="d(ddd)" YearVisible="False"/>
 					

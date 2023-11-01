@@ -23,6 +23,25 @@
 	<BoxShadows x:Key="TopHeaderBoxShadow">0 0 6 1 #141414</BoxShadows>
 	<BoxShadows x:Key="SideMenuBoxShadow">0 3 6 1 #141414</BoxShadows>
 
+	<!-- TreeView -->
+	<SolidColorBrush x:Key="AntDesignTreeViewItemBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="AntDesignTreeViewItemPointerOverBackground" Color="Transparent"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemPointerOverForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemPointerOverBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="AntDesignTreeViewItemPressedBackground" Color="{DynamicResource AntDesignAssistColor5}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemPressedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemPressedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedBackground" Color="{DynamicResource AntDesignAssistColor5}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedBorderBrush" Color="Transparent"/>
+
+	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedNoFocusForeground" Color="{StaticResource AntDesignForegroundColor}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemInnerBorderBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 
 
 </ResourceDictionary>
