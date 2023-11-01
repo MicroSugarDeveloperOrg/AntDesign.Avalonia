@@ -25,5 +25,9 @@ public static class AntDesignPseudoNameHelpers
     //public const string PC_PanelSideMenuOpened = ":panel-side-menu-opened";
     //public const string PC_PanelTopMenuOpened = ":panel-top-menu-opened";
 
+    //TreeView
+    public const string PC_Coloring = ":coloring";
+
+
 
 }

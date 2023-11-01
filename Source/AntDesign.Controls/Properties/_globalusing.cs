@@ -12,3 +12,4 @@ global using Avalonia.Layout;
 global using Avalonia.LogicalTree;
 global using Avalonia.Media;
 global using Avalonia.Metadata;
+global using System.Collections.Specialized;

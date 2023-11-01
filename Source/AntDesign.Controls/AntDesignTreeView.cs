@@ -1,26 +1,28 @@
-﻿
-namespace AntDesign.Controls;
+﻿namespace AntDesign.Controls;
 
 public class AntDesignTreeView : TreeView
 {
     static AntDesignTreeView()
     {
+        IsPanelExpandedProperty.Changed.AddClassHandler<AntDesignTreeView, bool>((s, e) =>
+        {
+
+        });
+
+        SelectedItemProperty.Changed.AddClassHandler<AntDesignTreeView, object?>((s, e) =>
+        {
+            s.ExpandingOrColoring();
+        });
     }
 
     public AntDesignTreeView()
     {
         ScrollViewer.SetVerticalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
         ScrollViewer.SetHorizontalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
-        //AntDesignTreeViewItem.IsSelectedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => AntDesignTreeViewItemSelected(s, e.NewValue.Value));
-        //AntDesignTreeViewItem.IsExpandedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => AntDesignTreeViewItemExpanded(s,e.NewValue.Value));
     }
-
-    List<AntDesignTreeViewItem> _isExpandedViewItems = new();
 
     public static readonly StyledProperty<bool> IsMenuModeProperty =
        AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsMenuMode), defaultValue: false);
-
-
 
     public static readonly StyledProperty<bool> IsPanelExpandedProperty =
            AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsPanelExpanded), defaultValue: true);
@@ -56,6 +58,17 @@ public class AntDesignTreeView : TreeView
         set => SetValue(WidthAfterClosingProperty, value);
     }
 
+    protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToLogicalTree(e);
+    }
+
+    protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+    {
+        base.OnApplyTemplate(e);
+        OnSelectedFirstValidItem(Items.FirstOrDefault());
+    }
+
     protected override void OnSizeChanged(SizeChangedEventArgs e)
     {
         base.OnSizeChanged(e);
@@ -64,35 +77,6 @@ public class AntDesignTreeView : TreeView
     protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
     {
         return new AntDesignTreeViewItem();
-    }
-
-    void AntDesignTreeViewItemExpanded(AntDesignTreeViewItem item, bool isExpanded)
-    {
-        if (!Items.Contains(item))
-            return;
-
-        //if (isExpanded)
-        //    _isExpandedViewItems.Add(item);
-        //else
-        //    _isExpandedViewItems.Remove(item);
-    }
-
-    void AntDesignTreeViewItemSelected(AntDesignTreeViewItem item, bool isSelected)
-    {
-        if (!Items.Contains(item))
-            return;
-
-        if (isSelected)
-        {
-            
-            _isExpandedViewItems.Add(item);
-        }
-        else
-        {
-
-            _isExpandedViewItems.Remove(item);
-        }
-
     }
 
     protected override void OnLoaded(RoutedEventArgs e)
@@ -117,23 +101,20 @@ public class AntDesignTreeView : TreeView
             foreach (var item in Items)
                 ExpanderOrCloseItems(item, bRet);
         }
-    } 
+    }
 
     void ExpanderOrCloseItems(object? item, bool isExpanded)
     {
-        if (item is null)
-            return;
-
         if (item is not TreeViewItem treeViewItem)
             return;
 
-        if (isExpanded) 
+        if (isExpanded)
         {
             if (treeViewItem.IsSelected)
             {
                 if (treeViewItem.Parent is TreeViewItem parentTreeViewItem)
                     parentTreeViewItem.IsExpanded = true;
-            }    
+            }
         }
         else
             treeViewItem.IsExpanded = false;
@@ -143,6 +124,61 @@ public class AntDesignTreeView : TreeView
 
         foreach (var subItem in treeViewItem.Items)
             ExpanderOrCloseItems(subItem, isExpanded);
+    }
+
+    void ExpandingOrColoring()
+    {
+        foreach (var item in Items)
+            ExpandingOrColoringParents(item);
+    }
+
+    bool ExpandingOrColoringParents(object? item)
+    {
+        if (item is not AntDesignTreeViewItem antDesignTreeViewItem)
+            return false;
+
+        if (antDesignTreeViewItem.ItemCount > 0)
+        {
+            bool isFlag = false;
+            foreach (var subitem in antDesignTreeViewItem.Items)
+            {
+                isFlag = ExpandingOrColoringParents(subitem);
+                if (isFlag)
+                    break;
+            }
+
+            antDesignTreeViewItem.IsColor = isFlag;
+            antDesignTreeViewItem.IsExpanded = isFlag;
+            return isFlag;
+        }
+        else
+            return antDesignTreeViewItem.IsSelected;
+    }
+
+    void OnSelectedFirstValidItem(object? item)
+    {
+        if (item is not AntDesignTreeViewItem antDesignTreeViewItem)
+            return;
+
+        if (antDesignTreeViewItem.ItemCount <= 0)
+            SelectedItem = item;
+        else
+            OnSelectedFirstValidItem(antDesignTreeViewItem.Items.FirstOrDefault());
+    }
+
+    protected override void OnPointerPressed(PointerPressedEventArgs e)
+    {
+        if (e.Source is null)
+            return;
+
+        var container = GetContainerFromEventSource(e.Source);
+        if (container is null)
+            return;
+
+        if (container.ItemCount > 0)
+            return;
+
+        base.OnPointerPressed(e);
     }
 
 }

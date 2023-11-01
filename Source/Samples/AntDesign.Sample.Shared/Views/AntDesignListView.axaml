@@ -9,15 +9,29 @@
 		<AntDesignTreeView HorizontalAlignment="Left" IsMenuMode="True"
 						   WidthBeforeClosing="200" WidthAfterClosing="20"
 						   IsPanelExpanded="{Binding IsTreeViewExpanded}">
+			
 			<AntDesignTreeViewItem Header="123">
-				<AntDesignTreeViewItem Header="2323"/>
-				<AntDesignTreeViewItem Header="4455"/>
-				<AntDesignTreeViewItem Header="5566"/>
-				<AntDesignTreeViewItem Header="5577"/>
-				<AntDesignTreeViewItem Header="5588"/>
+				<AntDesignTreeViewItem Header="1231"/>
+				<AntDesignTreeViewItem Header="1232"/>
+				<AntDesignTreeViewItem Header="1233"/>
+				<AntDesignTreeViewItem Header="1234"/>
+				<AntDesignTreeViewItem Header="1235"/>
+			</AntDesignTreeViewItem>
+			<AntDesignTreeViewItem Header="124">
+				<AntDesignTreeViewItem Header="1241"/>
+				<AntDesignTreeViewItem Header="1242"/>
+				<AntDesignTreeViewItem Header="1243"/>
+				<AntDesignTreeViewItem Header="1244"/>
+				<AntDesignTreeViewItem Header="1245"/>
+			</AntDesignTreeViewItem>
+			<AntDesignTreeViewItem Header="125">
+				<AntDesignTreeViewItem Header="1251"/>
+				<AntDesignTreeViewItem Header="1252"/>
+				<AntDesignTreeViewItem Header="1253"/>
+				<AntDesignTreeViewItem Header="1254"/>
+				<AntDesignTreeViewItem Header="1255"/>
 			</AntDesignTreeViewItem>
 		</AntDesignTreeView>
-		
 		
 		<Button Grid.Row="2" Content="Click" Command="{Binding TriggerClickCommand}"/>
 		

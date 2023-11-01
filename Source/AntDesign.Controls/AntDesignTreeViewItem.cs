@@ -1,37 +1,44 @@
-﻿
+﻿using AntDesign.Controls.Helpers;
+
 namespace AntDesign.Controls;
+
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_Coloring)]
 public class AntDesignTreeViewItem : TreeViewItem
 {
     static AntDesignTreeViewItem()
     {
-        IsSelectedProperty.AddOwner<AntDesignTreeViewItem>(new StyledPropertyMetadata<bool>(coerce: (s, e) =>
+        IsColorProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) =>
         {
-            if (s is not AntDesignTreeViewItem antDesignTreeViewItem)
-                return e;
-
-            if (antDesignTreeViewItem.ItemCount > 0 && antDesignTreeViewItem._antDesignTreeView?.IsMenuMode == true)
-                return false;
-
-            return e;
-        }));
+            s.UpdatePseudoClasses();
+        });
     }
 
     public AntDesignTreeViewItem()
     {
-
+        //ItemsSource
     }
 
+    bool _isColor = false;
+    bool _isPanelClosing = false;
     protected Control? _header;
     protected AntDesignTreeView? _antDesignTreeView;
 
-    public static readonly StyledProperty<bool> IsColourProperty =
-           AvaloniaProperty.Register<AntDesignTreeViewItem, bool>(nameof(IsColour), defaultValue: false);
+    public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsColorProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsColor), b => b.IsColor);
 
- 
-    public bool IsColour
+    public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsPanelClosingProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsPanelClosing), b => b.IsPanelClosing);
+
+    public bool IsColor
     {
-        get => GetValue(IsColourProperty);
-        set => SetValue(IsColourProperty, value);
+        get => _isColor;
+        internal set => SetAndRaise(IsColorProperty, ref _isColor, value);
+    }
+
+    public bool IsPanelClosing
+    {
+        get => _isPanelClosing;
+        internal set => SetAndRaise(IsColorProperty, ref _isPanelClosing, value);
     }
 
     protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
@@ -44,15 +51,74 @@ public class AntDesignTreeViewItem : TreeViewItem
     {
         base.OnApplyTemplate(e);
 
+        if (_header is not null)
+        {
+            _header.PointerPressed -= Header_PointerPressed;
+            _header = null;
+        }
+
         _header = e.NameScope.Find<Control>("PART_Header");
-        //if (_header is not null)
-            //_header.PointerPressed += Header_PointerPressed;
+        if (_header is not null)
+            _header.PointerPressed += Header_PointerPressed;
+
+        UpdatePseudoClasses();
+    }
+
+    protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)
+    {
+        base.OnDetachedFromLogicalTree(e);
+    }
+
+    protected override void OnPointerPressed(PointerPressedEventArgs e)
+    {
+        base.OnPointerPressed(e);
+    }
+
+    protected override void OnHeaderDoubleTapped(TappedEventArgs e)
+    {
+        if (_antDesignTreeView is not null)
+        {
+            if (!_antDesignTreeView.IsPanelExpanded)
+                return;
+        }
+
+        base.OnHeaderDoubleTapped(e);
     }
 
     private void Header_PointerPressed(object sender, PointerPressedEventArgs e)
     {
-         if(ItemCount > 0)
+ 
+        if (ItemCount > 0)
+        {
+            if (_antDesignTreeView is not null)
+            {
+                if (!_antDesignTreeView.IsPanelExpanded)
+                {
+
+                    //ContextFlyout = new Fla
+                    if (ContextMenu is null)
+                    {
+                        ContextMenu = new ContextMenu();
+                        ContextMenu.Items.Add(new MenuItem() { Header = "123" });
+                        ContextMenu.Items.Add(new MenuItem() { Header = "123" });
+                        ContextMenu.Items.Add(new MenuItem() { Header = "123" });
+                        ContextMenu.Items.Add(new MenuItem() { Header = "123" });
+
+                      
+                    }
+
+                    
+                    //ContextMenu.Open();
+
+                    return;
+                }
+            }
+
+
             IsExpanded = !IsExpanded;
+
+
+        }
     }
 
     protected override void OnSizeChanged(SizeChangedEventArgs e)
@@ -63,25 +129,15 @@ public class AntDesignTreeViewItem : TreeViewItem
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);
+    }
 
-        if (change.Property == IsSelectedProperty)
-        {
-            if (!bool.TryParse(change.NewValue?.ToString(), out var bRet))
-                return;
+    public void Clear()
+    {
+        IsColor = false;
+    }
 
-            if (bRet)
-            {
-                IsColour = true;
-                if (Parent is not AntDesignTreeViewItem parentTreeViewItem)
-                    return;
-
-                parentTreeViewItem.IsColour = true;
-            }
-            else
-            {
-
-            }
-        }
-
+    void UpdatePseudoClasses()
+    {
+        PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Coloring, IsColor);
     }
 }

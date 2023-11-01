@@ -266,6 +266,19 @@ public class AntDesignDrawer : ContentControl
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
+
+        if (_drawerButton is not null)
+        {
+            _drawerButton.Click -= DrawerButton_Click;
+            _drawerButton = default!;
+        }
+
+        if (_drawerMask is not null)
+        {
+            _drawerMask.PointerPressed -= DrawerMask_PointerPressed;
+            _drawerMask = default!;
+        }
+
         if (_drawerContentPresenter is null)
             throw new NullReferenceException(nameof(_drawerContentPresenter));
 
