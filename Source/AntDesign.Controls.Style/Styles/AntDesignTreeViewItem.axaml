@@ -88,6 +88,24 @@
 									</Transitions>
 								</Border.Transitions>
 							</Border>
+
+
+
+							<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
+								   IsOpen="false"
+								   Placement="BottomEdgeAlignedLeft"
+								   PlacementTarget="{TemplateBinding}"
+								   WindowManagerAddShadowHint="False"
+								   IsLightDismissEnabled="True"
+								   HorizontalOffset="-1"
+								   VerticalOffset="-1" >
+								<Grid>
+								 
+								</Grid>
+
+							</Popup>
+
+
 						</Grid>
 
 					</Border>

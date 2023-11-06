@@ -1,4 +1,6 @@
-﻿namespace AntDesign.Controls;
+﻿using Avalonia.Controls.Primitives;
+
+namespace AntDesign.Controls;
 
 public class AntDesignTreeView : TreeView
 {
@@ -20,6 +22,8 @@ public class AntDesignTreeView : TreeView
         ScrollViewer.SetVerticalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
         ScrollViewer.SetHorizontalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
     }
+
+    Popup? _popup;
 
     public static readonly StyledProperty<bool> IsMenuModeProperty =
        AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsMenuMode), defaultValue: false);
@@ -66,6 +70,9 @@ public class AntDesignTreeView : TreeView
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
+
+        _popup = e.NameScope.Find<Popup>("PART_Popup");
+
         OnSelectedFirstValidItem(Items.FirstOrDefault());
     }
 
@@ -181,4 +188,35 @@ public class AntDesignTreeView : TreeView
         base.OnPointerPressed(e);
     }
 
+    protected override void OnPointerEntered(PointerEventArgs e)
+    {
+        base.OnPointerEntered(e);
+    }
+
+    protected override void OnPointerMoved(PointerEventArgs e)
+    {
+        base.OnPointerMoved(e);
+
+        if (IsPanelExpanded)
+            return;
+
+        //if (_popup is null)
+            //return;
+
+        if (e.Source is null)
+            return;
+
+        var container = GetContainerFromEventSource(e.Source);
+        if (container is null)
+            return;
+
+        //if (container.ItemCount > 0)
+        //{
+        //    _popup.Placement = PlacementMode.Right;
+        //    _popup.PlacementTarget = container;
+        //    _popup.HorizontalOffset = 10;
+        //    _popup.IsOpen = true;
+        //}
+        
+    }
 }
