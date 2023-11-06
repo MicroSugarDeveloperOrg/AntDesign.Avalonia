@@ -1,4 +1,5 @@
 ﻿using AntDesign.Controls.Helpers;
+using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 
 namespace AntDesign.Controls;
@@ -23,9 +24,7 @@ public class AntDesignTreeViewItem : TreeViewItem
     bool _isPanelClosing = false;
     protected Control? _header;
     protected AntDesignTreeView? _antDesignTreeView;
-    protected ContextMenu? _menu;
-
-    protected Popup? _popup;
+    protected MenuFlyout? _menuFlyout; 
 
     public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsColorProperty =
            AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsColor), b => b.IsColor);
@@ -73,9 +72,7 @@ public class AntDesignTreeViewItem : TreeViewItem
             _header.PointerEntered += Header_PointerEntered;
         }
 
-        _popup = e.NameScope.Find<Popup>("PART_Popup");
-
-
+ 
         UpdatePseudoClasses();
     }
 
@@ -130,13 +127,12 @@ public class AntDesignTreeViewItem : TreeViewItem
         {
             if (_antDesignTreeView.IsPanelExpanded)
             {
-                _menu?.Close();
+               
                 return;
             }
         }
 
-        if (_popup is not null)
-           _popup.IsOpen = true;
+
 
         //Menu
 
@@ -173,6 +169,27 @@ public class AntDesignTreeViewItem : TreeViewItem
         //_menu.Placement = PlacementMode.RightEdgeAlignedTop;
         //_menu.HorizontalOffset = 5;  
         //_menu.Open(this); 
+
+        if (_menuFlyout is null)
+        {
+            _menuFlyout = new MenuFlyout()
+            { };
+
+
+
+            _menuFlyout.Items.Add(new MenuItem() { Header = "123" });
+            _menuFlyout.Items.Add(new MenuItem() { Header = "123" });
+            _menuFlyout.Items.Add(new MenuItem() { Header = "123" });
+            _menuFlyout.Items.Add(new MenuItem() { Header = "123" });
+
+
+
+
+        }
+
+        _menuFlyout.ShowMode = FlyoutShowMode.TransientWithDismissOnPointerMoveAway;
+
+        _menuFlyout.ShowAt(this);
     }
 
     private void Header_PointerExited(object sender, PointerEventArgs e)
