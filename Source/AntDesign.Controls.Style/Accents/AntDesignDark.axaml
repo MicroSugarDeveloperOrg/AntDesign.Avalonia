@@ -36,12 +36,12 @@
 	<SolidColorBrush x:Key="AntDesignTreeViewItemPressedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="AntDesignTreeViewItemPressedBorderBrush" Color="Transparent"/>
 
-	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedBackground" Color="{DynamicResource AntDesignAssistColor5}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedBackground" Color="{DynamicResource AntDesignPrimaryColor}" Opacity="0.15"/>
 	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedForeground" Color="{DynamicResource AntDesignSecondlyColor}"/>
 	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedBorderBrush" Color="Transparent"/>
 
 	<SolidColorBrush x:Key="AntDesignTreeViewItemSelectedNoFocusForeground" Color="{StaticResource AntDesignForegroundColor}"/>
-	<SolidColorBrush x:Key="AntDesignTreeViewItemInnerBorderBackground" Color="{DynamicResource AntDesignSecondlyColor}"/>
+	<SolidColorBrush x:Key="AntDesignTreeViewItemInnerBorderBackground" Color="{DynamicResource AntDesignPrimaryColor}" Opacity="0.7"/>
 
 
 </ResourceDictionary>

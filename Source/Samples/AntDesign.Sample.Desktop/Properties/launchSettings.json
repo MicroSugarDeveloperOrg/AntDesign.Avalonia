@@ -7,6 +7,12 @@
     "WSL": {
       "commandName": "WSL2",
       "distributionName": ""
-    } 
+    },
+    "Linux": {
+      "commandName": "Executable",
+      "remoteDebugEnabled": true,
+      "remoteDebugMachine": "192.168.66.99",
+      "workingDirectory": ""
+    }
   }
 }

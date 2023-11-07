@@ -148,7 +148,7 @@ public class AntDesignTreeView : TreeView
             }
 
             antDesignTreeViewItem.IsColor = isFlag;
-            antDesignTreeViewItem.IsExpanded = isFlag;
+            antDesignTreeViewItem.IsExpanded = IsPanelExpanded ? isFlag : false;
             return isFlag;
         }
         else
@@ -161,22 +161,25 @@ public class AntDesignTreeView : TreeView
             return;
 
         if (antDesignTreeViewItem.ItemCount <= 0)
-            SelectedItem = item;
+            antDesignTreeViewItem.IsSelected = true;
         else
             OnSelectedFirstValidItem(antDesignTreeViewItem.Items.FirstOrDefault());
     }
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
-        if (e.Source is null)
-            return;
+        if (IsMenuMode)
+        {
+            if (e.Source is null)
+                return;
 
-        var container = GetContainerFromEventSource(e.Source);
-        if (container is null)
-            return;
+            var container = GetContainerFromEventSource(e.Source);
+            if (container is null)
+                return;
 
-        if (container.ItemCount > 0)
-            return;
+            if (container.ItemCount > 0)
+                return;
+        }
 
         base.OnPointerPressed(e);
     }

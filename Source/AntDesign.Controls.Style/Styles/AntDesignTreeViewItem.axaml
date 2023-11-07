@@ -33,15 +33,16 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="AntDesignTreeViewItem">
 				<StackPanel>
-					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
-							Focusable="True"
-							MinHeight="{TemplateBinding MinHeight}"
-							Background="{TemplateBinding Background}"
-							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}"
-							CornerRadius="{TemplateBinding CornerRadius}"
-							Padding="{TemplateBinding Padding}"
-							TemplatedControl.IsTemplateFocusTarget="True">
+					<antdesign:AntDesignBorder x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+											   Focusable="True"
+											   IsAnimation="False"
+											   MinHeight="{TemplateBinding MinHeight}"
+											   Background="{TemplateBinding Background}"
+											   BorderBrush="{TemplateBinding BorderBrush}"
+											   BorderThickness="{TemplateBinding BorderThickness}"
+											   CornerRadius="{TemplateBinding CornerRadius}"
+											   Padding="{TemplateBinding Padding}"
+											   TemplatedControl.IsTemplateFocusTarget="True">
 
 						<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_Header}" 
 							  Background="Transparent">
@@ -90,30 +91,32 @@
 							</Border>
 						</Grid>
 
-					</Border>
+					</antdesign:AntDesignBorder>
 
-					<ItemsPresenter x:Name="PART_ItemsPresenter"
-									IsVisible="{TemplateBinding IsExpanded}"
-									ItemsPanel="{TemplateBinding ItemsPanel}" />					
+					<antdesign:AntDesignBorder IsHeightTransition="True" 
+											   IsExpanded="{TemplateBinding IsExpanded}">
+						<ItemsPresenter x:Name="PART_ItemsPresenter"
+										ItemsPanel="{TemplateBinding ItemsPanel}"/>
+					</antdesign:AntDesignBorder>
+								
 				</StackPanel>
 			</ControlTemplate>
 		</Setter>
 
- 
 		<!--  PointerOver state  -->
-		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover"> 
+		<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot:pointerover"> 
 			<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
 		</Style>
 
 		<!--  Pressed state  -->
-		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed">
+		<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot:pressed">
 			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBackground}" /> 
 			<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
 		</Style>
 
 		<!--  Selected state  -->
 		<Style Selector="^:selected">
-			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+			<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBackground}" />
 				<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
 			</Style>
@@ -123,18 +126,17 @@
 			</Style>
 		</Style>
 
+		<!--  Coloring state  -->
 		<Style Selector="^:coloring">
-			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+			<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot">
 				<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
 			</Style> 
 		</Style>
-		
 		
 		<!--  Disabled state  -->
 		<Style Selector="^:disabled">
 			<Setter Property="Opacity" Value="0.5"/>
 		</Style>
-
 
 	</ControlTheme>
 

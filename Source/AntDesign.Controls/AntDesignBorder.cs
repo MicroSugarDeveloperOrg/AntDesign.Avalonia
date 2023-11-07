@@ -1,5 +1,4 @@
 ﻿using AntDesign.Controls.Helpers;
-using System;
 
 namespace AntDesign.Controls;
 
@@ -49,10 +48,7 @@ public class AntDesignBorder : Border
         IsVisibleProperty.Changed.AddClassHandler<AntDesignBorder, bool>((s, e) =>
         {
             if (s is null)
-                return;
-
-            if (s.IsExpanded)
-                s.Expander(e.NewValue.Value);
+                return; 
         });
 
         IsExpandedProperty.Changed.AddClassHandler<AntDesignBorder, bool>((s, e) =>
@@ -124,6 +120,9 @@ public class AntDesignBorder : Border
     public static readonly DirectProperty<AntDesignBorder, bool> IsPressedProperty =
            AvaloniaProperty.RegisterDirect<AntDesignBorder, bool>(nameof(IsPressed), b => b.IsPressed);
 
+    public static readonly StyledProperty<bool> IsAnimationProperty =
+           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsAnimation), defaultValue: true);
+
     public static readonly StyledProperty<TimeSpan> DurationProperty =
            AvaloniaProperty.Register<AntDesignBorder, TimeSpan>(nameof(Duration), defaultValue: TimeSpan.FromMilliseconds(200));
 
@@ -140,7 +139,7 @@ public class AntDesignBorder : Border
            AvaloniaProperty.Register<AntDesignBorder, double>(nameof(HeightAfterClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<bool> IsExpandedProperty =
-           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsExpanded));
+           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsExpanded), defaultValue:true);
 
     #endregion
 
@@ -150,6 +149,12 @@ public class AntDesignBorder : Border
     {
         get => _isPressed;
         private set => SetAndRaise(IsPressedProperty, ref _isPressed, value);
+    }
+
+    public bool IsAnimation
+    {
+        get => GetValue(IsAnimationProperty);
+        set => SetValue(IsAnimationProperty, value);
     }
 
     public TimeSpan Duration
@@ -193,6 +198,9 @@ public class AntDesignBorder : Border
     protected override void OnLoaded(RoutedEventArgs e)
     {
         base.OnLoaded(e);
+
+        if (!IsAnimation)
+            return;
 
         if (!_isLoadedInStarting)
         {
@@ -263,6 +271,12 @@ public class AntDesignBorder : Border
     {
         if (!IsLoaded)
             return;
+
+        if (!IsAnimation)
+        {
+            IsVisible = isExpander;
+            return;
+        }
 
         if (!IsWidthTransition && !IsHeightTransition)
             return;
