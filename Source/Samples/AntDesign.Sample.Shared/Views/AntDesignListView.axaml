@@ -5,7 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.AntDesignListView">
 
-	<Grid RowDefinitions="Auto,5,50"> 
+	<Grid RowDefinitions="Auto,5,50,Auto"> 
 		<AntDesignTreeView HorizontalAlignment="Left" IsMenuMode="True"
 						   WidthBeforeClosing="200" WidthAfterClosing="20"
 						   IsPanelExpanded="{Binding IsTreeViewExpanded}">
@@ -34,6 +34,23 @@
 		</AntDesignTreeView>
 		
 		<Button Grid.Row="2" Content="Click" Command="{Binding TriggerClickCommand}"/>
+
+		<Menu Grid.Row="3">
+
+			<MenuItem Header="1231"/>
+			<MenuItem Header="1231">
+				<MenuItem Header="43434"/>
+				<MenuItem Header="43434"/>
+				<MenuItem Header="43434"/>
+				<MenuItem Header="43434"/>
+
+			</MenuItem>
+			<MenuItem Header="1231"/>
+			<MenuItem Header="1231"/>
+			
+			
+			
+		</Menu>
 		
 	</Grid>
 	

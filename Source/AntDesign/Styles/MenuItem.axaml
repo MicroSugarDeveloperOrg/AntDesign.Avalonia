@@ -72,6 +72,7 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="MenuItem">
 				<Panel>
+					
 					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 							Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
@@ -214,7 +215,6 @@
 				<Setter Property="Fill" Value="{TemplateBinding assists:MenuItemAssists.PointerOverForeground}" />
 			</Style>
 		</Style>
-
 
 		<Style Selector="^:pressed">
 			<Style Selector="^ /template/ Border#PART_LayoutRoot">

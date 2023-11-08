@@ -39,32 +39,7 @@
 								</ScrollViewer>
 
 							</antdesign:AntDesignBorder>
-
-							<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
-								   IsOpen="false"
-								   Placement="BottomEdgeAlignedLeft"
-								   PlacementTarget="{TemplateBinding}"
-								   WindowManagerAddShadowHint="False"
-								   IsLightDismissEnabled="True"
-								   HorizontalOffset="-1"
-								   VerticalOffset="-1" >
-								<Grid>
-									<Border x:Name="PART_PopupContainer"
-										    Width="200"
-											Height="200"
-											Background="Red"
-											BorderThickness="1"
-											BorderBrush="Yellow"
-											HorizontalAlignment="Stretch"
-											ClipToBounds="False">
-
-
-									</Border>
-
-								</Grid>
-
-							</Popup>
-
+ 
 						</Grid>
 					</Border>
 				</Border>

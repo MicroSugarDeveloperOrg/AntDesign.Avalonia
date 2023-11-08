@@ -32,8 +32,10 @@
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="AntDesignTreeViewItem">
-				<StackPanel>
-					<antdesign:AntDesignBorder x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+				<Grid>
+					<StackPanel>
+					
+						<antdesign:AntDesignBorder x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
 											   Focusable="True"
 											   IsAnimation="False"
 											   MinHeight="{TemplateBinding MinHeight}"
@@ -44,7 +46,7 @@
 											   Padding="{TemplateBinding Padding}"
 											   TemplatedControl.IsTemplateFocusTarget="True">
 
-						<Grid x:Name="{x:Static helpers:PARTNameHelper.PART_Header}" 
+						  <Grid x:Name="{x:Static helpers:PARTNameHelper.PART_Header}" 
 							  Background="Transparent">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*"/>
@@ -90,34 +92,45 @@
 								</Border.Transitions>
 							</Border>
 
-
-
-							<Popup Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
-								   IsOpen="false"
-								   Placement="BottomEdgeAlignedLeft"
-								   PlacementTarget="{TemplateBinding}"
-								   WindowManagerAddShadowHint="False"
-								   IsLightDismissEnabled="True"
-								   HorizontalOffset="-1"
-								   VerticalOffset="-1" >
-								<Grid>
-								 
-								</Grid>
-
-							</Popup>
-
-
 						</Grid>
 
-					</antdesign:AntDesignBorder>
+					  </antdesign:AntDesignBorder>
 
-					<antdesign:AntDesignBorder IsHeightTransition="True" 
-											   IsExpanded="{TemplateBinding IsExpanded}">
-						<ItemsPresenter x:Name="PART_ItemsPresenter"
-										ItemsPanel="{TemplateBinding ItemsPanel}"/>
-					</antdesign:AntDesignBorder>
-								
-				</StackPanel>
+					  <antdesign:AntDesignBorder IsHeightTransition="True" 
+												 IsExpanded="{TemplateBinding IsExpanded}">
+							<ItemsPresenter x:Name="PART_ItemsPresenter"
+											ItemsPanel="{TemplateBinding ItemsPanel}"/>
+					  </antdesign:AntDesignBorder>
+ 
+					</StackPanel>
+				
+					<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
+						   IsOpen="false"
+						   Placement="BottomEdgeAlignedLeft"
+						   PlacementTarget="{TemplateBinding}"
+						   WindowManagerAddShadowHint="False"
+						   IsLightDismissEnabled="false">
+							<Border Background="Transparent"
+									Padding="{DynamicResource PopupShadowPadding}">
+								<Border Background="{DynamicResource MenuItemPopupBackground}"
+										TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
+										BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
+										BorderThickness="{DynamicResource BorderThickness}"
+										CornerRadius="{DynamicResource OverlayCornerRadius}"
+										Padding="{DynamicResource PopupPadding}"
+										MaxWidth="{DynamicResource MenuItemPopupMaxWidth}"
+										MinHeight="{DynamicResource MenuItemPopupMinHeight}"
+										HorizontalAlignment="Stretch"
+										BoxShadow="{DynamicResource MenuItemPopupShadow}">
+											<ContentPresenter x:Name="PART_PopupPresenter" 
+															  Focusable="False" 
+															  HorizontalContentAlignment="Center"
+															  VerticalContentAlignment="Center"/>
+								</Border> 
+							</Border>
+					</Popup>
+				
+				</Grid>
 			</ControlTemplate>
 		</Setter>
 
