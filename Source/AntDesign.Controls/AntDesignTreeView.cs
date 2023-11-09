@@ -1,4 +1,8 @@
-﻿namespace AntDesign.Controls;
+﻿using Avalonia.Controls;
+using Avalonia.VisualTree;
+using System.Diagnostics.Tracing;
+
+namespace AntDesign.Controls;
 
 public class AntDesignTreeView : TreeView
 {
@@ -22,6 +26,7 @@ public class AntDesignTreeView : TreeView
     }
      
     AntDesignTreeViewItem? _lastMenuOpenItem;
+    TopLevel? _topLevel;
 
     public static readonly StyledProperty<bool> IsMenuModeProperty =
        AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsMenuMode), defaultValue: false);
@@ -68,7 +73,6 @@ public class AntDesignTreeView : TreeView
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e); 
-
         OnSelectedFirstValidItem(Items.FirstOrDefault());
     }
 
@@ -90,6 +94,25 @@ public class AntDesignTreeView : TreeView
             WidthBeforeClosing = Bounds.Width;
 
         Width = double.NaN;
+
+        _topLevel = TopLevel.GetTopLevel(this);
+        if (_topLevel is not null)
+        {
+            _topLevel.PointerPressed += TopLevel_PointerPressed;
+            _topLevel.PointerExited += TopLevel_PointerExited; 
+        }
+    }
+
+    protected override void OnUnloaded(RoutedEventArgs e)
+    {
+        if (_topLevel is not null)
+        {
+            _topLevel.PointerPressed -= TopLevel_PointerPressed;
+            _topLevel.PointerExited -= TopLevel_PointerExited;
+            _topLevel = default;
+        }
+
+        base.OnUnloaded(e);
     }
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -236,4 +259,27 @@ public class AntDesignTreeView : TreeView
         _lastMenuOpenItem = default;
     }
 
+    private void TopLevel_PointerPressed(object sender, PointerPressedEventArgs e)
+    {
+        if (e.Source is null)
+            return;
+
+        if (e.Source is not Visual visual)
+            return;
+
+        var visualRoot = visual.GetVisualRoot();
+        if (visualRoot is PopupRoot)
+            return;
+
+        var antDesignTreeView = ((Visual)e.Source).GetSelfAndVisualAncestors().OfType<AntDesignTreeView>().FirstOrDefault();
+        if (antDesignTreeView is not null)
+            return;
+
+        HideMenuItemCore();
+    }
+
+    private void TopLevel_PointerExited(object sender, PointerEventArgs e)
+    {
+        //HideMenuItemCore();
+    }
 }

@@ -108,11 +108,14 @@
 						   IsOpen="false"
 						   Placement="BottomEdgeAlignedLeft"
 						   PlacementTarget="{TemplateBinding}"
+						   PlacementConstraintAdjustment="SlideX"
 						   WindowManagerAddShadowHint="False"
 						   IsLightDismissEnabled="false">
 							<Border Background="Transparent"
 									Padding="{DynamicResource PopupShadowPadding}">
 								<Border Background="{DynamicResource MenuItemPopupBackground}"
+										Width="100"
+										Height="100"
 										TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
 										BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
 										BorderThickness="{DynamicResource BorderThickness}"

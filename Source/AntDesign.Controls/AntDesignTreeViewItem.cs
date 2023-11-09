@@ -1,9 +1,4 @@
 ﻿using AntDesign.Controls.Helpers;
-using Avalonia.Controls;
-using Avalonia.Controls.Diagnostics;
-using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Primitives.PopupPositioning;
-using Avalonia.Threading;
 
 namespace AntDesign.Controls;
 
@@ -17,7 +12,7 @@ public class AntDesignTreeViewItem : TreeViewItem
             s.UpdatePseudoClasses();
         });
 
-        IsMenuOpenProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) => 
+        IsMenuOpenProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) =>
         {
             s.PopupShowCore(e.NewValue.Value);
         });
@@ -25,17 +20,17 @@ public class AntDesignTreeViewItem : TreeViewItem
 
     public AntDesignTreeViewItem()
     {
-        //ItemsSource
-        //ToolTip.SetTip(this, "123123");
     }
 
     bool _isColor = false;
     bool _isPanelClosing = false;
     bool _isMenuOpen = false;
     protected Control? _header;
-    protected AntDesignTreeView? _antDesignTreeView; 
+    protected AntDesignTreeView? _antDesignTreeView;
     protected Popup? _popup;
-   
+
+    protected Menu? _menu;
+
 
     public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsColorProperty =
            AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsColor), b => b.IsColor);
@@ -58,7 +53,7 @@ public class AntDesignTreeViewItem : TreeViewItem
         get => _isPanelClosing;
         internal set => SetAndRaise(IsColorProperty, ref _isPanelClosing, value);
     }
- 
+
     public bool IsMenuOpen
     {
         get => _isMenuOpen;
@@ -78,35 +73,16 @@ public class AntDesignTreeViewItem : TreeViewItem
         if (_header is not null)
         {
             _header.PointerPressed -= Header_PointerPressed;
-            _header.PointerMoved -= Header_PointerMoved;
-            _header.PointerExited -= Header_PointerExited;
-            _header.PointerEntered -= Header_PointerEntered;
             _header = null;
         }
 
         _header = e.NameScope.Find<Control>("PART_Header");
         if (_header is not null)
-        {
             _header.PointerPressed += Header_PointerPressed;
-            _header.PointerMoved += Header_PointerMoved;
-            _header.PointerExited += Header_PointerExited;
-            _header.PointerEntered += Header_PointerEntered;
-        }
-
-        if (_popup is not null)
-        {
-            _popup.PointerEntered -= Popup_PointerEntered;
-            _popup.PointerExited -= Popup_PointerExited;
-            _popup = null;
-        }
 
         _popup = e.NameScope.Find<Popup>("PART_Popup");
         if (_popup is not null)
-        {
             _popup.Placement = PlacementMode.RightEdgeAlignedTop;
-            _popup.PointerEntered += Popup_PointerEntered;
-            _popup.PointerExited += Popup_PointerExited;
-        }
 
         UpdatePseudoClasses();
     }
@@ -116,12 +92,7 @@ public class AntDesignTreeViewItem : TreeViewItem
         base.OnDetachedFromLogicalTree(e);
 
         if (_header is not null)
-        {
             _header.PointerPressed -= Header_PointerPressed;
-            _header.PointerMoved -= Header_PointerMoved;
-            _header.PointerExited -= Header_PointerExited;
-            _header.PointerEntered -= Header_PointerEntered;
-        }
 
         IsMenuOpen = false;
     }
@@ -154,7 +125,6 @@ public class AntDesignTreeViewItem : TreeViewItem
 
     private void Header_PointerPressed(object sender, PointerPressedEventArgs e)
     {
- 
         if (ItemCount > 0)
         {
             if (_antDesignTreeView is not null)
@@ -165,37 +135,6 @@ public class AntDesignTreeViewItem : TreeViewItem
 
             IsExpanded = !IsExpanded;
         }
-    }
-
-    private void Header_PointerMoved(object sender, PointerEventArgs e)
-    {
-
-    }
-
-    private void Header_PointerEntered(object sender, PointerEventArgs e)
-    {
-        if (_antDesignTreeView is not null)
-        {
-            if (_antDesignTreeView.IsPanelExpanded)
-                return;
-        }
-        //PopupShowCore(true);
-    }
-
-    void Popup_PointerEntered(object sender, PointerEventArgs e)
-    {
-
-    }
-
-    void Popup_PointerExited(object sender, PointerEventArgs e)
-    {
-        PopupShowCore(false);
-    }
-
-    private void Header_PointerExited(object sender, PointerEventArgs e)
-    {
-        //if (_menu is not null)
-            //_menu.Close();
     }
 
     protected override void OnSizeChanged(SizeChangedEventArgs e)
