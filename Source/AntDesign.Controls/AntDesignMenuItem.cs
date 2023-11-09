@@ -1,4 +1,5 @@
 ﻿using AntDesign.Controls.Helpers;
+using System;
 
 namespace AntDesign.Controls;
 
@@ -20,18 +21,17 @@ public class AntDesignMenuItem : TreeViewItem
 
     public AntDesignMenuItem()
     {
+         
     }
 
     bool _isColor = false;
     bool _isPanelClosing = false;
     bool _isMenuOpen = false;
     protected Control? _header;
-    protected AntDesignMenu? _antDesignTreeView;
+    protected AntDesignMenu? _antDesignMenu;
     protected Popup? _popup;
-
     protected Menu? _menu;
-
-
+ 
     public static readonly DirectProperty<AntDesignMenuItem, bool> IsColorProperty =
            AvaloniaProperty.RegisterDirect<AntDesignMenuItem, bool>(nameof(IsColor), b => b.IsColor);
 
@@ -40,6 +40,29 @@ public class AntDesignMenuItem : TreeViewItem
 
     public static readonly DirectProperty<AntDesignMenuItem, bool> IsMenuOpenProperty =
            AvaloniaProperty.RegisterDirect<AntDesignMenuItem, bool>(nameof(IsMenuOpen), b => b.IsMenuOpen);
+
+    public static readonly StyledProperty<object?> PopupContentProperty =
+           AvaloniaProperty.Register<AntDesignMenuItem, object?>(nameof(PopupContent));
+
+    public static readonly StyledProperty<IDataTemplate?> PopupContentTemplateProperty =
+           AvaloniaProperty.Register<AntDesignMenuItem, IDataTemplate?>(nameof(PopupContentTemplate));
+
+
+    [DependsOn(nameof(PopupContentTemplate))]
+    public object? PopupContent
+    {
+        get { return GetValue(PopupContentProperty); }
+        set { SetValue(PopupContentProperty, value); }
+    }
+
+    /// <summary>
+    /// Gets or sets the data template used to display the content of the control.
+    /// </summary>
+    public IDataTemplate? PopupContentTemplate
+    {
+        get { return GetValue(PopupContentTemplateProperty); }
+        set { SetValue(PopupContentTemplateProperty, value); }
+    }
 
 
     public bool IsColor
@@ -63,7 +86,7 @@ public class AntDesignMenuItem : TreeViewItem
     protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
     {
         base.OnAttachedToLogicalTree(e);
-        _antDesignTreeView = this.GetLogicalAncestors().OfType<AntDesignMenu>().FirstOrDefault();
+        _antDesignMenu = this.GetLogicalAncestors().OfType<AntDesignMenu>().FirstOrDefault();
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -81,9 +104,7 @@ public class AntDesignMenuItem : TreeViewItem
             _header.PointerPressed += Header_PointerPressed;
 
         _popup = e.NameScope.Find<Popup>("PART_Popup");
-        if (_popup is not null)
-            _popup.Placement = PlacementMode.RightEdgeAlignedTop;
-
+ 
         UpdatePseudoClasses();
     }
 
@@ -114,9 +135,9 @@ public class AntDesignMenuItem : TreeViewItem
 
     protected override void OnHeaderDoubleTapped(TappedEventArgs e)
     {
-        if (_antDesignTreeView is not null)
+        if (_antDesignMenu is not null)
         {
-            if (!_antDesignTreeView.IsPanelExpanded)
+            if (!_antDesignMenu.IsPanelExpanded)
                 return;
         }
 
@@ -127,9 +148,9 @@ public class AntDesignMenuItem : TreeViewItem
     {
         if (ItemCount > 0)
         {
-            if (_antDesignTreeView is not null)
+            if (_antDesignMenu is not null)
             {
-                if (!_antDesignTreeView.IsPanelExpanded)
+                if (!_antDesignMenu.IsPanelExpanded)
                     return;
             }
 
@@ -147,11 +168,6 @@ public class AntDesignMenuItem : TreeViewItem
         base.OnPropertyChanged(change);
     }
 
-    public void Clear()
-    {
-        IsColor = false;
-    }
-
     void UpdatePseudoClasses()
     {
         PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Coloring, IsColor);
@@ -165,8 +181,28 @@ public class AntDesignMenuItem : TreeViewItem
         if (_popup.IsOpen && !isOpen)
             _popup.IsOpen = false;
 
-        if (_antDesignTreeView?.IsPanelExpanded == true)
+        if (_antDesignMenu?.IsPanelExpanded == true)
             return;
+
+        if (_menu is null)
+        {
+            _menu = new Menu()
+            {
+                //Theme = 
+                ItemsPanel = new FuncTemplate<Panel?>(() => new StackPanel() { Orientation = Orientation.Vertical }),
+            };
+
+            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+
+            PopupContent = _menu;
+        }
+
 
         _popup.IsOpen = isOpen;
     }

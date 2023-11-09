@@ -106,27 +106,24 @@
 				
 					<Popup x:Name="{x:Static helpers:PARTNameHelper.PART_Popup}"
 						   IsOpen="false"
-						   Placement="BottomEdgeAlignedLeft"
+						   Placement="RightEdgeAlignedTop"
 						   PlacementTarget="{TemplateBinding}"
-						   PlacementConstraintAdjustment="SlideX"
 						   WindowManagerAddShadowHint="False"
 						   IsLightDismissEnabled="false">
 							<Border Background="Transparent"
 									Padding="{DynamicResource PopupShadowPadding}">
-								<Border Background="{DynamicResource MenuItemPopupBackground}"
-										Width="100"
-										Height="100"
+								<Border Background="{DynamicResource MenuItemPopupBackground}" 
 										TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
 										BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
 										BorderThickness="{DynamicResource BorderThickness}"
 										CornerRadius="{DynamicResource OverlayCornerRadius}"
-										Padding="{DynamicResource PopupPadding}"
-										MaxWidth="{DynamicResource MenuItemPopupMaxWidth}"
-										MinHeight="{DynamicResource MenuItemPopupMinHeight}"
+										Padding="{DynamicResource PopupPadding}" 
 										HorizontalAlignment="Stretch"
 										BoxShadow="{DynamicResource MenuItemPopupShadow}">
 											<ContentPresenter x:Name="PART_PopupPresenter" 
 															  Focusable="False" 
+															  Content="{TemplateBinding PopupContent}"
+															  ContentTemplate="{TemplateBinding PopupContentTemplate}"
 															  HorizontalContentAlignment="Center"
 															  VerticalContentAlignment="Center"/>
 								</Border> 

@@ -31,7 +31,6 @@ public class AntDesignGrid : Grid
             IsPressed = false;
     }
 
-
     private void UpdatePseudoClasses()
     {
         PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Pressed, IsPressed);
