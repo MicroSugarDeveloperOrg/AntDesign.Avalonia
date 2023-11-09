@@ -5,7 +5,7 @@
 					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
 	
-	<ControlTheme x:Key="{x:Type AntDesignTreeViewItem}" TargetType="AntDesignTreeViewItem">
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignMenuItem}" TargetType="antdesign:AntDesignMenuItem">
 		<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}"/>
 		<Setter Property="Background" Value="{DynamicResource AntDesignTreeViewItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource AntDesignTreeViewItemForeground}" />
@@ -31,7 +31,7 @@
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="Template">
-			<ControlTemplate TargetType="AntDesignTreeViewItem">
+			<ControlTemplate TargetType="antdesign:AntDesignMenuItem">
 				<Grid>
 					<StackPanel>
 					

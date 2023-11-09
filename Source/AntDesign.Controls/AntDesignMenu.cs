@@ -1,44 +1,42 @@
-﻿using Avalonia.Controls;
-using Avalonia.VisualTree;
-using System.Diagnostics.Tracing;
+﻿using Avalonia.VisualTree;
 
 namespace AntDesign.Controls;
 
-public class AntDesignTreeView : TreeView
+public class AntDesignMenu : TreeView
 {
-    static AntDesignTreeView()
+    static AntDesignMenu()
     {
-        IsPanelExpandedProperty.Changed.AddClassHandler<AntDesignTreeView, bool>((s, e) =>
+        IsPanelExpandedProperty.Changed.AddClassHandler<AntDesignMenu, bool>((s, e) =>
         {
 
         });
 
-        SelectedItemProperty.Changed.AddClassHandler<AntDesignTreeView, object?>((s, e) =>
+        SelectedItemProperty.Changed.AddClassHandler<AntDesignMenu, object?>((s, e) =>
         {
             s.ExpandingOrColoring();
         });
     }
 
-    public AntDesignTreeView()
+    public AntDesignMenu()
     {
         ScrollViewer.SetVerticalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
         ScrollViewer.SetHorizontalScrollBarVisibility(this, ScrollBarVisibility.Hidden);
     }
-     
-    AntDesignTreeViewItem? _lastMenuOpenItem;
+
+    AntDesignMenuItem? _lastMenuOpenItem;
     TopLevel? _topLevel;
 
     public static readonly StyledProperty<bool> IsMenuModeProperty =
-       AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsMenuMode), defaultValue: false);
+       AvaloniaProperty.Register<AntDesignMenu, bool>(nameof(IsMenuMode), defaultValue: false);
 
     public static readonly StyledProperty<bool> IsPanelExpandedProperty =
-           AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsPanelExpanded), defaultValue: true);
+           AvaloniaProperty.Register<AntDesignMenu, bool>(nameof(IsPanelExpanded), defaultValue: true);
 
     public static readonly StyledProperty<double> WidthBeforeClosingProperty =
-           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthBeforeClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignMenu, double>(nameof(WidthBeforeClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<double> WidthAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthAfterClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignMenu, double>(nameof(WidthAfterClosing), defaultValue: 0d);
 
 
     public bool IsMenuMode
@@ -72,7 +70,7 @@ public class AntDesignTreeView : TreeView
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
-        base.OnApplyTemplate(e); 
+        base.OnApplyTemplate(e);
         OnSelectedFirstValidItem(Items.FirstOrDefault());
     }
 
@@ -83,7 +81,7 @@ public class AntDesignTreeView : TreeView
 
     protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
     {
-        return new AntDesignTreeViewItem();
+        return new AntDesignMenuItem();
     }
 
     protected override void OnLoaded(RoutedEventArgs e)
@@ -99,7 +97,7 @@ public class AntDesignTreeView : TreeView
         if (_topLevel is not null)
         {
             _topLevel.PointerPressed += TopLevel_PointerPressed;
-            _topLevel.PointerExited += TopLevel_PointerExited; 
+            _topLevel.PointerExited += TopLevel_PointerExited;
         }
     }
 
@@ -163,7 +161,7 @@ public class AntDesignTreeView : TreeView
 
     bool ExpandingOrColoringParents(object? item)
     {
-        if (item is not AntDesignTreeViewItem antDesignTreeViewItem)
+        if (item is not AntDesignMenuItem antDesignTreeViewItem)
             return false;
 
         if (antDesignTreeViewItem.ItemCount > 0)
@@ -186,7 +184,7 @@ public class AntDesignTreeView : TreeView
 
     void OnSelectedFirstValidItem(object? item)
     {
-        if (item is not AntDesignTreeViewItem antDesignTreeViewItem)
+        if (item is not AntDesignMenuItem antDesignTreeViewItem)
             return;
 
         if (antDesignTreeViewItem.ItemCount <= 0)
@@ -197,18 +195,15 @@ public class AntDesignTreeView : TreeView
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
-        if (IsMenuMode)
-        {
-            if (e.Source is null)
-                return;
+        if (e.Source is null)
+            return;
 
-            var container = GetContainerFromEventSource(e.Source);
-            if (container is null)
-                return;
+        var container = GetContainerFromEventSource(e.Source);
+        if (container is null)
+            return;
 
-            if (container.ItemCount > 0)
-                return;
-        }
+        if (container.ItemCount > 0)
+            return;
 
         base.OnPointerPressed(e);
     }
@@ -220,7 +215,7 @@ public class AntDesignTreeView : TreeView
 
     protected override void OnPointerExited(PointerEventArgs e)
     {
-        base.OnPointerExited(e); 
+        base.OnPointerExited(e);
     }
 
     protected override void OnPointerMoved(PointerEventArgs e)
@@ -234,7 +229,7 @@ public class AntDesignTreeView : TreeView
             return;
 
         var container = GetContainerFromEventSource(e.Source);
-        if (container is not AntDesignTreeViewItem antDesignTreeViewItem)
+        if (container is not AntDesignMenuItem antDesignTreeViewItem)
             return;
 
         if (_lastMenuOpenItem == container && _lastMenuOpenItem.IsMenuOpen)
@@ -271,7 +266,7 @@ public class AntDesignTreeView : TreeView
         if (visualRoot is PopupRoot)
             return;
 
-        var antDesignTreeView = ((Visual)e.Source).GetSelfAndVisualAncestors().OfType<AntDesignTreeView>().FirstOrDefault();
+        var antDesignTreeView = ((Visual)e.Source).GetSelfAndVisualAncestors().OfType<AntDesignMenu>().FirstOrDefault();
         if (antDesignTreeView is not null)
             return;
 
