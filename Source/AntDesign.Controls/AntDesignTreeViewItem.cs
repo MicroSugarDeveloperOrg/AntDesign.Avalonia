@@ -4,22 +4,22 @@ using System;
 namespace AntDesign.Controls;
 
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_Coloring)]
-public class AntDesignMenuItem : TreeViewItem
+public class AntDesignTreeViewItem : TreeViewItem
 {
-    static AntDesignMenuItem()
+    static AntDesignTreeViewItem()
     {
-        IsColorProperty.Changed.AddClassHandler<AntDesignMenuItem, bool>((s, e) =>
+        IsColorProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) =>
         {
             s.UpdatePseudoClasses();
         });
 
-        IsMenuOpenProperty.Changed.AddClassHandler<AntDesignMenuItem, bool>((s, e) =>
+        IsMenuOpenProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) =>
         {
             s.PopupShowCore(e.NewValue.Value);
         });
     }
 
-    public AntDesignMenuItem()
+    public AntDesignTreeViewItem()
     {
          
     }
@@ -28,24 +28,24 @@ public class AntDesignMenuItem : TreeViewItem
     bool _isPanelClosing = false;
     bool _isMenuOpen = false;
     protected Control? _header;
-    protected AntDesignMenu? _antDesignMenu;
+    protected AntDesignTreeView? _antDesignMenu;
     protected Popup? _popup;
     protected Menu? _menu;
  
-    public static readonly DirectProperty<AntDesignMenuItem, bool> IsColorProperty =
-           AvaloniaProperty.RegisterDirect<AntDesignMenuItem, bool>(nameof(IsColor), b => b.IsColor);
+    public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsColorProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsColor), b => b.IsColor);
 
-    public static readonly DirectProperty<AntDesignMenuItem, bool> IsPanelClosingProperty =
-           AvaloniaProperty.RegisterDirect<AntDesignMenuItem, bool>(nameof(IsPanelClosing), b => b.IsPanelClosing);
+    public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsPanelClosingProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsPanelClosing), b => b.IsPanelClosing);
 
-    public static readonly DirectProperty<AntDesignMenuItem, bool> IsMenuOpenProperty =
-           AvaloniaProperty.RegisterDirect<AntDesignMenuItem, bool>(nameof(IsMenuOpen), b => b.IsMenuOpen);
+    public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsMenuOpenProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsMenuOpen), b => b.IsMenuOpen);
 
     public static readonly StyledProperty<object?> PopupContentProperty =
-           AvaloniaProperty.Register<AntDesignMenuItem, object?>(nameof(PopupContent));
+           AvaloniaProperty.Register<AntDesignTreeViewItem, object?>(nameof(PopupContent));
 
     public static readonly StyledProperty<IDataTemplate?> PopupContentTemplateProperty =
-           AvaloniaProperty.Register<AntDesignMenuItem, IDataTemplate?>(nameof(PopupContentTemplate));
+           AvaloniaProperty.Register<AntDesignTreeViewItem, IDataTemplate?>(nameof(PopupContentTemplate));
 
 
     [DependsOn(nameof(PopupContentTemplate))]
@@ -86,7 +86,7 @@ public class AntDesignMenuItem : TreeViewItem
     protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
     {
         base.OnAttachedToLogicalTree(e);
-        _antDesignMenu = this.GetLogicalAncestors().OfType<AntDesignMenu>().FirstOrDefault();
+        _antDesignMenu = this.GetLogicalAncestors().OfType<AntDesignTreeView>().FirstOrDefault();
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)

@@ -5,7 +5,7 @@
 					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
 	
-	<ControlTheme x:Key="{x:Type antdesign:AntDesignMenuItem}" TargetType="antdesign:AntDesignMenuItem">
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignTreeViewItem}" TargetType="antdesign:AntDesignTreeViewItem">
 		<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}"/>
 		<Setter Property="Background" Value="{DynamicResource AntDesignTreeViewItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource AntDesignTreeViewItemForeground}" />
@@ -31,7 +31,7 @@
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Stretch" />
 		<Setter Property="Template">
-			<ControlTemplate TargetType="antdesign:AntDesignMenuItem">
+			<ControlTemplate TargetType="antdesign:AntDesignTreeViewItem">
 				<Grid>
 					<StackPanel>
 					
@@ -110,24 +110,21 @@
 						   PlacementTarget="{TemplateBinding}"
 						   WindowManagerAddShadowHint="False"
 						   IsLightDismissEnabled="false">
-							<Border Background="Transparent"
-									Padding="{DynamicResource PopupShadowPadding}">
-								<Border Background="{DynamicResource MenuItemPopupBackground}" 
-										TextElement.Foreground="{DynamicResource MenuItemPopupForeground}"
-										BorderBrush="{DynamicResource MenuItemPopupBorderBrush}"
-										BorderThickness="{DynamicResource BorderThickness}"
-										CornerRadius="{DynamicResource OverlayCornerRadius}"
-										Padding="{DynamicResource PopupPadding}" 
-										HorizontalAlignment="Stretch"
-										BoxShadow="{DynamicResource MenuItemPopupShadow}">
-											<ContentPresenter x:Name="PART_PopupPresenter" 
-															  Focusable="False" 
-															  Content="{TemplateBinding PopupContent}"
-															  ContentTemplate="{TemplateBinding PopupContentTemplate}"
-															  HorizontalContentAlignment="Center"
-															  VerticalContentAlignment="Center"/>
-								</Border> 
-							</Border>
+						<Border Background="{DynamicResource MenuItemPopupBackground}"
+								Margin="{DynamicResource PopupShadowPadding}"
+								CornerRadius="{DynamicResource OverlayCornerRadius}"
+								HorizontalAlignment="Stretch"
+								BoxShadow="{DynamicResource MenuItemPopupShadow}">
+
+							<ContentPresenter x:Name="PART_PopupPresenter"
+											  Focusable="False"
+											  CornerRadius="{DynamicResource OverlayCornerRadius}"
+											  ClipToBounds="true"
+											  Content="{TemplateBinding PopupContent}"
+											  ContentTemplate="{TemplateBinding PopupContentTemplate}"
+											  HorizontalContentAlignment="Center"
+											  VerticalContentAlignment="Center"/>
+						</Border>
 					</Popup>
 				
 				</Grid>

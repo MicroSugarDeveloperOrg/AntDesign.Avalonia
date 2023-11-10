@@ -3,7 +3,7 @@
 					xmlns:antdesign="using:AntDesign.Controls"
 					xmlns:helpers="using:AntDesign.Helpers"
 					x:CompileBindings="True">
-	<ControlTheme x:Key="{x:Type antdesign:AntDesignMenu}" TargetType="antdesign:AntDesignMenu">
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignTreeView}" TargetType="antdesign:AntDesignTreeView">
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
@@ -15,7 +15,7 @@
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
 		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
 		<Setter Property="Template">
-			<ControlTemplate TargetType="antdesign:AntDesignMenu">
+			<ControlTemplate TargetType="antdesign:AntDesignTreeView">
 				<Border Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"

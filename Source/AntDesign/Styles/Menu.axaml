@@ -5,7 +5,7 @@
 					xmlns:behaviors="using:AntDesign.Behaviors"
 					x:CompileBindings="True">
 
-	<ControlTheme x:Key="AntDesignMenuItemStyle" TargetType="MenuItem">
+	<ControlTheme x:Key="AntDesignTitleMenuItemStyle" TargetType="MenuItem">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Background" Value="{DynamicResource AntMenuItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource AntMenuItemForeground}" />
@@ -182,7 +182,7 @@
 
 	</ControlTheme>
 
-	<ControlTheme x:Key="AntDesignNormalMenuItemStyle" TargetType="MenuItem">
+	<ControlTheme x:Key="AntDesignLikeVsMenuItemStyle" TargetType="MenuItem">
 		<Setter Property="FontSize" Value="{DynamicResource FontSize}" />
 		<Setter Property="Background" Value="{DynamicResource AntNormalMenuItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource AntNormalMenuItemForeground}" />
@@ -355,14 +355,11 @@
 
 	<ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
 		<Setter Property="Background" Value="{DynamicResource MenuBackground}" />
-		<Setter Property="TextElement.Foreground" Value="{DynamicResource MenuForeground}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource MenuBorderBrush}" />
-		<Setter Property="BorderThickness" Value="{DynamicResource MenuBorderThickness}" />
+		<Setter Property="TextElement.Foreground" Value="{DynamicResource MenuForeground}" /> 
 		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
 		<Setter Property="Padding" Value="{DynamicResource Padding}" />
 		<Setter Property="Margin" Value="{DynamicResource Margin}" />
-		<Setter Property="MinHeight" Value="{DynamicResource MenuBarHeight}" />
-		<Setter Property="ItemContainerTheme" Value="{StaticResource AntDesignMenuItemStyle}" />
+		<Setter Property="MinHeight" Value="{DynamicResource MenuBarHeight}" /> 
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Center"/>
 		<Setter Property="Template">
@@ -381,9 +378,37 @@
 		</Setter>
 	</ControlTheme>
 
-	<ControlTheme x:Key="AntDesignNormalMenuStyle" TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
+	<ControlTheme x:Key="AntDesignTitleMenuStyle" TargetType="Menu">
+		<Setter Property="Background" Value="{DynamicResource MenuBackground}" />
+		<Setter Property="TextElement.Foreground" Value="{DynamicResource MenuForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource MenuBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource MenuBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
+		<Setter Property="MinHeight" Value="{DynamicResource MenuBarHeight}" />
+		<Setter Property="ItemContainerTheme" Value="{StaticResource AntDesignTitleMenuItemStyle}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Menu">
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Padding="{TemplateBinding Padding}">
+					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+									ItemsPanel="{TemplateBinding ItemsPanel}"
+									VerticalAlignment="Stretch"
+									KeyboardNavigation.TabNavigation="Continue" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignLikeVsMenuStyle" TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
 		<Setter Property="BorderThickness" Value="{StaticResource BorderThickness}" />
-		<Setter Property="ItemContainerTheme" Value="{StaticResource AntDesignNormalMenuItemStyle}" />
+		<Setter Property="ItemContainerTheme" Value="{StaticResource AntDesignLikeVsMenuItemStyle}" />
 	</ControlTheme>
 		
 </ResourceDictionary>
