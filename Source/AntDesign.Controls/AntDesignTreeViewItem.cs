@@ -1,5 +1,4 @@
 ﻿using AntDesign.Controls.Helpers;
-using System;
 
 namespace AntDesign.Controls;
 
@@ -21,7 +20,7 @@ public class AntDesignTreeViewItem : TreeViewItem
 
     public AntDesignTreeViewItem()
     {
-         
+
     }
 
     bool _isColor = false;
@@ -31,7 +30,7 @@ public class AntDesignTreeViewItem : TreeViewItem
     protected AntDesignTreeView? _antDesignMenu;
     protected Popup? _popup;
     protected AntDesignMenu? _menu;
- 
+
     public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsColorProperty =
            AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsColor), b => b.IsColor);
 
@@ -104,7 +103,7 @@ public class AntDesignTreeViewItem : TreeViewItem
             _header.PointerPressed += Header_PointerPressed;
 
         _popup = e.NameScope.Find<Popup>("PART_Popup");
- 
+
         UpdatePseudoClasses();
     }
 
@@ -194,10 +193,16 @@ public class AntDesignTreeViewItem : TreeViewItem
             _menu = new AntDesignMenu()
             {
                 //Theme = 
-                ItemsPanel = new FuncTemplate<Panel?>(() => new StackPanel() { Orientation = Orientation.Vertical, Spacing=3 }),
+                ItemsPanel = new FuncTemplate<Panel?>(() => new StackPanel() { Orientation = Orientation.Vertical, Spacing = 3 }),
             };
 
-            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
+            var menuItem = new AntDesignMenuItem() { Header = "1231233" };
+            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
+            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
+            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
+            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
+
+            _menu.Items.Add(menuItem);
             _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
             _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
             _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
