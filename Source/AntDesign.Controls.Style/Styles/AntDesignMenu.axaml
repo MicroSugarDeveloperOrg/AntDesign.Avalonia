@@ -4,5 +4,30 @@
 					xmlns:helpers="using:AntDesign.Helpers"
 					xmlns:assists="using:AntDesign.Assists"
 					x:CompileBindings="True">
-  <!-- Add Resources Here -->
+
+	<ControlTheme x:Key="{x:Type antdesign:AntDesignMenu}" TargetType="antdesign:AntDesignMenu">
+		<Setter Property="Background" Value="{DynamicResource MenuBackground}" />
+		<Setter Property="TextElement.Foreground" Value="{DynamicResource MenuForeground}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="Margin" Value="{DynamicResource Margin}" />
+		<Setter Property="MinHeight" Value="{DynamicResource MenuBarHeight}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="antdesign:AntDesignMenu">
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Padding="{TemplateBinding Padding}">
+					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+									ItemsPanel="{TemplateBinding ItemsPanel}"
+									VerticalAlignment="Stretch"
+									KeyboardNavigation.TabNavigation="Continue" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
 </ResourceDictionary>

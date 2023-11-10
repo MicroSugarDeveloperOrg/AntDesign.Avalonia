@@ -118,6 +118,11 @@ public class AntDesignTreeViewItem : TreeViewItem
         IsMenuOpen = false;
     }
 
+    protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
+    {
+        return new AntDesignTreeViewItem();
+    }
+
     protected override void OnPointerEntered(PointerEventArgs e)
     {
         base.OnPointerEntered(e);
