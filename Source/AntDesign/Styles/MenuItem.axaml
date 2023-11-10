@@ -56,11 +56,7 @@
 		<Setter Property="Background" Value="{DynamicResource MenuItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource MenuItemForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource MenuItemBorderBrush}" />
-		<Setter Property="behaviors:Interaction.Behaviors">
-			<Setter.Value>
-				<behaviors:MenuItemBehaviors/>
-			</Setter.Value>
-		</Setter>
+
 		<Setter Property="assists:MenuItemAssists.PointerOverBackground" Value="{DynamicResource MenuItemPointerOverBackground}" />
 		<Setter Property="assists:MenuItemAssists.PointerOverForeground" Value="{DynamicResource MenuItemPointerOverForeground}" />
 		<Setter Property="assists:MenuItemAssists.PointerOverBorderBrush" Value="{DynamicResource MenuItemPointerOverBorderBrush}" />
@@ -164,6 +160,7 @@
 								</ScrollViewer>
 							</Border>
 						</Border>
+					
 					</Popup>
 				
 				</Panel>

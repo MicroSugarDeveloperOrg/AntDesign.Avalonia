@@ -46,8 +46,7 @@
 						<DataGrid.Styles>
 							<Style Selector="DataGridRow">
 								<!--这是头部显示Index-->
-								<Setter Property="Header" Value="{Binding RelativeSource={RelativeSource Self}, Converter={StaticResource DataGridRowIndexConverter}}"/>
-								
+								<Setter Property="Header" Value="{Binding RelativeSource={RelativeSource Self}, Converter={StaticResource DataGridRowIndexConverter}}"/>								
 							</Style>
 							<Style  Selector="DataGridRow:nth-child(2n)">
 								<!--这是隔行变色-->

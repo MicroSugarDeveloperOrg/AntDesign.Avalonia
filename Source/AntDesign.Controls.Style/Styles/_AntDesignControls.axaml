@@ -4,6 +4,8 @@
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignContainer.axaml" />
 		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignDrawer.axaml" />
+		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignMenu.axaml" />
+		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignMenuItem.axaml" />
 		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignTreeView.axaml" />
 		<ResourceInclude Source="avares://AntDesign.Controls.Style/Styles/AntDesignTreeViewItem.axaml" />
 	</ResourceDictionary.MergedDictionaries>

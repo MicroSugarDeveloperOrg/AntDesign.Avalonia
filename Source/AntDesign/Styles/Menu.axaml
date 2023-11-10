@@ -187,6 +187,7 @@
 		<Setter Property="Background" Value="{DynamicResource AntNormalMenuItemBackground}" />
 		<Setter Property="Foreground" Value="{DynamicResource AntNormalMenuItemForeground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource AntNormalMenuItemBorderBrush}" />
+
 		<Setter Property="assists:MenuItemAssists.PointerOverBackground" Value="{DynamicResource AntNormalMenuItemPointerOverBackground}" />
 		<Setter Property="assists:MenuItemAssists.PointerOverForeground" Value="{DynamicResource AntNormalMenuItemPointerOverForeground}" />
 		<Setter Property="assists:MenuItemAssists.PointerOverBorderBrush" Value="{DynamicResource AntNormalMenuItemPointerOverBorderBrush}" />
