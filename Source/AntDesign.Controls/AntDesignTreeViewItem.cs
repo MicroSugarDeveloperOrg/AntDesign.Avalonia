@@ -30,7 +30,7 @@ public class AntDesignTreeViewItem : TreeViewItem
     protected Control? _header;
     protected AntDesignTreeView? _antDesignMenu;
     protected Popup? _popup;
-    protected Menu? _menu;
+    protected AntDesignMenu? _menu;
  
     public static readonly DirectProperty<AntDesignTreeViewItem, bool> IsColorProperty =
            AvaloniaProperty.RegisterDirect<AntDesignTreeViewItem, bool>(nameof(IsColor), b => b.IsColor);
@@ -191,19 +191,19 @@ public class AntDesignTreeViewItem : TreeViewItem
 
         if (_menu is null)
         {
-            _menu = new Menu()
+            _menu = new AntDesignMenu()
             {
                 //Theme = 
-                ItemsPanel = new FuncTemplate<Panel?>(() => new StackPanel() { Orientation = Orientation.Vertical }),
+                ItemsPanel = new FuncTemplate<Panel?>(() => new StackPanel() { Orientation = Orientation.Vertical, Spacing=3 }),
             };
 
-            _menu.Items.Add(new MenuItem() { Header = "1231233" });
-            _menu.Items.Add(new MenuItem() { Header = "1231233" });
-            _menu.Items.Add(new MenuItem() { Header = "1231233" });
-            _menu.Items.Add(new MenuItem() { Header = "1231233" });
-            _menu.Items.Add(new MenuItem() { Header = "1231233" });
-            _menu.Items.Add(new MenuItem() { Header = "1231233" });
-            _menu.Items.Add(new MenuItem() { Header = "1231233" });
+            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
+            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
+            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
+            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
+            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
+            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
+            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
 
             PopupContent = _menu;
         }
