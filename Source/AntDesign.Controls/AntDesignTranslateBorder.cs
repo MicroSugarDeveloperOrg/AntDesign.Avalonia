@@ -1,25 +1,26 @@
 ﻿using AntDesign.Controls.Helpers;
+using Avalonia.Collections;
 
 namespace AntDesign.Controls;
 
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_Pressed)]
-public class AntDesignBorder : Border
+public class AntDesignTranslateBorder : Border
 {
-    static AntDesignBorder()
+    static AntDesignTranslateBorder()
     {
-        ClipToBoundsProperty.OverrideDefaultValue<AntDesignBorder>(false);
-        ChildProperty.Changed.AddClassHandler<AntDesignBorder, Control?>((s, e) =>
+        ClipToBoundsProperty.OverrideDefaultValue<AntDesignTranslateBorder>(false);
+        ChildProperty.Changed.AddClassHandler<AntDesignTranslateBorder, Control?>((s, e) =>
         {
- 
+           
         });
 
-        IsVisibleProperty.Changed.AddClassHandler<AntDesignBorder, bool>((s, e) =>
+        IsVisibleProperty.Changed.AddClassHandler<AntDesignTranslateBorder, bool>((s, e) =>
         {
             if (s is null)
-                return; 
+                return;
         });
 
-        IsExpandedProperty.Changed.AddClassHandler<AntDesignBorder, bool>((s, e) =>
+        IsExpandedProperty.Changed.AddClassHandler<AntDesignTranslateBorder, bool>((s, e) =>
         {
             if (s is null)
                 return;
@@ -27,17 +28,17 @@ public class AntDesignBorder : Border
             s.Expander(e.NewValue.Value);
         });
 
-        WidthProperty.Changed.AddClassHandler<AntDesignBorder, double>((s, e) =>
+        WidthProperty.Changed.AddClassHandler<AntDesignTranslateBorder, double>((s, e) =>
         {
 
         });
 
-        HeightProperty.Changed.AddClassHandler<AntDesignBorder, double>((s, e) =>
+        HeightProperty.Changed.AddClassHandler<AntDesignTranslateBorder, double>((s, e) =>
         {
 
         });
 
-        HorizontalAlignmentProperty.Changed.AddClassHandler<AntDesignBorder, HorizontalAlignment>((s, e) =>
+        HorizontalAlignmentProperty.Changed.AddClassHandler<AntDesignTranslateBorder, HorizontalAlignment>((s, e) =>
         {
             switch (e.NewValue.Value)
             {
@@ -54,7 +55,7 @@ public class AntDesignBorder : Border
             }
         });
 
-        VerticalAlignmentProperty.Changed.AddClassHandler<AntDesignBorder, VerticalAlignment>((s, e) =>
+        VerticalAlignmentProperty.Changed.AddClassHandler<AntDesignTranslateBorder, VerticalAlignment>((s, e) =>
         {
             switch (e.NewValue.Value)
             {
@@ -72,48 +73,42 @@ public class AntDesignBorder : Border
         });
     }
 
-    public AntDesignBorder()
+    public AntDesignTranslateBorder()
     {
-
+        
     }
 
     bool _isLoadedInStarting;
     bool _isPressed = false;
 
-    double _panelWidth = double.NaN;
-    double _panelHeight = double.NaN;
+    double _panelWidth;
+    double _panelHeight;
 
     #region DependencyProperty
 
-    public static readonly DirectProperty<AntDesignBorder, bool> IsPressedProperty =
-           AvaloniaProperty.RegisterDirect<AntDesignBorder, bool>(nameof(IsPressed), b => b.IsPressed);
+    public static readonly DirectProperty<AntDesignTranslateBorder, bool> IsPressedProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignTranslateBorder, bool>(nameof(IsPressed), b => b.IsPressed);
 
     public static readonly StyledProperty<bool> IsAnimationProperty =
-           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsAnimation), defaultValue: true);
+           AvaloniaProperty.Register<AntDesignTranslateBorder, bool>(nameof(IsAnimation), defaultValue: true);
 
     public static readonly StyledProperty<TimeSpan> DurationProperty =
-           AvaloniaProperty.Register<AntDesignBorder, TimeSpan>(nameof(Duration), defaultValue: TimeSpan.FromMilliseconds(200));
+           AvaloniaProperty.Register<AntDesignTranslateBorder, TimeSpan>(nameof(Duration), defaultValue: TimeSpan.FromMilliseconds(200));
 
     public static readonly StyledProperty<bool> IsWidthTransitionProperty =
-           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsWidthTransition));
+           AvaloniaProperty.Register<AntDesignTranslateBorder, bool>(nameof(IsWidthTransition));
 
     public static readonly StyledProperty<bool> IsHeightTransitionProperty =
-           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsHeightTransition));
-
-    public static readonly StyledProperty<double> WidthBeforeClosingProperty =
-           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(WidthBeforeClosing), defaultValue: double.NaN);
+           AvaloniaProperty.Register<AntDesignTranslateBorder, bool>(nameof(IsHeightTransition));
 
     public static readonly StyledProperty<double> WidthAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(WidthAfterClosing), defaultValue: double.NaN);
-
-    public static readonly StyledProperty<double> HeightBeforeClosingProperty =
-           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(HeightBeforeClosing), defaultValue: double.NaN);
+           AvaloniaProperty.Register<AntDesignTranslateBorder, double>(nameof(WidthAfterClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<double> HeightAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(HeightAfterClosing), defaultValue: double.NaN);
+           AvaloniaProperty.Register<AntDesignTranslateBorder, double>(nameof(HeightAfterClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<bool> IsExpandedProperty =
-           AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsExpanded), defaultValue:true);
+           AvaloniaProperty.Register<AntDesignTranslateBorder, bool>(nameof(IsExpanded), defaultValue: true);
 
     #endregion
 
@@ -149,22 +144,10 @@ public class AntDesignBorder : Border
         set => SetValue(IsHeightTransitionProperty, value);
     }
 
-    public double WidthBeforeClosing
-    {
-        get => GetValue(WidthBeforeClosingProperty);
-        set => SetValue(WidthBeforeClosingProperty, value);
-    }
-
     public double WidthAfterClosing
     {
         get => GetValue(WidthAfterClosingProperty);
         set => SetValue(WidthAfterClosingProperty, value);
-    }
-
-    public double HeightBeforeClosing
-    {
-        get => GetValue(HeightBeforeClosingProperty);
-        set => SetValue(HeightBeforeClosingProperty, value);
     }
 
     public double HeightAfterClosing
@@ -189,7 +172,7 @@ public class AntDesignBorder : Border
             return;
 
         Width = double.NaN;
-        Height = double.NaN;    
+        Height = double.NaN;
 
         if (!IsExpanded)
         {
@@ -201,8 +184,7 @@ public class AntDesignBorder : Border
         }
         else
         {
-            MinWidth = WidthBeforeClosing;
-            MinHeight = HeightBeforeClosing;
+            
         }
     }
 
@@ -245,8 +227,8 @@ public class AntDesignBorder : Border
             return;
 
         Child.Measure(Size.Infinity);
-        _panelWidth = double.IsNaN(WidthBeforeClosing) ? Child.DesiredSize.Width : WidthBeforeClosing;
-        _panelHeight = double.IsNaN(HeightBeforeClosing) ? Child.DesiredSize.Height : HeightBeforeClosing;
+        _panelWidth = double.IsNaN(Width) ? Child.DesiredSize.Width : Width;
+        _panelHeight = double.IsNaN(Height)? Child.DesiredSize.Height : Height;
 
         Transitions?.Clear();
         Transitions = default;
@@ -282,13 +264,11 @@ public class AntDesignBorder : Border
 
         if (IsHeightTransition)
             MinHeight = isExpander ? _panelHeight : HeightAfterClosing;
-
-        //await Task.Delay(Duration);
-        //IsVisible = isExpander;
     }
 
     void UpdatePseudoClasses()
     {
         PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Pressed, IsPressed);
     }
+
 }

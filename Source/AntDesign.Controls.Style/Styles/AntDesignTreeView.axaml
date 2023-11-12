@@ -25,7 +25,7 @@
 						<Grid>
 							
 							<antdesign:AntDesignBorder x:Name="PART_ViewContainer"
-													   Width="{TemplateBinding WidthBeforeClosing}"
+													   WidthBeforeClosing="{TemplateBinding WidthBeforeClosing}"
 													   WidthAfterClosing="{TemplateBinding WidthAfterClosing}"
 													   IsExpanded="{TemplateBinding IsPanelExpanded}"
 													   IsWidthTransition="true">

@@ -1,4 +1,7 @@
 ﻿using AntDesign.Controls.Helpers;
+using Avalonia.Controls.Documents;
+using Avalonia.Controls.Shapes;
+using System.Net.Http.Headers;
 
 namespace AntDesign.Controls;
 
@@ -192,28 +195,57 @@ public class AntDesignTreeViewItem : TreeViewItem
         {
             _menu = new AntDesignMenu()
             {
-                //Theme = 
                 ItemsPanel = new FuncTemplate<Panel?>(() => new StackPanel() { Orientation = Orientation.Vertical, Spacing = 3 }),
             };
-
-            var menuItem = new AntDesignMenuItem() { Header = "1231233" };
-            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
-            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
-            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
-            menuItem.Items.Add(new AntDesignMenuItem() { Header = "234343434" });
-
-            _menu.Items.Add(menuItem);
-            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
-            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
-            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
-            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
-            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
-            _menu.Items.Add(new AntDesignMenuItem() { Header = "1231233" });
-
             PopupContent = _menu;
         }
 
-
+        _menu.Items.Clear();
+        foreach (var item in Items)
+            CreateMenuItem(item, _menu.Items);
+ 
         _popup.IsOpen = isOpen;
     }
+
+    void CreateMenuItem(object? item, ItemCollection itemCollection)
+    {
+        if (item is not TreeViewItem treeViewItem)
+            return;
+
+        AntDesignMenuItem menuItem = new();
+        if (treeViewItem.Header is Control control)
+        {
+            var menuItemFill = new Rectangle
+            {
+                Width = control.DesiredSize.Width,
+                Height = control.DesiredSize.Height,
+                Fill = new VisualBrush
+                {
+                    Visual = control,
+                    Stretch = Stretch.None,
+                    AlignmentX = AlignmentX.Left
+                }
+            };
+            menuItem.Header = menuItemFill;
+        }
+        else if(treeViewItem.Header is  string strValue)
+        {
+            menuItem.Header = strValue;
+        }
+
+        itemCollection.Add(menuItem);
+
+        foreach (var subItem in treeViewItem.Items)
+            CreateMenuItem(subItem, menuItem.Items);
+    }
+
+
+    void CreateContainerForItemOverride(string content)
+    {
+
+
+
+
+    }
+
 }
