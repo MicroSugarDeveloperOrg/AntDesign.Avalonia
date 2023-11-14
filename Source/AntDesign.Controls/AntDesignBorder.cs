@@ -10,7 +10,8 @@ public class AntDesignBorder : Border
         ClipToBoundsProperty.OverrideDefaultValue<AntDesignBorder>(false);
         ChildProperty.Changed.AddClassHandler<AntDesignBorder, Control?>((s, e) =>
         {
- 
+            s.RemoveChildSizeChanged(e.OldValue.Value);
+            s.RegisterChildSizeChanged(e.NewValue.Value);
         });
 
         IsVisibleProperty.Changed.AddClassHandler<AntDesignBorder, bool>((s, e) =>
@@ -104,13 +105,13 @@ public class AntDesignBorder : Border
            AvaloniaProperty.Register<AntDesignBorder, double>(nameof(WidthBeforeClosing), defaultValue: double.NaN);
 
     public static readonly StyledProperty<double> WidthAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(WidthAfterClosing), defaultValue: double.NaN);
+           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(WidthAfterClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<double> HeightBeforeClosingProperty =
            AvaloniaProperty.Register<AntDesignBorder, double>(nameof(HeightBeforeClosing), defaultValue: double.NaN);
 
     public static readonly StyledProperty<double> HeightAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(HeightAfterClosing), defaultValue: double.NaN);
+           AvaloniaProperty.Register<AntDesignBorder, double>(nameof(HeightAfterClosing), defaultValue: 0d);
 
     public static readonly StyledProperty<bool> IsExpandedProperty =
            AvaloniaProperty.Register<AntDesignBorder, bool>(nameof(IsExpanded), defaultValue:true);
@@ -194,18 +195,12 @@ public class AntDesignBorder : Border
         if (!IsExpanded)
         {
             if (IsWidthTransition)
-                MinWidth = WidthAfterClosing;
+                Width = WidthAfterClosing;
 
             if (IsHeightTransition)
-                MinHeight = HeightAfterClosing;
-        }
-        else
-        {
-            MinWidth = WidthBeforeClosing;
-            MinHeight = HeightBeforeClosing;
-        }
+                Height = HeightAfterClosing;
+        } 
     }
-
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
@@ -230,7 +225,7 @@ public class AntDesignBorder : Border
             UpdatePseudoClasses();
     }
 
-    void Expander(bool isExpander)
+    async void Expander(bool isExpander)
     {
         if (!IsLoaded)
             return;
@@ -257,7 +252,7 @@ public class AntDesignBorder : Border
         {
             var doubleTransition = new DoubleTransition()
             {
-                Property = MinWidthProperty,
+                Property = WidthProperty,
                 Duration = Duration,
                 Easing = new CircularEaseInOut()
             };
@@ -268,7 +263,7 @@ public class AntDesignBorder : Border
         {
             var doubleTransition = new DoubleTransition()
             {
-                Property = MinHeightProperty,
+                Property = HeightProperty,
                 Duration = Duration,
                 Easing = new CircularEaseInOut()
             };
@@ -278,17 +273,72 @@ public class AntDesignBorder : Border
         Transitions = transitions;
 
         if (IsWidthTransition)
-            MinWidth = isExpander ? _panelWidth : WidthAfterClosing;
+            Width = isExpander ? _panelWidth : WidthAfterClosing;
+        //{
+
+        //    if (isExpander)
+        //    {
+        //        MaxWidth = double.PositiveInfinity;
+        //        MinWidth = _panelWidth;
+        //    }
+        //    else
+        //    {
+        //        MinWidth = 0;
+        //        MaxWidth = WidthAfterClosing;
+        //    }
+        //}
+        //Width = isExpander ? _panelWidth : WidthAfterClosing;
 
         if (IsHeightTransition)
-            MinHeight = isExpander ? _panelHeight : HeightAfterClosing;
+            Height = isExpander ? _panelHeight : HeightAfterClosing;
+        //{
+        //    if (isExpander)
+        //    {
+        //        MaxHeight = _panelHeight + 1000;
+        //        MinHeight = _panelHeight;
+        //    }
+        //    else
+        //    {
+        //        MinHeight = 0;
+        //        MaxHeight = HeightAfterClosing;
+        //    }
+        //}
+        // Height = isExpander ? _panelHeight : HeightAfterClosing;
 
         //await Task.Delay(Duration);
         //IsVisible = isExpander;
+
+        await Task.Delay(Duration);
+        Height = double.NaN;
+        Width = double.NaN;
     }
 
     void UpdatePseudoClasses()
     {
         PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Pressed, IsPressed);
+    }
+
+    void RegisterChildSizeChanged(Control? child)
+    {
+        if (child is null)
+            return;
+
+        child.SizeChanged += Child_SizeChanged;
+    }
+
+    void RemoveChildSizeChanged(Control? child)
+    {
+        if (child is null)
+            return;
+
+        child.SizeChanged -= Child_SizeChanged;
+    }
+
+    void Child_SizeChanged(object sender, SizeChangedEventArgs e)
+    {
+        if (sender is not Control control)
+            return;
+
+
     }
 }

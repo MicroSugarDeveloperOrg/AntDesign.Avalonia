@@ -1,9 +1,9 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:antdesign="using:AntDesign.Controls"
-					xmlns:helpers="using:AntDesign.Helpers"
-					xmlns:assists="using:AntDesign.Assists"
-					x:CompileBindings="True">
+									  xmlns:antdesign="using:AntDesign.Controls"
+									  xmlns:helpers="using:AntDesign.Helpers"
+									  xmlns:assists="using:AntDesign.Assists"
+									  x:CompileBindings="True">
 	
 	<ControlTheme x:Key="{x:Type antdesign:AntDesignTreeViewItem}" TargetType="antdesign:AntDesignTreeViewItem">
 		<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}"/>
