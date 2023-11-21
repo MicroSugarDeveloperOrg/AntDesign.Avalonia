@@ -34,10 +34,9 @@
 			<ControlTemplate TargetType="antdesign:AntDesignTreeViewItem">
 				<Grid>
 					<StackPanel>
-					
-						<antdesign:AntDesignBorder x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
-												   Focusable="True"
-												   IsAnimation="False"
+
+            <PressableBorder x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+												   Focusable="True" 
 												   MinHeight="{TemplateBinding MinHeight}"
 												   Background="{TemplateBinding Background}"
 												   BorderBrush="{TemplateBinding BorderBrush}"
@@ -47,7 +46,7 @@
 												   TemplatedControl.IsTemplateFocusTarget="True">
 
 						  <Grid x:Name="{x:Static helpers:PARTNameHelper.PART_Header}" 
-							  Background="Transparent">
+							      Background="Transparent">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*"/>
 								<ColumnDefinition Width="{DynamicResource AntDesignTreeViewInnerWidth}"/>
@@ -81,26 +80,32 @@
 							</Grid>
 
 							<Border x:Name="PART_InnerBorder"
-									Grid.Column="1"
-									Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
-									BorderThickness="0"
-									RenderTransform ="scaley(0)">
+											Grid.Column="1"
+											Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
+											BorderThickness="0"
+											RenderTransform ="scaley(0)">
 								<Border.Transitions>
 									<Transitions>
 										<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.105" />
 									</Transitions>
 								</Border.Transitions>
 							</Border>
-
 						</Grid>
 
-					  </antdesign:AntDesignBorder>
+					  </PressableBorder>
 
-						<antdesign:AntDesignBorder IsHeightTransition="True" 
-					  							 IsExpanded="{TemplateBinding IsExpanded}">
+            <LayoutTransformControl x:Name="PART_LayoutItems" 
+                                    LayoutTransform ="scaley(0)">
+              <LayoutTransformControl.Transitions>
+                <Transitions>
+                  <TransformOperationsTransition Property="LayoutTransform" Duration="0:0:.105" />
+                </Transitions>
+              </LayoutTransformControl.Transitions>
+              
 					  		<ItemsPresenter x:Name="PART_ItemsPresenter"
-					  						ItemsPanel="{TemplateBinding ItemsPanel}"/>
-					  </antdesign:AntDesignBorder>
+					  						        ItemsPanel="{TemplateBinding ItemsPanel}"/>
+              
+					  </LayoutTransformControl>
  
 					</StackPanel>
 				
@@ -132,19 +137,19 @@
 		</Setter>
 
 		<!--  PointerOver state  -->
-		<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot:pointerover"> 
+		<Style Selector="^ /template/ antdesign|PressableBorder#PART_LayoutRoot:pointerover"> 
 			<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
 		</Style>
 
 		<!--  Pressed state  -->
-		<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot:pressed">
+		<Style Selector="^ /template/ antdesign|PressableBorder#PART_LayoutRoot:pressed">
 			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBackground}" /> 
 			<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
 		</Style>
 
 		<!--  Selected state  -->
 		<Style Selector="^:selected">
-			<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot">
+			<Style Selector="^ /template/ antdesign|PressableBorder#PART_LayoutRoot">
 				<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBackground}" />
 				<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
 			</Style>
@@ -156,10 +161,17 @@
 
 		<!--  Coloring state  -->
 		<Style Selector="^:coloring">
-			<Style Selector="^ /template/ antdesign|AntDesignBorder#PART_LayoutRoot">
+			<Style Selector="^ /template/ antdesign|PressableBorder#PART_LayoutRoot">
 				<Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
 			</Style> 
 		</Style>
+
+    <!--  Expander state  -->
+    <Style Selector="^:expander">
+      <Style Selector="^ /template/ LayoutTransformControl#PART_LayoutItems">
+        <Setter Property="LayoutTransform" Value="scaley(1)" />
+      </Style>
+    </Style>
 		
 		<!--  Disabled state  -->
 		<Style Selector="^:disabled">

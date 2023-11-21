@@ -1,9 +1,9 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:antdesign="using:AntDesign.Controls" 
-					xmlns:helpers="using:AntDesign.Helpers"
-					xmlns:assists="using:AntDesign.Assists"
-					x:CompileBindings="True">
+						        xmlns:antdesign="using:AntDesign.Controls" 
+						        xmlns:helpers="using:AntDesign.Helpers"
+						        xmlns:assists="using:AntDesign.Assists"
+						        x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type antdesign:AntDesignDrawer}" TargetType="antdesign:AntDesignDrawer">
 		<Setter Property="DrawerPanelBoxShadow" Value="{DynamicResource DrawerPanelBoxShadow}"/>
@@ -23,11 +23,11 @@
 								  ColumnDefinitions="*,Auto">
 
 								<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
-												  Content="{TemplateBinding Content}"
-												  ContentTemplate="{TemplateBinding ContentTemplate}"
-												  Padding="{TemplateBinding Padding}"
-												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+																  Content="{TemplateBinding Content}"
+																  ContentTemplate="{TemplateBinding ContentTemplate}"
+																  Padding="{TemplateBinding Padding}"
+																  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+																  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
 
 								<Panel x:Name="{x:Static helpers:AntDesignPARTNameHelpers.PART_DrawerMask}"
 									   Grid.Column="0"
@@ -52,7 +52,7 @@
 											VerticalAlignment="{TemplateBinding DrawerButtonVerticalAlignment}"
 											HorizontalAlignment="{TemplateBinding DrawerButtonHorizontalAlignment}"/>
 
-									<antdesign:AntDesignBorder IsExpanded="{TemplateBinding IsDrawerOpened}"
+                  <antdesign:AntDesignExpanderTranslateControl IsExpanded="{TemplateBinding IsDrawerOpened}"
 																				 BoxShadow="{TemplateBinding DrawerPanelBoxShadow}"
 																				 Background="{TemplateBinding DrawerPanelBackground}"
 																				 IsWidthTransition="true" >
@@ -60,7 +60,7 @@
 														  Content="{TemplateBinding DrawerContent}"
 														  ContentTemplate="{TemplateBinding DrawerContentTemplate}"
 														  ClipToBounds="true"/>
-									</antdesign:AntDesignBorder>
+									</antdesign:AntDesignExpanderTranslateControl>
 								</StackPanel>
 							</Grid>
 						</Border>

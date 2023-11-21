@@ -1,11 +1,9 @@
 ﻿using AntDesign.Controls.Helpers;
-using Avalonia.Controls.Documents;
 using Avalonia.Controls.Shapes;
-using System.Net.Http.Headers;
 
 namespace AntDesign.Controls;
 
-[PseudoClasses(AntDesignPseudoNameHelpers.PC_Coloring)]
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_Expander, AntDesignPseudoNameHelpers.PC_Coloring)]
 public class AntDesignTreeViewItem : TreeViewItem
 {
     static AntDesignTreeViewItem()
@@ -19,11 +17,17 @@ public class AntDesignTreeViewItem : TreeViewItem
         {
             s.PopupShowCore(e.NewValue.Value);
         });
+
+        IsExpandedProperty.Changed.AddClassHandler<AntDesignTreeViewItem, bool>((s, e) =>
+        {
+            s.UpdateExpanderPseudoClasses();
+        });
     }
 
     public AntDesignTreeViewItem()
     {
-
+        //LayoutTransformControl.RenderTransformProperty
+        //LayoutTransformControl.LayoutTransformProperty
     }
 
     bool _isColor = false;
@@ -108,6 +112,7 @@ public class AntDesignTreeViewItem : TreeViewItem
         _popup = e.NameScope.Find<Popup>("PART_Popup");
 
         UpdatePseudoClasses();
+        UpdateExpanderPseudoClasses();
     }
 
     protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)
@@ -180,6 +185,12 @@ public class AntDesignTreeViewItem : TreeViewItem
         PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Coloring, IsColor);
     }
 
+    void UpdateExpanderPseudoClasses()
+    {
+        PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Expander, IsExpanded);
+    }
+
+
     void PopupShowCore(bool isOpen)
     {
         if (_popup is null)
@@ -199,11 +210,20 @@ public class AntDesignTreeViewItem : TreeViewItem
             };
             PopupContent = _menu;
         }
+        try
+        {
+            if (_menu.Items.Count > 0)
+                _menu.Items.Clear();
+        }
+        catch (Exception)
+        {
+             
+        }
+       
 
-        _menu.Items.Clear();
         foreach (var item in Items)
             CreateMenuItem(item, _menu.Items);
- 
+
         _popup.IsOpen = isOpen;
     }
 
@@ -228,7 +248,7 @@ public class AntDesignTreeViewItem : TreeViewItem
             };
             menuItem.Header = menuItemFill;
         }
-        else if(treeViewItem.Header is  string strValue)
+        else if (treeViewItem.Header is string strValue)
         {
             menuItem.Header = strValue;
         }

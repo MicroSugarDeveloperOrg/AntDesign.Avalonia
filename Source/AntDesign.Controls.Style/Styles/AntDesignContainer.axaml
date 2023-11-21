@@ -1,8 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:antdesign="using:AntDesign.Controls"
-					xmlns:helpers="using:AntDesign.Helpers"
-					x:CompileBindings="True">
+									  xmlns:antdesign="using:AntDesign.Controls"
+									  xmlns:helpers="using:AntDesign.Helpers"
+									  x:CompileBindings="True">
 
 	<ControlTheme x:Key="{x:Type antdesign:AntDesignContainer}" TargetType="antdesign:AntDesignContainer">
 		<Setter Property="SideMenuBoxShadow" Value="{DynamicResource SideMenuBoxShadow}"/>
@@ -325,7 +325,7 @@
 									</Panel.IsVisible>
 								</Panel>
 
-								<antdesign:AntDesignBorder x:Name="PART_SideContainer" 
+                <antdesign:AntDesignExpanderTranslateBorder x:Name="PART_SideContainer" 
 														   Grid.Row="0"
 														   Grid.RowSpan="2"
 														   HorizontalAlignment="Left"
@@ -349,7 +349,7 @@
 														  ContentTemplate="{TemplateBinding SideMenuContentTemplate}"/> 
 									</Grid>
 								
-								</antdesign:AntDesignBorder>
+								</antdesign:AntDesignExpanderTranslateBorder>
 								
 							</Grid>
 						</Border>

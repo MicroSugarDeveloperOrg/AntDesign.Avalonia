@@ -3,12 +3,12 @@
 namespace AntDesign.Controls;
 
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_Pressed)]
-public class AntDesignGrid : Grid
+public class PressableGrid : Grid
 {
     bool _isPressed = false;
 
-    public static readonly DirectProperty<AntDesignGrid, bool> IsPressedProperty =
-           AvaloniaProperty.RegisterDirect<AntDesignGrid, bool>(nameof(IsPressed), b => b.IsPressed);
+    public static readonly DirectProperty<PressableGrid, bool> IsPressedProperty =
+           AvaloniaProperty.RegisterDirect<PressableGrid, bool>(nameof(IsPressed), b => b.IsPressed);
 
     public bool IsPressed
     {

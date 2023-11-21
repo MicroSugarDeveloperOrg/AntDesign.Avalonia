@@ -28,6 +28,7 @@ public static class AntDesignPseudoNameHelpers
     //TreeView
     public const string PC_Coloring = ":coloring";
     public const string PC_MenuMode = ":menu";
+    public const string PC_Expander = ":expander";
 
 
 

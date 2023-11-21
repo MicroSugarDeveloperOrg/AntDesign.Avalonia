@@ -1,19 +1,32 @@
-﻿using Avalonia.VisualTree;
+﻿using AntDesign.Controls.Helpers;
+using Avalonia.VisualTree;
 
 namespace AntDesign.Controls;
 
+
+[PseudoClasses(AntDesignPseudoNameHelpers.PC_Expander)]
 public class AntDesignTreeView : TreeView
 {
     static AntDesignTreeView()
     {
         IsPanelExpandedProperty.Changed.AddClassHandler<AntDesignTreeView, bool>((s, e) =>
         {
-
+            s.UpdatePseudoClasses();
         });
 
         SelectedItemProperty.Changed.AddClassHandler<AntDesignTreeView, object?>((s, e) =>
         {
             s.ExpandingOrColoring();
+        });
+
+        WidthBeforeClosingProperty.Changed.AddClassHandler<AntDesignTreeView, double>((s, e) =>
+        {
+            s.UpdateScaleX();
+        });
+
+        WidthAfterClosingProperty.Changed.AddClassHandler<AntDesignTreeView, double>((s, e) =>
+        {
+            s.UpdateScaleX();
         });
     }
 
@@ -26,18 +39,28 @@ public class AntDesignTreeView : TreeView
     AntDesignTreeViewItem? _lastMenuOpenItem;
     TopLevel? _topLevel;
 
+    double _scaleX = 0d;
+
+    public static readonly DirectProperty<AntDesignTreeView, double> ScaleXProperty =
+           AvaloniaProperty.RegisterDirect<AntDesignTreeView, double>(nameof(ScaleX), b => b.ScaleX);
+
     public static readonly StyledProperty<bool> IsMenuModeProperty =
-       AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsMenuMode), defaultValue: false);
+           AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsMenuMode), defaultValue: false);
 
     public static readonly StyledProperty<bool> IsPanelExpandedProperty =
            AvaloniaProperty.Register<AntDesignTreeView, bool>(nameof(IsPanelExpanded), defaultValue: true);
 
     public static readonly StyledProperty<double> WidthBeforeClosingProperty =
-           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthBeforeClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthBeforeClosing), defaultValue: double.NaN);
 
     public static readonly StyledProperty<double> WidthAfterClosingProperty =
-           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthAfterClosing), defaultValue: 0d);
+           AvaloniaProperty.Register<AntDesignTreeView, double>(nameof(WidthAfterClosing), defaultValue: double.NaN);
 
+    public double ScaleX
+    {
+        get => _scaleX;
+        internal set => SetAndRaise(ScaleXProperty, ref _scaleX, value);
+    }
 
     public bool IsMenuMode
     {
@@ -72,6 +95,7 @@ public class AntDesignTreeView : TreeView
     {
         base.OnApplyTemplate(e);
         OnSelectedFirstValidItem(Items.FirstOrDefault());
+        UpdatePseudoClasses();
     }
 
     protected override void OnSizeChanged(SizeChangedEventArgs e)
@@ -87,12 +111,7 @@ public class AntDesignTreeView : TreeView
     protected override void OnLoaded(RoutedEventArgs e)
     {
         base.OnLoaded(e);
-
-        if (WidthBeforeClosing <= 0)
-            WidthBeforeClosing = Bounds.Width;
-
-        Width = double.NaN;
-
+        Width = double.NaN; 
         _topLevel = TopLevel.GetTopLevel(this);
         if (_topLevel is not null)
         {
@@ -276,5 +295,17 @@ public class AntDesignTreeView : TreeView
     private void TopLevel_PointerExited(object sender, PointerEventArgs e)
     {
         //HideMenuItemCore();
+    }
+
+    void UpdatePseudoClasses()
+    {
+        PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Expander, IsPanelExpanded);
+    }
+
+    void UpdateScaleX()
+    {
+        double width = double.IsNaN(WidthBeforeClosing) ? 0 : WidthBeforeClosing;
+        double afterWidth = double.IsNaN(WidthAfterClosing) ? 0 : WidthAfterClosing;
+        ScaleX = afterWidth / width;
     }
 }

@@ -5,8 +5,9 @@
 					x:CompileBindings="True">
 	
 	<antdesignconverters:BooleansAndConverter x:Key="BooleansAndConverter"/>
-	
-	<!-- Drawer -->
+  <antdesignconverters:Double2ScaleTransformConverter x:Key="Double2ScaleTransformConverter"/>
+
+  <!-- Drawer -->
 	<x:Double x:Key="DrawerMaskOpacity">1</x:Double>
 	
 	<!-- AntDesignTreeView -->
