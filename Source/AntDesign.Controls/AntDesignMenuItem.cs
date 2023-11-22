@@ -1,9 +1,10 @@
 ﻿using AntDesign.Controls.Helpers;
+using Avalonia.Controls;
 
 namespace AntDesign.Controls;
 
 [PseudoClasses(AntDesignPseudoNameHelpers.PC_Coloring)]
-public class AntDesignMenuItem : MenuItem
+public class AntDesignMenuItem : HeaderedSelectingItemsControl
 {
     static AntDesignMenuItem()
     {
@@ -28,6 +29,8 @@ public class AntDesignMenuItem : MenuItem
     public static readonly DirectProperty<AntDesignMenuItem, bool> IsColorProperty =
            AvaloniaProperty.RegisterDirect<AntDesignMenuItem, bool>(nameof(IsColor), b => b.IsColor);
 
+    public static readonly StyledProperty<bool> IsSubMenuOpenProperty =
+           AvaloniaProperty.Register<AntDesignMenuItem, bool>(nameof(IsSubMenuOpen));
 
     public bool IsColor
     {
@@ -35,7 +38,11 @@ public class AntDesignMenuItem : MenuItem
         internal set => SetAndRaise(IsColorProperty, ref _isColor, value);
     }
 
-
+    public bool IsSubMenuOpen
+    {
+        get { return GetValue(IsSubMenuOpenProperty); }
+        set { SetValue(IsSubMenuOpenProperty, value); }
+    }
 
     protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
     { 
@@ -59,10 +66,23 @@ public class AntDesignMenuItem : MenuItem
             Open();
     }
 
-    protected override void OnSubmenuOpened(RoutedEventArgs e)
+    protected virtual void OnSubmenuOpened(RoutedEventArgs e)
     {
-        base.OnSubmenuOpened(e);
+        var menuItem = e.Source as MenuItem;
+
+        //if (menuItem != null && menuItem.Parent == this)
+        //{
+        //    foreach (var child in Items)
+        //    {
+        //        if (child != menuItem && child.IsSubMenuOpen)
+        //        {
+        //            child.IsSubMenuOpen = false;
+        //        }
+        //    }
+        //}
     }
+
+    public void Open() => SetCurrentValue(IsSubMenuOpenProperty, true);
 
     void UpdatePseudoClasses()
     {

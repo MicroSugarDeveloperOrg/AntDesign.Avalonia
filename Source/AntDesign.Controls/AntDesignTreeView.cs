@@ -187,11 +187,7 @@ public class AntDesignTreeView : TreeView
         {
             bool isFlag = false;
             foreach (var subitem in antDesignTreeViewItem.Items)
-            {
-                isFlag = ExpandingOrColoringParents(subitem);
-                if (isFlag)
-                    break;
-            }
+                isFlag |= ExpandingOrColoringParents(subitem);
 
             antDesignTreeViewItem.IsColor = isFlag;
             antDesignTreeViewItem.IsExpanded = IsPanelExpanded ? isFlag : false;

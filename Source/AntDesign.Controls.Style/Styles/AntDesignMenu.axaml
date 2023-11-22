@@ -17,14 +17,14 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="antdesign:AntDesignMenu">
 				<Border Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						CornerRadius="{TemplateBinding CornerRadius}"
-						Padding="{TemplateBinding Padding}">
-					<ItemsPresenter Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
-									ItemsPanel="{TemplateBinding ItemsPanel}"
-									VerticalAlignment="Stretch"
-									KeyboardNavigation.TabNavigation="Continue" />
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								Padding="{TemplateBinding Padding}">
+					<ItemsPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ItemsPresenter}"
+												  ItemsPanel="{TemplateBinding ItemsPanel}"
+												  VerticalAlignment="Stretch"
+												  KeyboardNavigation.TabNavigation="Continue" />
 				</Border>
 			</ControlTemplate>
 		</Setter>

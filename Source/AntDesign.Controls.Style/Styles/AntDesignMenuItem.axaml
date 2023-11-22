@@ -47,16 +47,6 @@
 												  SharedSizeGroup="MenuItemChevron" />
 							</Grid.ColumnDefinitions>
 
-							<Viewbox Name="{x:Static helpers:PARTNameHelper.PART_IconPresenter}"
-									 Margin="{DynamicResource MenuIconPresenterMargin}"
-									 StretchDirection="DownOnly"
-									 HorizontalAlignment="Center"
-									 VerticalAlignment="Center"
-									 IsVisible="False"
-									 Width="{DynamicResource MenuIconWidth}"
-									 Height="{DynamicResource MenuIconHeight}">
-								<ContentPresenter Content="{TemplateBinding Icon}"/>
-							</Viewbox>
 
 							<ContentPresenter Name="{x:Static helpers:PARTNameHelper.PART_HeaderPresenter}"
 											  Content="{TemplateBinding Header}"
@@ -66,15 +56,6 @@
 											  RecognizesAccessKey="True"
 											  Grid.Column="1"/>
 
-							<TextBlock x:Name="{x:Static helpers:PARTNameHelper.PART_InputGestureText}"
-									   Grid.Column="2"
-									   Classes="CaptionTextBlockStyle"
-									   Margin="{DynamicResource MenuInputGestureTextMargin}"
-									   Text="{TemplateBinding InputGesture, Converter={StaticResource KeyGestureConverter}}"
-									   HorizontalAlignment="Right"
-									   VerticalAlignment="Center"
-									   Opacity="{DynamicResource MenuInputGestureTextOpacity}"
-									   Foreground="{TemplateBinding Foreground}"/>
 
 							<Path Name="{x:Static helpers:PARTNameHelper.PART_ChevronPath}"
 								  Stretch="Uniform"

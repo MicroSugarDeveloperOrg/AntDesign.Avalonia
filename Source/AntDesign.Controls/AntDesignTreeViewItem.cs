@@ -1,4 +1,5 @@
 ﻿using AntDesign.Controls.Helpers;
+using Avalonia.Controls.Primitives.PopupPositioning;
 using Avalonia.Controls.Shapes;
 
 namespace AntDesign.Controls;
@@ -30,11 +31,15 @@ public class AntDesignTreeViewItem : TreeViewItem
         //LayoutTransformControl.LayoutTransformProperty
     }
 
+    bool _isLoaded = false;
+    Rect _bounds;
+    double _offset = 5;
+
     bool _isColor = false;
     bool _isPanelClosing = false;
     bool _isMenuOpen = false;
     protected Control? _header;
-    protected AntDesignTreeView? _antDesignMenu;
+    protected AntDesignTreeView? _antDesignTreeView;
     protected Popup? _popup;
     protected AntDesignMenu? _menu;
 
@@ -89,10 +94,21 @@ public class AntDesignTreeViewItem : TreeViewItem
         internal set => SetAndRaise(IsMenuOpenProperty, ref _isMenuOpen, value);
     }
 
+    protected override void OnLoaded(RoutedEventArgs e)
+    {
+        base.OnLoaded(e);
+
+        if(!_isLoaded)
+        {
+            _isLoaded = true;
+            _bounds = Bounds;
+        }
+    }
+
     protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
     {
         base.OnAttachedToLogicalTree(e);
-        _antDesignMenu = this.GetLogicalAncestors().OfType<AntDesignTreeView>().FirstOrDefault();
+        _antDesignTreeView = this.GetLogicalAncestors().OfType<AntDesignTreeView>().FirstOrDefault();
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -147,9 +163,9 @@ public class AntDesignTreeViewItem : TreeViewItem
 
     protected override void OnHeaderDoubleTapped(TappedEventArgs e)
     {
-        if (_antDesignMenu is not null)
+        if (_antDesignTreeView is not null)
         {
-            if (!_antDesignMenu.IsPanelExpanded)
+            if (!_antDesignTreeView.IsPanelExpanded)
                 return;
         }
 
@@ -160,9 +176,9 @@ public class AntDesignTreeViewItem : TreeViewItem
     {
         if (ItemCount > 0)
         {
-            if (_antDesignMenu is not null)
+            if (_antDesignTreeView is not null)
             {
-                if (!_antDesignMenu.IsPanelExpanded)
+                if (!_antDesignTreeView.IsPanelExpanded)
                     return;
             }
 
@@ -199,32 +215,55 @@ public class AntDesignTreeViewItem : TreeViewItem
         if (_popup.IsOpen && !isOpen)
             _popup.IsOpen = false;
 
-        if (_antDesignMenu?.IsPanelExpanded == true)
+        if (_antDesignTreeView?.IsPanelExpanded == true)
             return;
 
         if (_menu is null)
         {
             _menu = new AntDesignMenu()
             {
+                Width = _bounds.Width,
                 ItemsPanel = new FuncTemplate<Panel?>(() => new StackPanel() { Orientation = Orientation.Vertical, Spacing = 3 }),
             };
+            _menu.SelectionChanged += Menu_SelectionChanged;
             PopupContent = _menu;
         }
-        try
+
+        if (_menu.Items.Count > 0)
         {
-            if (_menu.Items.Count > 0)
-                _menu.Items.Clear();
+            CloseMenus(_menu.Items);
+            _menu.Items.Clear();
         }
-        catch (Exception)
-        {
-             
-        }
-       
 
         foreach (var item in Items)
             CreateMenuItem(item, _menu.Items);
 
+        var closeWidth = _antDesignTreeView?.WidthAfterClosing ?? 0;
+        //_popup.PlacementConstraintAdjustment = PopupPositionerConstraintAdjustment.SlideX;
+        if (closeWidth > 0)
+            _popup.HorizontalOffset = closeWidth + _offset - _bounds.Width;
+
         _popup.IsOpen = isOpen;
+    }
+
+    private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+         
+    }
+
+    void CloseMenus(ItemCollection itemCollection)
+    {
+        if (itemCollection is null || itemCollection.Count <= 0)
+            return;
+
+        foreach (var item in itemCollection)
+        {
+            if (item is not AntDesignMenuItem menuItem)
+                continue;
+
+            CloseMenus(menuItem.Items);
+            menuItem.IsSubMenuOpen = false;
+        }
     }
 
     void CreateMenuItem(object? item, ItemCollection itemCollection)

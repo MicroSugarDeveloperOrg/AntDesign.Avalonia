@@ -1,7 +1,20 @@
 ﻿
 namespace AntDesign.Controls;
-public class AntDesignMenu : Menu
+public class AntDesignMenu : SelectingItemsControl
 {
+    static AntDesignMenu()
+    {
+        SelectedItemProperty.Changed.AddClassHandler<AntDesignMenu, object?>((s, e) =>
+        {
+
+        });
+    }
+
+    public AntDesignMenu()
+    {
+      
+    }
+
     protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
     {
         return new AntDesignMenuItem();

@@ -43,39 +43,6 @@
 		
 		<Button Grid.Row="2" Content="Click" Command="{Binding TriggerClickCommand}"/>
 
-		<Menu Grid.Row="3" Theme="{StaticResource AntDesignLikeVsMenuStyle}">
-			<Menu.ItemsPanel>
-				<ItemsPanelTemplate>
-					<StackPanel Orientation="Vertical"/>
-				</ItemsPanelTemplate>
-			</Menu.ItemsPanel>
-
-			<MenuItem Header="1231"/>
-			<MenuItem Header="1231">
-				<MenuItem Header="43434"/>
-				<MenuItem Header="43434"/>
-				<MenuItem Header="43434"/>
-				<MenuItem Header="43434"/>
-
-			</MenuItem>
-			<MenuItem Header="1231"/>
-			<MenuItem Header="1231"/>		
-		</Menu>
-
-		<StackPanel Grid.Row="4">
-			<AntDesignMenuItem Header="123123123">
-				<AntDesignMenuItem Header="123123123"/>
-				<AntDesignMenuItem Header="123123123"/>
-				<AntDesignMenuItem Header="123123123"/>
-				<AntDesignMenuItem Header="123123123"/>
-			</AntDesignMenuItem>
-			<AntDesignMenuItem Header="123123123"/>
-			<AntDesignMenuItem Header="123123123"/>
-			<AntDesignMenuItem Header="123123123"/>
-
-		</StackPanel>
-		
-
 	</Grid>
 	
 	
