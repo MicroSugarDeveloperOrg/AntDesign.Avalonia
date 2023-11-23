@@ -248,7 +248,13 @@ public class AntDesignTreeViewItem : TreeViewItem
 
     private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        if (_antDesignTreeView is null) return;
+        if (sender is not AntDesignMenu menu) return;
+        if (menu.SelectedItem is not AntDesignMenuItem menuItem) return;
+        if (menuItem._linked is not TreeViewItem treeViewItem) return;
 
+        treeViewItem.IsSelected = true;
+        _antDesignTreeView.SelectedItem = treeViewItem;
     }
 
     protected internal void CloseMenus(ItemCollection itemCollection)
@@ -293,9 +299,9 @@ public class AntDesignTreeViewItem : TreeViewItem
             menuItem.Header = strValue;
         }
 
-        menuItem.IsSelected = treeViewItem.IsSelected;
         menuItem._linked = item;
         itemCollection.Add(menuItem);
+        menuItem.IsSelected = treeViewItem.IsSelected;
 
         foreach (var subItem in treeViewItem.Items)
             CreateMenuItem(subItem, menuItem.Items);

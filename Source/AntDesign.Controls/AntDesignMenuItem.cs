@@ -14,19 +14,14 @@ public class AntDesignMenuItem : HeaderedItemsControl, IColorable, ISubItem, ISe
             s.UpdateSelectedPsudoClasses();
         });
 
+        IsColoringProperty.Changed.AddClassHandler<AntDesignMenuItem, bool>((s, e) =>
+        {
+            s.UpdateColoringPseudoClasses();
+        });
+
         SelectedItemProperty.Changed.AddClassHandler<AntDesignMenuItem, object?>((s, e) => 
         {
-            if (e.OldValue.Value is ISelectable selectable)
-            {
-                if (selectable.IsSelected)
-                    selectable.IsSelected = false;
-            }
 
-            if (e.NewValue.Value is ISelectable selectable1)
-            {
-                if (!selectable1.IsSelected)
-                    selectable1.IsSelected = true;
-            }
         });
 
         IsSubMenuOpenProperty.Changed.AddClassHandler<AntDesignMenuItem, bool>((s, e) =>
@@ -125,7 +120,7 @@ public class AntDesignMenuItem : HeaderedItemsControl, IColorable, ISubItem, ISe
         get => SelectedItem;
         set => SelectedItem = value;
     }
-
+ 
     public event EventHandler<RoutedEventArgs>? SubmenuOpened
     {
         add => AddHandler(SubmenuOpenedEvent, value);
@@ -141,8 +136,9 @@ public class AntDesignMenuItem : HeaderedItemsControl, IColorable, ISubItem, ISe
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
-        UpdatePseudoClasses();
+        UpdateColoringPseudoClasses();
         UpdateOpendPseudoClasses();
+        UpdateSelectedPsudoClasses();
     }
 
     protected override Control CreateContainerForItemOverride(object? item, int index, object? recycleKey)
@@ -153,6 +149,7 @@ public class AntDesignMenuItem : HeaderedItemsControl, IColorable, ISubItem, ISe
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
         base.OnPointerPressed(e);
+        //e.Handled = true;
         if (Items.Count > 0)
             return;
 
@@ -249,20 +246,11 @@ public class AntDesignMenuItem : HeaderedItemsControl, IColorable, ISubItem, ISe
 
     void SelectedChanged(bool isSelected)
     {
-        if (Parent is not ISubItem subItem)
-            return;
-
-        if (subItem.SubItems is null)
-            return;
-
-        if (Parent is not ISubSelectable subSelectable)
-            return;
-
-        if (isSelected)
-            subSelectable.SelectedSubItem = this;
+        if (_antDesignMenu is not null && isSelected)
+            _antDesignMenu.SelectedItem = this;
     }
 
-    void UpdatePseudoClasses()
+    void UpdateColoringPseudoClasses()
     {
         PseudoClasses.Set(AntDesignPseudoNameHelpers.PC_Coloring, IsColoring);
     }

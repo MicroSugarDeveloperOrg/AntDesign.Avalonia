@@ -9,6 +9,7 @@ public class AntDesignTreeView : TreeView
 {
     static AntDesignTreeView()
     {
+        AutoScrollToSelectedItemProperty.OverrideDefaultValue<AntDesignTreeView>(false);
         IsPanelExpandedProperty.Changed.AddClassHandler<AntDesignTreeView, bool>((s, e) =>
         {
             s.ExpanderOrClose(e.NewValue.Value);
@@ -17,6 +18,7 @@ public class AntDesignTreeView : TreeView
 
         SelectedItemProperty.Changed.AddClassHandler<AntDesignTreeView, object?>((s, e) =>
         {
+            s.HideMenuItemCore();
             s.ExpandingOrColoring();
         });
 
@@ -72,16 +74,7 @@ public class AntDesignTreeView : TreeView
     public bool IsPanelExpanded
     {
         get => GetValue(IsPanelExpandedProperty);
-        set
-        {
-            //foreach (var item in Items)
-            //    ExpanderOrCloseItems(item, value);
-
-            //if (value)
-            //    HideMenuItemCore();
-
-            SetValue(IsPanelExpandedProperty, value);
-        }
+        set => SetValue(IsPanelExpandedProperty, value);
     }
 
     public double WidthBeforeClosing
@@ -142,44 +135,24 @@ public class AntDesignTreeView : TreeView
         base.OnUnloaded(e);
     }
 
-    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
-    {
-        base.OnPropertyChanged(change);
-
-        //if (change.Property == IsPanelExpandedProperty)
-        //{
-        //    if (!bool.TryParse(change.NewValue?.ToString(), out var bRet))
-        //        return;
-
-        //    foreach (var item in Items)
-        //        ExpanderOrCloseItems(item, bRet);
-
-        //    if (bRet)
-        //        HideMenuItemCore();
-        //}
-    }
-
-    void ExpanderOrCloseItems(object? item, bool isExpanded)
+    bool ExpanderOrCloseItems(object? item, bool isExpanded)
     {
         if (item is not TreeViewItem treeViewItem)
-            return;
+            return false;
 
-        if (isExpanded)
-        {
-            if (treeViewItem.IsSelected)
-            {
-                if (treeViewItem.Parent is TreeViewItem parentTreeViewItem)
-                    parentTreeViewItem.IsExpanded = true;
-            }
-        }
+        if (treeViewItem.ItemCount <= 0)
+            return treeViewItem.IsSelected;
+
+        bool bFlag = false;
+        foreach (var subItem in treeViewItem.Items)
+            bFlag |= ExpanderOrCloseItems(subItem, isExpanded);
+
+        if (bFlag && isExpanded)
+            treeViewItem.IsExpanded = true;
         else
             treeViewItem.IsExpanded = false;
 
-        if (treeViewItem.ItemCount <= 0)
-            return;
-
-        foreach (var subItem in treeViewItem.Items)
-            ExpanderOrCloseItems(subItem, isExpanded);
+        return bFlag;
     }
 
     void ExpandingOrColoring()
@@ -270,7 +243,7 @@ public class AntDesignTreeView : TreeView
         _lastMenuOpenItem = antDesignTreeViewItem;
     }
 
-    void HideMenuItemCore()
+    internal void HideMenuItemCore()
     {
         if (_lastMenuOpenItem is null)
             return;

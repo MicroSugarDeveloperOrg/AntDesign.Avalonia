@@ -138,7 +138,14 @@
 			</Style>
 		</Style>
 
-		<!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
+    <!--  Coloring state  -->
+    <Style Selector="^:coloring">
+      <Style Selector="^ /template/ Border#PART_LayoutRoot">
+        <Setter Property="TextElement.Foreground" Value="{TemplateBinding assists:MenuItemAssists.SelectedForeground}" />
+      </Style>
+    </Style>
+
+    <!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
 		<Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
 			<Setter Property="Background" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBackground}" />
 			<Setter Property="BorderBrush" Value="{TemplateBinding assists:MenuItemAssists.PointerOverBorderBrush}" />
@@ -194,7 +201,7 @@
 
 		<Style Selector="^:separator">
 			<Setter Property="Template">
-				<ControlTemplate TargetType="MenuItem">
+				<ControlTemplate TargetType="antdesign:AntDesignMenuItem">
 					<Separator/>
 				</ControlTemplate>
 			</Setter>
