@@ -260,6 +260,9 @@ public class AntDesignTreeView : TreeView
         if (e.Source is not Visual visual)
             return;
 
+        if(!IsPanelExpanded)
+            return;
+
         var visualRoot = visual.GetVisualRoot();
         if (visualRoot is PopupRoot)
             return;
