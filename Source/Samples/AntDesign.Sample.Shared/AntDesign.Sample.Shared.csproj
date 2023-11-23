@@ -37,14 +37,4 @@
 	  <ProjectReference Include="..\..\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <UpToDateCheckInput Remove="Views\HeaderContentControlView.axaml" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\AntDesignListView.axaml.cs">
-	    <DependentUpon>AntDesignListView.axaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
 </Project>

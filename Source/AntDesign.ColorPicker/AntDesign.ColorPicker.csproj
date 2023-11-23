@@ -37,10 +37,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia.Controls.ColorPicker" />
-		<PackageReference Include="PolySharp">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>build; analyzers</IncludeAssets>
-		</PackageReference>
+    <!--<PackageReference Include="PolySharp">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>build; analyzers</IncludeAssets>
+    </PackageReference>-->
 	</ItemGroup>
 
 </Project>

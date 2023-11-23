@@ -11,6 +11,7 @@ public class AntDesignTreeView : TreeView
     {
         IsPanelExpandedProperty.Changed.AddClassHandler<AntDesignTreeView, bool>((s, e) =>
         {
+            s.ExpanderOrClose(e.NewValue.Value);
             s.UpdatePseudoClasses();
         });
 
@@ -71,7 +72,16 @@ public class AntDesignTreeView : TreeView
     public bool IsPanelExpanded
     {
         get => GetValue(IsPanelExpandedProperty);
-        set => SetValue(IsPanelExpandedProperty, value);
+        set
+        {
+            //foreach (var item in Items)
+            //    ExpanderOrCloseItems(item, value);
+
+            //if (value)
+            //    HideMenuItemCore();
+
+            SetValue(IsPanelExpandedProperty, value);
+        }
     }
 
     public double WidthBeforeClosing
@@ -136,17 +146,17 @@ public class AntDesignTreeView : TreeView
     {
         base.OnPropertyChanged(change);
 
-        if (change.Property == IsPanelExpandedProperty)
-        {
-            if (!bool.TryParse(change.NewValue?.ToString(), out var bRet))
-                return;
+        //if (change.Property == IsPanelExpandedProperty)
+        //{
+        //    if (!bool.TryParse(change.NewValue?.ToString(), out var bRet))
+        //        return;
 
-            foreach (var item in Items)
-                ExpanderOrCloseItems(item, bRet);
+        //    foreach (var item in Items)
+        //        ExpanderOrCloseItems(item, bRet);
 
-            if (bRet)
-                HideMenuItemCore();
-        }
+        //    if (bRet)
+        //        HideMenuItemCore();
+        //}
     }
 
     void ExpanderOrCloseItems(object? item, bool isExpanded)
@@ -303,5 +313,14 @@ public class AntDesignTreeView : TreeView
         double width = double.IsNaN(WidthBeforeClosing) ? 0 : WidthBeforeClosing;
         double afterWidth = double.IsNaN(WidthAfterClosing) ? 0 : WidthAfterClosing;
         ScaleX = afterWidth / width;
+    }
+
+    void ExpanderOrClose(bool isExpander)
+    {
+        foreach (var item in Items)
+            ExpanderOrCloseItems(item, isExpander);
+
+        if (isExpander)
+            HideMenuItemCore();
     }
 }

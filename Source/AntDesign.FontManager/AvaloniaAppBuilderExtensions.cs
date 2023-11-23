@@ -2,13 +2,12 @@
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.Fonts;
-using System.Diagnostics.CodeAnalysis;
 
 
 namespace AntDesign.FontManager;
 public static class AvaloniaAppBuilderExtensions
 {
-    public static AppBuilder UseAntDesignFontManager([DisallowNull] this AppBuilder builder, Action<FontSettings>? configDelegate = default)
+    public static AppBuilder UseAntDesignFontManager(this AppBuilder builder, Action<FontSettings>? configDelegate = default)
     {
         var setting = new FontSettings();
         configDelegate?.Invoke(setting);

@@ -36,10 +36,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia.Controls.DataGrid" />
-		<PackageReference Include="PolySharp">
+		<!--<PackageReference Include="PolySharp">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>
-		</PackageReference>
+		</PackageReference>-->
 	</ItemGroup>
 
 </Project>

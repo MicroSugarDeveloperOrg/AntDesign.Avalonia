@@ -8,10 +8,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia" />
-		<PackageReference Include="PolySharp">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>build; analyzers</IncludeAssets>
-		</PackageReference>
+    <!--<PackageReference Include="PolySharp">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>build; analyzers</IncludeAssets>
+    </PackageReference>-->
 	</ItemGroup>
 
 	<ItemGroup>

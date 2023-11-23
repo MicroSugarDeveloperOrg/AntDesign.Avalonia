@@ -8,10 +8,10 @@
 	<ItemGroup>
 		<PackageReference Include="Avalonia" />
 		<PackageReference Include="Avalonia.ReactiveUI" />
-		<PackageReference Include="PolySharp">
+		<!--<PackageReference Include="PolySharp">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>build; analyzers</IncludeAssets>
-		</PackageReference>
+		</PackageReference>-->
 	</ItemGroup>
 	
 </Project>

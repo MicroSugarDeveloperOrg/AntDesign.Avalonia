@@ -1,5 +1,4 @@
 ﻿using AntDesign.Controls.Helpers;
-using Avalonia.Controls.Primitives.PopupPositioning;
 using Avalonia.Controls.Shapes;
 
 namespace AntDesign.Controls;
@@ -98,7 +97,7 @@ public class AntDesignTreeViewItem : TreeViewItem
     {
         base.OnLoaded(e);
 
-        if(!_isLoaded)
+        if (!_isLoaded)
         {
             _isLoaded = true;
             _bounds = Bounds;
@@ -212,11 +211,11 @@ public class AntDesignTreeViewItem : TreeViewItem
         if (_popup is null)
             return;
 
-        if (_popup.IsOpen && !isOpen)
-            _popup.IsOpen = false;
-
-        if (_antDesignTreeView?.IsPanelExpanded == true)
-            return;
+        if (isOpen)
+        {
+            if (_antDesignTreeView?.IsPanelExpanded == true)
+                return;
+        }
 
         if (_menu is null)
         {
@@ -248,10 +247,10 @@ public class AntDesignTreeViewItem : TreeViewItem
 
     private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-         
+
     }
 
-    void CloseMenus(ItemCollection itemCollection)
+    protected internal void CloseMenus(ItemCollection itemCollection)
     {
         if (itemCollection is null || itemCollection.Count <= 0)
             return;
