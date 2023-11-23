@@ -29,6 +29,8 @@ public static class AntDesignPseudoNameHelpers
     public const string PC_Coloring = ":coloring";
     public const string PC_MenuMode = ":menu";
     public const string PC_Expander = ":expander";
+    public const string PC_Opened = ":opened";
+    public const string PC_Selected = ":selected";
 
 
 

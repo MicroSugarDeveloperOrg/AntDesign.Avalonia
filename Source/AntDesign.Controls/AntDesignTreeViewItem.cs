@@ -37,8 +37,10 @@ public class AntDesignTreeViewItem : TreeViewItem
     bool _isColor = false;
     bool _isPanelClosing = false;
     bool _isMenuOpen = false;
-    protected Control? _header;
+
     protected AntDesignTreeView? _antDesignTreeView;
+
+    protected Control? _header;
     protected Popup? _popup;
     protected AntDesignMenu? _menu;
 
@@ -237,8 +239,7 @@ public class AntDesignTreeViewItem : TreeViewItem
         foreach (var item in Items)
             CreateMenuItem(item, _menu.Items);
 
-        var closeWidth = _antDesignTreeView?.WidthAfterClosing ?? 0;
-        //_popup.PlacementConstraintAdjustment = PopupPositionerConstraintAdjustment.SlideX;
+        var closeWidth = _antDesignTreeView?.WidthAfterClosing ?? 0; 
         if (closeWidth > 0)
             _popup.HorizontalOffset = closeWidth + _offset - _bounds.Width;
 
@@ -261,6 +262,7 @@ public class AntDesignTreeViewItem : TreeViewItem
                 continue;
 
             CloseMenus(menuItem.Items);
+            menuItem._linked = default;
             menuItem.IsSubMenuOpen = false;
         }
     }
@@ -291,6 +293,8 @@ public class AntDesignTreeViewItem : TreeViewItem
             menuItem.Header = strValue;
         }
 
+        menuItem.IsSelected = treeViewItem.IsSelected;
+        menuItem._linked = item;
         itemCollection.Add(menuItem);
 
         foreach (var subItem in treeViewItem.Items)

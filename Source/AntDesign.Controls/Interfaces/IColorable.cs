@@ -1,5 +1,5 @@
 ﻿namespace AntDesign.Controls.Interfaces;
-public interface IColorable
+internal interface IColorable
 {
-    bool IsColor { get; }
+    bool IsColoring { get; set; }
 }
