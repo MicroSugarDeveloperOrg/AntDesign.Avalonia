@@ -5,11 +5,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AntDesign.Sample.Views.AntDesignListView">
 
-	<Grid RowDefinitions="Auto,5,50,Auto,Auto"> 
-		<AntDesignTreeView HorizontalAlignment="Left"
-						   WidthBeforeClosing="200" WidthAfterClosing="20"
-						   IsPanelExpanded="{Binding IsTreeViewExpanded}">
-			
+	<Grid RowDefinitions="Auto,5,Auto,5,Auto"> 
+		<AntDesignTreeView >
 			<AntDesignTreeViewItem Header="123">
 				<AntDesignTreeViewItem Header="1231"/>
 				<AntDesignTreeViewItem Header="1232">
@@ -40,8 +37,23 @@
 				<AntDesignTreeViewItem Header="1255"/>
 			</AntDesignTreeViewItem>
 		</AntDesignTreeView>
-		
-		<Button Grid.Row="2" Content="Click" Command="{Binding TriggerClickCommand}"/>
+
+    <AntDesignMenu Grid.Row="2">
+      <AntDesignMenuItem Header="123123">
+        <AntDesignMenuItem Header="223123"/>
+        <AntDesignMenuItem Header="223123"/>
+        <AntDesignMenuItem Header="223123"/>
+        <AntDesignMenuItem Header="223123"/>
+      </AntDesignMenuItem>
+      <AntDesignMenuItem Header="123123"/>
+      <AntDesignMenuItem Header="123123">
+        <AntDesignMenuItem Header="223123"/>
+        <AntDesignMenuItem Header="223123"/>
+        <AntDesignMenuItem Header="223123"/>
+        <AntDesignMenuItem Header="223123"/>
+      </AntDesignMenuItem>
+      <AntDesignMenuItem Header="123123"/>
+    </AntDesignMenu>
 
 	</Grid>
 	

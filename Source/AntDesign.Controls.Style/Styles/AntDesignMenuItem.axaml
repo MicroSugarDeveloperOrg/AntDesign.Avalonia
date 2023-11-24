@@ -29,17 +29,17 @@
 			<ControlTemplate TargetType="antdesign:AntDesignMenuItem">
 				<Panel>
 
-					<Border Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
-							Background="{TemplateBinding Background}"
-							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}"
-							CornerRadius="{TemplateBinding CornerRadius}"
-							Padding="{TemplateBinding Padding}"
-							Margin="{TemplateBinding Margin}">
+					<Border x:Name="{x:Static helpers:PARTNameHelper.PART_LayoutRoot}"
+									Background="{TemplateBinding Background}"
+									BorderBrush="{TemplateBinding BorderBrush}"
+									BorderThickness="{TemplateBinding BorderThickness}"
+									CornerRadius="{TemplateBinding CornerRadius}"
+									Padding="{TemplateBinding Padding}"
+									Margin="{TemplateBinding Margin}">
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto"
-												  SharedSizeGroup="MenuItemIcon" />
+															    SharedSizeGroup="MenuItemIcon" />
 								<ColumnDefinition Width="*" />
 								<ColumnDefinition Width="Auto"
 												  SharedSizeGroup="MenuItemIGT" />

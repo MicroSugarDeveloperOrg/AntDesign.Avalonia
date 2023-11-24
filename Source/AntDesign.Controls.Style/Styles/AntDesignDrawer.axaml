@@ -20,7 +20,7 @@
 						<Border CornerRadius="{TemplateBinding CornerRadius}"
 								ClipToBounds="true">
 							<Grid x:Name="PART_RootContainer" 
-								  ColumnDefinitions="*,Auto">
+								    ColumnDefinitions="*,Auto">
 
 								<ContentPresenter x:Name="{x:Static helpers:PARTNameHelper.PART_ContentPresenter}"
 																  Content="{TemplateBinding Content}"

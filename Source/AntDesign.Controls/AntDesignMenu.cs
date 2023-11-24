@@ -1,5 +1,4 @@
 ﻿using AntDesign.Controls.Interfaces;
-using System;
 
 namespace AntDesign.Controls;
 public class AntDesignMenu : ItemsControl, ISubItem, ISubSelectable
@@ -37,7 +36,6 @@ public class AntDesignMenu : ItemsControl, ISubItem, ISubSelectable
            RoutedEvent.Register<SelectingItemsControl, SelectionChangedEventArgs>(nameof(SelectionChanged), RoutingStrategies.Bubble);
 
 
-
     public object? SelectedItem
     {
         get => GetValue(SelectedItemProperty);
@@ -67,7 +65,7 @@ public class AntDesignMenu : ItemsControl, ISubItem, ISubSelectable
 
     protected override void OnPointerMoved(PointerEventArgs e)
     {
-        base.OnPointerMoved(e); 
+        base.OnPointerMoved(e);
     }
 
     void ColoringOrSelected()
