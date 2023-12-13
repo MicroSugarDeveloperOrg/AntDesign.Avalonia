@@ -6,6 +6,7 @@
 		<ProvisioningType>manual</ProvisioningType>
 		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
 		<RootNamespace>AntDesign.Sample</RootNamespace>
+		<!--<SelfContained>true</SelfContained>-->
 
 		<!-- These properties need to be set in order to run on a real iDevice -->
 		<!--<RuntimeIdentifiers>iossimulator-x64;ios-arm64</RuntimeIdentifiers>-->

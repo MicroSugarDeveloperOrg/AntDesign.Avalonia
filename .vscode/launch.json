@@ -1,0 +1,20 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: AntDesign.Sample.Desktop [Desktop]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Source/Samples/AntDesign.Sample.Desktop/AntDesign.Sample.Desktop.csproj"
+        },
+        {
+            "name": "C#: AntDesign.Sample.iOS [iOS]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Source/Samples/AntDesign.Sample.iOS/AntDesign.Sample.iOS.csproj"
+        }
+    ]
+}
