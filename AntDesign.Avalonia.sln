@@ -20,8 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Build", ".Build", "{3DA99C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign", "Source\AntDesign\AntDesign.csproj", "{7D0D00F1-A36F-4DD5-8140-17329E911ED0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.SourceGenerator", "Source\Avalonia.SourceGenerator\Avalonia.SourceGenerator.csproj", "{8148DE74-5328-4198-8067-8B6339B9CAB8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.ReactiveUI.Toolkit", "Source\Avalonia.ReactiveUI.Toolkit\Avalonia.ReactiveUI.Toolkit.csproj", "{5CE934BE-6C44-4893-B6EC-F760AFA448BA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Icons", "Source\AntDesign.Icons\AntDesign.Icons.csproj", "{CEE81A97-90B0-4959-AAE4-4E78771AE380}"
@@ -58,7 +56,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.FontManager", "So
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Controls.Style", "Source\AntDesign.Controls.Style\AntDesign.Controls.Style.csproj", "{D764CFBF-3599-430D-BE4A-46E085D410EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntDesign.Animations", "Source\AntDesign.Animations\AntDesign.Animations.csproj", "{6E634171-6F26-4DC2-9766-35F20F182784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AntDesign.Animations", "Source\AntDesign.Animations\AntDesign.Animations.csproj", "{6E634171-6F26-4DC2-9766-35F20F182784}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,10 +68,6 @@ Global
 		{7D0D00F1-A36F-4DD5-8140-17329E911ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D0D00F1-A36F-4DD5-8140-17329E911ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D0D00F1-A36F-4DD5-8140-17329E911ED0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8148DE74-5328-4198-8067-8B6339B9CAB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8148DE74-5328-4198-8067-8B6339B9CAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8148DE74-5328-4198-8067-8B6339B9CAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8148DE74-5328-4198-8067-8B6339B9CAB8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5CE934BE-6C44-4893-B6EC-F760AFA448BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CE934BE-6C44-4893-B6EC-F760AFA448BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CE934BE-6C44-4893-B6EC-F760AFA448BA}.Release|Any CPU.ActiveCfg = Release|Any CPU

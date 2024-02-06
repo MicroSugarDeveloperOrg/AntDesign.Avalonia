@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
 		<EmccTotalMemory>16777216</EmccTotalMemory>
 		<BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
